@@ -1,0 +1,32 @@
+{
+  "type": "literal",
+  "children": {
+    "targets": {
+      "type": "argument",
+      "parser": "minecraft:entity",
+      "properties": {
+        "amount": "multiple",
+        "type": "players"
+      },
+      "children": {
+        "item": {
+          "type": "argument",
+          "parser": "minecraft:item_predicate",
+          "children": {
+            "maxCount": {
+              "type": "argument",
+              "parser": "brigadier:integer",
+              "properties": {
+                "min": 0
+              },
+              "executable": true
+            }
+          },
+          "executable": true
+        }
+      },
+      "executable": true
+    }
+  },
+  "executable": true
+}

@@ -1,0 +1,84 @@
+{
+  "type": "literal",
+  "children": {
+    "targets": {
+      "type": "argument",
+      "parser": "minecraft:entity",
+      "properties": {
+        "amount": "multiple",
+        "type": "players"
+      },
+      "children": {
+        "actionbar": {
+          "type": "literal",
+          "children": {
+            "title": {
+              "type": "argument",
+              "parser": "minecraft:component",
+              "executable": true
+            }
+          }
+        },
+        "clear": {
+          "type": "literal",
+          "executable": true
+        },
+        "reset": {
+          "type": "literal",
+          "executable": true
+        },
+        "subtitle": {
+          "type": "literal",
+          "children": {
+            "title": {
+              "type": "argument",
+              "parser": "minecraft:component",
+              "executable": true
+            }
+          }
+        },
+        "times": {
+          "type": "literal",
+          "children": {
+            "fadeIn": {
+              "type": "argument",
+              "parser": "brigadier:integer",
+              "properties": {
+                "min": 0
+              },
+              "children": {
+                "stay": {
+                  "type": "argument",
+                  "parser": "brigadier:integer",
+                  "properties": {
+                    "min": 0
+                  },
+                  "children": {
+                    "fadeOut": {
+                      "type": "argument",
+                      "parser": "brigadier:integer",
+                      "properties": {
+                        "min": 0
+                      },
+                      "executable": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "title": {
+          "type": "literal",
+          "children": {
+            "title": {
+              "type": "argument",
+              "parser": "minecraft:component",
+              "executable": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "type": "literal",
+  "children": {
+    "give": {
+      "type": "literal",
+      "children": {
+        "targets": {
+          "type": "argument",
+          "parser": "minecraft:entity",
+          "properties": {
+            "amount": "multiple",
+            "type": "players"
+          },
+          "children": {
+            "*": {
+              "type": "literal",
+              "executable": true
+            },
+            "recipe": {
+              "type": "argument",
+              "parser": "minecraft:resource_location",
+              "executable": true
+            }
+          }
+        }
+      }
+    },
+    "take": {
+      "type": "literal",
+      "children": {
+        "targets": {
+          "type": "argument",
+          "parser": "minecraft:entity",
+          "properties": {
+            "amount": "multiple",
+            "type": "players"
+          },
+          "children": {
+            "*": {
+              "type": "literal",
+              "executable": true
+            },
+            "recipe": {
+              "type": "argument",
+              "parser": "minecraft:resource_location",
+              "executable": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

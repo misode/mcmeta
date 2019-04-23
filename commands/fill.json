@@ -1,0 +1,51 @@
+{
+  "type": "literal",
+  "children": {
+    "from": {
+      "type": "argument",
+      "parser": "minecraft:block_pos",
+      "children": {
+        "to": {
+          "type": "argument",
+          "parser": "minecraft:block_pos",
+          "children": {
+            "block": {
+              "type": "argument",
+              "parser": "minecraft:block_state",
+              "children": {
+                "destroy": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "hollow": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "keep": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "outline": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "replace": {
+                  "type": "literal",
+                  "children": {
+                    "filter": {
+                      "type": "argument",
+                      "parser": "minecraft:block_predicate",
+                      "executable": true
+                    }
+                  },
+                  "executable": true
+                }
+              },
+              "executable": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

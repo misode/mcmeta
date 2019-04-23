@@ -1,0 +1,74 @@
+{
+  "type": "literal",
+  "children": {
+    "name": {
+      "type": "argument",
+      "parser": "minecraft:particle",
+      "children": {
+        "pos": {
+          "type": "argument",
+          "parser": "minecraft:vec3",
+          "children": {
+            "delta": {
+              "type": "argument",
+              "parser": "minecraft:vec3",
+              "children": {
+                "speed": {
+                  "type": "argument",
+                  "parser": "brigadier:float",
+                  "properties": {
+                    "min": 0.0
+                  },
+                  "children": {
+                    "count": {
+                      "type": "argument",
+                      "parser": "brigadier:integer",
+                      "properties": {
+                        "min": 0
+                      },
+                      "children": {
+                        "force": {
+                          "type": "literal",
+                          "children": {
+                            "viewers": {
+                              "type": "argument",
+                              "parser": "minecraft:entity",
+                              "properties": {
+                                "amount": "multiple",
+                                "type": "players"
+                              },
+                              "executable": true
+                            }
+                          },
+                          "executable": true
+                        },
+                        "normal": {
+                          "type": "literal",
+                          "children": {
+                            "viewers": {
+                              "type": "argument",
+                              "parser": "minecraft:entity",
+                              "properties": {
+                                "amount": "multiple",
+                                "type": "players"
+                              },
+                              "executable": true
+                            }
+                          },
+                          "executable": true
+                        }
+                      },
+                      "executable": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "executable": true
+        }
+      },
+      "executable": true
+    }
+  }
+}

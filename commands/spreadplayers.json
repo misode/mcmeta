@@ -1,0 +1,44 @@
+{
+  "type": "literal",
+  "children": {
+    "center": {
+      "type": "argument",
+      "parser": "minecraft:vec2",
+      "children": {
+        "spreadDistance": {
+          "type": "argument",
+          "parser": "brigadier:float",
+          "properties": {
+            "min": 0.0
+          },
+          "children": {
+            "maxRange": {
+              "type": "argument",
+              "parser": "brigadier:float",
+              "properties": {
+                "min": 1.0
+              },
+              "children": {
+                "respectTeams": {
+                  "type": "argument",
+                  "parser": "brigadier:bool",
+                  "children": {
+                    "targets": {
+                      "type": "argument",
+                      "parser": "minecraft:entity",
+                      "properties": {
+                        "amount": "multiple",
+                        "type": "entities"
+                      },
+                      "executable": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "type": "literal",
+  "children": {
+    "disable": {
+      "type": "literal",
+      "children": {
+        "name": {
+          "type": "argument",
+          "parser": "brigadier:string",
+          "properties": {
+            "type": "phrase"
+          },
+          "executable": true
+        }
+      }
+    },
+    "enable": {
+      "type": "literal",
+      "children": {
+        "name": {
+          "type": "argument",
+          "parser": "brigadier:string",
+          "properties": {
+            "type": "phrase"
+          },
+          "children": {
+            "after": {
+              "type": "literal",
+              "children": {
+                "existing": {
+                  "type": "argument",
+                  "parser": "brigadier:string",
+                  "properties": {
+                    "type": "phrase"
+                  },
+                  "executable": true
+                }
+              }
+            },
+            "before": {
+              "type": "literal",
+              "children": {
+                "existing": {
+                  "type": "argument",
+                  "parser": "brigadier:string",
+                  "properties": {
+                    "type": "phrase"
+                  },
+                  "executable": true
+                }
+              }
+            },
+            "first": {
+              "type": "literal",
+              "executable": true
+            },
+            "last": {
+              "type": "literal",
+              "executable": true
+            }
+          },
+          "executable": true
+        }
+      }
+    },
+    "list": {
+      "type": "literal",
+      "children": {
+        "available": {
+          "type": "literal",
+          "executable": true
+        },
+        "enabled": {
+          "type": "literal",
+          "executable": true
+        }
+      },
+      "executable": true
+    }
+  }
+}

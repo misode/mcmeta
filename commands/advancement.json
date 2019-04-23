@@ -1,0 +1,143 @@
+{
+  "type": "literal",
+  "children": {
+    "grant": {
+      "type": "literal",
+      "children": {
+        "targets": {
+          "type": "argument",
+          "parser": "minecraft:entity",
+          "properties": {
+            "amount": "multiple",
+            "type": "players"
+          },
+          "children": {
+            "everything": {
+              "type": "literal",
+              "executable": true
+            },
+            "from": {
+              "type": "literal",
+              "children": {
+                "advancement": {
+                  "type": "argument",
+                  "parser": "minecraft:resource_location",
+                  "executable": true
+                }
+              }
+            },
+            "only": {
+              "type": "literal",
+              "children": {
+                "advancement": {
+                  "type": "argument",
+                  "parser": "minecraft:resource_location",
+                  "children": {
+                    "criterion": {
+                      "type": "argument",
+                      "parser": "brigadier:string",
+                      "properties": {
+                        "type": "greedy"
+                      },
+                      "executable": true
+                    }
+                  },
+                  "executable": true
+                }
+              }
+            },
+            "through": {
+              "type": "literal",
+              "children": {
+                "advancement": {
+                  "type": "argument",
+                  "parser": "minecraft:resource_location",
+                  "executable": true
+                }
+              }
+            },
+            "until": {
+              "type": "literal",
+              "children": {
+                "advancement": {
+                  "type": "argument",
+                  "parser": "minecraft:resource_location",
+                  "executable": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "revoke": {
+      "type": "literal",
+      "children": {
+        "targets": {
+          "type": "argument",
+          "parser": "minecraft:entity",
+          "properties": {
+            "amount": "multiple",
+            "type": "players"
+          },
+          "children": {
+            "everything": {
+              "type": "literal",
+              "executable": true
+            },
+            "from": {
+              "type": "literal",
+              "children": {
+                "advancement": {
+                  "type": "argument",
+                  "parser": "minecraft:resource_location",
+                  "executable": true
+                }
+              }
+            },
+            "only": {
+              "type": "literal",
+              "children": {
+                "advancement": {
+                  "type": "argument",
+                  "parser": "minecraft:resource_location",
+                  "children": {
+                    "criterion": {
+                      "type": "argument",
+                      "parser": "brigadier:string",
+                      "properties": {
+                        "type": "greedy"
+                      },
+                      "executable": true
+                    }
+                  },
+                  "executable": true
+                }
+              }
+            },
+            "through": {
+              "type": "literal",
+              "children": {
+                "advancement": {
+                  "type": "argument",
+                  "parser": "minecraft:resource_location",
+                  "executable": true
+                }
+              }
+            },
+            "until": {
+              "type": "literal",
+              "children": {
+                "advancement": {
+                  "type": "argument",
+                  "parser": "minecraft:resource_location",
+                  "executable": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
