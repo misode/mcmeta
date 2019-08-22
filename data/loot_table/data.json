@@ -650,6 +650,113 @@
       }
     ]
   },
+  "blocks/bee_hive": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                      "enchantments": [
+                        {
+                          "enchantment": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "functions": [
+                  {
+                    "function": "minecraft:copy_nbt",
+                    "source": "block_entity",
+                    "ops": [
+                      {
+                        "source": "Bees",
+                        "target": "BlockEntityTag.Bees",
+                        "op": "replace"
+                      }
+                    ]
+                  },
+                  {
+                    "function": "minecraft:copy_state",
+                    "block": "minecraft:bee_hive",
+                    "properties": [
+                      "honey_level"
+                    ]
+                  }
+                ],
+                "name": "minecraft:bee_hive"
+              },
+              {
+                "type": "minecraft:item",
+                "name": "minecraft:bee_hive"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/bee_nest": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:copy_nbt",
+                "source": "block_entity",
+                "ops": [
+                  {
+                    "source": "Bees",
+                    "target": "BlockEntityTag.Bees",
+                    "op": "replace"
+                  }
+                ]
+              },
+              {
+                "function": "minecraft:copy_state",
+                "block": "minecraft:bee_nest",
+                "properties": [
+                  "honey_level"
+                ]
+              }
+            ],
+            "name": "minecraft:bee_nest"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "enchantments": [
+                {
+                  "enchantment": "minecraft:silk_touch",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
   "blocks/beetroots": {
     "type": "minecraft:block",
     "pools": [
@@ -18636,24 +18743,10 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
-                    "type": "minecraft:weakness",
-                    "duration": {
-                      "min": 6.0,
-                      "max": 8.0
-                    }
-                  },
-                  {
                     "type": "minecraft:blindness",
                     "duration": {
                       "min": 5.0,
                       "max": 7.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:saturation",
-                    "duration": {
-                      "min": 7.0,
-                      "max": 10.0
                     }
                   },
                   {
@@ -18671,10 +18764,24 @@
                     }
                   },
                   {
+                    "type": "minecraft:saturation",
+                    "duration": {
+                      "min": 7.0,
+                      "max": 10.0
+                    }
+                  },
+                  {
                     "type": "minecraft:poison",
                     "duration": {
                       "min": 10.0,
                       "max": 20.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:weakness",
+                    "duration": {
+                      "min": 6.0,
+                      "max": 8.0
                     }
                   }
                 ]
@@ -21931,6 +22038,9 @@
     "type": "minecraft:entity"
   },
   "entities/bat": {
+    "type": "minecraft:entity"
+  },
+  "entities/bee": {
     "type": "minecraft:entity"
   },
   "entities/blaze": {

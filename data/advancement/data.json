@@ -2877,32 +2877,32 @@
         "trigger": "minecraft:effects_changed",
         "conditions": {
           "effects": {
-            "minecraft:dolphins_grace": {},
-            "minecraft:slow_falling": {},
-            "minecraft:invisibility": {},
-            "minecraft:absorption": {},
-            "minecraft:resistance": {},
-            "minecraft:bad_omen": {},
-            "minecraft:jump_boost": {},
-            "minecraft:mining_fatigue": {},
-            "minecraft:speed": {},
-            "minecraft:strength": {},
             "minecraft:night_vision": {},
-            "minecraft:poison": {},
-            "minecraft:regeneration": {},
-            "minecraft:wither": {},
-            "minecraft:conduit_power": {},
-            "minecraft:slowness": {},
-            "minecraft:hunger": {},
-            "minecraft:water_breathing": {},
-            "minecraft:nausea": {},
-            "minecraft:hero_of_the_village": {},
-            "minecraft:glowing": {},
-            "minecraft:weakness": {},
+            "minecraft:dolphins_grace": {},
+            "minecraft:invisibility": {},
+            "minecraft:jump_boost": {},
             "minecraft:levitation": {},
+            "minecraft:hunger": {},
+            "minecraft:nausea": {},
+            "minecraft:fire_resistance": {},
+            "minecraft:slowness": {},
+            "minecraft:strength": {},
+            "minecraft:slow_falling": {},
             "minecraft:blindness": {},
+            "minecraft:poison": {},
             "minecraft:haste": {},
-            "minecraft:fire_resistance": {}
+            "minecraft:conduit_power": {},
+            "minecraft:hero_of_the_village": {},
+            "minecraft:weakness": {},
+            "minecraft:wither": {},
+            "minecraft:regeneration": {},
+            "minecraft:absorption": {},
+            "minecraft:mining_fatigue": {},
+            "minecraft:resistance": {},
+            "minecraft:speed": {},
+            "minecraft:bad_omen": {},
+            "minecraft:water_breathing": {},
+            "minecraft:glowing": {}
           }
         }
       }
@@ -2938,19 +2938,19 @@
         "trigger": "minecraft:effects_changed",
         "conditions": {
           "effects": {
-            "minecraft:slow_falling": {},
-            "minecraft:invisibility": {},
-            "minecraft:resistance": {},
-            "minecraft:slowness": {},
-            "minecraft:jump_boost": {},
-            "minecraft:water_breathing": {},
-            "minecraft:speed": {},
-            "minecraft:weakness": {},
-            "minecraft:strength": {},
             "minecraft:night_vision": {},
+            "minecraft:invisibility": {},
+            "minecraft:jump_boost": {},
             "minecraft:poison": {},
+            "minecraft:weakness": {},
+            "minecraft:regeneration": {},
+            "minecraft:resistance": {},
+            "minecraft:speed": {},
             "minecraft:fire_resistance": {},
-            "minecraft:regeneration": {}
+            "minecraft:slowness": {},
+            "minecraft:strength": {},
+            "minecraft:water_breathing": {},
+            "minecraft:slow_falling": {}
           }
         }
       }
@@ -14025,6 +14025,38 @@
       [
         "has_planks",
         "has_wood_slab",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/decorations/bee_hive": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:bee_hive"
+      ]
+    },
+    "criteria": {
+      "has_honeycomb": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:honeycomb"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:bee_hive"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_honeycomb",
         "has_the_recipe"
       ]
     ]
@@ -25446,11 +25478,43 @@
       ]
     ]
   },
-  "recipes/misc/sugar": {
+  "recipes/misc/sugar_from_honey_bottle": {
     "parent": "minecraft:recipes/root",
     "rewards": {
       "recipes": [
-        "minecraft:sugar"
+        "minecraft:sugar_from_honey_bottle"
+      ]
+    },
+    "criteria": {
+      "has_honey_bottle": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:honey_bottle"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:sugar_from_honey_bottle"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_honey_bottle",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/misc/sugar_from_sugar_cane": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:sugar_from_sugar_cane"
       ]
     },
     "criteria": {
@@ -25467,7 +25531,7 @@
       "has_the_recipe": {
         "trigger": "minecraft:recipe_unlocked",
         "conditions": {
-          "recipe": "minecraft:sugar"
+          "recipe": "minecraft:sugar_from_sugar_cane"
         }
       }
     },
