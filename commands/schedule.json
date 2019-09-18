@@ -1,6 +1,19 @@
 {
   "type": "literal",
   "children": {
+    "clear": {
+      "type": "literal",
+      "children": {
+        "function": {
+          "type": "argument",
+          "parser": "brigadier:string",
+          "properties": {
+            "type": "greedy"
+          },
+          "executable": true
+        }
+      }
+    },
     "function": {
       "type": "literal",
       "children": {
@@ -11,6 +24,16 @@
             "time": {
               "type": "argument",
               "parser": "minecraft:time",
+              "children": {
+                "append": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "replace": {
+                  "type": "literal",
+                  "executable": true
+                }
+              },
               "executable": true
             }
           }
