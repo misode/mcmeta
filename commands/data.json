@@ -2079,7 +2079,8 @@
               },
               "executable": true
             }
-          }
+          },
+          "executable": true
         },
         "give": {
           "type": "literal",
@@ -6257,6 +6258,32 @@
             "pos": {
               "type": "argument",
               "parser": "minecraft:block_pos",
+              "executable": true
+            }
+          },
+          "executable": true
+        }
+      },
+      "executable": true
+    },
+    "spectate": {
+      "type": "literal",
+      "children": {
+        "target": {
+          "type": "argument",
+          "parser": "minecraft:entity",
+          "properties": {
+            "amount": "single",
+            "type": "entities"
+          },
+          "children": {
+            "player": {
+              "type": "argument",
+              "parser": "minecraft:entity",
+              "properties": {
+                "amount": "single",
+                "type": "players"
+              },
               "executable": true
             }
           },
