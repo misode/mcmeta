@@ -702,64 +702,6 @@
       }
     ]
   },
-  "blocks/bee_hive": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1,
-        "entries": [
-          {
-            "type": "minecraft:alternatives",
-            "children": [
-              {
-                "type": "minecraft:item",
-                "conditions": [
-                  {
-                    "condition": "minecraft:match_tool",
-                    "predicate": {
-                      "enchantments": [
-                        {
-                          "enchantment": "minecraft:silk_touch",
-                          "levels": {
-                            "min": 1
-                          }
-                        }
-                      ]
-                    }
-                  }
-                ],
-                "functions": [
-                  {
-                    "function": "minecraft:copy_nbt",
-                    "source": "block_entity",
-                    "ops": [
-                      {
-                        "source": "Bees",
-                        "target": "BlockEntityTag.Bees",
-                        "op": "replace"
-                      }
-                    ]
-                  },
-                  {
-                    "function": "minecraft:copy_state",
-                    "block": "minecraft:bee_hive",
-                    "properties": [
-                      "honey_level"
-                    ]
-                  }
-                ],
-                "name": "minecraft:bee_hive"
-              },
-              {
-                "type": "minecraft:item",
-                "name": "minecraft:bee_hive"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
   "blocks/bee_nest": {
     "type": "minecraft:block",
     "pools": [
@@ -804,6 +746,64 @@
                 }
               ]
             }
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/beehive": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                      "enchantments": [
+                        {
+                          "enchantment": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "functions": [
+                  {
+                    "function": "minecraft:copy_nbt",
+                    "source": "block_entity",
+                    "ops": [
+                      {
+                        "source": "Bees",
+                        "target": "BlockEntityTag.Bees",
+                        "op": "replace"
+                      }
+                    ]
+                  },
+                  {
+                    "function": "minecraft:copy_state",
+                    "block": "minecraft:beehive",
+                    "properties": [
+                      "honey_level"
+                    ]
+                  }
+                ],
+                "name": "minecraft:beehive"
+              },
+              {
+                "type": "minecraft:item",
+                "name": "minecraft:beehive"
+              }
+            ]
           }
         ]
       }
@@ -6728,6 +6728,44 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:heavy_weighted_pressure_plate"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/honey_block": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:honey_block"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/honeycomb_block": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:honeycomb_block"
           }
         ],
         "conditions": [
@@ -18827,13 +18865,6 @@
                     }
                   },
                   {
-                    "type": "minecraft:night_vision",
-                    "duration": {
-                      "min": 7.0,
-                      "max": 10.0
-                    }
-                  },
-                  {
                     "type": "minecraft:jump_boost",
                     "duration": {
                       "min": 7.0,
@@ -18859,6 +18890,13 @@
                     "duration": {
                       "min": 6.0,
                       "max": 8.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:night_vision",
+                    "duration": {
+                      "min": 7.0,
+                      "max": 10.0
                     }
                   }
                 ]
