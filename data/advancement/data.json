@@ -439,6 +439,37 @@
       ]
     ]
   },
+  "adventure/bullseye": {
+    "parent": "minecraft:adventure/shoot_arrow",
+    "display": {
+      "icon": {
+        "item": "minecraft:target"
+      },
+      "title": {
+        "translate": "advancements.adventure.bullseye.title"
+      },
+      "description": {
+        "translate": "advancements.adventure.bullseye.description"
+      },
+      "frame": "task",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": false
+    },
+    "criteria": {
+      "bullseye": {
+        "trigger": "minecraft:target_hit",
+        "conditions": {
+          "signalStrength": 15
+        }
+      }
+    },
+    "requirements": [
+      [
+        "bullseye"
+      ]
+    ]
+  },
   "adventure/hero_of_the_village": {
     "parent": "minecraft:adventure/voluntary_exile",
     "display": {
@@ -537,11 +568,11 @@
           }
         }
       },
-      "minecraft:zombie_pigman": {
+      "minecraft:zombified_piglin": {
         "trigger": "minecraft:player_killed_entity",
         "conditions": {
           "entity": {
-            "type": "minecraft:zombie_pigman"
+            "type": "minecraft:zombified_piglin"
           }
         }
       },
@@ -742,7 +773,7 @@
       [
         "minecraft:cave_spider",
         "minecraft:spider",
-        "minecraft:zombie_pigman",
+        "minecraft:zombified_piglin",
         "minecraft:enderman",
         "minecraft:blaze",
         "minecraft:creeper",
@@ -808,11 +839,11 @@
           }
         }
       },
-      "minecraft:zombie_pigman": {
+      "minecraft:zombified_piglin": {
         "trigger": "minecraft:player_killed_entity",
         "conditions": {
           "entity": {
-            "type": "minecraft:zombie_pigman"
+            "type": "minecraft:zombified_piglin"
           }
         }
       },
@@ -1017,7 +1048,7 @@
         "minecraft:spider"
       ],
       [
-        "minecraft:zombie_pigman"
+        "minecraft:zombified_piglin"
       ],
       [
         "minecraft:enderman"
@@ -15057,7 +15088,7 @@
         "conditions": {
           "items": [
             {
-              "item": "minecraft:glass"
+              "item": "minecraft:black_stained_glass"
             }
           ]
         }
@@ -15367,7 +15398,7 @@
         "conditions": {
           "items": [
             {
-              "item": "minecraft:glass"
+              "item": "minecraft:blue_stained_glass"
             }
           ]
         }
@@ -15709,7 +15740,7 @@
         "conditions": {
           "items": [
             {
-              "item": "minecraft:glass"
+              "item": "minecraft:brown_stained_glass"
             }
           ]
         }
@@ -16038,6 +16069,38 @@
       ]
     ]
   },
+  "recipes/decorations/crimson_sign": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:crimson_sign"
+      ]
+    },
+    "criteria": {
+      "has_crimson_planks": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:crimson_planks"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:crimson_sign"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_crimson_planks",
+        "has_the_recipe"
+      ]
+    ]
+  },
   "recipes/decorations/cyan_banner": {
     "parent": "minecraft:recipes/root",
     "rewards": {
@@ -16254,7 +16317,7 @@
         "conditions": {
           "items": [
             {
-              "item": "minecraft:glass"
+              "item": "minecraft:cyan_stained_glass"
             }
           ]
         }
@@ -17076,7 +17139,7 @@
         "conditions": {
           "items": [
             {
-              "item": "minecraft:glass"
+              "item": "minecraft:gray_stained_glass"
             }
           ]
         }
@@ -17354,7 +17417,7 @@
         "conditions": {
           "items": [
             {
-              "item": "minecraft:glass"
+              "item": "minecraft:green_stained_glass"
             }
           ]
         }
@@ -17963,7 +18026,7 @@
         "conditions": {
           "items": [
             {
-              "item": "minecraft:glass"
+              "item": "minecraft:light_blue_stained_glass"
             }
           ]
         }
@@ -18241,7 +18304,7 @@
         "conditions": {
           "items": [
             {
-              "item": "minecraft:glass"
+              "item": "minecraft:light_gray_stained_glass"
             }
           ]
         }
@@ -18519,7 +18582,7 @@
         "conditions": {
           "items": [
             {
-              "item": "minecraft:glass"
+              "item": "minecraft:lime_stained_glass"
             }
           ]
         }
@@ -18829,7 +18892,7 @@
         "conditions": {
           "items": [
             {
-              "item": "minecraft:glass"
+              "item": "minecraft:magenta_stained_glass"
             }
           ]
         }
@@ -19325,7 +19388,7 @@
           ]
         }
       },
-      "has_oramge_dye": {
+      "has_orange_dye": {
         "trigger": "minecraft:inventory_changed",
         "conditions": {
           "items": [
@@ -19345,7 +19408,7 @@
     "requirements": [
       [
         "has_white_carpet",
-        "has_oramge_dye",
+        "has_orange_dye",
         "has_the_recipe"
       ]
     ]
@@ -19395,7 +19458,7 @@
         "conditions": {
           "items": [
             {
-              "item": "minecraft:glass"
+              "item": "minecraft:orange_stained_glass"
             }
           ]
         }
@@ -19705,7 +19768,7 @@
         "conditions": {
           "items": [
             {
-              "item": "minecraft:glass"
+              "item": "minecraft:pink_stained_glass"
             }
           ]
         }
@@ -20047,7 +20110,7 @@
         "conditions": {
           "items": [
             {
-              "item": "minecraft:glass"
+              "item": "minecraft:purple_stained_glass"
             }
           ]
         }
@@ -20453,7 +20516,7 @@
         "conditions": {
           "items": [
             {
-              "item": "minecraft:glass"
+              "item": "minecraft:red_stained_glass"
             }
           ]
         }
@@ -21091,6 +21154,38 @@
       ]
     ]
   },
+  "recipes/decorations/warped_sign": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:warped_sign"
+      ]
+    },
+    "criteria": {
+      "has_warped_planks": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:warped_planks"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:warped_sign"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_warped_planks",
+        "has_the_recipe"
+      ]
+    ]
+  },
   "recipes/decorations/white_banner": {
     "parent": "minecraft:recipes/root",
     "rewards": {
@@ -21232,7 +21327,7 @@
         "conditions": {
           "items": [
             {
-              "item": "minecraft:glass"
+              "item": "minecraft:white_stained_glass"
             }
           ]
         }
@@ -21510,7 +21605,7 @@
         "conditions": {
           "items": [
             {
-              "item": "minecraft:glass"
+              "item": "minecraft:yellow_stained_glass"
             }
           ]
         }
@@ -28523,6 +28618,49 @@
     "requirements": [
       [
         "has_stone",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/redstone/target": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:target"
+      ]
+    },
+    "criteria": {
+      "has_redstone": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:redstone"
+            }
+          ]
+        }
+      },
+      "has_hay_block": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:hay_block"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:target"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_redstone",
+        "has_hay_block",
         "has_the_recipe"
       ]
     ]

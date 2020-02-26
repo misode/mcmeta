@@ -3605,7 +3605,7 @@
       }
     ]
   },
-  "blocks/crimson_fungi": {
+  "blocks/crimson_fungus": {
     "type": "minecraft:block",
     "pools": [
       {
@@ -3613,7 +3613,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "minecraft:crimson_fungi"
+            "name": "minecraft:crimson_fungus"
           }
         ],
         "conditions": [
@@ -3798,6 +3798,25 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:crimson_trapdoor"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/crying_obsidian": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:crying_obsidian"
           }
         ],
         "conditions": [
@@ -12187,6 +12206,72 @@
       }
     ]
   },
+  "blocks/potted_crimson_fungus": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:flower_pot"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      },
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:crimson_fungus"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/potted_crimson_roots": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:flower_pot"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      },
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:crimson_roots"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/potted_dandelion": {
     "type": "minecraft:block",
     "pools": [
@@ -12639,6 +12724,72 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:spruce_sapling"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/potted_warped_fungus": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:flower_pot"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      },
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:warped_fungus"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/potted_warped_roots": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:flower_pot"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      },
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:warped_roots"
           }
         ],
         "conditions": [
@@ -16587,6 +16738,25 @@
       }
     ]
   },
+  "blocks/target": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:target"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/terracotta": {
     "type": "minecraft:block",
     "pools": [
@@ -16953,7 +17123,7 @@
       }
     ]
   },
-  "blocks/warped_fungi": {
+  "blocks/warped_fungus": {
     "type": "minecraft:block",
     "pools": [
       {
@@ -16961,7 +17131,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "minecraft:warped_fungi"
+            "name": "minecraft:warped_fungus"
           }
         ],
         "conditions": [
@@ -25868,7 +26038,65 @@
       }
     ]
   },
-  "entities/zombie_pigman": {
+  "entities/zombie_villager": {
+    "type": "minecraft:entity",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 0.0,
+                  "max": 2.0,
+                  "type": "minecraft:uniform"
+                }
+              },
+              {
+                "function": "minecraft:looting_enchant",
+                "count": {
+                  "min": 0.0,
+                  "max": 1.0
+                }
+              }
+            ],
+            "name": "minecraft:rotten_flesh"
+          }
+        ]
+      },
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:iron_ingot"
+          },
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:carrot"
+          },
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:potato"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:killed_by_player"
+          },
+          {
+            "condition": "minecraft:random_chance_with_looting",
+            "chance": 0.025,
+            "looting_multiplier": 0.01
+          }
+        ]
+      }
+    ]
+  },
+  "entities/zombified_piglin": {
     "type": "minecraft:entity",
     "pools": [
       {
@@ -25929,64 +26157,6 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:gold_ingot"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:killed_by_player"
-          },
-          {
-            "condition": "minecraft:random_chance_with_looting",
-            "chance": 0.025,
-            "looting_multiplier": 0.01
-          }
-        ]
-      }
-    ]
-  },
-  "entities/zombie_villager": {
-    "type": "minecraft:entity",
-    "pools": [
-      {
-        "rolls": 1,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 0.0,
-                  "max": 2.0,
-                  "type": "minecraft:uniform"
-                }
-              },
-              {
-                "function": "minecraft:looting_enchant",
-                "count": {
-                  "min": 0.0,
-                  "max": 1.0
-                }
-              }
-            ],
-            "name": "minecraft:rotten_flesh"
-          }
-        ]
-      },
-      {
-        "rolls": 1,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:iron_ingot"
-          },
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:carrot"
-          },
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:potato"
           }
         ],
         "conditions": [
@@ -26879,16 +27049,44 @@
         "entries": [
           {
             "type": "minecraft:item",
+            "name": "minecraft:netherite_hoe"
+          },
+          {
+            "type": "minecraft:item",
+            "weight": 5,
             "name": "minecraft:warped_nylium"
           },
           {
             "type": "minecraft:item",
+            "weight": 5,
+            "functions": [
+              {
+                "function": "minecraft:set_nbt",
+                "tag": "{Potion:\"minecraft:fire_resistance\"}"
+              }
+            ],
+            "name": "minecraft:potion"
+          },
+          {
+            "type": "minecraft:item",
+            "weight": 5,
+            "functions": [
+              {
+                "function": "minecraft:set_nbt",
+                "tag": "{Potion:\"minecraft:fire_resistance\"}"
+              }
+            ],
+            "name": "minecraft:splash_potion"
+          },
+          {
+            "type": "minecraft:item",
+            "weight": 10,
             "functions": [
               {
                 "function": "minecraft:set_count",
                 "count": {
-                  "min": 1.0,
-                  "max": 4.0,
+                  "min": 8.0,
+                  "max": 16.0,
                   "type": "minecraft:uniform"
                 }
               }
@@ -26897,17 +27095,13 @@
           },
           {
             "type": "minecraft:item",
-            "name": "minecraft:obsidian"
-          },
-          {
-            "type": "minecraft:item",
-            "weight": 2,
+            "weight": 10,
             "functions": [
               {
                 "function": "minecraft:set_count",
                 "count": {
-                  "min": 2.0,
-                  "max": 4.0,
+                  "min": 5.0,
+                  "max": 12.0,
                   "type": "minecraft:uniform"
                 }
               }
@@ -26916,7 +27110,137 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 2,
+            "weight": 10,
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 2.0,
+                  "max": 6.0,
+                  "type": "minecraft:uniform"
+                }
+              }
+            ],
+            "name": "minecraft:magma_cream"
+          },
+          {
+            "type": "minecraft:item",
+            "weight": 10,
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 4.0,
+                  "max": 8.0,
+                  "type": "minecraft:uniform"
+                }
+              }
+            ],
+            "name": "minecraft:ender_pearl"
+          },
+          {
+            "type": "minecraft:item",
+            "weight": 10,
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 8.0,
+                  "max": 24.0,
+                  "type": "minecraft:uniform"
+                }
+              }
+            ],
+            "name": "minecraft:string"
+          },
+          {
+            "type": "minecraft:item",
+            "weight": 20,
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 6.0,
+                  "max": 10.0,
+                  "type": "minecraft:uniform"
+                }
+              }
+            ],
+            "name": "minecraft:shroomlight"
+          },
+          {
+            "type": "minecraft:item",
+            "weight": 20,
+            "name": "minecraft:fire_charge"
+          },
+          {
+            "type": "minecraft:item",
+            "weight": 20,
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 8.0,
+                  "max": 16.0,
+                  "type": "minecraft:uniform"
+                }
+              }
+            ],
+            "name": "minecraft:gravel"
+          },
+          {
+            "type": "minecraft:item",
+            "weight": 20,
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 4.0,
+                  "max": 10.0,
+                  "type": "minecraft:uniform"
+                }
+              }
+            ],
+            "name": "minecraft:leather"
+          },
+          {
+            "type": "minecraft:item",
+            "weight": 20,
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 4.0,
+                  "max": 10.0,
+                  "type": "minecraft:uniform"
+                }
+              }
+            ],
+            "name": "minecraft:warped_fungus"
+          },
+          {
+            "type": "minecraft:item",
+            "weight": 20,
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 4.0,
+                  "max": 16.0,
+                  "type": "minecraft:uniform"
+                }
+              }
+            ],
+            "name": "minecraft:nether_brick"
+          },
+          {
+            "type": "minecraft:item",
+            "weight": 20,
+            "name": "minecraft:obsidian"
+          },
+          {
+            "type": "minecraft:item",
+            "weight": 20,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -26927,197 +27251,17 @@
                 }
               }
             ],
-            "name": "minecraft:magma_cream"
-          },
+            "name": "minecraft:crying_obsidian"
+          }
+        ],
+        "functions": [
           {
-            "type": "minecraft:item",
-            "weight": 2,
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 2.0,
-                  "max": 4.0,
-                  "type": "minecraft:uniform"
-                }
-              }
-            ],
-            "name": "minecraft:ender_pearl"
-          },
-          {
-            "type": "minecraft:item",
-            "weight": 5,
-            "name": "minecraft:shroomlight"
-          },
-          {
-            "type": "minecraft:item",
-            "weight": 5,
-            "name": "minecraft:fire_charge"
-          },
-          {
-            "type": "minecraft:item",
-            "weight": 5,
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 4.0,
-                  "max": 12.0,
-                  "type": "minecraft:uniform"
-                }
-              }
-            ],
-            "name": "minecraft:gravel"
-          },
-          {
-            "type": "minecraft:item",
-            "weight": 5,
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 2.0,
-                  "max": 5.0,
-                  "type": "minecraft:uniform"
-                }
-              }
-            ],
-            "name": "minecraft:porkchop"
-          },
-          {
-            "type": "minecraft:item",
-            "weight": 5,
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 2.0,
-                  "max": 7.0,
-                  "type": "minecraft:uniform"
-                }
-              }
-            ],
-            "name": "minecraft:leather"
-          },
-          {
-            "type": "minecraft:item",
-            "weight": 5,
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 1.0,
-                  "max": 2.0,
-                  "type": "minecraft:uniform"
-                }
-              }
-            ],
-            "name": "minecraft:warped_fungi"
-          },
-          {
-            "type": "minecraft:item",
-            "weight": 10,
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 1.0,
-                  "max": 4.0,
-                  "type": "minecraft:uniform"
-                }
-              }
-            ],
-            "name": "minecraft:soul_sand"
-          },
-          {
-            "type": "minecraft:item",
-            "weight": 10,
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 1.0,
-                  "max": 4.0,
-                  "type": "minecraft:uniform"
-                }
-              }
-            ],
-            "name": "minecraft:red_mushroom"
-          },
-          {
-            "type": "minecraft:item",
-            "weight": 10,
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 1.0,
-                  "max": 4.0,
-                  "type": "minecraft:uniform"
-                }
-              }
-            ],
-            "name": "minecraft:brown_mushroom"
-          },
-          {
-            "type": "minecraft:item",
-            "weight": 10,
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 3.0,
-                  "max": 8.0,
-                  "type": "minecraft:uniform"
-                }
-              }
-            ],
-            "name": "minecraft:flint"
-          },
-          {
-            "type": "minecraft:item",
-            "weight": 10,
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 4.0,
-                  "max": 12.0,
-                  "type": "minecraft:uniform"
-                }
-              }
-            ],
-            "name": "minecraft:rotten_flesh"
-          },
-          {
-            "type": "minecraft:item",
-            "weight": 10,
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 1.0,
-                  "max": 4.0,
-                  "type": "minecraft:uniform"
-                }
-              }
-            ],
-            "name": "minecraft:crimson_fungi"
-          },
-          {
-            "type": "minecraft:item",
-            "weight": 10,
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 1.0,
-                  "max": 4.0,
-                  "type": "minecraft:uniform"
-                }
-              }
-            ],
-            "name": "minecraft:nether_brick"
+            "function": "minecraft:set_count",
+            "count": {
+              "min": 1.0,
+              "max": 5.0,
+              "type": "minecraft:uniform"
+            }
           }
         ]
       }
