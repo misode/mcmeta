@@ -2,16 +2,26 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "minecraft:magenta_stained_glass_pane"
+      "minecraft:target"
     ]
   },
   "criteria": {
-    "has_glass": {
+    "has_redstone": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "minecraft:magenta_stained_glass"
+            "item": "minecraft:redstone"
+          }
+        ]
+      }
+    },
+    "has_hay_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:hay_block"
           }
         ]
       }
@@ -19,13 +29,14 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minecraft:magenta_stained_glass_pane"
+        "recipe": "minecraft:target"
       }
     }
   },
   "requirements": [
     [
-      "has_glass",
+      "has_redstone",
+      "has_hay_block",
       "has_the_recipe"
     ]
   ]
