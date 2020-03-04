@@ -460,7 +460,7 @@
       "bullseye": {
         "trigger": "minecraft:target_hit",
         "conditions": {
-          "signalStrength": 15
+          "signal_strength": 15
         }
       }
     },
@@ -3092,32 +3092,32 @@
         "trigger": "minecraft:effects_changed",
         "conditions": {
           "effects": {
-            "minecraft:regeneration": {},
-            "minecraft:night_vision": {},
-            "minecraft:poison": {},
-            "minecraft:glowing": {},
-            "minecraft:blindness": {},
-            "minecraft:speed": {},
-            "minecraft:slowness": {},
-            "minecraft:weakness": {},
-            "minecraft:water_breathing": {},
-            "minecraft:fire_resistance": {},
-            "minecraft:haste": {},
-            "minecraft:nausea": {},
-            "minecraft:hero_of_the_village": {},
-            "minecraft:wither": {},
-            "minecraft:strength": {},
-            "minecraft:resistance": {},
-            "minecraft:invisibility": {},
-            "minecraft:mining_fatigue": {},
-            "minecraft:conduit_power": {},
-            "minecraft:absorption": {},
-            "minecraft:dolphins_grace": {},
             "minecraft:jump_boost": {},
-            "minecraft:slow_falling": {},
+            "minecraft:haste": {},
+            "minecraft:resistance": {},
+            "minecraft:water_breathing": {},
+            "minecraft:slowness": {},
             "minecraft:bad_omen": {},
+            "minecraft:strength": {},
+            "minecraft:levitation": {},
+            "minecraft:poison": {},
+            "minecraft:hero_of_the_village": {},
+            "minecraft:conduit_power": {},
+            "minecraft:speed": {},
+            "minecraft:night_vision": {},
+            "minecraft:absorption": {},
+            "minecraft:regeneration": {},
+            "minecraft:nausea": {},
+            "minecraft:dolphins_grace": {},
+            "minecraft:wither": {},
             "minecraft:hunger": {},
-            "minecraft:levitation": {}
+            "minecraft:blindness": {},
+            "minecraft:weakness": {},
+            "minecraft:mining_fatigue": {},
+            "minecraft:glowing": {},
+            "minecraft:fire_resistance": {},
+            "minecraft:invisibility": {},
+            "minecraft:slow_falling": {}
           }
         }
       }
@@ -3153,18 +3153,18 @@
         "trigger": "minecraft:effects_changed",
         "conditions": {
           "effects": {
+            "minecraft:poison": {},
+            "minecraft:jump_boost": {},
+            "minecraft:resistance": {},
+            "minecraft:water_breathing": {},
+            "minecraft:speed": {},
+            "minecraft:night_vision": {},
+            "minecraft:slowness": {},
             "minecraft:regeneration": {},
             "minecraft:strength": {},
-            "minecraft:night_vision": {},
-            "minecraft:poison": {},
-            "minecraft:resistance": {},
-            "minecraft:invisibility": {},
-            "minecraft:speed": {},
-            "minecraft:slowness": {},
             "minecraft:weakness": {},
-            "minecraft:water_breathing": {},
             "minecraft:fire_resistance": {},
-            "minecraft:jump_boost": {},
+            "minecraft:invisibility": {},
             "minecraft:slow_falling": {}
           }
         }
@@ -5482,6 +5482,38 @@
     "requirements": [
       [
         "has_stone_bricks",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/crimson_hyphae": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:crimson_hyphae"
+      ]
+    },
+    "criteria": {
+      "has_log": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:crimson_stem"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:crimson_hyphae"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_log",
         "has_the_recipe"
       ]
     ]
@@ -12939,6 +12971,38 @@
       ]
     ]
   },
+  "recipes/building_blocks/stripped_crimson_hyphae": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:stripped_crimson_hyphae"
+      ]
+    },
+    "criteria": {
+      "has_log": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:stripped_crimson_stem"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:stripped_crimson_hyphae"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_log",
+        "has_the_recipe"
+      ]
+    ]
+  },
   "recipes/building_blocks/stripped_dark_oak_wood": {
     "parent": "minecraft:recipes/root",
     "rewards": {
@@ -13067,6 +13131,38 @@
       ]
     ]
   },
+  "recipes/building_blocks/stripped_warped_hyphae": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:stripped_warped_hyphae"
+      ]
+    },
+    "criteria": {
+      "has_log": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:stripped_warped_stem"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:stripped_warped_hyphae"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_log",
+        "has_the_recipe"
+      ]
+    ]
+  },
   "recipes/building_blocks/terracotta": {
     "parent": "minecraft:recipes/root",
     "rewards": {
@@ -13095,6 +13191,38 @@
     "requirements": [
       [
         "has_clay_block",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/warped_hyphae": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:warped_hyphae"
+      ]
+    },
+    "criteria": {
+      "has_log": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:warped_stem"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:warped_hyphae"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_log",
         "has_the_recipe"
       ]
     ]
@@ -14217,166 +14345,6 @@
     "requirements": [
       [
         "has_leather",
-        "has_the_recipe"
-      ]
-    ]
-  },
-  "recipes/combat/netherite_boots": {
-    "parent": "minecraft:recipes/root",
-    "rewards": {
-      "recipes": [
-        "minecraft:netherite_boots"
-      ]
-    },
-    "criteria": {
-      "has_netherite_ingot": {
-        "trigger": "minecraft:inventory_changed",
-        "conditions": {
-          "items": [
-            {
-              "item": "minecraft:netherite_ingot"
-            }
-          ]
-        }
-      },
-      "has_the_recipe": {
-        "trigger": "minecraft:recipe_unlocked",
-        "conditions": {
-          "recipe": "minecraft:netherite_boots"
-        }
-      }
-    },
-    "requirements": [
-      [
-        "has_netherite_ingot",
-        "has_the_recipe"
-      ]
-    ]
-  },
-  "recipes/combat/netherite_chestplate": {
-    "parent": "minecraft:recipes/root",
-    "rewards": {
-      "recipes": [
-        "minecraft:netherite_chestplate"
-      ]
-    },
-    "criteria": {
-      "has_netherite_ingot": {
-        "trigger": "minecraft:inventory_changed",
-        "conditions": {
-          "items": [
-            {
-              "item": "minecraft:netherite_ingot"
-            }
-          ]
-        }
-      },
-      "has_the_recipe": {
-        "trigger": "minecraft:recipe_unlocked",
-        "conditions": {
-          "recipe": "minecraft:netherite_chestplate"
-        }
-      }
-    },
-    "requirements": [
-      [
-        "has_netherite_ingot",
-        "has_the_recipe"
-      ]
-    ]
-  },
-  "recipes/combat/netherite_helmet": {
-    "parent": "minecraft:recipes/root",
-    "rewards": {
-      "recipes": [
-        "minecraft:netherite_helmet"
-      ]
-    },
-    "criteria": {
-      "has_netherite_ingot": {
-        "trigger": "minecraft:inventory_changed",
-        "conditions": {
-          "items": [
-            {
-              "item": "minecraft:netherite_ingot"
-            }
-          ]
-        }
-      },
-      "has_the_recipe": {
-        "trigger": "minecraft:recipe_unlocked",
-        "conditions": {
-          "recipe": "minecraft:netherite_helmet"
-        }
-      }
-    },
-    "requirements": [
-      [
-        "has_netherite_ingot",
-        "has_the_recipe"
-      ]
-    ]
-  },
-  "recipes/combat/netherite_leggings": {
-    "parent": "minecraft:recipes/root",
-    "rewards": {
-      "recipes": [
-        "minecraft:netherite_leggings"
-      ]
-    },
-    "criteria": {
-      "has_netherite_ingot": {
-        "trigger": "minecraft:inventory_changed",
-        "conditions": {
-          "items": [
-            {
-              "item": "minecraft:netherite_ingot"
-            }
-          ]
-        }
-      },
-      "has_the_recipe": {
-        "trigger": "minecraft:recipe_unlocked",
-        "conditions": {
-          "recipe": "minecraft:netherite_leggings"
-        }
-      }
-    },
-    "requirements": [
-      [
-        "has_netherite_ingot",
-        "has_the_recipe"
-      ]
-    ]
-  },
-  "recipes/combat/netherite_sword": {
-    "parent": "minecraft:recipes/root",
-    "rewards": {
-      "recipes": [
-        "minecraft:netherite_sword"
-      ]
-    },
-    "criteria": {
-      "has_netherite_ingot": {
-        "trigger": "minecraft:inventory_changed",
-        "conditions": {
-          "items": [
-            {
-              "item": "minecraft:netherite_ingot"
-            }
-          ]
-        }
-      },
-      "has_the_recipe": {
-        "trigger": "minecraft:recipe_unlocked",
-        "conditions": {
-          "recipe": "minecraft:netherite_sword"
-        }
-      }
-    },
-    "requirements": [
-      [
-        "has_netherite_ingot",
         "has_the_recipe"
       ]
     ]
@@ -29484,134 +29452,6 @@
     "requirements": [
       [
         "has_slime_ball",
-        "has_the_recipe"
-      ]
-    ]
-  },
-  "recipes/tools/netherite_axe": {
-    "parent": "minecraft:recipes/root",
-    "rewards": {
-      "recipes": [
-        "minecraft:netherite_axe"
-      ]
-    },
-    "criteria": {
-      "has_netherite_ingot": {
-        "trigger": "minecraft:inventory_changed",
-        "conditions": {
-          "items": [
-            {
-              "item": "minecraft:netherite_ingot"
-            }
-          ]
-        }
-      },
-      "has_the_recipe": {
-        "trigger": "minecraft:recipe_unlocked",
-        "conditions": {
-          "recipe": "minecraft:netherite_axe"
-        }
-      }
-    },
-    "requirements": [
-      [
-        "has_netherite_ingot",
-        "has_the_recipe"
-      ]
-    ]
-  },
-  "recipes/tools/netherite_hoe": {
-    "parent": "minecraft:recipes/root",
-    "rewards": {
-      "recipes": [
-        "minecraft:netherite_hoe"
-      ]
-    },
-    "criteria": {
-      "has_netherite_ingot": {
-        "trigger": "minecraft:inventory_changed",
-        "conditions": {
-          "items": [
-            {
-              "item": "minecraft:netherite_ingot"
-            }
-          ]
-        }
-      },
-      "has_the_recipe": {
-        "trigger": "minecraft:recipe_unlocked",
-        "conditions": {
-          "recipe": "minecraft:netherite_hoe"
-        }
-      }
-    },
-    "requirements": [
-      [
-        "has_netherite_ingot",
-        "has_the_recipe"
-      ]
-    ]
-  },
-  "recipes/tools/netherite_pickaxe": {
-    "parent": "minecraft:recipes/root",
-    "rewards": {
-      "recipes": [
-        "minecraft:netherite_pickaxe"
-      ]
-    },
-    "criteria": {
-      "has_netherite_ingot": {
-        "trigger": "minecraft:inventory_changed",
-        "conditions": {
-          "items": [
-            {
-              "item": "minecraft:netherite_ingot"
-            }
-          ]
-        }
-      },
-      "has_the_recipe": {
-        "trigger": "minecraft:recipe_unlocked",
-        "conditions": {
-          "recipe": "minecraft:netherite_pickaxe"
-        }
-      }
-    },
-    "requirements": [
-      [
-        "has_netherite_ingot",
-        "has_the_recipe"
-      ]
-    ]
-  },
-  "recipes/tools/netherite_shovel": {
-    "parent": "minecraft:recipes/root",
-    "rewards": {
-      "recipes": [
-        "minecraft:netherite_shovel"
-      ]
-    },
-    "criteria": {
-      "has_netherite_ingot": {
-        "trigger": "minecraft:inventory_changed",
-        "conditions": {
-          "items": [
-            {
-              "item": "minecraft:netherite_ingot"
-            }
-          ]
-        }
-      },
-      "has_the_recipe": {
-        "trigger": "minecraft:recipe_unlocked",
-        "conditions": {
-          "recipe": "minecraft:netherite_shovel"
-        }
-      }
-    },
-    "requirements": [
-      [
-        "has_netherite_ingot",
         "has_the_recipe"
       ]
     ]

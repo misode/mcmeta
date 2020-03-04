@@ -3624,6 +3624,25 @@
       }
     ]
   },
+  "blocks/crimson_hyphae": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:crimson_hyphae"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/crimson_nylium": {
     "type": "minecraft:block",
     "pools": [
@@ -16350,6 +16369,25 @@
       }
     ]
   },
+  "blocks/stripped_crimson_hyphae": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:stripped_crimson_hyphae"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/stripped_crimson_stem": {
     "type": "minecraft:block",
     "pools": [
@@ -16511,6 +16549,25 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:stripped_spruce_wood"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/stripped_warped_hyphae": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:stripped_warped_hyphae"
           }
         ],
         "conditions": [
@@ -17132,6 +17189,25 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:warped_fungus"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/warped_hyphae": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:warped_hyphae"
           }
         ],
         "conditions": [
@@ -19886,10 +19962,10 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
-                    "type": "minecraft:blindness",
+                    "type": "minecraft:poison",
                     "duration": {
-                      "min": 5.0,
-                      "max": 7.0
+                      "min": 10.0,
+                      "max": 20.0
                     }
                   },
                   {
@@ -19900,13 +19976,6 @@
                     }
                   },
                   {
-                    "type": "minecraft:weakness",
-                    "duration": {
-                      "min": 6.0,
-                      "max": 8.0
-                    }
-                  },
-                  {
                     "type": "minecraft:jump_boost",
                     "duration": {
                       "min": 7.0,
@@ -19914,17 +19983,24 @@
                     }
                   },
                   {
+                    "type": "minecraft:blindness",
+                    "duration": {
+                      "min": 5.0,
+                      "max": 7.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:weakness",
+                    "duration": {
+                      "min": 6.0,
+                      "max": 8.0
+                    }
+                  },
+                  {
                     "type": "minecraft:night_vision",
                     "duration": {
                       "min": 7.0,
                       "max": 10.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:poison",
-                    "duration": {
-                      "min": 10.0,
-                      "max": 20.0
                     }
                   }
                 ]
@@ -27053,12 +27129,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 5,
-            "name": "minecraft:warped_nylium"
-          },
-          {
-            "type": "minecraft:item",
-            "weight": 5,
+            "weight": 10,
             "functions": [
               {
                 "function": "minecraft:set_nbt",
@@ -27069,7 +27140,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 5,
+            "weight": 10,
             "functions": [
               {
                 "function": "minecraft:set_nbt",
@@ -27085,6 +27156,21 @@
               {
                 "function": "minecraft:set_count",
                 "count": {
+                  "min": 9.0,
+                  "max": 36.0,
+                  "type": "minecraft:uniform"
+                }
+              }
+            ],
+            "name": "minecraft:iron_nugget"
+          },
+          {
+            "type": "minecraft:item",
+            "weight": 20,
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
                   "min": 8.0,
                   "max": 16.0,
                   "type": "minecraft:uniform"
@@ -27095,7 +27181,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 10,
+            "weight": 20,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -27110,7 +27196,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 10,
+            "weight": 20,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -27125,7 +27211,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 10,
+            "weight": 20,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -27140,7 +27226,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 10,
+            "weight": 20,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -27155,27 +27241,22 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 20,
+            "weight": 40,
             "functions": [
               {
                 "function": "minecraft:set_count",
                 "count": {
-                  "min": 6.0,
-                  "max": 10.0,
+                  "min": 1.0,
+                  "max": 5.0,
                   "type": "minecraft:uniform"
                 }
               }
             ],
-            "name": "minecraft:shroomlight"
-          },
-          {
-            "type": "minecraft:item",
-            "weight": 20,
             "name": "minecraft:fire_charge"
           },
           {
             "type": "minecraft:item",
-            "weight": 20,
+            "weight": 40,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -27190,7 +27271,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 20,
+            "weight": 40,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -27205,22 +27286,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 20,
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 4.0,
-                  "max": 10.0,
-                  "type": "minecraft:uniform"
-                }
-              }
-            ],
-            "name": "minecraft:warped_fungus"
-          },
-          {
-            "type": "minecraft:item",
-            "weight": 20,
+            "weight": 40,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -27235,12 +27301,12 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 20,
+            "weight": 40,
             "name": "minecraft:obsidian"
           },
           {
             "type": "minecraft:item",
-            "weight": 20,
+            "weight": 40,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -27252,16 +27318,21 @@
               }
             ],
             "name": "minecraft:crying_obsidian"
-          }
-        ],
-        "functions": [
+          },
           {
-            "function": "minecraft:set_count",
-            "count": {
-              "min": 1.0,
-              "max": 5.0,
-              "type": "minecraft:uniform"
-            }
+            "type": "minecraft:item",
+            "weight": 40,
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 4.0,
+                  "max": 16.0,
+                  "type": "minecraft:uniform"
+                }
+              }
+            ],
+            "name": "minecraft:soul_sand"
           }
         ]
       }
