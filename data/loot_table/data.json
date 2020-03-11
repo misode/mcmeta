@@ -5867,6 +5867,9 @@
       }
     ]
   },
+  "blocks/fire": {
+    "type": "minecraft:block"
+  },
   "blocks/fire_coral": {
     "type": "minecraft:block",
     "pools": [
@@ -10088,6 +10091,25 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:nether_bricks"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/nether_gold_ore": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:nether_gold_ore"
           }
         ],
         "conditions": [
@@ -15533,6 +15555,9 @@
       }
     ]
   },
+  "blocks/soul_fire": {
+    "type": "minecraft:block"
+  },
   "blocks/soul_fire_lantern": {
     "type": "minecraft:block",
     "pools": [
@@ -17073,6 +17098,66 @@
       }
     ]
   },
+  "blocks/twisting_vines": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "minecraft:random_chance",
+                "chance": 0.33333334
+              }
+            ],
+            "functions": [
+              {
+                "function": "minecraft:apply_bonus",
+                "enchantment": "minecraft:fortune",
+                "formula": "minecraft:uniform_bonus_count",
+                "parameters": {
+                  "bonusMultiplier": 2
+                }
+              }
+            ],
+            "name": "minecraft:twisting_vines"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/twisting_vines_plant": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "minecraft:random_chance",
+                "chance": 0.33333334
+              }
+            ],
+            "functions": [
+              {
+                "function": "minecraft:apply_bonus",
+                "enchantment": "minecraft:fortune",
+                "formula": "minecraft:uniform_bonus_count",
+                "parameters": {
+                  "bonusMultiplier": 2
+                }
+              }
+            ],
+            "name": "minecraft:twisting_vines"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/vine": {
     "type": "minecraft:block",
     "pools": [
@@ -17429,12 +17514,23 @@
         "entries": [
           {
             "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "minecraft:random_chance",
+                "chance": 0.33333334
+              }
+            ],
+            "functions": [
+              {
+                "function": "minecraft:apply_bonus",
+                "enchantment": "minecraft:fortune",
+                "formula": "minecraft:uniform_bonus_count",
+                "parameters": {
+                  "bonusMultiplier": 2
+                }
+              }
+            ],
             "name": "minecraft:weeping_vines"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
           }
         ]
       }
@@ -17448,12 +17544,23 @@
         "entries": [
           {
             "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "minecraft:random_chance",
+                "chance": 0.33333334
+              }
+            ],
+            "functions": [
+              {
+                "function": "minecraft:apply_bonus",
+                "enchantment": "minecraft:fortune",
+                "formula": "minecraft:uniform_bonus_count",
+                "parameters": {
+                  "bonusMultiplier": 2
+                }
+              }
+            ],
             "name": "minecraft:weeping_vines"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
           }
         ]
       }
@@ -19962,6 +20069,27 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
+                    "type": "minecraft:jump_boost",
+                    "duration": {
+                      "min": 7.0,
+                      "max": 10.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:weakness",
+                    "duration": {
+                      "min": 6.0,
+                      "max": 8.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:blindness",
+                    "duration": {
+                      "min": 5.0,
+                      "max": 7.0
+                    }
+                  },
+                  {
                     "type": "minecraft:poison",
                     "duration": {
                       "min": 10.0,
@@ -19973,27 +20101,6 @@
                     "duration": {
                       "min": 7.0,
                       "max": 10.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:jump_boost",
-                    "duration": {
-                      "min": 7.0,
-                      "max": 10.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:blindness",
-                    "duration": {
-                      "min": 5.0,
-                      "max": 7.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:weakness",
-                    "duration": {
-                      "min": 6.0,
-                      "max": 8.0
                     }
                   },
                   {
@@ -27126,6 +27233,31 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:netherite_hoe"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:enchant_randomly",
+                "enchantments": [
+                  "minecraft:soul_speed"
+                ]
+              }
+            ],
+            "name": "minecraft:enchanted_book"
+          },
+          {
+            "type": "minecraft:item",
+            "weight": 5,
+            "functions": [
+              {
+                "function": "minecraft:enchant_randomly",
+                "enchantments": [
+                  "minecraft:soul_speed"
+                ]
+              }
+            ],
+            "name": "minecraft:iron_boots"
           },
           {
             "type": "minecraft:item",
