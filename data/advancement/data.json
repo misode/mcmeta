@@ -2526,6 +2526,14 @@
             "type": "minecraft:bee"
           }
         }
+      },
+      "minecraft:hoglin": {
+        "trigger": "minecraft:bred_animals",
+        "conditions": {
+          "parent": {
+            "type": "minecraft:hoglin"
+          }
+        }
       }
     },
     "requirements": [
@@ -2573,6 +2581,9 @@
       ],
       [
         "minecraft:bee"
+      ],
+      [
+        "minecraft:hoglin"
       ]
     ]
   },
@@ -3092,32 +3103,32 @@
         "trigger": "minecraft:effects_changed",
         "conditions": {
           "effects": {
-            "minecraft:speed": {},
-            "minecraft:mining_fatigue": {},
-            "minecraft:nausea": {},
-            "minecraft:resistance": {},
-            "minecraft:glowing": {},
-            "minecraft:conduit_power": {},
-            "minecraft:poison": {},
-            "minecraft:haste": {},
-            "minecraft:levitation": {},
-            "minecraft:hunger": {},
-            "minecraft:strength": {},
-            "minecraft:hero_of_the_village": {},
-            "minecraft:bad_omen": {},
-            "minecraft:dolphins_grace": {},
-            "minecraft:invisibility": {},
-            "minecraft:wither": {},
-            "minecraft:jump_boost": {},
-            "minecraft:slow_falling": {},
-            "minecraft:weakness": {},
-            "minecraft:blindness": {},
-            "minecraft:water_breathing": {},
-            "minecraft:night_vision": {},
             "minecraft:slowness": {},
-            "minecraft:absorption": {},
+            "minecraft:strength": {},
+            "minecraft:wither": {},
+            "minecraft:hero_of_the_village": {},
+            "minecraft:levitation": {},
+            "minecraft:blindness": {},
+            "minecraft:poison": {},
+            "minecraft:dolphins_grace": {},
+            "minecraft:water_breathing": {},
+            "minecraft:speed": {},
+            "minecraft:slow_falling": {},
+            "minecraft:conduit_power": {},
             "minecraft:regeneration": {},
-            "minecraft:fire_resistance": {}
+            "minecraft:night_vision": {},
+            "minecraft:haste": {},
+            "minecraft:mining_fatigue": {},
+            "minecraft:glowing": {},
+            "minecraft:invisibility": {},
+            "minecraft:resistance": {},
+            "minecraft:hunger": {},
+            "minecraft:nausea": {},
+            "minecraft:fire_resistance": {},
+            "minecraft:weakness": {},
+            "minecraft:jump_boost": {},
+            "minecraft:absorption": {},
+            "minecraft:bad_omen": {}
           }
         }
       }
@@ -3153,19 +3164,19 @@
         "trigger": "minecraft:effects_changed",
         "conditions": {
           "effects": {
-            "minecraft:strength": {},
-            "minecraft:speed": {},
-            "minecraft:resistance": {},
-            "minecraft:invisibility": {},
-            "minecraft:jump_boost": {},
-            "minecraft:slow_falling": {},
-            "minecraft:weakness": {},
-            "minecraft:poison": {},
             "minecraft:water_breathing": {},
-            "minecraft:night_vision": {},
+            "minecraft:speed": {},
+            "minecraft:slow_falling": {},
             "minecraft:slowness": {},
+            "minecraft:strength": {},
             "minecraft:regeneration": {},
-            "minecraft:fire_resistance": {}
+            "minecraft:night_vision": {},
+            "minecraft:invisibility": {},
+            "minecraft:resistance": {},
+            "minecraft:poison": {},
+            "minecraft:fire_resistance": {},
+            "minecraft:weakness": {},
+            "minecraft:jump_boost": {}
           }
         }
       }
@@ -9517,6 +9528,38 @@
     "requirements": [
       [
         "has_polished_andesite",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/polished_basalt": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:polished_basalt"
+      ]
+    },
+    "criteria": {
+      "has_basalt": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:basalt"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:polished_basalt"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_basalt",
         "has_the_recipe"
       ]
     ]
@@ -20542,6 +20585,38 @@
       [
         "has_glass_pane",
         "has_red_dye",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/decorations/respawn_anchor": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:respawn_anchor"
+      ]
+    },
+    "criteria": {
+      "has_obsidian": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:crying_obsidian"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:respawn_anchor"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_obsidian",
         "has_the_recipe"
       ]
     ]

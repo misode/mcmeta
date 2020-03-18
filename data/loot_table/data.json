@@ -10108,13 +10108,50 @@
         "rolls": 1,
         "entries": [
           {
-            "type": "minecraft:item",
-            "name": "minecraft:nether_gold_ore"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                      "enchantments": [
+                        {
+                          "enchantment": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "name": "minecraft:nether_gold_ore"
+              },
+              {
+                "type": "minecraft:item",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": {
+                      "min": 2.0,
+                      "max": 6.0,
+                      "type": "minecraft:uniform"
+                    }
+                  },
+                  {
+                    "function": "minecraft:apply_bonus",
+                    "enchantment": "minecraft:fortune",
+                    "formula": "minecraft:ore_drops"
+                  },
+                  {
+                    "function": "minecraft:explosion_decay"
+                  }
+                ],
+                "name": "minecraft:gold_nugget"
+              }
+            ]
           }
         ]
       }
@@ -11593,7 +11630,7 @@
                 "source": "block_entity",
                 "ops": [
                   {
-                    "source": "Owner",
+                    "source": "SkullOwner",
                     "target": "SkullOwner",
                     "op": "replace"
                   }
@@ -11709,6 +11746,25 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:polished_andesite_stairs"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/polished_basalt": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:polished_basalt"
           }
         ],
         "conditions": [
@@ -14466,6 +14522,25 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:repeater"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/respawn_anchor": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:respawn_anchor"
           }
         ],
         "conditions": [
@@ -20069,20 +20144,6 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
-                    "type": "minecraft:jump_boost",
-                    "duration": {
-                      "min": 7.0,
-                      "max": 10.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:weakness",
-                    "duration": {
-                      "min": 6.0,
-                      "max": 8.0
-                    }
-                  },
-                  {
                     "type": "minecraft:blindness",
                     "duration": {
                       "min": 5.0,
@@ -20098,6 +20159,20 @@
                   },
                   {
                     "type": "minecraft:saturation",
+                    "duration": {
+                      "min": 7.0,
+                      "max": 10.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:weakness",
+                    "duration": {
+                      "min": 6.0,
+                      "max": 8.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:jump_boost",
                     "duration": {
                       "min": 7.0,
                       "max": 10.0
@@ -26414,6 +26489,17 @@
           },
           {
             "type": "minecraft:loot_table",
+            "conditions": [
+              {
+                "condition": "minecraft:entity_properties",
+                "predicate": {
+                  "fishing_hook": {
+                    "in_open_water": true
+                  }
+                },
+                "entity": "this"
+              }
+            ],
             "weight": 5,
             "quality": 2,
             "name": "minecraft:gameplay/fishing/treasure"
@@ -27244,7 +27330,7 @@
                 ]
               }
             ],
-            "name": "minecraft:enchanted_book"
+            "name": "minecraft:book"
           },
           {
             "type": "minecraft:item",
