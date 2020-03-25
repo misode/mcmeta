@@ -3103,32 +3103,32 @@
         "trigger": "minecraft:effects_changed",
         "conditions": {
           "effects": {
-            "minecraft:slowness": {},
-            "minecraft:strength": {},
-            "minecraft:wither": {},
-            "minecraft:hero_of_the_village": {},
             "minecraft:levitation": {},
-            "minecraft:blindness": {},
-            "minecraft:poison": {},
-            "minecraft:dolphins_grace": {},
-            "minecraft:water_breathing": {},
-            "minecraft:speed": {},
-            "minecraft:slow_falling": {},
-            "minecraft:conduit_power": {},
-            "minecraft:regeneration": {},
-            "minecraft:night_vision": {},
-            "minecraft:haste": {},
-            "minecraft:mining_fatigue": {},
-            "minecraft:glowing": {},
-            "minecraft:invisibility": {},
-            "minecraft:resistance": {},
-            "minecraft:hunger": {},
-            "minecraft:nausea": {},
-            "minecraft:fire_resistance": {},
             "minecraft:weakness": {},
             "minecraft:jump_boost": {},
+            "minecraft:wither": {},
+            "minecraft:strength": {},
+            "minecraft:night_vision": {},
+            "minecraft:resistance": {},
             "minecraft:absorption": {},
-            "minecraft:bad_omen": {}
+            "minecraft:slow_falling": {},
+            "minecraft:slowness": {},
+            "minecraft:hunger": {},
+            "minecraft:glowing": {},
+            "minecraft:speed": {},
+            "minecraft:regeneration": {},
+            "minecraft:invisibility": {},
+            "minecraft:dolphins_grace": {},
+            "minecraft:bad_omen": {},
+            "minecraft:poison": {},
+            "minecraft:mining_fatigue": {},
+            "minecraft:blindness": {},
+            "minecraft:hero_of_the_village": {},
+            "minecraft:haste": {},
+            "minecraft:fire_resistance": {},
+            "minecraft:water_breathing": {},
+            "minecraft:conduit_power": {},
+            "minecraft:nausea": {}
           }
         }
       }
@@ -3164,19 +3164,19 @@
         "trigger": "minecraft:effects_changed",
         "conditions": {
           "effects": {
-            "minecraft:water_breathing": {},
             "minecraft:speed": {},
-            "minecraft:slow_falling": {},
-            "minecraft:slowness": {},
-            "minecraft:strength": {},
             "minecraft:regeneration": {},
-            "minecraft:night_vision": {},
-            "minecraft:invisibility": {},
-            "minecraft:resistance": {},
-            "minecraft:poison": {},
-            "minecraft:fire_resistance": {},
             "minecraft:weakness": {},
-            "minecraft:jump_boost": {}
+            "minecraft:invisibility": {},
+            "minecraft:jump_boost": {},
+            "minecraft:poison": {},
+            "minecraft:strength": {},
+            "minecraft:night_vision": {},
+            "minecraft:resistance": {},
+            "minecraft:fire_resistance": {},
+            "minecraft:water_breathing": {},
+            "minecraft:slow_falling": {},
+            "minecraft:slowness": {}
           }
         }
       }
@@ -9554,6 +9554,38 @@
         "trigger": "minecraft:recipe_unlocked",
         "conditions": {
           "recipe": "minecraft:polished_basalt"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_basalt",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/polished_basalt_from_basalt_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:polished_basalt_from_basalt_stonecutting"
+      ]
+    },
+    "criteria": {
+      "has_basalt": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:basalt"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:polished_basalt_from_basalt_stonecutting"
         }
       }
     },
@@ -18655,6 +18687,38 @@
       ]
     ]
   },
+  "recipes/decorations/lodestone": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:lodestone"
+      ]
+    },
+    "criteria": {
+      "has_netherite_ingot": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:netherite_ingot"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:lodestone"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_netherite_ingot",
+        "has_the_recipe"
+      ]
+    ]
+  },
   "recipes/decorations/loom": {
     "parent": "minecraft:recipes/root",
     "rewards": {
@@ -23389,7 +23453,7 @@
         "conditions": {
           "items": [
             {
-              "tag": "minecraft:logs"
+              "tag": "minecraft:logs_that_burn"
             }
           ]
         }
@@ -30303,6 +30367,38 @@
     "requirements": [
       [
         "has_minecart",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/transportation/warped_fungus_on_a_stick": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:warped_fungus_on_a_stick"
+      ]
+    },
+    "criteria": {
+      "has_warped_fungus": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:warped_fungus"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:warped_fungus_on_a_stick"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_warped_fungus",
         "has_the_recipe"
       ]
     ]

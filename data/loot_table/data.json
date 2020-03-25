@@ -9197,6 +9197,25 @@
       }
     ]
   },
+  "blocks/lodestone": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:lodestone"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/loom": {
     "type": "minecraft:block",
     "pools": [
@@ -20151,14 +20170,7 @@
                     }
                   },
                   {
-                    "type": "minecraft:poison",
-                    "duration": {
-                      "min": 10.0,
-                      "max": 20.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:saturation",
+                    "type": "minecraft:night_vision",
                     "duration": {
                       "min": 7.0,
                       "max": 10.0
@@ -20179,7 +20191,14 @@
                     }
                   },
                   {
-                    "type": "minecraft:night_vision",
+                    "type": "minecraft:poison",
+                    "duration": {
+                      "min": 10.0,
+                      "max": 20.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:saturation",
                     "duration": {
                       "min": 7.0,
                       "max": 10.0
@@ -25803,6 +25822,37 @@
       }
     ]
   },
+  "entities/strider": {
+    "type": "minecraft:entity",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 2.0,
+                  "max": 5.0,
+                  "type": "minecraft:uniform"
+                }
+              },
+              {
+                "function": "minecraft:looting_enchant",
+                "count": {
+                  "min": 0.0,
+                  "max": 1.0
+                }
+              }
+            ],
+            "name": "minecraft:string"
+          }
+        ]
+      }
+    ]
+  },
   "entities/trader_llama": {
     "type": "minecraft:entity",
     "pools": [
@@ -27322,6 +27372,7 @@
           },
           {
             "type": "minecraft:item",
+            "weight": 5,
             "functions": [
               {
                 "function": "minecraft:enchant_randomly",
@@ -27334,7 +27385,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 5,
+            "weight": 8,
             "functions": [
               {
                 "function": "minecraft:enchant_randomly",
