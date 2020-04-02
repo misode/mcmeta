@@ -20163,10 +20163,10 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
-                    "type": "minecraft:blindness",
+                    "type": "minecraft:weakness",
                     "duration": {
-                      "min": 5.0,
-                      "max": 7.0
+                      "min": 6.0,
+                      "max": 8.0
                     }
                   },
                   {
@@ -20177,13 +20177,6 @@
                     }
                   },
                   {
-                    "type": "minecraft:weakness",
-                    "duration": {
-                      "min": 6.0,
-                      "max": 8.0
-                    }
-                  },
-                  {
                     "type": "minecraft:jump_boost",
                     "duration": {
                       "min": 7.0,
@@ -20191,17 +20184,24 @@
                     }
                   },
                   {
-                    "type": "minecraft:poison",
-                    "duration": {
-                      "min": 10.0,
-                      "max": 20.0
-                    }
-                  },
-                  {
                     "type": "minecraft:saturation",
                     "duration": {
                       "min": 7.0,
                       "max": 10.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:blindness",
+                    "duration": {
+                      "min": 5.0,
+                      "max": 7.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:poison",
+                    "duration": {
+                      "min": 10.0,
+                      "max": 20.0
                     }
                   }
                 ]
@@ -26256,6 +26256,37 @@
   },
   "entities/wolf": {
     "type": "minecraft:entity"
+  },
+  "entities/zoglin": {
+    "type": "minecraft:entity",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 1.0,
+                  "max": 3.0,
+                  "type": "minecraft:uniform"
+                }
+              },
+              {
+                "function": "minecraft:looting_enchant",
+                "count": {
+                  "min": 0.0,
+                  "max": 1.0
+                }
+              }
+            ],
+            "name": "minecraft:rotten_flesh"
+          }
+        ]
+      }
+    ]
   },
   "entities/zombie": {
     "type": "minecraft:entity",
