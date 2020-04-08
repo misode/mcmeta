@@ -2172,6 +2172,77 @@
       "all": "minecraft:block/black_wool"
     }
   },
+  "block/blackstone": {
+    "parent": "minecraft:block/cube_top",
+    "textures": {
+      "top": "minecraft:block/blackstone_top",
+      "side": "minecraft:block/blackstone"
+    }
+  },
+  "block/blackstone_slab": {
+    "parent": "minecraft:block/slab",
+    "textures": {
+      "bottom": "minecraft:block/blackstone_top",
+      "top": "minecraft:block/blackstone_top",
+      "side": "minecraft:block/blackstone"
+    }
+  },
+  "block/blackstone_slab_top": {
+    "parent": "minecraft:block/slab_top",
+    "textures": {
+      "bottom": "minecraft:block/blackstone_top",
+      "top": "minecraft:block/blackstone_top",
+      "side": "minecraft:block/blackstone"
+    }
+  },
+  "block/blackstone_stairs": {
+    "parent": "minecraft:block/stairs",
+    "textures": {
+      "bottom": "minecraft:block/blackstone_top",
+      "top": "minecraft:block/blackstone_top",
+      "side": "minecraft:block/blackstone"
+    }
+  },
+  "block/blackstone_stairs_inner": {
+    "parent": "minecraft:block/inner_stairs",
+    "textures": {
+      "bottom": "minecraft:block/blackstone_top",
+      "top": "minecraft:block/blackstone_top",
+      "side": "minecraft:block/blackstone"
+    }
+  },
+  "block/blackstone_stairs_outer": {
+    "parent": "minecraft:block/outer_stairs",
+    "textures": {
+      "bottom": "minecraft:block/blackstone_top",
+      "top": "minecraft:block/blackstone_top",
+      "side": "minecraft:block/blackstone"
+    }
+  },
+  "block/blackstone_wall_inventory": {
+    "parent": "minecraft:block/wall_inventory",
+    "textures": {
+      "wall": "minecraft:block/blackstone"
+    }
+  },
+  "block/blackstone_wall_post": {
+    "parent": "minecraft:block/template_wall_post",
+    "textures": {
+      "wall": "minecraft:block/blackstone"
+    }
+  },
+  "block/blackstone_wall_side": {
+    "parent": "minecraft:block/template_wall_side",
+    "textures": {
+      "wall": "minecraft:block/blackstone"
+    }
+  },
+  "block/blackstone_wall_side_tall": {
+    "parent": "minecraft:block/template_wall_side_tall",
+    "textures": {
+      "wall": "minecraft:block/blackstone"
+    }
+  },
   "block/blast_furnace": {
     "parent": "minecraft:block/orientable",
     "textures": {
@@ -3823,453 +3894,11 @@
     ]
   },
   "block/campfire": {
-    "parent": "block/block",
-    "display": {
-      "head": {
-        "translation": [
-          0,
-          10.5,
-          0
-        ]
-      }
-    },
+    "parent": "minecraft:block/template_campfire",
     "textures": {
-      "particle": "block/campfire_log",
-      "log": "block/campfire_log",
-      "litlog": "block/campfire_log_lit",
-      "fire": "block/campfire_fire"
-    },
-    "elements": [
-      {
-        "from": [
-          1,
-          0,
-          0
-        ],
-        "to": [
-          5,
-          4,
-          16
-        ],
-        "faces": {
-          "north": {
-            "uv": [
-              0,
-              4,
-              4,
-              8
-            ],
-            "texture": "#log",
-            "cullface": "north"
-          },
-          "east": {
-            "uv": [
-              0,
-              1,
-              16,
-              5
-            ],
-            "texture": "#litlog"
-          },
-          "south": {
-            "uv": [
-              0,
-              4,
-              4,
-              8
-            ],
-            "texture": "#log",
-            "cullface": "south"
-          },
-          "west": {
-            "uv": [
-              16,
-              0,
-              0,
-              4
-            ],
-            "texture": "#log"
-          },
-          "up": {
-            "uv": [
-              0,
-              0,
-              16,
-              4
-            ],
-            "rotation": 90,
-            "texture": "#log"
-          },
-          "down": {
-            "uv": [
-              0,
-              0,
-              16,
-              4
-            ],
-            "rotation": 90,
-            "texture": "#log",
-            "cullface": "down"
-          }
-        }
-      },
-      {
-        "from": [
-          0,
-          3,
-          11
-        ],
-        "to": [
-          16,
-          7,
-          15
-        ],
-        "faces": {
-          "north": {
-            "uv": [
-              16,
-              0,
-              0,
-              4
-            ],
-            "texture": "#litlog"
-          },
-          "east": {
-            "uv": [
-              0,
-              4,
-              4,
-              8
-            ],
-            "texture": "#log",
-            "cullface": "east"
-          },
-          "south": {
-            "uv": [
-              0,
-              0,
-              16,
-              4
-            ],
-            "texture": "#litlog"
-          },
-          "west": {
-            "uv": [
-              0,
-              4,
-              4,
-              8
-            ],
-            "texture": "#log",
-            "cullface": "west"
-          },
-          "up": {
-            "uv": [
-              0,
-              0,
-              16,
-              4
-            ],
-            "rotation": 180,
-            "texture": "#log"
-          },
-          "down": {
-            "uv": [
-              0,
-              4,
-              16,
-              8
-            ],
-            "texture": "#litlog"
-          }
-        }
-      },
-      {
-        "from": [
-          11,
-          0,
-          0
-        ],
-        "to": [
-          15,
-          4,
-          16
-        ],
-        "faces": {
-          "north": {
-            "uv": [
-              0,
-              4,
-              4,
-              8
-            ],
-            "texture": "#log",
-            "cullface": "north"
-          },
-          "east": {
-            "uv": [
-              0,
-              0,
-              16,
-              4
-            ],
-            "texture": "#log"
-          },
-          "south": {
-            "uv": [
-              0,
-              4,
-              4,
-              8
-            ],
-            "texture": "#log",
-            "cullface": "south"
-          },
-          "west": {
-            "uv": [
-              16,
-              1,
-              0,
-              5
-            ],
-            "texture": "#litlog"
-          },
-          "up": {
-            "uv": [
-              0,
-              0,
-              16,
-              4
-            ],
-            "rotation": 90,
-            "texture": "#log"
-          },
-          "down": {
-            "uv": [
-              0,
-              0,
-              16,
-              4
-            ],
-            "rotation": 90,
-            "texture": "#log",
-            "cullface": "down"
-          }
-        }
-      },
-      {
-        "from": [
-          0,
-          3,
-          1
-        ],
-        "to": [
-          16,
-          7,
-          5
-        ],
-        "faces": {
-          "north": {
-            "uv": [
-              0,
-              0,
-              16,
-              4
-            ],
-            "texture": "#litlog"
-          },
-          "east": {
-            "uv": [
-              0,
-              4,
-              4,
-              8
-            ],
-            "texture": "#log",
-            "cullface": "east"
-          },
-          "south": {
-            "uv": [
-              16,
-              0,
-              0,
-              4
-            ],
-            "texture": "#litlog"
-          },
-          "west": {
-            "uv": [
-              0,
-              4,
-              4,
-              8
-            ],
-            "texture": "#log",
-            "cullface": "west"
-          },
-          "up": {
-            "uv": [
-              0,
-              0,
-              16,
-              4
-            ],
-            "rotation": 180,
-            "texture": "#log"
-          },
-          "down": {
-            "uv": [
-              0,
-              4,
-              16,
-              8
-            ],
-            "texture": "#litlog"
-          }
-        }
-      },
-      {
-        "from": [
-          5,
-          0,
-          0
-        ],
-        "to": [
-          11,
-          1,
-          16
-        ],
-        "faces": {
-          "north": {
-            "uv": [
-              0,
-              15,
-              6,
-              16
-            ],
-            "texture": "#log",
-            "cullface": "north"
-          },
-          "south": {
-            "uv": [
-              10,
-              15,
-              16,
-              16
-            ],
-            "texture": "#log",
-            "cullface": "south"
-          },
-          "up": {
-            "uv": [
-              0,
-              8,
-              16,
-              14
-            ],
-            "rotation": 90,
-            "texture": "#litlog"
-          },
-          "down": {
-            "uv": [
-              0,
-              8,
-              16,
-              14
-            ],
-            "rotation": 90,
-            "texture": "#log",
-            "cullface": "down"
-          }
-        }
-      },
-      {
-        "from": [
-          0.8,
-          1,
-          8
-        ],
-        "to": [
-          15.2,
-          17,
-          8
-        ],
-        "rotation": {
-          "origin": [
-            8,
-            8,
-            8
-          ],
-          "axis": "y",
-          "angle": 45,
-          "rescale": true
-        },
-        "shade": false,
-        "faces": {
-          "north": {
-            "uv": [
-              0,
-              0,
-              16,
-              16
-            ],
-            "texture": "#fire"
-          },
-          "south": {
-            "uv": [
-              0,
-              0,
-              16,
-              16
-            ],
-            "texture": "#fire"
-          }
-        }
-      },
-      {
-        "from": [
-          8,
-          1,
-          0.8
-        ],
-        "to": [
-          8,
-          17,
-          15.2
-        ],
-        "rotation": {
-          "origin": [
-            8,
-            8,
-            8
-          ],
-          "axis": "y",
-          "angle": 45,
-          "rescale": true
-        },
-        "shade": false,
-        "faces": {
-          "west": {
-            "uv": [
-              0,
-              0,
-              16,
-              16
-            ],
-            "texture": "#fire"
-          },
-          "east": {
-            "uv": [
-              0,
-              0,
-              16,
-              16
-            ],
-            "texture": "#fire"
-          }
-        }
-      }
-    ]
+      "fire": "minecraft:block/campfire_fire",
+      "lit_log": "minecraft:block/campfire_log_lit"
+    }
   },
   "block/campfire_off": {
     "parent": "block/block",
@@ -6472,6 +6101,18 @@
     "parent": "minecraft:block/template_anvil",
     "textures": {
       "top": "minecraft:block/chipped_anvil_top"
+    }
+  },
+  "block/chiseled_nether_bricks": {
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+      "all": "minecraft:block/chiseled_nether_bricks"
+    }
+  },
+  "block/chiseled_polished_blackstone": {
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+      "all": "minecraft:block/chiseled_polished_blackstone"
     }
   },
   "block/chiseled_quartz_block": {
@@ -9573,6 +9214,18 @@
     "parent": "minecraft:block/cross",
     "textures": {
       "cross": "minecraft:block/cornflower"
+    }
+  },
+  "block/cracked_nether_bricks": {
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+      "all": "minecraft:block/cracked_nether_bricks"
+    }
+  },
+  "block/cracked_polished_blackstone_bricks": {
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+      "all": "minecraft:block/cracked_polished_blackstone_bricks"
     }
   },
   "block/cracked_stone_bricks": {
@@ -15034,6 +14687,12 @@
       "top": "minecraft:block/furnace_top",
       "front": "minecraft:block/furnace_front_on",
       "side": "minecraft:block/furnace_side"
+    }
+  },
+  "block/gilded_blackstone": {
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+      "all": "minecraft:block/gilded_blackstone"
     }
   },
   "block/glass": {
@@ -20620,6 +20279,176 @@
       "side": "minecraft:block/polished_basalt_side"
     }
   },
+  "block/polished_blackstone": {
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+      "all": "minecraft:block/polished_blackstone"
+    }
+  },
+  "block/polished_blackstone_brick_slab": {
+    "parent": "minecraft:block/slab",
+    "textures": {
+      "bottom": "minecraft:block/polished_blackstone_bricks",
+      "top": "minecraft:block/polished_blackstone_bricks",
+      "side": "minecraft:block/polished_blackstone_bricks"
+    }
+  },
+  "block/polished_blackstone_brick_slab_top": {
+    "parent": "minecraft:block/slab_top",
+    "textures": {
+      "bottom": "minecraft:block/polished_blackstone_bricks",
+      "top": "minecraft:block/polished_blackstone_bricks",
+      "side": "minecraft:block/polished_blackstone_bricks"
+    }
+  },
+  "block/polished_blackstone_brick_stairs": {
+    "parent": "minecraft:block/stairs",
+    "textures": {
+      "bottom": "minecraft:block/polished_blackstone_bricks",
+      "top": "minecraft:block/polished_blackstone_bricks",
+      "side": "minecraft:block/polished_blackstone_bricks"
+    }
+  },
+  "block/polished_blackstone_brick_stairs_inner": {
+    "parent": "minecraft:block/inner_stairs",
+    "textures": {
+      "bottom": "minecraft:block/polished_blackstone_bricks",
+      "top": "minecraft:block/polished_blackstone_bricks",
+      "side": "minecraft:block/polished_blackstone_bricks"
+    }
+  },
+  "block/polished_blackstone_brick_stairs_outer": {
+    "parent": "minecraft:block/outer_stairs",
+    "textures": {
+      "bottom": "minecraft:block/polished_blackstone_bricks",
+      "top": "minecraft:block/polished_blackstone_bricks",
+      "side": "minecraft:block/polished_blackstone_bricks"
+    }
+  },
+  "block/polished_blackstone_brick_wall_inventory": {
+    "parent": "minecraft:block/wall_inventory",
+    "textures": {
+      "wall": "minecraft:block/polished_blackstone_bricks"
+    }
+  },
+  "block/polished_blackstone_brick_wall_post": {
+    "parent": "minecraft:block/template_wall_post",
+    "textures": {
+      "wall": "minecraft:block/polished_blackstone_bricks"
+    }
+  },
+  "block/polished_blackstone_brick_wall_side": {
+    "parent": "minecraft:block/template_wall_side",
+    "textures": {
+      "wall": "minecraft:block/polished_blackstone_bricks"
+    }
+  },
+  "block/polished_blackstone_brick_wall_side_tall": {
+    "parent": "minecraft:block/template_wall_side_tall",
+    "textures": {
+      "wall": "minecraft:block/polished_blackstone_bricks"
+    }
+  },
+  "block/polished_blackstone_bricks": {
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+      "all": "minecraft:block/polished_blackstone_bricks"
+    }
+  },
+  "block/polished_blackstone_button": {
+    "parent": "minecraft:block/button",
+    "textures": {
+      "texture": "minecraft:block/polished_blackstone"
+    }
+  },
+  "block/polished_blackstone_button_inventory": {
+    "parent": "minecraft:block/button_inventory",
+    "textures": {
+      "texture": "minecraft:block/polished_blackstone"
+    }
+  },
+  "block/polished_blackstone_button_pressed": {
+    "parent": "minecraft:block/button_pressed",
+    "textures": {
+      "texture": "minecraft:block/polished_blackstone"
+    }
+  },
+  "block/polished_blackstone_pressure_plate": {
+    "parent": "minecraft:block/pressure_plate_up",
+    "textures": {
+      "texture": "minecraft:block/polished_blackstone"
+    }
+  },
+  "block/polished_blackstone_pressure_plate_down": {
+    "parent": "minecraft:block/pressure_plate_down",
+    "textures": {
+      "texture": "minecraft:block/polished_blackstone"
+    }
+  },
+  "block/polished_blackstone_slab": {
+    "parent": "minecraft:block/slab",
+    "textures": {
+      "bottom": "minecraft:block/polished_blackstone",
+      "top": "minecraft:block/polished_blackstone",
+      "side": "minecraft:block/polished_blackstone"
+    }
+  },
+  "block/polished_blackstone_slab_top": {
+    "parent": "minecraft:block/slab_top",
+    "textures": {
+      "bottom": "minecraft:block/polished_blackstone",
+      "top": "minecraft:block/polished_blackstone",
+      "side": "minecraft:block/polished_blackstone"
+    }
+  },
+  "block/polished_blackstone_stairs": {
+    "parent": "minecraft:block/stairs",
+    "textures": {
+      "bottom": "minecraft:block/polished_blackstone",
+      "top": "minecraft:block/polished_blackstone",
+      "side": "minecraft:block/polished_blackstone"
+    }
+  },
+  "block/polished_blackstone_stairs_inner": {
+    "parent": "minecraft:block/inner_stairs",
+    "textures": {
+      "bottom": "minecraft:block/polished_blackstone",
+      "top": "minecraft:block/polished_blackstone",
+      "side": "minecraft:block/polished_blackstone"
+    }
+  },
+  "block/polished_blackstone_stairs_outer": {
+    "parent": "minecraft:block/outer_stairs",
+    "textures": {
+      "bottom": "minecraft:block/polished_blackstone",
+      "top": "minecraft:block/polished_blackstone",
+      "side": "minecraft:block/polished_blackstone"
+    }
+  },
+  "block/polished_blackstone_wall_inventory": {
+    "parent": "minecraft:block/wall_inventory",
+    "textures": {
+      "wall": "minecraft:block/polished_blackstone"
+    }
+  },
+  "block/polished_blackstone_wall_post": {
+    "parent": "minecraft:block/template_wall_post",
+    "textures": {
+      "wall": "minecraft:block/polished_blackstone"
+    }
+  },
+  "block/polished_blackstone_wall_side": {
+    "parent": "minecraft:block/template_wall_side",
+    "textures": {
+      "wall": "minecraft:block/polished_blackstone"
+    }
+  },
+  "block/polished_blackstone_wall_side_tall": {
+    "parent": "minecraft:block/template_wall_side_tall",
+    "textures": {
+      "wall": "minecraft:block/polished_blackstone"
+    }
+  },
   "block/polished_diorite": {
     "parent": "minecraft:block/cube_all",
     "textures": {
@@ -22249,6 +22078,12 @@
     "textures": {
       "end": "minecraft:block/quartz_block_top",
       "side": "minecraft:block/quartz_block_side"
+    }
+  },
+  "block/quartz_bricks": {
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+      "all": "minecraft:block/quartz_bricks"
     }
   },
   "block/quartz_pillar": {
@@ -29023,6 +28858,13 @@
       }
     ]
   },
+  "block/soul_campfire": {
+    "parent": "minecraft:block/template_campfire",
+    "textures": {
+      "fire": "minecraft:block/soul_campfire_fire",
+      "lit_log": "minecraft:block/soul_campfire_log_lit"
+    }
+  },
   "block/soul_fire_floor0": {
     "parent": "minecraft:block/template_fire_floor",
     "textures": {
@@ -31373,6 +31215,453 @@
             ],
             "texture": "#body",
             "rotation": 270
+          }
+        }
+      }
+    ]
+  },
+  "block/template_campfire": {
+    "parent": "block/block",
+    "display": {
+      "head": {
+        "translation": [
+          0,
+          10.5,
+          0
+        ]
+      }
+    },
+    "textures": {
+      "particle": "block/campfire_log",
+      "log": "block/campfire_log"
+    },
+    "elements": [
+      {
+        "from": [
+          1,
+          0,
+          0
+        ],
+        "to": [
+          5,
+          4,
+          16
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              0,
+              4,
+              4,
+              8
+            ],
+            "texture": "#log",
+            "cullface": "north"
+          },
+          "east": {
+            "uv": [
+              0,
+              1,
+              16,
+              5
+            ],
+            "texture": "#lit_log"
+          },
+          "south": {
+            "uv": [
+              0,
+              4,
+              4,
+              8
+            ],
+            "texture": "#log",
+            "cullface": "south"
+          },
+          "west": {
+            "uv": [
+              16,
+              0,
+              0,
+              4
+            ],
+            "texture": "#log"
+          },
+          "up": {
+            "uv": [
+              0,
+              0,
+              16,
+              4
+            ],
+            "rotation": 90,
+            "texture": "#log"
+          },
+          "down": {
+            "uv": [
+              0,
+              0,
+              16,
+              4
+            ],
+            "rotation": 90,
+            "texture": "#log",
+            "cullface": "down"
+          }
+        }
+      },
+      {
+        "from": [
+          0,
+          3,
+          11
+        ],
+        "to": [
+          16,
+          7,
+          15
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              16,
+              0,
+              0,
+              4
+            ],
+            "texture": "#lit_log"
+          },
+          "east": {
+            "uv": [
+              0,
+              4,
+              4,
+              8
+            ],
+            "texture": "#log",
+            "cullface": "east"
+          },
+          "south": {
+            "uv": [
+              0,
+              0,
+              16,
+              4
+            ],
+            "texture": "#lit_log"
+          },
+          "west": {
+            "uv": [
+              0,
+              4,
+              4,
+              8
+            ],
+            "texture": "#log",
+            "cullface": "west"
+          },
+          "up": {
+            "uv": [
+              0,
+              0,
+              16,
+              4
+            ],
+            "rotation": 180,
+            "texture": "#log"
+          },
+          "down": {
+            "uv": [
+              0,
+              4,
+              16,
+              8
+            ],
+            "texture": "#lit_log"
+          }
+        }
+      },
+      {
+        "from": [
+          11,
+          0,
+          0
+        ],
+        "to": [
+          15,
+          4,
+          16
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              0,
+              4,
+              4,
+              8
+            ],
+            "texture": "#log",
+            "cullface": "north"
+          },
+          "east": {
+            "uv": [
+              0,
+              0,
+              16,
+              4
+            ],
+            "texture": "#log"
+          },
+          "south": {
+            "uv": [
+              0,
+              4,
+              4,
+              8
+            ],
+            "texture": "#log",
+            "cullface": "south"
+          },
+          "west": {
+            "uv": [
+              16,
+              1,
+              0,
+              5
+            ],
+            "texture": "#lit_log"
+          },
+          "up": {
+            "uv": [
+              0,
+              0,
+              16,
+              4
+            ],
+            "rotation": 90,
+            "texture": "#log"
+          },
+          "down": {
+            "uv": [
+              0,
+              0,
+              16,
+              4
+            ],
+            "rotation": 90,
+            "texture": "#log",
+            "cullface": "down"
+          }
+        }
+      },
+      {
+        "from": [
+          0,
+          3,
+          1
+        ],
+        "to": [
+          16,
+          7,
+          5
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              0,
+              0,
+              16,
+              4
+            ],
+            "texture": "#lit_log"
+          },
+          "east": {
+            "uv": [
+              0,
+              4,
+              4,
+              8
+            ],
+            "texture": "#log",
+            "cullface": "east"
+          },
+          "south": {
+            "uv": [
+              16,
+              0,
+              0,
+              4
+            ],
+            "texture": "#lit_log"
+          },
+          "west": {
+            "uv": [
+              0,
+              4,
+              4,
+              8
+            ],
+            "texture": "#log",
+            "cullface": "west"
+          },
+          "up": {
+            "uv": [
+              0,
+              0,
+              16,
+              4
+            ],
+            "rotation": 180,
+            "texture": "#log"
+          },
+          "down": {
+            "uv": [
+              0,
+              4,
+              16,
+              8
+            ],
+            "texture": "#lit_log"
+          }
+        }
+      },
+      {
+        "from": [
+          5,
+          0,
+          0
+        ],
+        "to": [
+          11,
+          1,
+          16
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              0,
+              15,
+              6,
+              16
+            ],
+            "texture": "#log",
+            "cullface": "north"
+          },
+          "south": {
+            "uv": [
+              10,
+              15,
+              16,
+              16
+            ],
+            "texture": "#log",
+            "cullface": "south"
+          },
+          "up": {
+            "uv": [
+              0,
+              8,
+              16,
+              14
+            ],
+            "rotation": 90,
+            "texture": "#lit_log"
+          },
+          "down": {
+            "uv": [
+              0,
+              8,
+              16,
+              14
+            ],
+            "rotation": 90,
+            "texture": "#log",
+            "cullface": "down"
+          }
+        }
+      },
+      {
+        "from": [
+          0.8,
+          1,
+          8
+        ],
+        "to": [
+          15.2,
+          17,
+          8
+        ],
+        "rotation": {
+          "origin": [
+            8,
+            8,
+            8
+          ],
+          "axis": "y",
+          "angle": 45,
+          "rescale": true
+        },
+        "shade": false,
+        "faces": {
+          "north": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#fire"
+          },
+          "south": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#fire"
+          }
+        }
+      },
+      {
+        "from": [
+          8,
+          1,
+          0.8
+        ],
+        "to": [
+          8,
+          17,
+          15.2
+        ],
+        "rotation": {
+          "origin": [
+            8,
+            8,
+            8
+          ],
+          "axis": "y",
+          "angle": 45,
+          "rescale": true
+        },
+        "shade": false,
+        "faces": {
+          "west": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#fire"
+          },
+          "east": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#fire"
           }
         }
       }
@@ -44628,6 +44917,18 @@
   "item/black_wool": {
     "parent": "minecraft:block/black_wool"
   },
+  "item/blackstone": {
+    "parent": "minecraft:block/blackstone"
+  },
+  "item/blackstone_slab": {
+    "parent": "minecraft:block/blackstone_slab"
+  },
+  "item/blackstone_stairs": {
+    "parent": "minecraft:block/blackstone_stairs"
+  },
+  "item/blackstone_wall": {
+    "parent": "minecraft:block/blackstone_wall_inventory"
+  },
   "item/blast_furnace": {
     "parent": "minecraft:block/blast_furnace"
   },
@@ -45202,6 +45503,12 @@
   },
   "item/chipped_anvil": {
     "parent": "minecraft:block/chipped_anvil"
+  },
+  "item/chiseled_nether_bricks": {
+    "parent": "minecraft:block/chiseled_nether_bricks"
+  },
+  "item/chiseled_polished_blackstone": {
+    "parent": "minecraft:block/chiseled_polished_blackstone"
   },
   "item/chiseled_quartz_block": {
     "parent": "minecraft:block/chiseled_quartz_block"
@@ -46662,6 +46969,12 @@
   "item/cow_spawn_egg": {
     "parent": "minecraft:item/template_spawn_egg"
   },
+  "item/cracked_nether_bricks": {
+    "parent": "minecraft:block/cracked_nether_bricks"
+  },
+  "item/cracked_polished_blackstone_bricks": {
+    "parent": "minecraft:block/cracked_polished_blackstone_bricks"
+  },
   "item/cracked_stone_bricks": {
     "parent": "minecraft:block/cracked_stone_bricks"
   },
@@ -47615,6 +47928,9 @@
     "textures": {
       "layer0": "minecraft:item/ghast_tear"
     }
+  },
+  "item/gilded_blackstone": {
+    "parent": "minecraft:block/gilded_blackstone"
   },
   "item/glass": {
     "parent": "minecraft:block/glass"
@@ -49106,6 +49422,12 @@
   "item/pig_spawn_egg": {
     "parent": "minecraft:item/template_spawn_egg"
   },
+  "item/piglin_banner_pattern": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "minecraft:item/piglin_banner_pattern"
+    }
+  },
   "item/piglin_spawn_egg": {
     "parent": "minecraft:item/template_spawn_egg"
   },
@@ -49195,6 +49517,36 @@
   },
   "item/polished_basalt": {
     "parent": "minecraft:block/polished_basalt"
+  },
+  "item/polished_blackstone": {
+    "parent": "minecraft:block/polished_blackstone"
+  },
+  "item/polished_blackstone_brick_slab": {
+    "parent": "minecraft:block/polished_blackstone_brick_slab"
+  },
+  "item/polished_blackstone_brick_stairs": {
+    "parent": "minecraft:block/polished_blackstone_brick_stairs"
+  },
+  "item/polished_blackstone_brick_wall": {
+    "parent": "minecraft:block/polished_blackstone_brick_wall_inventory"
+  },
+  "item/polished_blackstone_bricks": {
+    "parent": "minecraft:block/polished_blackstone_bricks"
+  },
+  "item/polished_blackstone_button": {
+    "parent": "minecraft:block/polished_blackstone_button_inventory"
+  },
+  "item/polished_blackstone_pressure_plate": {
+    "parent": "minecraft:block/polished_blackstone_pressure_plate"
+  },
+  "item/polished_blackstone_slab": {
+    "parent": "minecraft:block/polished_blackstone_slab"
+  },
+  "item/polished_blackstone_stairs": {
+    "parent": "minecraft:block/polished_blackstone_stairs"
+  },
+  "item/polished_blackstone_wall": {
+    "parent": "minecraft:block/polished_blackstone_wall_inventory"
   },
   "item/polished_diorite": {
     "parent": "minecraft:block/polished_diorite"
@@ -49382,6 +49734,9 @@
   },
   "item/quartz_block": {
     "parent": "minecraft:block/quartz_block"
+  },
+  "item/quartz_bricks": {
+    "parent": "minecraft:block/quartz_bricks"
   },
   "item/quartz_pillar": {
     "parent": "minecraft:block/quartz_pillar"
@@ -49959,6 +50314,12 @@
     "parent": "minecraft:item/generated",
     "textures": {
       "layer0": "minecraft:item/snowball"
+    }
+  },
+  "item/soul_campfire": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "minecraft:item/soul_campfire"
     }
   },
   "item/soul_fire_lantern": {

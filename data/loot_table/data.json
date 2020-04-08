@@ -1615,6 +1615,95 @@
       }
     ]
   },
+  "blocks/blackstone": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:blackstone"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/blackstone_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:blackstone_slab",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:blackstone_slab"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/blackstone_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:blackstone_stairs"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/blackstone_wall": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:blackstone_wall"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/blast_furnace": {
     "type": "minecraft:block",
     "pools": [
@@ -2944,6 +3033,44 @@
       }
     ]
   },
+  "blocks/chiseled_nether_bricks": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:chiseled_nether_bricks"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/chiseled_polished_blackstone": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:chiseled_polished_blackstone"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/chiseled_quartz_block": {
     "type": "minecraft:block",
     "pools": [
@@ -3458,6 +3585,44 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:cornflower"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/cracked_nether_bricks": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:cracked_nether_bricks"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/cracked_polished_blackstone_bricks": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:cracked_polished_blackstone_bricks"
           }
         ],
         "conditions": [
@@ -6038,6 +6203,80 @@
         "conditions": [
           {
             "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/gilded_blackstone": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                      "enchantments": [
+                        {
+                          "enchantment": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "name": "minecraft:gilded_blackstone"
+              },
+              {
+                "type": "minecraft:alternatives",
+                "conditions": [
+                  {
+                    "condition": "minecraft:survives_explosion"
+                  }
+                ],
+                "children": [
+                  {
+                    "type": "minecraft:item",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:table_bonus",
+                        "enchantment": "minecraft:fortune",
+                        "chances": [
+                          0.1,
+                          0.14285715,
+                          0.25,
+                          1.0
+                        ]
+                      }
+                    ],
+                    "functions": [
+                      {
+                        "function": "minecraft:set_count",
+                        "count": {
+                          "min": 2.0,
+                          "max": 5.0,
+                          "type": "minecraft:uniform"
+                        }
+                      }
+                    ],
+                    "name": "minecraft:gold_nugget"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:gilded_blackstone"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }
@@ -11794,6 +12033,222 @@
       }
     ]
   },
+  "blocks/polished_blackstone": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:polished_blackstone"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/polished_blackstone_brick_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:polished_blackstone_brick_slab",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:polished_blackstone_brick_slab"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/polished_blackstone_brick_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:polished_blackstone_brick_stairs"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/polished_blackstone_brick_wall": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:polished_blackstone_brick_wall"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/polished_blackstone_bricks": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:polished_blackstone_bricks"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/polished_blackstone_button": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:polished_blackstone_button"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/polished_blackstone_pressure_plate": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:polished_blackstone_pressure_plate"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/polished_blackstone_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:polished_blackstone_slab",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:polished_blackstone_slab"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/polished_blackstone_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:polished_blackstone_stairs"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/polished_blackstone_wall": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:polished_blackstone_wall"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/polished_diorite": {
     "type": "minecraft:block",
     "pools": [
@@ -13730,6 +14185,25 @@
       }
     ]
   },
+  "blocks/quartz_bricks": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:quartz_bricks"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/quartz_pillar": {
     "type": "minecraft:block",
     "pools": [
@@ -15642,6 +16116,55 @@
                   }
                 ],
                 "name": "minecraft:snowball"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/soul_campfire": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                      "enchantments": [
+                        {
+                          "enchantment": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "name": "minecraft:soul_campfire"
+              },
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:survives_explosion"
+                  }
+                ],
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 1
+                  }
+                ],
+                "name": "minecraft:soul_soil"
               }
             ]
           }
@@ -20163,13 +20686,6 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
-                    "type": "minecraft:weakness",
-                    "duration": {
-                      "min": 6.0,
-                      "max": 8.0
-                    }
-                  },
-                  {
                     "type": "minecraft:night_vision",
                     "duration": {
                       "min": 7.0,
@@ -20191,10 +20707,10 @@
                     }
                   },
                   {
-                    "type": "minecraft:blindness",
+                    "type": "minecraft:weakness",
                     "duration": {
-                      "min": 5.0,
-                      "max": 7.0
+                      "min": 6.0,
+                      "max": 8.0
                     }
                   },
                   {
@@ -20202,6 +20718,13 @@
                     "duration": {
                       "min": 10.0,
                       "max": 20.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:blindness",
+                    "duration": {
+                      "min": 5.0,
+                      "max": 7.0
                     }
                   }
                 ]
