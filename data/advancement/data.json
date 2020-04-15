@@ -3223,32 +3223,32 @@
         "trigger": "minecraft:effects_changed",
         "conditions": {
           "effects": {
-            "minecraft:water_breathing": {},
-            "minecraft:night_vision": {},
-            "minecraft:strength": {},
-            "minecraft:wither": {},
-            "minecraft:dolphins_grace": {},
-            "minecraft:bad_omen": {},
-            "minecraft:levitation": {},
-            "minecraft:jump_boost": {},
-            "minecraft:poison": {},
-            "minecraft:resistance": {},
-            "minecraft:conduit_power": {},
-            "minecraft:hunger": {},
-            "minecraft:invisibility": {},
-            "minecraft:slowness": {},
+            "minecraft:fire_resistance": {},
             "minecraft:blindness": {},
-            "minecraft:absorption": {},
-            "minecraft:slow_falling": {},
-            "minecraft:nausea": {},
-            "minecraft:weakness": {},
-            "minecraft:haste": {},
-            "minecraft:speed": {},
-            "minecraft:regeneration": {},
             "minecraft:mining_fatigue": {},
-            "minecraft:hero_of_the_village": {},
+            "minecraft:levitation": {},
+            "minecraft:poison": {},
+            "minecraft:wither": {},
+            "minecraft:conduit_power": {},
+            "minecraft:dolphins_grace": {},
             "minecraft:glowing": {},
-            "minecraft:fire_resistance": {}
+            "minecraft:regeneration": {},
+            "minecraft:weakness": {},
+            "minecraft:slow_falling": {},
+            "minecraft:night_vision": {},
+            "minecraft:water_breathing": {},
+            "minecraft:speed": {},
+            "minecraft:strength": {},
+            "minecraft:invisibility": {},
+            "minecraft:absorption": {},
+            "minecraft:jump_boost": {},
+            "minecraft:slowness": {},
+            "minecraft:hunger": {},
+            "minecraft:nausea": {},
+            "minecraft:haste": {},
+            "minecraft:bad_omen": {},
+            "minecraft:hero_of_the_village": {},
+            "minecraft:resistance": {}
           }
         }
       }
@@ -3284,19 +3284,19 @@
         "trigger": "minecraft:effects_changed",
         "conditions": {
           "effects": {
-            "minecraft:water_breathing": {},
-            "minecraft:jump_boost": {},
+            "minecraft:fire_resistance": {},
+            "minecraft:regeneration": {},
+            "minecraft:weakness": {},
+            "minecraft:slow_falling": {},
             "minecraft:night_vision": {},
             "minecraft:poison": {},
-            "minecraft:resistance": {},
+            "minecraft:water_breathing": {},
+            "minecraft:speed": {},
             "minecraft:strength": {},
             "minecraft:invisibility": {},
+            "minecraft:jump_boost": {},
             "minecraft:slowness": {},
-            "minecraft:slow_falling": {},
-            "minecraft:weakness": {},
-            "minecraft:speed": {},
-            "minecraft:regeneration": {},
-            "minecraft:fire_resistance": {}
+            "minecraft:resistance": {}
           }
         }
       }
@@ -17348,6 +17348,49 @@
     "requirements": [
       [
         "has_paper",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/decorations/chain": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:chain"
+      ]
+    },
+    "criteria": {
+      "has_iron_nugget": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:iron_nugget"
+            }
+          ]
+        }
+      },
+      "has_iron_ingot": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:iron_ingot"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:chain"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_iron_nugget",
+        "has_iron_ingot",
         "has_the_recipe"
       ]
     ]
