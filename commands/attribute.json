@@ -1,0 +1,133 @@
+{
+  "type": "literal",
+  "children": {
+    "target": {
+      "type": "argument",
+      "parser": "minecraft:entity",
+      "properties": {
+        "amount": "single",
+        "type": "entities"
+      },
+      "children": {
+        "attribute": {
+          "type": "argument",
+          "parser": "minecraft:resource_location",
+          "children": {
+            "base": {
+              "type": "literal",
+              "children": {
+                "get": {
+                  "type": "literal",
+                  "children": {
+                    "scale": {
+                      "type": "argument",
+                      "parser": "brigadier:double",
+                      "executable": true
+                    }
+                  },
+                  "executable": true
+                },
+                "set": {
+                  "type": "literal",
+                  "children": {
+                    "value": {
+                      "type": "argument",
+                      "parser": "brigadier:double",
+                      "executable": true
+                    }
+                  }
+                }
+              }
+            },
+            "get": {
+              "type": "literal",
+              "children": {
+                "scale": {
+                  "type": "argument",
+                  "parser": "brigadier:double",
+                  "executable": true
+                }
+              },
+              "executable": true
+            },
+            "modifier": {
+              "type": "literal",
+              "children": {
+                "add": {
+                  "type": "literal",
+                  "children": {
+                    "uuid": {
+                      "type": "argument",
+                      "parser": "minecraft:uuid",
+                      "children": {
+                        "name": {
+                          "type": "argument",
+                          "parser": "brigadier:string",
+                          "properties": {
+                            "type": "phrase"
+                          },
+                          "children": {
+                            "value": {
+                              "type": "argument",
+                              "parser": "brigadier:double",
+                              "children": {
+                                "add": {
+                                  "type": "literal",
+                                  "executable": true
+                                },
+                                "multiply": {
+                                  "type": "literal",
+                                  "executable": true
+                                },
+                                "multiply_base": {
+                                  "type": "literal",
+                                  "executable": true
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "remove": {
+                  "type": "literal",
+                  "children": {
+                    "uuid": {
+                      "type": "argument",
+                      "parser": "minecraft:uuid",
+                      "executable": true
+                    }
+                  }
+                },
+                "value": {
+                  "type": "literal",
+                  "children": {
+                    "get": {
+                      "type": "literal",
+                      "children": {
+                        "uuid": {
+                          "type": "argument",
+                          "parser": "minecraft:uuid",
+                          "children": {
+                            "scale": {
+                              "type": "argument",
+                              "parser": "brigadier:double",
+                              "executable": true
+                            }
+                          },
+                          "executable": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
