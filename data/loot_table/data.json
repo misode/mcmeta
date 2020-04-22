@@ -16194,7 +16194,7 @@
   "blocks/soul_fire": {
     "type": "minecraft:block"
   },
-  "blocks/soul_fire_lantern": {
+  "blocks/soul_lantern": {
     "type": "minecraft:block",
     "pools": [
       {
@@ -16202,26 +16202,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "minecraft:soul_fire_lantern"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/soul_fire_torch": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:soul_fire_torch"
+            "name": "minecraft:soul_lantern"
           }
         ],
         "conditions": [
@@ -16260,6 +16241,25 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:soul_soil"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/soul_torch": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:soul_torch"
           }
         ],
         "conditions": [
@@ -19236,10 +19236,26 @@
             "type": "minecraft:item",
             "functions": [
               {
+                "function": "minecraft:set_damage",
+                "damage": {
+                  "min": 0.1,
+                  "max": 0.5
+                }
+              },
+              {
+                "function": "minecraft:enchant_randomly"
+              }
+            ],
+            "name": "minecraft:crossbow"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
                 "function": "minecraft:set_count",
                 "count": {
-                  "min": 5.0,
-                  "max": 18.0,
+                  "min": 2.0,
+                  "max": 12.0,
                   "type": "minecraft:uniform"
                 }
               }
@@ -19253,7 +19269,7 @@
                 "function": "minecraft:set_count",
                 "count": {
                   "min": 5.0,
-                  "max": 10.0,
+                  "max": 8.0,
                   "type": "minecraft:uniform"
                 }
               }
@@ -19465,7 +19481,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "weight": 10,
+            "weight": 5,
             "functions": [
               {
                 "function": "minecraft:set_damage",
@@ -19478,11 +19494,11 @@
                 "function": "minecraft:enchant_randomly"
               }
             ],
-            "name": "minecraft:netherite_shovel"
+            "name": "minecraft:diamond_shovel"
           },
           {
             "type": "minecraft:item",
-            "weight": 10,
+            "weight": 2,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -19493,7 +19509,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 10,
+            "weight": 3,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -19504,7 +19520,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 15,
+            "weight": 10,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -19515,7 +19531,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 10,
+            "weight": 25,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -19530,7 +19546,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 10,
+            "weight": 15,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -19544,7 +19560,7 @@
           },
           {
             "type": "minecraft:empty",
-            "weight": 10
+            "weight": 45
           }
         ]
       },
@@ -19735,7 +19751,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "weight": 10,
+            "weight": 12,
             "functions": [
               {
                 "function": "minecraft:set_damage",
@@ -19752,7 +19768,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 5,
+            "weight": 2,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -19763,7 +19779,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 5,
+            "weight": 2,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -19774,13 +19790,13 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 10,
+            "weight": 16,
             "functions": [
               {
                 "function": "minecraft:set_count",
                 "count": {
-                  "min": 5.0,
-                  "max": 20.0,
+                  "min": 2.0,
+                  "max": 15.0,
                   "type": "minecraft:uniform"
                 }
               }
@@ -19789,7 +19805,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 10,
+            "weight": 5,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -19800,7 +19816,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 10,
+            "weight": 3,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -19810,16 +19826,8 @@
             "name": "minecraft:music_disc_pigstep"
           },
           {
-            "type": "minecraft:empty",
-            "weight": 10
-          }
-        ]
-      },
-      {
-        "rolls": 2,
-        "entries": [
-          {
             "type": "minecraft:item",
+            "weight": 10,
             "functions": [
               {
                 "function": "minecraft:enchant_randomly",
@@ -19830,6 +19838,15 @@
             ],
             "name": "minecraft:book"
           },
+          {
+            "type": "minecraft:empty",
+            "weight": 50
+          }
+        ]
+      },
+      {
+        "rolls": 2,
+        "entries": [
           {
             "type": "minecraft:item",
             "functions": [
@@ -20106,7 +20123,11 @@
     "type": "minecraft:chest",
     "pools": [
       {
-        "rolls": 1,
+        "rolls": {
+          "min": 1.0,
+          "max": 2.0,
+          "type": "minecraft:uniform"
+        },
         "entries": [
           {
             "type": "minecraft:item",
@@ -20121,7 +20142,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 10,
+            "weight": 14,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -20143,7 +20164,6 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 5,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -20167,7 +20187,7 @@
                 "function": "minecraft:enchant_randomly"
               }
             ],
-            "name": "minecraft:netherite_sword"
+            "name": "minecraft:diamond_sword"
           },
           {
             "type": "minecraft:item",
@@ -20184,7 +20204,7 @@
                 "function": "minecraft:enchant_randomly"
               }
             ],
-            "name": "minecraft:netherite_chestplate"
+            "name": "minecraft:diamond_chestplate"
           },
           {
             "type": "minecraft:item",
@@ -20201,7 +20221,7 @@
                 "function": "minecraft:enchant_randomly"
               }
             ],
-            "name": "minecraft:netherite_helmet"
+            "name": "minecraft:diamond_helmet"
           },
           {
             "type": "minecraft:item",
@@ -20218,7 +20238,7 @@
                 "function": "minecraft:enchant_randomly"
               }
             ],
-            "name": "minecraft:netherite_leggings"
+            "name": "minecraft:diamond_leggings"
           },
           {
             "type": "minecraft:item",
@@ -20235,7 +20255,7 @@
                 "function": "minecraft:enchant_randomly"
               }
             ],
-            "name": "minecraft:netherite_boots"
+            "name": "minecraft:diamond_boots"
           },
           {
             "type": "minecraft:item",
@@ -20249,7 +20269,7 @@
                 }
               }
             ],
-            "name": "minecraft:netherite_sword"
+            "name": "minecraft:diamond_sword"
           },
           {
             "type": "minecraft:item",
@@ -20263,7 +20283,7 @@
                 }
               }
             ],
-            "name": "minecraft:netherite_chestplate"
+            "name": "minecraft:diamond_chestplate"
           },
           {
             "type": "minecraft:item",
@@ -20277,7 +20297,7 @@
                 }
               }
             ],
-            "name": "minecraft:netherite_helmet"
+            "name": "minecraft:diamond_helmet"
           },
           {
             "type": "minecraft:item",
@@ -20291,7 +20311,7 @@
                 }
               }
             ],
-            "name": "minecraft:netherite_boots"
+            "name": "minecraft:diamond_boots"
           },
           {
             "type": "minecraft:item",
@@ -20305,7 +20325,7 @@
                 }
               }
             ],
-            "name": "minecraft:netherite_leggings"
+            "name": "minecraft:diamond_leggings"
           },
           {
             "type": "minecraft:item",
@@ -22234,13 +22254,6 @@
                     }
                   },
                   {
-                    "type": "minecraft:weakness",
-                    "duration": {
-                      "min": 6.0,
-                      "max": 8.0
-                    }
-                  },
-                  {
                     "type": "minecraft:night_vision",
                     "duration": {
                       "min": 7.0,
@@ -22259,6 +22272,13 @@
                     "duration": {
                       "min": 7.0,
                       "max": 10.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:weakness",
+                    "duration": {
+                      "min": 6.0,
+                      "max": 8.0
                     }
                   }
                 ]
