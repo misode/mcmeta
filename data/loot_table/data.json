@@ -10489,48 +10489,16 @@
         "rolls": 1,
         "entries": [
           {
-            "type": "minecraft:alternatives",
-            "children": [
-              {
-                "type": "minecraft:item",
-                "conditions": [
-                  {
-                    "condition": "minecraft:alternative",
-                    "terms": [
-                      {
-                        "condition": "minecraft:match_tool",
-                        "predicate": {
-                          "item": "minecraft:shears"
-                        }
-                      },
-                      {
-                        "condition": "minecraft:match_tool",
-                        "predicate": {
-                          "enchantments": [
-                            {
-                              "enchantment": "minecraft:silk_touch",
-                              "levels": {
-                                "min": 1
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                ],
-                "name": "minecraft:nether_sprouts"
-              },
-              {
-                "type": "minecraft:item",
-                "conditions": [
-                  {
-                    "condition": "minecraft:survives_explosion"
-                  }
-                ],
-                "name": "minecraft:nether_sprouts"
-              }
-            ]
+            "type": "minecraft:item",
+            "name": "minecraft:nether_sprouts"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "item": "minecraft:shears"
+            }
           }
         ]
       }
@@ -22371,7 +22339,14 @@
                     }
                   },
                   {
-                    "type": "minecraft:jump_boost",
+                    "type": "minecraft:poison",
+                    "duration": {
+                      "min": 10.0,
+                      "max": 20.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:saturation",
                     "duration": {
                       "min": 7.0,
                       "max": 10.0
@@ -22385,14 +22360,7 @@
                     }
                   },
                   {
-                    "type": "minecraft:poison",
-                    "duration": {
-                      "min": 10.0,
-                      "max": 20.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:saturation",
+                    "type": "minecraft:jump_boost",
                     "duration": {
                       "min": 7.0,
                       "max": 10.0
