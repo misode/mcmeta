@@ -17,10 +17,13 @@
   },
   "criteria": {
     "safely_harvest_honey": {
-      "trigger": "minecraft:safely_harvest_honey",
+      "trigger": "minecraft:item_used_on_block",
       "conditions": {
-        "block": {
-          "tag": "minecraft:beehives"
+        "location": {
+          "smokey": true,
+          "block": {
+            "block": "minecraft:beehive"
+          }
         },
         "item": {
           "item": "minecraft:glass_bottle"
