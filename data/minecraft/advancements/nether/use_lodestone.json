@@ -1,14 +1,14 @@
 {
-  "parent": "minecraft:husbandry/root",
+  "parent": "minecraft:nether/obtain_ancient_debris",
   "display": {
     "icon": {
-      "item": "minecraft:honey_bottle"
+      "item": "minecraft:lodestone"
     },
     "title": {
-      "translate": "advancements.husbandry.safely_harvest_honey.title"
+      "translate": "advancements.nether.use_lodestone.title"
     },
     "description": {
-      "translate": "advancements.husbandry.safely_harvest_honey.description"
+      "translate": "advancements.nether.use_lodestone.description"
     },
     "frame": "task",
     "show_toast": true,
@@ -16,24 +16,23 @@
     "hidden": false
   },
   "criteria": {
-    "safely_harvest_honey": {
+    "use_lodestone": {
       "trigger": "minecraft:item_used_on_block",
       "conditions": {
         "location": {
-          "smokey": true,
           "block": {
-            "block": "minecraft:beehive"
+            "block": "minecraft:lodestone"
           }
         },
         "item": {
-          "item": "minecraft:glass_bottle"
+          "item": "minecraft:compass"
         }
       }
     }
   },
   "requirements": [
     [
-      "safely_harvest_honey"
+      "use_lodestone"
     ]
   ]
 }

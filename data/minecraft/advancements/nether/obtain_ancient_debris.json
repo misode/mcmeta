@@ -1,15 +1,14 @@
 {
-  "parent": "minecraft:story/root",
+  "parent": "minecraft:nether/root",
   "display": {
     "icon": {
-      "item": "minecraft:wooden_pickaxe",
-      "nbt": "{Damage:0}"
+      "item": "minecraft:ancient_debris"
     },
     "title": {
-      "translate": "advancements.story.mine_stone.title"
+      "translate": "advancements.nether.obtain_ancient_debris.title"
     },
     "description": {
-      "translate": "advancements.story.mine_stone.description"
+      "translate": "advancements.nether.obtain_ancient_debris.description"
     },
     "frame": "task",
     "show_toast": true,
@@ -17,12 +16,12 @@
     "hidden": false
   },
   "criteria": {
-    "get_stone": {
+    "ancient_debris": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "minecraft:stone_tool_materials"
+            "item": "minecraft:ancient_debris"
           }
         ]
       }
@@ -30,7 +29,7 @@
   },
   "requirements": [
     [
-      "get_stone"
+      "ancient_debris"
     ]
   ]
 }
