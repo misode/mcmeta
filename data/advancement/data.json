@@ -534,16 +534,32 @@
       "description": {
         "translate": "advancements.adventure.bullseye.description"
       },
-      "frame": "task",
+      "frame": "challenge",
       "show_toast": true,
       "announce_to_chat": true,
       "hidden": false
+    },
+    "rewards": {
+      "experience": 50
     },
     "criteria": {
       "bullseye": {
         "trigger": "minecraft:target_hit",
         "conditions": {
-          "signal_strength": 15
+          "signal_strength": 15,
+          "projectile": [
+            {
+              "condition": "minecraft:entity_properties",
+              "predicate": {
+                "distance": {
+                  "horizontal": {
+                    "min": 30.0
+                  }
+                }
+              },
+              "entity": "this"
+            }
+          ]
         }
       }
     },
@@ -3009,14 +3025,14 @@
     "parent": "minecraft:husbandry/plant_seed",
     "display": {
       "icon": {
-        "item": "minecraft:diamond_hoe",
+        "item": "minecraft:netherite_hoe",
         "nbt": "{Damage:0}"
       },
       "title": {
-        "translate": "advancements.husbandry.break_diamond_hoe.title"
+        "translate": "advancements.husbandry.netherite_hoe.title"
       },
       "description": {
-        "translate": "advancements.husbandry.break_diamond_hoe.description"
+        "translate": "advancements.husbandry.netherite_hoe.description"
       },
       "frame": "challenge",
       "show_toast": true,
@@ -3027,19 +3043,20 @@
       "experience": 100
     },
     "criteria": {
-      "broke_hoe": {
-        "trigger": "minecraft:item_durability_changed",
+      "netherite_hoe": {
+        "trigger": "minecraft:inventory_changed",
         "conditions": {
-          "item": {
-            "item": "minecraft:diamond_hoe"
-          },
-          "durability": 0
+          "items": [
+            {
+              "item": "minecraft:netherite_hoe"
+            }
+          ]
         }
       }
     },
     "requirements": [
       [
-        "broke_hoe"
+        "netherite_hoe"
       ]
     ]
   },
@@ -3287,6 +3304,20 @@
             }
           ]
         }
+      },
+      "minecraft:strider": {
+        "trigger": "minecraft:bred_animals",
+        "conditions": {
+          "parent": [
+            {
+              "condition": "minecraft:entity_properties",
+              "predicate": {
+                "type": "minecraft:strider"
+              },
+              "entity": "this"
+            }
+          ]
+        }
       }
     },
     "requirements": [
@@ -3337,6 +3368,9 @@
       ],
       [
         "minecraft:hoglin"
+      ],
+      [
+        "minecraft:strider"
       ]
     ]
   },
@@ -3749,10 +3783,13 @@
     },
     "criteria": {
       "safely_harvest_honey": {
-        "trigger": "minecraft:safely_harvest_honey",
+        "trigger": "minecraft:item_used_on_block",
         "conditions": {
-          "block": {
-            "tag": "minecraft:beehives"
+          "location": {
+            "smokey": true,
+            "block": {
+              "block": "minecraft:beehive"
+            }
           },
           "item": {
             "item": "minecraft:glass_bottle"
@@ -4035,6 +4072,47 @@
       ]
     ]
   },
+  "nether/charge_respawn_anchor": {
+    "parent": "minecraft:nether/obtain_crying_obsidian",
+    "display": {
+      "icon": {
+        "item": "minecraft:respawn_anchor"
+      },
+      "title": {
+        "translate": "advancements.nether.charge_respawn_anchor.title"
+      },
+      "description": {
+        "translate": "advancements.nether.charge_respawn_anchor.description"
+      },
+      "frame": "task",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": false
+    },
+    "criteria": {
+      "charge_respawn_anchor": {
+        "trigger": "minecraft:item_used_on_block",
+        "conditions": {
+          "location": {
+            "block": {
+              "block": "minecraft:respawn_anchor",
+              "state": {
+                "charges": "4"
+              }
+            }
+          },
+          "item": {
+            "item": "minecraft:glowstone"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "charge_respawn_anchor"
+      ]
+    ]
+  },
   "nether/create_beacon": {
     "parent": "minecraft:nether/summon_wither",
     "display": {
@@ -4099,6 +4177,184 @@
       ]
     ]
   },
+  "nether/distract_piglin": {
+    "parent": "minecraft:nether/root",
+    "display": {
+      "icon": {
+        "item": "minecraft:gold_ingot"
+      },
+      "title": {
+        "translate": "advancements.nether.distract_piglin.title"
+      },
+      "description": {
+        "translate": "advancements.nether.distract_piglin.description"
+      },
+      "frame": "task",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": false
+    },
+    "criteria": {
+      "distract_piglin": {
+        "trigger": "minecraft:thrown_item_picked_up_by_entity",
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "predicate": {
+                  "equipment": {
+                    "head": {
+                      "item": "minecraft:golden_helmet"
+                    }
+                  }
+                },
+                "entity": "this"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "predicate": {
+                  "equipment": {
+                    "chest": {
+                      "item": "minecraft:golden_chestplate"
+                    }
+                  }
+                },
+                "entity": "this"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "predicate": {
+                  "equipment": {
+                    "legs": {
+                      "item": "minecraft:golden_leggings"
+                    }
+                  }
+                },
+                "entity": "this"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "predicate": {
+                  "equipment": {
+                    "feet": {
+                      "item": "minecraft:golden_boots"
+                    }
+                  }
+                },
+                "entity": "this"
+              }
+            }
+          ],
+          "item": {
+            "tag": "minecraft:piglin_loved"
+          },
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "predicate": {
+                "type": "minecraft:piglin"
+              },
+              "entity": "this"
+            }
+          ]
+        }
+      }
+    },
+    "requirements": [
+      [
+        "distract_piglin"
+      ]
+    ]
+  },
+  "nether/explore_nether": {
+    "parent": "minecraft:nether/ride_strider",
+    "display": {
+      "icon": {
+        "item": "minecraft:netherite_boots",
+        "nbt": "{Damage:0}"
+      },
+      "title": {
+        "translate": "advancements.nether.explore_nether.title"
+      },
+      "description": {
+        "translate": "advancements.nether.explore_nether.description"
+      },
+      "frame": "challenge",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": false
+    },
+    "criteria": {
+      "minecraft:nether_wastes": {
+        "trigger": "minecraft:location",
+        "conditions": {
+          "location": {
+            "biome": "minecraft:nether_wastes"
+          }
+        }
+      },
+      "minecraft:soul_sand_valley": {
+        "trigger": "minecraft:location",
+        "conditions": {
+          "location": {
+            "biome": "minecraft:soul_sand_valley"
+          }
+        }
+      },
+      "minecraft:warped_forest": {
+        "trigger": "minecraft:location",
+        "conditions": {
+          "location": {
+            "biome": "minecraft:warped_forest"
+          }
+        }
+      },
+      "minecraft:crimson_forest": {
+        "trigger": "minecraft:location",
+        "conditions": {
+          "location": {
+            "biome": "minecraft:crimson_forest"
+          }
+        }
+      },
+      "minecraft:basalt_deltas": {
+        "trigger": "minecraft:location",
+        "conditions": {
+          "location": {
+            "biome": "minecraft:basalt_deltas"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "minecraft:nether_wastes"
+      ],
+      [
+        "minecraft:soul_sand_valley"
+      ],
+      [
+        "minecraft:warped_forest"
+      ],
+      [
+        "minecraft:crimson_forest"
+      ],
+      [
+        "minecraft:basalt_deltas"
+      ]
+    ]
+  },
   "nether/fast_travel": {
     "parent": "minecraft:nether/root",
     "display": {
@@ -4134,6 +4390,39 @@
     "requirements": [
       [
         "travelled"
+      ]
+    ]
+  },
+  "nether/find_bastion": {
+    "parent": "minecraft:nether/root",
+    "display": {
+      "icon": {
+        "item": "minecraft:polished_blackstone_bricks"
+      },
+      "title": {
+        "translate": "advancements.nether.find_bastion.title"
+      },
+      "description": {
+        "translate": "advancements.nether.find_bastion.description"
+      },
+      "frame": "task",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": false
+    },
+    "criteria": {
+      "bastion": {
+        "trigger": "minecraft:location",
+        "conditions": {
+          "location": {
+            "feature": "bastion_remnant"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "bastion"
       ]
     ]
   },
@@ -4205,6 +4494,138 @@
       ]
     ]
   },
+  "nether/loot_bastion": {
+    "parent": "minecraft:nether/find_bastion",
+    "display": {
+      "icon": {
+        "item": "minecraft:chest"
+      },
+      "title": {
+        "translate": "advancements.nether.loot_bastion.title"
+      },
+      "description": {
+        "translate": "advancements.nether.loot_bastion.description"
+      },
+      "frame": "task",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": false
+    },
+    "criteria": {
+      "loot_bastion_other": {
+        "trigger": "minecraft:player_generates_container_loot",
+        "conditions": {
+          "loot_table": "minecraft:chests/bastion_other"
+        }
+      },
+      "loot_bastion_treasure": {
+        "trigger": "minecraft:player_generates_container_loot",
+        "conditions": {
+          "loot_table": "minecraft:chests/bastion_treasure"
+        }
+      },
+      "loot_bastion_hoglin_stable": {
+        "trigger": "minecraft:player_generates_container_loot",
+        "conditions": {
+          "loot_table": "minecraft:chests/bastion_hoglin_stable"
+        }
+      },
+      "loot_bastion_bridge": {
+        "trigger": "minecraft:player_generates_container_loot",
+        "conditions": {
+          "loot_table": "minecraft:chests/bastion_bridge"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "loot_bastion_other",
+        "loot_bastion_treasure",
+        "loot_bastion_hoglin_stable",
+        "loot_bastion_bridge"
+      ]
+    ]
+  },
+  "nether/netherite_armor": {
+    "parent": "minecraft:nether/obtain_ancient_debris",
+    "display": {
+      "icon": {
+        "item": "minecraft:netherite_chestplate",
+        "nbt": "{Damage:0}"
+      },
+      "title": {
+        "translate": "advancements.nether.netherite_armor.title"
+      },
+      "description": {
+        "translate": "advancements.nether.netherite_armor.description"
+      },
+      "frame": "challenge",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": false
+    },
+    "criteria": {
+      "netherite_armor": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:netherite_helmet"
+            },
+            {
+              "item": "minecraft:netherite_chestplate"
+            },
+            {
+              "item": "minecraft:netherite_leggings"
+            },
+            {
+              "item": "minecraft:netherite_boots"
+            }
+          ]
+        }
+      }
+    },
+    "requirements": [
+      [
+        "netherite_armor"
+      ]
+    ]
+  },
+  "nether/obtain_ancient_debris": {
+    "parent": "minecraft:nether/root",
+    "display": {
+      "icon": {
+        "item": "minecraft:ancient_debris"
+      },
+      "title": {
+        "translate": "advancements.nether.obtain_ancient_debris.title"
+      },
+      "description": {
+        "translate": "advancements.nether.obtain_ancient_debris.description"
+      },
+      "frame": "task",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": false
+    },
+    "criteria": {
+      "ancient_debris": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:ancient_debris"
+            }
+          ]
+        }
+      }
+    },
+    "requirements": [
+      [
+        "ancient_debris"
+      ]
+    ]
+  },
   "nether/obtain_blaze_rod": {
     "parent": "minecraft:nether/find_fortress",
     "display": {
@@ -4237,6 +4658,41 @@
     "requirements": [
       [
         "blaze_rod"
+      ]
+    ]
+  },
+  "nether/obtain_crying_obsidian": {
+    "parent": "minecraft:nether/root",
+    "display": {
+      "icon": {
+        "item": "minecraft:crying_obsidian"
+      },
+      "title": {
+        "translate": "advancements.nether.obtain_crying_obsidian.title"
+      },
+      "description": {
+        "translate": "advancements.nether.obtain_crying_obsidian.description"
+      },
+      "frame": "task",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": false
+    },
+    "criteria": {
+      "crying_obsidian": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:crying_obsidian"
+            }
+          ]
+        }
+      }
+    },
+    "requirements": [
+      [
+        "crying_obsidian"
       ]
     ]
   },
@@ -4285,6 +4741,51 @@
     "requirements": [
       [
         "killed_ghast"
+      ]
+    ]
+  },
+  "nether/ride_strider": {
+    "parent": "minecraft:nether/root",
+    "display": {
+      "icon": {
+        "item": "minecraft:warped_fungus_on_a_stick",
+        "nbt": "{Damage:0}"
+      },
+      "title": {
+        "translate": "advancements.nether.ride_strider.title"
+      },
+      "description": {
+        "translate": "advancements.nether.ride_strider.description"
+      },
+      "frame": "task",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": false
+    },
+    "criteria": {
+      "used_warped_fungus_on_a_stick": {
+        "trigger": "minecraft:item_durability_changed",
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:entity_properties",
+              "predicate": {
+                "vehicle": {
+                  "type": "minecraft:strider"
+                }
+              },
+              "entity": "this"
+            }
+          ],
+          "item": {
+            "item": "minecraft:warped_fungus_on_a_stick"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "used_warped_fungus_on_a_stick"
       ]
     ]
   },
@@ -4400,6 +4901,44 @@
     "requirements": [
       [
         "killed_ghast"
+      ]
+    ]
+  },
+  "nether/use_lodestone": {
+    "parent": "minecraft:nether/obtain_ancient_debris",
+    "display": {
+      "icon": {
+        "item": "minecraft:lodestone"
+      },
+      "title": {
+        "translate": "advancements.nether.use_lodestone.title"
+      },
+      "description": {
+        "translate": "advancements.nether.use_lodestone.description"
+      },
+      "frame": "task",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": false
+    },
+    "criteria": {
+      "use_lodestone": {
+        "trigger": "minecraft:item_used_on_block",
+        "conditions": {
+          "location": {
+            "block": {
+              "block": "minecraft:lodestone"
+            }
+          },
+          "item": {
+            "item": "minecraft:compass"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "use_lodestone"
       ]
     ]
   },
@@ -33060,7 +33599,7 @@
         "conditions": {
           "items": [
             {
-              "item": "minecraft:cobblestone"
+              "tag": "minecraft:stone_tool_materials"
             }
           ]
         }
