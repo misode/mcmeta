@@ -19,6 +19,32 @@
                 "min": 1.0
               },
               "children": {
+                "under": {
+                  "type": "literal",
+                  "children": {
+                    "maxHeight": {
+                      "type": "argument",
+                      "parser": "brigadier:integer",
+                      "children": {
+                        "respectTeams": {
+                          "type": "argument",
+                          "parser": "brigadier:bool",
+                          "children": {
+                            "targets": {
+                              "type": "argument",
+                              "parser": "minecraft:entity",
+                              "properties": {
+                                "amount": "multiple",
+                                "type": "entities"
+                              },
+                              "executable": true
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
                 "respectTeams": {
                   "type": "argument",
                   "parser": "brigadier:bool",
