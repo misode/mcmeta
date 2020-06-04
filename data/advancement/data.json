@@ -3021,45 +3021,6 @@
       ]
     ]
   },
-  "husbandry/break_diamond_hoe": {
-    "parent": "minecraft:husbandry/plant_seed",
-    "display": {
-      "icon": {
-        "item": "minecraft:netherite_hoe",
-        "nbt": "{Damage:0}"
-      },
-      "title": {
-        "translate": "advancements.husbandry.netherite_hoe.title"
-      },
-      "description": {
-        "translate": "advancements.husbandry.netherite_hoe.description"
-      },
-      "frame": "challenge",
-      "show_toast": true,
-      "announce_to_chat": true,
-      "hidden": false
-    },
-    "rewards": {
-      "experience": 100
-    },
-    "criteria": {
-      "netherite_hoe": {
-        "trigger": "minecraft:inventory_changed",
-        "conditions": {
-          "items": [
-            {
-              "item": "minecraft:netherite_hoe"
-            }
-          ]
-        }
-      }
-    },
-    "requirements": [
-      [
-        "netherite_hoe"
-      ]
-    ]
-  },
   "husbandry/bred_all_animals": {
     "parent": "minecraft:husbandry/breed_an_animal",
     "display": {
@@ -3084,7 +3045,7 @@
       "minecraft:horse": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
-          "parent": [
+          "child": [
             {
               "condition": "minecraft:entity_properties",
               "predicate": {
@@ -3095,10 +3056,38 @@
           ]
         }
       },
+      "minecraft:donkey": {
+        "trigger": "minecraft:bred_animals",
+        "conditions": {
+          "child": [
+            {
+              "condition": "minecraft:entity_properties",
+              "predicate": {
+                "type": "minecraft:donkey"
+              },
+              "entity": "this"
+            }
+          ]
+        }
+      },
+      "minecraft:mule": {
+        "trigger": "minecraft:bred_animals",
+        "conditions": {
+          "child": [
+            {
+              "condition": "minecraft:entity_properties",
+              "predicate": {
+                "type": "minecraft:mule"
+              },
+              "entity": "this"
+            }
+          ]
+        }
+      },
       "minecraft:sheep": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
-          "parent": [
+          "child": [
             {
               "condition": "minecraft:entity_properties",
               "predicate": {
@@ -3112,7 +3101,7 @@
       "minecraft:cow": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
-          "parent": [
+          "child": [
             {
               "condition": "minecraft:entity_properties",
               "predicate": {
@@ -3126,7 +3115,7 @@
       "minecraft:mooshroom": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
-          "parent": [
+          "child": [
             {
               "condition": "minecraft:entity_properties",
               "predicate": {
@@ -3140,7 +3129,7 @@
       "minecraft:pig": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
-          "parent": [
+          "child": [
             {
               "condition": "minecraft:entity_properties",
               "predicate": {
@@ -3154,7 +3143,7 @@
       "minecraft:chicken": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
-          "parent": [
+          "child": [
             {
               "condition": "minecraft:entity_properties",
               "predicate": {
@@ -3168,7 +3157,7 @@
       "minecraft:wolf": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
-          "parent": [
+          "child": [
             {
               "condition": "minecraft:entity_properties",
               "predicate": {
@@ -3182,7 +3171,7 @@
       "minecraft:ocelot": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
-          "parent": [
+          "child": [
             {
               "condition": "minecraft:entity_properties",
               "predicate": {
@@ -3196,7 +3185,7 @@
       "minecraft:rabbit": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
-          "parent": [
+          "child": [
             {
               "condition": "minecraft:entity_properties",
               "predicate": {
@@ -3210,7 +3199,7 @@
       "minecraft:llama": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
-          "parent": [
+          "child": [
             {
               "condition": "minecraft:entity_properties",
               "predicate": {
@@ -3224,7 +3213,7 @@
       "minecraft:turtle": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
-          "parent": [
+          "child": [
             {
               "condition": "minecraft:entity_properties",
               "predicate": {
@@ -3238,7 +3227,7 @@
       "minecraft:cat": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
-          "parent": [
+          "child": [
             {
               "condition": "minecraft:entity_properties",
               "predicate": {
@@ -3252,7 +3241,7 @@
       "minecraft:panda": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
-          "parent": [
+          "child": [
             {
               "condition": "minecraft:entity_properties",
               "predicate": {
@@ -3266,7 +3255,7 @@
       "minecraft:fox": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
-          "parent": [
+          "child": [
             {
               "condition": "minecraft:entity_properties",
               "predicate": {
@@ -3280,7 +3269,7 @@
       "minecraft:bee": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
-          "parent": [
+          "child": [
             {
               "condition": "minecraft:entity_properties",
               "predicate": {
@@ -3294,7 +3283,7 @@
       "minecraft:hoglin": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
-          "parent": [
+          "child": [
             {
               "condition": "minecraft:entity_properties",
               "predicate": {
@@ -3308,7 +3297,7 @@
       "minecraft:strider": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
-          "parent": [
+          "child": [
             {
               "condition": "minecraft:entity_properties",
               "predicate": {
@@ -3323,6 +3312,12 @@
     "requirements": [
       [
         "minecraft:horse"
+      ],
+      [
+        "minecraft:donkey"
+      ],
+      [
+        "minecraft:mule"
       ],
       [
         "minecraft:sheep"
@@ -3673,6 +3668,45 @@
         "tropical_fish",
         "pufferfish",
         "salmon"
+      ]
+    ]
+  },
+  "husbandry/obtain_netherite_hoe": {
+    "parent": "minecraft:husbandry/plant_seed",
+    "display": {
+      "icon": {
+        "item": "minecraft:netherite_hoe",
+        "nbt": "{Damage:0}"
+      },
+      "title": {
+        "translate": "advancements.husbandry.netherite_hoe.title"
+      },
+      "description": {
+        "translate": "advancements.husbandry.netherite_hoe.description"
+      },
+      "frame": "challenge",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": false
+    },
+    "rewards": {
+      "experience": 100
+    },
+    "criteria": {
+      "netherite_hoe": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:netherite_hoe"
+            }
+          ]
+        }
+      }
+    },
+    "requirements": [
+      [
+        "netherite_hoe"
       ]
     ]
   },
@@ -4295,6 +4329,9 @@
       "announce_to_chat": true,
       "hidden": false
     },
+    "rewards": {
+      "experience": 500
+    },
     "criteria": {
       "minecraft:nether_wastes": {
         "trigger": "minecraft:location",
@@ -4563,6 +4600,9 @@
       "show_toast": true,
       "announce_to_chat": true,
       "hidden": false
+    },
+    "rewards": {
+      "experience": 100
     },
     "criteria": {
       "netherite_armor": {
@@ -16822,6 +16862,166 @@
     "requirements": [
       [
         "has_leather",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/combat/netherite_boots_smithing": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:netherite_boots_smithing"
+      ]
+    },
+    "criteria": {
+      "has_netherite_ingot": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:netherite_ingot"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:netherite_boots_smithing"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_netherite_ingot",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/combat/netherite_chestplate_smithing": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:netherite_chestplate_smithing"
+      ]
+    },
+    "criteria": {
+      "has_netherite_ingot": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:netherite_ingot"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:netherite_chestplate_smithing"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_netherite_ingot",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/combat/netherite_helmet_smithing": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:netherite_helmet_smithing"
+      ]
+    },
+    "criteria": {
+      "has_netherite_ingot": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:netherite_ingot"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:netherite_helmet_smithing"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_netherite_ingot",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/combat/netherite_leggings_smithing": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:netherite_leggings_smithing"
+      ]
+    },
+    "criteria": {
+      "has_netherite_ingot": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:netherite_ingot"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:netherite_leggings_smithing"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_netherite_ingot",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/combat/netherite_sword_smithing": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:netherite_sword_smithing"
+      ]
+    },
+    "criteria": {
+      "has_netherite_ingot": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:netherite_ingot"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:netherite_sword_smithing"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_netherite_ingot",
         "has_the_recipe"
       ]
     ]
@@ -32431,6 +32631,134 @@
     "requirements": [
       [
         "has_slime_ball",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/tools/netherite_axe_smithing": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:netherite_axe_smithing"
+      ]
+    },
+    "criteria": {
+      "has_netherite_ingot": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:netherite_ingot"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:netherite_axe_smithing"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_netherite_ingot",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/tools/netherite_hoe_smithing": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:netherite_hoe_smithing"
+      ]
+    },
+    "criteria": {
+      "has_netherite_ingot": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:netherite_ingot"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:netherite_hoe_smithing"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_netherite_ingot",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/tools/netherite_pickaxe_smithing": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:netherite_pickaxe_smithing"
+      ]
+    },
+    "criteria": {
+      "has_netherite_ingot": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:netherite_ingot"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:netherite_pickaxe_smithing"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_netherite_ingot",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/tools/netherite_shovel_smithing": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:netherite_shovel_smithing"
+      ]
+    },
+    "criteria": {
+      "has_netherite_ingot": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:netherite_ingot"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:netherite_shovel_smithing"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_netherite_ingot",
         "has_the_recipe"
       ]
     ]
