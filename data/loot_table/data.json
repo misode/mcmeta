@@ -22382,10 +22382,10 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
-                    "type": "minecraft:blindness",
+                    "type": "minecraft:jump_boost",
                     "duration": {
-                      "min": 5.0,
-                      "max": 7.0
+                      "min": 7.0,
+                      "max": 10.0
                     }
                   },
                   {
@@ -22393,13 +22393,6 @@
                     "duration": {
                       "min": 6.0,
                       "max": 8.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:jump_boost",
-                    "duration": {
-                      "min": 7.0,
-                      "max": 10.0
                     }
                   },
                   {
@@ -22414,6 +22407,13 @@
                     "duration": {
                       "min": 7.0,
                       "max": 10.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:blindness",
+                    "duration": {
+                      "min": 5.0,
+                      "max": 7.0
                     }
                   },
                   {
@@ -28717,7 +28717,19 @@
         ],
         "conditions": [
           {
-            "condition": "minecraft:killed_by_player"
+            "condition": "minecraft:alternative",
+            "terms": [
+              {
+                "condition": "minecraft:killed_by_player"
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "predicate": {
+                  "targeted_entity": {}
+                },
+                "entity": "this"
+              }
+            ]
           },
           {
             "condition": "minecraft:random_chance_with_looting",
