@@ -93,11 +93,90 @@
           }
         ]
       }
+    },
+    "distract_piglin_directly": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "predicate": {
+                "equipment": {
+                  "head": {
+                    "item": "minecraft:golden_helmet"
+                  }
+                }
+              },
+              "entity": "this"
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "predicate": {
+                "equipment": {
+                  "chest": {
+                    "item": "minecraft:golden_chestplate"
+                  }
+                }
+              },
+              "entity": "this"
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "predicate": {
+                "equipment": {
+                  "legs": {
+                    "item": "minecraft:golden_leggings"
+                  }
+                }
+              },
+              "entity": "this"
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "predicate": {
+                "equipment": {
+                  "feet": {
+                    "item": "minecraft:golden_boots"
+                  }
+                }
+              },
+              "entity": "this"
+            }
+          }
+        ],
+        "item": {
+          "item": "minecraft:gold_ingot"
+        },
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "type": "minecraft:piglin",
+              "flags": {
+                "is_baby": false
+              }
+            },
+            "entity": "this"
+          }
+        ]
+      }
     }
   },
   "requirements": [
     [
-      "distract_piglin"
+      "distract_piglin",
+      "distract_piglin_directly"
     ]
   ]
 }
