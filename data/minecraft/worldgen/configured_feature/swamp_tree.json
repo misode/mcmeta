@@ -1,0 +1,81 @@
+{
+  "config": {
+    "feature": {
+      "config": {
+        "feature": {
+          "config": {
+            "max_water_depth": 1,
+            "ignore_vines": false,
+            "heightmap": "OCEAN_FLOOR",
+            "minimum_size": {
+              "limit": 1,
+              "lower_size": 0,
+              "upper_size": 1,
+              "type": "minecraft:two_layers_feature_size"
+            },
+            "decorators": [
+              {
+                "type": "minecraft:leave_vine"
+              }
+            ],
+            "trunk_provider": {
+              "state": {
+                "Properties": {
+                  "axis": "y"
+                },
+                "Name": "minecraft:oak_log"
+              },
+              "type": "minecraft:simple_state_provider"
+            },
+            "leaves_provider": {
+              "state": {
+                "Properties": {
+                  "persistent": "false",
+                  "distance": "7"
+                },
+                "Name": "minecraft:oak_leaves"
+              },
+              "type": "minecraft:simple_state_provider"
+            },
+            "foliage_placer": {
+              "radius": 3,
+              "offset": 0,
+              "height": 3,
+              "type": "minecraft:blob_foliage_placer"
+            },
+            "trunk_placer": {
+              "base_height": 5,
+              "height_rand_a": 3,
+              "height_rand_b": 0,
+              "type": "minecraft:straight_trunk_placer"
+            }
+          },
+          "name": "minecraft:tree"
+        },
+        "decorator": {
+          "config": {
+            "outer": {
+              "config": {},
+              "name": "minecraft:square"
+            },
+            "inner": {
+              "config": {},
+              "name": "minecraft:heightmap"
+            }
+          },
+          "name": "minecraft:decorated"
+        }
+      },
+      "name": "minecraft:decorated"
+    },
+    "decorator": {
+      "config": {
+        "count": 2,
+        "extra_chance": 0.1,
+        "extra_count": 1
+      },
+      "name": "minecraft:count_extra"
+    }
+  },
+  "name": "minecraft:decorated"
+}
