@@ -1,0 +1,91 @@
+{
+  "config": {
+    "feature": {
+      "config": {
+        "feature": {
+          "config": {
+            "features": [
+              {
+                "feature": "minecraft:fancy_oak",
+                "chance": 0.05
+              },
+              {
+                "feature": "minecraft:jungle_bush",
+                "chance": 0.15
+              },
+              {
+                "feature": "minecraft:mega_jungle_tree",
+                "chance": 0.7
+              }
+            ],
+            "default": {
+              "config": {
+                "can_replace": false,
+                "project": true,
+                "need_water": false,
+                "xspread": 7,
+                "yspread": 3,
+                "zspread": 7,
+                "whitelist": [],
+                "blacklist": [
+                  {
+                    "Properties": {
+                      "snowy": "false"
+                    },
+                    "Name": "minecraft:podzol"
+                  }
+                ],
+                "tries": 32,
+                "state_provider": {
+                  "entries": [
+                    {
+                      "weight": 3,
+                      "data": {
+                        "Name": "minecraft:grass"
+                      }
+                    },
+                    {
+                      "weight": 1,
+                      "data": {
+                        "Name": "minecraft:fern"
+                      }
+                    }
+                  ],
+                  "type": "minecraft:weighted_state_provider"
+                },
+                "block_placer": {
+                  "type": "minecraft:simple_block_placer"
+                }
+              },
+              "name": "minecraft:random_patch"
+            }
+          },
+          "name": "minecraft:random_selector"
+        },
+        "decorator": {
+          "config": {
+            "outer": {
+              "config": {},
+              "name": "minecraft:square"
+            },
+            "inner": {
+              "config": {},
+              "name": "minecraft:heightmap"
+            }
+          },
+          "name": "minecraft:decorated"
+        }
+      },
+      "name": "minecraft:decorated"
+    },
+    "decorator": {
+      "config": {
+        "count": 30,
+        "extra_chance": 0.1,
+        "extra_count": 1
+      },
+      "name": "minecraft:count_extra"
+    }
+  },
+  "name": "minecraft:decorated"
+}
