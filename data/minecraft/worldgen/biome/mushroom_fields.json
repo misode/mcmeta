@@ -1,33 +1,16 @@
 {
-  "starts": [
-    "minecraft:mineshaft",
-    "minecraft:stronghold",
-    "minecraft:ruined_portal"
-  ],
-  "spawners": {
-    "monster": [],
-    "creature": [
-      {
-        "type": "minecraft:mooshroom",
-        "weight": 8,
-        "minCount": 4,
-        "maxCount": 8
-      }
-    ],
-    "ambient": [
-      {
-        "type": "minecraft:bat",
-        "weight": 10,
-        "minCount": 8,
-        "maxCount": 8
-      }
-    ],
-    "water_creature": [],
-    "water_ambient": [],
-    "misc": []
+  "effects": {
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    },
+    "sky_color": 7842047,
+    "fog_color": 12638463,
+    "water_color": 4159204,
+    "water_fog_color": 329011
   },
-  "spawn_costs": {},
-  "sky_color": 7842047,
   "surface_builder": "minecraft:mycelium",
   "carvers": {
     "air": [
@@ -79,21 +62,38 @@
       "minecraft:freeze_top_layer"
     ]
   ],
-  "scale": 0.3,
+  "starts": [
+    "minecraft:mineshaft",
+    "minecraft:stronghold",
+    "minecraft:ruined_portal"
+  ],
+  "spawners": {
+    "monster": [],
+    "creature": [
+      {
+        "type": "minecraft:mooshroom",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 8
+      }
+    ],
+    "ambient": [
+      {
+        "type": "minecraft:bat",
+        "weight": 10,
+        "minCount": 8,
+        "maxCount": 8
+      }
+    ],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "precipitation": "rain",
   "temperature": 0.9,
   "downfall": 1.0,
-  "effects": {
-    "mood_sound": {
-      "sound": "minecraft:ambient.cave",
-      "tick_delay": 6000,
-      "block_search_extent": 8,
-      "offset": 2.0
-    },
-    "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011
-  },
-  "precipitation": "rain",
   "category": "mushroom",
-  "depth": 0.2
+  "depth": 0.2,
+  "scale": 0.3
 }
