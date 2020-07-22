@@ -1,38 +1,33 @@
 {
-  "starts": [
-    "minecraft:ruined_portal_nether",
-    "minecraft:fortress"
-  ],
-  "spawners": {
-    "monster": [
-      {
-        "type": "minecraft:ghast",
-        "weight": 40,
-        "minCount": 1,
-        "maxCount": 1
+  "effects": {
+    "mood_sound": {
+      "sound": "minecraft:ambient.basalt_deltas.mood",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    },
+    "additions_sound": {
+      "sound": "minecraft:ambient.basalt_deltas.additions",
+      "tick_chance": 0.0111
+    },
+    "music": {
+      "sound": "minecraft:music.nether.basalt_deltas",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": false
+    },
+    "particle": {
+      "options": {
+        "type": "minecraft:white_ash"
       },
-      {
-        "type": "minecraft:magma_cube",
-        "weight": 100,
-        "minCount": 2,
-        "maxCount": 5
-      }
-    ],
-    "creature": [
-      {
-        "type": "minecraft:strider",
-        "weight": 60,
-        "minCount": 1,
-        "maxCount": 2
-      }
-    ],
-    "ambient": [],
-    "water_creature": [],
-    "water_ambient": [],
-    "misc": []
+      "probability": 0.118093334
+    },
+    "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
+    "sky_color": 7254527,
+    "fog_color": 6840176,
+    "water_color": 4159204,
+    "water_fog_color": 4341314
   },
-  "spawn_costs": {},
-  "sky_color": 7254527,
   "surface_builder": "minecraft:basalt_deltas",
   "carvers": {
     "air": [
@@ -72,38 +67,43 @@
       "minecraft:spring_lava_double"
     ]
   ],
-  "scale": 0.2,
+  "starts": [
+    "minecraft:ruined_portal_nether",
+    "minecraft:fortress"
+  ],
+  "spawners": {
+    "monster": [
+      {
+        "type": "minecraft:ghast",
+        "weight": 40,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "minecraft:magma_cube",
+        "weight": 100,
+        "minCount": 2,
+        "maxCount": 5
+      }
+    ],
+    "creature": [
+      {
+        "type": "minecraft:strider",
+        "weight": 60,
+        "minCount": 1,
+        "maxCount": 2
+      }
+    ],
+    "ambient": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "precipitation": "none",
   "temperature": 2.0,
   "downfall": 0.0,
-  "effects": {
-    "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
-    "mood_sound": {
-      "sound": "minecraft:ambient.basalt_deltas.mood",
-      "tick_delay": 6000,
-      "block_search_extent": 8,
-      "offset": 2.0
-    },
-    "additions_sound": {
-      "sound": "minecraft:ambient.basalt_deltas.additions",
-      "tick_chance": 0.0111
-    },
-    "music": {
-      "sound": "minecraft:music.nether.basalt_deltas",
-      "min_delay": 12000,
-      "max_delay": 24000,
-      "replace_current_music": false
-    },
-    "fog_color": 6840176,
-    "water_color": 4159204,
-    "water_fog_color": 4341314,
-    "particle": {
-      "options": {
-        "type": "minecraft:white_ash"
-      },
-      "probability": 0.118093334
-    }
-  },
-  "precipitation": "none",
   "category": "nether",
-  "depth": 0.1
+  "depth": 0.1,
+  "scale": 0.2
 }
