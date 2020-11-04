@@ -552,7 +552,7 @@
     }, 
     {
       pos: [4, 0, 0], 
-      state: 6
+      state: 5
     }, 
     {
       pos: [4, 0, 6], 
@@ -568,7 +568,7 @@
     }, 
     {
       pos: [6, 0, 0], 
-      state: 7
+      state: 6
     }, 
     {
       pos: [6, 0, 1], 
@@ -632,7 +632,7 @@
     }, 
     {
       pos: [2, 1, 0], 
-      state: 8
+      state: 7
     }, 
     {
       pos: [2, 1, 6], 
@@ -644,7 +644,7 @@
     }, 
     {
       pos: [3, 1, 1], 
-      state: 9
+      state: 8
     }, 
     {
       pos: [3, 1, 2], 
@@ -664,15 +664,15 @@
     }, 
     {
       pos: [4, 1, 0], 
-      state: 8
+      state: 7
     }, 
     {
       pos: [4, 1, 3], 
-      state: 10
+      state: 9
     }, 
     {
       pos: [4, 1, 4], 
-      state: 10
+      state: 9
     }, 
     {
       pos: [4, 1, 6], 
@@ -724,7 +724,7 @@
     }, 
     {
       pos: [0, 2, 2], 
-      state: 11
+      state: 10
     }, 
     {
       pos: [0, 2, 3], 
@@ -732,7 +732,7 @@
     }, 
     {
       pos: [0, 2, 4], 
-      state: 11
+      state: 10
     }, 
     {
       pos: [0, 2, 5], 
@@ -748,7 +748,7 @@
     }, 
     {
       pos: [1, 2, 3], 
-      state: 12
+      state: 11
     }, 
     {
       pos: [1, 2, 6], 
@@ -756,7 +756,7 @@
     }, 
     {
       pos: [2, 2, 0], 
-      state: 13
+      state: 12
     }, 
     {
       pos: [2, 2, 2], 
@@ -772,7 +772,7 @@
     }, 
     {
       pos: [2, 2, 6], 
-      state: 14
+      state: 13
     }, 
     {
       pos: [3, 2, 0], 
@@ -780,7 +780,7 @@
     }, 
     {
       pos: [3, 2, 1], 
-      state: 15
+      state: 14
     }, 
     {
       pos: [3, 2, 2], 
@@ -796,7 +796,7 @@
     }, 
     {
       pos: [3, 2, 5], 
-      state: 16
+      state: 15
     }, 
     {
       pos: [3, 2, 6], 
@@ -804,7 +804,7 @@
     }, 
     {
       pos: [4, 2, 0], 
-      state: 13
+      state: 12
     }, 
     {
       pos: [4, 2, 2], 
@@ -820,7 +820,7 @@
     }, 
     {
       pos: [4, 2, 6], 
-      state: 14
+      state: 13
     }, 
     {
       pos: [5, 2, 0], 
@@ -828,7 +828,7 @@
     }, 
     {
       pos: [5, 2, 3], 
-      state: 12
+      state: 11
     }, 
     {
       pos: [5, 2, 6], 
@@ -844,7 +844,7 @@
     }, 
     {
       pos: [6, 2, 2], 
-      state: 17
+      state: 16
     }, 
     {
       pos: [6, 2, 3], 
@@ -852,7 +852,7 @@
     }, 
     {
       pos: [6, 2, 4], 
-      state: 17
+      state: 16
     }, 
     {
       pos: [6, 2, 5], 
@@ -992,7 +992,7 @@
     }, 
     {
       pos: [3, 4, 2], 
-      state: 18
+      state: 17
     }, 
     {
       pos: [3, 4, 3], 
@@ -1000,7 +1000,7 @@
     }, 
     {
       pos: [3, 4, 4], 
-      state: 19
+      state: 18
     }, 
     {
       pos: [3, 4, 6], 
@@ -1356,6 +1356,7 @@
     }, 
     {
       nbt: {
+        joint: "aligned", 
         final_state: "minecraft:cobblestone_stairs[facing=south]", 
         name: "minecraft:building_entrance", 
         pool: "minecraft:empty", 
@@ -1363,10 +1364,11 @@
         target: "minecraft:building_entrance"
       }, 
       pos: [3, 0, 0], 
-      state: 20
+      state: 19
     }, 
     {
       nbt: {
+        joint: "rollable", 
         final_state: "minecraft:cobblestone", 
         name: "minecraft:bottom", 
         pool: "minecraft:village/taiga/villagers", 
@@ -1374,7 +1376,7 @@
         target: "minecraft:bottom"
       }, 
       pos: [3, 0, 3], 
-      state: 21
+      state: 20
     }, 
     {
       nbt: {
@@ -1385,21 +1387,21 @@
         LootTableSeed: 0L
       }, 
       pos: [2, 1, 2], 
-      state: 22
+      state: 21
     }, 
     {
       nbt: {
         id: "minecraft:bed"
       }, 
       pos: [2, 1, 3], 
-      state: 23
+      state: 22
     }, 
     {
       nbt: {
         id: "minecraft:bed"
       }, 
       pos: [2, 1, 4], 
-      state: 24
+      state: 23
     }
   ], 
   palette: [
@@ -1426,22 +1428,11 @@
     }, 
     {
       Properties: {
-        east: "low", 
-        waterlogged: "false", 
-        south: "low", 
-        north: "none", 
-        west: "none", 
-        up: "true"
-      }, 
-      Name: "minecraft:cobblestone_wall"
-    }, 
-    {
-      Properties: {
         east: "none", 
         waterlogged: "false", 
-        south: "low", 
+        south: "tall", 
         north: "none", 
-        west: "low", 
+        west: "none", 
         up: "true"
       }, 
       Name: "minecraft:cobblestone_wall"
