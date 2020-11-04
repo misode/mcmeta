@@ -434,6 +434,77 @@
       }
     ]
   },
+  "blocks/amethyst_block": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:amethyst_block"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/amethyst_cluster": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                      "enchantments": [
+                        {
+                          "enchantment": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "name": "minecraft:amethyst_cluster"
+              },
+              {
+                "type": "minecraft:item",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 4
+                  },
+                  {
+                    "function": "minecraft:apply_bonus",
+                    "enchantment": "minecraft:fortune",
+                    "formula": "minecraft:ore_drops"
+                  },
+                  {
+                    "function": "minecraft:explosion_decay"
+                  }
+                ],
+                "name": "minecraft:amethyst_shard"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
   "blocks/ancient_debris": {
     "type": "minecraft:block",
     "pools": [
@@ -1393,6 +1464,78 @@
       }
     ]
   },
+  "blocks/black_candle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:black_candle",
+                    "properties": {
+                      "candles": "2"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:black_candle",
+                    "properties": {
+                      "candles": "3"
+                    }
+                  }
+                ],
+                "count": 3
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:black_candle",
+                    "properties": {
+                      "candles": "4"
+                    }
+                  }
+                ],
+                "count": 4
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:black_candle"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/black_candle_cake": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:black_candle"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/black_carpet": {
     "type": "minecraft:block",
     "pools": [
@@ -1788,6 +1931,78 @@
         "conditions": [
           {
             "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/blue_candle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:blue_candle",
+                    "properties": {
+                      "candles": "2"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:blue_candle",
+                    "properties": {
+                      "candles": "3"
+                    }
+                  }
+                ],
+                "count": 3
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:blue_candle",
+                    "properties": {
+                      "candles": "4"
+                    }
+                  }
+                ],
+                "count": 4
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:blue_candle"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/blue_candle_cake": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:blue_candle"
           }
         ]
       }
@@ -2408,6 +2623,78 @@
       }
     ]
   },
+  "blocks/brown_candle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:brown_candle",
+                    "properties": {
+                      "candles": "2"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:brown_candle",
+                    "properties": {
+                      "candles": "3"
+                    }
+                  }
+                ],
+                "count": 3
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:brown_candle",
+                    "properties": {
+                      "candles": "4"
+                    }
+                  }
+                ],
+                "count": 4
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:brown_candle"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/brown_candle_cake": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:brown_candle"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/brown_carpet": {
     "type": "minecraft:block",
     "pools": [
@@ -2807,6 +3094,9 @@
       }
     ]
   },
+  "blocks/budding_amethyst": {
+    "type": "minecraft:block"
+  },
   "blocks/cactus": {
     "type": "minecraft:block",
     "pools": [
@@ -2828,6 +3118,25 @@
   },
   "blocks/cake": {
     "type": "minecraft:block"
+  },
+  "blocks/calcite": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:calcite"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
   },
   "blocks/campfire": {
     "type": "minecraft:block",
@@ -2873,6 +3182,78 @@
                 "name": "minecraft:charcoal"
               }
             ]
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/candle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:candle",
+                    "properties": {
+                      "candles": "2"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:candle",
+                    "properties": {
+                      "candles": "3"
+                    }
+                  }
+                ],
+                "count": 3
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:candle",
+                    "properties": {
+                      "candles": "4"
+                    }
+                  }
+                ],
+                "count": 4
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:candle"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/candle_cake": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:candle"
           }
         ]
       }
@@ -3595,6 +3976,44 @@
       }
     ]
   },
+  "blocks/copper_block": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:copper_block"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/copper_ore": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:copper_ore"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/cornflower": {
     "type": "minecraft:block",
     "pools": [
@@ -4054,6 +4473,63 @@
       }
     ]
   },
+  "blocks/cut_copper": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:cut_copper"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/cut_copper_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:cut_copper_slab"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/cut_copper_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:cut_copper_stairs"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/cut_red_sandstone": {
     "type": "minecraft:block",
     "pools": [
@@ -4215,6 +4691,78 @@
         "conditions": [
           {
             "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/cyan_candle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:cyan_candle",
+                    "properties": {
+                      "candles": "2"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:cyan_candle",
+                    "properties": {
+                      "candles": "3"
+                    }
+                  }
+                ],
+                "count": 3
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:cyan_candle",
+                    "properties": {
+                      "candles": "4"
+                    }
+                  }
+                ],
+                "count": 4
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:cyan_candle"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/cyan_candle_cake": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:cyan_candle"
           }
         ]
       }
@@ -5643,6 +6191,25 @@
       }
     ]
   },
+  "blocks/dirt_path": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:dirt"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/dispenser": {
     "type": "minecraft:block",
     "pools": [
@@ -6669,25 +7236,6 @@
       }
     ]
   },
-  "blocks/grass_path": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:dirt"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
   "blocks/gravel": {
     "type": "minecraft:block",
     "pools": [
@@ -6811,6 +7359,78 @@
         "conditions": [
           {
             "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/gray_candle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:gray_candle",
+                    "properties": {
+                      "candles": "2"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:gray_candle",
+                    "properties": {
+                      "candles": "3"
+                    }
+                  }
+                ],
+                "count": 3
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:gray_candle",
+                    "properties": {
+                      "candles": "4"
+                    }
+                  }
+                ],
+                "count": 4
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:gray_candle"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/gray_candle_cake": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:gray_candle"
           }
         ]
       }
@@ -7097,6 +7717,78 @@
         "conditions": [
           {
             "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/green_candle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:green_candle",
+                    "properties": {
+                      "candles": "2"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:green_candle",
+                    "properties": {
+                      "candles": "3"
+                    }
+                  }
+                ],
+                "count": 3
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:green_candle",
+                    "properties": {
+                      "candles": "4"
+                    }
+                  }
+                ],
+                "count": 4
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:green_candle"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/green_candle_cake": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:green_candle"
           }
         ]
       }
@@ -8445,6 +9137,35 @@
       }
     ]
   },
+  "blocks/large_amethyst_bud": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:large_amethyst_bud"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "enchantments": [
+                {
+                  "enchantment": "minecraft:silk_touch",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
   "blocks/large_fern": {
     "type": "minecraft:block",
     "pools": [
@@ -8574,6 +9295,25 @@
       }
     ]
   },
+  "blocks/lava_cauldron": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:cauldron"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/lectern": {
     "type": "minecraft:block",
     "pools": [
@@ -8677,6 +9417,78 @@
         "conditions": [
           {
             "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/light_blue_candle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:light_blue_candle",
+                    "properties": {
+                      "candles": "2"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:light_blue_candle",
+                    "properties": {
+                      "candles": "3"
+                    }
+                  }
+                ],
+                "count": 3
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:light_blue_candle",
+                    "properties": {
+                      "candles": "4"
+                    }
+                  }
+                ],
+                "count": 4
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:light_blue_candle"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/light_blue_candle_cake": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:light_blue_candle"
           }
         ]
       }
@@ -8968,6 +9780,78 @@
       }
     ]
   },
+  "blocks/light_gray_candle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:light_gray_candle",
+                    "properties": {
+                      "candles": "2"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:light_gray_candle",
+                    "properties": {
+                      "candles": "3"
+                    }
+                  }
+                ],
+                "count": 3
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:light_gray_candle",
+                    "properties": {
+                      "candles": "4"
+                    }
+                  }
+                ],
+                "count": 4
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:light_gray_candle"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/light_gray_candle_cake": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:light_gray_candle"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/light_gray_carpet": {
     "type": "minecraft:block",
     "pools": [
@@ -9209,6 +10093,101 @@
       }
     ]
   },
+  "blocks/lightly_weathered_copper_block": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:lightly_weathered_copper_block"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/lightly_weathered_cut_copper": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:lightly_weathered_cut_copper"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/lightly_weathered_cut_copper_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:lightly_weathered_cut_copper_slab"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/lightly_weathered_cut_copper_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:lightly_weathered_cut_copper_stairs"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/lightning_rod": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:lightning_rod"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/lilac": {
     "type": "minecraft:block",
     "pools": [
@@ -9334,6 +10313,78 @@
         "conditions": [
           {
             "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/lime_candle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:lime_candle",
+                    "properties": {
+                      "candles": "2"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:lime_candle",
+                    "properties": {
+                      "candles": "3"
+                    }
+                  }
+                ],
+                "count": 3
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:lime_candle",
+                    "properties": {
+                      "candles": "4"
+                    }
+                  }
+                ],
+                "count": 4
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:lime_candle"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/lime_candle_cake": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:lime_candle"
           }
         ]
       }
@@ -9663,6 +10714,78 @@
       }
     ]
   },
+  "blocks/magenta_candle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:magenta_candle",
+                    "properties": {
+                      "candles": "2"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:magenta_candle",
+                    "properties": {
+                      "candles": "3"
+                    }
+                  }
+                ],
+                "count": 3
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:magenta_candle",
+                    "properties": {
+                      "candles": "4"
+                    }
+                  }
+                ],
+                "count": 4
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:magenta_candle"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/magenta_candle_cake": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:magenta_candle"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/magenta_carpet": {
     "type": "minecraft:block",
     "pools": [
@@ -9899,6 +11022,35 @@
         "conditions": [
           {
             "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/medium_amethyst_bud": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:medium_amethyst_bud"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "enchantments": [
+                {
+                  "enchantment": "minecraft:silk_touch",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
           }
         ]
       }
@@ -11297,6 +12449,78 @@
       }
     ]
   },
+  "blocks/orange_candle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:orange_candle",
+                    "properties": {
+                      "candles": "2"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:orange_candle",
+                    "properties": {
+                      "candles": "3"
+                    }
+                  }
+                ],
+                "count": 3
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:orange_candle",
+                    "properties": {
+                      "candles": "4"
+                    }
+                  }
+                ],
+                "count": 4
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:orange_candle"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/orange_candle_cake": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:orange_candle"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/orange_carpet": {
     "type": "minecraft:block",
     "pools": [
@@ -11705,6 +12929,78 @@
         "conditions": [
           {
             "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/pink_candle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:pink_candle",
+                    "properties": {
+                      "candles": "2"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:pink_candle",
+                    "properties": {
+                      "candles": "3"
+                    }
+                  }
+                ],
+                "count": 3
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:pink_candle",
+                    "properties": {
+                      "candles": "4"
+                    }
+                  }
+                ],
+                "count": 4
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:pink_candle"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/pink_candle_cake": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pink_candle"
           }
         ]
       }
@@ -13951,6 +15247,78 @@
       }
     ]
   },
+  "blocks/purple_candle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:purple_candle",
+                    "properties": {
+                      "candles": "2"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:purple_candle",
+                    "properties": {
+                      "candles": "3"
+                    }
+                  }
+                ],
+                "count": 3
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:purple_candle",
+                    "properties": {
+                      "candles": "4"
+                    }
+                  }
+                ],
+                "count": 4
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:purple_candle"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/purple_candle_cake": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:purple_candle"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/purple_carpet": {
     "type": "minecraft:block",
     "pools": [
@@ -14448,6 +15816,78 @@
         "conditions": [
           {
             "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/red_candle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:red_candle",
+                    "properties": {
+                      "candles": "2"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:red_candle",
+                    "properties": {
+                      "candles": "3"
+                    }
+                  }
+                ],
+                "count": 3
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:red_candle",
+                    "properties": {
+                      "candles": "4"
+                    }
+                  }
+                ],
+                "count": 4
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:red_candle"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/red_candle_cake": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:red_candle"
           }
         ]
       }
@@ -15441,6 +16881,82 @@
       }
     ]
   },
+  "blocks/semi_weathered_copper_block": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:semi_weathered_copper_block"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/semi_weathered_cut_copper": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:semi_weathered_cut_copper"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/semi_weathered_cut_copper_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:semi_weathered_cut_copper_slab"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/semi_weathered_cut_copper_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:semi_weathered_cut_copper_stairs"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/shroomlight": {
     "type": "minecraft:block",
     "pools": [
@@ -15538,6 +17054,35 @@
         "conditions": [
           {
             "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/small_amethyst_bud": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:small_amethyst_bud"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "enchantments": [
+                {
+                  "enchantment": "minecraft:silk_touch",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
           }
         ]
       }
@@ -17659,6 +19204,25 @@
       }
     ]
   },
+  "blocks/tinted_glass": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:tinted_glass"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/tnt": {
     "type": "minecraft:block",
     "pools": [
@@ -17865,6 +19429,25 @@
                 }
               ]
             }
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/tuff": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:tuff"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
           }
         ]
       }
@@ -18393,6 +19976,329 @@
       }
     ]
   },
+  "blocks/water_cauldron": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:cauldron"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/waxed_copper": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:waxed_copper"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/waxed_cut_copper": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:waxed_cut_copper"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/waxed_cut_copper_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:waxed_cut_copper_slab"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/waxed_cut_copper_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:waxed_cut_copper_stairs"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/waxed_lightly_weathered_copper": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:waxed_lightly_weathered_copper"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/waxed_lightly_weathered_cut_copper": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:waxed_lightly_weathered_cut_copper"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/waxed_lightly_weathered_cut_copper_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:waxed_lightly_weathered_cut_copper_slab"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/waxed_lightly_weathered_cut_copper_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:waxed_lightly_weathered_cut_copper_stairs"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/waxed_semi_weathered_copper": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:waxed_semi_weathered_copper"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/waxed_semi_weathered_cut_copper": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:waxed_semi_weathered_cut_copper"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/waxed_semi_weathered_cut_copper_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:waxed_semi_weathered_cut_copper_slab"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/waxed_semi_weathered_cut_copper_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:waxed_semi_weathered_cut_copper_stairs"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/weathered_copper_block": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:weathered_copper_block"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/weathered_cut_copper": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:weathered_cut_copper"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/weathered_cut_copper_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:weathered_cut_copper_slab"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/weathered_cut_copper_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:weathered_cut_copper_stairs"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/weeping_vines": {
     "type": "minecraft:block",
     "pools": [
@@ -18659,6 +20565,78 @@
         "conditions": [
           {
             "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/white_candle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:white_candle",
+                    "properties": {
+                      "candles": "2"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:white_candle",
+                    "properties": {
+                      "candles": "3"
+                    }
+                  }
+                ],
+                "count": 3
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:white_candle",
+                    "properties": {
+                      "candles": "4"
+                    }
+                  }
+                ],
+                "count": 4
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:white_candle"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/white_candle_cake": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:white_candle"
           }
         ]
       }
@@ -18997,6 +20975,78 @@
         "conditions": [
           {
             "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/yellow_candle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:yellow_candle",
+                    "properties": {
+                      "candles": "2"
+                    }
+                  }
+                ],
+                "count": 2
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:yellow_candle",
+                    "properties": {
+                      "candles": "3"
+                    }
+                  }
+                ],
+                "count": 3
+              },
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:yellow_candle",
+                    "properties": {
+                      "candles": "4"
+                    }
+                  }
+                ],
+                "count": 4
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:yellow_candle"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/yellow_candle_cake": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:yellow_candle"
           }
         ]
       }
@@ -22699,14 +24749,21 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
-                    "type": "minecraft:jump_boost",
+                    "type": "minecraft:weakness",
+                    "duration": {
+                      "min": 6.0,
+                      "max": 8.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:saturation",
                     "duration": {
                       "min": 7.0,
                       "max": 10.0
                     }
                   },
                   {
-                    "type": "minecraft:saturation",
+                    "type": "minecraft:night_vision",
                     "duration": {
                       "min": 7.0,
                       "max": 10.0
@@ -22727,17 +24784,10 @@
                     }
                   },
                   {
-                    "type": "minecraft:night_vision",
+                    "type": "minecraft:jump_boost",
                     "duration": {
                       "min": 7.0,
                       "max": 10.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:weakness",
-                    "duration": {
-                      "min": 6.0,
-                      "max": 8.0
                     }
                   }
                 ]
