@@ -10811,6 +10811,12 @@
       }
     ]
   },
+  "block/dripstone_block": {
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+      "all": "minecraft:block/dripstone_block"
+    }
+  },
   "block/dropper": {
     "parent": "minecraft:block/orientable",
     "textures": {
@@ -19832,6 +19838,160 @@
       "top": "minecraft:block/podzol_top",
       "bottom": "minecraft:block/dirt",
       "side": "minecraft:block/podzol_side"
+    }
+  },
+  "block/pointed_dripstone": {
+    "ambientocclusion": true,
+    "textures": {
+      "particle": "#cross"
+    },
+    "elements": [
+      {
+        "from": [
+          0.8,
+          0,
+          8
+        ],
+        "to": [
+          15.2,
+          16,
+          8
+        ],
+        "rotation": {
+          "origin": [
+            8,
+            8,
+            8
+          ],
+          "axis": "y",
+          "angle": 45,
+          "rescale": true
+        },
+        "shade": false,
+        "faces": {
+          "north": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#cross"
+          },
+          "south": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#cross"
+          }
+        }
+      },
+      {
+        "from": [
+          8,
+          0,
+          0.8
+        ],
+        "to": [
+          8,
+          16,
+          15.2
+        ],
+        "rotation": {
+          "origin": [
+            8,
+            8,
+            8
+          ],
+          "axis": "y",
+          "angle": 45,
+          "rescale": true
+        },
+        "shade": false,
+        "faces": {
+          "west": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#cross"
+          },
+          "east": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#cross"
+          }
+        }
+      }
+    ]
+  },
+  "block/pointed_dripstone_down_base": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/pointed_dripstone_down_base"
+    }
+  },
+  "block/pointed_dripstone_down_frustum": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/pointed_dripstone_down_frustum"
+    }
+  },
+  "block/pointed_dripstone_down_middle": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/pointed_dripstone_down_middle"
+    }
+  },
+  "block/pointed_dripstone_down_tip": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/pointed_dripstone_down_tip"
+    }
+  },
+  "block/pointed_dripstone_down_tip_merge": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/pointed_dripstone_down_tip_merge"
+    }
+  },
+  "block/pointed_dripstone_up_base": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/pointed_dripstone_up_base"
+    }
+  },
+  "block/pointed_dripstone_up_frustum": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/pointed_dripstone_up_frustum"
+    }
+  },
+  "block/pointed_dripstone_up_middle": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/pointed_dripstone_up_middle"
+    }
+  },
+  "block/pointed_dripstone_up_tip": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/pointed_dripstone_up_tip"
+    }
+  },
+  "block/pointed_dripstone_up_tip_merge": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/pointed_dripstone_up_tip_merge"
     }
   },
   "block/polished_andesite": {
@@ -50425,6 +50585,9 @@
   "item/dried_kelp_block": {
     "parent": "minecraft:block/dried_kelp_block"
   },
+  "item/dripstone_block": {
+    "parent": "minecraft:block/dripstone_block"
+  },
   "item/dropper": {
     "parent": "minecraft:block/dropper"
   },
@@ -52425,6 +52588,12 @@
   "item/podzol": {
     "parent": "minecraft:block/podzol"
   },
+  "item/pointed_dripstone": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "minecraft:item/pointed_dripstone"
+    }
+  },
   "item/poisonous_potato": {
     "parent": "minecraft:item/generated",
     "textures": {
@@ -53390,71 +53559,193 @@
     "parent": "minecraft:block/spruce_wood"
   },
   "item/spyglass": {
-    "parent": "item/generated",
     "textures": {
-      "layer0": "item/spyglass"
+      "spyglass": "item/spyglass"
     },
-    "overrides": [
+    "elements": [
       {
-        "predicate": {
-          "scoping": 1
-        },
-        "model": "item/spyglass_scoping"
+        "from": [
+          7,
+          8.5,
+          7
+        ],
+        "to": [
+          9,
+          13.5,
+          9
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              0,
+              2,
+              2,
+              7
+            ],
+            "texture": "#spyglass"
+          },
+          "east": {
+            "uv": [
+              0,
+              2,
+              2,
+              7
+            ],
+            "texture": "#spyglass"
+          },
+          "south": {
+            "uv": [
+              0,
+              2,
+              2,
+              7
+            ],
+            "texture": "#spyglass"
+          },
+          "west": {
+            "uv": [
+              0,
+              2,
+              2,
+              7
+            ],
+            "texture": "#spyglass"
+          },
+          "up": {
+            "uv": [
+              0,
+              0,
+              2,
+              2
+            ],
+            "texture": "#spyglass"
+          }
+        }
+      },
+      {
+        "from": [
+          6.9,
+          2.4,
+          6.9
+        ],
+        "to": [
+          9.1,
+          8.6,
+          9.1
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              0,
+              7,
+              2,
+              13
+            ],
+            "texture": "#spyglass"
+          },
+          "east": {
+            "uv": [
+              0,
+              7,
+              2,
+              13
+            ],
+            "texture": "#spyglass"
+          },
+          "south": {
+            "uv": [
+              0,
+              7,
+              2,
+              13
+            ],
+            "texture": "#spyglass"
+          },
+          "west": {
+            "uv": [
+              0,
+              7,
+              2,
+              13
+            ],
+            "texture": "#spyglass"
+          },
+          "up": {
+            "uv": [
+              0,
+              5,
+              2,
+              7
+            ],
+            "texture": "#spyglass"
+          },
+          "down": {
+            "uv": [
+              0,
+              13,
+              2,
+              15
+            ],
+            "texture": "#spyglass"
+          }
+        }
       }
-    ]
-  },
-  "item/spyglass_scoping": {
-    "parent": "item/generated",
-    "textures": {
-      "layer0": "item/spyglass"
-    },
+    ],
+    "gui_light": "front",
     "display": {
       "thirdperson_righthand": {
+        "translation": [
+          0,
+          -2,
+          0
+        ]
+      },
+      "ground": {
         "rotation": [
-          155,
-          -45,
-          -25
+          90,
+          0,
+          0
+        ]
+      },
+      "gui": {
+        "rotation": [
+          -67.5,
+          0,
+          45
+        ],
+        "scale": [
+          1.5,
+          1.5,
+          1.5
+        ]
+      },
+      "head": {
+        "rotation": [
+          90,
+          0,
+          0
         ],
         "translation": [
-          5,
-          -3.5,
-          -2.5
+          0,
+          0,
+          -16
         ],
         "scale": [
-          0.8,
-          0.8,
-          0.8
+          1.6,
+          1.6,
+          1.6
         ]
       },
-      "thirdperson_lefthand": {
-        "rotation": [
-          155,
-          125,
-          25
-        ],
+      "fixed": {
         "translation": [
-          3,
-          -3.5,
-          -2.5
+          0,
+          0,
+          -1.5
         ],
         "scale": [
-          0.8,
-          0.8,
-          0.8
-        ]
-      },
-      "firstperson_righthand": {
-        "scale": [
-          0.0,
-          0.0,
-          0.0
-        ]
-      },
-      "firstperson_lefthand": {
-        "scale": [
-          0.0,
-          0.0,
-          0.0
+          1.5,
+          1.5,
+          1.5
         ]
       }
     }

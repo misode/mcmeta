@@ -6566,6 +6566,26 @@
       }
     ]
   },
+  "blocks/dripstone_block": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:dripstone_block"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/dropper": {
     "type": "minecraft:block",
     "pools": [
@@ -13917,6 +13937,26 @@
                 "name": "minecraft:dirt"
               }
             ]
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/pointed_dripstone": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pointed_dripstone"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
           }
         ]
       }
@@ -25968,19 +26008,11 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
-                    "type": "minecraft:jump_boost",
+                    "type": "minecraft:saturation",
                     "duration": {
                       "type": "minecraft:uniform",
                       "min": 7.0,
                       "max": 10.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:weakness",
-                    "duration": {
-                      "type": "minecraft:uniform",
-                      "min": 6.0,
-                      "max": 8.0
                     }
                   },
                   {
@@ -26000,6 +26032,14 @@
                     }
                   },
                   {
+                    "type": "minecraft:weakness",
+                    "duration": {
+                      "type": "minecraft:uniform",
+                      "min": 6.0,
+                      "max": 8.0
+                    }
+                  },
+                  {
                     "type": "minecraft:night_vision",
                     "duration": {
                       "type": "minecraft:uniform",
@@ -26008,7 +26048,7 @@
                     }
                   },
                   {
-                    "type": "minecraft:saturation",
+                    "type": "minecraft:jump_boost",
                     "duration": {
                       "type": "minecraft:uniform",
                       "min": 7.0,
