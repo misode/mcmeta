@@ -4705,12 +4705,26 @@
         "entries": [
           {
             "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:cut_copper_slab",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "add": false
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
             "name": "minecraft:cut_copper_slab"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
           }
         ]
       }
@@ -10603,12 +10617,26 @@
         "entries": [
           {
             "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:lightly_weathered_cut_copper_slab",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "add": false
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
             "name": "minecraft:lightly_weathered_cut_copper_slab"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
           }
         ]
       }
@@ -17566,6 +17594,26 @@
       }
     ]
   },
+  "blocks/sculk_sensor": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:sculk_sensor"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/sea_lantern": {
     "type": "minecraft:block",
     "pools": [
@@ -17768,12 +17816,26 @@
         "entries": [
           {
             "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:semi_weathered_cut_copper_slab",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "add": false
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
             "name": "minecraft:semi_weathered_cut_copper_slab"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
           }
         ]
       }
@@ -21023,12 +21085,26 @@
         "entries": [
           {
             "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:waxed_cut_copper_slab",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "add": false
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
             "name": "minecraft:waxed_cut_copper_slab"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
           }
         ]
       }
@@ -21103,12 +21179,26 @@
         "entries": [
           {
             "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:waxed_lightly_weathered_cut_copper_slab",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "add": false
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
             "name": "minecraft:waxed_lightly_weathered_cut_copper_slab"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
           }
         ]
       }
@@ -21183,12 +21273,26 @@
         "entries": [
           {
             "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:waxed_semi_weathered_cut_copper_slab",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "add": false
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
             "name": "minecraft:waxed_semi_weathered_cut_copper_slab"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
           }
         ]
       }
@@ -21263,12 +21367,26 @@
         "entries": [
           {
             "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:weathered_cut_copper_slab",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "add": false
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
             "name": "minecraft:weathered_cut_copper_slab"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
           }
         ]
       }
@@ -26008,7 +26126,31 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
-                    "type": "minecraft:saturation",
+                    "type": "minecraft:weakness",
+                    "duration": {
+                      "type": "minecraft:uniform",
+                      "min": 6.0,
+                      "max": 8.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:poison",
+                    "duration": {
+                      "type": "minecraft:uniform",
+                      "min": 10.0,
+                      "max": 20.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:night_vision",
+                    "duration": {
+                      "type": "minecraft:uniform",
+                      "min": 7.0,
+                      "max": 10.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:jump_boost",
                     "duration": {
                       "type": "minecraft:uniform",
                       "min": 7.0,
@@ -26024,31 +26166,7 @@
                     }
                   },
                   {
-                    "type": "minecraft:poison",
-                    "duration": {
-                      "type": "minecraft:uniform",
-                      "min": 10.0,
-                      "max": 20.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:weakness",
-                    "duration": {
-                      "type": "minecraft:uniform",
-                      "min": 6.0,
-                      "max": 8.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:night_vision",
-                    "duration": {
-                      "type": "minecraft:uniform",
-                      "min": 7.0,
-                      "max": 10.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:jump_boost",
+                    "type": "minecraft:saturation",
                     "duration": {
                       "type": "minecraft:uniform",
                       "min": 7.0,
