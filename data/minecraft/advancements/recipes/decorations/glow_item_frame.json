@@ -2,16 +2,26 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "minecraft:waxed_lightly_weathered_cut_copper_from_waxed_block"
+      "minecraft:glow_item_frame"
     ]
   },
   "criteria": {
-    "has_waxed_lightly_weathered_copper": {
+    "has_item_frame": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "minecraft:waxed_lightly_weathered_copper"
+            "item": "minecraft:item_frame"
+          }
+        ]
+      }
+    },
+    "has_glow_ink_sac": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:glow_ink_sac"
           }
         ]
       }
@@ -19,13 +29,14 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minecraft:waxed_lightly_weathered_cut_copper_from_waxed_block"
+        "recipe": "minecraft:glow_item_frame"
       }
     }
   },
   "requirements": [
     [
-      "has_waxed_lightly_weathered_copper",
+      "has_item_frame",
+      "has_glow_ink_sac",
       "has_the_recipe"
     ]
   ]
