@@ -723,6 +723,288 @@
       }
     ]
   },
+  "blocks/azalea": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:azalea"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/azalea_leaves": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:alternative",
+                    "terms": [
+                      {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                          "item": "minecraft:shears"
+                        }
+                      },
+                      {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                          "enchantments": [
+                            {
+                              "enchantment": "minecraft:silk_touch",
+                              "levels": {
+                                "min": 1
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "name": "minecraft:azalea_leaves"
+              },
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:survives_explosion"
+                  },
+                  {
+                    "condition": "minecraft:table_bonus",
+                    "enchantment": "minecraft:fortune",
+                    "chances": [
+                      0.05,
+                      0.0625,
+                      0.083333336,
+                      0.1
+                    ]
+                  }
+                ],
+                "name": "minecraft:azalea"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "minecraft:table_bonus",
+                "enchantment": "minecraft:fortune",
+                "chances": [
+                  0.02,
+                  0.022222223,
+                  0.025,
+                  0.033333335,
+                  0.1
+                ]
+              }
+            ],
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "type": "minecraft:uniform",
+                  "min": 1.0,
+                  "max": 2.0
+                },
+                "add": false
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:stick"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "item": "minecraft:shears"
+                  }
+                },
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "enchantments": [
+                      {
+                        "enchantment": "minecraft:silk_touch",
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/azalea_leaves_flowers": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:alternative",
+                    "terms": [
+                      {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                          "item": "minecraft:shears"
+                        }
+                      },
+                      {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                          "enchantments": [
+                            {
+                              "enchantment": "minecraft:silk_touch",
+                              "levels": {
+                                "min": 1
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "name": "minecraft:azalea_leaves_flowers"
+              },
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:survives_explosion"
+                  },
+                  {
+                    "condition": "minecraft:table_bonus",
+                    "enchantment": "minecraft:fortune",
+                    "chances": [
+                      0.05,
+                      0.0625,
+                      0.083333336,
+                      0.1
+                    ]
+                  }
+                ],
+                "name": "minecraft:flowering_azalea"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "minecraft:table_bonus",
+                "enchantment": "minecraft:fortune",
+                "chances": [
+                  0.02,
+                  0.022222223,
+                  0.025,
+                  0.033333335,
+                  0.1
+                ]
+              }
+            ],
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "type": "minecraft:uniform",
+                  "min": 1.0,
+                  "max": 2.0
+                },
+                "add": false
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:stick"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "item": "minecraft:shears"
+                  }
+                },
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "enchantments": [
+                      {
+                        "enchantment": "minecraft:silk_touch",
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
   "blocks/azure_bluet": {
     "type": "minecraft:block",
     "pools": [
@@ -1046,6 +1328,29 @@
         ]
       }
     ]
+  },
+  "blocks/big_dripleaf": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:big_dripleaf"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/big_dripleaf_stem": {
+    "type": "minecraft:block"
   },
   "blocks/birch_button": {
     "type": "minecraft:block",
@@ -3514,6 +3819,54 @@
         "conditions": [
           {
             "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/cave_vines_body": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:glow_berries"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "minecraft:cave_vines_body",
+            "properties": {
+              "berries": "true"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/cave_vines_head": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:glow_berries"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "minecraft:cave_vines_head",
+            "properties": {
+              "berries": "true"
+            }
           }
         ]
       }
@@ -6904,6 +7257,100 @@
       }
     ]
   },
+  "blocks/exposed_copper_block": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:exposed_copper_block"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/exposed_cut_copper": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:exposed_cut_copper"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/exposed_cut_copper_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:exposed_cut_copper_slab",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "add": false
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:exposed_cut_copper_slab"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/exposed_cut_copper_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:exposed_cut_copper_stairs"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/farmland": {
     "type": "minecraft:block",
     "pools": [
@@ -7118,6 +7565,26 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:flower_pot"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/flowering_azalea": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:flowering_azalea"
           }
         ],
         "conditions": [
@@ -8447,6 +8914,29 @@
         "conditions": [
           {
             "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/hanging_roots": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:hanging_roots"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "item": "minecraft:shears"
+            }
           }
         ]
       }
@@ -10591,100 +11081,6 @@
       }
     ]
   },
-  "blocks/lightly_weathered_copper_block": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:lightly_weathered_copper_block"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/lightly_weathered_cut_copper": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:lightly_weathered_cut_copper"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/lightly_weathered_cut_copper_slab": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "conditions": [
-                  {
-                    "condition": "minecraft:block_state_property",
-                    "block": "minecraft:lightly_weathered_cut_copper_slab",
-                    "properties": {
-                      "type": "double"
-                    }
-                  }
-                ],
-                "count": 2.0,
-                "add": false
-              },
-              {
-                "function": "minecraft:explosion_decay"
-              }
-            ],
-            "name": "minecraft:lightly_weathered_cut_copper_slab"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/lightly_weathered_cut_copper_stairs": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:lightly_weathered_cut_copper_stairs"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
   "blocks/lightning_rod": {
     "type": "minecraft:block",
     "pools": [
@@ -11840,6 +12236,46 @@
         "functions": [
           {
             "function": "minecraft:explosion_decay"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/moss_block": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:moss_block"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/moss_carpet": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:moss_carpet"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
           }
         ]
       }
@@ -13404,6 +13840,100 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:oxeye_daisy"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/oxidized_copper_block": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:oxidized_copper_block"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/oxidized_cut_copper": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:oxidized_cut_copper"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/oxidized_cut_copper_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:oxidized_cut_copper_slab",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "add": false
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:oxidized_cut_copper_slab"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/oxidized_cut_copper_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:oxidized_cut_copper_stairs"
           }
         ],
         "conditions": [
@@ -17454,6 +17984,26 @@
       }
     ]
   },
+  "blocks/rooted_dirt": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:rooted_dirt"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/rose_bush": {
     "type": "minecraft:block",
     "pools": [
@@ -17790,100 +18340,6 @@
       }
     ]
   },
-  "blocks/semi_weathered_copper_block": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:semi_weathered_copper_block"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/semi_weathered_cut_copper": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:semi_weathered_cut_copper"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/semi_weathered_cut_copper_slab": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "conditions": [
-                  {
-                    "condition": "minecraft:block_state_property",
-                    "block": "minecraft:semi_weathered_cut_copper_slab",
-                    "properties": {
-                      "type": "double"
-                    }
-                  }
-                ],
-                "count": 2.0,
-                "add": false
-              },
-              {
-                "function": "minecraft:explosion_decay"
-              }
-            ],
-            "name": "minecraft:semi_weathered_cut_copper_slab"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/semi_weathered_cut_copper_stairs": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:semi_weathered_cut_copper_stairs"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
   "blocks/shroomlight": {
     "type": "minecraft:block",
     "pools": [
@@ -18014,6 +18470,29 @@
                   }
                 }
               ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/small_dripleaf": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:small_dripleaf"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "item": "minecraft:shears"
             }
           }
         ]
@@ -18876,6 +19355,26 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:sponge"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/spore_blossom": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:spore_blossom"
           }
         ],
         "conditions": [
@@ -21153,7 +21652,7 @@
       }
     ]
   },
-  "blocks/waxed_lightly_weathered_copper": {
+  "blocks/waxed_exposed_copper": {
     "type": "minecraft:block",
     "pools": [
       {
@@ -21162,7 +21661,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "minecraft:waxed_lightly_weathered_copper"
+            "name": "minecraft:waxed_exposed_copper"
           }
         ],
         "conditions": [
@@ -21173,7 +21672,7 @@
       }
     ]
   },
-  "blocks/waxed_lightly_weathered_cut_copper": {
+  "blocks/waxed_exposed_cut_copper": {
     "type": "minecraft:block",
     "pools": [
       {
@@ -21182,7 +21681,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "minecraft:waxed_lightly_weathered_cut_copper"
+            "name": "minecraft:waxed_exposed_cut_copper"
           }
         ],
         "conditions": [
@@ -21193,7 +21692,7 @@
       }
     ]
   },
-  "blocks/waxed_lightly_weathered_cut_copper_slab": {
+  "blocks/waxed_exposed_cut_copper_slab": {
     "type": "minecraft:block",
     "pools": [
       {
@@ -21208,7 +21707,7 @@
                 "conditions": [
                   {
                     "condition": "minecraft:block_state_property",
-                    "block": "minecraft:waxed_lightly_weathered_cut_copper_slab",
+                    "block": "minecraft:waxed_exposed_cut_copper_slab",
                     "properties": {
                       "type": "double"
                     }
@@ -21221,13 +21720,13 @@
                 "function": "minecraft:explosion_decay"
               }
             ],
-            "name": "minecraft:waxed_lightly_weathered_cut_copper_slab"
+            "name": "minecraft:waxed_exposed_cut_copper_slab"
           }
         ]
       }
     ]
   },
-  "blocks/waxed_lightly_weathered_cut_copper_stairs": {
+  "blocks/waxed_exposed_cut_copper_stairs": {
     "type": "minecraft:block",
     "pools": [
       {
@@ -21236,7 +21735,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "minecraft:waxed_lightly_weathered_cut_copper_stairs"
+            "name": "minecraft:waxed_exposed_cut_copper_stairs"
           }
         ],
         "conditions": [
@@ -21247,7 +21746,7 @@
       }
     ]
   },
-  "blocks/waxed_semi_weathered_copper": {
+  "blocks/waxed_weathered_copper": {
     "type": "minecraft:block",
     "pools": [
       {
@@ -21256,7 +21755,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "minecraft:waxed_semi_weathered_copper"
+            "name": "minecraft:waxed_weathered_copper"
           }
         ],
         "conditions": [
@@ -21267,7 +21766,7 @@
       }
     ]
   },
-  "blocks/waxed_semi_weathered_cut_copper": {
+  "blocks/waxed_weathered_cut_copper": {
     "type": "minecraft:block",
     "pools": [
       {
@@ -21276,7 +21775,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "minecraft:waxed_semi_weathered_cut_copper"
+            "name": "minecraft:waxed_weathered_cut_copper"
           }
         ],
         "conditions": [
@@ -21287,7 +21786,7 @@
       }
     ]
   },
-  "blocks/waxed_semi_weathered_cut_copper_slab": {
+  "blocks/waxed_weathered_cut_copper_slab": {
     "type": "minecraft:block",
     "pools": [
       {
@@ -21302,7 +21801,7 @@
                 "conditions": [
                   {
                     "condition": "minecraft:block_state_property",
-                    "block": "minecraft:waxed_semi_weathered_cut_copper_slab",
+                    "block": "minecraft:waxed_weathered_cut_copper_slab",
                     "properties": {
                       "type": "double"
                     }
@@ -21315,13 +21814,13 @@
                 "function": "minecraft:explosion_decay"
               }
             ],
-            "name": "minecraft:waxed_semi_weathered_cut_copper_slab"
+            "name": "minecraft:waxed_weathered_cut_copper_slab"
           }
         ]
       }
     ]
   },
-  "blocks/waxed_semi_weathered_cut_copper_stairs": {
+  "blocks/waxed_weathered_cut_copper_stairs": {
     "type": "minecraft:block",
     "pools": [
       {
@@ -21330,7 +21829,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "minecraft:waxed_semi_weathered_cut_copper_stairs"
+            "name": "minecraft:waxed_weathered_cut_copper_stairs"
           }
         ],
         "conditions": [
@@ -26149,11 +26648,11 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
-                    "type": "minecraft:night_vision",
+                    "type": "minecraft:blindness",
                     "duration": {
                       "type": "minecraft:uniform",
-                      "min": 7.0,
-                      "max": 10.0
+                      "min": 5.0,
+                      "max": 7.0
                     }
                   },
                   {
@@ -26165,6 +26664,22 @@
                     }
                   },
                   {
+                    "type": "minecraft:saturation",
+                    "duration": {
+                      "type": "minecraft:uniform",
+                      "min": 7.0,
+                      "max": 10.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:night_vision",
+                    "duration": {
+                      "type": "minecraft:uniform",
+                      "min": 7.0,
+                      "max": 10.0
+                    }
+                  },
+                  {
                     "type": "minecraft:weakness",
                     "duration": {
                       "type": "minecraft:uniform",
@@ -26173,23 +26688,7 @@
                     }
                   },
                   {
-                    "type": "minecraft:blindness",
-                    "duration": {
-                      "type": "minecraft:uniform",
-                      "min": 5.0,
-                      "max": 7.0
-                    }
-                  },
-                  {
                     "type": "minecraft:jump_boost",
-                    "duration": {
-                      "type": "minecraft:uniform",
-                      "min": 7.0,
-                      "max": 10.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:saturation",
                     "duration": {
                       "type": "minecraft:uniform",
                       "min": 7.0,
@@ -30139,7 +30638,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "minecraft:gold_ingot"
+            "name": "minecraft:copper_ingot"
           }
         ],
         "conditions": [
