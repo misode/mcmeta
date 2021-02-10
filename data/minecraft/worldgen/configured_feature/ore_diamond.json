@@ -4,31 +4,42 @@
       "config": {
         "feature": {
           "config": {
-            "target": {
-              "tag": "minecraft:base_stone_overworld",
-              "predicate_type": "minecraft:tag_match"
+            "feature": {
+              "config": {
+                "target": {
+                  "tag": "minecraft:base_stone_overworld",
+                  "predicate_type": "minecraft:tag_match"
+                },
+                "state": {
+                  "Name": "minecraft:diamond_ore"
+                },
+                "size": 8
+              },
+              "type": "minecraft:ore"
             },
-            "state": {
-              "Name": "minecraft:diamond_ore"
-            },
-            "size": 8
+            "decorator": {
+              "config": {
+                "bottom_offset": -64,
+                "top_offset": -64,
+                "maximum": 16
+              },
+              "type": "minecraft:range"
+            }
           },
-          "type": "minecraft:ore"
+          "type": "minecraft:decorated"
         },
         "decorator": {
-          "config": {
-            "bottom_offset": 0,
-            "top_offset": 0,
-            "maximum": 16
-          },
-          "type": "minecraft:range"
+          "config": {},
+          "type": "minecraft:square"
         }
       },
       "type": "minecraft:decorated"
     },
     "decorator": {
-      "config": {},
-      "type": "minecraft:square"
+      "config": {
+        "count": 2
+      },
+      "type": "minecraft:count"
     }
   },
   "type": "minecraft:decorated"
