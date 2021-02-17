@@ -2,20 +2,57 @@
   "config": {
     "feature": {
       "config": {
-        "state": {
-          "Properties": {
-            "level": "0"
+        "feature": {
+          "config": {
+            "feature": {
+              "config": {
+                "feature": {
+                  "config": {
+                    "state": {
+                      "Properties": {
+                        "level": "0"
+                      },
+                      "Name": "minecraft:lava"
+                    }
+                  },
+                  "type": "minecraft:lake"
+                },
+                "decorator": {
+                  "config": {
+                    "chance": 80
+                  },
+                  "type": "minecraft:lava_lake"
+                }
+              },
+              "type": "minecraft:decorated"
+            },
+            "decorator": {
+              "config": {
+                "bottom_inclusive": {
+                  "above_bottom": 0
+                },
+                "top_inclusive": {
+                  "below_top": 0
+                },
+                "cutoff": 8
+              },
+              "type": "minecraft:range_biased_to_bottom"
+            }
           },
-          "Name": "minecraft:lava"
+          "type": "minecraft:decorated"
+        },
+        "decorator": {
+          "config": {},
+          "type": "minecraft:square"
         }
       },
-      "type": "minecraft:lake"
+      "type": "minecraft:decorated"
     },
     "decorator": {
       "config": {
-        "chance": 80
+        "chance": 8
       },
-      "type": "minecraft:lava_lake"
+      "type": "minecraft:chance"
     }
   },
   "type": "minecraft:decorated"
