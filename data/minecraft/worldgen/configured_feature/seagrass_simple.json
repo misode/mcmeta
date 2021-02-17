@@ -2,37 +2,47 @@
   "config": {
     "feature": {
       "config": {
-        "to_place": {
-          "Name": "minecraft:seagrass"
+        "feature": {
+          "config": {
+            "to_place": {
+              "Name": "minecraft:seagrass"
+            },
+            "place_on": [
+              {
+                "Name": "minecraft:stone"
+              }
+            ],
+            "place_in": [
+              {
+                "Properties": {
+                  "level": "0"
+                },
+                "Name": "minecraft:water"
+              }
+            ],
+            "place_under": [
+              {
+                "Properties": {
+                  "level": "0"
+                },
+                "Name": "minecraft:water"
+              }
+            ]
+          },
+          "type": "minecraft:simple_block"
         },
-        "place_on": [
-          {
-            "Name": "minecraft:stone"
-          }
-        ],
-        "place_in": [
-          {
-            "Properties": {
-              "level": "0"
-            },
-            "Name": "minecraft:water"
-          }
-        ],
-        "place_under": [
-          {
-            "Properties": {
-              "level": "0"
-            },
-            "Name": "minecraft:water"
-          }
-        ]
+        "decorator": {
+          "config": {
+            "chance": 10
+          },
+          "type": "minecraft:chance"
+        }
       },
-      "type": "minecraft:simple_block"
+      "type": "minecraft:decorated"
     },
     "decorator": {
       "config": {
-        "step": "liquid",
-        "probability": 0.1
+        "step": "liquid"
       },
       "type": "minecraft:carving_mask"
     }
