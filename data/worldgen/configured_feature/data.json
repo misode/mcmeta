@@ -146,9 +146,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -58,
-                  "top_offset": -58,
-                  "maximum": 47
+                  "bottom_inclusive": {
+                    "above_bottom": 6
+                  },
+                  "top_inclusive": {
+                    "absolute": 46
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -360,9 +363,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 0,
-                  "top_offset": 0,
-                  "maximum": 128
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "below_top": 0
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -397,9 +403,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 0,
-                  "top_offset": 0,
-                  "maximum": 128
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "below_top": 0
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -734,9 +743,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 0,
-                  "top_offset": 0,
-                  "maximum": 128
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "below_top": 0
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -771,9 +783,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 30,
-                  "top_offset": 32,
-                  "maximum": 64
+                  "bottom_inclusive": {
+                    "absolute": 30
+                  },
+                  "top_inclusive": {
+                    "absolute": 61
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -822,9 +837,12 @@
           "feature": "minecraft:patch_brown_mushroom",
           "decorator": {
             "config": {
-              "bottom_offset": 0,
-              "top_offset": 0,
-              "maximum": 128
+              "bottom_inclusive": {
+                "above_bottom": 0
+              },
+              "top_inclusive": {
+                "below_top": 0
+              }
             },
             "type": "minecraft:range"
           }
@@ -1071,8 +1089,17 @@
         "type": "minecraft:random_selector"
       },
       "decorator": {
-        "config": {},
-        "type": "minecraft:dark_oak_tree"
+        "config": {
+          "outer": {
+            "config": {},
+            "type": "minecraft:dark_oak_tree"
+          },
+          "inner": {
+            "config": {},
+            "type": "minecraft:heightmap"
+          }
+        },
+        "type": "minecraft:decorated"
       }
     },
     "type": "minecraft:decorated"
@@ -1108,8 +1135,17 @@
         "type": "minecraft:random_selector"
       },
       "decorator": {
-        "config": {},
-        "type": "minecraft:dark_oak_tree"
+        "config": {
+          "outer": {
+            "config": {},
+            "type": "minecraft:dark_oak_tree"
+          },
+          "inner": {
+            "config": {},
+            "type": "minecraft:heightmap"
+          }
+        },
+        "type": "minecraft:decorated"
       }
     },
     "type": "minecraft:decorated"
@@ -1402,9 +1438,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -64,
-                  "top_offset": -64,
-                  "maximum": 60
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "absolute": 59
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -1434,18 +1473,47 @@
     "config": {
       "feature": {
         "config": {
-          "exit": [
-            100,
-            50,
-            0
-          ],
-          "exact": true
+          "feature": {
+            "config": {
+              "feature": {
+                "config": {
+                  "feature": {
+                    "config": {
+                      "exit": [
+                        100,
+                        50,
+                        0
+                      ],
+                      "exact": true
+                    },
+                    "type": "minecraft:end_gateway"
+                  },
+                  "decorator": {
+                    "config": {},
+                    "type": "minecraft:end_gateway"
+                  }
+                },
+                "type": "minecraft:decorated"
+              },
+              "decorator": {
+                "config": {},
+                "type": "minecraft:heightmap"
+              }
+            },
+            "type": "minecraft:decorated"
+          },
+          "decorator": {
+            "config": {},
+            "type": "minecraft:square"
+          }
         },
-        "type": "minecraft:end_gateway"
+        "type": "minecraft:decorated"
       },
       "decorator": {
-        "config": {},
-        "type": "minecraft:end_gateway"
+        "config": {
+          "chance": 700
+        },
+        "type": "minecraft:chance"
       }
     },
     "type": "minecraft:decorated"
@@ -1462,10 +1530,50 @@
   },
   "end_island_decorated": {
     "config": {
-      "feature": "minecraft:end_island",
+      "feature": {
+        "config": {
+          "feature": {
+            "config": {
+              "feature": {
+                "config": {
+                  "feature": "minecraft:end_island",
+                  "decorator": {
+                    "config": {
+                      "bottom_inclusive": {
+                        "absolute": 55
+                      },
+                      "top_inclusive": {
+                        "absolute": 70
+                      }
+                    },
+                    "type": "minecraft:range"
+                  }
+                },
+                "type": "minecraft:decorated"
+              },
+              "decorator": {
+                "config": {},
+                "type": "minecraft:square"
+              }
+            },
+            "type": "minecraft:decorated"
+          },
+          "decorator": {
+            "config": {
+              "count": 1,
+              "extra_chance": 0.25,
+              "extra_count": 1
+            },
+            "type": "minecraft:count_extra"
+          }
+        },
+        "type": "minecraft:decorated"
+      },
       "decorator": {
-        "config": {},
-        "type": "minecraft:end_island"
+        "config": {
+          "chance": 14
+        },
+        "type": "minecraft:chance"
       }
     },
     "type": "minecraft:decorated"
@@ -2450,6 +2558,9 @@
                     },
                     {
                       "Name": "minecraft:tuff"
+                    },
+                    {
+                      "Name": "minecraft:grimstone"
                     }
                   ],
                   "search_range": 20,
@@ -2467,9 +2578,12 @@
           },
           "decorator": {
             "config": {
-              "bottom_offset": -64,
-              "top_offset": -64,
-              "maximum": 55
+              "bottom_inclusive": {
+                "above_bottom": 0
+              },
+              "top_inclusive": {
+                "absolute": 54
+              }
             },
             "type": "minecraft:range"
           }
@@ -2500,9 +2614,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 0,
-                  "top_offset": 0,
-                  "maximum": 128
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "below_top": 0
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -2528,8 +2645,33 @@
   "glowstone_extra": {
     "config": {
       "feature": {
-        "config": {},
-        "type": "minecraft:glowstone_blob"
+        "config": {
+          "feature": {
+            "config": {
+              "feature": {
+                "config": {},
+                "type": "minecraft:glowstone_blob"
+              },
+              "decorator": {
+                "config": {
+                  "bottom_inclusive": {
+                    "above_bottom": 4
+                  },
+                  "top_inclusive": {
+                    "below_top": 4
+                  }
+                },
+                "type": "minecraft:range"
+              }
+            },
+            "type": "minecraft:decorated"
+          },
+          "decorator": {
+            "config": {},
+            "type": "minecraft:square"
+          }
+        },
+        "type": "minecraft:decorated"
       },
       "decorator": {
         "config": {
@@ -2994,20 +3136,57 @@
     "config": {
       "feature": {
         "config": {
-          "state": {
-            "Properties": {
-              "level": "0"
+          "feature": {
+            "config": {
+              "feature": {
+                "config": {
+                  "feature": {
+                    "config": {
+                      "state": {
+                        "Properties": {
+                          "level": "0"
+                        },
+                        "Name": "minecraft:lava"
+                      }
+                    },
+                    "type": "minecraft:lake"
+                  },
+                  "decorator": {
+                    "config": {
+                      "chance": 80
+                    },
+                    "type": "minecraft:lava_lake"
+                  }
+                },
+                "type": "minecraft:decorated"
+              },
+              "decorator": {
+                "config": {
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "below_top": 0
+                  },
+                  "cutoff": 8
+                },
+                "type": "minecraft:range_biased_to_bottom"
+              }
             },
-            "Name": "minecraft:lava"
+            "type": "minecraft:decorated"
+          },
+          "decorator": {
+            "config": {},
+            "type": "minecraft:square"
           }
         },
-        "type": "minecraft:lake"
+        "type": "minecraft:decorated"
       },
       "decorator": {
         "config": {
-          "chance": 80
+          "chance": 8
         },
-        "type": "minecraft:lava_lake"
+        "type": "minecraft:chance"
       }
     },
     "type": "minecraft:decorated"
@@ -3016,20 +3195,45 @@
     "config": {
       "feature": {
         "config": {
-          "state": {
-            "Properties": {
-              "level": "0"
+          "feature": {
+            "config": {
+              "feature": {
+                "config": {
+                  "state": {
+                    "Properties": {
+                      "level": "0"
+                    },
+                    "Name": "minecraft:water"
+                  }
+                },
+                "type": "minecraft:lake"
+              },
+              "decorator": {
+                "config": {
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "below_top": 0
+                  }
+                },
+                "type": "minecraft:range"
+              }
             },
-            "Name": "minecraft:water"
+            "type": "minecraft:decorated"
+          },
+          "decorator": {
+            "config": {},
+            "type": "minecraft:square"
           }
         },
-        "type": "minecraft:lake"
+        "type": "minecraft:decorated"
       },
       "decorator": {
         "config": {
           "chance": 4
         },
-        "type": "minecraft:water_lake"
+        "type": "minecraft:chance"
       }
     },
     "type": "minecraft:decorated"
@@ -3095,9 +3299,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -64,
-                  "top_offset": -64,
-                  "maximum": 60
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "absolute": 59
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -3312,9 +3519,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -64,
-                  "top_offset": -64,
-                  "maximum": 384
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "below_top": 0
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -3630,15 +3840,18 @@
                   "state": {
                     "Name": "minecraft:andesite"
                   },
-                  "size": 33
+                  "size": 64
                 },
                 "type": "minecraft:ore"
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -64,
-                  "top_offset": -64,
-                  "maximum": 80
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "absolute": 79
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -3654,7 +3867,7 @@
       },
       "decorator": {
         "config": {
-          "count": 20
+          "count": 4
         },
         "type": "minecraft:count"
       }
@@ -3682,9 +3895,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 5,
-                  "top_offset": 10,
-                  "maximum": 37
+                  "bottom_inclusive": {
+                    "absolute": 5
+                  },
+                  "top_inclusive": {
+                    "absolute": 31
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -3707,7 +3923,7 @@
     },
     "type": "minecraft:decorated"
   },
-  "ore_coal": {
+  "ore_coal_lower": {
     "config": {
       "feature": {
         "config": {
@@ -3728,9 +3944,59 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -64,
-                  "top_offset": -64,
-                  "maximum": 128
+                  "baseline": {
+                    "absolute": 96
+                  },
+                  "spread": 96
+                },
+                "type": "minecraft:depth_average"
+              }
+            },
+            "type": "minecraft:decorated"
+          },
+          "decorator": {
+            "config": {},
+            "type": "minecraft:square"
+          }
+        },
+        "type": "minecraft:decorated"
+      },
+      "decorator": {
+        "config": {
+          "count": 20
+        },
+        "type": "minecraft:count"
+      }
+    },
+    "type": "minecraft:decorated"
+  },
+  "ore_coal_upper": {
+    "config": {
+      "feature": {
+        "config": {
+          "feature": {
+            "config": {
+              "feature": {
+                "config": {
+                  "target": {
+                    "tag": "minecraft:base_stone_overworld",
+                    "predicate_type": "minecraft:tag_match"
+                  },
+                  "state": {
+                    "Name": "minecraft:coal_ore"
+                  },
+                  "size": 17
+                },
+                "type": "minecraft:ore"
+              },
+              "decorator": {
+                "config": {
+                  "bottom_inclusive": {
+                    "absolute": 136
+                  },
+                  "top_inclusive": {
+                    "below_top": 0
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -3774,11 +4040,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -64,
-                  "top_offset": -64,
-                  "maximum": 64
+                  "baseline": {
+                    "absolute": 48
+                  },
+                  "spread": 48
                 },
-                "type": "minecraft:range"
+                "type": "minecraft:depth_average"
               }
             },
             "type": "minecraft:decorated"
@@ -3818,7 +4085,9 @@
           },
           "decorator": {
             "config": {
-              "baseline": 16,
+              "baseline": {
+                "absolute": 16
+              },
               "spread": 8
             },
             "type": "minecraft:depth_average"
@@ -3852,9 +4121,12 @@
           },
           "decorator": {
             "config": {
-              "bottom_offset": 8,
-              "top_offset": 16,
-              "maximum": 128
+              "bottom_inclusive": {
+                "above_bottom": 8
+              },
+              "top_inclusive": {
+                "below_top": 8
+              }
             },
             "type": "minecraft:range"
           }
@@ -3889,11 +4161,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -64,
-                  "top_offset": -64,
-                  "maximum": 16
+                  "baseline": {
+                    "above_bottom": 0
+                  },
+                  "spread": 80
                 },
-                "type": "minecraft:range"
+                "type": "minecraft:depth_average"
               }
             },
             "type": "minecraft:decorated"
@@ -3907,7 +4180,7 @@
       },
       "decorator": {
         "config": {
-          "count": 2
+          "count": 4
         },
         "type": "minecraft:count"
       }
@@ -3929,15 +4202,18 @@
                   "state": {
                     "Name": "minecraft:diorite"
                   },
-                  "size": 33
+                  "size": 64
                 },
                 "type": "minecraft:ore"
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -64,
-                  "top_offset": -64,
-                  "maximum": 80
+                  "bottom_inclusive": {
+                    "absolute": 0
+                  },
+                  "top_inclusive": {
+                    "absolute": 79
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -3953,7 +4229,7 @@
       },
       "decorator": {
         "config": {
-          "count": 20
+          "count": 2
         },
         "type": "minecraft:count"
       }
@@ -3981,9 +4257,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -64,
-                  "top_offset": -64,
-                  "maximum": 384
+                  "bottom_inclusive": {
+                    "absolute": 0
+                  },
+                  "top_inclusive": {
+                    "below_top": 0
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -4012,25 +4291,42 @@
         "config": {
           "feature": {
             "config": {
-              "target": {
-                "Name": "minecraft:stone"
+              "feature": {
+                "config": {
+                  "target": {
+                    "Name": "minecraft:stone"
+                  },
+                  "state": {
+                    "Name": "minecraft:emerald_ore"
+                  }
+                },
+                "type": "minecraft:emerald_ore"
               },
-              "state": {
-                "Name": "minecraft:emerald_ore"
+              "decorator": {
+                "config": {
+                  "baseline": {
+                    "absolute": 256
+                  },
+                  "spread": 224
+                },
+                "type": "minecraft:depth_average"
               }
             },
-            "type": "minecraft:emerald_ore"
+            "type": "minecraft:decorated"
           },
           "decorator": {
             "config": {},
-            "type": "minecraft:emerald_ore"
+            "type": "minecraft:square"
           }
         },
         "type": "minecraft:decorated"
       },
       "decorator": {
         "config": {
-          "count": 2
+          "count": {
+            "base": 6,
+            "spread": 16
+          }
         },
         "type": "minecraft:count"
       }
@@ -4058,11 +4354,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -64,
-                  "top_offset": -64,
-                  "maximum": 32
+                  "baseline": {
+                    "absolute": -16
+                  },
+                  "spread": 48
                 },
-                "type": "minecraft:range"
+                "type": "minecraft:depth_average"
               }
             },
             "type": "minecraft:decorated"
@@ -4104,9 +4401,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 10,
-                  "top_offset": 20,
-                  "maximum": 128
+                  "bottom_inclusive": {
+                    "above_bottom": 10
+                  },
+                  "top_inclusive": {
+                    "below_top": 10
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -4150,9 +4450,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 32,
-                  "top_offset": 32,
-                  "maximum": 80
+                  "bottom_inclusive": {
+                    "absolute": 32
+                  },
+                  "top_inclusive": {
+                    "absolute": 79
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -4196,9 +4499,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 10,
-                  "top_offset": 20,
-                  "maximum": 128
+                  "bottom_inclusive": {
+                    "above_bottom": 10
+                  },
+                  "top_inclusive": {
+                    "below_top": 10
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -4236,15 +4542,18 @@
                   "state": {
                     "Name": "minecraft:granite"
                   },
-                  "size": 33
+                  "size": 64
                 },
                 "type": "minecraft:ore"
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -64,
-                  "top_offset": -64,
-                  "maximum": 80
+                  "bottom_inclusive": {
+                    "absolute": 0
+                  },
+                  "top_inclusive": {
+                    "absolute": 79
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -4260,7 +4569,7 @@
       },
       "decorator": {
         "config": {
-          "count": 20
+          "count": 2
         },
         "type": "minecraft:count"
       }
@@ -4288,9 +4597,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -64,
-                  "top_offset": -64,
-                  "maximum": 384
+                  "bottom_inclusive": {
+                    "absolute": 0
+                  },
+                  "top_inclusive": {
+                    "below_top": 0
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -4334,9 +4646,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 5,
-                  "top_offset": 0,
-                  "maximum": 37
+                  "bottom_inclusive": {
+                    "absolute": 5
+                  },
+                  "top_inclusive": {
+                    "absolute": 41
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -4380,9 +4695,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -64,
-                  "top_offset": -64,
-                  "maximum": 64
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "absolute": 63
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -4405,7 +4723,7 @@
     },
     "type": "minecraft:decorated"
   },
-  "ore_iron": {
+  "ore_iron_lower": {
     "config": {
       "feature": {
         "config": {
@@ -4426,11 +4744,59 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -64,
-                  "top_offset": -64,
-                  "maximum": 64
+                  "baseline": {
+                    "absolute": 32
+                  },
+                  "spread": 48
                 },
-                "type": "minecraft:range"
+                "type": "minecraft:depth_average"
+              }
+            },
+            "type": "minecraft:decorated"
+          },
+          "decorator": {
+            "config": {},
+            "type": "minecraft:square"
+          }
+        },
+        "type": "minecraft:decorated"
+      },
+      "decorator": {
+        "config": {
+          "count": 20
+        },
+        "type": "minecraft:count"
+      }
+    },
+    "type": "minecraft:decorated"
+  },
+  "ore_iron_upper": {
+    "config": {
+      "feature": {
+        "config": {
+          "feature": {
+            "config": {
+              "feature": {
+                "config": {
+                  "target": {
+                    "tag": "minecraft:base_stone_overworld",
+                    "predicate_type": "minecraft:tag_match"
+                  },
+                  "state": {
+                    "Name": "minecraft:iron_ore"
+                  },
+                  "size": 9
+                },
+                "type": "minecraft:ore"
+              },
+              "decorator": {
+                "config": {
+                  "baseline": {
+                    "absolute": 256
+                  },
+                  "spread": 128
+                },
+                "type": "minecraft:depth_average"
               }
             },
             "type": "minecraft:decorated"
@@ -4470,10 +4836,50 @@
           },
           "decorator": {
             "config": {
-              "baseline": 16,
-              "spread": 16
+              "baseline": {
+                "absolute": 0
+              },
+              "spread": 32
             },
             "type": "minecraft:depth_average"
+          }
+        },
+        "type": "minecraft:decorated"
+      },
+      "decorator": {
+        "config": {},
+        "type": "minecraft:square"
+      }
+    },
+    "type": "minecraft:decorated"
+  },
+  "ore_lapis_buried": {
+    "config": {
+      "feature": {
+        "config": {
+          "feature": {
+            "config": {
+              "target": {
+                "tag": "minecraft:base_stone_overworld",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:lapis_ore"
+              },
+              "size": 7
+            },
+            "type": "minecraft:no_surface_ore"
+          },
+          "decorator": {
+            "config": {
+              "bottom_inclusive": {
+                "above_bottom": 0
+              },
+              "top_inclusive": {
+                "absolute": 64
+              }
+            },
+            "type": "minecraft:range"
           }
         },
         "type": "minecraft:decorated"
@@ -4505,8 +4911,15 @@
                 "type": "minecraft:ore"
               },
               "decorator": {
-                "config": {},
-                "type": "minecraft:magma"
+                "config": {
+                  "bottom_inclusive": {
+                    "absolute": 27
+                  },
+                  "top_inclusive": {
+                    "absolute": 36
+                  }
+                },
+                "type": "minecraft:range"
               }
             },
             "type": "minecraft:decorated"
@@ -4548,9 +4961,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 10,
-                  "top_offset": 20,
-                  "maximum": 128
+                  "bottom_inclusive": {
+                    "above_bottom": 10
+                  },
+                  "top_inclusive": {
+                    "below_top": 10
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -4594,9 +5010,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 10,
-                  "top_offset": 20,
-                  "maximum": 128
+                  "bottom_inclusive": {
+                    "above_bottom": 10
+                  },
+                  "top_inclusive": {
+                    "below_top": 10
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -4643,11 +5062,64 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -64,
-                  "top_offset": -64,
-                  "maximum": 16
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "absolute": 15
+                  }
                 },
                 "type": "minecraft:range"
+              }
+            },
+            "type": "minecraft:decorated"
+          },
+          "decorator": {
+            "config": {},
+            "type": "minecraft:square"
+          }
+        },
+        "type": "minecraft:decorated"
+      },
+      "decorator": {
+        "config": {
+          "count": 6
+        },
+        "type": "minecraft:count"
+      }
+    },
+    "type": "minecraft:decorated"
+  },
+  "ore_redstone_lower": {
+    "config": {
+      "feature": {
+        "config": {
+          "feature": {
+            "config": {
+              "feature": {
+                "config": {
+                  "target": {
+                    "tag": "minecraft:base_stone_overworld",
+                    "predicate_type": "minecraft:tag_match"
+                  },
+                  "state": {
+                    "Properties": {
+                      "lit": "false"
+                    },
+                    "Name": "minecraft:redstone_ore"
+                  },
+                  "size": 8
+                },
+                "type": "minecraft:ore"
+              },
+              "decorator": {
+                "config": {
+                  "baseline": {
+                    "above_bottom": 0
+                  },
+                  "spread": 32
+                },
+                "type": "minecraft:depth_average"
               }
             },
             "type": "minecraft:decorated"
@@ -4689,9 +5161,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -64,
-                  "top_offset": -64,
-                  "maximum": 32
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "absolute": 31
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -4934,9 +5409,12 @@
       },
       "decorator": {
         "config": {
-          "bottom_offset": 0,
-          "top_offset": 0,
-          "maximum": 128
+          "bottom_inclusive": {
+            "above_bottom": 0
+          },
+          "top_inclusive": {
+            "below_top": 0
+          }
         },
         "type": "minecraft:range"
       }
@@ -5127,9 +5605,37 @@
       },
       "decorator": {
         "config": {
-          "count": 10
+          "outer": {
+            "config": {
+              "count": {
+                "base": 0,
+                "spread": 5
+              }
+            },
+            "type": "minecraft:count"
+          },
+          "inner": {
+            "config": {
+              "outer": {
+                "config": {},
+                "type": "minecraft:square"
+              },
+              "inner": {
+                "config": {
+                  "bottom_inclusive": {
+                    "above_bottom": 4
+                  },
+                  "top_inclusive": {
+                    "below_top": 4
+                  }
+                },
+                "type": "minecraft:range"
+              }
+            },
+            "type": "minecraft:decorated"
+          }
         },
-        "type": "minecraft:fire"
+        "type": "minecraft:decorated"
       }
     },
     "type": "minecraft:decorated"
@@ -5795,9 +6301,37 @@
       },
       "decorator": {
         "config": {
-          "count": 10
+          "outer": {
+            "config": {
+              "count": {
+                "base": 0,
+                "spread": 5
+              }
+            },
+            "type": "minecraft:count"
+          },
+          "inner": {
+            "config": {
+              "outer": {
+                "config": {},
+                "type": "minecraft:square"
+              },
+              "inner": {
+                "config": {
+                  "bottom_inclusive": {
+                    "above_bottom": 4
+                  },
+                  "top_inclusive": {
+                    "below_top": 4
+                  }
+                },
+                "type": "minecraft:range"
+              }
+            },
+            "type": "minecraft:decorated"
+          }
         },
-        "type": "minecraft:fire"
+        "type": "minecraft:decorated"
       }
     },
     "type": "minecraft:decorated"
@@ -6507,9 +7041,12 @@
           "feature": "minecraft:patch_red_mushroom",
           "decorator": {
             "config": {
-              "bottom_offset": 0,
-              "top_offset": 0,
-              "maximum": 128
+              "bottom_inclusive": {
+                "above_bottom": 0
+              },
+              "top_inclusive": {
+                "below_top": 0
+              }
             },
             "type": "minecraft:range"
           }
@@ -6846,37 +7383,47 @@
     "config": {
       "feature": {
         "config": {
-          "to_place": {
-            "Name": "minecraft:seagrass"
+          "feature": {
+            "config": {
+              "to_place": {
+                "Name": "minecraft:seagrass"
+              },
+              "place_on": [
+                {
+                  "Name": "minecraft:stone"
+                }
+              ],
+              "place_in": [
+                {
+                  "Properties": {
+                    "level": "0"
+                  },
+                  "Name": "minecraft:water"
+                }
+              ],
+              "place_under": [
+                {
+                  "Properties": {
+                    "level": "0"
+                  },
+                  "Name": "minecraft:water"
+                }
+              ]
+            },
+            "type": "minecraft:simple_block"
           },
-          "place_on": [
-            {
-              "Name": "minecraft:stone"
-            }
-          ],
-          "place_in": [
-            {
-              "Properties": {
-                "level": "0"
-              },
-              "Name": "minecraft:water"
-            }
-          ],
-          "place_under": [
-            {
-              "Properties": {
-                "level": "0"
-              },
-              "Name": "minecraft:water"
-            }
-          ]
+          "decorator": {
+            "config": {
+              "chance": 10
+            },
+            "type": "minecraft:chance"
+          }
         },
-        "type": "minecraft:simple_block"
+        "type": "minecraft:decorated"
       },
       "decorator": {
         "config": {
-          "step": "liquid",
-          "probability": 0.1
+          "step": "liquid"
         },
         "type": "minecraft:carving_mask"
       }
@@ -6991,9 +7538,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": -64,
-                  "top_offset": -64,
-                  "maximum": 60
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "absolute": 59
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -7044,9 +7594,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 10,
-                  "top_offset": 20,
-                  "maximum": 128
+                  "bottom_inclusive": {
+                    "above_bottom": 10
+                  },
+                  "top_inclusive": {
+                    "below_top": 10
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -7094,9 +7647,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 10,
-                  "top_offset": 20,
-                  "maximum": 128
+                  "bottom_inclusive": {
+                    "above_bottom": 10
+                  },
+                  "top_inclusive": {
+                    "below_top": 10
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -7148,9 +7704,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 4,
-                  "top_offset": 8,
-                  "maximum": 128
+                  "bottom_inclusive": {
+                    "above_bottom": 4
+                  },
+                  "top_inclusive": {
+                    "below_top": 4
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -7201,11 +7760,15 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 8,
-                  "top_offset": 16,
-                  "maximum": 384
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "below_top": 8
+                  },
+                  "cutoff": 8
                 },
-                "type": "minecraft:range_very_biased"
+                "type": "minecraft:range_very_biased_to_bottom"
               }
             },
             "type": "minecraft:decorated"
@@ -7254,11 +7817,15 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 8,
-                  "top_offset": 16,
-                  "maximum": 384
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "below_top": 8
+                  },
+                  "cutoff": 8
                 },
-                "type": "minecraft:range_very_biased"
+                "type": "minecraft:range_very_biased_to_bottom"
               }
             },
             "type": "minecraft:decorated"
@@ -7304,9 +7871,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 4,
-                  "top_offset": 8,
-                  "maximum": 128
+                  "bottom_inclusive": {
+                    "above_bottom": 4
+                  },
+                  "top_inclusive": {
+                    "below_top": 4
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -7357,11 +7927,15 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 8,
-                  "top_offset": 8,
-                  "maximum": 384
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "below_top": 0
+                  },
+                  "cutoff": 8
                 },
-                "type": "minecraft:range_biased"
+                "type": "minecraft:range_biased_to_bottom"
               }
             },
             "type": "minecraft:decorated"
@@ -8107,9 +8681,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 0,
-                  "top_offset": 0,
-                  "maximum": 128
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "below_top": 0
+                  }
                 },
                 "type": "minecraft:range"
               }
@@ -8155,9 +8732,12 @@
           },
           "decorator": {
             "config": {
-              "bottom_offset": -64,
-              "top_offset": -64,
-              "maximum": 40
+              "bottom_inclusive": {
+                "above_bottom": 0
+              },
+              "top_inclusive": {
+                "absolute": 39
+              }
             },
             "type": "minecraft:range"
           }
@@ -8364,9 +8944,12 @@
               },
               "decorator": {
                 "config": {
-                  "bottom_offset": 0,
-                  "top_offset": 0,
-                  "maximum": 128
+                  "bottom_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "top_inclusive": {
+                    "below_top": 0
+                  }
                 },
                 "type": "minecraft:range"
               }

@@ -1968,12 +1968,12 @@
         "from": [
           0,
           11,
-          0.25
+          0
         ],
         "to": [
           16,
           15,
-          0.25
+          0.002
         ],
         "shade": false,
         "faces": {
@@ -1984,7 +1984,8 @@
               16,
               4
             ],
-            "texture": "#tip"
+            "texture": "#tip",
+            "cullface": "north"
           },
           "south": {
             "uv": [
@@ -1999,12 +2000,12 @@
       },
       {
         "from": [
-          0.25,
+          0,
           11,
           0
         ],
         "to": [
-          0.25,
+          0.002,
           15,
           16
         ],
@@ -2026,18 +2027,19 @@
               16,
               4
             ],
-            "texture": "#side"
+            "texture": "#side",
+            "cullface": "west"
           }
         }
       },
       {
         "from": [
-          15.75,
+          15.998,
           11,
           0
         ],
         "to": [
-          15.75,
+          16,
           15,
           16
         ],
@@ -2050,7 +2052,8 @@
               0,
               4
             ],
-            "texture": "#side"
+            "texture": "#side",
+            "cullface": "east"
           },
           "west": {
             "uv": [
@@ -2252,7 +2255,7 @@
           0
         ],
         "to": [
-          0,
+          0.002,
           15,
           16
         ],
@@ -2283,13 +2286,14 @@
               16,
               4
             ],
-            "texture": "#side"
+            "texture": "#side",
+            "cullface": "west"
           }
         }
       },
       {
         "from": [
-          16,
+          15.998,
           11,
           0
         ],
@@ -2316,7 +2320,8 @@
               0,
               4
             ],
-            "texture": "#side"
+            "texture": "#side",
+            "cullface": "east"
           },
           "west": {
             "uv": [
@@ -2518,7 +2523,7 @@
           0
         ],
         "to": [
-          0,
+          0.002,
           15,
           16
         ],
@@ -2549,13 +2554,14 @@
               16,
               4
             ],
-            "texture": "#side"
+            "texture": "#side",
+            "cullface": "west"
           }
         }
       },
       {
         "from": [
-          16,
+          15.998,
           11,
           0
         ],
@@ -2582,7 +2588,8 @@
               0,
               4
             ],
-            "texture": "#side"
+            "texture": "#side",
+            "cullface": "east"
           },
           "west": {
             "uv": [
@@ -5995,6 +6002,12 @@
     "parent": "minecraft:block/template_anvil",
     "textures": {
       "top": "minecraft:block/chipped_anvil_top"
+    }
+  },
+  "block/chiseled_grimstone": {
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+      "all": "minecraft:block/chiseled_grimstone"
     }
   },
   "block/chiseled_nether_bricks": {
@@ -15420,6 +15433,222 @@
       "all": "minecraft:block/green_wool"
     }
   },
+  "block/grimstone": {
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+      "all": "minecraft:block/grimstone"
+    }
+  },
+  "block/grimstone_brick_slab": {
+    "parent": "minecraft:block/slab",
+    "textures": {
+      "bottom": "minecraft:block/grimstone_bricks",
+      "top": "minecraft:block/grimstone_bricks",
+      "side": "minecraft:block/grimstone_bricks"
+    }
+  },
+  "block/grimstone_brick_slab_top": {
+    "parent": "minecraft:block/slab_top",
+    "textures": {
+      "bottom": "minecraft:block/grimstone_bricks",
+      "top": "minecraft:block/grimstone_bricks",
+      "side": "minecraft:block/grimstone_bricks"
+    }
+  },
+  "block/grimstone_brick_stairs": {
+    "parent": "minecraft:block/stairs",
+    "textures": {
+      "bottom": "minecraft:block/grimstone_bricks",
+      "top": "minecraft:block/grimstone_bricks",
+      "side": "minecraft:block/grimstone_bricks"
+    }
+  },
+  "block/grimstone_brick_stairs_inner": {
+    "parent": "minecraft:block/inner_stairs",
+    "textures": {
+      "bottom": "minecraft:block/grimstone_bricks",
+      "top": "minecraft:block/grimstone_bricks",
+      "side": "minecraft:block/grimstone_bricks"
+    }
+  },
+  "block/grimstone_brick_stairs_outer": {
+    "parent": "minecraft:block/outer_stairs",
+    "textures": {
+      "bottom": "minecraft:block/grimstone_bricks",
+      "top": "minecraft:block/grimstone_bricks",
+      "side": "minecraft:block/grimstone_bricks"
+    }
+  },
+  "block/grimstone_brick_wall_inventory": {
+    "parent": "minecraft:block/wall_inventory",
+    "textures": {
+      "wall": "minecraft:block/grimstone_bricks"
+    }
+  },
+  "block/grimstone_brick_wall_post": {
+    "parent": "minecraft:block/template_wall_post",
+    "textures": {
+      "wall": "minecraft:block/grimstone_bricks"
+    }
+  },
+  "block/grimstone_brick_wall_side": {
+    "parent": "minecraft:block/template_wall_side",
+    "textures": {
+      "wall": "minecraft:block/grimstone_bricks"
+    }
+  },
+  "block/grimstone_brick_wall_side_tall": {
+    "parent": "minecraft:block/template_wall_side_tall",
+    "textures": {
+      "wall": "minecraft:block/grimstone_bricks"
+    }
+  },
+  "block/grimstone_bricks": {
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+      "all": "minecraft:block/grimstone_bricks"
+    }
+  },
+  "block/grimstone_mirrored": {
+    "parent": "minecraft:block/cube_mirrored_all",
+    "textures": {
+      "all": "minecraft:block/grimstone"
+    }
+  },
+  "block/grimstone_slab": {
+    "parent": "minecraft:block/slab",
+    "textures": {
+      "bottom": "minecraft:block/grimstone",
+      "top": "minecraft:block/grimstone",
+      "side": "minecraft:block/grimstone"
+    }
+  },
+  "block/grimstone_slab_top": {
+    "parent": "minecraft:block/slab_top",
+    "textures": {
+      "bottom": "minecraft:block/grimstone",
+      "top": "minecraft:block/grimstone",
+      "side": "minecraft:block/grimstone"
+    }
+  },
+  "block/grimstone_stairs": {
+    "parent": "minecraft:block/stairs",
+    "textures": {
+      "bottom": "minecraft:block/grimstone",
+      "top": "minecraft:block/grimstone",
+      "side": "minecraft:block/grimstone"
+    }
+  },
+  "block/grimstone_stairs_inner": {
+    "parent": "minecraft:block/inner_stairs",
+    "textures": {
+      "bottom": "minecraft:block/grimstone",
+      "top": "minecraft:block/grimstone",
+      "side": "minecraft:block/grimstone"
+    }
+  },
+  "block/grimstone_stairs_outer": {
+    "parent": "minecraft:block/outer_stairs",
+    "textures": {
+      "bottom": "minecraft:block/grimstone",
+      "top": "minecraft:block/grimstone",
+      "side": "minecraft:block/grimstone"
+    }
+  },
+  "block/grimstone_tile_slab": {
+    "parent": "minecraft:block/slab",
+    "textures": {
+      "bottom": "minecraft:block/grimstone_tiles",
+      "top": "minecraft:block/grimstone_tiles",
+      "side": "minecraft:block/grimstone_tiles"
+    }
+  },
+  "block/grimstone_tile_slab_top": {
+    "parent": "minecraft:block/slab_top",
+    "textures": {
+      "bottom": "minecraft:block/grimstone_tiles",
+      "top": "minecraft:block/grimstone_tiles",
+      "side": "minecraft:block/grimstone_tiles"
+    }
+  },
+  "block/grimstone_tile_stairs": {
+    "parent": "minecraft:block/stairs",
+    "textures": {
+      "bottom": "minecraft:block/grimstone_tiles",
+      "top": "minecraft:block/grimstone_tiles",
+      "side": "minecraft:block/grimstone_tiles"
+    }
+  },
+  "block/grimstone_tile_stairs_inner": {
+    "parent": "minecraft:block/inner_stairs",
+    "textures": {
+      "bottom": "minecraft:block/grimstone_tiles",
+      "top": "minecraft:block/grimstone_tiles",
+      "side": "minecraft:block/grimstone_tiles"
+    }
+  },
+  "block/grimstone_tile_stairs_outer": {
+    "parent": "minecraft:block/outer_stairs",
+    "textures": {
+      "bottom": "minecraft:block/grimstone_tiles",
+      "top": "minecraft:block/grimstone_tiles",
+      "side": "minecraft:block/grimstone_tiles"
+    }
+  },
+  "block/grimstone_tile_wall_inventory": {
+    "parent": "minecraft:block/wall_inventory",
+    "textures": {
+      "wall": "minecraft:block/grimstone_tiles"
+    }
+  },
+  "block/grimstone_tile_wall_post": {
+    "parent": "minecraft:block/template_wall_post",
+    "textures": {
+      "wall": "minecraft:block/grimstone_tiles"
+    }
+  },
+  "block/grimstone_tile_wall_side": {
+    "parent": "minecraft:block/template_wall_side",
+    "textures": {
+      "wall": "minecraft:block/grimstone_tiles"
+    }
+  },
+  "block/grimstone_tile_wall_side_tall": {
+    "parent": "minecraft:block/template_wall_side_tall",
+    "textures": {
+      "wall": "minecraft:block/grimstone_tiles"
+    }
+  },
+  "block/grimstone_tiles": {
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+      "all": "minecraft:block/grimstone_tiles"
+    }
+  },
+  "block/grimstone_wall_inventory": {
+    "parent": "minecraft:block/wall_inventory",
+    "textures": {
+      "wall": "minecraft:block/grimstone"
+    }
+  },
+  "block/grimstone_wall_post": {
+    "parent": "minecraft:block/template_wall_post",
+    "textures": {
+      "wall": "minecraft:block/grimstone"
+    }
+  },
+  "block/grimstone_wall_side": {
+    "parent": "minecraft:block/template_wall_side",
+    "textures": {
+      "wall": "minecraft:block/grimstone"
+    }
+  },
+  "block/grimstone_wall_side_tall": {
+    "parent": "minecraft:block/template_wall_side_tall",
+    "textures": {
+      "wall": "minecraft:block/grimstone"
+    }
+  },
   "block/grindstone": {
     "parent": "block/block",
     "textures": {
@@ -20801,6 +21030,76 @@
       "bottom": "minecraft:block/polished_granite",
       "top": "minecraft:block/polished_granite",
       "side": "minecraft:block/polished_granite"
+    }
+  },
+  "block/polished_grimstone": {
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+      "all": "minecraft:block/polished_grimstone"
+    }
+  },
+  "block/polished_grimstone_slab": {
+    "parent": "minecraft:block/slab",
+    "textures": {
+      "bottom": "minecraft:block/polished_grimstone",
+      "top": "minecraft:block/polished_grimstone",
+      "side": "minecraft:block/polished_grimstone"
+    }
+  },
+  "block/polished_grimstone_slab_top": {
+    "parent": "minecraft:block/slab_top",
+    "textures": {
+      "bottom": "minecraft:block/polished_grimstone",
+      "top": "minecraft:block/polished_grimstone",
+      "side": "minecraft:block/polished_grimstone"
+    }
+  },
+  "block/polished_grimstone_stairs": {
+    "parent": "minecraft:block/stairs",
+    "textures": {
+      "bottom": "minecraft:block/polished_grimstone",
+      "top": "minecraft:block/polished_grimstone",
+      "side": "minecraft:block/polished_grimstone"
+    }
+  },
+  "block/polished_grimstone_stairs_inner": {
+    "parent": "minecraft:block/inner_stairs",
+    "textures": {
+      "bottom": "minecraft:block/polished_grimstone",
+      "top": "minecraft:block/polished_grimstone",
+      "side": "minecraft:block/polished_grimstone"
+    }
+  },
+  "block/polished_grimstone_stairs_outer": {
+    "parent": "minecraft:block/outer_stairs",
+    "textures": {
+      "bottom": "minecraft:block/polished_grimstone",
+      "top": "minecraft:block/polished_grimstone",
+      "side": "minecraft:block/polished_grimstone"
+    }
+  },
+  "block/polished_grimstone_wall_inventory": {
+    "parent": "minecraft:block/wall_inventory",
+    "textures": {
+      "wall": "minecraft:block/polished_grimstone"
+    }
+  },
+  "block/polished_grimstone_wall_post": {
+    "parent": "minecraft:block/template_wall_post",
+    "textures": {
+      "wall": "minecraft:block/polished_grimstone"
+    }
+  },
+  "block/polished_grimstone_wall_side": {
+    "parent": "minecraft:block/template_wall_side",
+    "textures": {
+      "wall": "minecraft:block/polished_grimstone"
+    }
+  },
+  "block/polished_grimstone_wall_side_tall": {
+    "parent": "minecraft:block/template_wall_side_tall",
+    "textures": {
+      "wall": "minecraft:block/polished_grimstone"
     }
   },
   "block/poppy": {
@@ -49569,6 +49868,9 @@
   "item/chipped_anvil": {
     "parent": "minecraft:block/chipped_anvil"
   },
+  "item/chiseled_grimstone": {
+    "parent": "minecraft:block/chiseled_grimstone"
+  },
   "item/chiseled_nether_bricks": {
     "parent": "minecraft:block/chiseled_nether_bricks"
   },
@@ -52330,6 +52632,42 @@
   "item/green_wool": {
     "parent": "minecraft:block/green_wool"
   },
+  "item/grimstone": {
+    "parent": "minecraft:block/grimstone"
+  },
+  "item/grimstone_brick_slab": {
+    "parent": "minecraft:block/grimstone_brick_slab"
+  },
+  "item/grimstone_brick_stairs": {
+    "parent": "minecraft:block/grimstone_brick_stairs"
+  },
+  "item/grimstone_brick_wall": {
+    "parent": "minecraft:block/grimstone_brick_wall_inventory"
+  },
+  "item/grimstone_bricks": {
+    "parent": "minecraft:block/grimstone_bricks"
+  },
+  "item/grimstone_slab": {
+    "parent": "minecraft:block/grimstone_slab"
+  },
+  "item/grimstone_stairs": {
+    "parent": "minecraft:block/grimstone_stairs"
+  },
+  "item/grimstone_tile_slab": {
+    "parent": "minecraft:block/grimstone_tile_slab"
+  },
+  "item/grimstone_tile_stairs": {
+    "parent": "minecraft:block/grimstone_tile_stairs"
+  },
+  "item/grimstone_tile_wall": {
+    "parent": "minecraft:block/grimstone_tile_wall_inventory"
+  },
+  "item/grimstone_tiles": {
+    "parent": "minecraft:block/grimstone_tiles"
+  },
+  "item/grimstone_wall": {
+    "parent": "minecraft:block/grimstone_wall_inventory"
+  },
   "item/grindstone": {
     "parent": "minecraft:block/grindstone"
   },
@@ -53840,6 +54178,18 @@
   },
   "item/polished_granite_stairs": {
     "parent": "minecraft:block/polished_granite_stairs"
+  },
+  "item/polished_grimstone": {
+    "parent": "minecraft:block/polished_grimstone"
+  },
+  "item/polished_grimstone_slab": {
+    "parent": "minecraft:block/polished_grimstone_slab"
+  },
+  "item/polished_grimstone_stairs": {
+    "parent": "minecraft:block/polished_grimstone_stairs"
+  },
+  "item/polished_grimstone_wall": {
+    "parent": "minecraft:block/polished_grimstone_wall_inventory"
   },
   "item/popped_chorus_fruit": {
     "parent": "minecraft:item/generated",
