@@ -4,25 +4,42 @@
       "config": {
         "feature": {
           "config": {
-            "target": {
-              "Name": "minecraft:stone"
+            "feature": {
+              "config": {
+                "target": {
+                  "Name": "minecraft:stone"
+                },
+                "state": {
+                  "Name": "minecraft:emerald_ore"
+                }
+              },
+              "type": "minecraft:emerald_ore"
             },
-            "state": {
-              "Name": "minecraft:emerald_ore"
+            "decorator": {
+              "config": {
+                "baseline": {
+                  "absolute": 256
+                },
+                "spread": 224
+              },
+              "type": "minecraft:depth_average"
             }
           },
-          "type": "minecraft:emerald_ore"
+          "type": "minecraft:decorated"
         },
         "decorator": {
           "config": {},
-          "type": "minecraft:emerald_ore"
+          "type": "minecraft:square"
         }
       },
       "type": "minecraft:decorated"
     },
     "decorator": {
       "config": {
-        "count": 2
+        "count": {
+          "base": 6,
+          "spread": 16
+        }
       },
       "type": "minecraft:count"
     }
