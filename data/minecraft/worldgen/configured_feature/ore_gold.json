@@ -6,14 +6,28 @@
           "config": {
             "feature": {
               "config": {
-                "target": {
-                  "tag": "minecraft:base_stone_overworld",
-                  "predicate_type": "minecraft:tag_match"
-                },
-                "state": {
-                  "Name": "minecraft:gold_ore"
-                },
-                "size": 9
+                "targets": [
+                  {
+                    "target": {
+                      "tag": "minecraft:stone_ore_replaceables",
+                      "predicate_type": "minecraft:tag_match"
+                    },
+                    "state": {
+                      "Name": "minecraft:gold_ore"
+                    }
+                  },
+                  {
+                    "target": {
+                      "tag": "minecraft:deepslate_ore_replaceables",
+                      "predicate_type": "minecraft:tag_match"
+                    },
+                    "state": {
+                      "Name": "minecraft:deepslate_gold_ore"
+                    }
+                  }
+                ],
+                "size": 9,
+                "discard_chance_on_air_exposure": 0.5
               },
               "type": "minecraft:ore"
             },
@@ -38,7 +52,7 @@
     },
     "decorator": {
       "config": {
-        "count": 4
+        "count": 6
       },
       "type": "minecraft:count"
     }

@@ -6,17 +6,34 @@
           "config": {
             "feature": {
               "config": {
-                "target": {
-                  "tag": "minecraft:base_stone_overworld",
-                  "predicate_type": "minecraft:tag_match"
-                },
-                "state": {
-                  "Properties": {
-                    "lit": "false"
+                "targets": [
+                  {
+                    "target": {
+                      "tag": "minecraft:stone_ore_replaceables",
+                      "predicate_type": "minecraft:tag_match"
+                    },
+                    "state": {
+                      "Properties": {
+                        "lit": "false"
+                      },
+                      "Name": "minecraft:redstone_ore"
+                    }
                   },
-                  "Name": "minecraft:redstone_ore"
-                },
-                "size": 8
+                  {
+                    "target": {
+                      "tag": "minecraft:deepslate_ore_replaceables",
+                      "predicate_type": "minecraft:tag_match"
+                    },
+                    "state": {
+                      "Properties": {
+                        "lit": "false"
+                      },
+                      "Name": "minecraft:deepslate_redstone_ore"
+                    }
+                  }
+                ],
+                "size": 8,
+                "discard_chance_on_air_exposure": 0.0
               },
               "type": "minecraft:ore"
             },
