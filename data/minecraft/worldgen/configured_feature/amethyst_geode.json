@@ -6,18 +6,18 @@
           "config": {
             "feature": {
               "config": {
-                "max_point_offset": 3,
                 "min_gen_offset": -16,
                 "max_gen_offset": 16,
                 "noise_multiplier": 0.05,
-                "max_outer_wall_distance": 7,
+                "invalid_blocks_threshold": 1,
                 "min_distribution_points": 3,
                 "max_distribution_points": 5,
                 "min_point_offset": 1,
-                "use_potential_placements_chance": 0.35,
+                "max_point_offset": 3,
                 "use_alternate_layer0_chance": 0.083,
                 "placements_require_layer0_alternate": true,
                 "min_outer_wall_distance": 4,
+                "max_outer_wall_distance": 7,
                 "blocks": {
                   "middle_layer_provider": {
                     "state": {
@@ -27,7 +27,7 @@
                   },
                   "outer_layer_provider": {
                     "state": {
-                      "Name": "minecraft:tuff"
+                      "Name": "minecraft:smooth_basalt"
                     },
                     "type": "minecraft:simple_state_provider"
                   },
@@ -94,7 +94,8 @@
                   "generate_crack_chance": 0.95,
                   "base_crack_size": 2.0,
                   "crack_point_offset": 2
-                }
+                },
+                "use_potential_placements_chance": 0.35
               },
               "type": "minecraft:geode"
             },
