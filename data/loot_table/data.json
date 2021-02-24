@@ -3938,7 +3938,7 @@
       }
     ]
   },
-  "blocks/chiseled_grimstone": {
+  "blocks/chiseled_deepslate": {
     "type": "minecraft:block",
     "pools": [
       {
@@ -3947,7 +3947,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "minecraft:chiseled_grimstone"
+            "name": "minecraft:chiseled_deepslate"
           }
         ],
         "conditions": [
@@ -4260,6 +4260,100 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:coarse_dirt"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/cobbled_deepslate": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:cobbled_deepslate"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/cobbled_deepslate_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:cobbled_deepslate_slab",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "add": false
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:cobbled_deepslate_slab"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/cobbled_deepslate_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:cobbled_deepslate_stairs"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/cobbled_deepslate_wall": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:cobbled_deepslate_wall"
           }
         ],
         "conditions": [
@@ -6654,6 +6748,446 @@
       }
     ]
   },
+  "blocks/deepslate": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                      "enchantments": [
+                        {
+                          "enchantment": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "name": "minecraft:deepslate"
+              },
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:survives_explosion"
+                  }
+                ],
+                "name": "minecraft:cobbled_deepslate"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/deepslate_brick_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:deepslate_brick_slab",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "add": false
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:deepslate_brick_slab"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/deepslate_brick_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:deepslate_brick_stairs"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/deepslate_brick_wall": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:deepslate_brick_wall"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/deepslate_bricks": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:deepslate_bricks"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/deepslate_diamond_ore": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                      "enchantments": [
+                        {
+                          "enchantment": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "name": "minecraft:deepslate_diamond_ore"
+              },
+              {
+                "type": "minecraft:item",
+                "functions": [
+                  {
+                    "function": "minecraft:apply_bonus",
+                    "enchantment": "minecraft:fortune",
+                    "formula": "minecraft:ore_drops"
+                  },
+                  {
+                    "function": "minecraft:explosion_decay"
+                  }
+                ],
+                "name": "minecraft:diamond"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/deepslate_gold_ore": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:deepslate_gold_ore"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/deepslate_iron_ore": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:deepslate_iron_ore"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/deepslate_lapis_ore": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                      "enchantments": [
+                        {
+                          "enchantment": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "name": "minecraft:deepslate_lapis_ore"
+              },
+              {
+                "type": "minecraft:item",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": {
+                      "type": "minecraft:uniform",
+                      "min": 4.0,
+                      "max": 9.0
+                    },
+                    "add": false
+                  },
+                  {
+                    "function": "minecraft:apply_bonus",
+                    "enchantment": "minecraft:fortune",
+                    "formula": "minecraft:ore_drops"
+                  },
+                  {
+                    "function": "minecraft:explosion_decay"
+                  }
+                ],
+                "name": "minecraft:lapis_lazuli"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/deepslate_redstone_ore": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                      "enchantments": [
+                        {
+                          "enchantment": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "name": "minecraft:deepslate_redstone_ore"
+              },
+              {
+                "type": "minecraft:item",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": {
+                      "type": "minecraft:uniform",
+                      "min": 4.0,
+                      "max": 5.0
+                    },
+                    "add": false
+                  },
+                  {
+                    "function": "minecraft:apply_bonus",
+                    "enchantment": "minecraft:fortune",
+                    "formula": "minecraft:uniform_bonus_count",
+                    "parameters": {
+                      "bonusMultiplier": 1
+                    }
+                  },
+                  {
+                    "function": "minecraft:explosion_decay"
+                  }
+                ],
+                "name": "minecraft:redstone"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/deepslate_tile_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:deepslate_tile_slab",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "add": false
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:deepslate_tile_slab"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/deepslate_tile_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:deepslate_tile_stairs"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/deepslate_tile_wall": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:deepslate_tile_wall"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/deepslate_tiles": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:deepslate_tiles"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/detector_rail": {
     "type": "minecraft:block",
     "pools": [
@@ -8903,288 +9437,6 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:green_wool"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/grimstone": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:grimstone"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/grimstone_brick_slab": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "conditions": [
-                  {
-                    "condition": "minecraft:block_state_property",
-                    "block": "minecraft:grimstone_brick_slab",
-                    "properties": {
-                      "type": "double"
-                    }
-                  }
-                ],
-                "count": 2.0,
-                "add": false
-              },
-              {
-                "function": "minecraft:explosion_decay"
-              }
-            ],
-            "name": "minecraft:grimstone_brick_slab"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/grimstone_brick_stairs": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:grimstone_brick_stairs"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/grimstone_brick_wall": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:grimstone_brick_wall"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/grimstone_bricks": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:grimstone_bricks"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/grimstone_slab": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "conditions": [
-                  {
-                    "condition": "minecraft:block_state_property",
-                    "block": "minecraft:grimstone_slab",
-                    "properties": {
-                      "type": "double"
-                    }
-                  }
-                ],
-                "count": 2.0,
-                "add": false
-              },
-              {
-                "function": "minecraft:explosion_decay"
-              }
-            ],
-            "name": "minecraft:grimstone_slab"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/grimstone_stairs": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:grimstone_stairs"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/grimstone_tile_slab": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "conditions": [
-                  {
-                    "condition": "minecraft:block_state_property",
-                    "block": "minecraft:grimstone_tile_slab",
-                    "properties": {
-                      "type": "double"
-                    }
-                  }
-                ],
-                "count": 2.0,
-                "add": false
-              },
-              {
-                "function": "minecraft:explosion_decay"
-              }
-            ],
-            "name": "minecraft:grimstone_tile_slab"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/grimstone_tile_stairs": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:grimstone_tile_stairs"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/grimstone_tile_wall": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:grimstone_tile_wall"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/grimstone_tiles": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:grimstone_tiles"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/grimstone_wall": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:grimstone_wall"
           }
         ],
         "conditions": [
@@ -15167,6 +15419,100 @@
       }
     ]
   },
+  "blocks/polished_deepslate": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:polished_deepslate"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/polished_deepslate_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "conditions": [
+                  {
+                    "condition": "minecraft:block_state_property",
+                    "block": "minecraft:polished_deepslate_slab",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "add": false
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:polished_deepslate_slab"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/polished_deepslate_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:polished_deepslate_stairs"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/polished_deepslate_wall": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:polished_deepslate_wall"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
   "blocks/polished_diorite": {
     "type": "minecraft:block",
     "pools": [
@@ -15305,100 +15651,6 @@
           {
             "type": "minecraft:item",
             "name": "minecraft:polished_granite_stairs"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/polished_grimstone": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:polished_grimstone"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/polished_grimstone_slab": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "conditions": [
-                  {
-                    "condition": "minecraft:block_state_property",
-                    "block": "minecraft:polished_grimstone_slab",
-                    "properties": {
-                      "type": "double"
-                    }
-                  }
-                ],
-                "count": 2.0,
-                "add": false
-              },
-              {
-                "function": "minecraft:explosion_decay"
-              }
-            ],
-            "name": "minecraft:polished_grimstone_slab"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/polished_grimstone_stairs": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:polished_grimstone_stairs"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ]
-      }
-    ]
-  },
-  "blocks/polished_grimstone_wall": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:polished_grimstone_wall"
           }
         ],
         "conditions": [
@@ -18937,6 +19189,26 @@
               }
             ],
             "name": "minecraft:smoker"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/smooth_basalt": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:smooth_basalt"
           }
         ],
         "conditions": [
@@ -27044,6 +27316,14 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
+                    "type": "minecraft:saturation",
+                    "duration": {
+                      "type": "minecraft:uniform",
+                      "min": 7.0,
+                      "max": 10.0
+                    }
+                  },
+                  {
                     "type": "minecraft:blindness",
                     "duration": {
                       "type": "minecraft:uniform",
@@ -27060,7 +27340,7 @@
                     }
                   },
                   {
-                    "type": "minecraft:saturation",
+                    "type": "minecraft:night_vision",
                     "duration": {
                       "type": "minecraft:uniform",
                       "min": 7.0,
@@ -27068,7 +27348,7 @@
                     }
                   },
                   {
-                    "type": "minecraft:night_vision",
+                    "type": "minecraft:jump_boost",
                     "duration": {
                       "type": "minecraft:uniform",
                       "min": 7.0,
@@ -27081,14 +27361,6 @@
                       "type": "minecraft:uniform",
                       "min": 6.0,
                       "max": 8.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:jump_boost",
-                    "duration": {
-                      "type": "minecraft:uniform",
-                      "min": 7.0,
-                      "max": 10.0
                     }
                   }
                 ]
