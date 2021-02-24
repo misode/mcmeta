@@ -6,25 +6,41 @@
           "config": {
             "feature": {
               "config": {
-                "target": {
-                  "tag": "minecraft:base_stone_overworld",
-                  "predicate_type": "minecraft:tag_match"
-                },
-                "state": {
-                  "Name": "minecraft:iron_ore"
-                },
-                "size": 9
+                "targets": [
+                  {
+                    "target": {
+                      "tag": "minecraft:stone_ore_replaceables",
+                      "predicate_type": "minecraft:tag_match"
+                    },
+                    "state": {
+                      "Name": "minecraft:iron_ore"
+                    }
+                  },
+                  {
+                    "target": {
+                      "tag": "minecraft:deepslate_ore_replaceables",
+                      "predicate_type": "minecraft:tag_match"
+                    },
+                    "state": {
+                      "Name": "minecraft:deepslate_iron_ore"
+                    }
+                  }
+                ],
+                "size": 4,
+                "discard_chance_on_air_exposure": 0.0
               },
               "type": "minecraft:ore"
             },
             "decorator": {
               "config": {
-                "baseline": {
-                  "absolute": 32
+                "bottom_inclusive": {
+                  "above_bottom": 0
                 },
-                "spread": 48
+                "top_inclusive": {
+                  "absolute": -8
+                }
               },
-              "type": "minecraft:depth_average"
+              "type": "minecraft:range"
             }
           },
           "type": "minecraft:decorated"
@@ -38,7 +54,7 @@
     },
     "decorator": {
       "config": {
-        "count": 20
+        "count": 4
       },
       "type": "minecraft:count"
     }
