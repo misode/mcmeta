@@ -4,14 +4,28 @@
       "config": {
         "feature": {
           "config": {
-            "target": {
-              "tag": "minecraft:base_stone_overworld",
-              "predicate_type": "minecraft:tag_match"
-            },
-            "state": {
-              "Name": "minecraft:lapis_ore"
-            },
-            "size": 7
+            "targets": [
+              {
+                "target": {
+                  "tag": "minecraft:stone_ore_replaceables",
+                  "predicate_type": "minecraft:tag_match"
+                },
+                "state": {
+                  "Name": "minecraft:lapis_ore"
+                }
+              },
+              {
+                "target": {
+                  "tag": "minecraft:deepslate_ore_replaceables",
+                  "predicate_type": "minecraft:tag_match"
+                },
+                "state": {
+                  "Name": "minecraft:lapis_ore"
+                }
+              }
+            ],
+            "size": 7,
+            "discard_chance_on_air_exposure": 0.0
           },
           "type": "minecraft:ore"
         },
