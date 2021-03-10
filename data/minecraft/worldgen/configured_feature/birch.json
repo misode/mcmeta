@@ -1,15 +1,20 @@
 {
   "config": {
-    "max_water_depth": 0,
+    "decorators": [],
     "ignore_vines": true,
-    "heightmap": "OCEAN_FLOOR",
+    "force_dirt": false,
+    "dirt_provider": {
+      "state": {
+        "Name": "minecraft:dirt"
+      },
+      "type": "minecraft:simple_state_provider"
+    },
     "minimum_size": {
       "limit": 1,
       "lower_size": 0,
       "upper_size": 1,
       "type": "minecraft:two_layers_feature_size"
     },
-    "decorators": [],
     "trunk_provider": {
       "state": {
         "Properties": {
@@ -19,7 +24,13 @@
       },
       "type": "minecraft:simple_state_provider"
     },
-    "leaves_provider": {
+    "trunk_placer": {
+      "base_height": 5,
+      "height_rand_a": 2,
+      "height_rand_b": 0,
+      "type": "minecraft:straight_trunk_placer"
+    },
+    "foliage_provider": {
       "state": {
         "Properties": {
           "persistent": "false",
@@ -34,12 +45,6 @@
       "offset": 0,
       "height": 3,
       "type": "minecraft:blob_foliage_placer"
-    },
-    "trunk_placer": {
-      "base_height": 5,
-      "height_rand_a": 2,
-      "height_rand_b": 0,
-      "type": "minecraft:straight_trunk_placer"
     }
   },
   "type": "minecraft:tree"
