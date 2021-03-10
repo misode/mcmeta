@@ -438,6 +438,47 @@
       }
     ]
   },
+  "fossil_coal": {
+    "processors": [
+      {
+        "integrity": 0.1,
+        "processor_type": "minecraft:block_rot"
+      }
+    ]
+  },
+  "fossil_diamonds": {
+    "processors": [
+      {
+        "integrity": 0.1,
+        "processor_type": "minecraft:block_rot"
+      },
+      {
+        "rules": [
+          {
+            "output_state": {
+              "Name": "minecraft:deepslate_diamond_ore"
+            },
+            "input_predicate": {
+              "block": "minecraft:coal_ore",
+              "predicate_type": "minecraft:block_match"
+            },
+            "location_predicate": {
+              "predicate_type": "minecraft:always_true"
+            }
+          }
+        ],
+        "processor_type": "minecraft:rule"
+      }
+    ]
+  },
+  "fossil_rot": {
+    "processors": [
+      {
+        "integrity": 0.9,
+        "processor_type": "minecraft:block_rot"
+      }
+    ]
+  },
   "high_rampart": {
     "processors": [
       {

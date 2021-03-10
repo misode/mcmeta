@@ -2334,7 +2334,7 @@
   "coal_from_blasting": {
     "type": "minecraft:blasting",
     "ingredient": {
-      "item": "minecraft:coal_ore"
+      "tag": "minecraft:coal_ores"
     },
     "result": "minecraft:coal",
     "experience": 0.1,
@@ -2343,7 +2343,7 @@
   "coal_from_smelting": {
     "type": "minecraft:smelting",
     "ingredient": {
-      "item": "minecraft:coal_ore"
+      "tag": "minecraft:coal_ores"
     },
     "result": "minecraft:coal",
     "experience": 0.1,
@@ -2813,7 +2813,7 @@
   "copper_ingot": {
     "type": "minecraft:smelting",
     "ingredient": {
-      "item": "minecraft:copper_ore"
+      "tag": "minecraft:copper_ores"
     },
     "result": "minecraft:copper_ingot",
     "experience": 0.7,
@@ -2822,7 +2822,7 @@
   "copper_ingot_from_blasting": {
     "type": "minecraft:blasting",
     "ingredient": {
-      "item": "minecraft:copper_ore"
+      "tag": "minecraft:copper_ores"
     },
     "result": "minecraft:copper_ingot",
     "experience": 0.7,
@@ -2840,6 +2840,24 @@
       "item": "minecraft:copper_ingot",
       "count": 4
     }
+  },
+  "cracked_deepslate_bricks": {
+    "type": "minecraft:smelting",
+    "ingredient": {
+      "item": "minecraft:deepslate_bricks"
+    },
+    "result": "minecraft:cracked_deepslate_bricks",
+    "experience": 0.1,
+    "cookingtime": 200
+  },
+  "cracked_deepslate_tiles": {
+    "type": "minecraft:smelting",
+    "ingredient": {
+      "item": "minecraft:deepslate_tiles"
+    },
+    "result": "minecraft:cracked_deepslate_tiles",
+    "experience": 0.1,
+    "cookingtime": 200
   },
   "cracked_nether_bricks": {
     "type": "minecraft:smelting",
@@ -3858,6 +3876,15 @@
       "item": "minecraft:daylight_detector"
     }
   },
+  "deepslate": {
+    "type": "minecraft:smelting",
+    "ingredient": {
+      "item": "minecraft:cobbled_deepslate"
+    },
+    "result": "minecraft:deepslate",
+    "experience": 0.1,
+    "cookingtime": 200
+  },
   "deepslate_brick_slab": {
     "type": "minecraft:crafting_shaped",
     "pattern": [
@@ -3873,10 +3900,26 @@
       "count": 6
     }
   },
+  "deepslate_brick_slab_from_cobbled_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:cobbled_deepslate"
+    },
+    "result": "minecraft:deepslate_brick_slab",
+    "count": 2
+  },
   "deepslate_brick_slab_from_deepslate_bricks_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": {
       "item": "minecraft:deepslate_bricks"
+    },
+    "result": "minecraft:deepslate_brick_slab",
+    "count": 2
+  },
+  "deepslate_brick_slab_from_polished_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:polished_deepslate"
     },
     "result": "minecraft:deepslate_brick_slab",
     "count": 2
@@ -3898,10 +3941,26 @@
       "count": 4
     }
   },
+  "deepslate_brick_stairs_from_cobbled_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:cobbled_deepslate"
+    },
+    "result": "minecraft:deepslate_brick_stairs",
+    "count": 1
+  },
   "deepslate_brick_stairs_from_deepslate_bricks_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": {
       "item": "minecraft:deepslate_bricks"
+    },
+    "result": "minecraft:deepslate_brick_stairs",
+    "count": 1
+  },
+  "deepslate_brick_stairs_from_polished_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:polished_deepslate"
     },
     "result": "minecraft:deepslate_brick_stairs",
     "count": 1
@@ -3922,12 +3981,60 @@
       "count": 6
     }
   },
+  "deepslate_brick_wall_from_cobbled_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:cobbled_deepslate"
+    },
+    "result": "minecraft:deepslate_brick_wall",
+    "count": 1
+  },
   "deepslate_brick_wall_from_deepslate_bricks_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": {
       "item": "minecraft:deepslate_bricks"
     },
     "result": "minecraft:deepslate_brick_wall",
+    "count": 1
+  },
+  "deepslate_brick_wall_from_polished_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:polished_deepslate"
+    },
+    "result": "minecraft:deepslate_brick_wall",
+    "count": 1
+  },
+  "deepslate_bricks": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "SS",
+      "SS"
+    ],
+    "key": {
+      "S": {
+        "item": "minecraft:polished_deepslate"
+      }
+    },
+    "result": {
+      "item": "minecraft:deepslate_bricks",
+      "count": 4
+    }
+  },
+  "deepslate_bricks_from_cobbled_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:cobbled_deepslate"
+    },
+    "result": "minecraft:deepslate_bricks",
+    "count": 1
+  },
+  "deepslate_bricks_from_polished_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:polished_deepslate"
+    },
+    "result": "minecraft:deepslate_bricks",
     "count": 1
   },
   "deepslate_tile_slab": {
@@ -3945,10 +4052,34 @@
       "count": 6
     }
   },
+  "deepslate_tile_slab_from_cobbled_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:cobbled_deepslate"
+    },
+    "result": "minecraft:deepslate_tile_slab",
+    "count": 2
+  },
+  "deepslate_tile_slab_from_deepslate_bricks_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:deepslate_bricks"
+    },
+    "result": "minecraft:deepslate_tile_slab",
+    "count": 2
+  },
   "deepslate_tile_slab_from_deepslate_tiles_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": {
       "item": "minecraft:deepslate_tiles"
+    },
+    "result": "minecraft:deepslate_tile_slab",
+    "count": 2
+  },
+  "deepslate_tile_slab_from_polished_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:polished_deepslate"
     },
     "result": "minecraft:deepslate_tile_slab",
     "count": 2
@@ -3970,10 +4101,34 @@
       "count": 4
     }
   },
+  "deepslate_tile_stairs_from_cobbled_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:cobbled_deepslate"
+    },
+    "result": "minecraft:deepslate_tile_stairs",
+    "count": 1
+  },
+  "deepslate_tile_stairs_from_deepslate_bricks_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:deepslate_bricks"
+    },
+    "result": "minecraft:deepslate_tile_stairs",
+    "count": 1
+  },
   "deepslate_tile_stairs_from_deepslate_tiles_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": {
       "item": "minecraft:deepslate_tiles"
+    },
+    "result": "minecraft:deepslate_tile_stairs",
+    "count": 1
+  },
+  "deepslate_tile_stairs_from_polished_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:polished_deepslate"
     },
     "result": "minecraft:deepslate_tile_stairs",
     "count": 1
@@ -3994,12 +4149,76 @@
       "count": 6
     }
   },
+  "deepslate_tile_wall_from_cobbled_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:cobbled_deepslate"
+    },
+    "result": "minecraft:deepslate_tile_wall",
+    "count": 1
+  },
+  "deepslate_tile_wall_from_deepslate_bricks_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:deepslate_bricks"
+    },
+    "result": "minecraft:deepslate_tile_wall",
+    "count": 1
+  },
   "deepslate_tile_wall_from_deepslate_tiles_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": {
       "item": "minecraft:deepslate_tiles"
     },
     "result": "minecraft:deepslate_tile_wall",
+    "count": 1
+  },
+  "deepslate_tile_wall_from_polished_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:polished_deepslate"
+    },
+    "result": "minecraft:deepslate_tile_wall",
+    "count": 1
+  },
+  "deepslate_tiles": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "SS",
+      "SS"
+    ],
+    "key": {
+      "S": {
+        "item": "minecraft:deepslate_bricks"
+      }
+    },
+    "result": {
+      "item": "minecraft:deepslate_tiles",
+      "count": 4
+    }
+  },
+  "deepslate_tiles_from_cobbled_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:cobbled_deepslate"
+    },
+    "result": "minecraft:deepslate_tiles",
+    "count": 1
+  },
+  "deepslate_tiles_from_deepslate_bricks_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:deepslate_bricks"
+    },
+    "result": "minecraft:deepslate_tiles",
+    "count": 1
+  },
+  "deepslate_tiles_from_polished_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:polished_deepslate"
+    },
+    "result": "minecraft:deepslate_tiles",
     "count": 1
   },
   "detector_rail": {
@@ -4481,7 +4700,7 @@
   "emerald_from_blasting": {
     "type": "minecraft:blasting",
     "ingredient": {
-      "item": "minecraft:emerald_ore"
+      "tag": "minecraft:emerald_ores"
     },
     "result": "minecraft:emerald",
     "experience": 1.0,
@@ -4490,7 +4709,7 @@
   "emerald_from_smelting": {
     "type": "minecraft:smelting",
     "ingredient": {
-      "item": "minecraft:emerald_ore"
+      "tag": "minecraft:emerald_ores"
     },
     "result": "minecraft:emerald",
     "experience": 1.0,
@@ -10331,6 +10550,14 @@
       "count": 4
     }
   },
+  "polished_deepslate_from_cobbled_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:cobbled_deepslate"
+    },
+    "result": "minecraft:polished_deepslate",
+    "count": 1
+  },
   "polished_deepslate_slab": {
     "type": "minecraft:crafting_shaped",
     "pattern": [
@@ -10345,6 +10572,14 @@
       "item": "minecraft:polished_deepslate_slab",
       "count": 6
     }
+  },
+  "polished_deepslate_slab_from_cobbled_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:cobbled_deepslate"
+    },
+    "result": "minecraft:polished_deepslate_slab",
+    "count": 2
   },
   "polished_deepslate_slab_from_polished_deepslate_stonecutting": {
     "type": "minecraft:stonecutting",
@@ -10371,6 +10606,14 @@
       "count": 4
     }
   },
+  "polished_deepslate_stairs_from_cobbled_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:cobbled_deepslate"
+    },
+    "result": "minecraft:polished_deepslate_stairs",
+    "count": 1
+  },
   "polished_deepslate_stairs_from_polished_deepslate_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": {
@@ -10394,6 +10637,14 @@
       "item": "minecraft:polished_deepslate_wall",
       "count": 6
     }
+  },
+  "polished_deepslate_wall_from_cobbled_deepslate_stonecutting": {
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:cobbled_deepslate"
+    },
+    "result": "minecraft:polished_deepslate_wall",
+    "count": 1
   },
   "polished_deepslate_wall_from_polished_deepslate_stonecutting": {
     "type": "minecraft:stonecutting",
