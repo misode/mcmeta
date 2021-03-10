@@ -1,15 +1,17 @@
-#version 110
+#version 150
 
 uniform sampler2D DiffuseSampler;
 
-varying vec2 texCoord;
-varying vec2 oneTexel;
+in vec2 texCoord;
+in vec2 oneTexel;
 
 uniform vec2 InSize;
 
 uniform float Time;
 uniform vec2 Frequency;
 uniform vec2 WobbleAmount;
+
+out vec4 fragColor;
 
 vec3 hue(float h)
 {
@@ -51,8 +53,8 @@ void main() {
     float xOffset = sin(texCoord.y * Frequency.x + Time * 3.1415926535 * 2.0) * WobbleAmount.x;
     float yOffset = cos(texCoord.x * Frequency.y + Time * 3.1415926535 * 2.0) * WobbleAmount.y;
     vec2 offset = vec2(xOffset, yOffset);
-    vec4 rgb = texture2D(DiffuseSampler, texCoord + offset);
+    vec4 rgb = texture(DiffuseSampler, texCoord + offset);
     vec3 hsv = RGBtoHSV(rgb.rgb);
     hsv.x = fract(hsv.x + Time);
-    gl_FragColor = vec4(HSVtoRGB(hsv), 1.0);
+    fragColor = vec4(HSVtoRGB(hsv), 1.0);
 }

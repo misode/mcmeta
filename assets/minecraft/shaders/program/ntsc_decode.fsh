@@ -1,10 +1,10 @@
-#version 110
+#version 150
 
 uniform sampler2D DiffuseSampler;
 uniform sampler2D BaseSampler;
 
-varying vec2 texCoord;
-varying vec2 oneTexel;
+in vec2 texCoord;
+in vec2 oneTexel;
 
 uniform vec2 InSize;
 
@@ -33,6 +33,8 @@ const vec4 CRange = vec4(3.2366);
 const float Pi2Length = Pi2 / 83.0;
 const vec4 NotchOffset = vec4(0.0, 1.0, 2.0, 3.0);
 const vec4 W = vec4(Pi2 * CCFrequency * ScanTime);
+
+out vec4 fragColor;
 
 void main() {
     vec4 YAccum = Zero;
@@ -63,14 +65,14 @@ void main() {
     float Fc_q_2 = Fc_q * 2.0;
     vec4 CoordY = vec4(texCoord.y);
 
-    vec4 BaseTexel = texture2D(DiffuseSampler, texCoord);
+    vec4 BaseTexel = texture(DiffuseSampler, texCoord);
     // 83 composite samples wide, 4 composite pixels per texel
     for (float n = -41.0; n < 42.0; n += 4.0)
     {
         vec4 n4 = n + NotchOffset;
         vec4 CoordX = texCoord.x + oneTexel.x * n4 * 0.25;
         vec2 TexCoord = vec2(CoordX.x, CoordY.y);
-        vec4 C = texture2D(DiffuseSampler, TexCoord) * CRange + MinC;
+        vec4 C = texture(DiffuseSampler, TexCoord) * CRange + MinC;
         vec4 WT = W * (CoordX + A2 * CoordY * InSize.y + B);
         vec4 Cosine = 0.54 + 0.46 * cos(Pi2Length * n4);
 
@@ -128,5 +130,5 @@ void main() {
     vec3 YIQ = vec3(Y, I, Q);
     vec3 OutRGB = vec3(dot(YIQ, YIQ2R), dot(YIQ, YIQ2G), dot(YIQ, YIQ2B));
 
-    gl_FragColor = vec4(OutRGB, 1.0);
+    fragColor = vec4(OutRGB, 1.0);
 }
