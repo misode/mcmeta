@@ -10,8 +10,21 @@
               "type": "minecraft:square"
             },
             "inner": {
-              "config": {},
-              "type": "minecraft:heightmap"
+              "config": {
+                "outer": {
+                  "config": {
+                    "max_water_depth": 0
+                  },
+                  "type": "minecraft:heightmap_with_water_threshold"
+                },
+                "inner": {
+                  "config": {
+                    "heightmap": "OCEAN_FLOOR"
+                  },
+                  "type": "minecraft:heightmap"
+                }
+              },
+              "type": "minecraft:decorated"
             }
           },
           "type": "minecraft:decorated"
