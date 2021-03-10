@@ -1,8 +1,14 @@
 {
   "config": {
-    "max_water_depth": 2147483647,
+    "decorators": [],
     "ignore_vines": true,
-    "heightmap": "MOTION_BLOCKING",
+    "force_dirt": false,
+    "dirt_provider": {
+      "state": {
+        "Name": "minecraft:dirt"
+      },
+      "type": "minecraft:simple_state_provider"
+    },
     "minimum_size": {
       "middle_size": 1,
       "upper_size": 2,
@@ -11,7 +17,6 @@
       "lower_size": 0,
       "type": "minecraft:three_layers_feature_size"
     },
-    "decorators": [],
     "trunk_provider": {
       "state": {
         "Properties": {
@@ -21,7 +26,13 @@
       },
       "type": "minecraft:simple_state_provider"
     },
-    "leaves_provider": {
+    "trunk_placer": {
+      "base_height": 6,
+      "height_rand_a": 2,
+      "height_rand_b": 1,
+      "type": "minecraft:dark_oak_trunk_placer"
+    },
+    "foliage_provider": {
       "state": {
         "Properties": {
           "persistent": "false",
@@ -35,12 +46,6 @@
       "radius": 0,
       "offset": 0,
       "type": "minecraft:dark_oak_foliage_placer"
-    },
-    "trunk_placer": {
-      "base_height": 6,
-      "height_rand_a": 2,
-      "height_rand_b": 1,
-      "type": "minecraft:dark_oak_trunk_placer"
     }
   },
   "type": "minecraft:tree"
