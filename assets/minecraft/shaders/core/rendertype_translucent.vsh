@@ -1,5 +1,7 @@
 #version 150
 
+#moj_import <light.glsl>
+
 in vec3 Position;
 in vec4 Color;
 in vec2 UV0;
@@ -15,14 +17,13 @@ uniform vec3 ChunkOffset;
 out float vertexDistance;
 out vec4 vertexColor;
 out vec2 texCoord0;
-out vec2 texCoord2;
 out vec4 normal;
 
 void main() {
     gl_Position = ProjMat * ModelViewMat * vec4(Position + ChunkOffset, 1.0);
 
     vertexDistance = length((ModelViewMat * vec4(Position + ChunkOffset, 1.0)).xyz);
-    vertexColor = Color * texelFetch(Sampler2, UV2 / 16, 0);
+    vertexColor = Color * minecraft_sample_lightmap(Sampler2, UV2);
     texCoord0 = UV0;
     normal = ProjMat * ModelViewMat * vec4(Normal, 0.0);
 }
