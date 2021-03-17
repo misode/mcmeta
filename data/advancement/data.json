@@ -11894,11 +11894,43 @@
       ]
     ]
   },
-  "recipes/building_blocks/mossy_cobblestone": {
+  "recipes/building_blocks/mossy_cobblestone_from_moss_block": {
     "parent": "minecraft:recipes/root",
     "rewards": {
       "recipes": [
-        "minecraft:mossy_cobblestone"
+        "minecraft:mossy_cobblestone_from_moss_block"
+      ]
+    },
+    "criteria": {
+      "has_moss_block": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:moss_block"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mossy_cobblestone_from_moss_block"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_moss_block",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/mossy_cobblestone_from_vine": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mossy_cobblestone_from_vine"
       ]
     },
     "criteria": {
@@ -11915,7 +11947,7 @@
       "has_the_recipe": {
         "trigger": "minecraft:recipe_unlocked",
         "conditions": {
-          "recipe": "minecraft:mossy_cobblestone"
+          "recipe": "minecraft:mossy_cobblestone_from_vine"
         }
       }
     },
@@ -12182,11 +12214,11 @@
       ]
     ]
   },
-  "recipes/building_blocks/mossy_stone_bricks": {
+  "recipes/building_blocks/mossy_stone_bricks_from_moss_block": {
     "parent": "minecraft:recipes/root",
     "rewards": {
       "recipes": [
-        "minecraft:mossy_stone_bricks"
+        "minecraft:mossy_stone_bricks_from_moss_block"
       ]
     },
     "criteria": {
@@ -12203,7 +12235,39 @@
       "has_the_recipe": {
         "trigger": "minecraft:recipe_unlocked",
         "conditions": {
-          "recipe": "minecraft:mossy_stone_bricks"
+          "recipe": "minecraft:mossy_stone_bricks_from_moss_block"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_mossy_cobblestone",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/mossy_stone_bricks_from_vine": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mossy_stone_bricks_from_vine"
+      ]
+    },
+    "criteria": {
+      "has_mossy_cobblestone": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:mossy_cobblestone"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mossy_stone_bricks_from_vine"
         }
       }
     },
@@ -18246,11 +18310,11 @@
       ]
     ]
   },
-  "recipes/building_blocks/waxed_copper_block": {
+  "recipes/building_blocks/waxed_copper_block_from_honeycomb": {
     "parent": "minecraft:recipes/root",
     "rewards": {
       "recipes": [
-        "minecraft:waxed_copper_block"
+        "minecraft:waxed_copper_block_from_honeycomb"
       ]
     },
     "criteria": {
@@ -18267,77 +18331,13 @@
       "has_the_recipe": {
         "trigger": "minecraft:recipe_unlocked",
         "conditions": {
-          "recipe": "minecraft:waxed_copper_block"
+          "recipe": "minecraft:waxed_copper_block_from_honeycomb"
         }
       }
     },
     "requirements": [
       [
         "has_copper_block",
-        "has_the_recipe"
-      ]
-    ]
-  },
-  "recipes/building_blocks/waxed_copper_cut_slab_from_honeycomb": {
-    "parent": "minecraft:recipes/root",
-    "rewards": {
-      "recipes": [
-        "minecraft:waxed_copper_cut_slab_from_honeycomb"
-      ]
-    },
-    "criteria": {
-      "has_copper_cut_slab": {
-        "trigger": "minecraft:inventory_changed",
-        "conditions": {
-          "items": [
-            {
-              "item": "minecraft:cut_copper_slab"
-            }
-          ]
-        }
-      },
-      "has_the_recipe": {
-        "trigger": "minecraft:recipe_unlocked",
-        "conditions": {
-          "recipe": "minecraft:waxed_copper_cut_slab_from_honeycomb"
-        }
-      }
-    },
-    "requirements": [
-      [
-        "has_copper_cut_slab",
-        "has_the_recipe"
-      ]
-    ]
-  },
-  "recipes/building_blocks/waxed_copper_cut_stairs_from_honeycomb": {
-    "parent": "minecraft:recipes/root",
-    "rewards": {
-      "recipes": [
-        "minecraft:waxed_copper_cut_stairs_from_honeycomb"
-      ]
-    },
-    "criteria": {
-      "has_copper_cut_stairs": {
-        "trigger": "minecraft:inventory_changed",
-        "conditions": {
-          "items": [
-            {
-              "item": "minecraft:cut_copper_stairs"
-            }
-          ]
-        }
-      },
-      "has_the_recipe": {
-        "trigger": "minecraft:recipe_unlocked",
-        "conditions": {
-          "recipe": "minecraft:waxed_copper_cut_stairs_from_honeycomb"
-        }
-      }
-    },
-    "requirements": [
-      [
-        "has_copper_cut_stairs",
         "has_the_recipe"
       ]
     ]
@@ -18470,6 +18470,38 @@
       ]
     ]
   },
+  "recipes/building_blocks/waxed_cut_copper_slab_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_cut_copper_slab_from_honeycomb"
+      ]
+    },
+    "criteria": {
+      "has_cut_copper_slab": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:cut_copper_slab"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:waxed_cut_copper_slab_from_honeycomb"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_cut_copper_slab",
+        "has_the_recipe"
+      ]
+    ]
+  },
   "recipes/building_blocks/waxed_cut_copper_slab_from_waxed_copper_block_stonecutting": {
     "parent": "minecraft:recipes/root",
     "rewards": {
@@ -18566,6 +18598,38 @@
       ]
     ]
   },
+  "recipes/building_blocks/waxed_cut_copper_stairs_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_cut_copper_stairs_from_honeycomb"
+      ]
+    },
+    "criteria": {
+      "has_cut_copper_stairs": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:cut_copper_stairs"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:waxed_cut_copper_stairs_from_honeycomb"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_cut_copper_stairs",
+        "has_the_recipe"
+      ]
+    ]
+  },
   "recipes/building_blocks/waxed_cut_copper_stairs_from_waxed_copper_block_stonecutting": {
     "parent": "minecraft:recipes/root",
     "rewards": {
@@ -18630,15 +18694,15 @@
       ]
     ]
   },
-  "recipes/building_blocks/waxed_exposed_copper": {
+  "recipes/building_blocks/waxed_exposed_copper_from_honeycomb": {
     "parent": "minecraft:recipes/root",
     "rewards": {
       "recipes": [
-        "minecraft:waxed_exposed_copper"
+        "minecraft:waxed_exposed_copper_from_honeycomb"
       ]
     },
     "criteria": {
-      "has_exposed_copper_block": {
+      "has_exposed_copper": {
         "trigger": "minecraft:inventory_changed",
         "conditions": {
           "items": [
@@ -18651,13 +18715,13 @@
       "has_the_recipe": {
         "trigger": "minecraft:recipe_unlocked",
         "conditions": {
-          "recipe": "minecraft:waxed_exposed_copper"
+          "recipe": "minecraft:waxed_exposed_copper_from_honeycomb"
         }
       }
     },
     "requirements": [
       [
-        "has_exposed_copper_block",
+        "has_exposed_copper",
         "has_the_recipe"
       ]
     ]
@@ -19014,15 +19078,15 @@
       ]
     ]
   },
-  "recipes/building_blocks/waxed_weathered_copper": {
+  "recipes/building_blocks/waxed_weathered_copper_from_honeycomb": {
     "parent": "minecraft:recipes/root",
     "rewards": {
       "recipes": [
-        "minecraft:waxed_weathered_copper"
+        "minecraft:waxed_weathered_copper_from_honeycomb"
       ]
     },
     "criteria": {
-      "has_weathered_copper_block": {
+      "has_weathered_copper": {
         "trigger": "minecraft:inventory_changed",
         "conditions": {
           "items": [
@@ -19035,13 +19099,13 @@
       "has_the_recipe": {
         "trigger": "minecraft:recipe_unlocked",
         "conditions": {
-          "recipe": "minecraft:waxed_weathered_copper"
+          "recipe": "minecraft:waxed_weathered_copper_from_honeycomb"
         }
       }
     },
     "requirements": [
       [
-        "has_weathered_copper_block",
+        "has_weathered_copper",
         "has_the_recipe"
       ]
     ]
@@ -31507,6 +31571,38 @@
     "requirements": [
       [
         "has_copper_block",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/misc/copper_ingot_from_waxed_copper_block": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:copper_ingot_from_waxed_copper_block"
+      ]
+    },
+    "criteria": {
+      "has_waxed_copper_block": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "minecraft:waxed_copper_block"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:copper_ingot_from_waxed_copper_block"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_waxed_copper_block",
         "has_the_recipe"
       ]
     ]

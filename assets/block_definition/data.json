@@ -4265,23 +4265,23 @@
       }
     }
   },
-  "cave_vines_body": {
+  "cave_vines": {
     "variants": {
       "berries=false": {
-        "model": "minecraft:block/cave_vines_body"
+        "model": "minecraft:block/cave_vines"
       },
       "berries=true": {
-        "model": "minecraft:block/cave_vines_body_lit"
+        "model": "minecraft:block/cave_vines_lit"
       }
     }
   },
-  "cave_vines_head": {
+  "cave_vines_plant": {
     "variants": {
       "berries=false": {
-        "model": "minecraft:block/cave_vines_head"
+        "model": "minecraft:block/cave_vines_plant"
       },
       "berries=true": {
-        "model": "minecraft:block/cave_vines_head_lit"
+        "model": "minecraft:block/cave_vines_plant_lit"
       }
     }
   },
@@ -10057,11 +10057,11 @@
     "multipart": [
       {
         "when": {
-          "up": "false",
+          "north": "false",
           "west": "false",
-          "east": "false",
+          "up": "false",
           "south": "false",
-          "north": "false"
+          "east": "false"
         },
         "apply": [
           {
@@ -10079,11 +10079,11 @@
               "north": "true"
             },
             {
-              "up": "false",
+              "north": "false",
               "west": "false",
-              "east": "false",
+              "up": "false",
               "south": "false",
-              "north": "false"
+              "east": "false"
             }
           ]
         },
@@ -10109,11 +10109,11 @@
               "east": "true"
             },
             {
-              "up": "false",
+              "north": "false",
               "west": "false",
-              "east": "false",
+              "up": "false",
               "south": "false",
-              "north": "false"
+              "east": "false"
             }
           ]
         },
@@ -10143,11 +10143,11 @@
               "south": "true"
             },
             {
-              "up": "false",
+              "north": "false",
               "west": "false",
-              "east": "false",
+              "up": "false",
               "south": "false",
-              "north": "false"
+              "east": "false"
             }
           ]
         },
@@ -10177,11 +10177,11 @@
               "west": "true"
             },
             {
-              "up": "false",
+              "north": "false",
               "west": "false",
-              "east": "false",
+              "up": "false",
               "south": "false",
-              "north": "false"
+              "east": "false"
             }
           ]
         },
@@ -10441,6 +10441,24 @@
     "multipart": [
       {
         "when": {
+          "north": "true"
+        },
+        "apply": {
+          "model": "minecraft:block/glow_lichen"
+        }
+      },
+      {
+        "when": {
+          "west": "true"
+        },
+        "apply": {
+          "model": "minecraft:block/glow_lichen",
+          "y": 270,
+          "uvlock": true
+        }
+      },
+      {
+        "when": {
           "up": "true"
         },
         "apply": {
@@ -10451,11 +10469,11 @@
       },
       {
         "when": {
-          "west": "true"
+          "south": "true"
         },
         "apply": {
           "model": "minecraft:block/glow_lichen",
-          "y": 270,
+          "y": 180,
           "uvlock": true
         }
       },
@@ -10477,24 +10495,6 @@
           "model": "minecraft:block/glow_lichen",
           "y": 90,
           "uvlock": true
-        }
-      },
-      {
-        "when": {
-          "south": "true"
-        },
-        "apply": {
-          "model": "minecraft:block/glow_lichen",
-          "y": 180,
-          "uvlock": true
-        }
-      },
-      {
-        "when": {
-          "north": "true"
-        },
-        "apply": {
-          "model": "minecraft:block/glow_lichen"
         }
       }
     ]
@@ -11569,10 +11569,10 @@
       },
       {
         "when": {
+          "north": "false",
           "west": "false",
-          "east": "false",
           "south": "false",
-          "north": "false"
+          "east": "false"
         },
         "apply": {
           "model": "minecraft:block/iron_bars_post"
@@ -11580,10 +11580,10 @@
       },
       {
         "when": {
+          "north": "true",
           "west": "false",
-          "east": "false",
           "south": "false",
-          "north": "true"
+          "east": "false"
         },
         "apply": {
           "model": "minecraft:block/iron_bars_cap"
@@ -11591,10 +11591,10 @@
       },
       {
         "when": {
+          "north": "false",
           "west": "false",
-          "east": "true",
           "south": "false",
-          "north": "false"
+          "east": "true"
         },
         "apply": {
           "model": "minecraft:block/iron_bars_cap",
@@ -11603,10 +11603,10 @@
       },
       {
         "when": {
+          "north": "false",
           "west": "false",
-          "east": "false",
           "south": "true",
-          "north": "false"
+          "east": "false"
         },
         "apply": {
           "model": "minecraft:block/iron_bars_cap_alt"
@@ -11614,10 +11614,10 @@
       },
       {
         "when": {
+          "north": "false",
           "west": "true",
-          "east": "false",
           "south": "false",
-          "north": "false"
+          "east": "false"
         },
         "apply": {
           "model": "minecraft:block/iron_bars_cap_alt",
@@ -13387,29 +13387,55 @@
   },
   "lightning_rod": {
     "variants": {
-      "facing=down": {
+      "facing=down,powered=false": {
         "model": "minecraft:block/lightning_rod",
         "x": 180
       },
-      "facing=east": {
+      "facing=down,powered=true": {
+        "model": "minecraft:block/lightning_rod_on",
+        "x": 180
+      },
+      "facing=east,powered=false": {
         "model": "minecraft:block/lightning_rod",
         "x": 90,
         "y": 90
       },
-      "facing=north": {
+      "facing=east,powered=true": {
+        "model": "minecraft:block/lightning_rod_on",
+        "x": 90,
+        "y": 90
+      },
+      "facing=north,powered=false": {
         "model": "minecraft:block/lightning_rod",
         "x": 90
       },
-      "facing=south": {
+      "facing=north,powered=true": {
+        "model": "minecraft:block/lightning_rod_on",
+        "x": 90
+      },
+      "facing=south,powered=false": {
         "model": "minecraft:block/lightning_rod",
         "x": 90,
         "y": 180
       },
-      "facing=up": {
+      "facing=south,powered=true": {
+        "model": "minecraft:block/lightning_rod_on",
+        "x": 90,
+        "y": 180
+      },
+      "facing=up,powered=false": {
         "model": "minecraft:block/lightning_rod"
       },
-      "facing=west": {
+      "facing=up,powered=true": {
+        "model": "minecraft:block/lightning_rod_on"
+      },
+      "facing=west,powered=false": {
         "model": "minecraft:block/lightning_rod",
+        "x": 90,
+        "y": 270
+      },
+      "facing=west,powered=true": {
+        "model": "minecraft:block/lightning_rod_on",
         "x": 90,
         "y": 270
       }
@@ -21453,8 +21479,8 @@
         "when": {
           "OR": [
             {
-              "west": "none",
               "east": "none",
+              "west": "none",
               "south": "none",
               "north": "none"
             },
@@ -22465,40 +22491,36 @@
   },
   "small_dripleaf": {
     "variants": {
-      "half=lower": [
-        {
-          "model": "minecraft:block/small_dripleaf_bottom"
-        },
-        {
-          "model": "minecraft:block/small_dripleaf_bottom",
-          "y": 90
-        },
-        {
-          "model": "minecraft:block/small_dripleaf_bottom",
-          "y": 180
-        },
-        {
-          "model": "minecraft:block/small_dripleaf_bottom",
-          "y": 270
-        }
-      ],
-      "half=upper": [
-        {
-          "model": "minecraft:block/small_dripleaf_top"
-        },
-        {
-          "model": "minecraft:block/small_dripleaf_top",
-          "y": 90
-        },
-        {
-          "model": "minecraft:block/small_dripleaf_top",
-          "y": 180
-        },
-        {
-          "model": "minecraft:block/small_dripleaf_top",
-          "y": 270
-        }
-      ]
+      "facing=east,half=lower": {
+        "y": 90,
+        "model": "minecraft:block/small_dripleaf_bottom"
+      },
+      "facing=east,half=upper": {
+        "y": 90,
+        "model": "minecraft:block/small_dripleaf_top"
+      },
+      "facing=north,half=lower": {
+        "model": "minecraft:block/small_dripleaf_bottom"
+      },
+      "facing=north,half=upper": {
+        "model": "minecraft:block/small_dripleaf_top"
+      },
+      "facing=south,half=lower": {
+        "y": 180,
+        "model": "minecraft:block/small_dripleaf_bottom"
+      },
+      "facing=south,half=upper": {
+        "y": 180,
+        "model": "minecraft:block/small_dripleaf_top"
+      },
+      "facing=west,half=lower": {
+        "y": 270,
+        "model": "minecraft:block/small_dripleaf_bottom"
+      },
+      "facing=west,half=upper": {
+        "y": 270,
+        "model": "minecraft:block/small_dripleaf_top"
+      }
     }
   },
   "smithing_table": {
@@ -25813,12 +25835,10 @@
     "multipart": [
       {
         "when": {
-          "up": "true"
+          "north": "true"
         },
         "apply": {
-          "model": "minecraft:block/vine",
-          "x": 270,
-          "uvlock": true
+          "model": "minecraft:block/vine"
         }
       },
       {
@@ -25833,11 +25853,11 @@
       },
       {
         "when": {
-          "east": "true"
+          "up": "true"
         },
         "apply": {
           "model": "minecraft:block/vine",
-          "y": 90,
+          "x": 270,
           "uvlock": true
         }
       },
@@ -25853,10 +25873,12 @@
       },
       {
         "when": {
-          "north": "true"
+          "east": "true"
         },
         "apply": {
-          "model": "minecraft:block/vine"
+          "model": "minecraft:block/vine",
+          "y": 90,
+          "uvlock": true
         }
       }
     ]

@@ -503,23 +503,47 @@
                 "name": "minecraft:amethyst_cluster"
               },
               {
-                "type": "minecraft:item",
-                "functions": [
+                "type": "minecraft:alternatives",
+                "children": [
                   {
-                    "function": "minecraft:set_count",
-                    "count": 4.0,
-                    "add": false
+                    "type": "minecraft:item",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                          "tag": "minecraft:cluster_max_harvestables"
+                        }
+                      }
+                    ],
+                    "functions": [
+                      {
+                        "function": "minecraft:set_count",
+                        "count": 4.0,
+                        "add": false
+                      },
+                      {
+                        "function": "minecraft:apply_bonus",
+                        "enchantment": "minecraft:fortune",
+                        "formula": "minecraft:ore_drops"
+                      }
+                    ],
+                    "name": "minecraft:amethyst_shard"
                   },
                   {
-                    "function": "minecraft:apply_bonus",
-                    "enchantment": "minecraft:fortune",
-                    "formula": "minecraft:ore_drops"
-                  },
-                  {
-                    "function": "minecraft:explosion_decay"
+                    "type": "minecraft:item",
+                    "functions": [
+                      {
+                        "function": "minecraft:set_count",
+                        "count": 2.0,
+                        "add": false
+                      },
+                      {
+                        "function": "minecraft:explosion_decay"
+                      }
+                    ],
+                    "name": "minecraft:amethyst_shard"
                   }
-                ],
-                "name": "minecraft:amethyst_shard"
+                ]
               }
             ]
           }
@@ -1350,7 +1374,24 @@
     ]
   },
   "blocks/big_dripleaf_stem": {
-    "type": "minecraft:block"
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:big_dripleaf"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
   },
   "blocks/birch_button": {
     "type": "minecraft:block",
@@ -3824,7 +3865,7 @@
       }
     ]
   },
-  "blocks/cave_vines_body": {
+  "blocks/cave_vines": {
     "type": "minecraft:block",
     "pools": [
       {
@@ -3839,7 +3880,7 @@
         "conditions": [
           {
             "condition": "minecraft:block_state_property",
-            "block": "minecraft:cave_vines_body",
+            "block": "minecraft:cave_vines",
             "properties": {
               "berries": "true"
             }
@@ -3848,7 +3889,7 @@
       }
     ]
   },
-  "blocks/cave_vines_head": {
+  "blocks/cave_vines_plant": {
     "type": "minecraft:block",
     "pools": [
       {
@@ -3863,7 +3904,7 @@
         "conditions": [
           {
             "condition": "minecraft:block_state_property",
-            "block": "minecraft:cave_vines_head",
+            "block": "minecraft:cave_vines_plant",
             "properties": {
               "berries": "true"
             }
@@ -27504,7 +27545,31 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
+                    "type": "minecraft:weakness",
+                    "duration": {
+                      "type": "minecraft:uniform",
+                      "min": 6.0,
+                      "max": 8.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:poison",
+                    "duration": {
+                      "type": "minecraft:uniform",
+                      "min": 10.0,
+                      "max": 20.0
+                    }
+                  },
+                  {
                     "type": "minecraft:night_vision",
+                    "duration": {
+                      "type": "minecraft:uniform",
+                      "min": 7.0,
+                      "max": 10.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:saturation",
                     "duration": {
                       "type": "minecraft:uniform",
                       "min": 7.0,
@@ -27520,35 +27585,11 @@
                     }
                   },
                   {
-                    "type": "minecraft:weakness",
-                    "duration": {
-                      "type": "minecraft:uniform",
-                      "min": 6.0,
-                      "max": 8.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:saturation",
-                    "duration": {
-                      "type": "minecraft:uniform",
-                      "min": 7.0,
-                      "max": 10.0
-                    }
-                  },
-                  {
                     "type": "minecraft:blindness",
                     "duration": {
                       "type": "minecraft:uniform",
                       "min": 5.0,
                       "max": 7.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:poison",
-                    "duration": {
-                      "type": "minecraft:uniform",
-                      "min": 10.0,
-                      "max": 20.0
                     }
                   }
                 ]
