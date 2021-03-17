@@ -9,6 +9,7 @@ uniform mat4 ProjMat;
 uniform float LineWidth;
 uniform vec2 ScreenSize;
 
+out float vertexDistance;
 out vec4 vertexColor;
 
 void main() {
@@ -27,5 +28,6 @@ void main() {
         gl_Position = vec4((ndc1 - vec3(lineOffset, 0.0)) * linePosStart.w, linePosStart.w);
     }
 
+    vertexDistance = length((ModelViewMat * vec4(Position, 1.0)).xyz);
     vertexColor = Color;
 }

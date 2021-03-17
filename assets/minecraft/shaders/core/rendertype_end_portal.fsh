@@ -46,7 +46,7 @@ mat4 end_portal_layer(float layer) {
 
     mat2 rotate = mat2_rotate_z(radians((layer * layer * 4321.0 + layer * 9.0) * 2.0));
 
-    mat2 scale = mat2(4.5 - layer / 4.0);
+    mat2 scale = mat2((4.5 - layer / 4.0) * 2.0);
 
     return mat4(scale * rotate) * translate * SCALE_TRANSLATE;
 }
