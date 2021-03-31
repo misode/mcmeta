@@ -1,42 +1,9 @@
 {
   "config": {
-    "horizontal_radius_factor": {
-      "type": "minecraft:uniform",
-      "value": {
-        "base": 0.75,
-        "spread": 0.25
-      }
+    "yScale": 3.0,
+    "lava_level": {
+      "above_bottom": 9
     },
-    "vertical_radius_default_factor": 1.0,
-    "vertical_radius_center_factor": 0.0,
-    "vertical_rotation": {
-      "type": "minecraft:uniform",
-      "value": {
-        "base": -0.125,
-        "spread": 0.25
-      }
-    },
-    "thickness": {
-      "type": "minecraft:trapezoid",
-      "value": {
-        "min": 0.0,
-        "max": 6.0,
-        "plateau": 2.0
-      }
-    },
-    "width_smoothness": 3,
-    "top_inclusive": {
-      "absolute": 67
-    },
-    "y_scale": 3,
-    "distance_factor": {
-      "type": "minecraft:uniform",
-      "value": {
-        "base": 0.75,
-        "spread": 0.25
-      }
-    },
-    "probability": 0.02,
     "debug_settings": {
       "air_state": {
         "Properties": {
@@ -47,8 +14,51 @@
         "Name": "minecraft:warped_button"
       }
     },
-    "bottom_inclusive": {
-      "absolute": 10
+    "probability": 0.02,
+    "y": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": {
+          "absolute": 10
+        },
+        "max_inclusive": {
+          "absolute": 67
+        }
+      }
+    },
+    "vertical_rotation": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": -0.125,
+        "max_exclusive": 0.125
+      }
+    },
+    "shape": {
+      "horizontal_radius_factor": {
+        "type": "minecraft:uniform",
+        "value": {
+          "min_inclusive": 0.75,
+          "max_exclusive": 1.0
+        }
+      },
+      "vertical_radius_default_factor": 1.0,
+      "vertical_radius_center_factor": 0.0,
+      "distance_factor": {
+        "type": "minecraft:uniform",
+        "value": {
+          "min_inclusive": 0.75,
+          "max_exclusive": 1.0
+        }
+      },
+      "thickness": {
+        "type": "minecraft:trapezoid",
+        "value": {
+          "min": 0.0,
+          "max": 6.0,
+          "plateau": 2.0
+        }
+      },
+      "width_smoothness": 3
     }
   },
   "type": "minecraft:canyon"

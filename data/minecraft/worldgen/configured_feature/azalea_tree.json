@@ -28,8 +28,11 @@
       "height_rand_b": 0,
       "min_height_for_leaves": 3,
       "bend_length": {
-        "base": 1,
-        "spread": 1
+        "type": "minecraft:uniform",
+        "value": {
+          "min_inclusive": 1,
+          "max_inclusive": 2
+        }
       },
       "base_height": 4,
       "height_rand_a": 2,
@@ -38,24 +41,24 @@
     "foliage_provider": {
       "entries": [
         {
-          "weight": 3,
           "data": {
             "Properties": {
               "persistent": "false",
               "distance": "7"
             },
             "Name": "minecraft:azalea_leaves"
-          }
+          },
+          "weight": 3
         },
         {
-          "weight": 1,
           "data": {
             "Properties": {
               "persistent": "false",
               "distance": "7"
             },
             "Name": "minecraft:azalea_leaves_flowers"
-          }
+          },
+          "weight": 1
         }
       ],
       "type": "minecraft:weighted_state_provider"
