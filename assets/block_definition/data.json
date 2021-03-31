@@ -12927,6 +12927,13 @@
       }
     }
   },
+  "light": {
+    "variants": {
+      "": {
+        "model": "minecraft:block/light"
+      }
+    }
+  },
   "light_blue_banner": {
     "variants": {
       "": {
@@ -21479,26 +21486,26 @@
         "when": {
           "OR": [
             {
-              "east": "none",
-              "west": "none",
               "south": "none",
-              "north": "none"
+              "north": "none",
+              "east": "none",
+              "west": "none"
             },
             {
-              "east": "side|up",
-              "north": "side|up"
+              "north": "side|up",
+              "east": "side|up"
             },
             {
-              "east": "side|up",
-              "south": "side|up"
+              "south": "side|up",
+              "east": "side|up"
             },
             {
-              "west": "side|up",
-              "south": "side|up"
+              "south": "side|up",
+              "west": "side|up"
             },
             {
-              "west": "side|up",
-              "north": "side|up"
+              "north": "side|up",
+              "west": "side|up"
             }
           ]
         },
@@ -21892,9 +21899,23 @@
   },
   "rooted_dirt": {
     "variants": {
-      "": {
-        "model": "minecraft:block/rooted_dirt"
-      }
+      "": [
+        {
+          "model": "minecraft:block/rooted_dirt"
+        },
+        {
+          "model": "minecraft:block/rooted_dirt",
+          "y": 90
+        },
+        {
+          "model": "minecraft:block/rooted_dirt",
+          "y": 180
+        },
+        {
+          "model": "minecraft:block/rooted_dirt",
+          "y": 270
+        }
+      ]
     }
   },
   "rose_bush": {
