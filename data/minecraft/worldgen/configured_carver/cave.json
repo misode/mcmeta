@@ -1,6 +1,15 @@
 {
   "config": {
-    "probability": 0.33333334,
+    "yScale": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 0.1,
+        "max_exclusive": 0.9
+      }
+    },
+    "lava_level": {
+      "above_bottom": 9
+    },
     "debug_settings": {
       "air_state": {
         "Properties": {
@@ -9,6 +18,39 @@
           "face": "wall"
         },
         "Name": "minecraft:crimson_button"
+      }
+    },
+    "probability": 0.33333334,
+    "y": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": {
+          "above_bottom": 8
+        },
+        "max_inclusive": {
+          "absolute": 126
+        }
+      }
+    },
+    "horizontal_radius_multiplier": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 0.3,
+        "max_exclusive": 1.8
+      }
+    },
+    "vertical_radius_multiplier": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 0.5,
+        "max_exclusive": 1.8
+      }
+    },
+    "floor_level": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": -1.0,
+        "max_exclusive": 0.0
       }
     }
   },
