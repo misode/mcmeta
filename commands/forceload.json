@@ -18,24 +18,9 @@
         }
       }
     },
-    "query": {
-      "type": "literal",
-      "children": {
-        "pos": {
-          "type": "argument",
-          "parser": "minecraft:column_pos",
-          "executable": true
-        }
-      },
-      "executable": true
-    },
     "remove": {
       "type": "literal",
       "children": {
-        "all": {
-          "type": "literal",
-          "executable": true
-        },
         "from": {
           "type": "argument",
           "parser": "minecraft:column_pos",
@@ -47,8 +32,23 @@
             }
           },
           "executable": true
+        },
+        "all": {
+          "type": "literal",
+          "executable": true
         }
       }
+    },
+    "query": {
+      "type": "literal",
+      "children": {
+        "pos": {
+          "type": "argument",
+          "parser": "minecraft:column_pos",
+          "executable": true
+        }
+      },
+      "executable": true
     }
   }
 }

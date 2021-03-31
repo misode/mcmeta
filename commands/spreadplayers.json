@@ -19,6 +19,21 @@
                 "min": 1.0
               },
               "children": {
+                "respectTeams": {
+                  "type": "argument",
+                  "parser": "brigadier:bool",
+                  "children": {
+                    "targets": {
+                      "type": "argument",
+                      "parser": "minecraft:entity",
+                      "properties": {
+                        "amount": "multiple",
+                        "type": "entities"
+                      },
+                      "executable": true
+                    }
+                  }
+                },
                 "under": {
                   "type": "literal",
                   "children": {
@@ -45,21 +60,6 @@
                           }
                         }
                       }
-                    }
-                  }
-                },
-                "respectTeams": {
-                  "type": "argument",
-                  "parser": "brigadier:bool",
-                  "children": {
-                    "targets": {
-                      "type": "argument",
-                      "parser": "minecraft:entity",
-                      "properties": {
-                        "amount": "multiple",
-                        "type": "entities"
-                      },
-                      "executable": true
                     }
                   }
                 }

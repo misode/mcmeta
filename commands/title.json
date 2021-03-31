@@ -9,7 +9,15 @@
         "type": "players"
       },
       "children": {
-        "actionbar": {
+        "clear": {
+          "type": "literal",
+          "executable": true
+        },
+        "reset": {
+          "type": "literal",
+          "executable": true
+        },
+        "title": {
           "type": "literal",
           "children": {
             "title": {
@@ -19,15 +27,17 @@
             }
           }
         },
-        "clear": {
-          "type": "literal",
-          "executable": true
-        },
-        "reset": {
-          "type": "literal",
-          "executable": true
-        },
         "subtitle": {
+          "type": "literal",
+          "children": {
+            "title": {
+              "type": "argument",
+              "parser": "minecraft:component",
+              "executable": true
+            }
+          }
+        },
+        "actionbar": {
           "type": "literal",
           "children": {
             "title": {
@@ -65,16 +75,6 @@
                   }
                 }
               }
-            }
-          }
-        },
-        "title": {
-          "type": "literal",
-          "children": {
-            "title": {
-              "type": "argument",
-              "parser": "minecraft:component",
-              "executable": true
             }
           }
         }

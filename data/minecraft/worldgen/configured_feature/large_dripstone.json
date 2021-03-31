@@ -9,8 +9,8 @@
                 "wind_speed": {
                   "type": "minecraft:uniform",
                   "value": {
-                    "base": 0.0,
-                    "spread": 0.3
+                    "min_inclusive": 0.0,
+                    "max_exclusive": 0.3
                   }
                 },
                 "min_radius_for_wind": 4,
@@ -18,27 +18,30 @@
                 "stalactite_bluntness": {
                   "type": "minecraft:uniform",
                   "value": {
-                    "base": 0.3,
-                    "spread": 0.6
+                    "min_inclusive": 0.3,
+                    "max_exclusive": 0.9
                   }
                 },
                 "stalagmite_bluntness": {
                   "type": "minecraft:uniform",
                   "value": {
-                    "base": 0.4,
-                    "spread": 0.6
+                    "min_inclusive": 0.4,
+                    "max_exclusive": 1.0
                   }
                 },
                 "floor_to_ceiling_search_range": 30,
                 "column_radius": {
-                  "base": 3,
-                  "spread": 16
+                  "type": "minecraft:uniform",
+                  "value": {
+                    "min_inclusive": 3,
+                    "max_inclusive": 19
+                  }
                 },
                 "height_scale": {
                   "type": "minecraft:uniform",
                   "value": {
-                    "base": 0.4,
-                    "spread": 1.6
+                    "min_inclusive": 0.4,
+                    "max_exclusive": 2.0
                   }
                 },
                 "max_column_radius_to_cave_height_ratio": 0.33
@@ -69,8 +72,11 @@
     "decorator": {
       "config": {
         "count": {
-          "base": 2,
-          "spread": 8
+          "type": "minecraft:uniform",
+          "value": {
+            "min_inclusive": 2,
+            "max_inclusive": 10
+          }
         }
       },
       "type": "minecraft:count"

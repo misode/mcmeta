@@ -1,20 +1,6 @@
 {
   "type": "literal",
   "children": {
-    "destination": {
-      "type": "argument",
-      "parser": "minecraft:entity",
-      "properties": {
-        "amount": "single",
-        "type": "entities"
-      },
-      "executable": true
-    },
-    "location": {
-      "type": "argument",
-      "parser": "minecraft:vec3",
-      "executable": true
-    },
     "targets": {
       "type": "argument",
       "parser": "minecraft:entity",
@@ -23,19 +9,15 @@
         "type": "entities"
       },
       "children": {
-        "destination": {
-          "type": "argument",
-          "parser": "minecraft:entity",
-          "properties": {
-            "amount": "single",
-            "type": "entities"
-          },
-          "executable": true
-        },
         "location": {
           "type": "argument",
           "parser": "minecraft:vec3",
           "children": {
+            "rotation": {
+              "type": "argument",
+              "parser": "minecraft:rotation",
+              "executable": true
+            },
             "facing": {
               "type": "literal",
               "children": {
@@ -66,16 +48,34 @@
                   "executable": true
                 }
               }
-            },
-            "rotation": {
-              "type": "argument",
-              "parser": "minecraft:rotation",
-              "executable": true
             }
+          },
+          "executable": true
+        },
+        "destination": {
+          "type": "argument",
+          "parser": "minecraft:entity",
+          "properties": {
+            "amount": "single",
+            "type": "entities"
           },
           "executable": true
         }
       }
+    },
+    "location": {
+      "type": "argument",
+      "parser": "minecraft:vec3",
+      "executable": true
+    },
+    "destination": {
+      "type": "argument",
+      "parser": "minecraft:entity",
+      "properties": {
+        "amount": "single",
+        "type": "entities"
+      },
+      "executable": true
     }
   }
 }

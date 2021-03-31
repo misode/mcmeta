@@ -13,12 +13,15 @@
               "type": "argument",
               "parser": "minecraft:block_state",
               "children": {
-                "destroy": {
+                "replace": {
                   "type": "literal",
-                  "executable": true
-                },
-                "hollow": {
-                  "type": "literal",
+                  "children": {
+                    "filter": {
+                      "type": "argument",
+                      "parser": "minecraft:block_predicate",
+                      "executable": true
+                    }
+                  },
                   "executable": true
                 },
                 "keep": {
@@ -29,15 +32,12 @@
                   "type": "literal",
                   "executable": true
                 },
-                "replace": {
+                "hollow": {
                   "type": "literal",
-                  "children": {
-                    "filter": {
-                      "type": "argument",
-                      "parser": "minecraft:block_predicate",
-                      "executable": true
-                    }
-                  },
+                  "executable": true
+                },
+                "destroy": {
+                  "type": "literal",
                   "executable": true
                 }
               },

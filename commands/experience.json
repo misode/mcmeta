@@ -16,38 +16,15 @@
               "type": "argument",
               "parser": "brigadier:integer",
               "children": {
-                "levels": {
+                "points": {
                   "type": "literal",
                   "executable": true
                 },
-                "points": {
+                "levels": {
                   "type": "literal",
                   "executable": true
                 }
               },
-              "executable": true
-            }
-          }
-        }
-      }
-    },
-    "query": {
-      "type": "literal",
-      "children": {
-        "targets": {
-          "type": "argument",
-          "parser": "minecraft:entity",
-          "properties": {
-            "amount": "single",
-            "type": "players"
-          },
-          "children": {
-            "levels": {
-              "type": "literal",
-              "executable": true
-            },
-            "points": {
-              "type": "literal",
               "executable": true
             }
           }
@@ -72,15 +49,38 @@
                 "min": 0
               },
               "children": {
-                "levels": {
+                "points": {
                   "type": "literal",
                   "executable": true
                 },
-                "points": {
+                "levels": {
                   "type": "literal",
                   "executable": true
                 }
               },
+              "executable": true
+            }
+          }
+        }
+      }
+    },
+    "query": {
+      "type": "literal",
+      "children": {
+        "targets": {
+          "type": "argument",
+          "parser": "minecraft:entity",
+          "properties": {
+            "amount": "single",
+            "type": "players"
+          },
+          "children": {
+            "points": {
+              "type": "literal",
+              "executable": true
+            },
+            "levels": {
+              "type": "literal",
               "executable": true
             }
           }

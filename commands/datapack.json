@@ -1,19 +1,6 @@
 {
   "type": "literal",
   "children": {
-    "disable": {
-      "type": "literal",
-      "children": {
-        "name": {
-          "type": "argument",
-          "parser": "brigadier:string",
-          "properties": {
-            "type": "phrase"
-          },
-          "executable": true
-        }
-      }
-    },
     "enable": {
       "type": "literal",
       "children": {
@@ -50,14 +37,27 @@
                 }
               }
             },
-            "first": {
-              "type": "literal",
-              "executable": true
-            },
             "last": {
               "type": "literal",
               "executable": true
+            },
+            "first": {
+              "type": "literal",
+              "executable": true
             }
+          },
+          "executable": true
+        }
+      }
+    },
+    "disable": {
+      "type": "literal",
+      "children": {
+        "name": {
+          "type": "argument",
+          "parser": "brigadier:string",
+          "properties": {
+            "type": "phrase"
           },
           "executable": true
         }

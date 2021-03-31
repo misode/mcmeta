@@ -4,6 +4,10 @@
     "objectives": {
       "type": "literal",
       "children": {
+        "list": {
+          "type": "literal",
+          "executable": true
+        },
         "add": {
           "type": "literal",
           "children": {
@@ -30,10 +34,6 @@
             }
           }
         },
-        "list": {
-          "type": "literal",
-          "executable": true
-        },
         "modify": {
           "type": "literal",
           "children": {
@@ -54,11 +54,11 @@
                 "rendertype": {
                   "type": "literal",
                   "children": {
-                    "hearts": {
+                    "integer": {
                       "type": "literal",
                       "executable": true
                     },
-                    "integer": {
+                    "hearts": {
                       "type": "literal",
                       "executable": true
                     }
@@ -100,7 +100,21 @@
     "players": {
       "type": "literal",
       "children": {
-        "add": {
+        "list": {
+          "type": "literal",
+          "children": {
+            "target": {
+              "type": "argument",
+              "parser": "minecraft:score_holder",
+              "properties": {
+                "amount": "single"
+              },
+              "executable": true
+            }
+          },
+          "executable": true
+        },
+        "set": {
           "type": "literal",
           "children": {
             "targets": {
@@ -117,31 +131,9 @@
                     "score": {
                       "type": "argument",
                       "parser": "brigadier:integer",
-                      "properties": {
-                        "min": 0
-                      },
                       "executable": true
                     }
                   }
-                }
-              }
-            }
-          }
-        },
-        "enable": {
-          "type": "literal",
-          "children": {
-            "targets": {
-              "type": "argument",
-              "parser": "minecraft:score_holder",
-              "properties": {
-                "amount": "multiple"
-              },
-              "children": {
-                "objective": {
-                  "type": "argument",
-                  "parser": "minecraft:objective",
-                  "executable": true
                 }
               }
             }
@@ -166,21 +158,7 @@
             }
           }
         },
-        "list": {
-          "type": "literal",
-          "children": {
-            "target": {
-              "type": "argument",
-              "parser": "minecraft:score_holder",
-              "properties": {
-                "amount": "single"
-              },
-              "executable": true
-            }
-          },
-          "executable": true
-        },
-        "operation": {
+        "add": {
           "type": "literal",
           "children": {
             "targets": {
@@ -190,29 +168,17 @@
                 "amount": "multiple"
               },
               "children": {
-                "targetObjective": {
+                "objective": {
                   "type": "argument",
                   "parser": "minecraft:objective",
                   "children": {
-                    "operation": {
+                    "score": {
                       "type": "argument",
-                      "parser": "minecraft:operation",
-                      "children": {
-                        "source": {
-                          "type": "argument",
-                          "parser": "minecraft:score_holder",
-                          "properties": {
-                            "amount": "multiple"
-                          },
-                          "children": {
-                            "sourceObjective": {
-                              "type": "argument",
-                              "parser": "minecraft:objective",
-                              "executable": true
-                            }
-                          }
-                        }
-                      }
+                      "parser": "brigadier:integer",
+                      "properties": {
+                        "min": 0
+                      },
+                      "executable": true
                     }
                   }
                 }
@@ -268,7 +234,7 @@
             }
           }
         },
-        "set": {
+        "enable": {
           "type": "literal",
           "children": {
             "targets": {
@@ -281,11 +247,45 @@
                 "objective": {
                   "type": "argument",
                   "parser": "minecraft:objective",
+                  "executable": true
+                }
+              }
+            }
+          }
+        },
+        "operation": {
+          "type": "literal",
+          "children": {
+            "targets": {
+              "type": "argument",
+              "parser": "minecraft:score_holder",
+              "properties": {
+                "amount": "multiple"
+              },
+              "children": {
+                "targetObjective": {
+                  "type": "argument",
+                  "parser": "minecraft:objective",
                   "children": {
-                    "score": {
+                    "operation": {
                       "type": "argument",
-                      "parser": "brigadier:integer",
-                      "executable": true
+                      "parser": "minecraft:operation",
+                      "children": {
+                        "source": {
+                          "type": "argument",
+                          "parser": "minecraft:score_holder",
+                          "properties": {
+                            "amount": "multiple"
+                          },
+                          "children": {
+                            "sourceObjective": {
+                              "type": "argument",
+                              "parser": "minecraft:objective",
+                              "executable": true
+                            }
+                          }
+                        }
+                      }
                     }
                   }
                 }

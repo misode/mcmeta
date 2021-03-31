@@ -13,32 +13,6 @@
           "type": "argument",
           "parser": "minecraft:resource_location",
           "children": {
-            "base": {
-              "type": "literal",
-              "children": {
-                "get": {
-                  "type": "literal",
-                  "children": {
-                    "scale": {
-                      "type": "argument",
-                      "parser": "brigadier:double",
-                      "executable": true
-                    }
-                  },
-                  "executable": true
-                },
-                "set": {
-                  "type": "literal",
-                  "children": {
-                    "value": {
-                      "type": "argument",
-                      "parser": "brigadier:double",
-                      "executable": true
-                    }
-                  }
-                }
-              }
-            },
             "get": {
               "type": "literal",
               "children": {
@@ -49,6 +23,32 @@
                 }
               },
               "executable": true
+            },
+            "base": {
+              "type": "literal",
+              "children": {
+                "set": {
+                  "type": "literal",
+                  "children": {
+                    "value": {
+                      "type": "argument",
+                      "parser": "brigadier:double",
+                      "executable": true
+                    }
+                  }
+                },
+                "get": {
+                  "type": "literal",
+                  "children": {
+                    "scale": {
+                      "type": "argument",
+                      "parser": "brigadier:double",
+                      "executable": true
+                    }
+                  },
+                  "executable": true
+                }
+              }
             },
             "modifier": {
               "type": "literal",

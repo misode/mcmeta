@@ -10,6 +10,20 @@
           "weight": 3,
           "functions": [
             {
+              "function": "minecraft:furnace_smelt",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "predicate": {
+                    "flags": {
+                      "is_on_fire": true
+                    }
+                  },
+                  "entity": "this"
+                }
+              ]
+            },
+            {
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
@@ -32,6 +46,20 @@
         {
           "type": "minecraft:item",
           "functions": [
+            {
+              "function": "minecraft:furnace_smelt",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "predicate": {
+                    "flags": {
+                      "is_on_fire": true
+                    }
+                  },
+                  "entity": "this"
+                }
+              ]
+            },
             {
               "function": "minecraft:set_count",
               "count": {
