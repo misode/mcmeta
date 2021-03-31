@@ -1,44 +1,15 @@
 {
   "config": {
-    "horizontal_radius_factor": {
+    "yScale": {
       "type": "minecraft:uniform",
       "value": {
-        "base": 0.25,
-        "spread": 0.75
+        "min_inclusive": 6.0,
+        "max_exclusive": 8.0
       }
     },
-    "vertical_radius_default_factor": 0.0,
-    "vertical_radius_center_factor": 5.0,
-    "vertical_rotation": {
-      "type": "minecraft:uniform",
-      "value": {
-        "base": -0.125,
-        "spread": 0.25
-      }
+    "lava_level": {
+      "above_bottom": 9
     },
-    "thickness": {
-      "type": "minecraft:uniform",
-      "value": {
-        "base": 0.0,
-        "spread": 1.0
-      }
-    },
-    "width_smoothness": 6,
-    "top_inclusive": {
-      "absolute": 80
-    },
-    "y_scale": {
-      "base": 6,
-      "spread": 2
-    },
-    "distance_factor": {
-      "type": "minecraft:uniform",
-      "value": {
-        "base": 0.5,
-        "spread": 0.5
-      }
-    },
-    "probability": 0.00125,
     "debug_settings": {
       "air_state": {
         "Properties": {
@@ -49,8 +20,50 @@
         "Name": "minecraft:oak_button"
       }
     },
-    "bottom_inclusive": {
-      "absolute": 40
+    "probability": 0.00125,
+    "y": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": {
+          "absolute": 40
+        },
+        "max_inclusive": {
+          "absolute": 80
+        }
+      }
+    },
+    "vertical_rotation": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": -0.125,
+        "max_exclusive": 0.125
+      }
+    },
+    "shape": {
+      "horizontal_radius_factor": {
+        "type": "minecraft:uniform",
+        "value": {
+          "min_inclusive": 0.25,
+          "max_exclusive": 1.0
+        }
+      },
+      "vertical_radius_default_factor": 0.0,
+      "vertical_radius_center_factor": 5.0,
+      "distance_factor": {
+        "type": "minecraft:uniform",
+        "value": {
+          "min_inclusive": 0.5,
+          "max_exclusive": 1.0
+        }
+      },
+      "thickness": {
+        "type": "minecraft:uniform",
+        "value": {
+          "min_inclusive": 0.0,
+          "max_exclusive": 1.0
+        }
+      },
+      "width_smoothness": 6
     }
   },
   "type": "minecraft:canyon"
