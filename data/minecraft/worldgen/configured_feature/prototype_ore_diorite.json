@@ -9,36 +9,32 @@
                 "targets": [
                   {
                     "target": {
-                      "tag": "minecraft:stone_ore_replaceables",
+                      "tag": "minecraft:base_stone_overworld",
                       "predicate_type": "minecraft:tag_match"
                     },
                     "state": {
-                      "Name": "minecraft:diamond_ore"
-                    }
-                  },
-                  {
-                    "target": {
-                      "tag": "minecraft:deepslate_ore_replaceables",
-                      "predicate_type": "minecraft:tag_match"
-                    },
-                    "state": {
-                      "Name": "minecraft:deepslate_diamond_ore"
+                      "Name": "minecraft:diorite"
                     }
                   }
                 ],
-                "size": 12,
-                "discard_chance_on_air_exposure": 0.7
+                "size": 64,
+                "discard_chance_on_air_exposure": 0.0
               },
               "type": "minecraft:ore"
             },
             "decorator": {
               "config": {
-                "baseline": {
-                  "above_bottom": 0
-                },
-                "spread": 80
+                "height": {
+                  "min_inclusive": {
+                    "absolute": 0
+                  },
+                  "max_inclusive": {
+                    "absolute": 79
+                  },
+                  "type": "minecraft:uniform"
+                }
               },
-              "type": "minecraft:depth_average"
+              "type": "minecraft:range"
             }
           },
           "type": "minecraft:decorated"
@@ -52,9 +48,9 @@
     },
     "decorator": {
       "config": {
-        "chance": 9
+        "count": 2
       },
-      "type": "minecraft:chance"
+      "type": "minecraft:count"
     }
   },
   "type": "minecraft:decorated"

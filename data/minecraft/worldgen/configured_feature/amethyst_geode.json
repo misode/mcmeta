@@ -10,14 +10,30 @@
                 "max_gen_offset": 16,
                 "noise_multiplier": 0.05,
                 "invalid_blocks_threshold": 1,
-                "min_distribution_points": 3,
-                "max_distribution_points": 5,
-                "min_point_offset": 1,
-                "max_point_offset": 3,
+                "outer_wall_distance": {
+                  "type": "minecraft:uniform",
+                  "value": {
+                    "min_inclusive": 4,
+                    "max_inclusive": 6
+                  }
+                },
+                "distribution_points": {
+                  "type": "minecraft:uniform",
+                  "value": {
+                    "min_inclusive": 3,
+                    "max_inclusive": 4
+                  }
+                },
+                "point_offset": {
+                  "type": "minecraft:uniform",
+                  "value": {
+                    "min_inclusive": 1,
+                    "max_inclusive": 2
+                  }
+                },
+                "use_potential_placements_chance": 0.35,
                 "use_alternate_layer0_chance": 0.083,
                 "placements_require_layer0_alternate": true,
-                "min_outer_wall_distance": 4,
-                "max_outer_wall_distance": 7,
                 "blocks": {
                   "middle_layer_provider": {
                     "state": {
@@ -94,18 +110,20 @@
                   "generate_crack_chance": 0.95,
                   "base_crack_size": 2.0,
                   "crack_point_offset": 2
-                },
-                "use_potential_placements_chance": 0.35
+                }
               },
               "type": "minecraft:geode"
             },
             "decorator": {
               "config": {
-                "bottom_inclusive": {
-                  "above_bottom": 6
-                },
-                "top_inclusive": {
-                  "absolute": 46
+                "height": {
+                  "min_inclusive": {
+                    "above_bottom": 6
+                  },
+                  "max_inclusive": {
+                    "absolute": 46
+                  },
+                  "type": "minecraft:uniform"
                 }
               },
               "type": "minecraft:range"
