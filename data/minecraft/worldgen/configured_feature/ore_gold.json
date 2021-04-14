@@ -27,18 +27,23 @@
                   }
                 ],
                 "size": 9,
-                "discard_chance_on_air_exposure": 0.5
+                "discard_chance_on_air_exposure": 0.0
               },
               "type": "minecraft:ore"
             },
             "decorator": {
               "config": {
-                "baseline": {
-                  "absolute": -16
-                },
-                "spread": 48
+                "height": {
+                  "min_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "max_inclusive": {
+                    "absolute": 31
+                  },
+                  "type": "minecraft:uniform"
+                }
               },
-              "type": "minecraft:depth_average"
+              "type": "minecraft:range"
             }
           },
           "type": "minecraft:decorated"
@@ -52,7 +57,7 @@
     },
     "decorator": {
       "config": {
-        "count": 4
+        "count": 2
       },
       "type": "minecraft:count"
     }

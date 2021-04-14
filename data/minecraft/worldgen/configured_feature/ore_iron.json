@@ -13,10 +13,7 @@
                       "predicate_type": "minecraft:tag_match"
                     },
                     "state": {
-                      "Properties": {
-                        "lit": "false"
-                      },
-                      "Name": "minecraft:redstone_ore"
+                      "Name": "minecraft:iron_ore"
                     }
                   },
                   {
@@ -25,26 +22,28 @@
                       "predicate_type": "minecraft:tag_match"
                     },
                     "state": {
-                      "Properties": {
-                        "lit": "false"
-                      },
-                      "Name": "minecraft:deepslate_redstone_ore"
+                      "Name": "minecraft:deepslate_iron_ore"
                     }
                   }
                 ],
-                "size": 8,
+                "size": 9,
                 "discard_chance_on_air_exposure": 0.0
               },
               "type": "minecraft:ore"
             },
             "decorator": {
               "config": {
-                "baseline": {
-                  "above_bottom": 0
-                },
-                "spread": 32
+                "height": {
+                  "min_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "max_inclusive": {
+                    "absolute": 63
+                  },
+                  "type": "minecraft:uniform"
+                }
               },
-              "type": "minecraft:depth_average"
+              "type": "minecraft:range"
             }
           },
           "type": "minecraft:decorated"
@@ -58,7 +57,7 @@
     },
     "decorator": {
       "config": {
-        "count": 8
+        "count": 20
       },
       "type": "minecraft:count"
     }
