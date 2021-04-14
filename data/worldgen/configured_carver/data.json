@@ -3,7 +3,7 @@
     "config": {
       "yScale": 3.0,
       "lava_level": {
-        "above_bottom": 9
+        "above_bottom": 11
       },
       "debug_settings": {
         "air_state": {
@@ -17,15 +17,14 @@
       },
       "probability": 0.02,
       "y": {
-        "type": "minecraft:uniform",
-        "value": {
-          "min_inclusive": {
-            "absolute": 10
-          },
-          "max_inclusive": {
-            "absolute": 67
-          }
-        }
+        "min_inclusive": {
+          "absolute": 20
+        },
+        "max_inclusive": {
+          "absolute": 67
+        },
+        "inner": 8,
+        "type": "minecraft:biased_to_bottom"
       },
       "vertical_rotation": {
         "type": "minecraft:uniform",
@@ -66,6 +65,157 @@
   },
   "cave": {
     "config": {
+      "yScale": 0.5,
+      "lava_level": {
+        "above_bottom": 11
+      },
+      "debug_settings": {
+        "air_state": {
+          "Properties": {
+            "powered": "false",
+            "facing": "north",
+            "face": "wall"
+          },
+          "Name": "minecraft:crimson_button"
+        }
+      },
+      "probability": 0.14285715,
+      "y": {
+        "min_inclusive": {
+          "absolute": 0
+        },
+        "max_inclusive": {
+          "absolute": 127
+        },
+        "inner": 8,
+        "type": "minecraft:biased_to_bottom"
+      },
+      "horizontal_radius_multiplier": 1.0,
+      "vertical_radius_multiplier": 1.0,
+      "floor_level": -0.7
+    },
+    "type": "minecraft:cave"
+  },
+  "nether_cave": {
+    "config": {
+      "yScale": 0.5,
+      "lava_level": {
+        "above_bottom": 11
+      },
+      "probability": 0.2,
+      "y": {
+        "min_inclusive": {
+          "absolute": 0
+        },
+        "max_inclusive": {
+          "below_top": 1
+        },
+        "type": "minecraft:uniform"
+      },
+      "horizontal_radius_multiplier": 1.0,
+      "vertical_radius_multiplier": 1.0,
+      "floor_level": -0.7
+    },
+    "type": "minecraft:nether_cave"
+  },
+  "ocean_cave": {
+    "config": {
+      "yScale": 0.5,
+      "lava_level": {
+        "above_bottom": 11
+      },
+      "debug_settings": {
+        "air_state": {
+          "Properties": {
+            "powered": "false",
+            "facing": "north",
+            "face": "wall"
+          },
+          "Name": "minecraft:crimson_button"
+        }
+      },
+      "probability": 0.06666667,
+      "y": {
+        "min_inclusive": {
+          "absolute": 0
+        },
+        "max_inclusive": {
+          "absolute": 127
+        },
+        "inner": 8,
+        "type": "minecraft:biased_to_bottom"
+      },
+      "horizontal_radius_multiplier": 1.0,
+      "vertical_radius_multiplier": 1.0,
+      "floor_level": -0.7
+    },
+    "type": "minecraft:cave"
+  },
+  "prototype_canyon": {
+    "config": {
+      "yScale": 3.0,
+      "lava_level": {
+        "above_bottom": 9
+      },
+      "debug_settings": {
+        "air_state": {
+          "Properties": {
+            "powered": "false",
+            "facing": "north",
+            "face": "wall"
+          },
+          "Name": "minecraft:warped_button"
+        }
+      },
+      "probability": 0.02,
+      "y": {
+        "min_inclusive": {
+          "absolute": 10
+        },
+        "max_inclusive": {
+          "absolute": 67
+        },
+        "type": "minecraft:uniform"
+      },
+      "vertical_rotation": {
+        "type": "minecraft:uniform",
+        "value": {
+          "min_inclusive": -0.125,
+          "max_exclusive": 0.125
+        }
+      },
+      "shape": {
+        "horizontal_radius_factor": {
+          "type": "minecraft:uniform",
+          "value": {
+            "min_inclusive": 0.75,
+            "max_exclusive": 1.0
+          }
+        },
+        "vertical_radius_default_factor": 1.0,
+        "vertical_radius_center_factor": 0.0,
+        "distance_factor": {
+          "type": "minecraft:uniform",
+          "value": {
+            "min_inclusive": 0.75,
+            "max_exclusive": 1.0
+          }
+        },
+        "thickness": {
+          "type": "minecraft:trapezoid",
+          "value": {
+            "min": 0.0,
+            "max": 6.0,
+            "plateau": 2.0
+          }
+        },
+        "width_smoothness": 3
+      }
+    },
+    "type": "minecraft:canyon"
+  },
+  "prototype_cave": {
+    "config": {
       "yScale": {
         "type": "minecraft:uniform",
         "value": {
@@ -88,15 +238,13 @@
       },
       "probability": 0.33333334,
       "y": {
-        "type": "minecraft:uniform",
-        "value": {
-          "min_inclusive": {
-            "above_bottom": 8
-          },
-          "max_inclusive": {
-            "absolute": 126
-          }
-        }
+        "min_inclusive": {
+          "above_bottom": 8
+        },
+        "max_inclusive": {
+          "absolute": 126
+        },
+        "type": "minecraft:uniform"
       },
       "horizontal_radius_multiplier": {
         "type": "minecraft:uniform",
@@ -122,7 +270,7 @@
     },
     "type": "minecraft:cave"
   },
-  "crack": {
+  "prototype_crack": {
     "config": {
       "yScale": {
         "type": "minecraft:uniform",
@@ -146,15 +294,13 @@
       },
       "probability": 0.00125,
       "y": {
-        "type": "minecraft:uniform",
-        "value": {
-          "min_inclusive": {
-            "absolute": 40
-          },
-          "max_inclusive": {
-            "absolute": 80
-          }
-        }
+        "min_inclusive": {
+          "absolute": 40
+        },
+        "max_inclusive": {
+          "absolute": 80
+        },
+        "type": "minecraft:uniform"
       },
       "vertical_rotation": {
         "type": "minecraft:uniform",
@@ -192,31 +338,7 @@
     },
     "type": "minecraft:canyon"
   },
-  "nether_cave": {
-    "config": {
-      "yScale": 0.5,
-      "lava_level": {
-        "above_bottom": 11
-      },
-      "probability": 0.2,
-      "y": {
-        "type": "minecraft:uniform",
-        "value": {
-          "min_inclusive": {
-            "absolute": 0
-          },
-          "max_inclusive": {
-            "below_top": 1
-          }
-        }
-      },
-      "horizontal_radius_multiplier": 1.0,
-      "vertical_radius_multiplier": 1.0,
-      "floor_level": -0.7
-    },
-    "type": "minecraft:nether_cave"
-  },
-  "ocean_cave": {
+  "prototype_ocean_cave": {
     "config": {
       "yScale": {
         "type": "minecraft:uniform",
@@ -240,16 +362,14 @@
       },
       "probability": 0.14285715,
       "y": {
-        "type": "minecraft:biased_to_bottom",
-        "value": {
-          "min_inclusive": {
-            "absolute": 0
-          },
-          "max_inclusive": {
-            "absolute": 127
-          },
-          "inner": 8
-        }
+        "min_inclusive": {
+          "absolute": 0
+        },
+        "max_inclusive": {
+          "absolute": 127
+        },
+        "inner": 8,
+        "type": "minecraft:biased_to_bottom"
       },
       "horizontal_radius_multiplier": 1.0,
       "vertical_radius_multiplier": 1.0,
@@ -262,5 +382,102 @@
       }
     },
     "type": "minecraft:cave"
+  },
+  "underwater_canyon": {
+    "config": {
+      "yScale": 3.0,
+      "lava_level": {
+        "above_bottom": 11
+      },
+      "debug_settings": {
+        "air_state": {
+          "Properties": {
+            "powered": "false",
+            "facing": "north",
+            "face": "wall"
+          },
+          "Name": "minecraft:warped_button"
+        }
+      },
+      "probability": 0.02,
+      "y": {
+        "min_inclusive": {
+          "absolute": 20
+        },
+        "max_inclusive": {
+          "absolute": 67
+        },
+        "inner": 8,
+        "type": "minecraft:biased_to_bottom"
+      },
+      "vertical_rotation": {
+        "type": "minecraft:uniform",
+        "value": {
+          "min_inclusive": -0.125,
+          "max_exclusive": 0.125
+        }
+      },
+      "shape": {
+        "horizontal_radius_factor": {
+          "type": "minecraft:uniform",
+          "value": {
+            "min_inclusive": 0.75,
+            "max_exclusive": 1.0
+          }
+        },
+        "vertical_radius_default_factor": 1.0,
+        "vertical_radius_center_factor": 0.0,
+        "distance_factor": {
+          "type": "minecraft:uniform",
+          "value": {
+            "min_inclusive": 0.75,
+            "max_exclusive": 1.0
+          }
+        },
+        "thickness": {
+          "type": "minecraft:trapezoid",
+          "value": {
+            "min": 0.0,
+            "max": 6.0,
+            "plateau": 2.0
+          }
+        },
+        "width_smoothness": 3
+      }
+    },
+    "type": "minecraft:underwater_canyon"
+  },
+  "underwater_cave": {
+    "config": {
+      "yScale": 0.5,
+      "lava_level": {
+        "above_bottom": 11
+      },
+      "debug_settings": {
+        "air_state": {
+          "Properties": {
+            "powered": "false",
+            "facing": "north",
+            "face": "wall"
+          },
+          "Name": "minecraft:crimson_button"
+        }
+      },
+      "probability": 0.06666667,
+      "y": {
+        "min_inclusive": {
+          "absolute": 0
+        },
+        "max_inclusive": {
+          "absolute": 127
+        },
+        "inner": 8,
+        "type": "minecraft:biased_to_bottom"
+      },
+      "horizontal_radius_multiplier": 1.0,
+      "vertical_radius_multiplier": 1.0,
+      "floor_level": -0.7
+    },
+    "type": "minecraft:underwater_cave"
   }
 }
