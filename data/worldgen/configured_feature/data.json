@@ -4773,7 +4773,7 @@
       "vegetation_feature": "minecraft:moss_vegetation",
       "surface": "floor",
       "depth": 1,
-      "replaceable": "minecraft:lush_plants_replaceable",
+      "replaceable": "minecraft:moss_replaceable",
       "ground_state": {
         "state": {
           "Name": "minecraft:moss_block"
@@ -4785,21 +4785,21 @@
   },
   "moss_patch_bonemeal": {
     "config": {
-      "vegetation_chance": 0.8,
+      "vegetation_chance": 0.6,
       "xz_radius": {
         "type": "minecraft:uniform",
         "value": {
           "min_inclusive": 1,
-          "max_inclusive": 3
+          "max_inclusive": 2
         }
       },
-      "extra_edge_column_chance": 0.0,
+      "extra_edge_column_chance": 0.75,
       "extra_bottom_block_chance": 0.0,
       "vertical_range": 5,
       "vegetation_feature": "minecraft:moss_vegetation",
       "surface": "floor",
       "depth": 1,
-      "replaceable": "minecraft:lush_plants_replaceable",
+      "replaceable": "minecraft:moss_replaceable",
       "ground_state": {
         "state": {
           "Name": "minecraft:moss_block"
@@ -4831,7 +4831,7 @@
           "max_inclusive": 2
         }
       },
-      "replaceable": "minecraft:lush_plants_replaceable",
+      "replaceable": "minecraft:moss_replaceable",
       "ground_state": {
         "state": {
           "Name": "minecraft:moss_block"
@@ -5765,28 +5765,68 @@
     "config": {
       "feature": {
         "config": {
-          "target": {
-            "Name": "minecraft:stone"
+          "feature": {
+            "config": {
+              "feature": {
+                "config": {
+                  "targets": [
+                    {
+                      "target": {
+                        "tag": "minecraft:stone_ore_replaceables",
+                        "predicate_type": "minecraft:tag_match"
+                      },
+                      "state": {
+                        "Name": "minecraft:emerald_ore"
+                      }
+                    },
+                    {
+                      "target": {
+                        "tag": "minecraft:deepslate_ore_replaceables",
+                        "predicate_type": "minecraft:tag_match"
+                      },
+                      "state": {
+                        "Name": "minecraft:deepslate_emerald_ore"
+                      }
+                    }
+                  ]
+                },
+                "type": "minecraft:replace_single_block"
+              },
+              "decorator": {
+                "config": {
+                  "height": {
+                    "min_inclusive": {
+                      "absolute": 4
+                    },
+                    "max_inclusive": {
+                      "absolute": 31
+                    },
+                    "type": "minecraft:uniform"
+                  }
+                },
+                "type": "minecraft:range"
+              }
+            },
+            "type": "minecraft:decorated"
           },
-          "state": {
-            "Name": "minecraft:emerald_ore"
+          "decorator": {
+            "config": {},
+            "type": "minecraft:square"
           }
         },
-        "type": "minecraft:emerald_ore"
+        "type": "minecraft:decorated"
       },
       "decorator": {
         "config": {
-          "height": {
-            "min_inclusive": {
-              "above_bottom": 0
-            },
-            "max_inclusive": {
-              "below_top": 0
-            },
-            "type": "minecraft:uniform"
+          "count": {
+            "type": "minecraft:uniform",
+            "value": {
+              "min_inclusive": 6,
+              "max_inclusive": 24
+            }
           }
         },
-        "type": "minecraft:range"
+        "type": "minecraft:count"
       }
     },
     "type": "minecraft:decorated"
@@ -6232,6 +6272,9 @@
                         "predicate_type": "minecraft:tag_match"
                       },
                       "state": {
+                        "Properties": {
+                          "axis": "y"
+                        },
                         "Name": "minecraft:infested_deepslate"
                       }
                     }
@@ -9380,14 +9423,30 @@
             "config": {
               "feature": {
                 "config": {
-                  "target": {
-                    "Name": "minecraft:stone"
-                  },
-                  "state": {
-                    "Name": "minecraft:emerald_ore"
-                  }
+                  "targets": [
+                    {
+                      "target": {
+                        "tag": "minecraft:stone_ore_replaceables",
+                        "predicate_type": "minecraft:tag_match"
+                      },
+                      "state": {
+                        "Name": "minecraft:emerald_ore"
+                      }
+                    },
+                    {
+                      "target": {
+                        "tag": "minecraft:deepslate_ore_replaceables",
+                        "predicate_type": "minecraft:tag_match"
+                      },
+                      "state": {
+                        "Name": "minecraft:deepslate_emerald_ore"
+                      }
+                    }
+                  ],
+                  "size": 3,
+                  "discard_chance_on_air_exposure": 0.0
                 },
-                "type": "minecraft:emerald_ore"
+                "type": "minecraft:ore"
               },
               "decorator": {
                 "config": {
@@ -9626,6 +9685,9 @@
                         "predicate_type": "minecraft:tag_match"
                       },
                       "state": {
+                        "Properties": {
+                          "axis": "y"
+                        },
                         "Name": "minecraft:infested_deepslate"
                       }
                     }
@@ -10654,7 +10716,6 @@
                 "config": {
                   "feature": {
                     "config": {
-                      "hanging_roots_vertical_span": 2,
                       "hanging_root_state_provider": {
                         "state": {
                           "Name": "minecraft:hanging_roots"
@@ -10662,10 +10723,10 @@
                         "type": "minecraft:simple_state_provider"
                       },
                       "hanging_root_placement_attempts": 20,
-                      "root_placement_attempts": 20,
+                      "allowed_vertical_water_for_tree": 3,
                       "root_column_max_height": 100,
                       "hanging_root_radius": 3,
-                      "root_radius": 3,
+                      "hanging_roots_vertical_span": 2,
                       "root_replaceable": "minecraft:lush_ground_replaceable",
                       "root_state_provider": {
                         "state": {
@@ -10673,8 +10734,10 @@
                         },
                         "type": "minecraft:simple_state_provider"
                       },
+                      "root_placement_attempts": 20,
                       "feature": "minecraft:azalea_tree",
-                      "required_vertical_space_for_tree": 3
+                      "required_vertical_space_for_tree": 3,
+                      "root_radius": 3
                     },
                     "type": "minecraft:root_system"
                   },

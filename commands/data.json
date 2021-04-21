@@ -7075,6 +7075,20 @@
     "teleport": {
       "type": "literal",
       "children": {
+        "location": {
+          "type": "argument",
+          "parser": "minecraft:vec3",
+          "executable": true
+        },
+        "destination": {
+          "type": "argument",
+          "parser": "minecraft:entity",
+          "properties": {
+            "amount": "single",
+            "type": "entities"
+          },
+          "executable": true
+        },
         "targets": {
           "type": "argument",
           "parser": "minecraft:entity",
@@ -7136,20 +7150,6 @@
               "executable": true
             }
           }
-        },
-        "location": {
-          "type": "argument",
-          "parser": "minecraft:vec3",
-          "executable": true
-        },
-        "destination": {
-          "type": "argument",
-          "parser": "minecraft:entity",
-          "properties": {
-            "amount": "single",
-            "type": "entities"
-          },
-          "executable": true
         }
       }
     },
