@@ -2,28 +2,68 @@
   "config": {
     "feature": {
       "config": {
-        "target": {
-          "Name": "minecraft:stone"
+        "feature": {
+          "config": {
+            "feature": {
+              "config": {
+                "targets": [
+                  {
+                    "target": {
+                      "tag": "minecraft:stone_ore_replaceables",
+                      "predicate_type": "minecraft:tag_match"
+                    },
+                    "state": {
+                      "Name": "minecraft:emerald_ore"
+                    }
+                  },
+                  {
+                    "target": {
+                      "tag": "minecraft:deepslate_ore_replaceables",
+                      "predicate_type": "minecraft:tag_match"
+                    },
+                    "state": {
+                      "Name": "minecraft:deepslate_emerald_ore"
+                    }
+                  }
+                ]
+              },
+              "type": "minecraft:replace_single_block"
+            },
+            "decorator": {
+              "config": {
+                "height": {
+                  "min_inclusive": {
+                    "absolute": 4
+                  },
+                  "max_inclusive": {
+                    "absolute": 31
+                  },
+                  "type": "minecraft:uniform"
+                }
+              },
+              "type": "minecraft:range"
+            }
+          },
+          "type": "minecraft:decorated"
         },
-        "state": {
-          "Name": "minecraft:emerald_ore"
+        "decorator": {
+          "config": {},
+          "type": "minecraft:square"
         }
       },
-      "type": "minecraft:emerald_ore"
+      "type": "minecraft:decorated"
     },
     "decorator": {
       "config": {
-        "height": {
-          "min_inclusive": {
-            "above_bottom": 0
-          },
-          "max_inclusive": {
-            "below_top": 0
-          },
-          "type": "minecraft:uniform"
+        "count": {
+          "type": "minecraft:uniform",
+          "value": {
+            "min_inclusive": 6,
+            "max_inclusive": 24
+          }
         }
       },
-      "type": "minecraft:range"
+      "type": "minecraft:count"
     }
   },
   "type": "minecraft:decorated"
