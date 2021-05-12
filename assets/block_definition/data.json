@@ -10057,11 +10057,11 @@
     "multipart": [
       {
         "when": {
-          "south": "false",
           "up": "false",
           "north": "false",
-          "east": "false",
-          "west": "false"
+          "west": "false",
+          "south": "false",
+          "east": "false"
         },
         "apply": [
           {
@@ -10079,11 +10079,11 @@
               "north": "true"
             },
             {
-              "south": "false",
               "up": "false",
               "north": "false",
-              "east": "false",
-              "west": "false"
+              "west": "false",
+              "south": "false",
+              "east": "false"
             }
           ]
         },
@@ -10109,11 +10109,11 @@
               "east": "true"
             },
             {
-              "south": "false",
               "up": "false",
               "north": "false",
-              "east": "false",
-              "west": "false"
+              "west": "false",
+              "south": "false",
+              "east": "false"
             }
           ]
         },
@@ -10143,11 +10143,11 @@
               "south": "true"
             },
             {
-              "south": "false",
               "up": "false",
               "north": "false",
-              "east": "false",
-              "west": "false"
+              "west": "false",
+              "south": "false",
+              "east": "false"
             }
           ]
         },
@@ -10177,11 +10177,11 @@
               "west": "true"
             },
             {
-              "south": "false",
               "up": "false",
               "north": "false",
-              "east": "false",
-              "west": "false"
+              "west": "false",
+              "south": "false",
+              "east": "false"
             }
           ]
         },
@@ -10441,16 +10441,6 @@
     "multipart": [
       {
         "when": {
-          "south": "true"
-        },
-        "apply": {
-          "model": "minecraft:block/glow_lichen",
-          "y": 180,
-          "uvlock": true
-        }
-      },
-      {
-        "when": {
           "up": "true"
         },
         "apply": {
@@ -10461,20 +10451,30 @@
       },
       {
         "when": {
-          "down": "true"
+          "north": "true"
+        },
+        "apply": {
+          "model": "minecraft:block/glow_lichen"
+        }
+      },
+      {
+        "when": {
+          "west": "true"
         },
         "apply": {
           "model": "minecraft:block/glow_lichen",
-          "x": 90,
+          "y": 270,
           "uvlock": true
         }
       },
       {
         "when": {
-          "north": "true"
+          "south": "true"
         },
         "apply": {
-          "model": "minecraft:block/glow_lichen"
+          "model": "minecraft:block/glow_lichen",
+          "y": 180,
+          "uvlock": true
         }
       },
       {
@@ -10489,11 +10489,11 @@
       },
       {
         "when": {
-          "west": "true"
+          "down": "true"
         },
         "apply": {
           "model": "minecraft:block/glow_lichen",
-          "y": 270,
+          "x": 90,
           "uvlock": true
         }
       }
@@ -11624,10 +11624,10 @@
       },
       {
         "when": {
-          "south": "false",
           "north": "false",
-          "east": "false",
-          "west": "false"
+          "west": "false",
+          "south": "false",
+          "east": "false"
         },
         "apply": {
           "model": "minecraft:block/iron_bars_post"
@@ -11635,10 +11635,10 @@
       },
       {
         "when": {
-          "south": "false",
           "north": "true",
-          "east": "false",
-          "west": "false"
+          "west": "false",
+          "south": "false",
+          "east": "false"
         },
         "apply": {
           "model": "minecraft:block/iron_bars_cap"
@@ -11646,10 +11646,10 @@
       },
       {
         "when": {
-          "south": "false",
           "north": "false",
-          "east": "true",
-          "west": "false"
+          "west": "false",
+          "south": "false",
+          "east": "true"
         },
         "apply": {
           "model": "minecraft:block/iron_bars_cap",
@@ -11658,10 +11658,10 @@
       },
       {
         "when": {
-          "south": "true",
           "north": "false",
-          "east": "false",
-          "west": "false"
+          "west": "false",
+          "south": "true",
+          "east": "false"
         },
         "apply": {
           "model": "minecraft:block/iron_bars_cap_alt"
@@ -11669,10 +11669,10 @@
       },
       {
         "when": {
-          "south": "false",
           "north": "false",
-          "east": "false",
-          "west": "true"
+          "west": "true",
+          "south": "false",
+          "east": "false"
         },
         "apply": {
           "model": "minecraft:block/iron_bars_cap_alt",
@@ -21562,22 +21562,22 @@
         "when": {
           "OR": [
             {
+              "south": "none",
               "east": "none",
-              "north": "none",
               "west": "none",
-              "south": "none"
+              "north": "none"
             },
             {
               "east": "side|up",
               "north": "side|up"
             },
             {
-              "east": "side|up",
-              "south": "side|up"
+              "south": "side|up",
+              "east": "side|up"
             },
             {
-              "west": "side|up",
-              "south": "side|up"
+              "south": "side|up",
+              "west": "side|up"
             },
             {
               "west": "side|up",
@@ -25932,16 +25932,6 @@
     "multipart": [
       {
         "when": {
-          "south": "true"
-        },
-        "apply": {
-          "model": "minecraft:block/vine",
-          "y": 180,
-          "uvlock": true
-        }
-      },
-      {
-        "when": {
           "up": "true"
         },
         "apply": {
@@ -25960,21 +25950,31 @@
       },
       {
         "when": {
-          "east": "true"
-        },
-        "apply": {
-          "model": "minecraft:block/vine",
-          "y": 90,
-          "uvlock": true
-        }
-      },
-      {
-        "when": {
           "west": "true"
         },
         "apply": {
           "model": "minecraft:block/vine",
           "y": 270,
+          "uvlock": true
+        }
+      },
+      {
+        "when": {
+          "south": "true"
+        },
+        "apply": {
+          "model": "minecraft:block/vine",
+          "y": 180,
+          "uvlock": true
+        }
+      },
+      {
+        "when": {
+          "east": "true"
+        },
+        "apply": {
+          "model": "minecraft:block/vine",
+          "y": 90,
           "uvlock": true
         }
       }
