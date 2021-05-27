@@ -16,6 +16,30 @@
         "upper_size": 2,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:acacia_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:acacia_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 0,
+        "type": "minecraft:acacia_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -30,21 +54,6 @@
         "height_rand_a": 2,
         "height_rand_b": 2,
         "type": "minecraft:forking_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:acacia_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 0,
-        "type": "minecraft:acacia_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -86,12 +95,6 @@
                   "use_alternate_layer0_chance": 0.083,
                   "placements_require_layer0_alternate": true,
                   "blocks": {
-                    "middle_layer_provider": {
-                      "state": {
-                        "Name": "minecraft:calcite"
-                      },
-                      "type": "minecraft:simple_state_provider"
-                    },
                     "outer_layer_provider": {
                       "state": {
                         "Name": "minecraft:smooth_basalt"
@@ -129,6 +132,7 @@
                       }
                     ],
                     "cannot_replace": "minecraft:features_cannot_replace",
+                    "invalid_blocks": "minecraft:geode_invalid_blocks",
                     "filling_provider": {
                       "state": {
                         "Name": "minecraft:air"
@@ -144,6 +148,12 @@
                     "alternate_inner_layer_provider": {
                       "state": {
                         "Name": "minecraft:budding_amethyst"
+                      },
+                      "type": "minecraft:simple_state_provider"
+                    },
+                    "middle_layer_provider": {
+                      "state": {
+                        "Name": "minecraft:calcite"
                       },
                       "type": "minecraft:simple_state_provider"
                     }
@@ -212,29 +222,6 @@
         "upper_size": 1,
         "type": "minecraft:two_layers_feature_size"
       },
-      "trunk_provider": {
-        "state": {
-          "Properties": {
-            "axis": "y"
-          },
-          "Name": "minecraft:oak_log"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "trunk_placer": {
-        "height_rand_b": 0,
-        "min_height_for_leaves": 3,
-        "bend_length": {
-          "type": "minecraft:uniform",
-          "value": {
-            "min_inclusive": 1,
-            "max_inclusive": 2
-          }
-        },
-        "base_height": 4,
-        "height_rand_a": 2,
-        "type": "minecraft:bending_trunk_placer"
-      },
       "foliage_provider": {
         "entries": [
           {
@@ -260,12 +247,41 @@
         ],
         "type": "minecraft:weighted_state_provider"
       },
+      "sapling_provider": {
+        "state": {
+          "Name": "minecraft:azalea"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
       "foliage_placer": {
         "radius": 3,
         "offset": 0,
         "foliage_height": 2,
         "leaf_placement_attempts": 50,
         "type": "minecraft:random_spread_foliage_placer"
+      },
+      "trunk_provider": {
+        "state": {
+          "Properties": {
+            "axis": "y"
+          },
+          "Name": "minecraft:oak_log"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "trunk_placer": {
+        "height_rand_b": 0,
+        "min_height_for_leaves": 3,
+        "bend_length": {
+          "type": "minecraft:uniform",
+          "value": {
+            "min_inclusive": 1,
+            "max_inclusive": 2
+          }
+        },
+        "base_height": 4,
+        "height_rand_a": 2,
+        "type": "minecraft:bending_trunk_placer"
       }
     },
     "type": "minecraft:tree"
@@ -570,6 +586,31 @@
         "upper_size": 1,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:birch_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:birch_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 0,
+        "height": 3,
+        "type": "minecraft:blob_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -584,22 +625,6 @@
         "height_rand_a": 2,
         "height_rand_b": 0,
         "type": "minecraft:straight_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:birch_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 0,
-        "height": 3,
-        "type": "minecraft:blob_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -626,6 +651,31 @@
         "upper_size": 1,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:birch_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:birch_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 0,
+        "height": 3,
+        "type": "minecraft:blob_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -640,22 +690,6 @@
         "height_rand_a": 2,
         "height_rand_b": 0,
         "type": "minecraft:straight_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:birch_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 0,
-        "height": 3,
-        "type": "minecraft:blob_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -682,6 +716,31 @@
         "upper_size": 1,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:birch_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:birch_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 0,
+        "height": 3,
+        "type": "minecraft:blob_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -696,22 +755,6 @@
         "height_rand_a": 2,
         "height_rand_b": 0,
         "type": "minecraft:straight_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:birch_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 0,
-        "height": 3,
-        "type": "minecraft:blob_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -738,6 +781,31 @@
         "upper_size": 1,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:birch_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:birch_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 0,
+        "height": 3,
+        "type": "minecraft:blob_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -752,22 +820,6 @@
         "height_rand_a": 2,
         "height_rand_b": 0,
         "type": "minecraft:straight_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:birch_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 0,
-        "height": 3,
-        "type": "minecraft:blob_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -1720,6 +1772,30 @@
         "lower_size": 0,
         "type": "minecraft:three_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:dark_oak_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:dark_oak_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 0,
+        "offset": 0,
+        "type": "minecraft:dark_oak_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -1734,21 +1810,6 @@
         "height_rand_a": 2,
         "height_rand_b": 1,
         "type": "minecraft:dark_oak_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:dark_oak_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 0,
-        "offset": 0,
-        "type": "minecraft:dark_oak_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -2448,6 +2509,31 @@
         "min_clipped_height": 4,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:oak_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:oak_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 4,
+        "height": 4,
+        "type": "minecraft:fancy_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -2462,22 +2548,6 @@
         "height_rand_a": 11,
         "height_rand_b": 0,
         "type": "minecraft:fancy_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:oak_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 4,
-        "height": 4,
-        "type": "minecraft:fancy_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -2505,6 +2575,31 @@
         "min_clipped_height": 4,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:oak_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:oak_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 4,
+        "height": 4,
+        "type": "minecraft:fancy_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -2519,22 +2614,6 @@
         "height_rand_a": 11,
         "height_rand_b": 0,
         "type": "minecraft:fancy_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:oak_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 4,
-        "height": 4,
-        "type": "minecraft:fancy_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -2562,6 +2641,31 @@
         "min_clipped_height": 4,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:oak_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:oak_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 4,
+        "height": 4,
+        "type": "minecraft:fancy_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -2576,22 +2680,6 @@
         "height_rand_a": 11,
         "height_rand_b": 0,
         "type": "minecraft:fancy_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:oak_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 4,
-        "height": 4,
-        "type": "minecraft:fancy_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -2619,6 +2707,31 @@
         "min_clipped_height": 4,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:oak_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:oak_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 4,
+        "height": 4,
+        "type": "minecraft:fancy_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -2633,22 +2746,6 @@
         "height_rand_a": 11,
         "height_rand_b": 0,
         "type": "minecraft:fancy_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:oak_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 4,
-        "height": 4,
-        "type": "minecraft:fancy_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -3899,6 +3996,31 @@
         "upper_size": 0,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:oak_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:oak_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 1,
+        "height": 2,
+        "type": "minecraft:bush_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -3913,22 +4035,6 @@
         "height_rand_a": 0,
         "height_rand_b": 0,
         "type": "minecraft:straight_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:oak_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 1,
-        "height": 2,
-        "type": "minecraft:bush_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -3961,6 +4067,31 @@
         "upper_size": 1,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:jungle_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:jungle_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 0,
+        "height": 3,
+        "type": "minecraft:blob_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -3975,22 +4106,6 @@
         "height_rand_a": 8,
         "height_rand_b": 0,
         "type": "minecraft:straight_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:jungle_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 0,
-        "height": 3,
-        "type": "minecraft:blob_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -4012,6 +4127,31 @@
         "upper_size": 1,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:jungle_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:jungle_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 0,
+        "height": 3,
+        "type": "minecraft:blob_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -4026,22 +4166,6 @@
         "height_rand_a": 8,
         "height_rand_b": 0,
         "type": "minecraft:straight_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:jungle_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 0,
-        "height": 3,
-        "type": "minecraft:blob_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -4537,6 +4661,31 @@
         "upper_size": 2,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:jungle_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:jungle_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 0,
+        "height": 2,
+        "type": "minecraft:jungle_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -4551,22 +4700,6 @@
         "height_rand_a": 2,
         "height_rand_b": 19,
         "type": "minecraft:mega_jungle_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:jungle_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 0,
-        "height": 2,
-        "type": "minecraft:jungle_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -4601,21 +4734,6 @@
         "upper_size": 2,
         "type": "minecraft:two_layers_feature_size"
       },
-      "trunk_provider": {
-        "state": {
-          "Properties": {
-            "axis": "y"
-          },
-          "Name": "minecraft:spruce_log"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "trunk_placer": {
-        "base_height": 13,
-        "height_rand_a": 2,
-        "height_rand_b": 14,
-        "type": "minecraft:giant_trunk_placer"
-      },
       "foliage_provider": {
         "state": {
           "Properties": {
@@ -4623,6 +4741,15 @@
             "distance": "7"
           },
           "Name": "minecraft:spruce_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:spruce_sapling"
         },
         "type": "minecraft:simple_state_provider"
       },
@@ -4637,6 +4764,21 @@
           }
         },
         "type": "minecraft:mega_pine_foliage_placer"
+      },
+      "trunk_provider": {
+        "state": {
+          "Properties": {
+            "axis": "y"
+          },
+          "Name": "minecraft:spruce_log"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "trunk_placer": {
+        "base_height": 13,
+        "height_rand_a": 2,
+        "height_rand_b": 14,
+        "type": "minecraft:giant_trunk_placer"
       }
     },
     "type": "minecraft:tree"
@@ -4671,21 +4813,6 @@
         "upper_size": 2,
         "type": "minecraft:two_layers_feature_size"
       },
-      "trunk_provider": {
-        "state": {
-          "Properties": {
-            "axis": "y"
-          },
-          "Name": "minecraft:spruce_log"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "trunk_placer": {
-        "base_height": 13,
-        "height_rand_a": 2,
-        "height_rand_b": 14,
-        "type": "minecraft:giant_trunk_placer"
-      },
       "foliage_provider": {
         "state": {
           "Properties": {
@@ -4693,6 +4820,15 @@
             "distance": "7"
           },
           "Name": "minecraft:spruce_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:spruce_sapling"
         },
         "type": "minecraft:simple_state_provider"
       },
@@ -4707,6 +4843,21 @@
           }
         },
         "type": "minecraft:mega_pine_foliage_placer"
+      },
+      "trunk_provider": {
+        "state": {
+          "Properties": {
+            "axis": "y"
+          },
+          "Name": "minecraft:spruce_log"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "trunk_placer": {
+        "base_height": 13,
+        "height_rand_a": 2,
+        "height_rand_b": 14,
+        "type": "minecraft:giant_trunk_placer"
       }
     },
     "type": "minecraft:tree"
@@ -4950,6 +5101,31 @@
         "upper_size": 1,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:oak_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:oak_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 0,
+        "height": 3,
+        "type": "minecraft:blob_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -4964,22 +5140,6 @@
         "height_rand_a": 2,
         "height_rand_b": 0,
         "type": "minecraft:straight_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:oak_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 0,
-        "height": 3,
-        "type": "minecraft:blob_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -5006,6 +5166,31 @@
         "upper_size": 1,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:oak_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:oak_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 0,
+        "height": 3,
+        "type": "minecraft:blob_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -5020,22 +5205,6 @@
         "height_rand_a": 2,
         "height_rand_b": 0,
         "type": "minecraft:straight_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:oak_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 0,
-        "height": 3,
-        "type": "minecraft:blob_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -5062,6 +5231,31 @@
         "upper_size": 1,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:oak_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:oak_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 0,
+        "height": 3,
+        "type": "minecraft:blob_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -5076,22 +5270,6 @@
         "height_rand_a": 2,
         "height_rand_b": 0,
         "type": "minecraft:straight_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:oak_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 0,
-        "height": 3,
-        "type": "minecraft:blob_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -5118,6 +5296,31 @@
         "upper_size": 1,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:oak_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:oak_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 0,
+        "height": 3,
+        "type": "minecraft:blob_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -5132,22 +5335,6 @@
         "height_rand_a": 2,
         "height_rand_b": 0,
         "type": "minecraft:straight_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:oak_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 0,
-        "height": 3,
-        "type": "minecraft:blob_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -8660,21 +8847,6 @@
         "upper_size": 2,
         "type": "minecraft:two_layers_feature_size"
       },
-      "trunk_provider": {
-        "state": {
-          "Properties": {
-            "axis": "y"
-          },
-          "Name": "minecraft:spruce_log"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "trunk_placer": {
-        "base_height": 6,
-        "height_rand_a": 4,
-        "height_rand_b": 0,
-        "type": "minecraft:straight_trunk_placer"
-      },
       "foliage_provider": {
         "state": {
           "Properties": {
@@ -8682,6 +8854,15 @@
             "distance": "7"
           },
           "Name": "minecraft:spruce_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:spruce_sapling"
         },
         "type": "minecraft:simple_state_provider"
       },
@@ -8696,6 +8877,21 @@
           }
         },
         "type": "minecraft:pine_foliage_placer"
+      },
+      "trunk_provider": {
+        "state": {
+          "Properties": {
+            "axis": "y"
+          },
+          "Name": "minecraft:spruce_log"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "trunk_placer": {
+        "base_height": 6,
+        "height_rand_a": 4,
+        "height_rand_b": 0,
+        "type": "minecraft:straight_trunk_placer"
       }
     },
     "type": "minecraft:tree"
@@ -11788,21 +11984,6 @@
         "upper_size": 2,
         "type": "minecraft:two_layers_feature_size"
       },
-      "trunk_provider": {
-        "state": {
-          "Properties": {
-            "axis": "y"
-          },
-          "Name": "minecraft:spruce_log"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "trunk_placer": {
-        "base_height": 5,
-        "height_rand_a": 2,
-        "height_rand_b": 1,
-        "type": "minecraft:straight_trunk_placer"
-      },
       "foliage_provider": {
         "state": {
           "Properties": {
@@ -11810,6 +11991,15 @@
             "distance": "7"
           },
           "Name": "minecraft:spruce_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:spruce_sapling"
         },
         "type": "minecraft:simple_state_provider"
       },
@@ -11836,6 +12026,21 @@
           }
         },
         "type": "minecraft:spruce_foliage_placer"
+      },
+      "trunk_provider": {
+        "state": {
+          "Properties": {
+            "axis": "y"
+          },
+          "Name": "minecraft:spruce_log"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "trunk_placer": {
+        "base_height": 5,
+        "height_rand_a": 2,
+        "height_rand_b": 1,
+        "type": "minecraft:straight_trunk_placer"
       }
     },
     "type": "minecraft:tree"
@@ -11862,6 +12067,31 @@
         "upper_size": 1,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:birch_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:birch_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 2,
+        "offset": 0,
+        "height": 3,
+        "type": "minecraft:blob_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -11876,22 +12106,6 @@
         "height_rand_a": 2,
         "height_rand_b": 6,
         "type": "minecraft:straight_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:birch_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 2,
-        "offset": 0,
-        "height": 3,
-        "type": "minecraft:blob_foliage_placer"
       }
     },
     "type": "minecraft:tree"
@@ -11917,6 +12131,31 @@
         "upper_size": 1,
         "type": "minecraft:two_layers_feature_size"
       },
+      "foliage_provider": {
+        "state": {
+          "Properties": {
+            "persistent": "false",
+            "distance": "7"
+          },
+          "Name": "minecraft:oak_leaves"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "sapling_provider": {
+        "state": {
+          "Properties": {
+            "stage": "0"
+          },
+          "Name": "minecraft:oak_sapling"
+        },
+        "type": "minecraft:simple_state_provider"
+      },
+      "foliage_placer": {
+        "radius": 3,
+        "offset": 0,
+        "height": 3,
+        "type": "minecraft:blob_foliage_placer"
+      },
       "trunk_provider": {
         "state": {
           "Properties": {
@@ -11931,22 +12170,6 @@
         "height_rand_a": 3,
         "height_rand_b": 0,
         "type": "minecraft:straight_trunk_placer"
-      },
-      "foliage_provider": {
-        "state": {
-          "Properties": {
-            "persistent": "false",
-            "distance": "7"
-          },
-          "Name": "minecraft:oak_leaves"
-        },
-        "type": "minecraft:simple_state_provider"
-      },
-      "foliage_placer": {
-        "radius": 3,
-        "offset": 0,
-        "height": 3,
-        "type": "minecraft:blob_foliage_placer"
       }
     },
     "type": "minecraft:tree"
