@@ -906,141 +906,6 @@
       }
     ]
   },
-  "blocks/azalea_leaves_flowers": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:alternatives",
-            "children": [
-              {
-                "type": "minecraft:item",
-                "conditions": [
-                  {
-                    "condition": "minecraft:alternative",
-                    "terms": [
-                      {
-                        "condition": "minecraft:match_tool",
-                        "predicate": {
-                          "items": [
-                            "minecraft:shears"
-                          ]
-                        }
-                      },
-                      {
-                        "condition": "minecraft:match_tool",
-                        "predicate": {
-                          "enchantments": [
-                            {
-                              "enchantment": "minecraft:silk_touch",
-                              "levels": {
-                                "min": 1
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                ],
-                "name": "minecraft:azalea_leaves_flowers"
-              },
-              {
-                "type": "minecraft:item",
-                "conditions": [
-                  {
-                    "condition": "minecraft:survives_explosion"
-                  },
-                  {
-                    "condition": "minecraft:table_bonus",
-                    "enchantment": "minecraft:fortune",
-                    "chances": [
-                      0.05,
-                      0.0625,
-                      0.083333336,
-                      0.1
-                    ]
-                  }
-                ],
-                "name": "minecraft:flowering_azalea"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "conditions": [
-              {
-                "condition": "minecraft:table_bonus",
-                "enchantment": "minecraft:fortune",
-                "chances": [
-                  0.02,
-                  0.022222223,
-                  0.025,
-                  0.033333335,
-                  0.1
-                ]
-              }
-            ],
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "type": "minecraft:uniform",
-                  "min": 1.0,
-                  "max": 2.0
-                },
-                "add": false
-              },
-              {
-                "function": "minecraft:explosion_decay"
-              }
-            ],
-            "name": "minecraft:stick"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
-                  }
-                },
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "enchantments": [
-                      {
-                        "enchantment": "minecraft:silk_touch",
-                        "levels": {
-                          "min": 1
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
-    ]
-  },
   "blocks/azure_bluet": {
     "type": "minecraft:block",
     "pools": [
@@ -8505,6 +8370,141 @@
         "conditions": [
           {
             "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  },
+  "blocks/flowering_azalea_leaves": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:alternative",
+                    "terms": [
+                      {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                          "items": [
+                            "minecraft:shears"
+                          ]
+                        }
+                      },
+                      {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                          "enchantments": [
+                            {
+                              "enchantment": "minecraft:silk_touch",
+                              "levels": {
+                                "min": 1
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "name": "minecraft:flowering_azalea_leaves"
+              },
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:survives_explosion"
+                  },
+                  {
+                    "condition": "minecraft:table_bonus",
+                    "enchantment": "minecraft:fortune",
+                    "chances": [
+                      0.05,
+                      0.0625,
+                      0.083333336,
+                      0.1
+                    ]
+                  }
+                ],
+                "name": "minecraft:flowering_azalea"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "minecraft:table_bonus",
+                "enchantment": "minecraft:fortune",
+                "chances": [
+                  0.02,
+                  0.022222223,
+                  0.025,
+                  0.033333335,
+                  0.1
+                ]
+              }
+            ],
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "type": "minecraft:uniform",
+                  "min": 1.0,
+                  "max": 2.0
+                },
+                "add": false
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:stick"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "items": [
+                      "minecraft:shears"
+                    ]
+                  }
+                },
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "enchantments": [
+                      {
+                        "enchantment": "minecraft:silk_touch",
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
           }
         ]
       }
@@ -28169,7 +28169,7 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
-                    "type": "minecraft:jump_boost",
+                    "type": "minecraft:saturation",
                     "duration": {
                       "type": "minecraft:uniform",
                       "min": 7.0,
@@ -28177,7 +28177,7 @@
                     }
                   },
                   {
-                    "type": "minecraft:saturation",
+                    "type": "minecraft:night_vision",
                     "duration": {
                       "type": "minecraft:uniform",
                       "min": 7.0,
@@ -28201,19 +28201,19 @@
                     }
                   },
                   {
-                    "type": "minecraft:night_vision",
-                    "duration": {
-                      "type": "minecraft:uniform",
-                      "min": 7.0,
-                      "max": 10.0
-                    }
-                  },
-                  {
                     "type": "minecraft:blindness",
                     "duration": {
                       "type": "minecraft:uniform",
                       "min": 5.0,
                       "max": 7.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:jump_boost",
+                    "duration": {
+                      "type": "minecraft:uniform",
+                      "min": 7.0,
+                      "max": 10.0
                     }
                   }
                 ]
