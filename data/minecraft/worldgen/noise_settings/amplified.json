@@ -1,11 +1,14 @@
 {
-  "noise_caves_enabled": false,
-  "deepslate_enabled": false,
-  "ore_veins_enabled": false,
-  "noodle_caves_enabled": false,
-  "min_surface_level": 0,
+  "noise_caves_enabled": true,
+  "deepslate_enabled": true,
+  "ore_veins_enabled": true,
+  "noodle_caves_enabled": true,
+  "sea_level": 63,
   "disable_mob_generation": false,
-  "aquifers_enabled": false,
+  "aquifers_enabled": true,
+  "default_block": {
+    "Name": "minecraft:stone"
+  },
   "default_fluid": {
     "Properties": {
       "level": "0"
@@ -14,7 +17,6 @@
   },
   "bedrock_roof_position": -2147483648,
   "bedrock_floor_position": 0,
-  "sea_level": 63,
   "structures": {
     "stronghold": {
       "distance": 32,
@@ -115,25 +117,25 @@
     }
   },
   "noise": {
-    "simplex_surface_noise": true,
     "random_density_offset": true,
     "amplified": true,
-    "size_vertical": 2,
     "density_factor": 1.0,
-    "density_offset": -0.46875,
+    "density_offset": -0.51875,
+    "simplex_surface_noise": true,
     "top_slide": {
-      "target": -10,
-      "size": 3,
-      "offset": 0
+      "target": -0.078125,
+      "size": 2,
+      "offset": 8
     },
     "bottom_slide": {
-      "target": 15,
+      "target": 0.1171875,
       "size": 3,
       "offset": 0
     },
     "size_horizontal": 1,
-    "min_y": 0,
-    "height": 256,
+    "size_vertical": 2,
+    "min_y": -64,
+    "height": 384,
     "sampling": {
       "xz_scale": 0.9999999814507745,
       "y_scale": 0.9999999814507745,
@@ -141,7 +143,72 @@
       "y_factor": 160.0
     }
   },
-  "default_block": {
-    "Name": "minecraft:stone"
+  "octaves": {
+    "erosion": {
+      "firstOctave": -9,
+      "amplitudes": [
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0
+      ]
+    },
+    "weirdness": {
+      "firstOctave": -7,
+      "amplitudes": [
+        1.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "shift": {
+      "firstOctave": -3,
+      "amplitudes": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    "temperature": {
+      "firstOctave": -9,
+      "amplitudes": [
+        1.5,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "humidity": {
+      "firstOctave": -7,
+      "amplitudes": [
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "continentalness": {
+      "firstOctave": -9,
+      "amplitudes": [
+        1.0,
+        1.0,
+        2.0,
+        2.0,
+        2.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
   }
 }
