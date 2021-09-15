@@ -3,9 +3,12 @@
   "deepslate_enabled": false,
   "ore_veins_enabled": false,
   "noodle_caves_enabled": false,
-  "min_surface_level": 0,
+  "sea_level": 0,
   "disable_mob_generation": false,
   "aquifers_enabled": false,
+  "default_block": {
+    "Name": "minecraft:stone"
+  },
   "default_fluid": {
     "Properties": {
       "level": "0"
@@ -14,7 +17,6 @@
   },
   "bedrock_roof_position": -2147483648,
   "bedrock_floor_position": -2147483648,
-  "sea_level": 0,
   "structures": {
     "stronghold": {
       "distance": 32,
@@ -115,21 +117,22 @@
     }
   },
   "noise": {
-    "simplex_surface_noise": true,
-    "size_vertical": 1,
+    "use_legacy_random": true,
     "density_factor": 0.0,
     "density_offset": 0.0,
+    "simplex_surface_noise": true,
     "top_slide": {
-      "target": -3000,
+      "target": -23.4375,
       "size": 64,
       "offset": -46
     },
     "bottom_slide": {
-      "target": -30,
+      "target": -0.234375,
       "size": 7,
       "offset": 1
     },
     "size_horizontal": 2,
+    "size_vertical": 1,
     "min_y": 0,
     "height": 128,
     "sampling": {
@@ -139,7 +142,42 @@
       "y_factor": 160.0
     }
   },
-  "default_block": {
-    "Name": "minecraft:stone"
+  "octaves": {
+    "erosion": {
+      "firstOctave": 0,
+      "amplitudes": [
+        0.0
+      ]
+    },
+    "weirdness": {
+      "firstOctave": 0,
+      "amplitudes": [
+        0.0
+      ]
+    },
+    "shift": {
+      "firstOctave": 0,
+      "amplitudes": [
+        0.0
+      ]
+    },
+    "temperature": {
+      "firstOctave": 0,
+      "amplitudes": [
+        0.0
+      ]
+    },
+    "humidity": {
+      "firstOctave": 0,
+      "amplitudes": [
+        0.0
+      ]
+    },
+    "continentalness": {
+      "firstOctave": 0,
+      "amplitudes": [
+        0.0
+      ]
+    }
   }
 }

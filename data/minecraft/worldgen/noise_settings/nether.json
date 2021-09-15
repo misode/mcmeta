@@ -3,9 +3,12 @@
   "deepslate_enabled": false,
   "ore_veins_enabled": false,
   "noodle_caves_enabled": false,
-  "min_surface_level": 0,
+  "sea_level": 32,
   "disable_mob_generation": false,
   "aquifers_enabled": false,
+  "default_block": {
+    "Name": "minecraft:netherrack"
+  },
   "default_fluid": {
     "Properties": {
       "level": "0"
@@ -14,7 +17,6 @@
   },
   "bedrock_roof_position": 0,
   "bedrock_floor_position": 0,
-  "sea_level": 32,
   "structures": {
     "structures": {
       "minecraft:bastion_remnant": {
@@ -110,21 +112,22 @@
     }
   },
   "noise": {
-    "simplex_surface_noise": false,
-    "size_vertical": 2,
+    "use_legacy_random": true,
     "density_factor": 0.0,
-    "density_offset": 0.019921875,
+    "density_offset": -0.030078125,
+    "simplex_surface_noise": false,
     "top_slide": {
-      "target": 120,
+      "target": 0.9375,
       "size": 3,
       "offset": 0
     },
     "bottom_slide": {
-      "target": 320,
+      "target": 2.5,
       "size": 4,
       "offset": -1
     },
     "size_horizontal": 1,
+    "size_vertical": 2,
     "min_y": 0,
     "height": 128,
     "sampling": {
@@ -134,7 +137,47 @@
       "y_factor": 60.0
     }
   },
-  "default_block": {
-    "Name": "minecraft:netherrack"
+  "octaves": {
+    "erosion": {
+      "firstOctave": -7,
+      "amplitudes": [
+        1.0,
+        1.0
+      ]
+    },
+    "weirdness": {
+      "firstOctave": -7,
+      "amplitudes": [
+        1.0,
+        1.0
+      ]
+    },
+    "shift": {
+      "firstOctave": 0,
+      "amplitudes": [
+        0.0
+      ]
+    },
+    "temperature": {
+      "firstOctave": -7,
+      "amplitudes": [
+        1.0,
+        1.0
+      ]
+    },
+    "humidity": {
+      "firstOctave": -7,
+      "amplitudes": [
+        1.0,
+        1.0
+      ]
+    },
+    "continentalness": {
+      "firstOctave": -7,
+      "amplitudes": [
+        1.0,
+        1.0
+      ]
+    }
   }
 }

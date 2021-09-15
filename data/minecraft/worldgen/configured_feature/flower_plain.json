@@ -10,7 +10,48 @@
     "blacklist": [],
     "tries": 64,
     "state_provider": {
-      "type": "minecraft:plain_flower_provider"
+      "high_chance": 0.33333334,
+      "default_state": {
+        "Name": "minecraft:dandelion"
+      },
+      "low_states": [
+        {
+          "Name": "minecraft:orange_tulip"
+        },
+        {
+          "Name": "minecraft:red_tulip"
+        },
+        {
+          "Name": "minecraft:pink_tulip"
+        },
+        {
+          "Name": "minecraft:white_tulip"
+        }
+      ],
+      "high_states": [
+        {
+          "Name": "minecraft:poppy"
+        },
+        {
+          "Name": "minecraft:azure_bluet"
+        },
+        {
+          "Name": "minecraft:oxeye_daisy"
+        },
+        {
+          "Name": "minecraft:cornflower"
+        }
+      ],
+      "seed": 2345,
+      "noise": {
+        "firstOctave": 0,
+        "amplitudes": [
+          1.0
+        ]
+      },
+      "scale": 0.005,
+      "threshold": -0.8,
+      "type": "minecraft:noise_2d_cutoff_provider"
     },
     "block_placer": {
       "type": "minecraft:simple_block_placer"
