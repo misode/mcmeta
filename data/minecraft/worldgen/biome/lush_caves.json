@@ -1,5 +1,4 @@
 {
-  "scale": 0.2,
   "effects": {
     "sky_color": 8103167,
     "fog_color": 12638463,
@@ -9,8 +8,9 @@
   "surface_builder": "minecraft:grass",
   "carvers": {
     "air": [
-      "minecraft:cave",
-      "minecraft:canyon"
+      "minecraft:prototype_cave",
+      "minecraft:prototype_cave_extra_underground",
+      "minecraft:prototype_canyon"
     ]
   },
   "features": [
@@ -28,32 +28,40 @@
     [],
     [],
     [
-      "minecraft:ore_dirt",
-      "minecraft:ore_gravel",
-      "minecraft:ore_granite",
-      "minecraft:ore_diorite",
-      "minecraft:ore_andesite",
-      "minecraft:ore_tuff",
-      "minecraft:ore_deepslate",
-      "minecraft:ore_coal",
-      "minecraft:ore_iron",
-      "minecraft:ore_gold",
-      "minecraft:ore_redstone",
-      "minecraft:ore_diamond",
-      "minecraft:ore_lapis",
-      "minecraft:ore_copper",
+      "minecraft:prototype_ore_dirt",
+      "minecraft:prototype_ore_gravel",
+      "minecraft:prototype_ore_granite_upper",
+      "minecraft:prototype_ore_granite_lower",
+      "minecraft:prototype_ore_diorite_upper",
+      "minecraft:prototype_ore_diorite_lower",
+      "minecraft:prototype_ore_andesite_upper",
+      "minecraft:prototype_ore_andesite_lower",
+      "minecraft:prototype_ore_tuff",
+      "minecraft:prototype_ore_coal_upper",
+      "minecraft:prototype_ore_coal_lower",
+      "minecraft:prototype_ore_iron_upper",
+      "minecraft:prototype_ore_iron_middle",
+      "minecraft:prototype_ore_iron_small",
+      "minecraft:prototype_ore_gold",
+      "minecraft:prototype_ore_redstone",
+      "minecraft:prototype_ore_redstone_lower",
+      "minecraft:prototype_ore_diamond",
+      "minecraft:prototype_ore_diamond_large",
+      "minecraft:prototype_ore_lapis",
+      "minecraft:prototype_ore_lapis_buried",
+      "minecraft:prototype_ore_copper",
+      "minecraft:prototype_underwater_magma",
       "minecraft:ore_clay",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel"
     ],
-    [
-      "minecraft:rare_dripstone_cluster",
-      "minecraft:rare_small_dripstone"
-    ],
+    [],
     [
       "minecraft:patch_tall_grass_2",
-      "minecraft:glow_lichen",
+      "minecraft:prototype_glow_lichen",
+      "minecraft:prototype_spring_water",
+      "minecraft:spring_lava",
       "minecraft:lush_caves_ceiling_vegetation",
       "minecraft:cave_vines",
       "minecraft:lush_caves_clay",
@@ -62,11 +70,6 @@
       "minecraft:spore_blossom",
       "minecraft:classic_vines_cave_feature"
     ]
-  ],
-  "starts": [
-    "minecraft:mineshaft",
-    "minecraft:stronghold",
-    "minecraft:ruined_portal"
   ],
   "spawners": {
     "monster": [
@@ -128,15 +131,17 @@
         "maxCount": 8
       }
     ],
-    "underground_water_creature": [
+    "axolotls": [
       {
-        "type": "minecraft:glow_squid",
+        "type": "minecraft:axolotl",
         "weight": 10,
         "minCount": 4,
         "maxCount": 6
-      },
+      }
+    ],
+    "underground_water_creature": [
       {
-        "type": "minecraft:axolotl",
+        "type": "minecraft:glow_squid",
         "weight": 10,
         "minCount": 4,
         "maxCount": 6
@@ -151,6 +156,5 @@
   "precipitation": "rain",
   "temperature": 0.5,
   "downfall": 0.5,
-  "category": "underground",
-  "depth": 0.1
+  "category": "underground"
 }
