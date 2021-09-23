@@ -1,0 +1,56 @@
+{
+  "config": {
+    "feature": {
+      "config": {
+        "feature": {
+          "config": {
+            "features": [
+              {
+                "feature": "minecraft:pine_on_snow",
+                "chance": 0.33333334
+              }
+            ],
+            "default": "minecraft:spruce_on_snow"
+          },
+          "type": "minecraft:random_selector"
+        },
+        "decorator": {
+          "config": {
+            "outer": {
+              "config": {},
+              "type": "minecraft:square"
+            },
+            "inner": {
+              "config": {
+                "outer": {
+                  "config": {
+                    "max_water_depth": 0
+                  },
+                  "type": "minecraft:water_depth_threshold"
+                },
+                "inner": {
+                  "config": {
+                    "heightmap": "OCEAN_FLOOR"
+                  },
+                  "type": "minecraft:heightmap"
+                }
+              },
+              "type": "minecraft:decorated"
+            }
+          },
+          "type": "minecraft:decorated"
+        }
+      },
+      "type": "minecraft:decorated"
+    },
+    "decorator": {
+      "config": {
+        "count": 10,
+        "extra_chance": 0.1,
+        "extra_count": 1
+      },
+      "type": "minecraft:count_extra"
+    }
+  },
+  "type": "minecraft:decorated"
+}
