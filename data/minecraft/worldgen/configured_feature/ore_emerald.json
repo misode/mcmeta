@@ -25,20 +25,22 @@
                       "Name": "minecraft:deepslate_emerald_ore"
                     }
                   }
-                ]
+                ],
+                "size": 3,
+                "discard_chance_on_air_exposure": 0.0
               },
-              "type": "minecraft:replace_single_block"
+              "type": "minecraft:ore"
             },
             "decorator": {
               "config": {
                 "height": {
                   "min_inclusive": {
-                    "absolute": 4
+                    "absolute": 32
                   },
                   "max_inclusive": {
-                    "absolute": 31
+                    "absolute": 480
                   },
-                  "type": "minecraft:uniform"
+                  "type": "minecraft:trapezoid"
                 }
               },
               "type": "minecraft:range"
@@ -55,13 +57,7 @@
     },
     "decorator": {
       "config": {
-        "count": {
-          "type": "minecraft:uniform",
-          "value": {
-            "min_inclusive": 3,
-            "max_inclusive": 8
-          }
-        }
+        "count": 50
       },
       "type": "minecraft:count"
     }
