@@ -6,95 +6,117 @@
           "config": {
             "feature": {
               "config": {
-                "can_replace": false,
-                "project": true,
-                "need_water": false,
-                "xspread": 7,
-                "yspread": 3,
-                "zspread": 7,
-                "whitelist": [],
-                "blacklist": [],
-                "tries": 64,
-                "state_provider": {
-                  "seed": 2345,
-                  "noise": {
-                    "firstOctave": 0,
-                    "amplitudes": [
-                      1.0
-                    ]
-                  },
-                  "scale": 0.020833334,
-                  "states": [
-                    {
-                      "Name": "minecraft:dandelion"
+                "allowed_on": [],
+                "disallowed_on": [],
+                "only_in_air": true,
+                "feature": {
+                  "config": {
+                    "feature": {
+                      "config": {
+                        "to_place": {
+                          "seed": 2345,
+                          "noise": {
+                            "firstOctave": 0,
+                            "amplitudes": [
+                              1.0
+                            ]
+                          },
+                          "scale": 0.020833334,
+                          "states": [
+                            {
+                              "Name": "minecraft:dandelion"
+                            },
+                            {
+                              "Name": "minecraft:poppy"
+                            },
+                            {
+                              "Name": "minecraft:allium"
+                            },
+                            {
+                              "Name": "minecraft:azure_bluet"
+                            },
+                            {
+                              "Name": "minecraft:red_tulip"
+                            },
+                            {
+                              "Name": "minecraft:orange_tulip"
+                            },
+                            {
+                              "Name": "minecraft:white_tulip"
+                            },
+                            {
+                              "Name": "minecraft:pink_tulip"
+                            },
+                            {
+                              "Name": "minecraft:oxeye_daisy"
+                            },
+                            {
+                              "Name": "minecraft:cornflower"
+                            },
+                            {
+                              "Name": "minecraft:lily_of_the_valley"
+                            }
+                          ],
+                          "type": "minecraft:noise_provider"
+                        }
+                      },
+                      "type": "minecraft:simple_block"
                     },
-                    {
-                      "Name": "minecraft:poppy"
-                    },
-                    {
-                      "Name": "minecraft:allium"
-                    },
-                    {
-                      "Name": "minecraft:azure_bluet"
-                    },
-                    {
-                      "Name": "minecraft:red_tulip"
-                    },
-                    {
-                      "Name": "minecraft:orange_tulip"
-                    },
-                    {
-                      "Name": "minecraft:white_tulip"
-                    },
-                    {
-                      "Name": "minecraft:pink_tulip"
-                    },
-                    {
-                      "Name": "minecraft:oxeye_daisy"
-                    },
-                    {
-                      "Name": "minecraft:cornflower"
-                    },
-                    {
-                      "Name": "minecraft:lily_of_the_valley"
+                    "decorator": {
+                      "config": {
+                        "predicate": {
+                          "blocks": [
+                            "minecraft:air"
+                          ],
+                          "offset": [
+                            0,
+                            0,
+                            0
+                          ],
+                          "type": "minecraft:matching_blocks"
+                        }
+                      },
+                      "type": "minecraft:block_filter"
                     }
-                  ],
-                  "type": "minecraft:noise_provider"
+                  },
+                  "type": "minecraft:decorated"
                 },
-                "block_placer": {
-                  "type": "minecraft:simple_block_placer"
-                }
+                "tries": 96,
+                "xz_spread": 6,
+                "y_spread": 2
               },
               "type": "minecraft:flower"
             },
             "decorator": {
-              "config": {},
-              "type": "minecraft:spread_32_above"
+              "config": {
+                "outer": {
+                  "config": {},
+                  "type": "minecraft:square"
+                },
+                "inner": {
+                  "config": {
+                    "heightmap": "MOTION_BLOCKING"
+                  },
+                  "type": "minecraft:heightmap"
+                }
+              },
+              "type": "minecraft:decorated"
             }
           },
           "type": "minecraft:decorated"
         },
         "decorator": {
           "config": {
-            "outer": {
-              "config": {},
-              "type": "minecraft:square"
-            },
-            "inner": {
-              "config": {
-                "heightmap": "MOTION_BLOCKING"
-              },
-              "type": "minecraft:heightmap"
-            }
+            "chance": 2
           },
-          "type": "minecraft:decorated"
+          "type": "minecraft:chance"
         }
       },
       "type": "minecraft:decorated"
     },
     "decorator": {
       "config": {
-        "count": 100
+        "count": 3
       },
       "type": "minecraft:count"
     }
