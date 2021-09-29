@@ -26507,6 +26507,26 @@
             "name": "minecraft:cooked_salmon"
           }
         ]
+      },
+      {
+        "rolls": {
+          "type": "minecraft:uniform",
+          "min": 0.0,
+          "max": 2.0
+        },
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:potion"
+          }
+        ],
+        "functions": [
+          {
+            "function": "minecraft:set_potion",
+            "id": "minecraft:water_breathing"
+          }
+        ]
       }
     ]
   },
@@ -28186,6 +28206,14 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
+                    "type": "minecraft:jump_boost",
+                    "duration": {
+                      "type": "minecraft:uniform",
+                      "min": 7.0,
+                      "max": 10.0
+                    }
+                  },
+                  {
                     "type": "minecraft:night_vision",
                     "duration": {
                       "type": "minecraft:uniform",
@@ -28202,6 +28230,14 @@
                     }
                   },
                   {
+                    "type": "minecraft:poison",
+                    "duration": {
+                      "type": "minecraft:uniform",
+                      "min": 10.0,
+                      "max": 20.0
+                    }
+                  },
+                  {
                     "type": "minecraft:blindness",
                     "duration": {
                       "type": "minecraft:uniform",
@@ -28211,22 +28247,6 @@
                   },
                   {
                     "type": "minecraft:saturation",
-                    "duration": {
-                      "type": "minecraft:uniform",
-                      "min": 7.0,
-                      "max": 10.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:poison",
-                    "duration": {
-                      "type": "minecraft:uniform",
-                      "min": 10.0,
-                      "max": 20.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:jump_boost",
                     "duration": {
                       "type": "minecraft:uniform",
                       "min": 7.0,
@@ -34333,8 +34353,8 @@
                 "limit": 1
               },
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:slowness\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:slowness"
               }
             ],
             "name": "minecraft:tipped_arrow"
@@ -35288,8 +35308,8 @@
             "weight": 10,
             "functions": [
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:water\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:water"
               }
             ],
             "name": "minecraft:potion"
@@ -35641,8 +35661,8 @@
                 "add": false
               },
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:swiftness\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:swiftness"
               }
             ],
             "name": "minecraft:tipped_arrow"
@@ -35660,8 +35680,8 @@
                 "add": false
               },
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:slowness\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:slowness"
               }
             ],
             "name": "minecraft:tipped_arrow"
@@ -35679,8 +35699,8 @@
                 "add": false
               },
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:strength\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:strength"
               }
             ],
             "name": "minecraft:tipped_arrow"
@@ -35698,8 +35718,8 @@
                 "add": false
               },
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:healing\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:healing"
               }
             ],
             "name": "minecraft:tipped_arrow"
@@ -35717,8 +35737,8 @@
                 "add": false
               },
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:harming\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:harming"
               }
             ],
             "name": "minecraft:tipped_arrow"
@@ -35736,8 +35756,8 @@
                 "add": false
               },
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:leaping\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:leaping"
               }
             ],
             "name": "minecraft:tipped_arrow"
@@ -35755,8 +35775,8 @@
                 "add": false
               },
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:regeneration\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:regeneration"
               }
             ],
             "name": "minecraft:tipped_arrow"
@@ -35774,8 +35794,8 @@
                 "add": false
               },
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:fire_resistance\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:fire_resistance"
               }
             ],
             "name": "minecraft:tipped_arrow"
@@ -35793,8 +35813,8 @@
                 "add": false
               },
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:water_breathing\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:water_breathing"
               }
             ],
             "name": "minecraft:tipped_arrow"
@@ -35812,8 +35832,8 @@
                 "add": false
               },
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:invisibility\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:invisibility"
               }
             ],
             "name": "minecraft:tipped_arrow"
@@ -35831,8 +35851,8 @@
                 "add": false
               },
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:night_vision\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:night_vision"
               }
             ],
             "name": "minecraft:tipped_arrow"
@@ -35850,8 +35870,8 @@
                 "add": false
               },
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:weakness\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:weakness"
               }
             ],
             "name": "minecraft:tipped_arrow"
@@ -35869,8 +35889,8 @@
                 "add": false
               },
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:poison\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:poison"
               }
             ],
             "name": "minecraft:tipped_arrow"
@@ -36087,8 +36107,8 @@
             "weight": 8,
             "functions": [
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:fire_resistance\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:fire_resistance"
               }
             ],
             "name": "minecraft:potion"
@@ -36098,8 +36118,8 @@
             "weight": 8,
             "functions": [
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:fire_resistance\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:fire_resistance"
               }
             ],
             "name": "minecraft:splash_potion"
@@ -36109,8 +36129,8 @@
             "weight": 10,
             "functions": [
               {
-                "function": "minecraft:set_nbt",
-                "tag": "{Potion:\"minecraft:water\"}"
+                "function": "minecraft:set_potion",
+                "id": "minecraft:water"
               }
             ],
             "name": "minecraft:potion"
