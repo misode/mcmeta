@@ -1,33 +1,76 @@
 {
   "config": {
-    "can_replace": false,
-    "project": false,
-    "need_water": false,
-    "xspread": 7,
-    "yspread": 3,
-    "zspread": 7,
-    "whitelist": [],
-    "blacklist": [],
-    "tries": 10,
-    "state_provider": {
-      "state": {
-        "Properties": {
-          "age": "0"
+    "allowed_on": [],
+    "disallowed_on": [],
+    "only_in_air": false,
+    "feature": {
+      "config": {
+        "feature": {
+          "config": {
+            "feature": {
+              "config": {
+                "layers": [
+                  {
+                    "height": {
+                      "type": "minecraft:biased_to_bottom",
+                      "value": {
+                        "min_inclusive": 1,
+                        "max_inclusive": 3
+                      }
+                    },
+                    "provider": {
+                      "state": {
+                        "Properties": {
+                          "age": "0"
+                        },
+                        "Name": "minecraft:cactus"
+                      },
+                      "type": "minecraft:simple_state_provider"
+                    }
+                  }
+                ],
+                "direction": "up",
+                "allow_water": false,
+                "prioritize_tip": false
+              },
+              "type": "minecraft:block_column"
+            },
+            "decorator": {
+              "config": {
+                "state": {
+                  "Properties": {
+                    "age": "0"
+                  },
+                  "Name": "minecraft:cactus"
+                }
+              },
+              "type": "minecraft:block_survives_filter"
+            }
+          },
+          "type": "minecraft:decorated"
         },
-        "Name": "minecraft:cactus"
-      },
-      "type": "minecraft:simple_state_provider"
-    },
-    "block_placer": {
-      "size": {
-        "type": "minecraft:biased_to_bottom",
-        "value": {
-          "min_inclusive": 1,
-          "max_inclusive": 3
+        "decorator": {
+          "config": {
+            "predicate": {
+              "blocks": [
+                "minecraft:air"
+              ],
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "type": "minecraft:matching_blocks"
+            }
+          },
+          "type": "minecraft:block_filter"
         }
       },
-      "type": "minecraft:column_placer"
-    }
+      "type": "minecraft:decorated"
+    },
+    "tries": 10,
+    "xz_spread": 7,
+    "y_spread": 3
   },
   "type": "minecraft:random_patch"
 }
