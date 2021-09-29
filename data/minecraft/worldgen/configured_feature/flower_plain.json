@@ -1,61 +1,81 @@
 {
   "config": {
-    "can_replace": false,
-    "project": true,
-    "need_water": false,
-    "xspread": 7,
-    "yspread": 3,
-    "zspread": 7,
-    "whitelist": [],
-    "blacklist": [],
-    "tries": 64,
-    "state_provider": {
-      "high_chance": 0.33333334,
-      "default_state": {
-        "Name": "minecraft:dandelion"
-      },
-      "low_states": [
-        {
-          "Name": "minecraft:orange_tulip"
+    "allowed_on": [],
+    "disallowed_on": [],
+    "only_in_air": true,
+    "feature": {
+      "config": {
+        "feature": {
+          "config": {
+            "to_place": {
+              "high_chance": 0.33333334,
+              "default_state": {
+                "Name": "minecraft:dandelion"
+              },
+              "low_states": [
+                {
+                  "Name": "minecraft:orange_tulip"
+                },
+                {
+                  "Name": "minecraft:red_tulip"
+                },
+                {
+                  "Name": "minecraft:pink_tulip"
+                },
+                {
+                  "Name": "minecraft:white_tulip"
+                }
+              ],
+              "high_states": [
+                {
+                  "Name": "minecraft:poppy"
+                },
+                {
+                  "Name": "minecraft:azure_bluet"
+                },
+                {
+                  "Name": "minecraft:oxeye_daisy"
+                },
+                {
+                  "Name": "minecraft:cornflower"
+                }
+              ],
+              "seed": 2345,
+              "noise": {
+                "firstOctave": 0,
+                "amplitudes": [
+                  1.0
+                ]
+              },
+              "scale": 0.005,
+              "threshold": -0.8,
+              "type": "minecraft:noise_threshold_provider"
+            }
+          },
+          "type": "minecraft:simple_block"
         },
-        {
-          "Name": "minecraft:red_tulip"
-        },
-        {
-          "Name": "minecraft:pink_tulip"
-        },
-        {
-          "Name": "minecraft:white_tulip"
+        "decorator": {
+          "config": {
+            "predicate": {
+              "blocks": [
+                "minecraft:air"
+              ],
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "type": "minecraft:matching_blocks"
+            }
+          },
+          "type": "minecraft:block_filter"
         }
-      ],
-      "high_states": [
-        {
-          "Name": "minecraft:poppy"
-        },
-        {
-          "Name": "minecraft:azure_bluet"
-        },
-        {
-          "Name": "minecraft:oxeye_daisy"
-        },
-        {
-          "Name": "minecraft:cornflower"
-        }
-      ],
-      "seed": 2345,
-      "noise": {
-        "firstOctave": 0,
-        "amplitudes": [
-          1.0
-        ]
       },
-      "scale": 0.005,
-      "threshold": -0.8,
-      "type": "minecraft:noise_threshold_provider"
+      "type": "minecraft:decorated"
     },
-    "block_placer": {
-      "type": "minecraft:simple_block_placer"
-    }
+    "tries": 64,
+    "xz_spread": 6,
+    "y_spread": 2
   },
   "type": "minecraft:flower"
 }
