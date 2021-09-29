@@ -2,41 +2,61 @@
   "config": {
     "feature": {
       "config": {
-        "can_replace": false,
-        "project": true,
-        "need_water": false,
-        "xspread": 7,
-        "yspread": 3,
-        "zspread": 7,
-        "whitelist": [],
-        "blacklist": [],
-        "tries": 32,
-        "state_provider": {
-          "state": {
-            "Name": "minecraft:grass"
-          },
-          "type": "minecraft:simple_state_provider"
-        },
-        "block_placer": {
-          "type": "minecraft:simple_block_placer"
-        }
-      },
-      "type": "minecraft:random_patch"
-    },
-    "decorator": {
-      "config": {
-        "outer": {
-          "config": {},
-          "type": "minecraft:square"
-        },
-        "inner": {
+        "feature": {
           "config": {
-            "heightmap": "MOTION_BLOCKING"
+            "allowed_on": [],
+            "disallowed_on": [],
+            "only_in_air": false,
+            "feature": {
+              "config": {
+                "feature": {
+                  "config": {
+                    "to_place": {
+                      "state": {
+                        "Name": "minecraft:grass"
+                      },
+                      "type": "minecraft:simple_state_provider"
+                    }
+                  },
+                  "type": "minecraft:simple_block"
+                },
+                "decorator": {
+                  "config": {
+                    "predicate": {
+                      "blocks": [
+                        "minecraft:air"
+                      ],
+                      "offset": [
+                        0,
+                        0,
+                        0
+                      ],
+                      "type": "minecraft:matching_blocks"
+                    }
+                  },
+                  "type": "minecraft:block_filter"
+                }
+              },
+              "type": "minecraft:decorated"
+            },
+            "tries": 32,
+            "xz_spread": 7,
+            "y_spread": 3
           },
-          "type": "minecraft:heightmap_spread_double"
+          "type": "minecraft:random_patch"
+        },
+        "decorator": {
+          "config": {
+            "heightmap": "WORLD_SURFACE_WG"
+          },
+          "type": "minecraft:heightmap"
         }
       },
       "type": "minecraft:decorated"
+    },
+    "decorator": {
+      "config": {},
+      "type": "minecraft:square"
     }
   },
   "type": "minecraft:decorated"

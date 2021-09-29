@@ -4,38 +4,49 @@
       "config": {
         "feature": {
           "config": {
+            "allowed_on": [],
+            "disallowed_on": [],
+            "only_in_air": false,
             "feature": {
               "config": {
-                "can_replace": false,
-                "project": false,
-                "need_water": false,
-                "xspread": 7,
-                "yspread": 3,
-                "zspread": 7,
-                "whitelist": [],
-                "blacklist": [],
-                "tries": 64,
-                "state_provider": {
-                  "state": {
-                    "Properties": {
-                      "half": "lower"
-                    },
-                    "Name": "minecraft:sunflower"
+                "feature": {
+                  "config": {
+                    "to_place": {
+                      "state": {
+                        "Properties": {
+                          "half": "lower"
+                        },
+                        "Name": "minecraft:sunflower"
+                      },
+                      "type": "minecraft:simple_state_provider"
+                    }
                   },
-                  "type": "minecraft:simple_state_provider"
+                  "type": "minecraft:simple_block"
                 },
-                "block_placer": {
-                  "type": "minecraft:double_plant_placer"
+                "decorator": {
+                  "config": {
+                    "predicate": {
+                      "blocks": [
+                        "minecraft:air"
+                      ],
+                      "offset": [
+                        0,
+                        0,
+                        0
+                      ],
+                      "type": "minecraft:matching_blocks"
+                    }
+                  },
+                  "type": "minecraft:block_filter"
                 }
               },
-              "type": "minecraft:random_patch"
+              "type": "minecraft:decorated"
             },
-            "decorator": {
-              "config": {},
-              "type": "minecraft:spread_32_above"
-            }
+            "tries": 96,
+            "xz_spread": 7,
+            "y_spread": 3
           },
-          "type": "minecraft:decorated"
+          "type": "minecraft:random_patch"
         },
         "decorator": {
           "config": {
@@ -57,9 +68,9 @@
     },
     "decorator": {
       "config": {
-        "count": 10
+        "chance": 3
       },
-      "type": "minecraft:count"
+      "type": "minecraft:chance"
     }
   },
   "type": "minecraft:decorated"
