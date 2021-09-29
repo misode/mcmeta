@@ -4,34 +4,140 @@
       "config": {
         "feature": {
           "config": {
-            "can_replace": false,
-            "project": false,
-            "need_water": true,
-            "xspread": 4,
-            "yspread": 0,
-            "zspread": 4,
-            "whitelist": [],
-            "blacklist": [],
-            "tries": 20,
-            "state_provider": {
-              "state": {
-                "Properties": {
-                  "age": "0"
+            "allowed_on": [],
+            "disallowed_on": [],
+            "only_in_air": false,
+            "feature": {
+              "config": {
+                "feature": {
+                  "config": {
+                    "feature": {
+                      "config": {
+                        "feature": {
+                          "config": {
+                            "layers": [
+                              {
+                                "height": {
+                                  "type": "minecraft:biased_to_bottom",
+                                  "value": {
+                                    "min_inclusive": 2,
+                                    "max_inclusive": 4
+                                  }
+                                },
+                                "provider": {
+                                  "state": {
+                                    "Properties": {
+                                      "age": "0"
+                                    },
+                                    "Name": "minecraft:sugar_cane"
+                                  },
+                                  "type": "minecraft:simple_state_provider"
+                                }
+                              }
+                            ],
+                            "direction": "up",
+                            "allow_water": false,
+                            "prioritize_tip": false
+                          },
+                          "type": "minecraft:block_column"
+                        },
+                        "decorator": {
+                          "config": {
+                            "predicate": {
+                              "blocks": [
+                                "minecraft:air"
+                              ],
+                              "offset": [
+                                0,
+                                0,
+                                0
+                              ],
+                              "type": "minecraft:matching_blocks"
+                            }
+                          },
+                          "type": "minecraft:block_filter"
+                        }
+                      },
+                      "type": "minecraft:decorated"
+                    },
+                    "decorator": {
+                      "config": {
+                        "state": {
+                          "Properties": {
+                            "age": "0"
+                          },
+                          "Name": "minecraft:sugar_cane"
+                        }
+                      },
+                      "type": "minecraft:block_survives_filter"
+                    }
+                  },
+                  "type": "minecraft:decorated"
                 },
-                "Name": "minecraft:sugar_cane"
-              },
-              "type": "minecraft:simple_state_provider"
-            },
-            "block_placer": {
-              "size": {
-                "type": "minecraft:biased_to_bottom",
-                "value": {
-                  "min_inclusive": 2,
-                  "max_inclusive": 4
+                "decorator": {
+                  "config": {
+                    "predicate": {
+                      "predicates": [
+                        {
+                          "fluids": [
+                            "minecraft:water",
+                            "minecraft:flowing_water"
+                          ],
+                          "offset": [
+                            1,
+                            -1,
+                            0
+                          ],
+                          "type": "minecraft:matching_fluids"
+                        },
+                        {
+                          "fluids": [
+                            "minecraft:water",
+                            "minecraft:flowing_water"
+                          ],
+                          "offset": [
+                            -1,
+                            -1,
+                            0
+                          ],
+                          "type": "minecraft:matching_fluids"
+                        },
+                        {
+                          "fluids": [
+                            "minecraft:water",
+                            "minecraft:flowing_water"
+                          ],
+                          "offset": [
+                            0,
+                            -1,
+                            1
+                          ],
+                          "type": "minecraft:matching_fluids"
+                        },
+                        {
+                          "fluids": [
+                            "minecraft:water",
+                            "minecraft:flowing_water"
+                          ],
+                          "offset": [
+                            0,
+                            -1,
+                            -1
+                          ],
+                          "type": "minecraft:matching_fluids"
+                        }
+                      ],
+                      "type": "minecraft:any_of"
+                    }
+                  },
+                  "type": "minecraft:block_filter"
                 }
               },
-              "type": "minecraft:column_placer"
-            }
+              "type": "minecraft:decorated"
+            },
+            "tries": 20,
+            "xz_spread": 4,
+            "y_spread": 0
           },
           "type": "minecraft:random_patch"
         },
@@ -45,7 +151,7 @@
               "config": {
                 "heightmap": "MOTION_BLOCKING"
               },
-              "type": "minecraft:heightmap_spread_double"
+              "type": "minecraft:heightmap"
             }
           },
           "type": "minecraft:decorated"
@@ -55,9 +161,9 @@
     },
     "decorator": {
       "config": {
-        "count": 10
+        "chance": 6
       },
-      "type": "minecraft:count"
+      "type": "minecraft:chance"
     }
   },
   "type": "minecraft:decorated"
