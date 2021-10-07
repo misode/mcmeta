@@ -4,11 +4,9 @@
       "config": {
         "feature": {
           "config": {
-            "allowed_on": [
-              "minecraft:grass_block"
-            ],
-            "disallowed_on": [],
-            "only_in_air": false,
+            "tries": 64,
+            "xz_spread": 7,
+            "y_spread": 3,
             "feature": {
               "config": {
                 "feature": {
@@ -25,17 +23,30 @@
                 "decorator": {
                   "config": {
                     "predicate": {
-                      "type": "minecraft:replaceable"
+                      "predicates": [
+                        {
+                          "type": "minecraft:replaceable"
+                        },
+                        {
+                          "offset": [
+                            0,
+                            -1,
+                            0
+                          ],
+                          "blocks": [
+                            "minecraft:grass_block"
+                          ],
+                          "type": "minecraft:matching_blocks"
+                        }
+                      ],
+                      "type": "minecraft:all_of"
                     }
                   },
                   "type": "minecraft:block_filter"
                 }
               },
               "type": "minecraft:decorated"
-            },
-            "tries": 64,
-            "xz_spread": 7,
-            "y_spread": 3
+            }
           },
           "type": "minecraft:random_patch"
         },
