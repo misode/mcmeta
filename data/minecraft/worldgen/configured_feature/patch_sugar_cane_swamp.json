@@ -4,9 +4,9 @@
       "config": {
         "feature": {
           "config": {
-            "allowed_on": [],
-            "disallowed_on": [],
-            "only_in_air": false,
+            "tries": 20,
+            "xz_spread": 4,
+            "y_spread": 0,
             "feature": {
               "config": {
                 "feature": {
@@ -36,7 +36,12 @@
                               }
                             ],
                             "direction": "up",
-                            "allow_water": false,
+                            "allowed_placement": {
+                              "blocks": [
+                                "minecraft:air"
+                              ],
+                              "type": "minecraft:matching_blocks"
+                            },
                             "prioritize_tip": false
                           },
                           "type": "minecraft:block_column"
@@ -46,11 +51,6 @@
                             "predicate": {
                               "blocks": [
                                 "minecraft:air"
-                              ],
-                              "offset": [
-                                0,
-                                0,
-                                0
                               ],
                               "type": "minecraft:matching_blocks"
                             }
@@ -62,14 +62,17 @@
                     },
                     "decorator": {
                       "config": {
-                        "state": {
-                          "Properties": {
-                            "age": "0"
+                        "predicate": {
+                          "state": {
+                            "Properties": {
+                              "age": "0"
+                            },
+                            "Name": "minecraft:sugar_cane"
                           },
-                          "Name": "minecraft:sugar_cane"
+                          "type": "minecraft:would_survive"
                         }
                       },
-                      "type": "minecraft:block_survives_filter"
+                      "type": "minecraft:block_filter"
                     }
                   },
                   "type": "minecraft:decorated"
@@ -79,50 +82,50 @@
                     "predicate": {
                       "predicates": [
                         {
-                          "fluids": [
-                            "minecraft:water",
-                            "minecraft:flowing_water"
-                          ],
                           "offset": [
                             1,
                             -1,
                             0
                           ],
-                          "type": "minecraft:matching_fluids"
-                        },
-                        {
                           "fluids": [
                             "minecraft:water",
                             "minecraft:flowing_water"
                           ],
+                          "type": "minecraft:matching_fluids"
+                        },
+                        {
                           "offset": [
                             -1,
                             -1,
                             0
                           ],
-                          "type": "minecraft:matching_fluids"
-                        },
-                        {
                           "fluids": [
                             "minecraft:water",
                             "minecraft:flowing_water"
                           ],
+                          "type": "minecraft:matching_fluids"
+                        },
+                        {
                           "offset": [
                             0,
                             -1,
                             1
                           ],
-                          "type": "minecraft:matching_fluids"
-                        },
-                        {
                           "fluids": [
                             "minecraft:water",
                             "minecraft:flowing_water"
                           ],
+                          "type": "minecraft:matching_fluids"
+                        },
+                        {
                           "offset": [
                             0,
                             -1,
                             -1
+                          ],
+                          "fluids": [
+                            "minecraft:water",
+                            "minecraft:flowing_water"
                           ],
                           "type": "minecraft:matching_fluids"
                         }
@@ -134,10 +137,7 @@
                 }
               },
               "type": "minecraft:decorated"
-            },
-            "tries": 20,
-            "xz_spread": 4,
-            "y_spread": 0
+            }
           },
           "type": "minecraft:random_patch"
         },

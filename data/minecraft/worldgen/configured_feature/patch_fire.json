@@ -2,11 +2,9 @@
   "config": {
     "feature": {
       "config": {
-        "allowed_on": [
-          "minecraft:netherrack"
-        ],
-        "disallowed_on": [],
-        "only_in_air": false,
+        "tries": 96,
+        "xz_spread": 7,
+        "y_spread": 3,
         "feature": {
           "config": {
             "feature": {
@@ -31,25 +29,33 @@
             "decorator": {
               "config": {
                 "predicate": {
-                  "blocks": [
-                    "minecraft:air"
+                  "predicates": [
+                    {
+                      "blocks": [
+                        "minecraft:air"
+                      ],
+                      "type": "minecraft:matching_blocks"
+                    },
+                    {
+                      "offset": [
+                        0,
+                        -1,
+                        0
+                      ],
+                      "blocks": [
+                        "minecraft:netherrack"
+                      ],
+                      "type": "minecraft:matching_blocks"
+                    }
                   ],
-                  "offset": [
-                    0,
-                    0,
-                    0
-                  ],
-                  "type": "minecraft:matching_blocks"
+                  "type": "minecraft:all_of"
                 }
               },
               "type": "minecraft:block_filter"
             }
           },
           "type": "minecraft:decorated"
-        },
-        "tries": 96,
-        "xz_spread": 7,
-        "y_spread": 3
+        }
       },
       "type": "minecraft:random_patch"
     },
