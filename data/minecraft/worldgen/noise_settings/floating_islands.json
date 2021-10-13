@@ -7,14 +7,17 @@
   "disable_mob_generation": false,
   "aquifers_enabled": false,
   "noise_caves_enabled": false,
-  "default_block": {
-    "Name": "minecraft:stone"
-  },
   "default_fluid": {
     "Properties": {
       "level": "0"
     },
     "Name": "minecraft:water"
+  },
+  "surface_rule": {
+    "result_state": {
+      "Name": "minecraft:end_stone"
+    },
+    "type": "minecraft:block"
   },
   "bedrock_roof_position": -2147483648,
   "bedrock_floor_position": -2147483648,
@@ -119,9 +122,9 @@
   },
   "noise": {
     "use_legacy_random": true,
+    "size_vertical": 1,
     "density_factor": 0.0,
     "density_offset": 0.0,
-    "simplex_surface_noise": true,
     "top_slide": {
       "target": -23.4375,
       "size": 64,
@@ -133,7 +136,6 @@
       "offset": 1
     },
     "size_horizontal": 2,
-    "size_vertical": 1,
     "min_y": 0,
     "height": 128,
     "sampling": {
@@ -180,5 +182,8 @@
         0.0
       ]
     }
+  },
+  "default_block": {
+    "Name": "minecraft:stone"
   }
 }
