@@ -1,0 +1,141 @@
+{
+  "config": {
+    "feature": {
+      "config": {
+        "feature": {
+          "config": {
+            "feature": {
+              "config": {
+                "feature": {
+                  "config": {
+                    "feature": {
+                      "config": {
+                        "features": [
+                          {
+                            "config": {
+                              "feature": {
+                                "config": {
+                                  "chance_of_taller_dripstone": 0.2,
+                                  "chance_of_directional_spread": 0.7,
+                                  "chance_of_spread_radius2": 0.5,
+                                  "chance_of_spread_radius3": 0.5
+                                },
+                                "type": "minecraft:pointed_dripstone"
+                              },
+                              "decorator": {
+                                "config": {
+                                  "surface": "floor",
+                                  "floor_to_ceiling_search_range": 12,
+                                  "allow_water": true
+                                },
+                                "type": "minecraft:cave_surface"
+                              }
+                            },
+                            "type": "minecraft:decorated"
+                          },
+                          {
+                            "config": {
+                              "feature": {
+                                "config": {
+                                  "chance_of_taller_dripstone": 0.2,
+                                  "chance_of_directional_spread": 0.7,
+                                  "chance_of_spread_radius2": 0.5,
+                                  "chance_of_spread_radius3": 0.5
+                                },
+                                "type": "minecraft:pointed_dripstone"
+                              },
+                              "decorator": {
+                                "config": {
+                                  "surface": "ceiling",
+                                  "floor_to_ceiling_search_range": 12,
+                                  "allow_water": true
+                                },
+                                "type": "minecraft:cave_surface"
+                              }
+                            },
+                            "type": "minecraft:decorated"
+                          }
+                        ]
+                      },
+                      "type": "minecraft:simple_random_selector"
+                    },
+                    "decorator": {
+                      "config": {
+                        "xz_spread": {
+                          "type": "minecraft:clamped_normal",
+                          "value": {
+                            "mean": 0.0,
+                            "deviation": 3.0,
+                            "min_inclusive": -10,
+                            "max_inclusive": 10
+                          }
+                        },
+                        "y_spread": {
+                          "type": "minecraft:clamped_normal",
+                          "value": {
+                            "mean": 0.0,
+                            "deviation": 0.6,
+                            "min_inclusive": -2,
+                            "max_inclusive": 2
+                          }
+                        }
+                      },
+                      "type": "minecraft:scatter"
+                    }
+                  },
+                  "type": "minecraft:decorated"
+                },
+                "decorator": {
+                  "config": {
+                    "count": {
+                      "type": "minecraft:uniform",
+                      "value": {
+                        "min_inclusive": 1,
+                        "max_inclusive": 5
+                      }
+                    }
+                  },
+                  "type": "minecraft:count"
+                }
+              },
+              "type": "minecraft:decorated"
+            },
+            "decorator": {
+              "config": {
+                "height": {
+                  "min_inclusive": {
+                    "above_bottom": 0
+                  },
+                  "max_inclusive": {
+                    "absolute": 256
+                  },
+                  "type": "minecraft:uniform"
+                }
+              },
+              "type": "minecraft:range"
+            }
+          },
+          "type": "minecraft:decorated"
+        },
+        "decorator": {
+          "config": {},
+          "type": "minecraft:square"
+        }
+      },
+      "type": "minecraft:decorated"
+    },
+    "decorator": {
+      "config": {
+        "count": {
+          "type": "minecraft:uniform",
+          "value": {
+            "min_inclusive": 140,
+            "max_inclusive": 220
+          }
+        }
+      },
+      "type": "minecraft:count"
+    }
+  },
+  "type": "minecraft:decorated"
+}
