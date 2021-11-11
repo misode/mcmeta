@@ -1,0 +1,34 @@
+{
+  "feature": "minecraft:pine",
+  "placement": [
+    {
+      "direction_of_search": "up",
+      "target_condition": {
+        "predicate": {
+          "blocks": [
+            "minecraft:powder_snow"
+          ],
+          "type": "minecraft:matching_blocks"
+        },
+        "type": "minecraft:not"
+      },
+      "max_steps": 8,
+      "type": "minecraft:environment_scan"
+    },
+    {
+      "predicate": {
+        "offset": [
+          0,
+          -1,
+          0
+        ],
+        "blocks": [
+          "minecraft:snow_block",
+          "minecraft:powder_snow"
+        ],
+        "type": "minecraft:matching_blocks"
+      },
+      "type": "minecraft:block_predicate_filter"
+    }
+  ]
+}

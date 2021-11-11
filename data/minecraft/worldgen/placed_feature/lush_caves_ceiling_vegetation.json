@@ -1,0 +1,41 @@
+{
+  "feature": "minecraft:moss_patch_ceiling",
+  "placement": [
+    {
+      "count": 104,
+      "type": "minecraft:count"
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "height": {
+        "min_inclusive": {
+          "above_bottom": 0
+        },
+        "max_inclusive": {
+          "absolute": 120
+        },
+        "type": "minecraft:uniform"
+      },
+      "type": "minecraft:height_range"
+    },
+    {
+      "direction_of_search": "up",
+      "target_condition": {
+        "type": "minecraft:solid"
+      },
+      "allowed_search_condition": {
+        "blocks": [
+          "minecraft:air"
+        ],
+        "type": "minecraft:matching_blocks"
+      },
+      "max_steps": 12,
+      "type": "minecraft:environment_scan"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

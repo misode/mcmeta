@@ -1,55 +1,32 @@
 {
   "config": {
+    "tries": 4,
+    "xz_spread": 7,
+    "y_spread": 3,
     "feature": {
-      "config": {
-        "feature": {
-          "config": {
-            "tries": 4,
-            "xz_spread": 7,
-            "y_spread": 3,
-            "feature": {
-              "config": {
-                "feature": {
-                  "config": {
-                    "to_place": {
-                      "state": {
-                        "Name": "minecraft:dead_bush"
-                      },
-                      "type": "minecraft:simple_state_provider"
-                    }
-                  },
-                  "type": "minecraft:simple_block"
-                },
-                "decorator": {
-                  "config": {
-                    "predicate": {
-                      "blocks": [
-                        "minecraft:air"
-                      ],
-                      "type": "minecraft:matching_blocks"
-                    }
-                  },
-                  "type": "minecraft:block_filter"
-                }
-              },
-              "type": "minecraft:decorated"
-            }
-          },
-          "type": "minecraft:random_patch"
+      "feature": {
+        "config": {
+          "to_place": {
+            "state": {
+              "Name": "minecraft:dead_bush"
+            },
+            "type": "minecraft:simple_state_provider"
+          }
         },
-        "decorator": {
-          "config": {
-            "heightmap": "WORLD_SURFACE_WG"
-          },
-          "type": "minecraft:heightmap"
-        }
+        "type": "minecraft:simple_block"
       },
-      "type": "minecraft:decorated"
-    },
-    "decorator": {
-      "config": {},
-      "type": "minecraft:square"
+      "placement": [
+        {
+          "predicate": {
+            "blocks": [
+              "minecraft:air"
+            ],
+            "type": "minecraft:matching_blocks"
+          },
+          "type": "minecraft:block_predicate_filter"
+        }
+      ]
     }
   },
-  "type": "minecraft:decorated"
+  "type": "minecraft:random_patch"
 }
