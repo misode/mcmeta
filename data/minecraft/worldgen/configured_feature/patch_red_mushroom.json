@@ -4,31 +4,28 @@
     "xz_spread": 7,
     "y_spread": 3,
     "feature": {
-      "config": {
-        "feature": {
-          "config": {
-            "to_place": {
-              "state": {
-                "Name": "minecraft:red_mushroom"
-              },
-              "type": "minecraft:simple_state_provider"
-            }
-          },
-          "type": "minecraft:simple_block"
+      "feature": {
+        "config": {
+          "to_place": {
+            "state": {
+              "Name": "minecraft:red_mushroom"
+            },
+            "type": "minecraft:simple_state_provider"
+          }
         },
-        "decorator": {
-          "config": {
-            "predicate": {
-              "blocks": [
-                "minecraft:air"
-              ],
-              "type": "minecraft:matching_blocks"
-            }
-          },
-          "type": "minecraft:block_filter"
-        }
+        "type": "minecraft:simple_block"
       },
-      "type": "minecraft:decorated"
+      "placement": [
+        {
+          "predicate": {
+            "blocks": [
+              "minecraft:air"
+            ],
+            "type": "minecraft:matching_blocks"
+          },
+          "type": "minecraft:block_predicate_filter"
+        }
+      ]
     }
   },
   "type": "minecraft:random_patch"
