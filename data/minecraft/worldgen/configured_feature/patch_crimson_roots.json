@@ -1,54 +1,32 @@
 {
   "config": {
+    "tries": 96,
+    "xz_spread": 7,
+    "y_spread": 3,
     "feature": {
-      "config": {
-        "tries": 96,
-        "xz_spread": 7,
-        "y_spread": 3,
-        "feature": {
-          "config": {
-            "feature": {
-              "config": {
-                "to_place": {
-                  "state": {
-                    "Name": "minecraft:crimson_roots"
-                  },
-                  "type": "minecraft:simple_state_provider"
-                }
-              },
-              "type": "minecraft:simple_block"
+      "feature": {
+        "config": {
+          "to_place": {
+            "state": {
+              "Name": "minecraft:crimson_roots"
             },
-            "decorator": {
-              "config": {
-                "predicate": {
-                  "blocks": [
-                    "minecraft:air"
-                  ],
-                  "type": "minecraft:matching_blocks"
-                }
-              },
-              "type": "minecraft:block_filter"
-            }
-          },
-          "type": "minecraft:decorated"
-        }
+            "type": "minecraft:simple_state_provider"
+          }
+        },
+        "type": "minecraft:simple_block"
       },
-      "type": "minecraft:random_patch"
-    },
-    "decorator": {
-      "config": {
-        "height": {
-          "min_inclusive": {
-            "above_bottom": 0
+      "placement": [
+        {
+          "predicate": {
+            "blocks": [
+              "minecraft:air"
+            ],
+            "type": "minecraft:matching_blocks"
           },
-          "max_inclusive": {
-            "below_top": 0
-          },
-          "type": "minecraft:uniform"
+          "type": "minecraft:block_predicate_filter"
         }
-      },
-      "type": "minecraft:range"
+      ]
     }
   },
-  "type": "minecraft:decorated"
+  "type": "minecraft:random_patch"
 }

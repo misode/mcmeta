@@ -1,104 +1,56 @@
 {
   "config": {
+    "tries": 96,
+    "xz_spread": 7,
+    "y_spread": 3,
     "feature": {
-      "config": {
-        "tries": 96,
-        "xz_spread": 7,
-        "y_spread": 3,
-        "feature": {
-          "config": {
-            "feature": {
-              "config": {
-                "to_place": {
-                  "state": {
-                    "Properties": {
-                      "west": "false",
-                      "up": "false",
-                      "south": "false",
-                      "north": "false",
-                      "east": "false",
-                      "age": "0"
-                    },
-                    "Name": "minecraft:fire"
-                  },
-                  "type": "minecraft:simple_state_provider"
-                }
+      "feature": {
+        "config": {
+          "to_place": {
+            "state": {
+              "Properties": {
+                "west": "false",
+                "up": "false",
+                "south": "false",
+                "north": "false",
+                "east": "false",
+                "age": "0"
               },
-              "type": "minecraft:simple_block"
+              "Name": "minecraft:fire"
             },
-            "decorator": {
-              "config": {
-                "predicate": {
-                  "predicates": [
-                    {
-                      "blocks": [
-                        "minecraft:air"
-                      ],
-                      "type": "minecraft:matching_blocks"
-                    },
-                    {
-                      "offset": [
-                        0,
-                        -1,
-                        0
-                      ],
-                      "blocks": [
-                        "minecraft:netherrack"
-                      ],
-                      "type": "minecraft:matching_blocks"
-                    }
-                  ],
-                  "type": "minecraft:all_of"
-                }
-              },
-              "type": "minecraft:block_filter"
-            }
-          },
-          "type": "minecraft:decorated"
-        }
-      },
-      "type": "minecraft:random_patch"
-    },
-    "decorator": {
-      "config": {
-        "outer": {
-          "config": {
-            "count": {
-              "type": "minecraft:uniform",
-              "value": {
-                "min_inclusive": 0,
-                "max_inclusive": 5
-              }
-            }
-          },
-          "type": "minecraft:count"
+            "type": "minecraft:simple_state_provider"
+          }
         },
-        "inner": {
-          "config": {
-            "outer": {
-              "config": {},
-              "type": "minecraft:square"
-            },
-            "inner": {
-              "config": {
-                "height": {
-                  "min_inclusive": {
-                    "above_bottom": 4
-                  },
-                  "max_inclusive": {
-                    "below_top": 4
-                  },
-                  "type": "minecraft:uniform"
-                }
-              },
-              "type": "minecraft:range"
-            }
-          },
-          "type": "minecraft:decorated"
-        }
+        "type": "minecraft:simple_block"
       },
-      "type": "minecraft:decorated"
+      "placement": [
+        {
+          "predicate": {
+            "predicates": [
+              {
+                "blocks": [
+                  "minecraft:air"
+                ],
+                "type": "minecraft:matching_blocks"
+              },
+              {
+                "offset": [
+                  0,
+                  -1,
+                  0
+                ],
+                "blocks": [
+                  "minecraft:netherrack"
+                ],
+                "type": "minecraft:matching_blocks"
+              }
+            ],
+            "type": "minecraft:all_of"
+          },
+          "type": "minecraft:block_predicate_filter"
+        }
+      ]
     }
   },
-  "type": "minecraft:decorated"
+  "type": "minecraft:random_patch"
 }

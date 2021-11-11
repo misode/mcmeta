@@ -1,93 +1,48 @@
 {
   "config": {
-    "feature": {
-      "config": {
-        "feature": {
-          "config": {
-            "feature": {
-              "config": {
-                "chance_of_dripstone_column_at_max_distance_from_center": 0.1,
-                "max_distance_from_edge_affecting_chance_of_dripstone_column": 3,
-                "max_distance_from_center_affecting_height_bias": 8,
-                "dripstone_block_layer_thickness": {
-                  "type": "minecraft:uniform",
-                  "value": {
-                    "min_inclusive": 2,
-                    "max_inclusive": 4
-                  }
-                },
-                "density": {
-                  "type": "minecraft:uniform",
-                  "value": {
-                    "min_inclusive": 0.3,
-                    "max_exclusive": 0.7
-                  }
-                },
-                "wetness": {
-                  "type": "minecraft:clamped_normal",
-                  "value": {
-                    "mean": 0.1,
-                    "deviation": 0.3,
-                    "min": 0.1,
-                    "max": 0.9
-                  }
-                },
-                "radius": {
-                  "type": "minecraft:uniform",
-                  "value": {
-                    "min_inclusive": 2,
-                    "max_inclusive": 8
-                  }
-                },
-                "max_stalagmite_stalactite_height_diff": 1,
-                "height_deviation": 3,
-                "floor_to_ceiling_search_range": 12,
-                "height": {
-                  "type": "minecraft:uniform",
-                  "value": {
-                    "min_inclusive": 3,
-                    "max_inclusive": 6
-                  }
-                }
-              },
-              "type": "minecraft:dripstone_cluster"
-            },
-            "decorator": {
-              "config": {
-                "height": {
-                  "min_inclusive": {
-                    "above_bottom": 0
-                  },
-                  "max_inclusive": {
-                    "absolute": 256
-                  },
-                  "type": "minecraft:uniform"
-                }
-              },
-              "type": "minecraft:range"
-            }
-          },
-          "type": "minecraft:decorated"
-        },
-        "decorator": {
-          "config": {},
-          "type": "minecraft:square"
-        }
-      },
-      "type": "minecraft:decorated"
+    "chance_of_dripstone_column_at_max_distance_from_center": 0.1,
+    "max_distance_from_edge_affecting_chance_of_dripstone_column": 3,
+    "max_distance_from_center_affecting_height_bias": 8,
+    "dripstone_block_layer_thickness": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 2,
+        "max_inclusive": 4
+      }
     },
-    "decorator": {
-      "config": {
-        "count": {
-          "type": "minecraft:uniform",
-          "value": {
-            "min_inclusive": 35,
-            "max_inclusive": 70
-          }
-        }
-      },
-      "type": "minecraft:count"
+    "density": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 0.3,
+        "max_exclusive": 0.7
+      }
+    },
+    "wetness": {
+      "type": "minecraft:clamped_normal",
+      "value": {
+        "mean": 0.1,
+        "deviation": 0.3,
+        "min": 0.1,
+        "max": 0.9
+      }
+    },
+    "radius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 2,
+        "max_inclusive": 8
+      }
+    },
+    "max_stalagmite_stalactite_height_diff": 1,
+    "height_deviation": 3,
+    "floor_to_ceiling_search_range": 12,
+    "height": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 3,
+        "max_inclusive": 6
+      }
     }
   },
-  "type": "minecraft:decorated"
+  "type": "minecraft:dripstone_cluster"
 }

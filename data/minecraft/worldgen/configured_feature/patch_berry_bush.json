@@ -4,50 +4,47 @@
     "xz_spread": 7,
     "y_spread": 3,
     "feature": {
-      "config": {
-        "feature": {
-          "config": {
-            "to_place": {
-              "state": {
-                "Properties": {
-                  "age": "3"
-                },
-                "Name": "minecraft:sweet_berry_bush"
+      "feature": {
+        "config": {
+          "to_place": {
+            "state": {
+              "Properties": {
+                "age": "3"
               },
-              "type": "minecraft:simple_state_provider"
-            }
-          },
-          "type": "minecraft:simple_block"
+              "Name": "minecraft:sweet_berry_bush"
+            },
+            "type": "minecraft:simple_state_provider"
+          }
         },
-        "decorator": {
-          "config": {
-            "predicate": {
-              "predicates": [
-                {
-                  "blocks": [
-                    "minecraft:air"
-                  ],
-                  "type": "minecraft:matching_blocks"
-                },
-                {
-                  "offset": [
-                    0,
-                    -1,
-                    0
-                  ],
-                  "blocks": [
-                    "minecraft:grass_block"
-                  ],
-                  "type": "minecraft:matching_blocks"
-                }
-              ],
-              "type": "minecraft:all_of"
-            }
-          },
-          "type": "minecraft:block_filter"
-        }
+        "type": "minecraft:simple_block"
       },
-      "type": "minecraft:decorated"
+      "placement": [
+        {
+          "predicate": {
+            "predicates": [
+              {
+                "blocks": [
+                  "minecraft:air"
+                ],
+                "type": "minecraft:matching_blocks"
+              },
+              {
+                "offset": [
+                  0,
+                  -1,
+                  0
+                ],
+                "blocks": [
+                  "minecraft:grass_block"
+                ],
+                "type": "minecraft:matching_blocks"
+              }
+            ],
+            "type": "minecraft:all_of"
+          },
+          "type": "minecraft:block_predicate_filter"
+        }
+      ]
     }
   },
   "type": "minecraft:random_patch"
