@@ -1,100 +1,77 @@
 {
   "config": {
+    "tries": 96,
+    "xz_spread": 6,
+    "y_spread": 2,
     "feature": {
-      "config": {
-        "tries": 96,
-        "xz_spread": 6,
-        "y_spread": 2,
-        "feature": {
-          "config": {
-            "feature": {
-              "config": {
-                "to_place": {
-                  "seed": 2345,
-                  "noise": {
-                    "firstOctave": -3,
-                    "amplitudes": [
-                      1.0
-                    ]
-                  },
-                  "scale": 1.0,
-                  "states": [
-                    {
-                      "Properties": {
-                        "half": "lower"
-                      },
-                      "Name": "minecraft:tall_grass"
-                    },
-                    {
-                      "Name": "minecraft:allium"
-                    },
-                    {
-                      "Name": "minecraft:poppy"
-                    },
-                    {
-                      "Name": "minecraft:azure_bluet"
-                    },
-                    {
-                      "Name": "minecraft:dandelion"
-                    },
-                    {
-                      "Name": "minecraft:cornflower"
-                    },
-                    {
-                      "Name": "minecraft:oxeye_daisy"
-                    },
-                    {
-                      "Name": "minecraft:grass"
-                    }
-                  ],
-                  "variety": [
-                    1,
-                    3
-                  ],
-                  "slow_noise": {
-                    "firstOctave": -10,
-                    "amplitudes": [
-                      1.0
-                    ]
-                  },
-                  "slow_scale": 1.0,
-                  "type": "minecraft:dual_noise_provider"
-                }
-              },
-              "type": "minecraft:simple_block"
+      "feature": {
+        "config": {
+          "to_place": {
+            "seed": 2345,
+            "noise": {
+              "firstOctave": -3,
+              "amplitudes": [
+                1.0
+              ]
             },
-            "decorator": {
-              "config": {
-                "predicate": {
-                  "blocks": [
-                    "minecraft:air"
-                  ],
-                  "type": "minecraft:matching_blocks"
-                }
+            "scale": 1.0,
+            "states": [
+              {
+                "Properties": {
+                  "half": "lower"
+                },
+                "Name": "minecraft:tall_grass"
               },
-              "type": "minecraft:block_filter"
-            }
-          },
-          "type": "minecraft:decorated"
-        }
-      },
-      "type": "minecraft:flower"
-    },
-    "decorator": {
-      "config": {
-        "outer": {
-          "config": {},
-          "type": "minecraft:square"
+              {
+                "Name": "minecraft:allium"
+              },
+              {
+                "Name": "minecraft:poppy"
+              },
+              {
+                "Name": "minecraft:azure_bluet"
+              },
+              {
+                "Name": "minecraft:dandelion"
+              },
+              {
+                "Name": "minecraft:cornflower"
+              },
+              {
+                "Name": "minecraft:oxeye_daisy"
+              },
+              {
+                "Name": "minecraft:grass"
+              }
+            ],
+            "variety": [
+              1,
+              3
+            ],
+            "slow_noise": {
+              "firstOctave": -10,
+              "amplitudes": [
+                1.0
+              ]
+            },
+            "slow_scale": 1.0,
+            "type": "minecraft:dual_noise_provider"
+          }
         },
-        "inner": {
-          "config": {
-            "heightmap": "MOTION_BLOCKING"
-          },
-          "type": "minecraft:heightmap"
-        }
+        "type": "minecraft:simple_block"
       },
-      "type": "minecraft:decorated"
+      "placement": [
+        {
+          "predicate": {
+            "blocks": [
+              "minecraft:air"
+            ],
+            "type": "minecraft:matching_blocks"
+          },
+          "type": "minecraft:block_predicate_filter"
+        }
+      ]
     }
   },
-  "type": "minecraft:decorated"
+  "type": "minecraft:flower"
 }

@@ -40,7 +40,9 @@
           "sequence": [
             {
               "if_true": {
-                "add_run_depth": false,
+                "offset": 0,
+                "add_surface_depth": false,
+                "add_surface_secondary_depth": false,
                 "surface_type": "floor",
                 "type": "minecraft:stone_depth"
               },
@@ -58,7 +60,7 @@
                         "anchor": {
                           "absolute": 97
                         },
-                        "run_depth_multiplier": 2,
+                        "surface_depth_multiplier": 2,
                         "add_stone_depth": false,
                         "type": "minecraft:y_above"
                       },
@@ -114,7 +116,7 @@
                               {
                                 "if_true": {
                                   "offset": -1,
-                                  "run_depth_multiplier": 0,
+                                  "surface_depth_multiplier": 0,
                                   "add_stone_depth": false,
                                   "type": "minecraft:water"
                                 },
@@ -157,7 +159,7 @@
                         "anchor": {
                           "absolute": 62
                         },
-                        "run_depth_multiplier": 0,
+                        "surface_depth_multiplier": 0,
                         "add_stone_depth": false,
                         "type": "minecraft:y_above"
                       },
@@ -167,7 +169,7 @@
                             "anchor": {
                               "absolute": 63
                             },
-                            "run_depth_multiplier": 0,
+                            "surface_depth_multiplier": 0,
                             "add_stone_depth": false,
                             "type": "minecraft:y_above"
                           },
@@ -212,219 +214,146 @@
                 "type": "minecraft:biome"
               },
               "then_run": {
-                "sequence": [
-                  {
-                    "if_true": {
-                      "add_run_depth": false,
-                      "surface_type": "floor",
-                      "type": "minecraft:stone_depth"
-                    },
-                    "then_run": {
-                      "sequence": [
-                        {
-                          "if_true": {
-                            "anchor": {
-                              "absolute": 256
-                            },
-                            "run_depth_multiplier": 0,
-                            "add_stone_depth": false,
-                            "type": "minecraft:y_above"
-                          },
-                          "then_run": {
-                            "result_state": {
-                              "Name": "minecraft:orange_terracotta"
-                            },
-                            "type": "minecraft:block"
-                          },
-                          "type": "minecraft:condition"
-                        },
-                        {
-                          "if_true": {
-                            "anchor": {
-                              "absolute": 74
-                            },
-                            "run_depth_multiplier": 1,
-                            "add_stone_depth": true,
-                            "type": "minecraft:y_above"
-                          },
-                          "then_run": {
-                            "sequence": [
-                              {
-                                "if_true": {
-                                  "noise": "minecraft:surface",
-                                  "min_threshold": -0.909,
-                                  "max_threshold": -0.5454,
-                                  "type": "minecraft:noise_threshold"
-                                },
-                                "then_run": {
-                                  "result_state": {
-                                    "Name": "minecraft:terracotta"
-                                  },
-                                  "type": "minecraft:block"
-                                },
-                                "type": "minecraft:condition"
+                "if_true": {
+                  "offset": 15,
+                  "add_surface_depth": false,
+                  "add_surface_secondary_depth": false,
+                  "surface_type": "floor",
+                  "type": "minecraft:stone_depth"
+                },
+                "then_run": {
+                  "sequence": [
+                    {
+                      "if_true": {
+                        "offset": 0,
+                        "add_surface_depth": false,
+                        "add_surface_secondary_depth": false,
+                        "surface_type": "floor",
+                        "type": "minecraft:stone_depth"
+                      },
+                      "then_run": {
+                        "sequence": [
+                          {
+                            "if_true": {
+                              "anchor": {
+                                "absolute": 256
                               },
-                              {
-                                "if_true": {
-                                  "noise": "minecraft:surface",
-                                  "min_threshold": -0.1818,
-                                  "max_threshold": 0.1818,
-                                  "type": "minecraft:noise_threshold"
-                                },
-                                "then_run": {
-                                  "result_state": {
-                                    "Name": "minecraft:terracotta"
-                                  },
-                                  "type": "minecraft:block"
-                                },
-                                "type": "minecraft:condition"
-                              },
-                              {
-                                "if_true": {
-                                  "noise": "minecraft:surface",
-                                  "min_threshold": 0.5454,
-                                  "max_threshold": 0.909,
-                                  "type": "minecraft:noise_threshold"
-                                },
-                                "then_run": {
-                                  "result_state": {
-                                    "Name": "minecraft:terracotta"
-                                  },
-                                  "type": "minecraft:block"
-                                },
-                                "type": "minecraft:condition"
-                              },
-                              {
-                                "type": "minecraft:bandlands"
-                              }
-                            ],
-                            "type": "minecraft:sequence"
-                          },
-                          "type": "minecraft:condition"
-                        },
-                        {
-                          "if_true": {
-                            "offset": -1,
-                            "run_depth_multiplier": 0,
-                            "add_stone_depth": false,
-                            "type": "minecraft:water"
-                          },
-                          "then_run": {
-                            "sequence": [
-                              {
-                                "if_true": {
-                                  "add_run_depth": false,
-                                  "surface_type": "ceiling",
-                                  "type": "minecraft:stone_depth"
-                                },
-                                "then_run": {
-                                  "result_state": {
-                                    "Name": "minecraft:red_sandstone"
-                                  },
-                                  "type": "minecraft:block"
-                                },
-                                "type": "minecraft:condition"
-                              },
-                              {
-                                "result_state": {
-                                  "Name": "minecraft:red_sand"
-                                },
-                                "type": "minecraft:block"
-                              }
-                            ],
-                            "type": "minecraft:sequence"
-                          },
-                          "type": "minecraft:condition"
-                        },
-                        {
-                          "if_true": {
-                            "invert": {
-                              "type": "minecraft:hole"
+                              "surface_depth_multiplier": 0,
+                              "add_stone_depth": false,
+                              "type": "minecraft:y_above"
                             },
-                            "type": "minecraft:not"
-                          },
-                          "then_run": {
-                            "result_state": {
-                              "Name": "minecraft:orange_terracotta"
-                            },
-                            "type": "minecraft:block"
-                          },
-                          "type": "minecraft:condition"
-                        },
-                        {
-                          "if_true": {
-                            "offset": -6,
-                            "run_depth_multiplier": -1,
-                            "add_stone_depth": true,
-                            "type": "minecraft:water"
-                          },
-                          "then_run": {
-                            "result_state": {
-                              "Name": "minecraft:white_terracotta"
-                            },
-                            "type": "minecraft:block"
-                          },
-                          "type": "minecraft:condition"
-                        },
-                        {
-                          "sequence": [
-                            {
-                              "if_true": {
-                                "add_run_depth": false,
-                                "surface_type": "ceiling",
-                                "type": "minecraft:stone_depth"
-                              },
-                              "then_run": {
-                                "result_state": {
-                                  "Name": "minecraft:stone"
-                                },
-                                "type": "minecraft:block"
-                              },
-                              "type": "minecraft:condition"
-                            },
-                            {
+                            "then_run": {
                               "result_state": {
-                                "Name": "minecraft:gravel"
+                                "Name": "minecraft:orange_terracotta"
                               },
                               "type": "minecraft:block"
-                            }
-                          ],
-                          "type": "minecraft:sequence"
-                        }
-                      ],
-                      "type": "minecraft:sequence"
-                    },
-                    "type": "minecraft:condition"
-                  },
-                  {
-                    "if_true": {
-                      "anchor": {
-                        "absolute": 63
-                      },
-                      "run_depth_multiplier": -1,
-                      "add_stone_depth": true,
-                      "type": "minecraft:y_above"
-                    },
-                    "then_run": {
-                      "sequence": [
-                        {
-                          "if_true": {
-                            "anchor": {
-                              "absolute": 63
                             },
-                            "run_depth_multiplier": 0,
-                            "add_stone_depth": false,
-                            "type": "minecraft:y_above"
+                            "type": "minecraft:condition"
                           },
-                          "then_run": {
+                          {
+                            "if_true": {
+                              "anchor": {
+                                "absolute": 74
+                              },
+                              "surface_depth_multiplier": 1,
+                              "add_stone_depth": true,
+                              "type": "minecraft:y_above"
+                            },
+                            "then_run": {
+                              "sequence": [
+                                {
+                                  "if_true": {
+                                    "noise": "minecraft:surface",
+                                    "min_threshold": -0.909,
+                                    "max_threshold": -0.5454,
+                                    "type": "minecraft:noise_threshold"
+                                  },
+                                  "then_run": {
+                                    "result_state": {
+                                      "Name": "minecraft:terracotta"
+                                    },
+                                    "type": "minecraft:block"
+                                  },
+                                  "type": "minecraft:condition"
+                                },
+                                {
+                                  "if_true": {
+                                    "noise": "minecraft:surface",
+                                    "min_threshold": -0.1818,
+                                    "max_threshold": 0.1818,
+                                    "type": "minecraft:noise_threshold"
+                                  },
+                                  "then_run": {
+                                    "result_state": {
+                                      "Name": "minecraft:terracotta"
+                                    },
+                                    "type": "minecraft:block"
+                                  },
+                                  "type": "minecraft:condition"
+                                },
+                                {
+                                  "if_true": {
+                                    "noise": "minecraft:surface",
+                                    "min_threshold": 0.5454,
+                                    "max_threshold": 0.909,
+                                    "type": "minecraft:noise_threshold"
+                                  },
+                                  "then_run": {
+                                    "result_state": {
+                                      "Name": "minecraft:terracotta"
+                                    },
+                                    "type": "minecraft:block"
+                                  },
+                                  "type": "minecraft:condition"
+                                },
+                                {
+                                  "type": "minecraft:bandlands"
+                                }
+                              ],
+                              "type": "minecraft:sequence"
+                            },
+                            "type": "minecraft:condition"
+                          },
+                          {
+                            "if_true": {
+                              "offset": -1,
+                              "surface_depth_multiplier": 0,
+                              "add_stone_depth": false,
+                              "type": "minecraft:water"
+                            },
+                            "then_run": {
+                              "sequence": [
+                                {
+                                  "if_true": {
+                                    "offset": 0,
+                                    "add_surface_depth": false,
+                                    "add_surface_secondary_depth": false,
+                                    "surface_type": "ceiling",
+                                    "type": "minecraft:stone_depth"
+                                  },
+                                  "then_run": {
+                                    "result_state": {
+                                      "Name": "minecraft:red_sandstone"
+                                    },
+                                    "type": "minecraft:block"
+                                  },
+                                  "type": "minecraft:condition"
+                                },
+                                {
+                                  "result_state": {
+                                    "Name": "minecraft:red_sand"
+                                  },
+                                  "type": "minecraft:block"
+                                }
+                              ],
+                              "type": "minecraft:sequence"
+                            },
+                            "type": "minecraft:condition"
+                          },
+                          {
                             "if_true": {
                               "invert": {
-                                "anchor": {
-                                  "absolute": 74
-                                },
-                                "run_depth_multiplier": 1,
-                                "add_stone_depth": true,
-                                "type": "minecraft:y_above"
+                                "type": "minecraft:hole"
                               },
                               "type": "minecraft:not"
                             },
@@ -436,54 +365,147 @@
                             },
                             "type": "minecraft:condition"
                           },
-                          "type": "minecraft:condition"
-                        },
-                        {
-                          "type": "minecraft:bandlands"
-                        }
-                      ],
-                      "type": "minecraft:sequence"
-                    },
-                    "type": "minecraft:condition"
-                  },
-                  {
-                    "if_true": {
-                      "add_run_depth": true,
-                      "surface_type": "floor",
-                      "type": "minecraft:stone_depth"
-                    },
-                    "then_run": {
-                      "if_true": {
-                        "offset": -6,
-                        "run_depth_multiplier": -1,
-                        "add_stone_depth": true,
-                        "type": "minecraft:water"
-                      },
-                      "then_run": {
-                        "result_state": {
-                          "Name": "minecraft:white_terracotta"
-                        },
-                        "type": "minecraft:block"
+                          {
+                            "if_true": {
+                              "offset": -6,
+                              "surface_depth_multiplier": -1,
+                              "add_stone_depth": true,
+                              "type": "minecraft:water"
+                            },
+                            "then_run": {
+                              "result_state": {
+                                "Name": "minecraft:white_terracotta"
+                              },
+                              "type": "minecraft:block"
+                            },
+                            "type": "minecraft:condition"
+                          },
+                          {
+                            "sequence": [
+                              {
+                                "if_true": {
+                                  "offset": 0,
+                                  "add_surface_depth": false,
+                                  "add_surface_secondary_depth": false,
+                                  "surface_type": "ceiling",
+                                  "type": "minecraft:stone_depth"
+                                },
+                                "then_run": {
+                                  "result_state": {
+                                    "Name": "minecraft:stone"
+                                  },
+                                  "type": "minecraft:block"
+                                },
+                                "type": "minecraft:condition"
+                              },
+                              {
+                                "result_state": {
+                                  "Name": "minecraft:gravel"
+                                },
+                                "type": "minecraft:block"
+                              }
+                            ],
+                            "type": "minecraft:sequence"
+                          }
+                        ],
+                        "type": "minecraft:sequence"
                       },
                       "type": "minecraft:condition"
                     },
-                    "type": "minecraft:condition"
-                  }
-                ],
-                "type": "minecraft:sequence"
+                    {
+                      "if_true": {
+                        "anchor": {
+                          "absolute": 63
+                        },
+                        "surface_depth_multiplier": -1,
+                        "add_stone_depth": true,
+                        "type": "minecraft:y_above"
+                      },
+                      "then_run": {
+                        "sequence": [
+                          {
+                            "if_true": {
+                              "anchor": {
+                                "absolute": 63
+                              },
+                              "surface_depth_multiplier": 0,
+                              "add_stone_depth": false,
+                              "type": "minecraft:y_above"
+                            },
+                            "then_run": {
+                              "if_true": {
+                                "invert": {
+                                  "anchor": {
+                                    "absolute": 74
+                                  },
+                                  "surface_depth_multiplier": 1,
+                                  "add_stone_depth": true,
+                                  "type": "minecraft:y_above"
+                                },
+                                "type": "minecraft:not"
+                              },
+                              "then_run": {
+                                "result_state": {
+                                  "Name": "minecraft:orange_terracotta"
+                                },
+                                "type": "minecraft:block"
+                              },
+                              "type": "minecraft:condition"
+                            },
+                            "type": "minecraft:condition"
+                          },
+                          {
+                            "type": "minecraft:bandlands"
+                          }
+                        ],
+                        "type": "minecraft:sequence"
+                      },
+                      "type": "minecraft:condition"
+                    },
+                    {
+                      "if_true": {
+                        "offset": 0,
+                        "add_surface_depth": true,
+                        "add_surface_secondary_depth": false,
+                        "surface_type": "floor",
+                        "type": "minecraft:stone_depth"
+                      },
+                      "then_run": {
+                        "if_true": {
+                          "offset": -6,
+                          "surface_depth_multiplier": -1,
+                          "add_stone_depth": true,
+                          "type": "minecraft:water"
+                        },
+                        "then_run": {
+                          "result_state": {
+                            "Name": "minecraft:white_terracotta"
+                          },
+                          "type": "minecraft:block"
+                        },
+                        "type": "minecraft:condition"
+                      },
+                      "type": "minecraft:condition"
+                    }
+                  ],
+                  "type": "minecraft:sequence"
+                },
+                "type": "minecraft:condition"
               },
               "type": "minecraft:condition"
             },
             {
               "if_true": {
-                "add_run_depth": false,
+                "offset": 0,
+                "add_surface_depth": false,
+                "add_surface_secondary_depth": false,
                 "surface_type": "floor",
                 "type": "minecraft:stone_depth"
               },
               "then_run": {
                 "if_true": {
                   "offset": -1,
-                  "run_depth_multiplier": 0,
+                  "surface_depth_multiplier": 0,
                   "add_stone_depth": false,
                   "type": "minecraft:water"
                 },
@@ -506,7 +528,7 @@
                             {
                               "if_true": {
                                 "offset": 0,
-                                "run_depth_multiplier": 0,
+                                "surface_depth_multiplier": 0,
                                 "add_stone_depth": false,
                                 "type": "minecraft:water"
                               },
@@ -781,7 +803,9 @@
                                       "sequence": [
                                         {
                                           "if_true": {
-                                            "add_run_depth": false,
+                                            "offset": 0,
+                                            "add_surface_depth": false,
+                                            "add_surface_secondary_depth": false,
                                             "surface_type": "ceiling",
                                             "type": "minecraft:stone_depth"
                                           },
@@ -853,7 +877,9 @@
                                 "sequence": [
                                   {
                                     "if_true": {
-                                      "add_run_depth": false,
+                                      "offset": 0,
+                                      "add_surface_depth": false,
+                                      "add_surface_secondary_depth": false,
                                       "surface_type": "ceiling",
                                       "type": "minecraft:stone_depth"
                                     },
@@ -958,7 +984,9 @@
                                   "sequence": [
                                     {
                                       "if_true": {
-                                        "add_run_depth": false,
+                                        "offset": 0,
+                                        "add_surface_depth": false,
+                                        "add_surface_secondary_depth": false,
                                         "surface_type": "ceiling",
                                         "type": "minecraft:stone_depth"
                                       },
@@ -1008,7 +1036,7 @@
                                     {
                                       "if_true": {
                                         "offset": -1,
-                                        "run_depth_multiplier": 0,
+                                        "surface_depth_multiplier": 0,
                                         "add_stone_depth": false,
                                         "type": "minecraft:water"
                                       },
@@ -1038,7 +1066,9 @@
                                 "sequence": [
                                   {
                                     "if_true": {
-                                      "add_run_depth": false,
+                                      "offset": 0,
+                                      "add_surface_depth": false,
+                                      "add_surface_secondary_depth": false,
                                       "surface_type": "ceiling",
                                       "type": "minecraft:stone_depth"
                                     },
@@ -1150,7 +1180,7 @@
                             {
                               "if_true": {
                                 "offset": -1,
-                                "run_depth_multiplier": 0,
+                                "surface_depth_multiplier": 0,
                                 "add_stone_depth": false,
                                 "type": "minecraft:water"
                               },
@@ -1186,226 +1216,62 @@
             },
             {
               "if_true": {
-                "add_run_depth": false,
-                "surface_type": "floor",
-                "type": "minecraft:stone_depth"
+                "offset": -6,
+                "surface_depth_multiplier": -1,
+                "add_stone_depth": true,
+                "type": "minecraft:water"
               },
               "then_run": {
-                "if_true": {
-                  "offset": -6,
-                  "run_depth_multiplier": -1,
-                  "add_stone_depth": true,
-                  "type": "minecraft:water"
-                },
-                "then_run": {
-                  "if_true": {
-                    "biome_is": [
-                      "minecraft:frozen_ocean",
-                      "minecraft:deep_frozen_ocean"
-                    ],
-                    "type": "minecraft:biome"
-                  },
-                  "then_run": {
+                "sequence": [
+                  {
                     "if_true": {
-                      "type": "minecraft:hole"
+                      "offset": 0,
+                      "add_surface_depth": false,
+                      "add_surface_secondary_depth": false,
+                      "surface_type": "floor",
+                      "type": "minecraft:stone_depth"
                     },
                     "then_run": {
-                      "result_state": {
-                        "Properties": {
-                          "level": "0"
-                        },
-                        "Name": "minecraft:water"
+                      "if_true": {
+                        "biome_is": [
+                          "minecraft:frozen_ocean",
+                          "minecraft:deep_frozen_ocean"
+                        ],
+                        "type": "minecraft:biome"
                       },
-                      "type": "minecraft:block"
+                      "then_run": {
+                        "if_true": {
+                          "type": "minecraft:hole"
+                        },
+                        "then_run": {
+                          "result_state": {
+                            "Properties": {
+                              "level": "0"
+                            },
+                            "Name": "minecraft:water"
+                          },
+                          "type": "minecraft:block"
+                        },
+                        "type": "minecraft:condition"
+                      },
+                      "type": "minecraft:condition"
                     },
                     "type": "minecraft:condition"
                   },
-                  "type": "minecraft:condition"
-                },
-                "type": "minecraft:condition"
-              },
-              "type": "minecraft:condition"
-            },
-            {
-              "if_true": {
-                "add_run_depth": true,
-                "surface_type": "floor",
-                "type": "minecraft:stone_depth"
-              },
-              "then_run": {
-                "if_true": {
-                  "offset": -6,
-                  "run_depth_multiplier": -1,
-                  "add_stone_depth": true,
-                  "type": "minecraft:water"
-                },
-                "then_run": {
-                  "sequence": [
-                    {
-                      "if_true": {
-                        "biome_is": [
-                          "minecraft:frozen_peaks"
-                        ],
-                        "type": "minecraft:biome"
-                      },
-                      "then_run": {
-                        "sequence": [
-                          {
-                            "if_true": {
-                              "type": "minecraft:steep"
-                            },
-                            "then_run": {
-                              "result_state": {
-                                "Name": "minecraft:packed_ice"
-                              },
-                              "type": "minecraft:block"
-                            },
-                            "type": "minecraft:condition"
-                          },
-                          {
-                            "if_true": {
-                              "noise": "minecraft:packed_ice",
-                              "min_threshold": -0.5,
-                              "max_threshold": 0.2,
-                              "type": "minecraft:noise_threshold"
-                            },
-                            "then_run": {
-                              "result_state": {
-                                "Name": "minecraft:packed_ice"
-                              },
-                              "type": "minecraft:block"
-                            },
-                            "type": "minecraft:condition"
-                          },
-                          {
-                            "if_true": {
-                              "noise": "minecraft:ice",
-                              "min_threshold": -0.0625,
-                              "max_threshold": 0.025,
-                              "type": "minecraft:noise_threshold"
-                            },
-                            "then_run": {
-                              "result_state": {
-                                "Name": "minecraft:ice"
-                              },
-                              "type": "minecraft:block"
-                            },
-                            "type": "minecraft:condition"
-                          },
-                          {
-                            "result_state": {
-                              "Name": "minecraft:snow_block"
-                            },
-                            "type": "minecraft:block"
-                          }
-                        ],
-                        "type": "minecraft:sequence"
-                      },
-                      "type": "minecraft:condition"
+                  {
+                    "if_true": {
+                      "offset": 0,
+                      "add_surface_depth": true,
+                      "add_surface_secondary_depth": false,
+                      "surface_type": "floor",
+                      "type": "minecraft:stone_depth"
                     },
-                    {
-                      "if_true": {
-                        "biome_is": [
-                          "minecraft:snowy_slopes"
-                        ],
-                        "type": "minecraft:biome"
-                      },
-                      "then_run": {
-                        "sequence": [
-                          {
-                            "if_true": {
-                              "type": "minecraft:steep"
-                            },
-                            "then_run": {
-                              "result_state": {
-                                "Name": "minecraft:stone"
-                              },
-                              "type": "minecraft:block"
-                            },
-                            "type": "minecraft:condition"
-                          },
-                          {
-                            "if_true": {
-                              "noise": "minecraft:powder_snow",
-                              "min_threshold": 0.45,
-                              "max_threshold": 0.58,
-                              "type": "minecraft:noise_threshold"
-                            },
-                            "then_run": {
-                              "result_state": {
-                                "Name": "minecraft:powder_snow"
-                              },
-                              "type": "minecraft:block"
-                            },
-                            "type": "minecraft:condition"
-                          },
-                          {
-                            "result_state": {
-                              "Name": "minecraft:snow_block"
-                            },
-                            "type": "minecraft:block"
-                          }
-                        ],
-                        "type": "minecraft:sequence"
-                      },
-                      "type": "minecraft:condition"
-                    },
-                    {
-                      "if_true": {
-                        "biome_is": [
-                          "minecraft:jagged_peaks"
-                        ],
-                        "type": "minecraft:biome"
-                      },
-                      "then_run": {
-                        "result_state": {
-                          "Name": "minecraft:stone"
-                        },
-                        "type": "minecraft:block"
-                      },
-                      "type": "minecraft:condition"
-                    },
-                    {
-                      "if_true": {
-                        "biome_is": [
-                          "minecraft:grove"
-                        ],
-                        "type": "minecraft:biome"
-                      },
-                      "then_run": {
-                        "sequence": [
-                          {
-                            "if_true": {
-                              "noise": "minecraft:powder_snow",
-                              "min_threshold": 0.45,
-                              "max_threshold": 0.58,
-                              "type": "minecraft:noise_threshold"
-                            },
-                            "then_run": {
-                              "result_state": {
-                                "Name": "minecraft:powder_snow"
-                              },
-                              "type": "minecraft:block"
-                            },
-                            "type": "minecraft:condition"
-                          },
-                          {
-                            "result_state": {
-                              "Name": "minecraft:dirt"
-                            },
-                            "type": "minecraft:block"
-                          }
-                        ],
-                        "type": "minecraft:sequence"
-                      },
-                      "type": "minecraft:condition"
-                    },
-                    {
+                    "then_run": {
                       "sequence": [
                         {
                           "if_true": {
                             "biome_is": [
-                              "minecraft:stony_peaks"
+                              "minecraft:frozen_peaks"
                             ],
                             "type": "minecraft:biome"
                           },
@@ -1413,14 +1279,41 @@
                             "sequence": [
                               {
                                 "if_true": {
-                                  "noise": "minecraft:calcite",
-                                  "min_threshold": -0.0125,
-                                  "max_threshold": 0.0125,
+                                  "type": "minecraft:steep"
+                                },
+                                "then_run": {
+                                  "result_state": {
+                                    "Name": "minecraft:packed_ice"
+                                  },
+                                  "type": "minecraft:block"
+                                },
+                                "type": "minecraft:condition"
+                              },
+                              {
+                                "if_true": {
+                                  "noise": "minecraft:packed_ice",
+                                  "min_threshold": -0.5,
+                                  "max_threshold": 0.2,
                                   "type": "minecraft:noise_threshold"
                                 },
                                 "then_run": {
                                   "result_state": {
-                                    "Name": "minecraft:calcite"
+                                    "Name": "minecraft:packed_ice"
+                                  },
+                                  "type": "minecraft:block"
+                                },
+                                "type": "minecraft:condition"
+                              },
+                              {
+                                "if_true": {
+                                  "noise": "minecraft:ice",
+                                  "min_threshold": -0.0625,
+                                  "max_threshold": 0.025,
+                                  "type": "minecraft:noise_threshold"
+                                },
+                                "then_run": {
+                                  "result_state": {
+                                    "Name": "minecraft:ice"
                                   },
                                   "type": "minecraft:block"
                                 },
@@ -1428,7 +1321,7 @@
                               },
                               {
                                 "result_state": {
-                                  "Name": "minecraft:stone"
+                                  "Name": "minecraft:snow_block"
                                 },
                                 "type": "minecraft:block"
                               }
@@ -1440,7 +1333,7 @@
                         {
                           "if_true": {
                             "biome_is": [
-                              "minecraft:stony_shore"
+                              "minecraft:snowy_slopes"
                             ],
                             "type": "minecraft:biome"
                           },
@@ -1448,16 +1341,313 @@
                             "sequence": [
                               {
                                 "if_true": {
-                                  "noise": "minecraft:gravel",
-                                  "min_threshold": -0.05,
-                                  "max_threshold": 0.05,
+                                  "type": "minecraft:steep"
+                                },
+                                "then_run": {
+                                  "result_state": {
+                                    "Name": "minecraft:stone"
+                                  },
+                                  "type": "minecraft:block"
+                                },
+                                "type": "minecraft:condition"
+                              },
+                              {
+                                "if_true": {
+                                  "noise": "minecraft:powder_snow",
+                                  "min_threshold": 0.45,
+                                  "max_threshold": 0.58,
+                                  "type": "minecraft:noise_threshold"
+                                },
+                                "then_run": {
+                                  "result_state": {
+                                    "Name": "minecraft:powder_snow"
+                                  },
+                                  "type": "minecraft:block"
+                                },
+                                "type": "minecraft:condition"
+                              },
+                              {
+                                "result_state": {
+                                  "Name": "minecraft:snow_block"
+                                },
+                                "type": "minecraft:block"
+                              }
+                            ],
+                            "type": "minecraft:sequence"
+                          },
+                          "type": "minecraft:condition"
+                        },
+                        {
+                          "if_true": {
+                            "biome_is": [
+                              "minecraft:jagged_peaks"
+                            ],
+                            "type": "minecraft:biome"
+                          },
+                          "then_run": {
+                            "result_state": {
+                              "Name": "minecraft:stone"
+                            },
+                            "type": "minecraft:block"
+                          },
+                          "type": "minecraft:condition"
+                        },
+                        {
+                          "if_true": {
+                            "biome_is": [
+                              "minecraft:grove"
+                            ],
+                            "type": "minecraft:biome"
+                          },
+                          "then_run": {
+                            "sequence": [
+                              {
+                                "if_true": {
+                                  "noise": "minecraft:powder_snow",
+                                  "min_threshold": 0.45,
+                                  "max_threshold": 0.58,
+                                  "type": "minecraft:noise_threshold"
+                                },
+                                "then_run": {
+                                  "result_state": {
+                                    "Name": "minecraft:powder_snow"
+                                  },
+                                  "type": "minecraft:block"
+                                },
+                                "type": "minecraft:condition"
+                              },
+                              {
+                                "result_state": {
+                                  "Name": "minecraft:dirt"
+                                },
+                                "type": "minecraft:block"
+                              }
+                            ],
+                            "type": "minecraft:sequence"
+                          },
+                          "type": "minecraft:condition"
+                        },
+                        {
+                          "sequence": [
+                            {
+                              "if_true": {
+                                "biome_is": [
+                                  "minecraft:stony_peaks"
+                                ],
+                                "type": "minecraft:biome"
+                              },
+                              "then_run": {
+                                "sequence": [
+                                  {
+                                    "if_true": {
+                                      "noise": "minecraft:calcite",
+                                      "min_threshold": -0.0125,
+                                      "max_threshold": 0.0125,
+                                      "type": "minecraft:noise_threshold"
+                                    },
+                                    "then_run": {
+                                      "result_state": {
+                                        "Name": "minecraft:calcite"
+                                      },
+                                      "type": "minecraft:block"
+                                    },
+                                    "type": "minecraft:condition"
+                                  },
+                                  {
+                                    "result_state": {
+                                      "Name": "minecraft:stone"
+                                    },
+                                    "type": "minecraft:block"
+                                  }
+                                ],
+                                "type": "minecraft:sequence"
+                              },
+                              "type": "minecraft:condition"
+                            },
+                            {
+                              "if_true": {
+                                "biome_is": [
+                                  "minecraft:stony_shore"
+                                ],
+                                "type": "minecraft:biome"
+                              },
+                              "then_run": {
+                                "sequence": [
+                                  {
+                                    "if_true": {
+                                      "noise": "minecraft:gravel",
+                                      "min_threshold": -0.05,
+                                      "max_threshold": 0.05,
+                                      "type": "minecraft:noise_threshold"
+                                    },
+                                    "then_run": {
+                                      "sequence": [
+                                        {
+                                          "if_true": {
+                                            "offset": 0,
+                                            "add_surface_depth": false,
+                                            "add_surface_secondary_depth": false,
+                                            "surface_type": "ceiling",
+                                            "type": "minecraft:stone_depth"
+                                          },
+                                          "then_run": {
+                                            "result_state": {
+                                              "Name": "minecraft:stone"
+                                            },
+                                            "type": "minecraft:block"
+                                          },
+                                          "type": "minecraft:condition"
+                                        },
+                                        {
+                                          "result_state": {
+                                            "Name": "minecraft:gravel"
+                                          },
+                                          "type": "minecraft:block"
+                                        }
+                                      ],
+                                      "type": "minecraft:sequence"
+                                    },
+                                    "type": "minecraft:condition"
+                                  },
+                                  {
+                                    "result_state": {
+                                      "Name": "minecraft:stone"
+                                    },
+                                    "type": "minecraft:block"
+                                  }
+                                ],
+                                "type": "minecraft:sequence"
+                              },
+                              "type": "minecraft:condition"
+                            },
+                            {
+                              "if_true": {
+                                "biome_is": [
+                                  "minecraft:windswept_hills"
+                                ],
+                                "type": "minecraft:biome"
+                              },
+                              "then_run": {
+                                "if_true": {
+                                  "noise": "minecraft:surface",
+                                  "min_threshold": 0.12121212121212122,
+                                  "max_threshold": 1.7976931348623157e+308,
+                                  "type": "minecraft:noise_threshold"
+                                },
+                                "then_run": {
+                                  "result_state": {
+                                    "Name": "minecraft:stone"
+                                  },
+                                  "type": "minecraft:block"
+                                },
+                                "type": "minecraft:condition"
+                              },
+                              "type": "minecraft:condition"
+                            },
+                            {
+                              "if_true": {
+                                "biome_is": [
+                                  "minecraft:warm_ocean",
+                                  "minecraft:desert",
+                                  "minecraft:beach",
+                                  "minecraft:snowy_beach"
+                                ],
+                                "type": "minecraft:biome"
+                              },
+                              "then_run": {
+                                "sequence": [
+                                  {
+                                    "if_true": {
+                                      "offset": 0,
+                                      "add_surface_depth": false,
+                                      "add_surface_secondary_depth": false,
+                                      "surface_type": "ceiling",
+                                      "type": "minecraft:stone_depth"
+                                    },
+                                    "then_run": {
+                                      "result_state": {
+                                        "Name": "minecraft:sandstone"
+                                      },
+                                      "type": "minecraft:block"
+                                    },
+                                    "type": "minecraft:condition"
+                                  },
+                                  {
+                                    "result_state": {
+                                      "Name": "minecraft:sand"
+                                    },
+                                    "type": "minecraft:block"
+                                  }
+                                ],
+                                "type": "minecraft:sequence"
+                              },
+                              "type": "minecraft:condition"
+                            },
+                            {
+                              "if_true": {
+                                "biome_is": [
+                                  "minecraft:dripstone_caves"
+                                ],
+                                "type": "minecraft:biome"
+                              },
+                              "then_run": {
+                                "result_state": {
+                                  "Name": "minecraft:stone"
+                                },
+                                "type": "minecraft:block"
+                              },
+                              "type": "minecraft:condition"
+                            }
+                          ],
+                          "type": "minecraft:sequence"
+                        },
+                        {
+                          "if_true": {
+                            "biome_is": [
+                              "minecraft:windswept_savanna"
+                            ],
+                            "type": "minecraft:biome"
+                          },
+                          "then_run": {
+                            "if_true": {
+                              "noise": "minecraft:surface",
+                              "min_threshold": 0.21212121212121213,
+                              "max_threshold": 1.7976931348623157e+308,
+                              "type": "minecraft:noise_threshold"
+                            },
+                            "then_run": {
+                              "result_state": {
+                                "Name": "minecraft:stone"
+                              },
+                              "type": "minecraft:block"
+                            },
+                            "type": "minecraft:condition"
+                          },
+                          "type": "minecraft:condition"
+                        },
+                        {
+                          "if_true": {
+                            "biome_is": [
+                              "minecraft:windswept_gravelly_hills"
+                            ],
+                            "type": "minecraft:biome"
+                          },
+                          "then_run": {
+                            "sequence": [
+                              {
+                                "if_true": {
+                                  "noise": "minecraft:surface",
+                                  "min_threshold": 0.24242424242424243,
+                                  "max_threshold": 1.7976931348623157e+308,
                                   "type": "minecraft:noise_threshold"
                                 },
                                 "then_run": {
                                   "sequence": [
                                     {
                                       "if_true": {
-                                        "add_run_depth": false,
+                                        "offset": 0,
+                                        "add_surface_depth": false,
+                                        "add_surface_secondary_depth": false,
                                         "surface_type": "ceiling",
                                         "type": "minecraft:stone_depth"
                                       },
@@ -1481,199 +1671,11 @@
                                 "type": "minecraft:condition"
                               },
                               {
-                                "result_state": {
-                                  "Name": "minecraft:stone"
-                                },
-                                "type": "minecraft:block"
-                              }
-                            ],
-                            "type": "minecraft:sequence"
-                          },
-                          "type": "minecraft:condition"
-                        },
-                        {
-                          "if_true": {
-                            "biome_is": [
-                              "minecraft:windswept_hills"
-                            ],
-                            "type": "minecraft:biome"
-                          },
-                          "then_run": {
-                            "if_true": {
-                              "noise": "minecraft:surface",
-                              "min_threshold": 0.12121212121212122,
-                              "max_threshold": 1.7976931348623157e+308,
-                              "type": "minecraft:noise_threshold"
-                            },
-                            "then_run": {
-                              "result_state": {
-                                "Name": "minecraft:stone"
-                              },
-                              "type": "minecraft:block"
-                            },
-                            "type": "minecraft:condition"
-                          },
-                          "type": "minecraft:condition"
-                        },
-                        {
-                          "if_true": {
-                            "biome_is": [
-                              "minecraft:warm_ocean",
-                              "minecraft:desert",
-                              "minecraft:beach",
-                              "minecraft:snowy_beach"
-                            ],
-                            "type": "minecraft:biome"
-                          },
-                          "then_run": {
-                            "sequence": [
-                              {
                                 "if_true": {
-                                  "add_run_depth": false,
-                                  "surface_type": "ceiling",
-                                  "type": "minecraft:stone_depth"
-                                },
-                                "then_run": {
-                                  "result_state": {
-                                    "Name": "minecraft:sandstone"
-                                  },
-                                  "type": "minecraft:block"
-                                },
-                                "type": "minecraft:condition"
-                              },
-                              {
-                                "result_state": {
-                                  "Name": "minecraft:sand"
-                                },
-                                "type": "minecraft:block"
-                              }
-                            ],
-                            "type": "minecraft:sequence"
-                          },
-                          "type": "minecraft:condition"
-                        },
-                        {
-                          "if_true": {
-                            "biome_is": [
-                              "minecraft:dripstone_caves"
-                            ],
-                            "type": "minecraft:biome"
-                          },
-                          "then_run": {
-                            "result_state": {
-                              "Name": "minecraft:stone"
-                            },
-                            "type": "minecraft:block"
-                          },
-                          "type": "minecraft:condition"
-                        }
-                      ],
-                      "type": "minecraft:sequence"
-                    },
-                    {
-                      "if_true": {
-                        "biome_is": [
-                          "minecraft:windswept_savanna"
-                        ],
-                        "type": "minecraft:biome"
-                      },
-                      "then_run": {
-                        "if_true": {
-                          "noise": "minecraft:surface",
-                          "min_threshold": 0.21212121212121213,
-                          "max_threshold": 1.7976931348623157e+308,
-                          "type": "minecraft:noise_threshold"
-                        },
-                        "then_run": {
-                          "result_state": {
-                            "Name": "minecraft:stone"
-                          },
-                          "type": "minecraft:block"
-                        },
-                        "type": "minecraft:condition"
-                      },
-                      "type": "minecraft:condition"
-                    },
-                    {
-                      "if_true": {
-                        "biome_is": [
-                          "minecraft:windswept_gravelly_hills"
-                        ],
-                        "type": "minecraft:biome"
-                      },
-                      "then_run": {
-                        "sequence": [
-                          {
-                            "if_true": {
-                              "noise": "minecraft:surface",
-                              "min_threshold": 0.24242424242424243,
-                              "max_threshold": 1.7976931348623157e+308,
-                              "type": "minecraft:noise_threshold"
-                            },
-                            "then_run": {
-                              "sequence": [
-                                {
-                                  "if_true": {
-                                    "add_run_depth": false,
-                                    "surface_type": "ceiling",
-                                    "type": "minecraft:stone_depth"
-                                  },
-                                  "then_run": {
-                                    "result_state": {
-                                      "Name": "minecraft:stone"
-                                    },
-                                    "type": "minecraft:block"
-                                  },
-                                  "type": "minecraft:condition"
-                                },
-                                {
-                                  "result_state": {
-                                    "Name": "minecraft:gravel"
-                                  },
-                                  "type": "minecraft:block"
-                                }
-                              ],
-                              "type": "minecraft:sequence"
-                            },
-                            "type": "minecraft:condition"
-                          },
-                          {
-                            "if_true": {
-                              "noise": "minecraft:surface",
-                              "min_threshold": 0.12121212121212122,
-                              "max_threshold": 1.7976931348623157e+308,
-                              "type": "minecraft:noise_threshold"
-                            },
-                            "then_run": {
-                              "result_state": {
-                                "Name": "minecraft:stone"
-                              },
-                              "type": "minecraft:block"
-                            },
-                            "type": "minecraft:condition"
-                          },
-                          {
-                            "if_true": {
-                              "noise": "minecraft:surface",
-                              "min_threshold": -0.12121212121212122,
-                              "max_threshold": 1.7976931348623157e+308,
-                              "type": "minecraft:noise_threshold"
-                            },
-                            "then_run": {
-                              "result_state": {
-                                "Name": "minecraft:dirt"
-                              },
-                              "type": "minecraft:block"
-                            },
-                            "type": "minecraft:condition"
-                          },
-                          {
-                            "sequence": [
-                              {
-                                "if_true": {
-                                  "add_run_depth": false,
-                                  "surface_type": "ceiling",
-                                  "type": "minecraft:stone_depth"
+                                  "noise": "minecraft:surface",
+                                  "min_threshold": 0.12121212121212122,
+                                  "max_threshold": 1.7976931348623157e+308,
+                                  "type": "minecraft:noise_threshold"
                                 },
                                 "then_run": {
                                   "result_state": {
@@ -1684,35 +1686,101 @@
                                 "type": "minecraft:condition"
                               },
                               {
-                                "result_state": {
-                                  "Name": "minecraft:gravel"
+                                "if_true": {
+                                  "noise": "minecraft:surface",
+                                  "min_threshold": -0.12121212121212122,
+                                  "max_threshold": 1.7976931348623157e+308,
+                                  "type": "minecraft:noise_threshold"
                                 },
-                                "type": "minecraft:block"
+                                "then_run": {
+                                  "result_state": {
+                                    "Name": "minecraft:dirt"
+                                  },
+                                  "type": "minecraft:block"
+                                },
+                                "type": "minecraft:condition"
+                              },
+                              {
+                                "sequence": [
+                                  {
+                                    "if_true": {
+                                      "offset": 0,
+                                      "add_surface_depth": false,
+                                      "add_surface_secondary_depth": false,
+                                      "surface_type": "ceiling",
+                                      "type": "minecraft:stone_depth"
+                                    },
+                                    "then_run": {
+                                      "result_state": {
+                                        "Name": "minecraft:stone"
+                                      },
+                                      "type": "minecraft:block"
+                                    },
+                                    "type": "minecraft:condition"
+                                  },
+                                  {
+                                    "result_state": {
+                                      "Name": "minecraft:gravel"
+                                    },
+                                    "type": "minecraft:block"
+                                  }
+                                ],
+                                "type": "minecraft:sequence"
                               }
                             ],
                             "type": "minecraft:sequence"
-                          }
-                        ],
-                        "type": "minecraft:sequence"
+                          },
+                          "type": "minecraft:condition"
+                        },
+                        {
+                          "result_state": {
+                            "Name": "minecraft:dirt"
+                          },
+                          "type": "minecraft:block"
+                        }
+                      ],
+                      "type": "minecraft:sequence"
+                    },
+                    "type": "minecraft:condition"
+                  },
+                  {
+                    "if_true": {
+                      "biome_is": [
+                        "minecraft:warm_ocean",
+                        "minecraft:desert",
+                        "minecraft:beach",
+                        "minecraft:snowy_beach"
+                      ],
+                      "type": "minecraft:biome"
+                    },
+                    "then_run": {
+                      "if_true": {
+                        "offset": 0,
+                        "add_surface_depth": true,
+                        "add_surface_secondary_depth": true,
+                        "surface_type": "floor",
+                        "type": "minecraft:stone_depth"
+                      },
+                      "then_run": {
+                        "result_state": {
+                          "Name": "minecraft:sandstone"
+                        },
+                        "type": "minecraft:block"
                       },
                       "type": "minecraft:condition"
                     },
-                    {
-                      "result_state": {
-                        "Name": "minecraft:dirt"
-                      },
-                      "type": "minecraft:block"
-                    }
-                  ],
-                  "type": "minecraft:sequence"
-                },
-                "type": "minecraft:condition"
+                    "type": "minecraft:condition"
+                  }
+                ],
+                "type": "minecraft:sequence"
               },
               "type": "minecraft:condition"
             },
             {
               "if_true": {
-                "add_run_depth": false,
+                "offset": 0,
+                "add_surface_depth": false,
+                "add_surface_secondary_depth": false,
                 "surface_type": "floor",
                 "type": "minecraft:stone_depth"
               },
@@ -1747,7 +1815,9 @@
                       "sequence": [
                         {
                           "if_true": {
-                            "add_run_depth": false,
+                            "offset": 0,
+                            "add_surface_depth": false,
+                            "add_surface_secondary_depth": false,
                             "surface_type": "ceiling",
                             "type": "minecraft:stone_depth"
                           },
@@ -1774,7 +1844,9 @@
                     "sequence": [
                       {
                         "if_true": {
-                          "add_run_depth": false,
+                          "offset": 0,
+                          "add_surface_depth": false,
+                          "add_surface_secondary_depth": false,
                           "surface_type": "ceiling",
                           "type": "minecraft:stone_depth"
                         },
@@ -1938,7 +2010,7 @@
         "points": [
           {
             "location": -1.1,
-            "value": 0.044,
+            "value": 0.088,
             "derivative": 0.0
           },
           {
@@ -1978,7 +2050,7 @@
                       },
                       {
                         "location": 1.0,
-                        "value": 0.69000006,
+                        "value": 1.3800001,
                         "derivative": 0.38940096
                       }
                     ]
@@ -1997,7 +2069,7 @@
                       },
                       {
                         "location": 1.0,
-                        "value": 0.6400001,
+                        "value": 1.2800002,
                         "derivative": 0.37788022
                       }
                     ]
@@ -2026,17 +2098,17 @@
                       },
                       {
                         "location": 0.5954547,
-                        "value": 2.9802322e-08,
+                        "value": 5.9604645e-08,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.6054547,
-                        "value": 2.9802322e-08,
+                        "value": 5.9604645e-08,
                         "derivative": 0.2534563
                       },
                       {
                         "location": 1.0,
-                        "value": 0.100000024,
+                        "value": 0.20000005,
                         "derivative": 0.2534563
                       }
                     ]
@@ -2055,22 +2127,22 @@
                       },
                       {
                         "location": -0.4,
-                        "value": 0.05,
+                        "value": 0.1,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.05,
+                        "value": 0.1,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.4,
-                        "value": 0.05,
+                        "value": 0.1,
                         "derivative": 0.0
                       },
                       {
                         "location": 1.0,
-                        "value": 0.060000002,
+                        "value": 0.120000005,
                         "derivative": 0.007000001
                       }
                     ]
@@ -2099,12 +2171,12 @@
                       },
                       {
                         "location": 0.4,
-                        "value": 0.05,
+                        "value": 0.1,
                         "derivative": 0.1
                       },
                       {
                         "location": 1.0,
-                        "value": 0.060000002,
+                        "value": 0.120000005,
                         "derivative": 0.007000001
                       }
                     ]
@@ -2200,7 +2272,7 @@
                       },
                       {
                         "location": 1.0,
-                        "value": 0.69000006,
+                        "value": 1.3800001,
                         "derivative": 0.38940096
                       }
                     ]
@@ -2219,7 +2291,7 @@
                       },
                       {
                         "location": 1.0,
-                        "value": 0.6400001,
+                        "value": 1.2800002,
                         "derivative": 0.37788022
                       }
                     ]
@@ -2248,17 +2320,17 @@
                       },
                       {
                         "location": 0.5954547,
-                        "value": 2.9802322e-08,
+                        "value": 5.9604645e-08,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.6054547,
-                        "value": 2.9802322e-08,
+                        "value": 5.9604645e-08,
                         "derivative": 0.2534563
                       },
                       {
                         "location": 1.0,
-                        "value": 0.100000024,
+                        "value": 0.20000005,
                         "derivative": 0.2534563
                       }
                     ]
@@ -2277,22 +2349,22 @@
                       },
                       {
                         "location": -0.4,
-                        "value": 0.05,
+                        "value": 0.1,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.05,
+                        "value": 0.1,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.4,
-                        "value": 0.05,
+                        "value": 0.1,
                         "derivative": 0.0
                       },
                       {
                         "location": 1.0,
-                        "value": 0.060000002,
+                        "value": 0.120000005,
                         "derivative": 0.007000001
                       }
                     ]
@@ -2321,12 +2393,12 @@
                       },
                       {
                         "location": 0.4,
-                        "value": 0.05,
+                        "value": 0.1,
                         "derivative": 0.1
                       },
                       {
                         "location": 1.0,
-                        "value": 0.060000002,
+                        "value": 0.120000005,
                         "derivative": 0.007000001
                       }
                     ]
@@ -2422,7 +2494,7 @@
                       },
                       {
                         "location": 1.0,
-                        "value": 0.69000006,
+                        "value": 1.3800001,
                         "derivative": 0.38940096
                       }
                     ]
@@ -2441,7 +2513,7 @@
                       },
                       {
                         "location": 1.0,
-                        "value": 0.6400001,
+                        "value": 1.2800002,
                         "derivative": 0.37788022
                       }
                     ]
@@ -2470,17 +2542,17 @@
                       },
                       {
                         "location": 0.5954547,
-                        "value": 2.9802322e-08,
+                        "value": 5.9604645e-08,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.6054547,
-                        "value": 2.9802322e-08,
+                        "value": 5.9604645e-08,
                         "derivative": 0.2534563
                       },
                       {
                         "location": 1.0,
-                        "value": 0.100000024,
+                        "value": 0.20000005,
                         "derivative": 0.2534563
                       }
                     ]
@@ -2499,22 +2571,22 @@
                       },
                       {
                         "location": -0.4,
-                        "value": 0.05,
+                        "value": 0.1,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.05,
+                        "value": 0.1,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.4,
-                        "value": 0.05,
+                        "value": 0.1,
                         "derivative": 0.0
                       },
                       {
                         "location": 1.0,
-                        "value": 0.060000002,
+                        "value": 0.120000005,
                         "derivative": 0.007000001
                       }
                     ]
@@ -2533,22 +2605,22 @@
                       },
                       {
                         "location": -0.4,
-                        "value": 0.001,
+                        "value": 0.002,
                         "derivative": 0.01
                       },
                       {
                         "location": 0.0,
-                        "value": 0.003,
+                        "value": 0.006,
                         "derivative": 0.01
                       },
                       {
                         "location": 0.4,
-                        "value": 0.05,
+                        "value": 0.1,
                         "derivative": 0.094000004
                       },
                       {
                         "location": 1.0,
-                        "value": 0.060000002,
+                        "value": 0.120000005,
                         "derivative": 0.007000001
                       }
                     ]
@@ -2567,22 +2639,22 @@
                       },
                       {
                         "location": -0.4,
-                        "value": 0.01,
+                        "value": 0.02,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.01,
+                        "value": 0.02,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.4,
-                        "value": 0.03,
+                        "value": 0.06,
                         "derivative": 0.04
                       },
                       {
                         "location": 1.0,
-                        "value": 0.1,
+                        "value": 0.2,
                         "derivative": 0.049
                       }
                     ]
@@ -2611,12 +2683,12 @@
                       },
                       {
                         "location": 0.4,
-                        "value": 0.03,
+                        "value": 0.06,
                         "derivative": 0.12
                       },
                       {
                         "location": 1.0,
-                        "value": 0.1,
+                        "value": 0.2,
                         "derivative": 0.049
                       }
                     ]
@@ -2639,17 +2711,17 @@
                     "points": [
                       {
                         "location": -1.0,
-                        "value": 0.20235021,
+                        "value": 0.40470043,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.7161751,
+                        "value": 1.4323502,
                         "derivative": 0.5138249
                       },
                       {
                         "location": 1.0,
-                        "value": 1.23,
+                        "value": 2.46,
                         "derivative": 0.5138249
                       }
                     ]
@@ -2663,17 +2735,17 @@
                     "points": [
                       {
                         "location": -1.0,
-                        "value": 0.2,
+                        "value": 0.4,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.44682026,
+                        "value": 0.8936405,
                         "derivative": 0.43317974
                       },
                       {
                         "location": 1.0,
-                        "value": 0.88,
+                        "value": 1.76,
                         "derivative": 0.43317974
                       }
                     ]
@@ -2687,17 +2759,17 @@
                     "points": [
                       {
                         "location": -1.0,
-                        "value": 0.2,
+                        "value": 0.4,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.30829495,
+                        "value": 0.6165899,
                         "derivative": 0.3917051
                       },
                       {
                         "location": 1.0,
-                        "value": 0.70000005,
+                        "value": 1.4000001,
                         "derivative": 0.3917051
                       }
                     ]
@@ -2716,22 +2788,22 @@
                       },
                       {
                         "location": -0.4,
-                        "value": 0.35,
+                        "value": 0.7,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.35,
+                        "value": 0.7,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.4,
-                        "value": 0.35,
+                        "value": 0.7,
                         "derivative": 0.0
                       },
                       {
                         "location": 1.0,
-                        "value": 0.42000002,
+                        "value": 0.84000003,
                         "derivative": 0.049000014
                       }
                     ]
@@ -2750,22 +2822,22 @@
                       },
                       {
                         "location": -0.4,
-                        "value": 0.0069999998,
+                        "value": 0.0139999995,
                         "derivative": 0.07
                       },
                       {
                         "location": 0.0,
-                        "value": 0.021,
+                        "value": 0.042,
                         "derivative": 0.07
                       },
                       {
                         "location": 0.4,
-                        "value": 0.35,
+                        "value": 0.7,
                         "derivative": 0.658
                       },
                       {
                         "location": 1.0,
-                        "value": 0.42000002,
+                        "value": 0.84000003,
                         "derivative": 0.049000014
                       }
                     ]
@@ -2784,22 +2856,22 @@
                       },
                       {
                         "location": -0.4,
-                        "value": 0.01,
+                        "value": 0.02,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.01,
+                        "value": 0.02,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.4,
-                        "value": 0.03,
+                        "value": 0.06,
                         "derivative": 0.04
                       },
                       {
                         "location": 1.0,
-                        "value": 0.1,
+                        "value": 0.2,
                         "derivative": 0.049
                       }
                     ]
@@ -2818,22 +2890,22 @@
                       },
                       {
                         "location": -0.4,
-                        "value": 0.01,
+                        "value": 0.02,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.01,
+                        "value": 0.02,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.4,
-                        "value": 0.03,
+                        "value": 0.06,
                         "derivative": 0.04
                       },
                       {
                         "location": 1.0,
-                        "value": 0.1,
+                        "value": 0.2,
                         "derivative": 0.049
                       }
                     ]
@@ -2862,22 +2934,22 @@
                             },
                             {
                               "location": -0.4,
-                              "value": 0.01,
+                              "value": 0.02,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.0,
-                              "value": 0.01,
+                              "value": 0.02,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.4,
-                              "value": 0.03,
+                              "value": 0.06,
                               "derivative": 0.04
                             },
                             {
                               "location": 1.0,
-                              "value": 0.1,
+                              "value": 0.2,
                               "derivative": 0.049
                             }
                           ]
@@ -2886,7 +2958,7 @@
                       },
                       {
                         "location": 0.0,
-                        "value": 0.17,
+                        "value": 0.34,
                         "derivative": 0.0
                       }
                     ]
@@ -2915,22 +2987,22 @@
                             },
                             {
                               "location": -0.4,
-                              "value": 0.01,
+                              "value": 0.02,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.0,
-                              "value": 0.01,
+                              "value": 0.02,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.4,
-                              "value": 0.03,
+                              "value": 0.06,
                               "derivative": 0.04
                             },
                             {
                               "location": 1.0,
-                              "value": 0.1,
+                              "value": 0.2,
                               "derivative": 0.049
                             }
                           ]
@@ -2939,7 +3011,7 @@
                       },
                       {
                         "location": 0.0,
-                        "value": 0.17,
+                        "value": 0.34,
                         "derivative": 0.0
                       }
                     ]
@@ -2958,22 +3030,22 @@
                       },
                       {
                         "location": -0.4,
-                        "value": 0.01,
+                        "value": 0.02,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.01,
+                        "value": 0.02,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.4,
-                        "value": 0.03,
+                        "value": 0.06,
                         "derivative": 0.04
                       },
                       {
                         "location": 1.0,
-                        "value": 0.1,
+                        "value": 0.2,
                         "derivative": 0.049
                       }
                     ]
@@ -3002,12 +3074,12 @@
                       },
                       {
                         "location": 0.4,
-                        "value": 0.03,
+                        "value": 0.06,
                         "derivative": 0.12
                       },
                       {
                         "location": 1.0,
-                        "value": 0.1,
+                        "value": 0.2,
                         "derivative": 0.049
                       }
                     ]
@@ -3030,17 +3102,17 @@
                     "points": [
                       {
                         "location": -1.0,
-                        "value": 0.34792626,
+                        "value": 0.6958525,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.9239631,
+                        "value": 1.8479263,
                         "derivative": 0.5760369
                       },
                       {
                         "location": 1.0,
-                        "value": 1.5,
+                        "value": 3.0,
                         "derivative": 0.5760369
                       }
                     ]
@@ -3054,17 +3126,17 @@
                     "points": [
                       {
                         "location": -1.0,
-                        "value": 0.2,
+                        "value": 0.4,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.5391705,
+                        "value": 1.078341,
                         "derivative": 0.4608295
                       },
                       {
                         "location": 1.0,
-                        "value": 1.0,
+                        "value": 2.0,
                         "derivative": 0.4608295
                       }
                     ]
@@ -3078,17 +3150,17 @@
                     "points": [
                       {
                         "location": -1.0,
-                        "value": 0.2,
+                        "value": 0.4,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.5391705,
+                        "value": 1.078341,
                         "derivative": 0.4608295
                       },
                       {
                         "location": 1.0,
-                        "value": 1.0,
+                        "value": 2.0,
                         "derivative": 0.4608295
                       }
                     ]
@@ -3107,22 +3179,22 @@
                       },
                       {
                         "location": -0.4,
-                        "value": 0.5,
+                        "value": 1.0,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.5,
+                        "value": 1.0,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.4,
-                        "value": 0.5,
+                        "value": 1.0,
                         "derivative": 0.0
                       },
                       {
                         "location": 1.0,
-                        "value": 0.6,
+                        "value": 1.2,
                         "derivative": 0.070000015
                       }
                     ]
@@ -3141,22 +3213,22 @@
                       },
                       {
                         "location": -0.4,
-                        "value": 0.01,
+                        "value": 0.02,
                         "derivative": 0.099999994
                       },
                       {
                         "location": 0.0,
-                        "value": 0.03,
+                        "value": 0.06,
                         "derivative": 0.099999994
                       },
                       {
                         "location": 0.4,
-                        "value": 0.5,
+                        "value": 1.0,
                         "derivative": 0.94
                       },
                       {
                         "location": 1.0,
-                        "value": 0.6,
+                        "value": 1.2,
                         "derivative": 0.070000015
                       }
                     ]
@@ -3175,22 +3247,22 @@
                       },
                       {
                         "location": -0.4,
-                        "value": 0.01,
+                        "value": 0.02,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.01,
+                        "value": 0.02,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.4,
-                        "value": 0.03,
+                        "value": 0.06,
                         "derivative": 0.04
                       },
                       {
                         "location": 1.0,
-                        "value": 0.1,
+                        "value": 0.2,
                         "derivative": 0.049
                       }
                     ]
@@ -3209,22 +3281,22 @@
                       },
                       {
                         "location": -0.4,
-                        "value": 0.01,
+                        "value": 0.02,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.01,
+                        "value": 0.02,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.4,
-                        "value": 0.03,
+                        "value": 0.06,
                         "derivative": 0.04
                       },
                       {
                         "location": 1.0,
-                        "value": 0.1,
+                        "value": 0.2,
                         "derivative": 0.049
                       }
                     ]
@@ -3253,22 +3325,22 @@
                             },
                             {
                               "location": -0.4,
-                              "value": 0.01,
+                              "value": 0.02,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.0,
-                              "value": 0.01,
+                              "value": 0.02,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.4,
-                              "value": 0.03,
+                              "value": 0.06,
                               "derivative": 0.04
                             },
                             {
                               "location": 1.0,
-                              "value": 0.1,
+                              "value": 0.2,
                               "derivative": 0.049
                             }
                           ]
@@ -3277,7 +3349,7 @@
                       },
                       {
                         "location": 0.0,
-                        "value": 0.17,
+                        "value": 0.34,
                         "derivative": 0.0
                       }
                     ]
@@ -3306,22 +3378,22 @@
                             },
                             {
                               "location": -0.4,
-                              "value": 0.01,
+                              "value": 0.02,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.0,
-                              "value": 0.01,
+                              "value": 0.02,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.4,
-                              "value": 0.03,
+                              "value": 0.06,
                               "derivative": 0.04
                             },
                             {
                               "location": 1.0,
-                              "value": 0.1,
+                              "value": 0.2,
                               "derivative": 0.049
                             }
                           ]
@@ -3330,7 +3402,7 @@
                       },
                       {
                         "location": 0.0,
-                        "value": 0.17,
+                        "value": 0.34,
                         "derivative": 0.0
                       }
                     ]
@@ -3349,22 +3421,22 @@
                       },
                       {
                         "location": -0.4,
-                        "value": 0.01,
+                        "value": 0.02,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.01,
+                        "value": 0.02,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.4,
-                        "value": 0.03,
+                        "value": 0.06,
                         "derivative": 0.04
                       },
                       {
                         "location": 1.0,
-                        "value": 0.1,
+                        "value": 0.2,
                         "derivative": 0.049
                       }
                     ]
@@ -3383,22 +3455,22 @@
                       },
                       {
                         "location": -0.4,
-                        "value": 0.01,
+                        "value": 0.02,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.0,
-                        "value": 0.01,
+                        "value": 0.02,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.4,
-                        "value": 0.03,
+                        "value": 0.06,
                         "derivative": 0.04
                       },
                       {
                         "location": 1.0,
-                        "value": 0.1,
+                        "value": 0.2,
                         "derivative": 0.049
                       }
                     ]
@@ -3630,12 +3702,12 @@
                     "points": [
                       {
                         "location": -0.2,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.2,
-                        "value": 5.47,
+                        "value": 0.6530563,
                         "derivative": 0.0
                       }
                     ]
@@ -3649,12 +3721,12 @@
                     "points": [
                       {
                         "location": -0.05,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.05,
-                        "value": 2.67,
+                        "value": 0.4351369,
                         "derivative": 0.0
                       }
                     ]
@@ -3668,12 +3740,12 @@
                     "points": [
                       {
                         "location": -0.2,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.2,
-                        "value": 5.47,
+                        "value": 0.6530563,
                         "derivative": 0.0
                       }
                     ]
@@ -3687,12 +3759,12 @@
                     "points": [
                       {
                         "location": -0.2,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.2,
-                        "value": 5.47,
+                        "value": 0.6530563,
                         "derivative": 0.0
                       }
                     ]
@@ -3706,12 +3778,12 @@
                     "points": [
                       {
                         "location": -0.05,
-                        "value": 2.67,
+                        "value": 0.4351369,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.05,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       }
                     ]
@@ -3725,12 +3797,12 @@
                     "points": [
                       {
                         "location": -0.2,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.2,
-                        "value": 5.47,
+                        "value": 0.6530563,
                         "derivative": 0.0
                       }
                     ]
@@ -3739,7 +3811,7 @@
                 },
                 {
                   "location": 0.35,
-                  "value": 5.47,
+                  "value": 0.6530563,
                   "derivative": 0.0
                 },
                 {
@@ -3749,7 +3821,7 @@
                     "points": [
                       {
                         "location": -0.9,
-                        "value": 5.47,
+                        "value": 0.6530563,
                         "derivative": 0.0
                       },
                       {
@@ -3759,12 +3831,12 @@
                           "points": [
                             {
                               "location": 0.0,
-                              "value": 5.47,
+                              "value": 0.6530563,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.1,
-                              "value": 0.625,
+                              "value": 0.13888884,
                               "derivative": 0.0
                             }
                           ]
@@ -3782,7 +3854,7 @@
                     "points": [
                       {
                         "location": -0.9,
-                        "value": 5.47,
+                        "value": 0.6530563,
                         "derivative": 0.0
                       },
                       {
@@ -3792,12 +3864,12 @@
                           "points": [
                             {
                               "location": 0.0,
-                              "value": 5.47,
+                              "value": 0.6530563,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.1,
-                              "value": 0.625,
+                              "value": 0.13888884,
                               "derivative": 0.0
                             }
                           ]
@@ -3810,7 +3882,7 @@
                 },
                 {
                   "location": 0.62,
-                  "value": 5.47,
+                  "value": 0.6530563,
                   "derivative": 0.0
                 }
               ]
@@ -3829,12 +3901,12 @@
                     "points": [
                       {
                         "location": -0.2,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.2,
-                        "value": 5.08,
+                        "value": 0.6299603,
                         "derivative": 0.0
                       }
                     ]
@@ -3848,12 +3920,12 @@
                     "points": [
                       {
                         "location": -0.05,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.05,
-                        "value": 2.67,
+                        "value": 0.4351369,
                         "derivative": 0.0
                       }
                     ]
@@ -3867,12 +3939,12 @@
                     "points": [
                       {
                         "location": -0.2,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.2,
-                        "value": 5.08,
+                        "value": 0.6299603,
                         "derivative": 0.0
                       }
                     ]
@@ -3886,12 +3958,12 @@
                     "points": [
                       {
                         "location": -0.2,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.2,
-                        "value": 5.08,
+                        "value": 0.6299603,
                         "derivative": 0.0
                       }
                     ]
@@ -3905,12 +3977,12 @@
                     "points": [
                       {
                         "location": -0.05,
-                        "value": 2.67,
+                        "value": 0.4351369,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.05,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       }
                     ]
@@ -3924,12 +3996,12 @@
                     "points": [
                       {
                         "location": -0.2,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.2,
-                        "value": 5.08,
+                        "value": 0.6299603,
                         "derivative": 0.0
                       }
                     ]
@@ -3938,7 +4010,7 @@
                 },
                 {
                   "location": 0.35,
-                  "value": 5.08,
+                  "value": 0.6299603,
                   "derivative": 0.0
                 },
                 {
@@ -3948,7 +4020,7 @@
                     "points": [
                       {
                         "location": -0.9,
-                        "value": 5.08,
+                        "value": 0.6299603,
                         "derivative": 0.0
                       },
                       {
@@ -3958,12 +4030,12 @@
                           "points": [
                             {
                               "location": 0.0,
-                              "value": 5.08,
+                              "value": 0.6299603,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.1,
-                              "value": 0.625,
+                              "value": 0.13888884,
                               "derivative": 0.0
                             }
                           ]
@@ -3981,7 +4053,7 @@
                     "points": [
                       {
                         "location": -0.9,
-                        "value": 5.08,
+                        "value": 0.6299603,
                         "derivative": 0.0
                       },
                       {
@@ -3991,12 +4063,12 @@
                           "points": [
                             {
                               "location": 0.0,
-                              "value": 5.08,
+                              "value": 0.6299603,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.1,
-                              "value": 0.625,
+                              "value": 0.13888884,
                               "derivative": 0.0
                             }
                           ]
@@ -4009,7 +4081,7 @@
                 },
                 {
                   "location": 0.62,
-                  "value": 5.08,
+                  "value": 0.6299603,
                   "derivative": 0.0
                 }
               ]
@@ -4028,12 +4100,12 @@
                     "points": [
                       {
                         "location": -0.2,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.2,
-                        "value": 4.69,
+                        "value": 0.6050052,
                         "derivative": 0.0
                       }
                     ]
@@ -4047,12 +4119,12 @@
                     "points": [
                       {
                         "location": -0.05,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.05,
-                        "value": 2.67,
+                        "value": 0.4351369,
                         "derivative": 0.0
                       }
                     ]
@@ -4066,12 +4138,12 @@
                     "points": [
                       {
                         "location": -0.2,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.2,
-                        "value": 4.69,
+                        "value": 0.6050052,
                         "derivative": 0.0
                       }
                     ]
@@ -4085,12 +4157,12 @@
                     "points": [
                       {
                         "location": -0.2,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.2,
-                        "value": 4.69,
+                        "value": 0.6050052,
                         "derivative": 0.0
                       }
                     ]
@@ -4104,12 +4176,12 @@
                     "points": [
                       {
                         "location": -0.05,
-                        "value": 2.67,
+                        "value": 0.4351369,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.05,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       }
                     ]
@@ -4123,12 +4195,12 @@
                     "points": [
                       {
                         "location": -0.2,
-                        "value": 6.3,
+                        "value": 0.6969027,
                         "derivative": 0.0
                       },
                       {
                         "location": 0.2,
-                        "value": 4.69,
+                        "value": 0.6050052,
                         "derivative": 0.0
                       }
                     ]
@@ -4147,12 +4219,12 @@
                           "points": [
                             {
                               "location": -0.2,
-                              "value": 6.3,
+                              "value": 0.6969027,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.2,
-                              "value": 4.69,
+                              "value": 0.6050052,
                               "derivative": 0.0
                             }
                           ]
@@ -4161,7 +4233,7 @@
                       },
                       {
                         "location": 0.7,
-                        "value": 1.56,
+                        "value": 0.2972561,
                         "derivative": 0.0
                       }
                     ]
@@ -4180,12 +4252,12 @@
                           "points": [
                             {
                               "location": -0.2,
-                              "value": 6.3,
+                              "value": 0.6969027,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.2,
-                              "value": 4.69,
+                              "value": 0.6050052,
                               "derivative": 0.0
                             }
                           ]
@@ -4194,7 +4266,7 @@
                       },
                       {
                         "location": 0.7,
-                        "value": 1.56,
+                        "value": 0.2972561,
                         "derivative": 0.0
                       }
                     ]
@@ -4213,12 +4285,12 @@
                           "points": [
                             {
                               "location": -0.2,
-                              "value": 6.3,
+                              "value": 0.6969027,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.2,
-                              "value": 4.69,
+                              "value": 0.6050052,
                               "derivative": 0.0
                             }
                           ]
@@ -4227,7 +4299,7 @@
                       },
                       {
                         "location": -0.15,
-                        "value": 1.37,
+                        "value": 0.2688383,
                         "derivative": 0.0
                       }
                     ]
@@ -4246,12 +4318,12 @@
                           "points": [
                             {
                               "location": -0.2,
-                              "value": 6.3,
+                              "value": 0.6969027,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.2,
-                              "value": 4.69,
+                              "value": 0.6050052,
                               "derivative": 0.0
                             }
                           ]
@@ -4260,7 +4332,7 @@
                       },
                       {
                         "location": -0.15,
-                        "value": 1.37,
+                        "value": 0.2688383,
                         "derivative": 0.0
                       }
                     ]
@@ -4269,7 +4341,7 @@
                 },
                 {
                   "location": 0.58,
-                  "value": 4.69,
+                  "value": 0.6050052,
                   "derivative": 0.0
                 }
               ]
@@ -4313,12 +4385,12 @@
                           "points": [
                             {
                               "location": -0.01,
-                              "value": 0.63,
+                              "value": 1.26,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.01,
-                              "value": 0.3,
+                              "value": 0.6,
                               "derivative": 0.0
                             }
                           ]
@@ -4351,12 +4423,12 @@
                           "points": [
                             {
                               "location": -0.01,
-                              "value": 0.315,
+                              "value": 0.63,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.01,
-                              "value": 0.15,
+                              "value": 0.3,
                               "derivative": 0.0
                             }
                           ]
@@ -4389,12 +4461,12 @@
                           "points": [
                             {
                               "location": -0.01,
-                              "value": 0.315,
+                              "value": 0.63,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.01,
-                              "value": 0.15,
+                              "value": 0.3,
                               "derivative": 0.0
                             }
                           ]
@@ -4436,12 +4508,12 @@
                           "points": [
                             {
                               "location": -0.01,
-                              "value": 0.63,
+                              "value": 1.26,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.01,
-                              "value": 0.3,
+                              "value": 0.6,
                               "derivative": 0.0
                             }
                           ]
@@ -4455,12 +4527,12 @@
                           "points": [
                             {
                               "location": -0.01,
-                              "value": 0.63,
+                              "value": 1.26,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.01,
-                              "value": 0.3,
+                              "value": 0.6,
                               "derivative": 0.0
                             }
                           ]
@@ -4493,12 +4565,12 @@
                           "points": [
                             {
                               "location": -0.01,
-                              "value": 0.63,
+                              "value": 1.26,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.01,
-                              "value": 0.3,
+                              "value": 0.6,
                               "derivative": 0.0
                             }
                           ]
@@ -4531,12 +4603,12 @@
                           "points": [
                             {
                               "location": -0.01,
-                              "value": 0.63,
+                              "value": 1.26,
                               "derivative": 0.0
                             },
                             {
                               "location": 0.01,
-                              "value": 0.3,
+                              "value": 0.6,
                               "derivative": 0.0
                             }
                           ]
@@ -4570,7 +4642,7 @@
     "top_slide": {
       "target": -0.078125,
       "size": 2,
-      "offset": 8
+      "offset": 0
     },
     "bottom_slide": {
       "target": 0.1171875,

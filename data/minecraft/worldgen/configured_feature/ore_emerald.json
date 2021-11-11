@@ -1,66 +1,27 @@
 {
   "config": {
-    "feature": {
-      "config": {
-        "feature": {
-          "config": {
-            "feature": {
-              "config": {
-                "targets": [
-                  {
-                    "target": {
-                      "tag": "minecraft:stone_ore_replaceables",
-                      "predicate_type": "minecraft:tag_match"
-                    },
-                    "state": {
-                      "Name": "minecraft:emerald_ore"
-                    }
-                  },
-                  {
-                    "target": {
-                      "tag": "minecraft:deepslate_ore_replaceables",
-                      "predicate_type": "minecraft:tag_match"
-                    },
-                    "state": {
-                      "Name": "minecraft:deepslate_emerald_ore"
-                    }
-                  }
-                ],
-                "size": 3,
-                "discard_chance_on_air_exposure": 0.0
-              },
-              "type": "minecraft:ore"
-            },
-            "decorator": {
-              "config": {
-                "height": {
-                  "min_inclusive": {
-                    "absolute": -16
-                  },
-                  "max_inclusive": {
-                    "absolute": 480
-                  },
-                  "type": "minecraft:trapezoid"
-                }
-              },
-              "type": "minecraft:range"
-            }
-          },
-          "type": "minecraft:decorated"
+    "targets": [
+      {
+        "target": {
+          "tag": "minecraft:stone_ore_replaceables",
+          "predicate_type": "minecraft:tag_match"
         },
-        "decorator": {
-          "config": {},
-          "type": "minecraft:square"
+        "state": {
+          "Name": "minecraft:emerald_ore"
         }
       },
-      "type": "minecraft:decorated"
-    },
-    "decorator": {
-      "config": {
-        "count": 100
-      },
-      "type": "minecraft:count"
-    }
+      {
+        "target": {
+          "tag": "minecraft:deepslate_ore_replaceables",
+          "predicate_type": "minecraft:tag_match"
+        },
+        "state": {
+          "Name": "minecraft:deepslate_emerald_ore"
+        }
+      }
+    ],
+    "size": 3,
+    "discard_chance_on_air_exposure": 0.0
   },
-  "type": "minecraft:decorated"
+  "type": "minecraft:ore"
 }
