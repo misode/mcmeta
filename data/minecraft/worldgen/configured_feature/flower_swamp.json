@@ -1,66 +1,32 @@
 {
   "config": {
+    "tries": 64,
+    "xz_spread": 6,
+    "y_spread": 2,
     "feature": {
-      "config": {
-        "feature": {
-          "config": {
-            "tries": 64,
-            "xz_spread": 6,
-            "y_spread": 2,
-            "feature": {
-              "config": {
-                "feature": {
-                  "config": {
-                    "to_place": {
-                      "state": {
-                        "Name": "minecraft:blue_orchid"
-                      },
-                      "type": "minecraft:simple_state_provider"
-                    }
-                  },
-                  "type": "minecraft:simple_block"
-                },
-                "decorator": {
-                  "config": {
-                    "predicate": {
-                      "blocks": [
-                        "minecraft:air"
-                      ],
-                      "type": "minecraft:matching_blocks"
-                    }
-                  },
-                  "type": "minecraft:block_filter"
-                }
-              },
-              "type": "minecraft:decorated"
-            }
-          },
-          "type": "minecraft:flower"
-        },
-        "decorator": {
-          "config": {
-            "outer": {
-              "config": {},
-              "type": "minecraft:square"
+      "feature": {
+        "config": {
+          "to_place": {
+            "state": {
+              "Name": "minecraft:blue_orchid"
             },
-            "inner": {
-              "config": {
-                "heightmap": "MOTION_BLOCKING"
-              },
-              "type": "minecraft:heightmap"
-            }
+            "type": "minecraft:simple_state_provider"
+          }
+        },
+        "type": "minecraft:simple_block"
+      },
+      "placement": [
+        {
+          "predicate": {
+            "blocks": [
+              "minecraft:air"
+            ],
+            "type": "minecraft:matching_blocks"
           },
-          "type": "minecraft:decorated"
+          "type": "minecraft:block_predicate_filter"
         }
-      },
-      "type": "minecraft:decorated"
-    },
-    "decorator": {
-      "config": {
-        "chance": 32
-      },
-      "type": "minecraft:chance"
+      ]
     }
   },
-  "type": "minecraft:decorated"
+  "type": "minecraft:flower"
 }

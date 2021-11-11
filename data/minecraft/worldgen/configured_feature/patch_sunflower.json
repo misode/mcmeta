@@ -1,69 +1,35 @@
 {
   "config": {
+    "tries": 96,
+    "xz_spread": 7,
+    "y_spread": 3,
     "feature": {
-      "config": {
-        "feature": {
-          "config": {
-            "tries": 96,
-            "xz_spread": 7,
-            "y_spread": 3,
-            "feature": {
-              "config": {
-                "feature": {
-                  "config": {
-                    "to_place": {
-                      "state": {
-                        "Properties": {
-                          "half": "lower"
-                        },
-                        "Name": "minecraft:sunflower"
-                      },
-                      "type": "minecraft:simple_state_provider"
-                    }
-                  },
-                  "type": "minecraft:simple_block"
-                },
-                "decorator": {
-                  "config": {
-                    "predicate": {
-                      "blocks": [
-                        "minecraft:air"
-                      ],
-                      "type": "minecraft:matching_blocks"
-                    }
-                  },
-                  "type": "minecraft:block_filter"
-                }
+      "feature": {
+        "config": {
+          "to_place": {
+            "state": {
+              "Properties": {
+                "half": "lower"
               },
-              "type": "minecraft:decorated"
-            }
-          },
-          "type": "minecraft:random_patch"
-        },
-        "decorator": {
-          "config": {
-            "outer": {
-              "config": {},
-              "type": "minecraft:square"
+              "Name": "minecraft:sunflower"
             },
-            "inner": {
-              "config": {
-                "heightmap": "MOTION_BLOCKING"
-              },
-              "type": "minecraft:heightmap"
-            }
+            "type": "minecraft:simple_state_provider"
+          }
+        },
+        "type": "minecraft:simple_block"
+      },
+      "placement": [
+        {
+          "predicate": {
+            "blocks": [
+              "minecraft:air"
+            ],
+            "type": "minecraft:matching_blocks"
           },
-          "type": "minecraft:decorated"
+          "type": "minecraft:block_predicate_filter"
         }
-      },
-      "type": "minecraft:decorated"
-    },
-    "decorator": {
-      "config": {
-        "chance": 3
-      },
-      "type": "minecraft:chance"
+      ]
     }
   },
-  "type": "minecraft:decorated"
+  "type": "minecraft:random_patch"
 }
