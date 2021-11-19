@@ -784,7 +784,10 @@
       "extra_edge_column_chance": 0.7,
       "extra_bottom_block_chance": 0.8,
       "vertical_range": 5,
-      "vegetation_feature": "minecraft:dripleaf",
+      "vegetation_feature": {
+        "feature": "minecraft:dripleaf",
+        "placement": []
+      },
       "surface": "floor",
       "depth": 3,
       "replaceable": "minecraft:lush_ground_replaceable",
@@ -810,7 +813,10 @@
       "extra_edge_column_chance": 0.7,
       "extra_bottom_block_chance": 0.8,
       "vertical_range": 2,
-      "vegetation_feature": "minecraft:dripleaf",
+      "vegetation_feature": {
+        "feature": "minecraft:dripleaf",
+        "placement": []
+      },
       "surface": "floor",
       "depth": 3,
       "replaceable": "minecraft:lush_ground_replaceable",
@@ -2728,8 +2734,14 @@
   },
   "lush_caves_clay": {
     "config": {
-      "feature_true": "minecraft:clay_with_dripleaves",
-      "feature_false": "minecraft:clay_pool_with_dripleaves"
+      "feature_true": {
+        "feature": "minecraft:clay_with_dripleaves",
+        "placement": []
+      },
+      "feature_false": {
+        "feature": "minecraft:clay_pool_with_dripleaves",
+        "placement": []
+      }
     },
     "type": "minecraft:random_boolean_selector"
   },
@@ -2960,7 +2972,10 @@
       "extra_edge_column_chance": 0.3,
       "extra_bottom_block_chance": 0.0,
       "vertical_range": 5,
-      "vegetation_feature": "minecraft:moss_vegetation",
+      "vegetation_feature": {
+        "feature": "minecraft:moss_vegetation",
+        "placement": []
+      },
       "surface": "floor",
       "depth": 1,
       "replaceable": "minecraft:moss_replaceable",
@@ -2986,7 +3001,10 @@
       "extra_edge_column_chance": 0.75,
       "extra_bottom_block_chance": 0.0,
       "vertical_range": 5,
-      "vegetation_feature": "minecraft:moss_vegetation",
+      "vegetation_feature": {
+        "feature": "minecraft:moss_vegetation",
+        "placement": []
+      },
       "surface": "floor",
       "depth": 1,
       "replaceable": "minecraft:moss_replaceable",
@@ -3012,7 +3030,10 @@
       "extra_edge_column_chance": 0.3,
       "extra_bottom_block_chance": 0.0,
       "vertical_range": 5,
-      "vegetation_feature": "minecraft:cave_vine_in_moss",
+      "vegetation_feature": {
+        "feature": "minecraft:cave_vine_in_moss",
+        "placement": []
+      },
       "surface": "ceiling",
       "depth": {
         "type": "minecraft:uniform",
@@ -3076,8 +3097,14 @@
   },
   "mushroom_island_vegetation": {
     "config": {
-      "feature_true": "minecraft:huge_red_mushroom",
-      "feature_false": "minecraft:huge_brown_mushroom"
+      "feature_true": {
+        "feature": "minecraft:huge_red_mushroom",
+        "placement": []
+      },
+      "feature_false": {
+        "feature": "minecraft:huge_brown_mushroom",
+        "placement": []
+      }
     },
     "type": "minecraft:random_boolean_selector"
   },
@@ -5036,6 +5063,11 @@
             {
               "direction_of_search": "down",
               "target_condition": {
+                "offset": [
+                  0,
+                  -1,
+                  0
+                ],
                 "type": "minecraft:solid"
               },
               "allowed_search_condition": {
@@ -5064,6 +5096,11 @@
             {
               "direction_of_search": "up",
               "target_condition": {
+                "offset": [
+                  0,
+                  1,
+                  0
+                ],
                 "type": "minecraft:solid"
               },
               "allowed_search_condition": {
@@ -5095,10 +5132,46 @@
       },
       "hanging_root_placement_attempts": 20,
       "allowed_vertical_water_for_tree": 2,
+      "allowed_tree_position": {
+        "predicates": [
+          {
+            "predicates": [
+              {
+                "blocks": [
+                  "minecraft:air",
+                  "minecraft:cave_air",
+                  "minecraft:void_air",
+                  "minecraft:water"
+                ],
+                "type": "minecraft:matching_blocks"
+              },
+              {
+                "tag": "minecraft:leaves",
+                "type": "minecraft:matching_block_tag"
+              },
+              {
+                "tag": "minecraft:replaceable_plants",
+                "type": "minecraft:matching_block_tag"
+              }
+            ],
+            "type": "minecraft:any_of"
+          },
+          {
+            "offset": [
+              0,
+              -1,
+              0
+            ],
+            "tag": "minecraft:azalea_grows_on",
+            "type": "minecraft:matching_block_tag"
+          }
+        ],
+        "type": "minecraft:all_of"
+      },
       "root_column_max_height": 100,
       "hanging_root_radius": 3,
       "hanging_roots_vertical_span": 2,
-      "root_replaceable": "minecraft:lush_ground_replaceable",
+      "root_replaceable": "minecraft:azalea_root_replaceable",
       "root_state_provider": {
         "state": {
           "Name": "minecraft:rooted_dirt"
