@@ -1,5 +1,7 @@
 #version 150
 
+#moj_import <fog.glsl>
+
 in vec3 Position;
 in vec2 UV0;
 in vec4 Color;
@@ -17,7 +19,7 @@ void main() {
     gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
 
     texCoord0 = UV0;
-    vertexDistance = length((ModelViewMat * vec4(Position, 1.0)).xyz);
+    vertexDistance = cylindrical_distance(ModelViewMat, Position);
     vertexColor = Color;
     normal = ProjMat * ModelViewMat * vec4(Normal, 0.0);
 }
