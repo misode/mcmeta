@@ -10,6 +10,7 @@ uniform mat4 ModelViewMat;
 uniform mat4 ProjMat;
 uniform float LineWidth;
 uniform vec2 ScreenSize;
+uniform int FogShape;
 
 out float vertexDistance;
 out vec4 vertexColor;
@@ -42,6 +43,6 @@ void main() {
         gl_Position = vec4((ndc1 - vec3(lineOffset, 0.0)) * linePosStart.w, linePosStart.w);
     }
 
-    vertexDistance = cylindrical_distance(ModelViewMat, Position);
+    vertexDistance = fog_distance(ModelViewMat, Position, FogShape);
     vertexColor = Color;
 }
