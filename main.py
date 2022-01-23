@@ -50,14 +50,14 @@ def main(version: str, commit: bool, init: bool):
 		process_versions = [version]
 
 	if init:
-		init_output()
+		init_output(versions[process_versions[0]]['releaseTime'])
 		click.echo(f'🎉 Initialized output branch')
 
 	click.echo(f'🚧 Processing versions: {", ".join(process_versions)}')
 	for i, v in enumerate(process_versions):
 		process(v, versions, all_versions)
 		if commit:
-			create_commit(v)
+			create_commit(v, versions[v]['releaseTime'])
 		click.echo(f'✅ Done {v} ({i+1}/{len(process_versions)})')
 
 
@@ -187,7 +187,7 @@ def process(version: str, versions: dict, all_versions: list):
 	export(version_meta, 'summary/version')
 
 
-def init_output():
+def init_output(date: str):
 	for export in ['summary']:
 		shutil.rmtree(export, ignore_errors=True)
 		os.makedirs(export, exist_ok=True)
@@ -197,14 +197,18 @@ def init_output():
 		subprocess.run(['git', 'config', 'user.email', 'actions@github.com'])
 		shutil.copyfile('../.gitattributes', f'.gitattributes')
 		subprocess.run(['git', 'add', '.'])
+		os.environ['GIT_AUTHOR_DATE'] = date
+		os.environ['GIT_COMMITTER_DATE'] = date
 		subprocess.run(['git', 'commit', '-m', f'🎉 Initial commit'])
 		os.chdir('..')
 
 
-def create_commit(version: str):
+def create_commit(version: str, date: str):
 	for export in ['summary']:
 		os.chdir(export)
 		subprocess.run(['git', 'add', '.'])
+		os.environ['GIT_AUTHOR_DATE'] = date
+		os.environ['GIT_COMMITTER_DATE'] = date
 		subprocess.run(['git', 'commit', '-m', f'🚀 Update {export} for {version}'])
 		subprocess.run(['git', 'tag', f'{version}-{export}'])
 		os.chdir('..')
