@@ -32,4 +32,9 @@ jobs:
 
       - run: python main.py ${{ needs.check.outputs.id }} --commit
 
-      - run: git push origin summary
+      - uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: summary
+          directory: summary
+          tags: true

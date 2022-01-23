@@ -15,12 +15,12 @@ import re
 
 @click.command()
 @click.argument('version')
-@click.option('--all', is_flag=True, help='Whether to iterate over all version since')
-@click.option('--commit', is_flag=True, help='Whether to commit the summary changes')
-def main(version: str, all: bool, commit: bool):
+@click.option('--commit', is_flag=True, help='Whether to commit the output')
+@click.option('--init', is_flag=True, help='Whether to initialize the output branch')
+def main(version: str, commit: bool, init: bool):
 	dotenv.load_dotenv()
 
-	# === fetch manifest and version jars ===
+	# === fetch manifest ===
 	manifest = requests.get('https://launchermeta.mojang.com/mc/game/version_manifest.json').json()
 	for v in manifest['versions']:
 		v['id'] = v['id'].replace(' Pre-Release ', '-pre')
@@ -34,17 +34,35 @@ def main(version: str, all: bool, commit: bool):
 
 	versions = { v['id']: dict(**v, index=all_versions.index(v['id'])) for v in manifest['versions'] }
 
-	for v in reversed(all_versions[:all_versions.index(version)+1]) if all else [version]:
+	if '..' in version:
+		start, end = version.split('..')
+		start_i = all_versions.index(start)
+		end_i = all_versions.index(end)
+		if end_i > start_i:
+			click.echo('❗ Invalid version range')
+			return
+		process_versions = [
+			all_versions[i]
+			for i in range(start_i, end_i - 1, -1)
+			if all_versions[i] != '20w14infinite'
+		]
+	else:
+		process_versions = [version]
+
+	if init:
+		init_output()
+		click.echo(f'🎉 Initialized output branch')
+
+	click.echo(f'🚧 Processing versions: {", ".join(process_versions)}')
+	for i, v in enumerate(process_versions):
 		process(v, versions, all_versions)
 		if commit:
 			create_commit(v)
-		click.echo(f'{v} ✅')
+		click.echo(f'✅ Done {v} ({i+1}/{len(process_versions)})')
 
 
 def process(version: str, versions: dict, all_versions: list):
-	if version not in versions:
-		click.echo(f'Unknown version "{version}"')
-		return
+	# === fetch version jars ===
 	launchermeta_url = versions[version]['url']
 	launchermeta = requests.get(launchermeta_url).json()
 
@@ -65,7 +83,7 @@ def process(version: str, versions: dict, all_versions: list):
 
 	with open('version.json', 'r') as f:
 		version_meta = json.load(f)
-		version_meta['id'] = version_meta['id'].replace(' Pre-Release ', '-pre')
+		version_meta['id'] = version
 
 	# === run data generators ===
 	shutil.rmtree('generated', ignore_errors=True)
@@ -140,7 +158,11 @@ def process(version: str, versions: dict, all_versions: list):
 			properties = data.get('properties')
 			if properties:
 				default = next(s.get('properties') for s in data['states'] if s.get('default'))
-				blocks[key] = (properties, default)
+				blocks[key.removeprefix('minecraft:')] = (properties, default)
+
+	# === read commands report ===
+	with open('generated/reports/commands.json', 'r') as f:
+		commands = json.load(f)
 
 	# === export summary ===
 	def export(data, path):
@@ -159,19 +181,33 @@ def process(version: str, versions: dict, all_versions: list):
 		with open(f'{path}/data.msgpack.gz', 'wb') as f:
 			f.write(gzip.compress(msgpack.packb(data)))
 
-	export(dict(sorted(registries.items())), 'registries')
-	export(dict(sorted(blocks.items())), 'blocks')
-	export(version_meta, 'version')
+	export(dict(sorted(registries.items())), 'summary/registries')
+	export(dict(sorted(blocks.items())), 'summary/blocks')
+	export(commands, 'summary/commands')
+	export(version_meta, 'summary/version')
+
+
+def init_output():
+	for export in ['summary']:
+		shutil.rmtree(export, ignore_errors=True)
+		os.makedirs(export, exist_ok=True)
+		os.chdir(export)
+		subprocess.run(['git', 'init'])
+		subprocess.run(['git', 'config', 'user.name', 'actions-user'])
+		subprocess.run(['git', 'config', 'user.email', 'actions@github.com'])
+		shutil.copyfile('../.gitattributes', f'.gitattributes')
+		subprocess.run(['git', 'add', '.'])
+		subprocess.run(['git', 'commit', '-m', f'🎉 Initial commit'])
+		os.chdir('..')
 
 
 def create_commit(version: str):
-	subprocess.run(['git', 'config', 'user.name', 'actions-user'])
-	subprocess.run(['git', 'config', 'user.email', 'actions@github.com'])
-	subprocess.run(['git', 'checkout', '--orphan', 'summary'])
-	subprocess.run(['git', 'reset'])
-	subprocess.run(['git', 'add', '-f', 'registries', 'blocks', 'version'])
-	subprocess.run(['git', 'commit', '-m', version])
-	subprocess.run(['git', 'tag', version])
+	for export in ['summary']:
+		os.chdir(export)
+		subprocess.run(['git', 'add', '.'])
+		subprocess.run(['git', 'commit', '-m', f'🚀 Update {export} for {version}'])
+		subprocess.run(['git', 'tag', f'{version}-{export}'])
+		os.chdir('..')
 
 
 if __name__ == '__main__':
