@@ -1,0 +1,35 @@
+name: 'Tick'
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Minecraft updates
+        uses: ByMartrixX/minecraft-update-check-action@v0
+        with:
+          cache-base-key: 'mc-manifest-'
+
+  update:
+    needs: check
+    if: ${{ needs.check.outputs.id != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      
+      - run: pip install -r requirements.txt
+
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - run: python main.py ${{ needs.check.outputs.id }} --commit
+
+      - run: git push origin summary
