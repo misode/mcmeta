@@ -14,10 +14,11 @@ import datetime
 import re
 
 @click.command()
-@click.argument('version')
-@click.option('--commit', is_flag=True, help='Whether to commit the output')
-@click.option('--init', is_flag=True, help='Whether to initialize the output branch')
-def main(version: str, commit: bool, init: bool):
+@click.argument('version', required=True)
+@click.option('--commit', is_flag=True, help='Whether to commit the exports')
+@click.option('--init', is_flag=True, help='Whether to initialize the exports')
+@click.option('--exports', '-e', multiple=True, required=True, type=click.Choice(['summary', 'data'], case_sensitive=True))
+def main(version: str, commit: bool, init: bool, exports: tuple[str]):
 	dotenv.load_dotenv()
 
 	# === fetch manifest ===
@@ -50,18 +51,17 @@ def main(version: str, commit: bool, init: bool):
 		process_versions = [version]
 
 	if init:
-		init_output(versions[process_versions[0]]['releaseTime'])
-		click.echo(f'🎉 Initialized output branch')
+		init_output(versions[process_versions[0]]['releaseTime'], exports)
 
 	click.echo(f'🚧 Processing versions: {", ".join(process_versions)}')
 	for i, v in enumerate(process_versions):
-		process(v, versions, all_versions)
+		process(v, versions, all_versions, exports)
 		if commit:
-			create_commit(v, versions[v]['releaseTime'])
+			create_commit(v, versions[v]['releaseTime'], exports)
 		click.echo(f'✅ Done {v} ({i+1}/{len(process_versions)})')
 
 
-def process(version: str, versions: dict, all_versions: list):
+def process(version: str, versions: dict, all_versions: list, exports: tuple[str]):
 	# === fetch version jars ===
 	launchermeta_url = versions[version]['url']
 	launchermeta = requests.get(launchermeta_url).json()
@@ -72,14 +72,16 @@ def process(version: str, versions: dict, all_versions: list):
 		with open(f'{side}.jar', 'wb') as f:
 			f.write(side_content)
 
-	# === extract version, assets and structures ===
-	shutil.rmtree('assets', ignore_errors=True)
-	shutil.rmtree('data', ignore_errors=True)
+	# === extract client jar ===
+	shutil.rmtree('data/assets', ignore_errors=True)
+	shutil.rmtree('data/data', ignore_errors=True)
 	with zipfile.ZipFile('client.jar', 'r') as jar:
 		jar.extract('version.json')
 		for file in jar.namelist():
+			if file.endswith('.mcassetsroot'):
+				continue
 			if file.startswith('assets/') or file.startswith('data/'):
-				jar.extract(file)
+				jar.extract(file, 'data')
 
 	with open('version.json', 'r') as f:
 		version_meta = json.load(f)
@@ -87,23 +89,24 @@ def process(version: str, versions: dict, all_versions: list):
 
 	# === run data generators ===
 	shutil.rmtree('generated', ignore_errors=True)
+	summary_flags = ['--server', '--reports'] if 'summary' in exports else []
 	if versions[version]['index'] <= versions['1.18-pre1']['index']:
-		subprocess.run(['java', '-DbundlerMainClass=net.minecraft.data.Main', '-jar', 'server.jar', '--server', '--reports', '--report'])
-	elif versions[version]['index'] <= versions['21w39a']['index']:
-		subprocess.run(['java', '-DbundlerMainClass=net.minecraft.data.Main', '-jar', 'server.jar', '--server', '--reports'])
-	else:
-		subprocess.run(['java', '-cp', 'server.jar', 'net.minecraft.data.Main', '--server', '--reports'])
+		subprocess.run(['java', '-DbundlerMainClass=net.minecraft.data.Main', '-jar', 'server.jar', *summary_flags, '--report'])
+	elif versions[version]['index'] <= versions['21w39a']['index'] and summary_flags:
+		subprocess.run(['java', '-DbundlerMainClass=net.minecraft.data.Main', '-jar', 'server.jar', *summary_flags])
+	elif summary_flags:
+		subprocess.run(['java', '-cp', 'server.jar', 'net.minecraft.data.Main', *summary_flags])
 
 	# === get vanilla worldgen === 
 	if versions[version]['index'] <= versions['1.18-pre1']['index']:
-		shutil.copytree('generated/reports/worldgen', 'data', dirs_exist_ok=True)
+		shutil.copytree('generated/reports/worldgen', 'data/data', dirs_exist_ok=True)
 	elif versions[version]['index'] <= versions['20w28a']['index']:
 		username = os.getenv('GITHUB_USERNAME')
 		token = os.getenv('GITHUB_TOKEN')
 		auth = requests.auth.HTTPBasicAuth(username, token) if username and token else None
 		headers = { 'Accept': 'application/vnd.github.v3+json' }
 		time = datetime.datetime.fromisoformat(versions[version]['releaseTime'])
-		time += datetime.timedelta(hours=1)
+		time += datetime.timedelta(days=1)
 		res = requests.get(f'https://api.github.com/repos/slicedlime/examples/commits?until={time.isoformat()}', headers=headers, auth=auth)
 		click.echo(f'Remaining GitHub requests: {res.headers["X-RateLimit-Remaining"]}/{res.headers["X-RateLimit-Limit"]}')
 		commits = res.json()
@@ -117,52 +120,55 @@ def process(version: str, versions: dict, all_versions: list):
 				with open('vanilla_worldgen.zip', 'wb') as f:
 					f.write(content)
 				zip = zipfile.ZipFile('vanilla_worldgen.zip', 'r')
-				zip.extractall('data/minecraft')
+				zip.extractall('data/data/minecraft')
 				break
 
 	# === collect summary of registries ===
-	registries = dict()
-	with open('generated/reports/registries.json', 'r') as f:
-		for key, data in json.load(f).items():
-			if key == 'minecraft:biome':
-				key = 'worldgen/biome'
-			entries = [e.removeprefix('minecraft:') for e in data['entries'].keys()]
-			registries[key.removeprefix('minecraft:')] = sorted(entries)
+	if 'summary' in exports:
+		registries = dict()
+		with open('generated/reports/registries.json', 'r') as f:
+			for key, data in json.load(f).items():
+				if key == 'minecraft:biome':
+					key = 'worldgen/biome'
+				entries = [e.removeprefix('minecraft:') for e in data['entries'].keys()]
+				registries[key.removeprefix('minecraft:')] = sorted(entries)
 
-	def listfiles(path: str, ext: str = 'json'):
-		files = glob.glob(f'{path}/**/*.{ext}', recursive=True)
-		entries = [e.replace('\\', '/', -1).removeprefix(f'{path}/').removesuffix(f'.{ext}') for e in files]
-		return sorted(entries)
+		def listfiles(path: str, ext: str = 'json'):
+			files = glob.glob(f'{path}/**/*.{ext}', recursive=True)
+			entries = [e.replace('\\', '/', -1).removeprefix(f'{path}/').removesuffix(f'.{ext}') for e in files]
+			return sorted(entries)
 
-	for path, key in [('advancements', 'advancement'), ('loot_tables', 'loot_table'),('recipes', 'recipe'), ('tags/blocks', 'tag/block'), ('tags/entity_types', 'tag/entity_type'), ('tags/fluids', 'tag/fluid'), ('tags/game_events', 'tag/game_event'), ('tags/items', 'tag/item')]:
-		registries[key] = listfiles(f'data/minecraft/{path}')
+		for path, key in [('advancements', 'advancement'), ('loot_tables', 'loot_table'),('recipes', 'recipe'), ('tags/blocks', 'tag/block'), ('tags/entity_types', 'tag/entity_type'), ('tags/fluids', 'tag/fluid'), ('tags/game_events', 'tag/game_event'), ('tags/items', 'tag/item')]:
+			registries[key] = listfiles(f'data/data/minecraft/{path}')
 
-	for key in ['dimension', 'dimension_type', 'worldgen/biome', 'worldgen/configured_carver', 'worldgen/configured_feature', 'worldgen/configured_structure_feature', 'worldgen/configured_surface_builder', 'worldgen/noise', 'worldgen/noise_settings', 'worldgen/placed_feature', 'worldgen/processor_list', 'worldgen/template_pool']:
-		if key not in registries:
-			registries[key] = listfiles(f'data/minecraft/{key}')
+		for key in ['dimension', 'dimension_type', 'worldgen/biome', 'worldgen/configured_carver', 'worldgen/configured_feature', 'worldgen/configured_structure_feature', 'worldgen/configured_surface_builder', 'worldgen/noise', 'worldgen/noise_settings', 'worldgen/placed_feature', 'worldgen/processor_list', 'worldgen/template_pool']:
+			if key not in registries:
+				registries[key] = listfiles(f'data/data/minecraft/{key}')
 
-	registries['structure'] = listfiles('data/minecraft/structures', 'nbt')
+		registries['structure'] = listfiles('data/data/minecraft/structures', 'nbt')
 
-	for key in ['item_modifier', 'predicate', 'function']:
-		registries[key] = []
+		for key in ['item_modifier', 'predicate', 'function']:
+			registries[key] = []
 
-	for path, key in [('blockstates', 'block_definition'), ('font', 'font'), ('models', 'model')]:
-		registries[key] = listfiles(f'assets/minecraft/{path}')
+		for path, key in [('blockstates', 'block_definition'), ('font', 'font'), ('models', 'model')]:
+			registries[key] = listfiles(f'data/assets/minecraft/{path}')
 
-	registries['texture'] = listfiles('assets/minecraft/textures', 'png')
+		registries['texture'] = listfiles('data/assets/minecraft/textures', 'png')
 
 	# === simplify blocks report ===
-	blocks = dict()
-	with open('generated/reports/blocks.json', 'r') as f:
-		for key, data in json.load(f).items():
-			properties = data.get('properties')
-			if properties:
-				default = next(s.get('properties') for s in data['states'] if s.get('default'))
-				blocks[key.removeprefix('minecraft:')] = (properties, default)
+	if 'summary' in exports:
+		blocks = dict()
+		with open('generated/reports/blocks.json', 'r') as f:
+			for key, data in json.load(f).items():
+				properties = data.get('properties')
+				if properties:
+					default = next(s.get('properties') for s in data['states'] if s.get('default'))
+					blocks[key.removeprefix('minecraft:')] = (properties, default)
 
 	# === read commands report ===
-	with open('generated/reports/commands.json', 'r') as f:
-		commands = json.load(f)
+	if 'summary' in exports:
+		with open('generated/reports/commands.json', 'r') as f:
+			commands = json.load(f)
 
 	# === export summary ===
 	def export(data, path):
@@ -181,14 +187,21 @@ def process(version: str, versions: dict, all_versions: list):
 		with open(f'{path}/data.msgpack.gz', 'wb') as f:
 			f.write(gzip.compress(msgpack.packb(data)))
 
-	export(dict(sorted(registries.items())), 'summary/registries')
-	export(dict(sorted(blocks.items())), 'summary/blocks')
-	export(commands, 'summary/commands')
-	export(version_meta, 'summary/version')
+	if 'summary' in exports:
+		export(dict(sorted(registries.items())), 'summary/registries')
+		export(dict(sorted(blocks.items())), 'summary/blocks')
+		export(commands, 'summary/commands')
+		export(version_meta, 'summary/version')
+
+	# === export data ===
+	if 'data' in exports:
+		with open(f'data/version.json', 'w') as f:
+			json.dump(version_meta, f, indent=2)
+			f.write('\n')
 
 
-def init_output(date: str):
-	for export in ['summary']:
+def init_output(date: str, exports: tuple[str]):
+	for export in exports:
 		shutil.rmtree(export, ignore_errors=True)
 		os.makedirs(export, exist_ok=True)
 		os.chdir(export)
@@ -199,19 +212,21 @@ def init_output(date: str):
 		subprocess.run(['git', 'add', '.'])
 		os.environ['GIT_AUTHOR_DATE'] = date
 		os.environ['GIT_COMMITTER_DATE'] = date
-		subprocess.run(['git', 'commit', '-m', f'🎉 Initial commit'])
+		subprocess.run(['git', 'commit', '-q', '-m', f'🎉 Initial commit'])
 		os.chdir('..')
+		click.echo(f'🎉 Initialized {export} branch')
 
 
-def create_commit(version: str, date: str):
-	for export in ['summary']:
+def create_commit(version: str, date: str, exports: tuple[str]):
+	for export in exports:
 		os.chdir(export)
 		subprocess.run(['git', 'add', '.'])
 		os.environ['GIT_AUTHOR_DATE'] = date
 		os.environ['GIT_COMMITTER_DATE'] = date
-		subprocess.run(['git', 'commit', '-m', f'🚀 Update {export} for {version}'])
+		subprocess.run(['git', 'commit', '-q', '-m', f'🚀 Update {export} for {version}'])
 		subprocess.run(['git', 'tag', f'{version}-{export}'])
 		os.chdir('..')
+		click.echo(f'🚀 Created commit on {export} branch')
 
 
 if __name__ == '__main__':
