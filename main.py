@@ -13,6 +13,7 @@ import dotenv
 import datetime
 import re
 import tarfile
+import time
 
 @click.command()
 @click.argument('version', required=True)
@@ -23,46 +24,110 @@ def main(version: str, commit: bool, init: bool, exports: tuple[str]):
 	dotenv.load_dotenv()
 
 	# === fetch manifest ===
-	manifest = requests.get('https://launchermeta.mojang.com/mc/game/version_manifest.json').json()
+	manifest = requests.get('https://launchermeta.mojang.com/mc/game/version_manifest_v2.json').json()
 	for v in manifest['versions']:
 		v['id'] = v['id'].replace(' Pre-Release ', '-pre')
-	all_versions = [v['id'] for v in manifest['versions']]
+	version_ids = [v['id'] for v in manifest['versions']]
 
 	# Fix version order anomaly around 1.16.5
-	v1165 = all_versions.index('1.16.5')
-	v20w51a = all_versions.index('20w51a')
-	v1164 = all_versions.index('1.16.4')
-	all_versions = [*all_versions[:v1165], *all_versions[v20w51a:v1164], *all_versions[v1165:v20w51a], *all_versions[v1164:]]
+	v1165 = version_ids.index('1.16.5')
+	v20w51a = version_ids.index('20w51a')
+	v1164 = version_ids.index('1.16.4')
+	version_ids = [*version_ids[:v1165], *version_ids[v20w51a:v1164], *version_ids[v1165:v20w51a], *version_ids[v1164:]]
 
-	versions = { v['id']: dict(**v, index=all_versions.index(v['id'])) for v in manifest['versions'] }
+	unordered_versions = { v['id']: dict(**v, index=version_ids.index(v['id'])) for v in manifest['versions'] }
+	versions = { v: unordered_versions[v] for v in version_ids }
 
-	if '..' in version:
-		start, end = version.split('..')
-		start_i = all_versions.index(start)
-		end_i = all_versions.index(end)
-		if end_i > start_i:
-			click.echo('❗ Invalid version range')
-			return
-		process_versions = [
-			all_versions[i]
-			for i in range(start_i, end_i - 1, -1)
-			if all_versions[i] != '20w14infinite'
-		]
-	else:
-		process_versions = [version]
+	# process and commit each version in the range
+	process_versions = expand_version_range(version, versions)
+	n = len(process_versions)
+	if not process_versions:
+		click.echo('❗ No versions to process')
+		return
 
 	if init:
 		init_output(versions[process_versions[0]]['releaseTime'], exports)
 
+	try:
+		os.remove('versions.json')
+	except OSError:
+		pass
+
 	click.echo(f'🚧 Processing versions: {", ".join(process_versions)}')
+	t0 = time.time()
 	for i, v in enumerate(process_versions):
-		process(v, versions, all_versions, exports)
+		t1 = time.time()
+		process(v, versions, exports)
 		if commit:
 			create_commit(v, versions[v]['releaseTime'], exports)
-		click.echo(f'✅ Done {v} ({i+1}/{len(process_versions)})')
+		t2 = time.time()
+		if n == 1:
+			click.echo(f'✅ Done {v} ({(t2 - t1):.3f}s)')
+		else:
+			remaining = t2 - t0 + int(t2 - t1) * (n - i - 1)
+			click.echo(f'✅ Done {v} ({i+1}/{n}) {format_time(t2 - t1)} ({format_time(t2 - t0)}/{format_time(remaining)})')
 
 
-def process(version: str, versions: dict, all_versions: list, exports: tuple[str]):
+def format_time(seconds: float | int):
+	seconds = int(seconds)
+	if seconds <= 60:
+		return f'{seconds}s'
+	return f'{int(seconds/60)}m{seconds % 60}s'
+
+
+def expand_version_range(version: str, versions: dict[str]):
+	version_ids = list(versions.keys())
+	if '..' in version:
+		start, end = version.split('..')
+		start_i = version_ids.index(start)
+		end_i = version_ids.index(end)
+		if end_i > start_i:
+			return []
+		return [version_ids[i] for i in range(start_i, end_i - 1, -1) if version_ids[i] != '20w14infinite']
+	else:
+		return [version]
+
+
+def get_version_meta(version: str, versions: dict[str], jar: str = None):
+	os.makedirs('tmp', exist_ok=True)
+
+	if not jar:
+		launchermeta_url = versions[version]['url']
+		launchermeta = requests.get(launchermeta_url).json()
+
+		client_url = launchermeta['downloads']['client']['url']
+		client = requests.get(client_url).content
+		jar = 'tmp/client.jar'
+		with open(jar, 'wb') as f:
+			f.write(client)
+
+	with zipfile.ZipFile(jar, 'r') as f:
+		f.extract('version.json', 'tmp')
+
+	with open('tmp/version.json', 'r') as f:
+		data = json.load(f)
+
+	pack = data['pack_version']
+
+	return {
+		'id': version,
+		'name': data['name'],
+		'release_target': data['release_target'],
+		'type': versions[version]['type'],
+		'stable': data['stable'],
+		'data_version': data['world_version'],
+		'protocol_version': data['protocol_version'],
+		'data_pack_version': pack if type(pack) == int else pack['data'],
+		'resource_pack_version': pack if type(pack) == int else pack['resource'],
+		'build_time': data['build_time'],
+		'release_time': versions[version]['releaseTime'],
+		'sha1': versions[version]['sha1']
+	}
+
+
+def process(version: str, versions: dict[str], exports: tuple[str]):
+	version_ids = list(versions.keys())
+
 	# === fetch version jars ===
 	launchermeta_url = versions[version]['url']
 	launchermeta = requests.get(launchermeta_url).json()
@@ -77,24 +142,37 @@ def process(version: str, versions: dict, all_versions: list, exports: tuple[str
 	shutil.rmtree('data/assets', ignore_errors=True)
 	shutil.rmtree('data/data', ignore_errors=True)
 	with zipfile.ZipFile('client.jar', 'r') as jar:
-		jar.extract('version.json')
 		for file in jar.namelist():
 			if file.endswith('.mcassetsroot'):
 				continue
 			if file.startswith('assets/') or file.startswith('data/'):
 				jar.extract(file, 'data')
 
-	with open('version.json', 'r') as f:
-		version_meta = json.load(f)
-		version_meta['id'] = version
+	# === update version metas ===
+	try:
+		with open('versions.json', 'r') as f:
+			version_metas = json.load(f)
+	except:
+		version_metas = []
+
+	version_metas.append(get_version_meta(version, versions, 'client.jar'))
+	has_version_ids = [v['id'] for v in version_metas]
+	for v in expand_version_range(f'1.14..{version}', versions):
+		if v not in has_version_ids:
+			version_metas.append(get_version_meta(v, versions))
+	version_metas.sort(key=lambda v: versions[v['id']]['index'])
+	version_meta = version_metas[0]
+
+	with open('versions.json', 'w') as f:
+		json.dump(version_metas, f)
 
 	# === run data generators ===
 	shutil.rmtree('generated', ignore_errors=True)
 	summary_flags = ['--server', '--reports'] if 'summary' in exports else []
 	if versions[version]['index'] <= versions['21w39a']['index'] and summary_flags:
-		subprocess.run(['java', '-DbundlerMainClass=net.minecraft.data.Main', '-jar', 'server.jar', *summary_flags])
+		subprocess.run(['java', '-DbundlerMainClass=net.minecraft.data.Main', '-jar', 'server.jar', *summary_flags], capture_output=True)
 	elif summary_flags:
-		subprocess.run(['java', '-cp', 'server.jar', 'net.minecraft.data.Main', *summary_flags])
+		subprocess.run(['java', '-cp', 'server.jar', 'net.minecraft.data.Main', *summary_flags], capture_output=True)
 
 	# === get vanilla worldgen === 
 	if versions[version]['index'] <= versions['1.18-pre1']['index']:
@@ -109,12 +187,11 @@ def process(version: str, versions: dict, all_versions: list, exports: tuple[str
 		res = requests.get(f'https://api.github.com/repos/slicedlime/examples/commits?until={time.isoformat()}', headers=headers, auth=auth)
 		click.echo(f'Remaining GitHub requests: {res.headers["X-RateLimit-Remaining"]}/{res.headers["X-RateLimit-Limit"]}')
 		commits = res.json()
-		for id in all_versions[versions[version]['index']:]:
+		for id in version_ids[versions[version]['index']:]:
 			sha = next((c['sha'] for c in commits if re.match(f'Update to {id}\\.?$', c['commit']['message'])), None)
 			if sha is None and id == '20w28a':
 				sha = 'd304a1dcf330005e617a78cef4e492ab3e2c09b0'
 			if sha:
-				click.echo(f'Found matching vanilla worldgen commit {sha} ({id})')
 				content = requests.get(f'https://raw.githubusercontent.com/slicedlime/examples/{sha}/vanilla_worldgen.zip').content
 				with open('vanilla_worldgen.zip', 'wb') as f:
 					f.write(content)
@@ -170,7 +247,7 @@ def process(version: str, versions: dict, all_versions: list, exports: tuple[str
 			commands = json.load(f)
 
 	# === export summary ===
-	def export(data, path):
+	def create_summary(data, path):
 		shutil.rmtree(path, ignore_errors=True)
 		os.makedirs(path, exist_ok=True)
 		with open(f'{path}/data.json', 'w') as f:
@@ -187,19 +264,13 @@ def process(version: str, versions: dict, all_versions: list, exports: tuple[str
 			f.write(gzip.compress(msgpack.packb(data)))
 
 	if 'summary' in exports:
-		export(dict(sorted(registries.items())), 'summary/registries')
-		export(dict(sorted(blocks.items())), 'summary/blocks')
-		export(commands, 'summary/commands')
-		export(version_meta, 'summary/version')
-
-	# === export data ===
-	if 'data' in exports:
-		with open(f'data/version.json', 'w') as f:
-			json.dump(version_meta, f, indent=2)
-			f.write('\n')
+		create_summary(dict(sorted(registries.items())), 'summary/registries')
+		create_summary(dict(sorted(blocks.items())), 'summary/blocks')
+		create_summary(commands, 'summary/commands')
+		create_summary(version_metas, 'summary/versions')
 
 	# === export data archives ===
-	def archive(name, *patterns):
+	def create_archive(name, *patterns):
 		with tarfile.open(f'archive/{name}.tar.gz', 'w:gz') as tar:
 			for pattern in patterns:
 				files = glob.glob(pattern, recursive=True)
@@ -208,17 +279,22 @@ def process(version: str, versions: dict, all_versions: list, exports: tuple[str
 
 	if 'archive' in exports:
 		os.makedirs('archive', exist_ok=True)
-		archive('data', 'data/data/**/*')
-		archive('data_json', 'data/data/**/*.json')
-		archive('assets', 'data/assets/**/*')
-		archive('assets_json', 'data/assets/**/*.json')
-		archive('json', 'data/**/*.json')
-		archive('structures', 'data/data/*/structures/**/*')
-		archive('textures', 'data/assets/*/textures/**/*')
+		create_archive('data', 'data/data/**/*')
+		create_archive('data_json', 'data/data/**/*.json')
+		create_archive('assets', 'data/assets/**/*')
+		create_archive('assets_json', 'data/assets/**/*.json')
+		create_archive('json', 'data/**/*.json')
+		create_archive('structures', 'data/data/*/structures/**/*')
+		create_archive('textures', 'data/assets/*/textures/**/*')
 
 		if versions[version]['index'] <= versions['20w28a']['index']:
-			archive('worldgen', *[f'data/data/*/{p}/**/*' for p in ['dimension', 'dimension_type', 'worldgen']])
+			create_archive('worldgen', *[f'data/data/*/{p}/**/*' for p in ['dimension', 'dimension_type', 'worldgen']])
 
+	# === export version.json to all ===
+	for export in exports:
+		with open(f'{export}/version.json', 'w') as f:
+			json.dump(version_meta, f, indent=2)
+			f.write('\n')
 
 def init_output(date: str, exports: tuple[str]):
 	for export in exports:
