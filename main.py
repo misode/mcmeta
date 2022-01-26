@@ -19,7 +19,7 @@ import time
 @click.argument('version', required=True)
 @click.option('--commit', is_flag=True, help='Whether to commit the exports')
 @click.option('--init', is_flag=True, help='Whether to initialize the exports')
-@click.option('--exports', '-e', multiple=True, required=True, type=click.Choice(['summary', 'data', 'archive'], case_sensitive=True))
+@click.option('--exports', '-e', multiple=True, required=True, type=click.Choice(['summary', 'data', 'assets', 'data-json', 'assets-json'], case_sensitive=True))
 def main(version: str, commit: bool, init: bool, exports: tuple[str]):
 	dotenv.load_dotenv()
 
@@ -46,7 +46,7 @@ def main(version: str, commit: bool, init: bool, exports: tuple[str]):
 		return
 
 	if init:
-		init_output(versions[process_versions[0]]['releaseTime'], exports)
+		init_exports(versions[process_versions[0]]['releaseTime'], exports)
 
 	try:
 		os.remove('versions.json')
@@ -145,8 +145,11 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		for file in jar.namelist():
 			if file.endswith('.mcassetsroot'):
 				continue
-			if file.startswith('assets/') or file.startswith('data/'):
-				jar.extract(file, 'data')
+			for part in ['assets', 'data']:
+				if file.startswith(f'{part}/'):
+					jar.extract(file, part)
+					if f'{part}-json' in exports and file.endswith('.json'):
+						jar.extract(file, f'{part}-json')
 
 	# === update version metas ===
 	try:
@@ -269,34 +272,13 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		create_summary(commands, 'summary/commands')
 		create_summary(version_metas, 'summary/versions')
 
-	# === export data archives ===
-	def create_archive(name, *patterns):
-		with tarfile.open(f'archive/{name}.tar.gz', 'w:gz') as tar:
-			for pattern in patterns:
-				files = glob.glob(pattern, recursive=True)
-				for f in files:
-					tar.add(f)
-
-	if 'archive' in exports:
-		os.makedirs('archive', exist_ok=True)
-		create_archive('data', 'data/data/**/*')
-		create_archive('data_json', 'data/data/**/*.json')
-		create_archive('assets', 'data/assets/**/*')
-		create_archive('assets_json', 'data/assets/**/*.json')
-		create_archive('json', 'data/**/*.json')
-		create_archive('structures', 'data/data/*/structures/**/*')
-		create_archive('textures', 'data/assets/*/textures/**/*')
-
-		if versions[version]['index'] <= versions['20w28a']['index']:
-			create_archive('worldgen', *[f'data/data/*/{p}/**/*' for p in ['dimension', 'dimension_type', 'worldgen']])
-
 	# === export version.json to all ===
 	for export in exports:
 		with open(f'{export}/version.json', 'w') as f:
 			json.dump(version_meta, f, indent=2)
 			f.write('\n')
 
-def init_output(date: str, exports: tuple[str]):
+def init_exports(date: str, exports: tuple[str]):
 	for export in exports:
 		shutil.rmtree(export, ignore_errors=True)
 		os.makedirs(export, exist_ok=True)
