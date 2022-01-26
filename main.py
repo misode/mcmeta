@@ -12,12 +12,13 @@ import shutil
 import dotenv
 import datetime
 import re
+import tarfile
 
 @click.command()
 @click.argument('version', required=True)
 @click.option('--commit', is_flag=True, help='Whether to commit the exports')
 @click.option('--init', is_flag=True, help='Whether to initialize the exports')
-@click.option('--exports', '-e', multiple=True, required=True, type=click.Choice(['summary', 'data'], case_sensitive=True))
+@click.option('--exports', '-e', multiple=True, required=True, type=click.Choice(['summary', 'data', 'archive'], case_sensitive=True))
 def main(version: str, commit: bool, init: bool, exports: tuple[str]):
 	dotenv.load_dotenv()
 
@@ -90,9 +91,7 @@ def process(version: str, versions: dict, all_versions: list, exports: tuple[str
 	# === run data generators ===
 	shutil.rmtree('generated', ignore_errors=True)
 	summary_flags = ['--server', '--reports'] if 'summary' in exports else []
-	if versions[version]['index'] <= versions['1.18-pre1']['index']:
-		subprocess.run(['java', '-DbundlerMainClass=net.minecraft.data.Main', '-jar', 'server.jar', *summary_flags, '--report'])
-	elif versions[version]['index'] <= versions['21w39a']['index'] and summary_flags:
+	if versions[version]['index'] <= versions['21w39a']['index'] and summary_flags:
 		subprocess.run(['java', '-DbundlerMainClass=net.minecraft.data.Main', '-jar', 'server.jar', *summary_flags])
 	elif summary_flags:
 		subprocess.run(['java', '-cp', 'server.jar', 'net.minecraft.data.Main', *summary_flags])
@@ -198,6 +197,27 @@ def process(version: str, versions: dict, all_versions: list, exports: tuple[str
 		with open(f'data/version.json', 'w') as f:
 			json.dump(version_meta, f, indent=2)
 			f.write('\n')
+
+	# === export data archives ===
+	def archive(name, *patterns):
+		with tarfile.open(f'archive/{name}.tar.gz', 'w:gz') as tar:
+			for pattern in patterns:
+				files = glob.glob(pattern, recursive=True)
+				for f in files:
+					tar.add(f)
+
+	if 'archive' in exports:
+		os.makedirs('archive', exist_ok=True)
+		archive('data', 'data/data/**/*')
+		archive('data_json', 'data/data/**/*.json')
+		archive('assets', 'data/assets/**/*')
+		archive('assets_json', 'data/assets/**/*.json')
+		archive('json', 'data/**/*.json')
+		archive('structures', 'data/data/*/structures/**/*')
+		archive('textures', 'data/assets/*/textures/**/*')
+
+		if versions[version]['index'] <= versions['20w28a']['index']:
+			archive('worldgen', *[f'data/data/*/{p}/**/*' for p in ['dimension', 'dimension_type', 'worldgen']])
 
 
 def init_output(date: str, exports: tuple[str]):
