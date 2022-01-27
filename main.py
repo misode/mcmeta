@@ -171,11 +171,10 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 
 	# === run data generators ===
 	shutil.rmtree('generated', ignore_errors=True)
-	summary_flags = ['--server', '--reports'] if 'summary' in exports else []
-	if versions[version]['index'] <= versions['21w39a']['index'] and summary_flags:
-		subprocess.run(['java', '-DbundlerMainClass=net.minecraft.data.Main', '-jar', 'server.jar', *summary_flags], capture_output=True)
-	elif summary_flags:
-		subprocess.run(['java', '-cp', 'server.jar', 'net.minecraft.data.Main', *summary_flags], capture_output=True)
+	if versions[version]['index'] <= versions['21w39a']['index']:
+		subprocess.run(['java', '-DbundlerMainClass=net.minecraft.data.Main', '-jar', 'server.jar', '--server', '--reports'], capture_output=True)
+	else:
+		subprocess.run(['java', '-cp', 'server.jar', 'net.minecraft.data.Main', '--server', '--reports'], capture_output=True)
 
 	# === get vanilla worldgen === 
 	if versions[version]['index'] <= versions['1.18-pre1']['index']:
@@ -230,9 +229,9 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			registries[key] = []
 
 		for path, key in [('blockstates', 'block_definition'), ('font', 'font'), ('models', 'model')]:
-			registries[key] = listfiles(f'data/assets/minecraft/{path}')
+			registries[key] = listfiles(f'assets/assets/minecraft/{path}')
 
-		registries['texture'] = listfiles('data/assets/minecraft/textures', 'png')
+		registries['texture'] = listfiles('assets/assets/minecraft/textures', 'png')
 
 	# === simplify blocks report ===
 	if 'summary' in exports:
