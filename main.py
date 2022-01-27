@@ -162,6 +162,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	has_version_ids = [v['id'] for v in version_metas]
 	for v in expand_version_range(f'1.14..{version}', versions):
 		if v not in has_version_ids:
+			continue
 			version_metas.append(get_version_meta(v, versions))
 	version_metas.sort(key=lambda v: versions[v['id']]['index'])
 	version_meta = version_metas[0]
@@ -202,6 +203,45 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 				zip.extractall('data/data/minecraft')
 				zip.extractall('data-json/data/minecraft')
 				break
+
+	# === stabilize ordering in some data files ===
+	reorders = [
+		('advancements/adventure/adventuring_time',
+			[('criteria', None), ('requirements', lambda e: e[0])]),
+		('advancements/nether/all_effects',
+			[('criteria.all_effects.conditions.effects', None)]),
+		('advancements/nether/all_potions',
+			[('criteria.all_effects.conditions.effects', None)]),
+		('loot_tables/chests/shipwreck_supply',
+			[('pools.0.entries.[name=minecraft:suspicious_stew].functions.0.effects', lambda e: e['type'])]),
+		('loot_tables/gameplay/hero_of_the_village/fletcher_gift',
+			[('pools.0.entries', lambda e: (e.get('functions')[-1].get('tag') or e.get('functions')[-1].get('id')) if e.get('functions') else e.get('name'))]),
+		('worldgen/noise_settings/*',
+			[('structures.structures', None)]),
+	]
+
+	for filepath, sorts in reorders:
+		for file in glob.glob(f'data/data/minecraft/{filepath}.json'):
+			with open(file, 'r') as f:
+				root = json.load(f)
+
+			for path, order in sorts:
+				*parts, last = [int(p) if re.match('\d+', p) else p for p in path.split('.')]
+				node = root
+				for p in parts:
+					if type(p) == str and p.startswith('['):
+						key, value = p[1:-1].split('=')
+						node = next(e for e in node if e[key] == value)
+					else:
+						node = node[p]
+				if type(node[last]) == dict:
+					node[last] = dict(sorted(node[last].items(), key=order))
+				else:
+					node[last] = sorted(node[last], key=order)
+
+			for export in set(['data', 'data-json']).intersection(exports):
+				with open(f'{export}{file.removeprefix("data")}', 'w') as f:
+					json.dump(root, f, indent=2)
 
 	# === collect summary of registries ===
 	if 'summary' in exports:
