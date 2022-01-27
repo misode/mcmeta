@@ -5,6 +5,7 @@ import zipfile
 import subprocess
 import json
 import os
+import os.path
 import glob
 import msgpack
 import gzip
@@ -12,7 +13,6 @@ import shutil
 import dotenv
 import datetime
 import re
-import tarfile
 import time
 
 @click.command()
@@ -243,6 +243,54 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 					default = next(s.get('properties') for s in data['states'] if s.get('default'))
 					blocks[key.removeprefix('minecraft:')] = (properties, default)
 
+	# === create sounds report ===
+	def get_resource(hash: str):
+		url = f'https://resources.download.minecraft.net/{hash[0:2]}/{hash}'
+		return requests.get(url)
+
+	if 'summary' in exports:
+		assets_url = launchermeta['assetIndex']['url']
+		assets = requests.get(assets_url).json()
+		assets_hash = assets['objects']['minecraft/sounds.json']['hash']
+		sounds: dict = get_resource(assets_hash).json()
+		sounds = dict(sorted(sounds.items()))
+		os.makedirs('sounds', exist_ok=True)
+
+		cached = False
+		try:
+			with open(f'sounds/hash.txt', 'r') as f:
+				cached = assets_hash == f.read()
+		except:
+			pass
+		if not cached:
+			with open(f'sounds/sounds.json', 'w') as f:
+				json.dump(sounds, f)
+
+			if 'assets' in exports:
+				sound_paths = set(
+					sound if type(sound) == str else sound['name']
+					for event in sounds.values()
+					for sound in event['sounds']
+					if type(sound) == str or sound.get('type') != 'event'
+				)
+				print(f'Collecting {len(sound_paths)} sounds')
+				shutil.rmtree('sounds/minecraft', ignore_errors=True)
+				for path in sound_paths:
+					full_path = f'minecraft/sounds/{path}.ogg'
+					sound = get_resource(assets['objects'][full_path]['hash'])
+					os.makedirs(os.path.normpath(os.path.join(f'sounds/{full_path}', '..')), exist_ok=True)
+					with open(f'sounds/{full_path}', 'wb') as f:
+						f.write(sound.content)
+
+			with open(f'sounds/hash.txt', 'w') as f:
+				f.write(assets_hash)
+
+		for export in set(['assets', 'assets-json']).intersection(exports):
+			shutil.copyfile('sounds/sounds.json', f'{export}/assets/minecraft/sounds.json')
+		if 'assets' in exports:
+			shutil.rmtree('assets/assets/minecraft/sounds', ignore_errors=True)
+			shutil.copytree('sounds/minecraft/sounds', 'assets/assets/minecraft/sounds')
+
 	# === read commands report ===
 	if 'summary' in exports:
 		with open('generated/reports/commands.json', 'r') as f:
@@ -256,7 +304,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			json.dump(data, f, indent=2)
 			f.write('\n')
 		with open(f'{path}/data.min.json', 'w') as f:
-			json.dump(data, f)
+			json.dump(data, f, separators=(',', ':'))
 			f.write('\n')
 		with open(f'{path}/data.msgpack', 'wb') as f:
 			f.write(msgpack.packb(data))
@@ -268,6 +316,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	if 'summary' in exports:
 		create_summary(dict(sorted(registries.items())), 'summary/registries')
 		create_summary(dict(sorted(blocks.items())), 'summary/blocks')
+		create_summary(sounds, 'summary/sounds')
 		create_summary(commands, 'summary/commands')
 		create_summary(version_metas, 'summary/versions')
 
