@@ -179,6 +179,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	# === get vanilla worldgen === 
 	if versions[version]['index'] <= versions['1.18-pre1']['index']:
 		shutil.copytree('generated/reports/worldgen', 'data/data', dirs_exist_ok=True)
+		shutil.copytree('generated/reports/worldgen', 'data-json/data', dirs_exist_ok=True)
 	elif versions[version]['index'] <= versions['20w28a']['index']:
 		username = os.getenv('GITHUB_USERNAME')
 		token = os.getenv('GITHUB_TOKEN')
@@ -199,6 +200,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 					f.write(content)
 				zip = zipfile.ZipFile('vanilla_worldgen.zip', 'r')
 				zip.extractall('data/data/minecraft')
+				zip.extractall('data-json/data/minecraft')
 				break
 
 	# === collect summary of registries ===
