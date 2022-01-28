@@ -15,13 +15,19 @@ import datetime
 import re
 import time
 
+EXPORTS = ('assets', 'assets-json', 'data', 'data-json', 'summary')
+
 @click.command()
 @click.argument('version', required=True)
+@click.option('--reset', is_flag=True, help='Whether to reset the exports')
+@click.option('--fetch', is_flag=True, help='Whether to fetch from the remote at the start')
 @click.option('--commit', is_flag=True, help='Whether to commit the exports')
-@click.option('--init', is_flag=True, help='Whether to initialize the exports')
-@click.option('--exports', '-e', multiple=True, required=True, type=click.Choice(['summary', 'data', 'assets', 'data-json', 'assets-json'], case_sensitive=True))
-def main(version: str, commit: bool, init: bool, exports: tuple[str]):
+@click.option('--export', '-e', multiple=True, required=True, type=click.Choice([*EXPORTS, 'all'], case_sensitive=True))
+@click.option('--push', is_flag=True, help='Whether to push to the remote after each commit')
+def main(version: str, reset: bool, fetch: bool, commit: bool, export: tuple[str], push: bool):
 	dotenv.load_dotenv()
+	if 'all' in export:
+		export = EXPORTS
 
 	# === fetch manifest ===
 	manifest = requests.get('https://launchermeta.mojang.com/mc/game/version_manifest_v2.json').json()
@@ -45,8 +51,7 @@ def main(version: str, commit: bool, init: bool, exports: tuple[str]):
 		click.echo('❗ No versions to process')
 		return
 
-	if init:
-		init_exports(versions[process_versions[0]]['releaseTime'], exports)
+	init_exports(versions[process_versions[0]]['releaseTime'], reset, fetch, export)
 
 	try:
 		os.remove('versions.json')
@@ -57,9 +62,9 @@ def main(version: str, commit: bool, init: bool, exports: tuple[str]):
 	t0 = time.time()
 	for i, v in enumerate(process_versions):
 		t1 = time.time()
-		process(v, versions, exports)
+		process(v, versions, export)
 		if commit:
-			create_commit(v, versions[v]['releaseTime'], exports)
+			create_commit(v, versions[v]['releaseTime'], push, export)
 		t2 = time.time()
 		if n == 1:
 			click.echo(f'✅ Done {v} ({(t2 - t1):.3f}s)')
@@ -162,7 +167,6 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	has_version_ids = [v['id'] for v in version_metas]
 	for v in expand_version_range(f'1.14..{version}', versions):
 		if v not in has_version_ids:
-			continue
 			version_metas.append(get_version_meta(v, versions))
 	version_metas.sort(key=lambda v: versions[v['id']]['index'])
 	version_meta = version_metas[0]
@@ -182,8 +186,8 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		shutil.copytree('generated/reports/worldgen', 'data/data', dirs_exist_ok=True)
 		shutil.copytree('generated/reports/worldgen', 'data-json/data', dirs_exist_ok=True)
 	elif versions[version]['index'] <= versions['20w28a']['index']:
-		username = os.getenv('GITHUB_USERNAME')
-		token = os.getenv('GITHUB_TOKEN')
+		username = os.getenv('github-username')
+		token = os.getenv('github-token')
 		auth = requests.auth.HTTPBasicAuth(username, token) if username and token else None
 		headers = { 'Accept': 'application/vnd.github.v3+json' }
 		time = datetime.datetime.fromisoformat(versions[version]['releaseTime'])
@@ -248,8 +252,6 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		registries = dict()
 		with open('generated/reports/registries.json', 'r') as f:
 			for key, data in json.load(f).items():
-				if key == 'minecraft:biome':
-					key = 'worldgen/biome'
 				entries = [e.removeprefix('minecraft:') for e in data['entries'].keys()]
 				registries[key.removeprefix('minecraft:')] = sorted(entries)
 
@@ -368,24 +370,34 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			json.dump(version_meta, f, indent=2)
 			f.write('\n')
 
-def init_exports(date: str, exports: tuple[str]):
+
+def init_exports(date: str, reset: bool, fetch: bool, exports: tuple[str]):
 	for export in exports:
-		shutil.rmtree(export, ignore_errors=True)
+		if reset:
+			shutil.rmtree(export, ignore_errors=True)
 		os.makedirs(export, exist_ok=True)
 		os.chdir(export)
-		subprocess.run(['git', 'init'])
+		subprocess.run(['git', 'init', '-q', '-b', export])
 		subprocess.run(['git', 'config', 'user.name', 'actions-user'])
 		subprocess.run(['git', 'config', 'user.email', 'actions@github.com'])
-		shutil.copyfile('../.gitattributes', f'.gitattributes')
-		subprocess.run(['git', 'add', '.'])
-		os.environ['GIT_AUTHOR_DATE'] = date
-		os.environ['GIT_COMMITTER_DATE'] = date
-		subprocess.run(['git', 'commit', '-q', '-m', f'🎉 Initial commit'])
+		if os.getenv('github-repository'):
+			remotes = subprocess.run(['git', 'remote'], capture_output=True).stdout.decode('utf-8').split('\n')
+			remote = f'https://x-access-token:{os.getenv("github-token")}@github.com/{os.getenv("github-repository")}'
+			subprocess.run(['git', 'remote', 'set-url' if 'origin' in remotes else 'add', 'origin', remote])
+		if reset:
+			shutil.copyfile('../.gitattributes', f'.gitattributes')
+			subprocess.run(['git', 'add', '.'])
+			os.environ['GIT_AUTHOR_DATE'] = date
+			os.environ['GIT_COMMITTER_DATE'] = date
+			subprocess.run(['git', 'commit', '-q', '-m', f'🎉 Initial commit'])
+		elif fetch:
+			subprocess.run(['git', 'fetch', '-q', 'origin'])
+			subprocess.run(['git', 'reset', '-q', '--hard', f'origin/{export}'])
 		os.chdir('..')
 		click.echo(f'🎉 Initialized {export} branch')
 
 
-def create_commit(version: str, date: str, exports: tuple[str]):
+def create_commit(version: str, date: str, push: bool, exports: tuple[str]):
 	for export in exports:
 		os.chdir(export)
 		subprocess.run(['git', 'add', '.'])
@@ -393,6 +405,8 @@ def create_commit(version: str, date: str, exports: tuple[str]):
 		os.environ['GIT_COMMITTER_DATE'] = date
 		subprocess.run(['git', 'commit', '-q', '-m', f'🚀 Update {export} for {version}'])
 		subprocess.run(['git', 'tag', f'{version}-{export}'])
+		if push:
+			subprocess.run(['git', 'push', '-q', '--tags', 'origin', export])
 		os.chdir('..')
 		click.echo(f'🚀 Created commit on {export} branch')
 

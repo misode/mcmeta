@@ -8,8 +8,11 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
+    outputs:
+      id: ${{ steps.check.outputs.id }}
     steps:
-      - name: Check Minecraft updates
+      - id: check
+        name: Check Minecraft updates
         uses: ByMartrixX/minecraft-update-check-action@v0
         with:
           cache-base-key: 'mc-manifest-'
@@ -19,6 +22,8 @@ jobs:
     if: ${{ needs.check.outputs.id != '' }}
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+
       - uses: actions/setup-python@v2
         with:
           python-version: '3.x'
@@ -30,25 +35,8 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - run: python main.py ${{ needs.check.outputs.id }} --commit
-
-      - uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: summary
-          directory: summary
-          tags: true
-
-      - uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: data
-          directory: data
-          tags: true
-
-      - uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: archive
-          directory: archive
-          tags: true
+      - run: python main.py ${{ needs.check.outputs.id }} --fetch --export all --commit --push
+        env:
+          github-username: misode
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-repository: misode/mcmeta
