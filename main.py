@@ -67,17 +67,20 @@ def main(version: str, reset: bool, fetch: bool, commit: bool, export: tuple[str
 			create_commit(v, versions[v]['releaseTime'], push, export)
 		t2 = time.time()
 		if n == 1:
-			click.echo(f'✅ Done {v} ({(t2 - t1):.3f}s)')
+			click.echo(f'✅ Done {v} ({format_time(t2 - t1)})')
 		else:
 			remaining = t2 - t0 + int(t2 - t1) * (n - i - 1)
-			click.echo(f'✅ Done {v} ({i+1}/{n}) {format_time(t2 - t1)} ({format_time(t2 - t0)}/{format_time(remaining)})')
+			click.echo(f'✅ Done {v} ({i+1} / {n}) {format_time(t2 - t1)} ({format_time(t2 - t0)} / {format_time(remaining)})')
 
 
 def format_time(seconds: float | int):
 	seconds = int(seconds)
 	if seconds <= 60:
 		return f'{seconds}s'
-	return f'{int(seconds/60)}m{seconds % 60}s'
+	minutes = int(seconds/60)
+	if minutes <= 60:
+		return f'{minutes}m {seconds % 60}s'
+	return f'{int(minutes/60)}h {minutes%60}m {seconds%60}s'
 
 
 def expand_version_range(version: str, versions: dict[str]):
@@ -287,53 +290,45 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 					default = next(s.get('properties') for s in data['states'] if s.get('default'))
 					blocks[key.removeprefix('minecraft:')] = (properties, default)
 
-	# === create sounds report ===
+	# === download resources ===
 	def get_resource(hash: str):
 		url = f'https://resources.download.minecraft.net/{hash[0:2]}/{hash}'
 		return requests.get(url)
 
 	if 'summary' in exports:
+		assets_hash = launchermeta['assetIndex']['sha1']
 		assets_url = launchermeta['assetIndex']['url']
 		assets = requests.get(assets_url).json()
-		assets_hash = assets['objects']['minecraft/sounds.json']['hash']
-		sounds: dict = get_resource(assets_hash).json()
-		sounds = dict(sorted(sounds.items()))
-		os.makedirs('sounds', exist_ok=True)
 
-		cached = False
 		try:
-			with open(f'sounds/hash.txt', 'r') as f:
+			with open(f'resources/hash.txt', 'r') as f:
 				cached = assets_hash == f.read()
 		except:
-			pass
+			cached = False
 		if not cached:
-			with open(f'sounds/sounds.json', 'w') as f:
-				json.dump(sounds, f)
-
 			if 'assets' in exports:
-				sound_paths = set(
-					sound if type(sound) == str else sound['name']
-					for event in sounds.values()
-					for sound in event['sounds']
-					if type(sound) == str or sound.get('type') != 'event'
-				)
-				print(f'Collecting {len(sound_paths)} sounds')
-				shutil.rmtree('sounds/minecraft', ignore_errors=True)
-				for path in sound_paths:
-					full_path = f'minecraft/sounds/{path}.ogg'
-					sound = get_resource(assets['objects'][full_path]['hash'])
-					os.makedirs(os.path.normpath(os.path.join(f'sounds/{full_path}', '..')), exist_ok=True)
-					with open(f'sounds/{full_path}', 'wb') as f:
+				shutil.rmtree('resources', ignore_errors=True)
+				os.makedirs('resources', exist_ok=True)
+				for key, object in assets['objects'].items():
+					sound = get_resource(object['hash'])
+					os.makedirs(os.path.normpath(os.path.join(f'resources/{key}', '..')), exist_ok=True)
+					with open(f'resources/{key}', 'wb') as f:
 						f.write(sound.content)
 
-			with open(f'sounds/hash.txt', 'w') as f:
+			with open(f'resources/hash.txt', 'w') as f:
 				f.write(assets_hash)
 
-		for export in set(['assets', 'assets-json']).intersection(exports):
-			shutil.copyfile('sounds/sounds.json', f'{export}/assets/minecraft/sounds.json')
-		if 'assets' in exports:
-			shutil.rmtree('assets/assets/minecraft/sounds', ignore_errors=True)
-			shutil.copytree('sounds/minecraft/sounds', 'assets/assets/minecraft/sounds')
+		for export, pattern in [('assets', '*.*'), ('assets-json', '*.json')]:
+			if export in exports:
+				for path in glob.glob(f'resources/**/{pattern}', recursive=True):
+					if path == 'resources/hash.txt':
+						continue
+					target = f'{export}/assets{path.removeprefix("resources")}'
+					os.makedirs(os.path.normpath(os.path.join(target, '..')), exist_ok=True)
+					shutil.copyfile(path, target)
+		if 'summary' in exports:
+			with open(f'resources/minecraft/sounds.json', 'r') as f:
+				sounds: dict = json.load(f)
 
 	# === read commands report ===
 	if 'summary' in exports:
@@ -360,7 +355,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	if 'summary' in exports:
 		create_summary(dict(sorted(registries.items())), 'summary/registries')
 		create_summary(dict(sorted(blocks.items())), 'summary/blocks')
-		create_summary(sounds, 'summary/sounds')
+		create_summary(dict(sorted(sounds.items())), 'summary/sounds')
 		create_summary(commands, 'summary/commands')
 		create_summary(version_metas, 'summary/versions')
 
@@ -377,22 +372,23 @@ def init_exports(date: str, reset: bool, fetch: bool, exports: tuple[str]):
 			shutil.rmtree(export, ignore_errors=True)
 		os.makedirs(export, exist_ok=True)
 		os.chdir(export)
-		subprocess.run(['git', 'init', '-q', '-b', export])
+		subprocess.run(['git', 'init', '-q'])
+		subprocess.run(['git', 'checkout', '-q', '-b', export])
 		subprocess.run(['git', 'config', 'user.name', 'actions-user'])
 		subprocess.run(['git', 'config', 'user.email', 'actions@github.com'])
 		if os.getenv('github-repository'):
 			remotes = subprocess.run(['git', 'remote'], capture_output=True).stdout.decode('utf-8').split('\n')
 			remote = f'https://x-access-token:{os.getenv("github-token")}@github.com/{os.getenv("github-repository")}'
 			subprocess.run(['git', 'remote', 'set-url' if 'origin' in remotes else 'add', 'origin', remote])
-		if reset:
+		if fetch:
+			subprocess.run(['git', 'fetch', '-q', 'origin'])
+			subprocess.run(['git', 'reset', '-q', '--hard', f'origin/{export}'])
+		elif reset:
 			shutil.copyfile('../.gitattributes', f'.gitattributes')
 			subprocess.run(['git', 'add', '.'])
 			os.environ['GIT_AUTHOR_DATE'] = date
 			os.environ['GIT_COMMITTER_DATE'] = date
 			subprocess.run(['git', 'commit', '-q', '-m', f'🎉 Initial commit'])
-		elif fetch:
-			subprocess.run(['git', 'fetch', '-q', 'origin'])
-			subprocess.run(['git', 'reset', '-q', '--hard', f'origin/{export}'])
 		os.chdir('..')
 		click.echo(f'🎉 Initialized {export} branch')
 
