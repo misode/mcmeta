@@ -147,12 +147,16 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			f.write(side_content)
 
 	# === extract client jar ===
-	shutil.rmtree('data/assets', ignore_errors=True)
+	shutil.rmtree('assets/assets', ignore_errors=True)
+	shutil.rmtree('assets-json/assets', ignore_errors=True)
 	shutil.rmtree('data/data', ignore_errors=True)
+	shutil.rmtree('data-json/data', ignore_errors=True)
 	with zipfile.ZipFile('client.jar', 'r') as jar:
 		for file in jar.namelist():
 			if file.endswith('.mcassetsroot'):
 				continue
+			if file.endswith('pack.mcmeta'):
+				jar.extract(file, 'data')
 			for part in ['assets', 'data']:
 				if file.startswith(f'{part}/'):
 					jar.extract(file, part)
@@ -180,9 +184,9 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	# === run data generators ===
 	shutil.rmtree('generated', ignore_errors=True)
 	if versions[version]['index'] <= versions['21w39a']['index']:
-		subprocess.run(['java', '-DbundlerMainClass=net.minecraft.data.Main', '-jar', 'server.jar', '--server', '--reports'], capture_output=True)
+		subprocess.run(['java', '-DbundlerMainClass=net.minecraft.data.Main', '-jar', 'server.jar', '--reports'], capture_output=True)
 	else:
-		subprocess.run(['java', '-cp', 'server.jar', 'net.minecraft.data.Main', '--server', '--reports'], capture_output=True)
+		subprocess.run(['java', '-cp', 'server.jar', 'net.minecraft.data.Main', '--reports'], capture_output=True)
 
 	# === get vanilla worldgen === 
 	if versions[version]['index'] <= versions['1.18-pre1']['index']:
@@ -321,9 +325,11 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		for export, pattern in [('assets', '*.*'), ('assets-json', '*.json')]:
 			if export in exports:
 				for path in glob.glob(f'resources/**/{pattern}', recursive=True):
-					if path == 'resources/hash.txt':
+					if path.endswith('hash.txt'):
 						continue
 					target = f'{export}/assets{path.removeprefix("resources")}'
+					if path.endswith('pack.mcmeta'):
+						target = f'{export}/pack.mcmeta'
 					os.makedirs(os.path.normpath(os.path.join(target, '..')), exist_ok=True)
 					shutil.copyfile(path, target)
 		if 'summary' in exports:
@@ -364,6 +370,10 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		with open(f'{export}/version.json', 'w') as f:
 			json.dump(version_meta, f, indent=2)
 			f.write('\n')
+
+	# === copy pack.mcmeta to json exports ===
+	for export in ['assets', 'data']:
+		shutil.copyfile(f'{export}/pack.mcmeta', f'{export}-json/pack.mcmeta')
 
 
 def init_exports(date: str, reset: bool, fetch: bool, exports: tuple[str]):
