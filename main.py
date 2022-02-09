@@ -182,6 +182,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		json.dump(version_metas, f)
 
 	# === run data generators ===
+	click.echo('Running data generator')
 	shutil.rmtree('generated', ignore_errors=True)
 	if versions[version]['index'] <= versions['21w39a']['index']:
 		subprocess.run(['java', '-DbundlerMainClass=net.minecraft.data.Main', '-jar', 'server.jar', '--reports'], capture_output=True)
@@ -193,6 +194,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		shutil.copytree('generated/reports/worldgen', 'data/data', dirs_exist_ok=True)
 		shutil.copytree('generated/reports/worldgen', 'data-json/data', dirs_exist_ok=True)
 	elif versions[version]['index'] <= versions['20w28a']['index']:
+		click.echo('Downloading vanilla worldgen')
 		username = os.getenv('github-username')
 		token = os.getenv('github-token')
 		auth = requests.auth.HTTPBasicAuth(username, token) if username and token else None
@@ -227,9 +229,12 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			[('pools.0.entries.[name=minecraft:suspicious_stew].functions.0.effects', lambda e: e['type'])]),
 		('loot_tables/gameplay/hero_of_the_village/fletcher_gift',
 			[('pools.0.entries', lambda e: (e.get('functions')[-1].get('tag') or e.get('functions')[-1].get('id')) if e.get('functions') else e.get('name'))]),
-		('worldgen/noise_settings/*',
-			[('structures.structures', None)]),
 	]
+
+	if versions[version]['index'] <= versions['22w06a']['index']:
+		reorders.append(('worldgen/noise_settings/*', [('structures', None)]))
+	else:
+		reorders.append(('worldgen/noise_settings/*', [('structures.structures', None)]))
 
 	for filepath, sorts in reorders:
 		for file in glob.glob(f'data/data/minecraft/{filepath}.json'):
@@ -311,6 +316,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			cached = False
 		if not cached:
 			if 'assets' in exports:
+				click.echo(f'Downloading {len(assets["objects"])} resources')
 				shutil.rmtree('resources', ignore_errors=True)
 				os.makedirs('resources', exist_ok=True)
 				for key, object in assets['objects'].items():
