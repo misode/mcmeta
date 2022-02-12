@@ -14,6 +14,7 @@ Each of the following branches has a commit per version. Starting from 1.14, upd
 * [**data-json**](https://github.com/misode/mcmeta/tree/data-json) - The same as **data** but only containing json files, so excluding structures.
 * [**assets**](https://github.com/misode/mcmeta/tree/assets) - The vanilla assets is if they would appear in a resource pack.
 * [**assets-json**](https://github.com/misode/mcmeta/tree/assets-json) - The same as **assets** but only containing json files, so excluding textures, sounds and shaders.
+* [**atlas**](https://github.com/misode/mcmeta/tree/atlas) - Texture atlases of blocks, items and entities
 
 ## Sources
 * [Version manifest](https://launchermeta.mojang.com/mc/game/version_manifest_v2.json), a list of versions and metadata, client and server jars by following links

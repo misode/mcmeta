@@ -14,8 +14,9 @@ import dotenv
 import datetime
 import re
 import time
+import image_packer.packer
 
-EXPORTS = ('assets', 'assets-json', 'data', 'data-json', 'summary')
+EXPORTS = ('assets', 'assets-json', 'data', 'data-json', 'summary', 'atlas')
 
 @click.command()
 @click.argument('version', required=True)
@@ -182,40 +183,42 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		json.dump(version_metas, f)
 
 	# === run data generators ===
-	click.echo('Running data generator')
-	shutil.rmtree('generated', ignore_errors=True)
-	if versions[version]['index'] <= versions['21w39a']['index']:
-		subprocess.run(['java', '-DbundlerMainClass=net.minecraft.data.Main', '-jar', 'server.jar', '--reports'], capture_output=True)
-	else:
-		subprocess.run(['java', '-cp', 'server.jar', 'net.minecraft.data.Main', '--reports'], capture_output=True)
+	if 'data' in exports or 'data-json' in exports or 'summary' in exports:
+		click.echo('Running data generator')
+		shutil.rmtree('generated', ignore_errors=True)
+		if versions[version]['index'] <= versions['21w39a']['index']:
+			subprocess.run(['java', '-DbundlerMainClass=net.minecraft.data.Main', '-jar', 'server.jar', '--reports'], capture_output=True)
+		else:
+			subprocess.run(['java', '-cp', 'server.jar', 'net.minecraft.data.Main', '--reports'], capture_output=True)
 
-	# === get vanilla worldgen === 
-	if versions[version]['index'] <= versions['1.18-pre1']['index']:
-		shutil.copytree('generated/reports/worldgen', 'data/data', dirs_exist_ok=True)
-		shutil.copytree('generated/reports/worldgen', 'data-json/data', dirs_exist_ok=True)
-	elif versions[version]['index'] <= versions['20w28a']['index']:
-		click.echo('Downloading vanilla worldgen')
-		username = os.getenv('github-username')
-		token = os.getenv('github-token')
-		auth = requests.auth.HTTPBasicAuth(username, token) if username and token else None
-		headers = { 'Accept': 'application/vnd.github.v3+json' }
-		time = datetime.datetime.fromisoformat(versions[version]['releaseTime'])
-		time += datetime.timedelta(days=1)
-		res = requests.get(f'https://api.github.com/repos/slicedlime/examples/commits?until={time.isoformat()}', headers=headers, auth=auth)
-		click.echo(f'Remaining GitHub requests: {res.headers["X-RateLimit-Remaining"]}/{res.headers["X-RateLimit-Limit"]}')
-		commits = res.json()
-		for id in version_ids[versions[version]['index']:]:
-			sha = next((c['sha'] for c in commits if re.match(f'Update to {id}\\.?$', c['commit']['message'])), None)
-			if sha is None and id == '20w28a':
-				sha = 'd304a1dcf330005e617a78cef4e492ab3e2c09b0'
-			if sha:
-				content = requests.get(f'https://raw.githubusercontent.com/slicedlime/examples/{sha}/vanilla_worldgen.zip').content
-				with open('vanilla_worldgen.zip', 'wb') as f:
-					f.write(content)
-				zip = zipfile.ZipFile('vanilla_worldgen.zip', 'r')
-				zip.extractall('data/data/minecraft')
-				zip.extractall('data-json/data/minecraft')
-				break
+	# === get vanilla worldgen ===
+	if 'data' in exports or 'data-json' in exports or 'summary' in exports:
+		if versions[version]['index'] <= versions['1.18-pre1']['index']:
+			shutil.copytree('generated/reports/worldgen', 'data/data', dirs_exist_ok=True)
+			shutil.copytree('generated/reports/worldgen', 'data-json/data', dirs_exist_ok=True)
+		elif versions[version]['index'] <= versions['20w28a']['index']:
+			click.echo('Downloading vanilla worldgen')
+			username = os.getenv('github-username')
+			token = os.getenv('github-token')
+			auth = requests.auth.HTTPBasicAuth(username, token) if username and token else None
+			headers = { 'Accept': 'application/vnd.github.v3+json' }
+			released = datetime.datetime.fromisoformat(versions[version]['releaseTime'])
+			released += datetime.timedelta(days=1)
+			res = requests.get(f'https://api.github.com/repos/slicedlime/examples/commits?until={released.isoformat()}', headers=headers, auth=auth)
+			click.echo(f'Remaining GitHub requests: {res.headers["X-RateLimit-Remaining"]}/{res.headers["X-RateLimit-Limit"]}')
+			commits = res.json()
+			for id in version_ids[versions[version]['index']:]:
+				sha = next((c['sha'] for c in commits if re.match(f'Update to {id}\\.?$', c['commit']['message'])), None)
+				if sha is None and id == '20w28a':
+					sha = 'd304a1dcf330005e617a78cef4e492ab3e2c09b0'
+				if sha:
+					content = requests.get(f'https://raw.githubusercontent.com/slicedlime/examples/{sha}/vanilla_worldgen.zip').content
+					with open('vanilla_worldgen.zip', 'wb') as f:
+						f.write(content)
+					zip = zipfile.ZipFile('vanilla_worldgen.zip', 'r')
+					zip.extractall('data/data/minecraft')
+					zip.extractall('data-json/data/minecraft')
+					break
 
 	# === stabilize ordering in some data files ===
 	reorders = [
@@ -348,9 +351,10 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			commands = json.load(f)
 
 	# === export summary ===
-	def create_summary(data, path):
-		shutil.rmtree(path, ignore_errors=True)
-		os.makedirs(path, exist_ok=True)
+	def create_summary(data, path, clear=True):
+		if clear:
+			shutil.rmtree(path, ignore_errors=True)
+			os.makedirs(path, exist_ok=True)
 		with open(f'{path}/data.json', 'w') as f:
 			json.dump(data, f, indent=2)
 			f.write('\n')
@@ -370,6 +374,35 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		create_summary(dict(sorted(sounds.items())), 'summary/sounds')
 		create_summary(commands, 'summary/commands')
 		create_summary(version_metas, 'summary/versions')
+
+	# === create texture atlas ===
+	if 'atlas' in exports:
+		click.echo('Packing textures into atlas')
+		atlases = [
+			('blocks', ['block'], 1024),
+			('items', ['item'], 512),
+			('entities', ['entity', 'entity/**'], 2048),
+			('all', ['block', 'item', 'entity', 'entity/**'], 2048)
+		]
+		for name, folders, width in atlases:
+			os.makedirs(f'atlas/{name}', exist_ok=True)
+			prefix = 'assets/assets/minecraft/textures/'
+			inputs = [f'{prefix}{f}/*.png' for f in folders]
+			options = {
+				'bg_color': (0, 0, 0, 0),
+				'enable_auto_size': False,
+			}
+			image_packer.packer.pack(inputs, f'atlas/{name}/atlas.png', width, options)
+			with open(f'atlas/{name}/atlas.json', 'r') as f:
+				mapping = json.load(f)
+				def key(filepath: str):
+					return filepath.replace('\\', '/', -1).removeprefix(prefix).removesuffix('.png')
+				mapping = {
+					key(r['filepath']): [r['x'], r['y'], r['width'], r['height']]
+					for r in mapping['regions'].values()
+				}
+			os.remove(f'atlas/{name}/atlas.json')
+			create_summary(mapping, f'atlas/{name}', False)
 
 	# === export version.json to all ===
 	for export in exports:
