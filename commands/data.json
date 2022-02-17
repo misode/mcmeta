@@ -4749,6 +4749,10 @@
         "bastion_remnant": {
           "type": "literal",
           "executable": true
+        },
+        "ancient_city": {
+          "type": "literal",
+          "executable": true
         }
       }
     },
@@ -6631,9 +6635,6 @@
                         "maxHeight": {
                           "type": "argument",
                           "parser": "brigadier:integer",
-                          "properties": {
-                            "min": 0
-                          },
                           "children": {
                             "respectTeams": {
                               "type": "argument",
@@ -7384,6 +7385,29 @@
             }
           },
           "executable": true
+        }
+      }
+    },
+    "warden_spawn_tracker": {
+      "type": "literal",
+      "children": {
+        "clear": {
+          "type": "literal",
+          "executable": true
+        },
+        "set": {
+          "type": "literal",
+          "children": {
+            "warning_level": {
+              "type": "argument",
+              "parser": "brigadier:integer",
+              "properties": {
+                "min": 0,
+                "max": 3
+              },
+              "executable": true
+            }
+          }
         }
       }
     },
