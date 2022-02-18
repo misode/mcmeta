@@ -248,10 +248,10 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			[('pools.0.entries', lambda e: (e.get('functions')[-1].get('tag') or e.get('functions')[-1].get('id')) if e.get('functions') else e.get('name'))]),
 	]
 
-	if versions[version]['index'] <= versions['22w06a']['index'] and version_meta['type'] != 'pending':
-		reorders.append(('worldgen/noise_settings/*', [('structures', None)]))
-	else:
+	if versions[version]['index'] > versions['22w06a']['index'] or version_meta['type'] == 'pending':
 		reorders.append(('worldgen/noise_settings/*', [('structures.structures', None)]))
+	elif versions[version]['index'] > versions['1.18.2-pre1']['index']:
+		reorders.append(('worldgen/noise_settings/*', [('structures', None)]))
 
 	for filepath, sorts in reorders:
 		for file in glob.glob(f'data/data/minecraft/{filepath}.json'):
@@ -292,7 +292,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		for path, key in [('advancements', 'advancement'), ('loot_tables', 'loot_table'),('recipes', 'recipe'), ('tags/blocks', 'tag/block'), ('tags/entity_types', 'tag/entity_type'), ('tags/fluids', 'tag/fluid'), ('tags/game_events', 'tag/game_event'), ('tags/items', 'tag/item')]:
 			registries[key] = listfiles(f'data/data/minecraft/{path}')
 
-		for key in ['dimension', 'dimension_type', 'worldgen/biome', 'worldgen/configured_carver', 'worldgen/configured_feature', 'worldgen/configured_structure_feature', 'worldgen/configured_surface_builder', 'worldgen/noise', 'worldgen/noise_settings', 'worldgen/placed_feature', 'worldgen/processor_list', 'worldgen/template_pool']:
+		for key in ['dimension', 'dimension_type', 'worldgen/biome', 'worldgen/configured_carver', 'worldgen/configured_feature', 'worldgen/density_function', 'worldgen/configured_structure_feature', 'worldgen/configured_surface_builder', 'worldgen/noise', 'worldgen/noise_settings', 'worldgen/placed_feature', 'worldgen/processor_list', 'worldgen/structure_set', 'worldgen/template_pool']:
 			if key not in registries:
 				registries[key] = listfiles(f'data/data/minecraft/{key}')
 
