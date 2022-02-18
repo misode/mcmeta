@@ -1,0 +1,57 @@
+{
+  "argument1": {
+    "from_y": -64,
+    "to_y": 320,
+    "from_value": 1.5,
+    "to_value": -1.5,
+    "type": "minecraft:y_clamped_gradient"
+  },
+  "argument2": {
+    "argument": {
+      "argument": {
+        "argument1": {
+          "argument1": {
+            "type": "minecraft:blend_offset"
+          },
+          "argument2": {
+            "argument1": 1.0,
+            "argument2": {
+              "argument1": -1.0,
+              "argument2": {
+                "argument": {
+                  "type": "minecraft:blend_alpha"
+                },
+                "type": "minecraft:cache_once"
+              },
+              "type": "minecraft:mul"
+            },
+            "type": "minecraft:add"
+          },
+          "type": "minecraft:mul"
+        },
+        "argument2": {
+          "argument1": {
+            "spline": "offset",
+            "min_value": -0.81,
+            "max_value": 2.5,
+            "continentalness": "minecraft:overworld_large_biomes/continents",
+            "erosion": "minecraft:overworld_large_biomes/erosion",
+            "weirdness": "minecraft:overworld/ridges",
+            "type": "minecraft:terrain_shaper_spline"
+          },
+          "argument2": {
+            "argument": {
+              "type": "minecraft:blend_alpha"
+            },
+            "type": "minecraft:cache_once"
+          },
+          "type": "minecraft:mul"
+        },
+        "type": "minecraft:add"
+      },
+      "type": "minecraft:cache_2d"
+    },
+    "type": "minecraft:flat_cache"
+  },
+  "type": "minecraft:add"
+}
