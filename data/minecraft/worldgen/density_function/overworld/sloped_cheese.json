@@ -1,0 +1,76 @@
+{
+  "argument1": {
+    "argument1": 4.0,
+    "argument2": {
+      "argument": {
+        "argument1": {
+          "argument1": "minecraft:overworld/depth",
+          "argument2": {
+            "argument1": {
+              "argument": {
+                "argument": {
+                  "argument1": {
+                    "argument1": 0.0,
+                    "argument2": {
+                      "argument1": 1.0,
+                      "argument2": {
+                        "argument1": -1.0,
+                        "argument2": {
+                          "argument": {
+                            "type": "minecraft:blend_alpha"
+                          },
+                          "type": "minecraft:cache_once"
+                        },
+                        "type": "minecraft:mul"
+                      },
+                      "type": "minecraft:add"
+                    },
+                    "type": "minecraft:mul"
+                  },
+                  "argument2": {
+                    "argument1": {
+                      "spline": "jaggedness",
+                      "min_value": 0.0,
+                      "max_value": 1.28,
+                      "continentalness": "minecraft:overworld/continents",
+                      "erosion": "minecraft:overworld/erosion",
+                      "weirdness": "minecraft:overworld/ridges",
+                      "type": "minecraft:terrain_shaper_spline"
+                    },
+                    "argument2": {
+                      "argument": {
+                        "type": "minecraft:blend_alpha"
+                      },
+                      "type": "minecraft:cache_once"
+                    },
+                    "type": "minecraft:mul"
+                  },
+                  "type": "minecraft:add"
+                },
+                "type": "minecraft:cache_2d"
+              },
+              "type": "minecraft:flat_cache"
+            },
+            "argument2": {
+              "argument": {
+                "noise": "minecraft:jagged",
+                "xz_scale": 1500.0,
+                "y_scale": 0.0,
+                "type": "minecraft:noise"
+              },
+              "type": "minecraft:half_negative"
+            },
+            "type": "minecraft:mul"
+          },
+          "type": "minecraft:add"
+        },
+        "argument2": "minecraft:overworld/factor",
+        "type": "minecraft:mul"
+      },
+      "type": "minecraft:quarter_negative"
+    },
+    "type": "minecraft:mul"
+  },
+  "argument2": "minecraft:overworld/base_3d_noise",
+  "type": "minecraft:add"
+}
