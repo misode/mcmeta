@@ -20,12 +20,14 @@ EXPORTS = ('assets', 'assets-json', 'data', 'data-json', 'summary', 'atlas')
 
 @click.command()
 @click.argument('version', required=True)
+@click.option('--file', '-f', type=click.File(), help='Custom version JSON file')
 @click.option('--reset', is_flag=True, help='Whether to reset the exports')
-@click.option('--fetch', is_flag=True, help='Whether to fetch from the remote at the start')
+@click.option('--fetch', is_flag=True, help='The ref to fetch')
 @click.option('--commit', is_flag=True, help='Whether to commit the exports')
 @click.option('--export', '-e', multiple=True, required=True, type=click.Choice([*EXPORTS, 'all'], case_sensitive=True))
 @click.option('--push', is_flag=True, help='Whether to push to the remote after each commit')
-def main(version: str, reset: bool, fetch: bool, commit: bool, export: tuple[str], push: bool):
+@click.option('--branch', help='The export branch prefix to use')
+def main(version: str, file, reset: bool, fetch: bool, commit: bool, export: tuple[str], push: bool, branch: str | None):
 	dotenv.load_dotenv()
 	if 'all' in export:
 		export = EXPORTS
@@ -45,6 +47,17 @@ def main(version: str, reset: bool, fetch: bool, commit: bool, export: tuple[str
 	unordered_versions = { v['id']: dict(**v, index=version_ids.index(v['id'])) for v in manifest['versions'] }
 	versions = { v: unordered_versions[v] for v in version_ids }
 
+	if file:
+		launchermeta = json.load(file)
+		versions[version] = {
+			'id': version,
+			'type': launchermeta['type'],
+			'url': launchermeta,
+			'releaseTime': launchermeta['releaseTime'],
+			'sha1': 'unknown',
+			'index': -1,
+		}
+
 	# process and commit each version in the range
 	process_versions = expand_version_range(version, versions)
 	n = len(process_versions)
@@ -52,7 +65,7 @@ def main(version: str, reset: bool, fetch: bool, commit: bool, export: tuple[str
 		click.echo('❗ No versions to process')
 		return
 
-	init_exports(versions[process_versions[0]]['releaseTime'], reset, fetch, export)
+	init_exports(versions[process_versions[0]]['releaseTime'], reset, fetch, export, branch)
 
 	try:
 		os.remove('versions.json')
@@ -65,7 +78,7 @@ def main(version: str, reset: bool, fetch: bool, commit: bool, export: tuple[str
 		t1 = time.time()
 		process(v, versions, export)
 		if commit:
-			create_commit(v, versions[v]['releaseTime'], push, export)
+			create_commit(v, versions[v]['releaseTime'], push, export, branch)
 		t2 = time.time()
 		if n == 1:
 			click.echo(f'✅ Done {v} ({format_time(t2 - t1)})')
@@ -102,7 +115,7 @@ def get_version_meta(version: str, versions: dict[str], jar: str = None):
 
 	if not jar:
 		launchermeta_url = versions[version]['url']
-		launchermeta = requests.get(launchermeta_url).json()
+		launchermeta = requests.get(launchermeta_url).json() if type(launchermeta_url) is str else launchermeta_url
 
 		client_url = launchermeta['downloads']['client']['url']
 		client = requests.get(client_url).content
@@ -139,7 +152,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 
 	# === fetch version jars ===
 	launchermeta_url = versions[version]['url']
-	launchermeta = requests.get(launchermeta_url).json()
+	launchermeta = requests.get(launchermeta_url).json() if type(launchermeta_url) is str else launchermeta_url
 
 	for side in ['server', 'client']:
 		side_url = launchermeta['downloads'][side]['url']
@@ -234,7 +247,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			[('pools.0.entries', lambda e: (e.get('functions')[-1].get('tag') or e.get('functions')[-1].get('id')) if e.get('functions') else e.get('name'))]),
 	]
 
-	if versions[version]['index'] <= versions['22w06a']['index']:
+	if versions[version]['index'] <= versions['22w06a']['index'] and version_meta['type'] != 'pending':
 		reorders.append(('worldgen/noise_settings/*', [('structures', None)]))
 	else:
 		reorders.append(('worldgen/noise_settings/*', [('structures.structures', None)]))
@@ -415,14 +428,15 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		shutil.copyfile(f'{export}/pack.mcmeta', f'{export}-json/pack.mcmeta')
 
 
-def init_exports(date: str, reset: bool, fetch: bool, exports: tuple[str]):
+def init_exports(date: str, reset: bool, fetch: bool, exports: tuple[str], branch: str | None):
 	for export in exports:
+		export_branch = f'{branch}-{export}' if export else export
 		if reset:
 			shutil.rmtree(export, ignore_errors=True)
 		os.makedirs(export, exist_ok=True)
 		os.chdir(export)
 		subprocess.run(['git', 'init', '-q'])
-		subprocess.run(['git', 'checkout', '-q', '-b', export])
+		subprocess.run(['git', 'checkout', '-q', '-b', export_branch])
 		subprocess.run(['git', 'config', 'user.name', 'actions-user'])
 		subprocess.run(['git', 'config', 'user.email', 'actions@github.com'])
 		if os.getenv('github-repository'):
@@ -431,7 +445,7 @@ def init_exports(date: str, reset: bool, fetch: bool, exports: tuple[str]):
 			subprocess.run(['git', 'remote', 'set-url' if 'origin' in remotes else 'add', 'origin', remote])
 		if fetch:
 			subprocess.run(['git', 'fetch', '-q', 'origin'])
-			subprocess.run(['git', 'reset', '-q', '--hard', f'origin/{export}'])
+			subprocess.run(['git', 'reset', '-q', '--hard', f'origin/{export_branch}'])
 		elif reset:
 			shutil.copyfile('../.gitattributes', f'.gitattributes')
 			subprocess.run(['git', 'add', '.'])
@@ -442,8 +456,9 @@ def init_exports(date: str, reset: bool, fetch: bool, exports: tuple[str]):
 		click.echo(f'🎉 Initialized {export} branch')
 
 
-def create_commit(version: str, date: str, push: bool, exports: tuple[str]):
+def create_commit(version: str, date: str, push: bool, exports: tuple[str], branch: str | None):
 	for export in exports:
+		export_branch = f'{branch}-{export}' if export else export
 		os.chdir(export)
 		subprocess.run(['git', 'add', '.'])
 		os.environ['GIT_AUTHOR_DATE'] = date
@@ -451,9 +466,9 @@ def create_commit(version: str, date: str, push: bool, exports: tuple[str]):
 		subprocess.run(['git', 'commit', '-q', '-m', f'🚀 Update {export} for {version}'])
 		subprocess.run(['git', 'tag', f'{version}-{export}'])
 		if push:
-			subprocess.run(['git', 'push', '-q', '--tags', 'origin', export])
+			subprocess.run(['git', 'push', '-q', '--tags', 'origin', export_branch])
 		os.chdir('..')
-		click.echo(f'🚀 Created commit on {export} branch')
+		click.echo(f'🚀 Created commit on {export_branch} branch')
 
 
 if __name__ == '__main__':
