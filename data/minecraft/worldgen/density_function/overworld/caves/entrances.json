@@ -1,0 +1,83 @@
+{
+  "argument": {
+    "argument1": {
+      "argument1": {
+        "argument1": 0.37,
+        "argument2": {
+          "noise": "minecraft:cave_entrance",
+          "xz_scale": 0.75,
+          "y_scale": 0.5,
+          "type": "minecraft:noise"
+        },
+        "type": "minecraft:add"
+      },
+      "argument2": {
+        "from_y": -10,
+        "to_y": 30,
+        "from_value": 0.3,
+        "to_value": 0.0,
+        "type": "minecraft:y_clamped_gradient"
+      },
+      "type": "minecraft:add"
+    },
+    "argument2": {
+      "argument1": "minecraft:overworld/caves/spaghetti_roughness_function",
+      "argument2": {
+        "input": {
+          "argument1": {
+            "argument1": {
+              "input": {
+                "argument": {
+                  "noise": "minecraft:spaghetti_3d_rarity",
+                  "xz_scale": 2.0,
+                  "y_scale": 1.0,
+                  "type": "minecraft:noise"
+                },
+                "type": "minecraft:cache_once"
+              },
+              "noise": "minecraft:spaghetti_3d_1",
+              "rarity_value_mapper": "type_1",
+              "type": "minecraft:weird_scaled_sampler"
+            },
+            "argument2": {
+              "input": {
+                "argument": {
+                  "noise": "minecraft:spaghetti_3d_rarity",
+                  "xz_scale": 2.0,
+                  "y_scale": 1.0,
+                  "type": "minecraft:noise"
+                },
+                "type": "minecraft:cache_once"
+              },
+              "noise": "minecraft:spaghetti_3d_2",
+              "rarity_value_mapper": "type_1",
+              "type": "minecraft:weird_scaled_sampler"
+            },
+            "type": "minecraft:max"
+          },
+          "argument2": {
+            "argument1": -0.0765,
+            "argument2": {
+              "argument1": -0.011499999999999996,
+              "argument2": {
+                "noise": "minecraft:spaghetti_3d_thickness",
+                "xz_scale": 1.0,
+                "y_scale": 1.0,
+                "type": "minecraft:noise"
+              },
+              "type": "minecraft:mul"
+            },
+            "type": "minecraft:add"
+          },
+          "type": "minecraft:add"
+        },
+        "min": -1.0,
+        "max": 1.0,
+        "type": "minecraft:clamp"
+      },
+      "type": "minecraft:add"
+    },
+    "type": "minecraft:min"
+  },
+  "type": "minecraft:cache_once"
+}
