@@ -16,18 +16,19 @@ import re
 import time
 import image_packer.packer
 
-EXPORTS = ('assets', 'assets-json', 'data', 'data-json', 'summary', 'atlas')
+EXPORTS = ('assets', 'assets-json', 'data', 'data-json', 'summary', 'registries', 'atlas')
 
 @click.command()
 @click.argument('version', required=True)
 @click.option('--file', '-f', type=click.File(), help='Custom version JSON file')
 @click.option('--reset', is_flag=True, help='Whether to reset the exports')
-@click.option('--fetch', is_flag=True, help='The ref to fetch')
+@click.option('--fetch', is_flag=True, help='Whether to fetch from the remote at the start')
 @click.option('--commit', is_flag=True, help='Whether to commit the exports')
 @click.option('--export', '-e', multiple=True, required=True, type=click.Choice([*EXPORTS, 'all'], case_sensitive=True))
 @click.option('--push', is_flag=True, help='Whether to push to the remote after each commit')
+@click.option('--force', is_flag=True, help='Whether to force create a tag and force push')
 @click.option('--branch', help='The export branch prefix to use')
-def main(version: str, file, reset: bool, fetch: bool, commit: bool, export: tuple[str], push: bool, branch: str | None):
+def main(version: str, file, reset: bool, fetch: bool, commit: bool, export: tuple[str], push: bool, force: bool, branch: str | None):
 	dotenv.load_dotenv()
 	if 'all' in export:
 		export = EXPORTS
@@ -78,7 +79,7 @@ def main(version: str, file, reset: bool, fetch: bool, commit: bool, export: tup
 		t1 = time.time()
 		process(v, versions, export)
 		if commit:
-			create_commit(v, versions[v]['releaseTime'], push, export, branch)
+			create_commit(v, versions[v]['releaseTime'], push, force, export, branch)
 		t2 = time.time()
 		if n == 1:
 			click.echo(f'✅ Done {v} ({format_time(t2 - t1)})')
@@ -196,7 +197,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		json.dump(version_metas, f)
 
 	# === run data generators ===
-	if 'data' in exports or 'data-json' in exports or 'summary' in exports:
+	if 'data' in exports or 'data-json' in exports or 'summary' in exports or 'registries' in exports:
 		click.echo('Running data generator')
 		shutil.rmtree('generated', ignore_errors=True)
 		if versions[version]['index'] <= versions['21w39a']['index']:
@@ -205,7 +206,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			subprocess.run(['java', '-cp', 'server.jar', 'net.minecraft.data.Main', '--reports'], capture_output=True)
 
 	# === get vanilla worldgen ===
-	if 'data' in exports or 'data-json' in exports or 'summary' in exports:
+	if 'data' in exports or 'data-json' in exports or 'summary' in exports or 'registries' in exports:
 		if versions[version]['index'] <= versions['1.18-pre1']['index']:
 			shutil.copytree('generated/reports/worldgen', 'data/data', dirs_exist_ok=True)
 			shutil.copytree('generated/reports/worldgen', 'data-json/data', dirs_exist_ok=True)
@@ -276,7 +277,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 					json.dump(root, f, indent=2)
 
 	# === collect summary of registries ===
-	if 'summary' in exports:
+	if 'summary' in exports or 'registries' in exports:
 		registries = dict()
 		with open('generated/reports/registries.json', 'r') as f:
 			for key, data in json.load(f).items():
@@ -364,7 +365,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			commands = json.load(f)
 
 	# === export summary ===
-	def create_summary(data, path, clear=True):
+	def create_summary(data, path, clear=True, bin=True):
 		if clear:
 			shutil.rmtree(path, ignore_errors=True)
 			os.makedirs(path, exist_ok=True)
@@ -374,12 +375,13 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		with open(f'{path}/data.min.json', 'w') as f:
 			json.dump(data, f, separators=(',', ':'))
 			f.write('\n')
-		with open(f'{path}/data.msgpack', 'wb') as f:
-			f.write(msgpack.packb(data))
-		with open(f'{path}/data.json.gz', 'wb') as f:
-			f.write(gzip.compress(json.dumps(data).encode('utf-8')))
-		with open(f'{path}/data.msgpack.gz', 'wb') as f:
-			f.write(gzip.compress(msgpack.packb(data)))
+		if bin:
+			with open(f'{path}/data.msgpack', 'wb') as f:
+				f.write(msgpack.packb(data))
+			with open(f'{path}/data.json.gz', 'wb') as f:
+				f.write(gzip.compress(json.dumps(data).encode('utf-8')))
+			with open(f'{path}/data.msgpack.gz', 'wb') as f:
+				f.write(gzip.compress(msgpack.packb(data)))
 
 	if 'summary' in exports:
 		create_summary(dict(sorted(registries.items())), 'summary/registries')
@@ -415,7 +417,12 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 					for r in mapping['regions'].values()
 				}
 			os.remove(f'atlas/{name}/atlas.json')
-			create_summary(mapping, f'atlas/{name}', False)
+			create_summary(mapping, f'atlas/{name}', clear=False)
+
+	# === create registries ===
+	if 'registries' in exports:
+		for key, entries in sorted(registries.items()):
+			create_summary(entries, f'registries/{key}', bin=False)
 
 	# === export version.json to all ===
 	for export in exports:
@@ -430,7 +437,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 
 def init_exports(date: str, reset: bool, fetch: bool, exports: tuple[str], branch: str | None):
 	for export in exports:
-		export_branch = f'{branch}-{export}' if export else export
+		export_branch = f'{branch}-{export}' if branch else export
 		if reset:
 			shutil.rmtree(export, ignore_errors=True)
 		os.makedirs(export, exist_ok=True)
@@ -456,17 +463,23 @@ def init_exports(date: str, reset: bool, fetch: bool, exports: tuple[str], branc
 		click.echo(f'🎉 Initialized {export} branch')
 
 
-def create_commit(version: str, date: str, push: bool, exports: tuple[str], branch: str | None):
+def create_commit(version: str, date: str, push: bool, force: bool, exports: tuple[str], branch: str | None):
 	for export in exports:
-		export_branch = f'{branch}-{export}' if export else export
+		export_branch = f'{branch}-{export}' if branch else export
 		os.chdir(export)
 		subprocess.run(['git', 'add', '.'])
 		os.environ['GIT_AUTHOR_DATE'] = date
 		os.environ['GIT_COMMITTER_DATE'] = date
 		subprocess.run(['git', 'commit', '-q', '-m', f'🚀 Update {export} for {version}'])
-		subprocess.run(['git', 'tag', f'{version}-{export}'])
+		if force:
+			subprocess.run(['git', 'tag', '-f', f'{version}-{export}'])
+		else:
+			subprocess.run(['git', 'tag', f'{version}-{export}'])
 		if push:
-			subprocess.run(['git', 'push', '-q', '--tags', 'origin', export_branch])
+			if force:
+				subprocess.run(['git', 'push', '-f', '-q', '--tags', 'origin', export_branch])
+			else:
+				subprocess.run(['git', 'push', '-q', '--tags', 'origin', export_branch])
 		os.chdir('..')
 		click.echo(f'🚀 Created commit on {export_branch} branch')
 

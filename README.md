@@ -10,6 +10,7 @@ Each of the following branches has a commit per version. Starting from 1.14, upd
   * [**registries**](https://github.com/misode/mcmeta/blob/summary/registries/data.json) - Collections of resource locations. Including the generated registries, data, and assets.
   * [**sounds**](https://github.com/misode/mcmeta/blob/summary/sounds/data.json) - The sounds.json from assets.
   * [**versions**](https://github.com/misode/mcmeta/blob/summary/versions/data.json) - A list of versions up to that point ordered with the most recent first. Each entry has the same format as the `version.json` at the root of each branch.
+* [**registries**](https://github.com/misode/mcmeta/tree/registries) - The same registries from **summary**, but in a separate file per registry key.
 * [**data**](https://github.com/misode/mcmeta/tree/data) - The vanilla data as it if would appear in a data pack.
 * [**data-json**](https://github.com/misode/mcmeta/tree/data-json) - The same as **data** but only containing json files, so excluding structures.
 * [**assets**](https://github.com/misode/mcmeta/tree/assets) - The vanilla assets is if they would appear in a resource pack.
