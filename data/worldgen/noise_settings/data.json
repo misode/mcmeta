@@ -192,11 +192,7 @@
         "argument1": 4.0,
         "argument2": {
           "argument": {
-            "argument1": {
-              "argument1": 0.0,
-              "argument2": "minecraft:overworld/depth",
-              "type": "minecraft:add"
-            },
+            "argument1": "minecraft:overworld/depth",
             "argument2": {
               "argument": "minecraft:overworld/factor",
               "type": "minecraft:cache_2d"
@@ -2326,7 +2322,13 @@
       "type": "minecraft:sequence"
     },
     "noise": {
-      "amplified": true,
+      "bottom_slide": {
+        "target": 0.4,
+        "size": 3,
+        "offset": 0
+      },
+      "size_horizontal": 1,
+      "size_vertical": 2,
       "terrain_shaper": {
         "offset": {
           "coordinate": "continents",
@@ -4954,8 +4956,8 @@
           ]
         }
       },
-      "size_horizontal": 1,
-      "size_vertical": 2,
+      "min_y": -64,
+      "height": 384,
       "sampling": {
         "xz_scale": 1.0,
         "y_scale": 1.0,
@@ -4966,14 +4968,7 @@
         "target": -0.078125,
         "size": 2,
         "offset": 0
-      },
-      "bottom_slide": {
-        "target": 0.4,
-        "size": 3,
-        "offset": 0
-      },
-      "min_y": -64,
-      "height": 384
+      }
     },
     "default_block": {
       "Name": "minecraft:stone"
@@ -4993,93 +4988,25 @@
     },
     "noise_router": {
       "final_density": {
-        "argument1": {
-          "argument": {
-            "argument1": 0.64,
-            "argument2": {
-              "argument": {
-                "argument": {
-                  "argument": "minecraft:overworld/sloped_cheese",
-                  "type": "minecraft:slide"
-                },
-                "type": "minecraft:blend_density"
-              },
-              "type": "minecraft:interpolated"
-            },
-            "type": "minecraft:mul"
-          },
-          "type": "minecraft:squeeze"
-        },
-        "argument2": 64.0,
-        "type": "minecraft:min"
-      },
-      "vein_toggle": {
         "argument": {
-          "max_exclusive": 51.0,
-          "when_in_range": {
-            "noise": "minecraft:ore_veininess",
-            "xz_scale": 1.5,
-            "y_scale": 1.5,
-            "type": "minecraft:noise"
-          },
-          "when_out_of_range": 0.0,
-          "input": "minecraft:y",
-          "min_inclusive": -60.0,
-          "type": "minecraft:range_choice"
-        },
-        "type": "minecraft:interpolated"
-      },
-      "vein_ridged": {
-        "argument1": -0.07999999821186066,
-        "argument2": {
-          "argument1": {
-            "argument": {
-              "argument": {
-                "max_exclusive": 51.0,
-                "when_in_range": {
-                  "noise": "minecraft:ore_vein_a",
-                  "xz_scale": 4.0,
-                  "y_scale": 4.0,
-                  "type": "minecraft:noise"
-                },
-                "when_out_of_range": 0.0,
-                "input": "minecraft:y",
-                "min_inclusive": -60.0,
-                "type": "minecraft:range_choice"
-              },
-              "type": "minecraft:interpolated"
-            },
-            "type": "minecraft:abs"
-          },
+          "argument1": 0.64,
           "argument2": {
             "argument": {
               "argument": {
-                "max_exclusive": 51.0,
-                "when_in_range": {
-                  "noise": "minecraft:ore_vein_b",
-                  "xz_scale": 4.0,
-                  "y_scale": 4.0,
-                  "type": "minecraft:noise"
-                },
-                "when_out_of_range": 0.0,
-                "input": "minecraft:y",
-                "min_inclusive": -60.0,
-                "type": "minecraft:range_choice"
+                "argument": "minecraft:overworld/sloped_cheese",
+                "type": "minecraft:slide"
               },
-              "type": "minecraft:interpolated"
+              "type": "minecraft:blend_density"
             },
-            "type": "minecraft:abs"
+            "type": "minecraft:interpolated"
           },
-          "type": "minecraft:max"
+          "type": "minecraft:mul"
         },
-        "type": "minecraft:add"
+        "type": "minecraft:squeeze"
       },
-      "vein_gap": {
-        "noise": "minecraft:ore_gap",
-        "xz_scale": 1.0,
-        "y_scale": 1.0,
-        "type": "minecraft:noise"
-      },
+      "vein_toggle": 0.0,
+      "vein_ridged": 0.0,
+      "vein_gap": 0.0,
       "erosion": "minecraft:overworld/erosion",
       "depth": "minecraft:overworld/depth",
       "ridges": "minecraft:overworld/ridges",
@@ -5087,11 +5014,7 @@
         "argument1": 4.0,
         "argument2": {
           "argument": {
-            "argument1": {
-              "argument1": 0.0,
-              "argument2": "minecraft:overworld/depth",
-              "type": "minecraft:add"
-            },
+            "argument1": "minecraft:overworld/depth",
             "argument2": {
               "argument": "minecraft:overworld/factor",
               "type": "minecraft:cache_2d"
@@ -5102,12 +5025,7 @@
         },
         "type": "minecraft:mul"
       },
-      "lava": {
-        "noise": "minecraft:aquifer_lava",
-        "xz_scale": 1.0,
-        "y_scale": 1.0,
-        "type": "minecraft:noise"
-      },
+      "lava": 0.0,
       "temperature": {
         "xz_scale": 0.25,
         "y_scale": 0.0,
@@ -5127,24 +5045,9 @@
         "type": "minecraft:shifted_noise"
       },
       "continents": "minecraft:overworld/continents",
-      "barrier": {
-        "noise": "minecraft:aquifer_barrier",
-        "xz_scale": 1.0,
-        "y_scale": 0.5,
-        "type": "minecraft:noise"
-      },
-      "fluid_level_floodedness": {
-        "noise": "minecraft:aquifer_fluid_level_floodedness",
-        "xz_scale": 1.0,
-        "y_scale": 0.67,
-        "type": "minecraft:noise"
-      },
-      "fluid_level_spread": {
-        "noise": "minecraft:aquifer_fluid_level_spread",
-        "xz_scale": 1.0,
-        "y_scale": 0.7142857142857143,
-        "type": "minecraft:noise"
-      }
+      "barrier": 0.0,
+      "fluid_level_floodedness": 0.0,
+      "fluid_level_spread": 0.0
     },
     "surface_rule": {
       "sequence": [
@@ -7237,13 +7140,20 @@
       "type": "minecraft:sequence"
     },
     "noise": {
+      "bottom_slide": {
+        "target": 2.5,
+        "size": 4,
+        "offset": -1
+      },
+      "size_horizontal": 1,
+      "size_vertical": 2,
       "terrain_shaper": {
         "offset": 0.0,
         "factor": 0.0,
         "jaggedness": 0.0
       },
-      "size_horizontal": 1,
-      "size_vertical": 2,
+      "min_y": -64,
+      "height": 192,
       "sampling": {
         "xz_scale": 1.0,
         "y_scale": 3.0,
@@ -7254,14 +7164,7 @@
         "target": 0.9375,
         "size": 3,
         "offset": 0
-      },
-      "bottom_slide": {
-        "target": 2.5,
-        "size": 4,
-        "offset": -1
-      },
-      "min_y": -64,
-      "height": 192
+      }
     },
     "default_block": {
       "Name": "minecraft:stone"
@@ -7278,145 +7181,41 @@
     },
     "noise_router": {
       "final_density": {
-        "argument1": {
-          "argument": {
-            "argument1": 0.64,
-            "argument2": {
-              "argument": {
-                "argument": {
-                  "argument": "minecraft:end/sloped_cheese",
-                  "type": "minecraft:slide"
-                },
-                "type": "minecraft:blend_density"
-              },
-              "type": "minecraft:interpolated"
-            },
-            "type": "minecraft:mul"
-          },
-          "type": "minecraft:squeeze"
-        },
-        "argument2": 64.0,
-        "type": "minecraft:min"
-      },
-      "vein_toggle": {
         "argument": {
-          "max_exclusive": 51.0,
-          "when_in_range": {
-            "noise": "minecraft:ore_veininess",
-            "xz_scale": 1.5,
-            "y_scale": 1.5,
-            "type": "minecraft:noise"
-          },
-          "when_out_of_range": 0.0,
-          "input": "minecraft:y",
-          "min_inclusive": -60.0,
-          "type": "minecraft:range_choice"
-        },
-        "type": "minecraft:interpolated"
-      },
-      "vein_ridged": {
-        "argument1": -0.07999999821186066,
-        "argument2": {
-          "argument1": {
-            "argument": {
-              "argument": {
-                "max_exclusive": 51.0,
-                "when_in_range": {
-                  "noise": "minecraft:ore_vein_a",
-                  "xz_scale": 4.0,
-                  "y_scale": 4.0,
-                  "type": "minecraft:noise"
-                },
-                "when_out_of_range": 0.0,
-                "input": "minecraft:y",
-                "min_inclusive": -60.0,
-                "type": "minecraft:range_choice"
-              },
-              "type": "minecraft:interpolated"
-            },
-            "type": "minecraft:abs"
-          },
+          "argument1": 0.64,
           "argument2": {
             "argument": {
               "argument": {
-                "max_exclusive": 51.0,
-                "when_in_range": {
-                  "noise": "minecraft:ore_vein_b",
-                  "xz_scale": 4.0,
-                  "y_scale": 4.0,
-                  "type": "minecraft:noise"
-                },
-                "when_out_of_range": 0.0,
-                "input": "minecraft:y",
-                "min_inclusive": -60.0,
-                "type": "minecraft:range_choice"
+                "argument": "minecraft:end/sloped_cheese",
+                "type": "minecraft:slide"
               },
-              "type": "minecraft:interpolated"
+              "type": "minecraft:blend_density"
             },
-            "type": "minecraft:abs"
+            "type": "minecraft:interpolated"
           },
-          "type": "minecraft:max"
+          "type": "minecraft:mul"
         },
-        "type": "minecraft:add"
+        "type": "minecraft:squeeze"
       },
-      "vein_gap": {
-        "noise": "minecraft:ore_gap",
-        "xz_scale": 1.0,
-        "y_scale": 1.0,
-        "type": "minecraft:noise"
-      },
-      "erosion": "minecraft:overworld/erosion",
-      "depth": "minecraft:overworld/depth",
-      "ridges": "minecraft:overworld/ridges",
+      "vein_toggle": 0.0,
+      "vein_ridged": 0.0,
+      "vein_gap": 0.0,
+      "erosion": 0.0,
+      "depth": 0.0,
+      "ridges": 0.0,
       "initial_density_without_jaggedness": {
         "argument": {
           "type": "minecraft:end_islands"
         },
         "type": "minecraft:cache_2d"
       },
-      "lava": {
-        "noise": "minecraft:aquifer_lava",
-        "xz_scale": 1.0,
-        "y_scale": 1.0,
-        "type": "minecraft:noise"
-      },
-      "temperature": {
-        "xz_scale": 0.25,
-        "y_scale": 0.0,
-        "noise": "minecraft:temperature",
-        "shift_x": "minecraft:shift_x",
-        "shift_y": 0.0,
-        "shift_z": "minecraft:shift_z",
-        "type": "minecraft:shifted_noise"
-      },
-      "vegetation": {
-        "xz_scale": 0.25,
-        "y_scale": 0.0,
-        "noise": "minecraft:vegetation",
-        "shift_x": "minecraft:shift_x",
-        "shift_y": 0.0,
-        "shift_z": "minecraft:shift_z",
-        "type": "minecraft:shifted_noise"
-      },
-      "continents": "minecraft:overworld/continents",
-      "barrier": {
-        "noise": "minecraft:aquifer_barrier",
-        "xz_scale": 1.0,
-        "y_scale": 0.5,
-        "type": "minecraft:noise"
-      },
-      "fluid_level_floodedness": {
-        "noise": "minecraft:aquifer_fluid_level_floodedness",
-        "xz_scale": 1.0,
-        "y_scale": 0.67,
-        "type": "minecraft:noise"
-      },
-      "fluid_level_spread": {
-        "noise": "minecraft:aquifer_fluid_level_spread",
-        "xz_scale": 1.0,
-        "y_scale": 0.7142857142857143,
-        "type": "minecraft:noise"
-      }
+      "lava": 0.0,
+      "temperature": 0.0,
+      "vegetation": 0.0,
+      "continents": 0.0,
+      "barrier": 0.0,
+      "fluid_level_floodedness": 0.0,
+      "fluid_level_spread": 0.0
     },
     "surface_rule": {
       "result_state": {
@@ -7425,14 +7224,20 @@
       "type": "minecraft:block"
     },
     "noise": {
+      "bottom_slide": {
+        "target": -0.234375,
+        "size": 7,
+        "offset": 1
+      },
+      "size_horizontal": 2,
+      "size_vertical": 1,
       "terrain_shaper": {
         "offset": 0.0,
         "factor": 1.0,
         "jaggedness": 0.0
       },
-      "size_horizontal": 2,
-      "size_vertical": 1,
-      "island_noise_override": true,
+      "min_y": 0,
+      "height": 128,
       "sampling": {
         "xz_scale": 2.0,
         "y_scale": 1.0,
@@ -7443,14 +7248,7 @@
         "target": -23.4375,
         "size": 64,
         "offset": -46
-      },
-      "bottom_slide": {
-        "target": -0.234375,
-        "size": 7,
-        "offset": 1
-      },
-      "min_y": 0,
-      "height": 128
+      }
     },
     "default_block": {
       "Name": "minecraft:end_stone"
@@ -7470,93 +7268,25 @@
     },
     "noise_router": {
       "final_density": {
-        "argument1": {
-          "argument": {
-            "argument1": 0.64,
-            "argument2": {
-              "argument": {
-                "argument": {
-                  "argument": "minecraft:overworld/sloped_cheese",
-                  "type": "minecraft:slide"
-                },
-                "type": "minecraft:blend_density"
-              },
-              "type": "minecraft:interpolated"
-            },
-            "type": "minecraft:mul"
-          },
-          "type": "minecraft:squeeze"
-        },
-        "argument2": 64.0,
-        "type": "minecraft:min"
-      },
-      "vein_toggle": {
         "argument": {
-          "max_exclusive": 51.0,
-          "when_in_range": {
-            "noise": "minecraft:ore_veininess",
-            "xz_scale": 1.5,
-            "y_scale": 1.5,
-            "type": "minecraft:noise"
-          },
-          "when_out_of_range": 0.0,
-          "input": "minecraft:y",
-          "min_inclusive": -60.0,
-          "type": "minecraft:range_choice"
-        },
-        "type": "minecraft:interpolated"
-      },
-      "vein_ridged": {
-        "argument1": -0.07999999821186066,
-        "argument2": {
-          "argument1": {
-            "argument": {
-              "argument": {
-                "max_exclusive": 51.0,
-                "when_in_range": {
-                  "noise": "minecraft:ore_vein_a",
-                  "xz_scale": 4.0,
-                  "y_scale": 4.0,
-                  "type": "minecraft:noise"
-                },
-                "when_out_of_range": 0.0,
-                "input": "minecraft:y",
-                "min_inclusive": -60.0,
-                "type": "minecraft:range_choice"
-              },
-              "type": "minecraft:interpolated"
-            },
-            "type": "minecraft:abs"
-          },
+          "argument1": 0.64,
           "argument2": {
             "argument": {
               "argument": {
-                "max_exclusive": 51.0,
-                "when_in_range": {
-                  "noise": "minecraft:ore_vein_b",
-                  "xz_scale": 4.0,
-                  "y_scale": 4.0,
-                  "type": "minecraft:noise"
-                },
-                "when_out_of_range": 0.0,
-                "input": "minecraft:y",
-                "min_inclusive": -60.0,
-                "type": "minecraft:range_choice"
+                "argument": "minecraft:overworld/sloped_cheese",
+                "type": "minecraft:slide"
               },
-              "type": "minecraft:interpolated"
+              "type": "minecraft:blend_density"
             },
-            "type": "minecraft:abs"
+            "type": "minecraft:interpolated"
           },
-          "type": "minecraft:max"
+          "type": "minecraft:mul"
         },
-        "type": "minecraft:add"
+        "type": "minecraft:squeeze"
       },
-      "vein_gap": {
-        "noise": "minecraft:ore_gap",
-        "xz_scale": 1.0,
-        "y_scale": 1.0,
-        "type": "minecraft:noise"
-      },
+      "vein_toggle": 0.0,
+      "vein_ridged": 0.0,
+      "vein_gap": 0.0,
       "erosion": "minecraft:overworld/erosion",
       "depth": "minecraft:overworld/depth",
       "ridges": "minecraft:overworld/ridges",
@@ -7564,11 +7294,7 @@
         "argument1": 4.0,
         "argument2": {
           "argument": {
-            "argument1": {
-              "argument1": 0.0,
-              "argument2": "minecraft:overworld/depth",
-              "type": "minecraft:add"
-            },
+            "argument1": "minecraft:overworld/depth",
             "argument2": {
               "argument": "minecraft:overworld/factor",
               "type": "minecraft:cache_2d"
@@ -7579,12 +7305,7 @@
         },
         "type": "minecraft:mul"
       },
-      "lava": {
-        "noise": "minecraft:aquifer_lava",
-        "xz_scale": 1.0,
-        "y_scale": 1.0,
-        "type": "minecraft:noise"
-      },
+      "lava": 0.0,
       "temperature": {
         "xz_scale": 0.25,
         "y_scale": 0.0,
@@ -7604,24 +7325,9 @@
         "type": "minecraft:shifted_noise"
       },
       "continents": "minecraft:overworld/continents",
-      "barrier": {
-        "noise": "minecraft:aquifer_barrier",
-        "xz_scale": 1.0,
-        "y_scale": 0.5,
-        "type": "minecraft:noise"
-      },
-      "fluid_level_floodedness": {
-        "noise": "minecraft:aquifer_fluid_level_floodedness",
-        "xz_scale": 1.0,
-        "y_scale": 0.67,
-        "type": "minecraft:noise"
-      },
-      "fluid_level_spread": {
-        "noise": "minecraft:aquifer_fluid_level_spread",
-        "xz_scale": 1.0,
-        "y_scale": 0.7142857142857143,
-        "type": "minecraft:noise"
-      }
+      "barrier": 0.0,
+      "fluid_level_floodedness": 0.0,
+      "fluid_level_spread": 0.0
     },
     "surface_rule": {
       "sequence": [
@@ -9673,13 +9379,20 @@
       "type": "minecraft:sequence"
     },
     "noise": {
+      "bottom_slide": {
+        "target": -0.234375,
+        "size": 7,
+        "offset": 1
+      },
+      "size_horizontal": 2,
+      "size_vertical": 1,
       "terrain_shaper": {
         "offset": 0.0,
         "factor": 0.0,
         "jaggedness": 0.0
       },
-      "size_horizontal": 2,
-      "size_vertical": 1,
+      "min_y": 0,
+      "height": 256,
       "sampling": {
         "xz_scale": 2.0,
         "y_scale": 1.0,
@@ -9690,14 +9403,7 @@
         "target": -23.4375,
         "size": 64,
         "offset": -46
-      },
-      "bottom_slide": {
-        "target": -0.234375,
-        "size": 7,
-        "offset": 1
-      },
-      "min_y": 0,
-      "height": 256
+      }
     },
     "default_block": {
       "Name": "minecraft:stone"
@@ -9896,11 +9602,7 @@
         "argument1": 4.0,
         "argument2": {
           "argument": {
-            "argument1": {
-              "argument1": 0.0,
-              "argument2": "minecraft:overworld_large_biomes/depth",
-              "type": "minecraft:add"
-            },
+            "argument1": "minecraft:overworld_large_biomes/depth",
             "argument2": {
               "argument": "minecraft:overworld_large_biomes/factor",
               "type": "minecraft:cache_2d"
@@ -12030,7 +11732,13 @@
       "type": "minecraft:sequence"
     },
     "noise": {
-      "large_biomes": true,
+      "bottom_slide": {
+        "target": 0.1171875,
+        "size": 3,
+        "offset": 0
+      },
+      "size_horizontal": 1,
+      "size_vertical": 2,
       "terrain_shaper": {
         "offset": {
           "coordinate": "continents",
@@ -14658,8 +14366,8 @@
           ]
         }
       },
-      "size_horizontal": 1,
-      "size_vertical": 2,
+      "min_y": -64,
+      "height": 384,
       "sampling": {
         "xz_scale": 1.0,
         "y_scale": 1.0,
@@ -14670,14 +14378,7 @@
         "target": -0.078125,
         "size": 2,
         "offset": 8
-      },
-      "bottom_slide": {
-        "target": 0.1171875,
-        "size": 3,
-        "offset": 0
-      },
-      "min_y": -64,
-      "height": 384
+      }
     },
     "default_block": {
       "Name": "minecraft:stone"
@@ -14697,93 +14398,25 @@
     },
     "noise_router": {
       "final_density": {
-        "argument1": {
-          "argument": {
-            "argument1": 0.64,
-            "argument2": {
-              "argument": {
-                "argument": {
-                  "argument": "minecraft:overworld/sloped_cheese",
-                  "type": "minecraft:slide"
-                },
-                "type": "minecraft:blend_density"
-              },
-              "type": "minecraft:interpolated"
-            },
-            "type": "minecraft:mul"
-          },
-          "type": "minecraft:squeeze"
-        },
-        "argument2": 64.0,
-        "type": "minecraft:min"
-      },
-      "vein_toggle": {
         "argument": {
-          "max_exclusive": 51.0,
-          "when_in_range": {
-            "noise": "minecraft:ore_veininess",
-            "xz_scale": 1.5,
-            "y_scale": 1.5,
-            "type": "minecraft:noise"
-          },
-          "when_out_of_range": 0.0,
-          "input": "minecraft:y",
-          "min_inclusive": -60.0,
-          "type": "minecraft:range_choice"
-        },
-        "type": "minecraft:interpolated"
-      },
-      "vein_ridged": {
-        "argument1": -0.07999999821186066,
-        "argument2": {
-          "argument1": {
-            "argument": {
-              "argument": {
-                "max_exclusive": 51.0,
-                "when_in_range": {
-                  "noise": "minecraft:ore_vein_a",
-                  "xz_scale": 4.0,
-                  "y_scale": 4.0,
-                  "type": "minecraft:noise"
-                },
-                "when_out_of_range": 0.0,
-                "input": "minecraft:y",
-                "min_inclusive": -60.0,
-                "type": "minecraft:range_choice"
-              },
-              "type": "minecraft:interpolated"
-            },
-            "type": "minecraft:abs"
-          },
+          "argument1": 0.64,
           "argument2": {
             "argument": {
               "argument": {
-                "max_exclusive": 51.0,
-                "when_in_range": {
-                  "noise": "minecraft:ore_vein_b",
-                  "xz_scale": 4.0,
-                  "y_scale": 4.0,
-                  "type": "minecraft:noise"
-                },
-                "when_out_of_range": 0.0,
-                "input": "minecraft:y",
-                "min_inclusive": -60.0,
-                "type": "minecraft:range_choice"
+                "argument": "minecraft:overworld/sloped_cheese",
+                "type": "minecraft:slide"
               },
-              "type": "minecraft:interpolated"
+              "type": "minecraft:blend_density"
             },
-            "type": "minecraft:abs"
+            "type": "minecraft:interpolated"
           },
-          "type": "minecraft:max"
+          "type": "minecraft:mul"
         },
-        "type": "minecraft:add"
+        "type": "minecraft:squeeze"
       },
-      "vein_gap": {
-        "noise": "minecraft:ore_gap",
-        "xz_scale": 1.0,
-        "y_scale": 1.0,
-        "type": "minecraft:noise"
-      },
+      "vein_toggle": 0.0,
+      "vein_ridged": 0.0,
+      "vein_gap": 0.0,
       "erosion": "minecraft:overworld/erosion",
       "depth": "minecraft:overworld/depth",
       "ridges": "minecraft:overworld/ridges",
@@ -14791,11 +14424,7 @@
         "argument1": 4.0,
         "argument2": {
           "argument": {
-            "argument1": {
-              "argument1": 0.0,
-              "argument2": "minecraft:overworld/depth",
-              "type": "minecraft:add"
-            },
+            "argument1": "minecraft:overworld/depth",
             "argument2": {
               "argument": "minecraft:overworld/factor",
               "type": "minecraft:cache_2d"
@@ -14806,12 +14435,7 @@
         },
         "type": "minecraft:mul"
       },
-      "lava": {
-        "noise": "minecraft:aquifer_lava",
-        "xz_scale": 1.0,
-        "y_scale": 1.0,
-        "type": "minecraft:noise"
-      },
+      "lava": 0.0,
       "temperature": {
         "xz_scale": 0.25,
         "y_scale": 0.0,
@@ -14831,24 +14455,9 @@
         "type": "minecraft:shifted_noise"
       },
       "continents": "minecraft:overworld/continents",
-      "barrier": {
-        "noise": "minecraft:aquifer_barrier",
-        "xz_scale": 1.0,
-        "y_scale": 0.5,
-        "type": "minecraft:noise"
-      },
-      "fluid_level_floodedness": {
-        "noise": "minecraft:aquifer_fluid_level_floodedness",
-        "xz_scale": 1.0,
-        "y_scale": 0.67,
-        "type": "minecraft:noise"
-      },
-      "fluid_level_spread": {
-        "noise": "minecraft:aquifer_fluid_level_spread",
-        "xz_scale": 1.0,
-        "y_scale": 0.7142857142857143,
-        "type": "minecraft:noise"
-      }
+      "barrier": 0.0,
+      "fluid_level_floodedness": 0.0,
+      "fluid_level_spread": 0.0
     },
     "surface_rule": {
       "sequence": [
@@ -15483,13 +15092,20 @@
       "type": "minecraft:sequence"
     },
     "noise": {
+      "bottom_slide": {
+        "target": 2.5,
+        "size": 4,
+        "offset": -1
+      },
+      "size_horizontal": 1,
+      "size_vertical": 2,
       "terrain_shaper": {
         "offset": 0.0,
         "factor": 0.0,
         "jaggedness": 0.0
       },
-      "size_horizontal": 1,
-      "size_vertical": 2,
+      "min_y": 0,
+      "height": 128,
       "sampling": {
         "xz_scale": 1.0,
         "y_scale": 3.0,
@@ -15500,14 +15116,7 @@
         "target": 0.9375,
         "size": 3,
         "offset": 0
-      },
-      "bottom_slide": {
-        "target": 2.5,
-        "size": 4,
-        "offset": -1
-      },
-      "min_y": 0,
-      "height": 128
+      }
     },
     "default_block": {
       "Name": "minecraft:netherrack"
@@ -15706,11 +15315,7 @@
         "argument1": 4.0,
         "argument2": {
           "argument": {
-            "argument1": {
-              "argument1": 0.0,
-              "argument2": "minecraft:overworld/depth",
-              "type": "minecraft:add"
-            },
+            "argument1": "minecraft:overworld/depth",
             "argument2": {
               "argument": "minecraft:overworld/factor",
               "type": "minecraft:cache_2d"
@@ -17840,6 +17445,13 @@
       "type": "minecraft:sequence"
     },
     "noise": {
+      "bottom_slide": {
+        "target": 0.1171875,
+        "size": 3,
+        "offset": 0
+      },
+      "size_horizontal": 1,
+      "size_vertical": 2,
       "terrain_shaper": {
         "offset": {
           "coordinate": "continents",
@@ -20467,8 +20079,8 @@
           ]
         }
       },
-      "size_horizontal": 1,
-      "size_vertical": 2,
+      "min_y": -64,
+      "height": 384,
       "sampling": {
         "xz_scale": 1.0,
         "y_scale": 1.0,
@@ -20479,14 +20091,7 @@
         "target": -0.078125,
         "size": 2,
         "offset": 8
-      },
-      "bottom_slide": {
-        "target": 0.1171875,
-        "size": 3,
-        "offset": 0
-      },
-      "min_y": -64,
-      "height": 384
+      }
     },
     "default_block": {
       "Name": "minecraft:stone"
