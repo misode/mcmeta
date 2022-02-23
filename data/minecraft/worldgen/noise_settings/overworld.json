@@ -191,11 +191,7 @@
       "argument1": 4.0,
       "argument2": {
         "argument": {
-          "argument1": {
-            "argument1": 0.0,
-            "argument2": "minecraft:overworld/depth",
-            "type": "minecraft:add"
-          },
+          "argument1": "minecraft:overworld/depth",
           "argument2": {
             "argument": "minecraft:overworld/factor",
             "type": "minecraft:cache_2d"
@@ -2325,6 +2321,13 @@
     "type": "minecraft:sequence"
   },
   "noise": {
+    "bottom_slide": {
+      "target": 0.1171875,
+      "size": 3,
+      "offset": 0
+    },
+    "size_horizontal": 1,
+    "size_vertical": 2,
     "terrain_shaper": {
       "offset": {
         "coordinate": "continents",
@@ -4952,8 +4955,8 @@
         ]
       }
     },
-    "size_horizontal": 1,
-    "size_vertical": 2,
+    "min_y": -64,
+    "height": 384,
     "sampling": {
       "xz_scale": 1.0,
       "y_scale": 1.0,
@@ -4964,14 +4967,7 @@
       "target": -0.078125,
       "size": 2,
       "offset": 8
-    },
-    "bottom_slide": {
-      "target": 0.1171875,
-      "size": 3,
-      "offset": 0
-    },
-    "min_y": -64,
-    "height": 384
+    }
   },
   "default_block": {
     "Name": "minecraft:stone"
