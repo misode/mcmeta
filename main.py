@@ -68,10 +68,10 @@ def main(version: str, file, reset: bool, fetch: bool, commit: bool, export: tup
 
 	init_exports(versions[process_versions[0]]['releaseTime'], reset, fetch, export, branch)
 
-	try:
-		os.remove('versions.json')
-	except OSError:
-		pass
+	# try:
+	# 	os.remove('versions.json')
+	# except OSError:
+	# 	pass
 
 	click.echo(f'🚧 Processing versions: {", ".join(process_versions)}')
 	t0 = time.time()
@@ -247,12 +247,11 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			[('pools.0.entries.[name=minecraft:suspicious_stew].functions.0.effects', lambda e: e['type'])]),
 		('loot_tables/gameplay/hero_of_the_village/fletcher_gift',
 			[('pools.0.entries', lambda e: (e.get('functions')[-1].get('tag') or e.get('functions')[-1].get('id')) if e.get('functions') else e.get('name'))]),
+		('worldgen/noise_settings/*', [('structures.structures', None)]),
+		('worldgen/noise_settings/*', [('structures', None)]),
+		('worldgen/configured_structure_feature/*', [('spawn_overrides', None)]),
+		('worldgen/structure/*', [('spawn_overrides', None)]),
 	]
-
-	if versions[version]['index'] > versions['22w06a']['index'] or version_meta['type'] == 'pending':
-		reorders.append(('worldgen/noise_settings/*', [('structures.structures', None)]))
-	elif versions[version]['index'] > versions['1.18.2-pre1']['index']:
-		reorders.append(('worldgen/noise_settings/*', [('structures', None)]))
 
 	for filepath, sorts in reorders:
 		for file in glob.glob(f'data/data/minecraft/{filepath}.json'):
@@ -263,11 +262,19 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 				*parts, last = [int(p) if re.match('\d+', p) else p for p in path.split('.')]
 				node = root
 				for p in parts:
+					if node is None:
+						break
 					if type(p) == str and p.startswith('['):
 						key, value = p[1:-1].split('=')
-						node = next(e for e in node if e[key] == value)
-					else:
+						node = next((e for e in node if key in e and e[key] == value), None)
+					elif type(node) == list:
 						node = node[p]
+					elif hasattr(node, 'get'):
+						node = node.get(p, None)
+					else:
+						node = None
+				if node is None or last not in node:
+					break
 				if type(node[last]) == dict:
 					node[last] = dict(sorted(node[last].items(), key=order))
 				else:
