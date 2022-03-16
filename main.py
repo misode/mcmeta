@@ -185,7 +185,8 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	except:
 		version_metas = []
 
-	version_metas.append(get_version_meta(version, versions, 'client.jar'))
+	if version not in [v['id'] for v in version_metas]:
+		version_metas.append(get_version_meta(version, versions, 'client.jar'))
 	has_version_ids = [v['id'] for v in version_metas]
 	for v in expand_version_range(f'1.14..{version}', versions):
 		if v not in has_version_ids:
@@ -289,17 +290,29 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			entries = [e.replace('\\', '/', -1).removeprefix(f'{path}/').removesuffix(f'.{ext}') for e in files]
 			return sorted(entries)
 
-		for path, key in [('advancements', 'advancement'), ('loot_tables', 'loot_table'),('recipes', 'recipe'), ('tags/blocks', 'tag/block'), ('tags/entity_types', 'tag/entity_type'), ('tags/fluids', 'tag/fluid'), ('tags/game_events', 'tag/game_event'), ('tags/items', 'tag/item')]:
-			registries[key] = listfiles(f'data/data/minecraft/{path}')
+		registry_overrides = {
+			'advancements': 'advancement',
+			'loot_tables': 'loot_table',
+			'recipes': 'recipe',
+			'tag/blocks': 'tag/block',
+			'tag/entity_types': 'tag/entity_type',
+			'tag/fluids': 'tag/fluid',
+			'tag/game_events': 'tag/game_event',
+			'tag/items': 'tag/item',
+		}
 
-		for key in ['dimension', 'dimension_type', 'worldgen/biome', 'worldgen/configured_carver', 'worldgen/configured_feature', 'worldgen/density_function', 'worldgen/configured_structure_feature', 'worldgen/configured_surface_builder', 'worldgen/noise', 'worldgen/noise_settings', 'worldgen/placed_feature', 'worldgen/processor_list', 'worldgen/structure_set', 'worldgen/template_pool']:
-			if key not in registries:
-				registries[key] = listfiles(f'data/data/minecraft/{key}')
+		for pattern in ['', 'worldgen/', 'tags/', 'tags/worldgen/']:
+			full_pattern = f'data/data/minecraft/{pattern}'
+			types = [
+				e.replace('\\', '/', -1).removeprefix(full_pattern).removesuffix('/')
+				for e in glob.glob(f'{full_pattern}*/')
+			]
+			for typ in [t for t in types if t not in ['tags', 'worldgen', 'structures']]:
+				registry_key = (pattern + typ).replace('tags/', 'tag/')
+				registry_key = registry_overrides.get(registry_key, registry_key)
+				registries[registry_key] = listfiles(full_pattern + typ)
 
 		registries['structure'] = listfiles('data/data/minecraft/structures', 'nbt')
-
-		for key in ['item_modifier', 'predicate', 'function']:
-			registries[key] = []
 
 		for path, key in [('blockstates', 'block_definition'), ('font', 'font'), ('models', 'model')]:
 			registries[key] = listfiles(f'assets/assets/minecraft/{path}')
