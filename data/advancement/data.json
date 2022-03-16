@@ -420,6 +420,14 @@
             "biome": "minecraft:lush_caves"
           }
         }
+      },
+      "minecraft:deep_dark": {
+        "trigger": "minecraft:location",
+        "conditions": {
+          "location": {
+            "biome": "minecraft:deep_dark"
+          }
+        }
       }
     },
     "requirements": [
@@ -572,6 +580,9 @@
       ],
       [
         "minecraft:lush_caves"
+      ],
+      [
+        "minecraft:deep_dark"
       ]
     ]
   },
@@ -2936,7 +2947,7 @@
         "trigger": "minecraft:location",
         "conditions": {
           "location": {
-            "feature": "minecraft:end_city"
+            "structure": "minecraft:end_city"
           }
         }
       }
@@ -5515,7 +5526,7 @@
         "trigger": "minecraft:location",
         "conditions": {
           "location": {
-            "feature": "minecraft:bastion_remnant"
+            "structure": "minecraft:bastion_remnant"
           }
         }
       }
@@ -5548,7 +5559,7 @@
         "trigger": "minecraft:location",
         "conditions": {
           "location": {
-            "feature": "minecraft:fortress"
+            "structure": "minecraft:fortress"
           }
         }
       }
@@ -13289,6 +13300,208 @@
       ]
     ]
   },
+  "recipes/building_blocks/mangrove_fence": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mangrove_fence"
+      ]
+    },
+    "criteria": {
+      "has_planks": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mangrove_planks"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mangrove_fence"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/mangrove_fence_gate": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mangrove_fence_gate"
+      ]
+    },
+    "criteria": {
+      "has_planks": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mangrove_planks"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mangrove_fence_gate"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/mangrove_planks": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mangrove_planks"
+      ]
+    },
+    "criteria": {
+      "has_logs": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "tag": "minecraft:mangrove_logs"
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mangrove_planks"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_logs",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/mangrove_slab": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mangrove_slab"
+      ]
+    },
+    "criteria": {
+      "has_planks": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mangrove_planks"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mangrove_slab"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/mangrove_stairs": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mangrove_stairs"
+      ]
+    },
+    "criteria": {
+      "has_planks": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mangrove_planks"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mangrove_stairs"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/mangrove_wood": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mangrove_wood"
+      ]
+    },
+    "criteria": {
+      "has_log": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mangrove_log"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mangrove_wood"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_log",
+        "has_the_recipe"
+      ]
+    ]
+  },
   "recipes/building_blocks/melon": {
     "parent": "minecraft:recipes/root",
     "rewards": {
@@ -13727,6 +13940,210 @@
     "requirements": [
       [
         "has_vine",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/mud_brick_slab": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mud_brick_slab"
+      ]
+    },
+    "criteria": {
+      "has_mud_bricks": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mud_bricks"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mud_brick_slab"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_mud_bricks",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/mud_brick_slab_from_mud_bricks_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mud_brick_slab_from_mud_bricks_stonecutting"
+      ]
+    },
+    "criteria": {
+      "has_mud_bricks": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mud_bricks"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mud_brick_slab_from_mud_bricks_stonecutting"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_mud_bricks",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/mud_brick_stairs": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mud_brick_stairs"
+      ]
+    },
+    "criteria": {
+      "has_mud_bricks": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mud_bricks"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mud_brick_stairs"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_mud_bricks",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/mud_brick_stairs_from_mud_bricks_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mud_brick_stairs_from_mud_bricks_stonecutting"
+      ]
+    },
+    "criteria": {
+      "has_mud_bricks": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mud_bricks"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mud_brick_stairs_from_mud_bricks_stonecutting"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_mud_bricks",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/mud_bricks": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mud_bricks"
+      ]
+    },
+    "criteria": {
+      "has_packed_mud": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:packed_mud"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mud_bricks"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_packed_mud",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/muddy_mangrove_roots": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:muddy_mangrove_roots"
+      ]
+    },
+    "criteria": {
+      "has_mangrove_roots": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mangrove_roots"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:muddy_mangrove_roots"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_mangrove_roots",
         "has_the_recipe"
       ]
     ]
@@ -14554,6 +14971,40 @@
     "requirements": [
       [
         "has_ice",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/packed_mud": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:packed_mud"
+      ]
+    },
+    "criteria": {
+      "has_mud": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mud"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:packed_mud"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_mud",
         "has_the_recipe"
       ]
     ]
@@ -19939,6 +20390,40 @@
         "trigger": "minecraft:recipe_unlocked",
         "conditions": {
           "recipe": "minecraft:stripped_jungle_wood"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_log",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/building_blocks/stripped_mangrove_wood": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:stripped_mangrove_wood"
+      ]
+    },
+    "criteria": {
+      "has_log": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:stripped_mangrove_log"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:stripped_mangrove_wood"
         }
       }
     },
@@ -29221,6 +29706,40 @@
       ]
     ]
   },
+  "recipes/decorations/mangrove_sign": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mangrove_sign"
+      ]
+    },
+    "criteria": {
+      "has_planks": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mangrove_planks"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mangrove_sign"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ]
+  },
   "recipes/decorations/moss_carpet": {
     "parent": "minecraft:recipes/root",
     "rewards": {
@@ -29387,6 +29906,74 @@
     "requirements": [
       [
         "has_mossy_stone_bricks",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/decorations/mud_brick_wall": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mud_brick_wall"
+      ]
+    },
+    "criteria": {
+      "has_mud_bricks": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mud_bricks"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mud_brick_wall"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_mud_bricks",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/decorations/mud_brick_wall_from_mud_bricks_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mud_brick_wall_from_mud_bricks_stonecutting"
+      ]
+    },
+    "criteria": {
+      "has_mud_bricks": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mud_bricks"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mud_brick_wall_from_mud_bricks_stonecutting"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_mud_bricks",
         "has_the_recipe"
       ]
     ]
@@ -40514,6 +41101,142 @@
       ]
     ]
   },
+  "recipes/redstone/mangrove_button": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mangrove_button"
+      ]
+    },
+    "criteria": {
+      "has_planks": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mangrove_planks"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mangrove_button"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/redstone/mangrove_door": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mangrove_door"
+      ]
+    },
+    "criteria": {
+      "has_planks": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mangrove_planks"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mangrove_door"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/redstone/mangrove_pressure_plate": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mangrove_pressure_plate"
+      ]
+    },
+    "criteria": {
+      "has_planks": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mangrove_planks"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mangrove_pressure_plate"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ]
+  },
+  "recipes/redstone/mangrove_trapdoor": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mangrove_trapdoor"
+      ]
+    },
+    "criteria": {
+      "has_planks": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:mangrove_planks"
+              ]
+            }
+          ]
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mangrove_trapdoor"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ]
+  },
   "recipes/redstone/note_block": {
     "parent": "minecraft:recipes/root",
     "rewards": {
@@ -43172,6 +43895,34 @@
       ]
     ]
   },
+  "recipes/transportation/mangrove_boat": {
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+      "recipes": [
+        "minecraft:mangrove_boat"
+      ]
+    },
+    "criteria": {
+      "in_water": {
+        "trigger": "minecraft:enter_block",
+        "conditions": {
+          "block": "minecraft:water"
+        }
+      },
+      "has_the_recipe": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "minecraft:mangrove_boat"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "in_water",
+        "has_the_recipe"
+      ]
+    ]
+  },
   "recipes/transportation/minecart": {
     "parent": "minecraft:recipes/root",
     "rewards": {
@@ -43578,7 +44329,7 @@
         "trigger": "minecraft:location",
         "conditions": {
           "location": {
-            "feature": "minecraft:stronghold"
+            "structure": "minecraft:stronghold"
           }
         }
       }
