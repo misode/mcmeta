@@ -2,6 +2,7 @@
   "aquifers_enabled": false,
   "ore_veins_enabled": false,
   "legacy_random_source": true,
+  "spawn_target": [],
   "sea_level": 32,
   "disable_mob_generation": false,
   "default_fluid": {
@@ -17,7 +18,7 @@
         "argument2": {
           "argument": {
             "argument": {
-              "argument": "minecraft:overworld/sloped_cheese",
+              "argument": "minecraft:overworld/base_3d_noise",
               "type": "minecraft:slide"
             },
             "type": "minecraft:blend_density"
@@ -31,24 +32,10 @@
     "vein_toggle": 0.0,
     "vein_ridged": 0.0,
     "vein_gap": 0.0,
-    "erosion": "minecraft:overworld/erosion",
-    "depth": "minecraft:overworld/depth",
-    "ridges": "minecraft:overworld/ridges",
-    "initial_density_without_jaggedness": {
-      "argument1": 4.0,
-      "argument2": {
-        "argument": {
-          "argument1": "minecraft:overworld/depth",
-          "argument2": {
-            "argument": "minecraft:overworld/factor",
-            "type": "minecraft:cache_2d"
-          },
-          "type": "minecraft:mul"
-        },
-        "type": "minecraft:quarter_negative"
-      },
-      "type": "minecraft:mul"
-    },
+    "erosion": 0.0,
+    "depth": 0.0,
+    "ridges": 0.0,
+    "initial_density_without_jaggedness": 0.0,
     "lava": 0.0,
     "temperature": {
       "xz_scale": 0.25,
@@ -68,7 +55,7 @@
       "shift_z": "minecraft:shift_z",
       "type": "minecraft:shifted_noise"
     },
-    "continents": "minecraft:overworld/continents",
+    "continents": 0.0,
     "barrier": 0.0,
     "fluid_level_floodedness": 0.0,
     "fluid_level_spread": 0.0
@@ -2164,6 +2151,11 @@
     "type": "minecraft:sequence"
   },
   "noise": {
+    "top_slide": {
+      "target": 0.9375,
+      "size": 3,
+      "offset": 0
+    },
     "bottom_slide": {
       "target": 2.5,
       "size": 4,
@@ -2171,11 +2163,6 @@
     },
     "size_horizontal": 1,
     "size_vertical": 2,
-    "terrain_shaper": {
-      "offset": 0.0,
-      "factor": 0.0,
-      "jaggedness": 0.0
-    },
     "min_y": -64,
     "height": 192,
     "sampling": {
@@ -2183,11 +2170,6 @@
       "y_scale": 3.0,
       "xz_factor": 80.0,
       "y_factor": 60.0
-    },
-    "top_slide": {
-      "target": 0.9375,
-      "size": 3,
-      "offset": 0
     }
   },
   "default_block": {

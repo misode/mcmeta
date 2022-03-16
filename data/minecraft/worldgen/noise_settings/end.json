@@ -2,6 +2,7 @@
   "aquifers_enabled": false,
   "ore_veins_enabled": false,
   "legacy_random_source": true,
+  "spawn_target": [],
   "sea_level": 0,
   "disable_mob_generation": true,
   "default_fluid": {
@@ -28,7 +29,12 @@
     "vein_toggle": 0.0,
     "vein_ridged": 0.0,
     "vein_gap": 0.0,
-    "erosion": 0.0,
+    "erosion": {
+      "argument": {
+        "type": "minecraft:end_islands"
+      },
+      "type": "minecraft:cache_2d"
+    },
     "depth": 0.0,
     "ridges": 0.0,
     "initial_density_without_jaggedness": {
@@ -52,6 +58,11 @@
     "type": "minecraft:block"
   },
   "noise": {
+    "top_slide": {
+      "target": -23.4375,
+      "size": 64,
+      "offset": -46
+    },
     "bottom_slide": {
       "target": -0.234375,
       "size": 7,
@@ -59,11 +70,6 @@
     },
     "size_horizontal": 2,
     "size_vertical": 1,
-    "terrain_shaper": {
-      "offset": 0.0,
-      "factor": 1.0,
-      "jaggedness": 0.0
-    },
     "min_y": 0,
     "height": 128,
     "sampling": {
@@ -71,11 +77,6 @@
       "y_scale": 1.0,
       "xz_factor": 80.0,
       "y_factor": 160.0
-    },
-    "top_slide": {
-      "target": -23.4375,
-      "size": 64,
-      "offset": -46
     }
   },
   "default_block": {
