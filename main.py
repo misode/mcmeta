@@ -68,10 +68,10 @@ def main(version: str, file, reset: bool, fetch: bool, commit: bool, export: tup
 
 	init_exports(versions[process_versions[0]]['releaseTime'], reset, fetch, export, branch)
 
-	# try:
-	# 	os.remove('versions.json')
-	# except OSError:
-	# 	pass
+	try:
+		os.remove('versions.json')
+	except OSError:
+		pass
 
 	click.echo(f'🚧 Processing versions: {", ".join(process_versions)}')
 	t0 = time.time()
