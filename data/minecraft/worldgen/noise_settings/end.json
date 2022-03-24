@@ -15,8 +15,41 @@
         "argument2": {
           "argument": {
             "argument": {
-              "argument": "minecraft:end/sloped_cheese",
-              "type": "minecraft:slide"
+              "argument1": -0.234375,
+              "argument2": {
+                "argument1": {
+                  "from_y": 4,
+                  "to_y": 32,
+                  "from_value": 0.0,
+                  "to_value": 1.0,
+                  "type": "minecraft:y_clamped_gradient"
+                },
+                "argument2": {
+                  "argument1": 0.234375,
+                  "argument2": {
+                    "argument1": -23.4375,
+                    "argument2": {
+                      "argument1": {
+                        "from_y": 56,
+                        "to_y": 312,
+                        "from_value": 1.0,
+                        "to_value": 0.0,
+                        "type": "minecraft:y_clamped_gradient"
+                      },
+                      "argument2": {
+                        "argument1": 23.4375,
+                        "argument2": "minecraft:end/sloped_cheese",
+                        "type": "minecraft:add"
+                      },
+                      "type": "minecraft:mul"
+                    },
+                    "type": "minecraft:add"
+                  },
+                  "type": "minecraft:add"
+                },
+                "type": "minecraft:mul"
+              },
+              "type": "minecraft:add"
             },
             "type": "minecraft:blend_density"
           },
@@ -38,10 +71,50 @@
     "depth": 0.0,
     "ridges": 0.0,
     "initial_density_without_jaggedness": {
-      "argument": {
-        "type": "minecraft:end_islands"
+      "argument1": -0.234375,
+      "argument2": {
+        "argument1": {
+          "from_y": 4,
+          "to_y": 32,
+          "from_value": 0.0,
+          "to_value": 1.0,
+          "type": "minecraft:y_clamped_gradient"
+        },
+        "argument2": {
+          "argument1": 0.234375,
+          "argument2": {
+            "argument1": -23.4375,
+            "argument2": {
+              "argument1": {
+                "from_y": 56,
+                "to_y": 312,
+                "from_value": 1.0,
+                "to_value": 0.0,
+                "type": "minecraft:y_clamped_gradient"
+              },
+              "argument2": {
+                "argument1": 23.4375,
+                "argument2": {
+                  "argument1": -0.703125,
+                  "argument2": {
+                    "argument": {
+                      "type": "minecraft:end_islands"
+                    },
+                    "type": "minecraft:cache_2d"
+                  },
+                  "type": "minecraft:add"
+                },
+                "type": "minecraft:add"
+              },
+              "type": "minecraft:mul"
+            },
+            "type": "minecraft:add"
+          },
+          "type": "minecraft:add"
+        },
+        "type": "minecraft:mul"
       },
-      "type": "minecraft:cache_2d"
+      "type": "minecraft:add"
     },
     "lava": 0.0,
     "temperature": 0.0,
@@ -58,26 +131,10 @@
     "type": "minecraft:block"
   },
   "noise": {
-    "top_slide": {
-      "target": -23.4375,
-      "size": 64,
-      "offset": -46
-    },
-    "bottom_slide": {
-      "target": -0.234375,
-      "size": 7,
-      "offset": 1
-    },
-    "size_horizontal": 2,
-    "size_vertical": 1,
     "min_y": 0,
     "height": 128,
-    "sampling": {
-      "xz_scale": 2.0,
-      "y_scale": 1.0,
-      "xz_factor": 80.0,
-      "y_factor": 160.0
-    }
+    "size_horizontal": 2,
+    "size_vertical": 1
   },
   "default_block": {
     "Name": "minecraft:end_stone"

@@ -18,8 +18,41 @@
         "argument2": {
           "argument": {
             "argument": {
-              "argument": "minecraft:overworld/base_3d_noise",
-              "type": "minecraft:slide"
+              "argument1": -0.234375,
+              "argument2": {
+                "argument1": {
+                  "from_y": 4,
+                  "to_y": 32,
+                  "from_value": 0.0,
+                  "to_value": 1.0,
+                  "type": "minecraft:y_clamped_gradient"
+                },
+                "argument2": {
+                  "argument1": 0.234375,
+                  "argument2": {
+                    "argument1": -23.4375,
+                    "argument2": {
+                      "argument1": {
+                        "from_y": 184,
+                        "to_y": 440,
+                        "from_value": 1.0,
+                        "to_value": 0.0,
+                        "type": "minecraft:y_clamped_gradient"
+                      },
+                      "argument2": {
+                        "argument1": 23.4375,
+                        "argument2": "minecraft:end/base_3d_noise",
+                        "type": "minecraft:add"
+                      },
+                      "type": "minecraft:mul"
+                    },
+                    "type": "minecraft:add"
+                  },
+                  "type": "minecraft:add"
+                },
+                "type": "minecraft:mul"
+              },
+              "type": "minecraft:add"
             },
             "type": "minecraft:blend_density"
           },
@@ -2110,26 +2143,10 @@
     "type": "minecraft:sequence"
   },
   "noise": {
-    "top_slide": {
-      "target": -23.4375,
-      "size": 64,
-      "offset": -46
-    },
-    "bottom_slide": {
-      "target": -0.234375,
-      "size": 7,
-      "offset": 1
-    },
-    "size_horizontal": 2,
-    "size_vertical": 1,
     "min_y": 0,
     "height": 256,
-    "sampling": {
-      "xz_scale": 2.0,
-      "y_scale": 1.0,
-      "xz_factor": 80.0,
-      "y_factor": 160.0
-    }
+    "size_horizontal": 2,
+    "size_vertical": 1
   },
   "default_block": {
     "Name": "minecraft:stone"

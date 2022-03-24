@@ -18,8 +18,41 @@
         "argument2": {
           "argument": {
             "argument": {
-              "argument": "minecraft:overworld/base_3d_noise",
-              "type": "minecraft:slide"
+              "argument1": 2.5,
+              "argument2": {
+                "argument1": {
+                  "from_y": -8,
+                  "to_y": 24,
+                  "from_value": 0.0,
+                  "to_value": 1.0,
+                  "type": "minecraft:y_clamped_gradient"
+                },
+                "argument2": {
+                  "argument1": -2.5,
+                  "argument2": {
+                    "argument1": 0.9375,
+                    "argument2": {
+                      "argument1": {
+                        "from_y": 104,
+                        "to_y": 128,
+                        "from_value": 1.0,
+                        "to_value": 0.0,
+                        "type": "minecraft:y_clamped_gradient"
+                      },
+                      "argument2": {
+                        "argument1": -0.9375,
+                        "argument2": "minecraft:nether/base_3d_noise",
+                        "type": "minecraft:add"
+                      },
+                      "type": "minecraft:mul"
+                    },
+                    "type": "minecraft:add"
+                  },
+                  "type": "minecraft:add"
+                },
+                "type": "minecraft:mul"
+              },
+              "type": "minecraft:add"
             },
             "type": "minecraft:blend_density"
           },
@@ -693,26 +726,10 @@
     "type": "minecraft:sequence"
   },
   "noise": {
-    "top_slide": {
-      "target": 0.9375,
-      "size": 3,
-      "offset": 0
-    },
-    "bottom_slide": {
-      "target": 2.5,
-      "size": 4,
-      "offset": -1
-    },
-    "size_horizontal": 1,
-    "size_vertical": 2,
     "min_y": 0,
     "height": 128,
-    "sampling": {
-      "xz_scale": 1.0,
-      "y_scale": 3.0,
-      "xz_factor": 80.0,
-      "y_factor": 60.0
-    }
+    "size_horizontal": 1,
+    "size_vertical": 2
   },
   "default_block": {
     "Name": "minecraft:netherrack"
