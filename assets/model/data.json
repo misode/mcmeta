@@ -30036,6 +30036,14 @@
       "torch": "minecraft:block/redstone_torch_off"
     }
   },
+  "block/reinforced_deepslate": {
+    "parent": "minecraft:block/cube_bottom_top",
+    "textures": {
+      "top": "minecraft:block/reinforced_deepslate_top",
+      "bottom": "minecraft:block/reinforced_deepslate_bottom",
+      "side": "minecraft:block/reinforced_deepslate_side"
+    }
+  },
   "block/repeater_1tick": {
     "ambientocclusion": false,
     "textures": {
@@ -35008,266 +35016,24 @@
     }
   },
   "block/sculk_shrieker": {
-    "parent": "block/block",
+    "parent": "minecraft:block/template_sculk_shrieker",
     "textures": {
-      "bottom": "block/sculk_shrieker_bottom",
-      "side": "block/sculk_shrieker_side",
-      "top": "block/sculk_shrieker_top",
-      "inner_top": "block/sculk_shrieker_inner_top",
-      "particle": "block/sculk_shrieker_bottom"
-    },
-    "elements": [
-      {
-        "name": "bottom_slab",
-        "from": [
-          0,
-          0,
-          0
-        ],
-        "to": [
-          16,
-          8,
-          16
-        ],
-        "faces": {
-          "north": {
-            "uv": [
-              0,
-              8,
-              16,
-              16
-            ],
-            "texture": "#side"
-          },
-          "east": {
-            "uv": [
-              0,
-              8,
-              16,
-              16
-            ],
-            "texture": "#side"
-          },
-          "south": {
-            "uv": [
-              0,
-              8,
-              16,
-              16
-            ],
-            "texture": "#side"
-          },
-          "west": {
-            "uv": [
-              0,
-              8,
-              16,
-              16
-            ],
-            "texture": "#side"
-          },
-          "up": {
-            "uv": [
-              0,
-              0,
-              16,
-              16
-            ],
-            "texture": "#inner_top"
-          },
-          "down": {
-            "uv": [
-              0,
-              0,
-              16,
-              16
-            ],
-            "texture": "#bottom"
-          }
-        }
-      },
-      {
-        "name": "top_slab",
-        "from": [
-          1,
-          8,
-          1
-        ],
-        "to": [
-          15,
-          15,
-          15
-        ],
-        "faces": {
-          "north": {
-            "uv": [
-              1,
-              0,
-              15,
-              8
-            ],
-            "texture": "#side"
-          },
-          "east": {
-            "uv": [
-              1,
-              0,
-              15,
-              8
-            ],
-            "texture": "#side"
-          },
-          "south": {
-            "uv": [
-              1,
-              0,
-              15,
-              8
-            ],
-            "texture": "#side"
-          },
-          "west": {
-            "uv": [
-              1,
-              0,
-              15,
-              8
-            ],
-            "texture": "#side"
-          },
-          "up": {
-            "uv": [
-              1,
-              1,
-              15,
-              15
-            ],
-            "texture": "#top"
-          }
-        }
-      },
-      {
-        "name": "up",
-        "from": [
-          1,
-          14.98,
-          1
-        ],
-        "to": [
-          15,
-          14.98,
-          15
-        ],
-        "faces": {
-          "down": {
-            "uv": [
-              1,
-              1,
-              15,
-              15
-            ],
-            "texture": "#top"
-          }
-        }
-      },
-      {
-        "name": "south",
-        "from": [
-          1,
-          8,
-          14.98
-        ],
-        "to": [
-          15,
-          15,
-          14.98
-        ],
-        "faces": {
-          "north": {
-            "uv": [
-              1,
-              0,
-              15,
-              8
-            ],
-            "texture": "#side"
-          }
-        }
-      },
-      {
-        "name": "north",
-        "from": [
-          1,
-          8,
-          1.02
-        ],
-        "to": [
-          15,
-          15,
-          1.02
-        ],
-        "faces": {
-          "south": {
-            "uv": [
-              1,
-              0,
-              15,
-              8
-            ],
-            "texture": "#side"
-          }
-        }
-      },
-      {
-        "name": "east",
-        "from": [
-          14.98,
-          8,
-          1
-        ],
-        "to": [
-          14.98,
-          15,
-          15
-        ],
-        "faces": {
-          "west": {
-            "uv": [
-              1,
-              0,
-              15,
-              8
-            ],
-            "texture": "#side"
-          }
-        }
-      },
-      {
-        "name": "west",
-        "from": [
-          1.02,
-          8,
-          1
-        ],
-        "to": [
-          1.02,
-          15,
-          15
-        ],
-        "faces": {
-          "east": {
-            "uv": [
-              1,
-              0,
-              15,
-              8
-            ],
-            "texture": "#side",
-            "cullface": "east"
-          }
-        }
-      }
-    ]
+      "bottom": "minecraft:block/sculk_shrieker_bottom",
+      "side": "minecraft:block/sculk_shrieker_side",
+      "top": "minecraft:block/sculk_shrieker_top",
+      "particle": "minecraft:block/sculk_shrieker_bottom",
+      "inner_top": "minecraft:block/sculk_shrieker_inner_top"
+    }
+  },
+  "block/sculk_shrieker_can_summon": {
+    "parent": "minecraft:block/template_sculk_shrieker",
+    "textures": {
+      "bottom": "minecraft:block/sculk_shrieker_bottom",
+      "side": "minecraft:block/sculk_shrieker_side",
+      "top": "minecraft:block/sculk_shrieker_top",
+      "particle": "minecraft:block/sculk_shrieker_bottom",
+      "inner_top": "minecraft:block/sculk_shrieker_can_summon_inner_top"
+    }
   },
   "block/sculk_vein": {
     "ambientocclusion": false,
@@ -48392,6 +48158,268 @@
       }
     ]
   },
+  "block/template_sculk_shrieker": {
+    "parent": "block/block",
+    "textures": {
+      "bottom": "block/sculk_shrieker_bottom",
+      "side": "block/sculk_shrieker_side",
+      "top": "block/sculk_shrieker_top",
+      "inner_top": "block/sculk_shrieker_inner_top",
+      "particle": "block/sculk_shrieker_bottom"
+    },
+    "elements": [
+      {
+        "name": "bottom_slab",
+        "from": [
+          0,
+          0,
+          0
+        ],
+        "to": [
+          16,
+          8,
+          16
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              0,
+              8,
+              16,
+              16
+            ],
+            "texture": "#side"
+          },
+          "east": {
+            "uv": [
+              0,
+              8,
+              16,
+              16
+            ],
+            "texture": "#side"
+          },
+          "south": {
+            "uv": [
+              0,
+              8,
+              16,
+              16
+            ],
+            "texture": "#side"
+          },
+          "west": {
+            "uv": [
+              0,
+              8,
+              16,
+              16
+            ],
+            "texture": "#side"
+          },
+          "up": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#inner_top"
+          },
+          "down": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#bottom"
+          }
+        }
+      },
+      {
+        "name": "top_slab",
+        "from": [
+          1,
+          8,
+          1
+        ],
+        "to": [
+          15,
+          15,
+          15
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              1,
+              0,
+              15,
+              8
+            ],
+            "texture": "#side"
+          },
+          "east": {
+            "uv": [
+              1,
+              0,
+              15,
+              8
+            ],
+            "texture": "#side"
+          },
+          "south": {
+            "uv": [
+              1,
+              0,
+              15,
+              8
+            ],
+            "texture": "#side"
+          },
+          "west": {
+            "uv": [
+              1,
+              0,
+              15,
+              8
+            ],
+            "texture": "#side"
+          },
+          "up": {
+            "uv": [
+              1,
+              1,
+              15,
+              15
+            ],
+            "texture": "#top"
+          }
+        }
+      },
+      {
+        "name": "up",
+        "from": [
+          1,
+          14.98,
+          1
+        ],
+        "to": [
+          15,
+          14.98,
+          15
+        ],
+        "faces": {
+          "down": {
+            "uv": [
+              1,
+              1,
+              15,
+              15
+            ],
+            "texture": "#top"
+          }
+        }
+      },
+      {
+        "name": "south",
+        "from": [
+          1,
+          8,
+          14.98
+        ],
+        "to": [
+          15,
+          15,
+          14.98
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              1,
+              0,
+              15,
+              8
+            ],
+            "texture": "#side"
+          }
+        }
+      },
+      {
+        "name": "north",
+        "from": [
+          1,
+          8,
+          1.02
+        ],
+        "to": [
+          15,
+          15,
+          1.02
+        ],
+        "faces": {
+          "south": {
+            "uv": [
+              1,
+              0,
+              15,
+              8
+            ],
+            "texture": "#side"
+          }
+        }
+      },
+      {
+        "name": "east",
+        "from": [
+          14.98,
+          8,
+          1
+        ],
+        "to": [
+          14.98,
+          15,
+          15
+        ],
+        "faces": {
+          "west": {
+            "uv": [
+              1,
+              0,
+              15,
+              8
+            ],
+            "texture": "#side"
+          }
+        }
+      },
+      {
+        "name": "west",
+        "from": [
+          1.02,
+          8,
+          1
+        ],
+        "to": [
+          1.02,
+          15,
+          15
+        ],
+        "faces": {
+          "east": {
+            "uv": [
+              1,
+              0,
+              15,
+              8
+            ],
+            "texture": "#side",
+            "cullface": "east"
+          }
+        }
+      }
+    ]
+  },
   "block/template_seagrass": {
     "parent": "block/block",
     "ambientocclusion": false,
@@ -56671,6 +56699,9 @@
     }
   },
   "item/air": {},
+  "item/allay_spawn_egg": {
+    "parent": "minecraft:item/template_spawn_egg"
+  },
   "item/allium": {
     "parent": "minecraft:item/generated",
     "textures": {
@@ -62822,6 +62853,9 @@
     "textures": {
       "layer0": "minecraft:block/redstone_torch"
     }
+  },
+  "item/reinforced_deepslate": {
+    "parent": "minecraft:block/reinforced_deepslate"
   },
   "item/repeater": {
     "parent": "minecraft:item/generated",

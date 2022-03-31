@@ -285,14 +285,6 @@
           }
         }
       },
-      "minecraft:eroded_badlands": {
-        "trigger": "minecraft:location",
-        "conditions": {
-          "location": {
-            "biome": "minecraft:eroded_badlands"
-          }
-        }
-      },
       "minecraft:desert": {
         "trigger": "minecraft:location",
         "conditions": {
@@ -386,6 +378,14 @@
         "conditions": {
           "location": {
             "biome": "minecraft:bamboo_jungle"
+          }
+        }
+      },
+      "minecraft:eroded_badlands": {
+        "trigger": "minecraft:location",
+        "conditions": {
+          "location": {
+            "biome": "minecraft:eroded_badlands"
           }
         }
       },
@@ -531,9 +531,6 @@
         "minecraft:badlands"
       ],
       [
-        "minecraft:eroded_badlands"
-      ],
-      [
         "minecraft:desert"
       ],
       [
@@ -568,6 +565,9 @@
       ],
       [
         "minecraft:bamboo_jungle"
+      ],
+      [
+        "minecraft:eroded_badlands"
       ],
       [
         "minecraft:windswept_savanna"
@@ -1925,6 +1925,35 @@
       ],
       [
         "minecraft:zombified_piglin"
+      ]
+    ]
+  },
+  "adventure/kill_mob_near_sculk_catalyst": {
+    "parent": "minecraft:adventure/root",
+    "display": {
+      "icon": {
+        "item": "minecraft:sculk_catalyst"
+      },
+      "title": {
+        "translate": "advancements.adventure.kill_mob_near_sculk_catalyst.title"
+      },
+      "description": {
+        "translate": "advancements.adventure.kill_mob_near_sculk_catalyst.description"
+      },
+      "frame": "challenge",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": false
+    },
+    "criteria": {
+      "kill_mob_near_sculk_catalyst": {
+        "trigger": "minecraft:kill_mob_near_sculk_catalyst",
+        "conditions": {}
+      }
+    },
+    "requirements": [
+      [
+        "kill_mob_near_sculk_catalyst"
       ]
     ]
   },
@@ -4008,6 +4037,29 @@
             }
           ]
         }
+      },
+      "minecraft:frog": {
+        "trigger": "minecraft:bred_animals",
+        "conditions": {
+          "parent": [
+            {
+              "condition": "minecraft:entity_properties",
+              "predicate": {
+                "type": "minecraft:frog"
+              },
+              "entity": "this"
+            }
+          ],
+          "partner": [
+            {
+              "condition": "minecraft:entity_properties",
+              "predicate": {
+                "type": "minecraft:frog"
+              },
+              "entity": "this"
+            }
+          ]
+        }
       }
     },
     "requirements": [
@@ -4073,6 +4125,9 @@
       ],
       [
         "minecraft:turtle"
+      ],
+      [
+        "minecraft:frog"
       ]
     ]
   },
@@ -4383,6 +4438,53 @@
         "tropical_fish",
         "pufferfish",
         "salmon"
+      ]
+    ]
+  },
+  "husbandry/froglights": {
+    "parent": "minecraft:husbandry/tadpole_in_a_bucket",
+    "display": {
+      "icon": {
+        "item": "minecraft:verdant_froglight"
+      },
+      "title": {
+        "translate": "advancements.husbandry.froglights.title"
+      },
+      "description": {
+        "translate": "advancements.husbandry.froglights.description"
+      },
+      "frame": "challenge",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": false
+    },
+    "criteria": {
+      "froglights": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:ochre_froglight"
+              ]
+            },
+            {
+              "items": [
+                "minecraft:pearlescent_froglight"
+              ]
+            },
+            {
+              "items": [
+                "minecraft:verdant_froglight"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "requirements": [
+      [
+        "froglights"
       ]
     ]
   },
@@ -4786,6 +4888,41 @@
         "tropical_fish_bucket",
         "pufferfish_bucket",
         "salmon_bucket"
+      ]
+    ]
+  },
+  "husbandry/tadpole_in_a_bucket": {
+    "parent": "minecraft:husbandry/root",
+    "display": {
+      "icon": {
+        "item": "minecraft:tadpole_bucket"
+      },
+      "title": {
+        "translate": "advancements.husbandry.tadpole_in_a_bucket.title"
+      },
+      "description": {
+        "translate": "advancements.husbandry.tadpole_in_a_bucket.description"
+      },
+      "frame": "task",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": false
+    },
+    "criteria": {
+      "tadpole_bucket": {
+        "trigger": "minecraft:filled_bucket",
+        "conditions": {
+          "item": {
+            "items": [
+              "minecraft:tadpole_bucket"
+            ]
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "tadpole_bucket"
       ]
     ]
   },
