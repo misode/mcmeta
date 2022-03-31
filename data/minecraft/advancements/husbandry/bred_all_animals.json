@@ -321,6 +321,29 @@
           }
         ]
       }
+    },
+    "minecraft:frog": {
+      "trigger": "minecraft:bred_animals",
+      "conditions": {
+        "parent": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "type": "minecraft:frog"
+            },
+            "entity": "this"
+          }
+        ],
+        "partner": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "type": "minecraft:frog"
+            },
+            "entity": "this"
+          }
+        ]
+      }
     }
   },
   "requirements": [
@@ -386,6 +409,9 @@
     ],
     [
       "minecraft:turtle"
+    ],
+    [
+      "minecraft:frog"
     ]
   ]
 }
