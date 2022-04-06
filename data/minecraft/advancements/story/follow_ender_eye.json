@@ -19,9 +19,17 @@
     "in_stronghold": {
       "trigger": "minecraft:location",
       "conditions": {
-        "location": {
-          "structure": "minecraft:stronghold"
-        }
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "location": {
+                "structure": "minecraft:stronghold"
+              }
+            },
+            "entity": "this"
+          }
+        ]
       }
     }
   },

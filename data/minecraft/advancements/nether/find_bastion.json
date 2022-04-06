@@ -19,9 +19,17 @@
     "bastion": {
       "trigger": "minecraft:location",
       "conditions": {
-        "location": {
-          "structure": "minecraft:bastion_remnant"
-        }
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "location": {
+                "structure": "minecraft:bastion_remnant"
+              }
+            },
+            "entity": "this"
+          }
+        ]
       }
     }
   },
