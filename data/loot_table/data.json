@@ -25622,8 +25622,8 @@
       {
         "rolls": {
           "type": "minecraft:uniform",
-          "min": 4.0,
-          "max": 9.0
+          "min": 5.0,
+          "max": 10.0
         },
         "bonus_rolls": 0.0,
         "entries": [
@@ -25908,6 +25908,22 @@
                   "max": 3.0
                 },
                 "add": false
+              }
+            ],
+            "name": "minecraft:echo_shard"
+          },
+          {
+            "type": "minecraft:item",
+            "weight": 5,
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "type": "minecraft:uniform",
+                  "min": 1.0,
+                  "max": 3.0
+                },
+                "add": false
               },
               {
                 "function": "minecraft:set_potion",
@@ -25918,7 +25934,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 4,
+            "weight": 5,
             "functions": [
               {
                 "function": "minecraft:enchant_randomly"
@@ -25928,7 +25944,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 4,
+            "weight": 5,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -25944,7 +25960,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 4,
+            "weight": 5,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -25960,7 +25976,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 4,
+            "weight": 5,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -25976,7 +25992,7 @@
           },
           {
             "type": "minecraft:item",
-            "weight": 6,
+            "weight": 7,
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -29533,27 +29549,11 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
-                    "type": "minecraft:jump_boost",
-                    "duration": {
-                      "type": "minecraft:uniform",
-                      "min": 7.0,
-                      "max": 10.0
-                    }
-                  },
-                  {
                     "type": "minecraft:poison",
                     "duration": {
                       "type": "minecraft:uniform",
                       "min": 10.0,
                       "max": 20.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:saturation",
-                    "duration": {
-                      "type": "minecraft:uniform",
-                      "min": 7.0,
-                      "max": 10.0
                     }
                   },
                   {
@@ -29565,7 +29565,7 @@
                     }
                   },
                   {
-                    "type": "minecraft:night_vision",
+                    "type": "minecraft:jump_boost",
                     "duration": {
                       "type": "minecraft:uniform",
                       "min": 7.0,
@@ -29578,6 +29578,22 @@
                       "type": "minecraft:uniform",
                       "min": 6.0,
                       "max": 8.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:saturation",
+                    "duration": {
+                      "type": "minecraft:uniform",
+                      "min": 7.0,
+                      "max": 10.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:night_vision",
+                    "duration": {
+                      "type": "minecraft:uniform",
+                      "min": 7.0,
+                      "max": 10.0
                     }
                   }
                 ]
@@ -34304,6 +34320,31 @@
         "entries": [
           {
             "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "minecraft:inverted",
+                "term": {
+                  "condition": "minecraft:damage_source_properties",
+                  "predicate": {
+                    "source_entity": {
+                      "type": "minecraft:frog"
+                    }
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "predicate": {
+                  "type_specific": {
+                    "size": {
+                      "min": 2
+                    },
+                    "type": "slime"
+                  }
+                },
+                "entity": "this"
+              }
+            ],
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -34324,6 +34365,81 @@
               }
             ],
             "name": "minecraft:magma_cream"
+          },
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "minecraft:damage_source_properties",
+                "predicate": {
+                  "source_entity": {
+                    "type": "minecraft:frog",
+                    "type_specific": {
+                      "variant": "minecraft:warm",
+                      "type": "frog"
+                    }
+                  }
+                }
+              }
+            ],
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": 1.0,
+                "add": false
+              }
+            ],
+            "name": "minecraft:pearlescent_froglight"
+          },
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "minecraft:damage_source_properties",
+                "predicate": {
+                  "source_entity": {
+                    "type": "minecraft:frog",
+                    "type_specific": {
+                      "variant": "minecraft:cold",
+                      "type": "frog"
+                    }
+                  }
+                }
+              }
+            ],
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": 1.0,
+                "add": false
+              }
+            ],
+            "name": "minecraft:verdant_froglight"
+          },
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "minecraft:damage_source_properties",
+                "predicate": {
+                  "source_entity": {
+                    "type": "minecraft:frog",
+                    "type_specific": {
+                      "variant": "minecraft:temperate",
+                      "type": "frog"
+                    }
+                  }
+                }
+              }
+            ],
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": 1.0,
+                "add": false
+              }
+            ],
+            "name": "minecraft:ochre_froglight"
           }
         ]
       }
@@ -35467,6 +35583,19 @@
         "entries": [
           {
             "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "minecraft:inverted",
+                "term": {
+                  "condition": "minecraft:damage_source_properties",
+                  "predicate": {
+                    "source_entity": {
+                      "type": "minecraft:frog"
+                    }
+                  }
+                }
+              }
+            ],
             "functions": [
               {
                 "function": "minecraft:set_count",
@@ -35487,6 +35616,39 @@
               }
             ],
             "name": "minecraft:slime_ball"
+          },
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "minecraft:damage_source_properties",
+                "predicate": {
+                  "source_entity": {
+                    "type": "minecraft:frog"
+                  }
+                }
+              }
+            ],
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": 1.0,
+                "add": false
+              }
+            ],
+            "name": "minecraft:slime_ball"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "type_specific": {
+                "size": 1,
+                "type": "slime"
+              }
+            },
+            "entity": "this"
           }
         ]
       }
@@ -36573,8 +36735,9 @@
               {
                 "condition": "minecraft:entity_properties",
                 "predicate": {
-                  "fishing_hook": {
-                    "in_open_water": true
+                  "type_specific": {
+                    "in_open_water": true,
+                    "type": "fishing_hook"
                   }
                 },
                 "entity": "this"
