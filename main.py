@@ -74,19 +74,20 @@ def main(version: str | None, file, reset: bool, fetch: bool, undo: int | None, 
 	except OSError:
 		pass
 
-	click.echo(f'🚧 Processing versions: {", ".join(process_versions)}')
-	t0 = time.time()
-	for i, v in enumerate(process_versions):
-		t1 = time.time()
-		process(v, versions, export)
-		if commit:
-			create_commit(v, versions[v]['releaseTime'], push, force, export, branch)
-		t2 = time.time()
-		if n == 1:
-			click.echo(f'✅ Done {v} ({format_time(t2 - t1)})')
-		else:
-			remaining = t2 - t0 + int(t2 - t1) * (n - i - 1)
-			click.echo(f'✅ Done {v} ({i+1} / {n}) {format_time(t2 - t1)} ({format_time(t2 - t0)} / {format_time(remaining)})')
+	if process_versions:
+		click.echo(f'🚧 Processing versions: {", ".join(process_versions)}')
+		t0 = time.time()
+		for i, v in enumerate(process_versions):
+			t1 = time.time()
+			process(v, versions, export)
+			if commit:
+				create_commit(v, versions[v]['releaseTime'], push, force, export, branch)
+			t2 = time.time()
+			if n == 1:
+				click.echo(f'✅ Done {v} ({format_time(t2 - t1)})')
+			else:
+				remaining = t2 - t0 + int(t2 - t1) * (n - i - 1)
+				click.echo(f'✅ Done {v} ({i+1} / {n}) {format_time(t2 - t1)} ({format_time(t2 - t0)} / {format_time(remaining)})')
 
 	if not version and push:
 		create_commit(None, None, push, force, export, branch)
@@ -258,6 +259,8 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		('worldgen/noise_settings/*', [('structures', None)]),
 		('worldgen/configured_structure_feature/*', [('spawn_overrides', None)]),
 		('worldgen/structure/*', [('spawn_overrides', None)]),
+		('worldgen/flat_level_generator_preset/*', [('settings.structure_overrides', None)]),
+		('worldgen/world_preset/*', [('dimensions', None)]),
 	]
 
 	for filepath, sorts in reorders:
@@ -481,8 +484,7 @@ def init_exports(start_date: str | None, reset: bool, fetch: bool, undo: int, ex
 			subprocess.run(['git', 'fetch', '-q', 'origin'])
 			subprocess.run(['git', 'reset', '-q', '--hard', f'origin/{export_branch}'])
 		elif reset:
-			if not start_date:
-				click.echo('❗ Cannot reset without a version')
+			assert start_date, 'Cannot reset without a version'
 			shutil.copyfile('../.gitattributes', f'.gitattributes')
 			subprocess.run(['git', 'add', '.'])
 			os.environ['GIT_AUTHOR_DATE'] = start_date
