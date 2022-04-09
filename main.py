@@ -18,6 +18,8 @@ import image_packer.packer
 
 EXPORTS = ('assets', 'assets-json', 'data', 'data-json', 'summary', 'registries', 'atlas')
 
+APRIL_FOOLS = ('15w14a', '3D Shareware v1.34', '20w14infinite', '22w13oneblockatatime')
+
 @click.command()
 @click.option('--version', '-v')
 @click.option('--file', '-f', type=click.File(), help='Custom version JSON file')
@@ -25,7 +27,7 @@ EXPORTS = ('assets', 'assets-json', 'data', 'data-json', 'summary', 'registries'
 @click.option('--fetch', is_flag=True, help='Whether to fetch from the remote at the start')
 @click.option('--undo', default=0, help='Undos N commits')
 @click.option('--commit', is_flag=True, help='Whether to commit the exports')
-@click.option('--export', '-e', multiple=True, required=True, type=click.Choice([*EXPORTS, 'all'], case_sensitive=True))
+@click.option('--export', '-e', multiple=True, default=tuple(), type=click.Choice([*EXPORTS, 'all'], case_sensitive=True))
 @click.option('--push', is_flag=True, help='Whether to push to the remote after each commit')
 @click.option('--force', is_flag=True, help='Whether to force create a tag and force push')
 @click.option('--branch', help='The export branch prefix to use')
@@ -111,7 +113,7 @@ def expand_version_range(version: str | None, versions: dict[str]):
 		if end_i > start_i:
 			click.echo('❗ No versions in range')
 			return []
-		return [version_ids[i] for i in range(start_i, end_i - 1, -1) if version_ids[i] != '20w14infinite']
+		return [version_ids[i] for i in range(start_i, end_i - 1, -1) if version_ids[i] not in APRIL_FOOLS]
 	else:
 		return [version]
 
