@@ -35,7 +35,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - run: python main.py ${{ needs.check.outputs.id }} --fetch --export all --commit --push
+      - run: python main.py --version ${{ needs.check.outputs.id }} --fetch --export all --commit --push
         env:
           github-username: misode
           github-token: ${{ secrets.GITHUB_TOKEN }}

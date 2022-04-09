@@ -19,16 +19,17 @@ import image_packer.packer
 EXPORTS = ('assets', 'assets-json', 'data', 'data-json', 'summary', 'registries', 'atlas')
 
 @click.command()
-@click.argument('version', required=True)
+@click.option('--version', '-v')
 @click.option('--file', '-f', type=click.File(), help='Custom version JSON file')
 @click.option('--reset', is_flag=True, help='Whether to reset the exports')
 @click.option('--fetch', is_flag=True, help='Whether to fetch from the remote at the start')
+@click.option('--undo', default=0, help='Undos N commits')
 @click.option('--commit', is_flag=True, help='Whether to commit the exports')
 @click.option('--export', '-e', multiple=True, required=True, type=click.Choice([*EXPORTS, 'all'], case_sensitive=True))
 @click.option('--push', is_flag=True, help='Whether to push to the remote after each commit')
 @click.option('--force', is_flag=True, help='Whether to force create a tag and force push')
 @click.option('--branch', help='The export branch prefix to use')
-def main(version: str, file, reset: bool, fetch: bool, commit: bool, export: tuple[str], push: bool, force: bool, branch: str | None):
+def main(version: str | None, file, reset: bool, fetch: bool, undo: int | None, commit: bool, export: tuple[str], push: bool, force: bool, branch: str | None):
 	dotenv.load_dotenv()
 	if 'all' in export:
 		export = EXPORTS
@@ -49,6 +50,7 @@ def main(version: str, file, reset: bool, fetch: bool, commit: bool, export: tup
 	versions = { v: unordered_versions[v] for v in version_ids }
 
 	if file:
+		assert version
 		launchermeta = json.load(file)
 		versions[version] = {
 			'id': version,
@@ -62,11 +64,8 @@ def main(version: str, file, reset: bool, fetch: bool, commit: bool, export: tup
 	# process and commit each version in the range
 	process_versions = expand_version_range(version, versions)
 	n = len(process_versions)
-	if not process_versions:
-		click.echo('❗ No versions to process')
-		return
-
-	init_exports(versions[process_versions[0]]['releaseTime'], reset, fetch, export, branch)
+	start_date = versions[process_versions[0]]['releaseTime'] if process_versions else None
+	init_exports(start_date, reset, fetch, undo, export, branch)
 
 	try:
 		os.remove('versions.json')
@@ -87,6 +86,9 @@ def main(version: str, file, reset: bool, fetch: bool, commit: bool, export: tup
 			remaining = t2 - t0 + int(t2 - t1) * (n - i - 1)
 			click.echo(f'✅ Done {v} ({i+1} / {n}) {format_time(t2 - t1)} ({format_time(t2 - t0)} / {format_time(remaining)})')
 
+	if not version and push:
+		create_commit(None, None, push, force, export, branch)
+
 
 def format_time(seconds: float | int):
 	seconds = int(seconds)
@@ -98,13 +100,16 @@ def format_time(seconds: float | int):
 	return f'{int(minutes/60)}h {minutes%60}m {seconds%60}s'
 
 
-def expand_version_range(version: str, versions: dict[str]):
+def expand_version_range(version: str | None, versions: dict[str]):
+	if version is None:
+		return []
 	version_ids = list(versions.keys())
 	if '..' in version:
 		start, end = version.split('..')
 		start_i = version_ids.index(start)
 		end_i = version_ids.index(end)
 		if end_i > start_i:
+			click.echo('❗ No versions in range')
 			return []
 		return [version_ids[i] for i in range(start_i, end_i - 1, -1) if version_ids[i] != '20w14infinite']
 	else:
@@ -455,7 +460,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		shutil.copyfile(f'{export}/pack.mcmeta', f'{export}-json/pack.mcmeta')
 
 
-def init_exports(date: str, reset: bool, fetch: bool, exports: tuple[str], branch: str | None):
+def init_exports(start_date: str | None, reset: bool, fetch: bool, undo: int, exports: tuple[str], branch: str | None):
 	for export in exports:
 		export_branch = f'{branch}-{export}' if branch else export
 		if reset:
@@ -474,27 +479,33 @@ def init_exports(date: str, reset: bool, fetch: bool, exports: tuple[str], branc
 			subprocess.run(['git', 'fetch', '-q', 'origin'])
 			subprocess.run(['git', 'reset', '-q', '--hard', f'origin/{export_branch}'])
 		elif reset:
+			if not start_date:
+				click.echo('❗ Cannot reset without a version')
 			shutil.copyfile('../.gitattributes', f'.gitattributes')
 			subprocess.run(['git', 'add', '.'])
-			os.environ['GIT_AUTHOR_DATE'] = date
-			os.environ['GIT_COMMITTER_DATE'] = date
+			os.environ['GIT_AUTHOR_DATE'] = start_date
+			os.environ['GIT_COMMITTER_DATE'] = start_date
 			subprocess.run(['git', 'commit', '-q', '-m', f'🎉 Initial commit'])
+		if undo:
+			subprocess.run(['git', 'reset', '--hard', f'HEAD~{undo}'])
 		os.chdir('..')
 		click.echo(f'🎉 Initialized {export} branch')
 
 
-def create_commit(version: str, date: str, push: bool, force: bool, exports: tuple[str], branch: str | None):
+def create_commit(version: str | None, date: str | None, push: bool, force: bool, exports: tuple[str], branch: str | None):
 	for export in exports:
 		export_branch = f'{branch}-{export}' if branch else export
 		os.chdir(export)
-		subprocess.run(['git', 'add', '.'])
-		os.environ['GIT_AUTHOR_DATE'] = date
-		os.environ['GIT_COMMITTER_DATE'] = date
-		subprocess.run(['git', 'commit', '-q', '-m', f'🚀 Update {export} for {version}'])
-		if force:
-			subprocess.run(['git', 'tag', '-f', f'{version}-{export}'])
-		else:
-			subprocess.run(['git', 'tag', f'{version}-{export}'])
+		if version:
+			assert date
+			subprocess.run(['git', 'add', '.'])
+			os.environ['GIT_AUTHOR_DATE'] = date
+			os.environ['GIT_COMMITTER_DATE'] = date
+			subprocess.run(['git', 'commit', '-q', '-m', f'🚀 Update {export} for {version}'])
+			if force:
+				subprocess.run(['git', 'tag', '-f', f'{version}-{export}'])
+			else:
+				subprocess.run(['git', 'tag', f'{version}-{export}'])
 		if push:
 			if force:
 				subprocess.run(['git', 'push', '-f', '-q', '--tags', 'origin', export_branch])
