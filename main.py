@@ -69,10 +69,10 @@ def main(version: str | None, file, reset: bool, fetch: bool, undo: int | None, 
 	start_date = versions[process_versions[0]]['releaseTime'] if process_versions else None
 	init_exports(start_date, reset, fetch, undo, export, branch)
 
-	try:
-		os.remove('versions.json')
-	except OSError:
-		pass
+	# try:
+	# 	os.remove('versions.json')
+	# except OSError:
+	# 	pass
 
 	if process_versions:
 		click.echo(f'🚧 Processing versions: {", ".join(process_versions)}')
@@ -243,6 +243,25 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 					zip.extractall('data-json/data/minecraft')
 					break
 
+	# === reconstruct dimensions ===
+	if versions[version]['index'] <= versions['22w11a']['index'] and not os.path.isdir('data/data/minecraft/dimension'):
+		with open('data/data/minecraft/worldgen/world_preset/normal.json', 'r') as f:
+			world_preset = json.load(f)
+		for key, dimension in world_preset['dimensions'].items():
+			preset = dimension['generator'].get('biome_source', dict()).get('preset', '')
+			try:
+				with open(f'generated/reports/biome_parameters/{preset.replace(":", "/")}.json', 'r') as f:
+					parameters = json.load(f)
+					if parameters:
+						parameters['type'] = 'minecraft:multi_noise'
+						dimension['generator']['biome_source'] = parameters
+			except:
+				pass
+			for e in ['data', 'data-json']:
+				os.makedirs(f'{e}/data/minecraft/dimension/', exist_ok=True)
+				with open(f'{e}/data/minecraft/dimension/{key.removeprefix("minecraft:")}.json', 'w') as f:
+					json.dump(dimension, f, indent=2)
+
 	# === stabilize ordering in some data files ===
 	reorders = [
 		('advancements/adventure/adventuring_time',
@@ -287,7 +306,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 					break
 				if type(node[last]) == dict:
 					node[last] = dict(sorted(node[last].items(), key=order))
-				else:
+				elif type(node[last]) == list:
 					node[last] = sorted(node[last], key=order)
 
 			for export in set(['data', 'data-json']).intersection(exports):
