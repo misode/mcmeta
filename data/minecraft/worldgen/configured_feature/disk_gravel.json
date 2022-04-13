@@ -1,20 +1,20 @@
 {
   "config": {
-    "half_height": 2,
-    "targets": [
-      {
-        "Name": "minecraft:dirt"
-      },
-      {
-        "Properties": {
-          "snowy": "false"
+    "state_provider": {
+      "fallback": {
+        "state": {
+          "Name": "minecraft:gravel"
         },
-        "Name": "minecraft:grass_block"
-      }
-    ],
-    "can_origin_replace": "minecraft:water",
-    "state": {
-      "Name": "minecraft:gravel"
+        "type": "minecraft:simple_state_provider"
+      },
+      "rules": []
+    },
+    "target": {
+      "blocks": [
+        "minecraft:dirt",
+        "minecraft:grass_block"
+      ],
+      "type": "minecraft:matching_blocks"
     },
     "radius": {
       "type": "minecraft:uniform",
@@ -22,7 +22,8 @@
         "min_inclusive": 2,
         "max_inclusive": 5
       }
-    }
+    },
+    "half_height": 2
   },
   "type": "minecraft:disk"
 }
