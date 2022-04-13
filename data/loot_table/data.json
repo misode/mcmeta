@@ -13203,86 +13203,72 @@
         "bonus_rolls": 0.0,
         "entries": [
           {
-            "type": "minecraft:item",
-            "name": "minecraft:mangrove_leaves"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:match_tool",
-            "predicate": {
-              "items": [
-                "minecraft:shears"
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "rolls": 1.0,
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "conditions": [
+            "type": "minecraft:alternatives",
+            "children": [
               {
-                "condition": "minecraft:table_bonus",
-                "enchantment": "minecraft:fortune",
-                "chances": [
-                  0.02,
-                  0.022222223,
-                  0.025,
-                  0.033333335,
-                  0.1
-                ]
-              }
-            ],
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "type": "minecraft:uniform",
-                  "min": 1.0,
-                  "max": 2.0
-                },
-                "add": false
-              },
-              {
-                "function": "minecraft:explosion_decay"
-              }
-            ],
-            "name": "minecraft:stick"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
-                  }
-                },
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "enchantments": [
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:alternative",
+                    "terms": [
                       {
-                        "enchantment": "minecraft:silk_touch",
-                        "levels": {
-                          "min": 1
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                          "items": [
+                            "minecraft:shears"
+                          ]
+                        }
+                      },
+                      {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                          "enchantments": [
+                            {
+                              "enchantment": "minecraft:silk_touch",
+                              "levels": {
+                                "min": 1
+                              }
+                            }
+                          ]
                         }
                       }
                     ]
                   }
-                }
-              ]
-            }
+                ],
+                "name": "minecraft:mangrove_leaves"
+              },
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:table_bonus",
+                    "enchantment": "minecraft:fortune",
+                    "chances": [
+                      0.02,
+                      0.022222223,
+                      0.025,
+                      0.033333335,
+                      0.1
+                    ]
+                  }
+                ],
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": {
+                      "type": "minecraft:uniform",
+                      "min": 1.0,
+                      "max": 2.0
+                    },
+                    "add": false
+                  },
+                  {
+                    "function": "minecraft:explosion_decay"
+                  }
+                ],
+                "name": "minecraft:stick"
+              }
+            ]
           }
         ]
       }
@@ -26028,19 +26014,19 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
-                    "type": "minecraft:blindness",
-                    "duration": {
-                      "type": "minecraft:uniform",
-                      "min": 5.0,
-                      "max": 7.0
-                    }
-                  },
-                  {
                     "type": "minecraft:night_vision",
                     "duration": {
                       "type": "minecraft:uniform",
                       "min": 7.0,
                       "max": 10.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:blindness",
+                    "duration": {
+                      "type": "minecraft:uniform",
+                      "min": 5.0,
+                      "max": 7.0
                     }
                   }
                 ]
@@ -29549,11 +29535,19 @@
                 "function": "minecraft:set_stew_effect",
                 "effects": [
                   {
-                    "type": "minecraft:poison",
+                    "type": "minecraft:saturation",
                     "duration": {
                       "type": "minecraft:uniform",
-                      "min": 10.0,
-                      "max": 20.0
+                      "min": 7.0,
+                      "max": 10.0
+                    }
+                  },
+                  {
+                    "type": "minecraft:night_vision",
+                    "duration": {
+                      "type": "minecraft:uniform",
+                      "min": 7.0,
+                      "max": 10.0
                     }
                   },
                   {
@@ -29565,11 +29559,11 @@
                     }
                   },
                   {
-                    "type": "minecraft:jump_boost",
+                    "type": "minecraft:poison",
                     "duration": {
                       "type": "minecraft:uniform",
-                      "min": 7.0,
-                      "max": 10.0
+                      "min": 10.0,
+                      "max": 20.0
                     }
                   },
                   {
@@ -29581,15 +29575,7 @@
                     }
                   },
                   {
-                    "type": "minecraft:saturation",
-                    "duration": {
-                      "type": "minecraft:uniform",
-                      "min": 7.0,
-                      "max": 10.0
-                    }
-                  },
-                  {
-                    "type": "minecraft:night_vision",
+                    "type": "minecraft:jump_boost",
                     "duration": {
                       "type": "minecraft:uniform",
                       "min": 7.0,
@@ -30382,6 +30368,22 @@
               }
             ],
             "name": "minecraft:dark_oak_log"
+          },
+          {
+            "type": "minecraft:item",
+            "weight": 3,
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "type": "minecraft:uniform",
+                  "min": 1.0,
+                  "max": 3.0
+                },
+                "add": false
+              }
+            ],
+            "name": "minecraft:mangrove_log"
           }
         ]
       }

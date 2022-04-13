@@ -1055,18 +1055,21 @@
   },
   "disk_clay": {
     "config": {
-      "half_height": 1,
-      "targets": [
-        {
-          "Name": "minecraft:dirt"
+      "state_provider": {
+        "fallback": {
+          "state": {
+            "Name": "minecraft:clay"
+          },
+          "type": "minecraft:simple_state_provider"
         },
-        {
-          "Name": "minecraft:clay"
-        }
-      ],
-      "can_origin_replace": "minecraft:water",
-      "state": {
-        "Name": "minecraft:clay"
+        "rules": []
+      },
+      "target": {
+        "blocks": [
+          "minecraft:dirt",
+          "minecraft:clay"
+        ],
+        "type": "minecraft:matching_blocks"
       },
       "radius": {
         "type": "minecraft:uniform",
@@ -1074,30 +1077,65 @@
           "min_inclusive": 2,
           "max_inclusive": 3
         }
-      }
+      },
+      "half_height": 1
     },
     "type": "minecraft:disk"
   },
   "disk_grass": {
     "config": {
-      "half_height": 2,
-      "targets": [
-        {
-          "Name": "minecraft:dirt"
+      "state_provider": {
+        "fallback": {
+          "state": {
+            "Name": "minecraft:dirt"
+          },
+          "type": "minecraft:simple_state_provider"
         },
-        {
-          "Name": "minecraft:mud"
-        }
-      ],
-      "can_origin_replace": [
-        "minecraft:water",
-        "minecraft:mud"
-      ],
-      "state": {
-        "Properties": {
-          "snowy": "false"
-        },
-        "Name": "minecraft:grass_block"
+        "rules": [
+          {
+            "if_true": {
+              "predicate": {
+                "predicates": [
+                  {
+                    "offset": [
+                      0,
+                      1,
+                      0
+                    ],
+                    "type": "minecraft:solid"
+                  },
+                  {
+                    "offset": [
+                      0,
+                      1,
+                      0
+                    ],
+                    "fluids": "minecraft:water",
+                    "type": "minecraft:matching_fluids"
+                  }
+                ],
+                "type": "minecraft:any_of"
+              },
+              "type": "minecraft:not"
+            },
+            "then": {
+              "state": {
+                "Properties": {
+                  "snowy": "false"
+                },
+                "Name": "minecraft:grass_block"
+              },
+              "type": "minecraft:simple_state_provider"
+            }
+          }
+        ]
+      },
+      "target": {
+        "blocks": [
+          "minecraft:dirt",
+          "minecraft:mud"
+        ],
+        "type": "minecraft:matching_blocks"
       },
       "radius": {
         "type": "minecraft:uniform",
@@ -1105,27 +1143,28 @@
           "min_inclusive": 2,
           "max_inclusive": 6
         }
-      }
+      },
+      "half_height": 2
     },
-    "type": "minecraft:surface_disk"
+    "type": "minecraft:disk"
   },
   "disk_gravel": {
     "config": {
-      "half_height": 2,
-      "targets": [
-        {
-          "Name": "minecraft:dirt"
-        },
-        {
-          "Properties": {
-            "snowy": "false"
+      "state_provider": {
+        "fallback": {
+          "state": {
+            "Name": "minecraft:gravel"
           },
-          "Name": "minecraft:grass_block"
-        }
-      ],
-      "can_origin_replace": "minecraft:water",
-      "state": {
-        "Name": "minecraft:gravel"
+          "type": "minecraft:simple_state_provider"
+        },
+        "rules": []
+      },
+      "target": {
+        "blocks": [
+          "minecraft:dirt",
+          "minecraft:grass_block"
+        ],
+        "type": "minecraft:matching_blocks"
       },
       "radius": {
         "type": "minecraft:uniform",
@@ -1133,27 +1172,46 @@
           "min_inclusive": 2,
           "max_inclusive": 5
         }
-      }
+      },
+      "half_height": 2
     },
     "type": "minecraft:disk"
   },
   "disk_sand": {
     "config": {
-      "half_height": 2,
-      "targets": [
-        {
-          "Name": "minecraft:dirt"
-        },
-        {
-          "Properties": {
-            "snowy": "false"
+      "state_provider": {
+        "fallback": {
+          "state": {
+            "Name": "minecraft:sand"
           },
-          "Name": "minecraft:grass_block"
-        }
-      ],
-      "can_origin_replace": "minecraft:water",
-      "state": {
-        "Name": "minecraft:sand"
+          "type": "minecraft:simple_state_provider"
+        },
+        "rules": [
+          {
+            "if_true": {
+              "offset": [
+                0,
+                -1,
+                0
+              ],
+              "blocks": "minecraft:air",
+              "type": "minecraft:matching_blocks"
+            },
+            "then": {
+              "state": {
+                "Name": "minecraft:sandstone"
+              },
+              "type": "minecraft:simple_state_provider"
+            }
+          }
+        ]
+      },
+      "target": {
+        "blocks": [
+          "minecraft:dirt",
+          "minecraft:grass_block"
+        ],
+        "type": "minecraft:matching_blocks"
       },
       "radius": {
         "type": "minecraft:uniform",
@@ -1161,7 +1219,8 @@
           "min_inclusive": 2,
           "max_inclusive": 6
         }
-      }
+      },
+      "half_height": 2
     },
     "type": "minecraft:disk"
   },
@@ -2441,42 +2500,26 @@
   },
   "ice_patch": {
     "config": {
-      "half_height": 1,
-      "targets": [
-        {
-          "Name": "minecraft:dirt"
-        },
-        {
-          "Properties": {
-            "snowy": "false"
+      "state_provider": {
+        "fallback": {
+          "state": {
+            "Name": "minecraft:packed_ice"
           },
-          "Name": "minecraft:grass_block"
+          "type": "minecraft:simple_state_provider"
         },
-        {
-          "Properties": {
-            "snowy": "false"
-          },
-          "Name": "minecraft:podzol"
-        },
-        {
-          "Name": "minecraft:coarse_dirt"
-        },
-        {
-          "Properties": {
-            "snowy": "false"
-          },
-          "Name": "minecraft:mycelium"
-        },
-        {
-          "Name": "minecraft:snow_block"
-        },
-        {
-          "Name": "minecraft:ice"
-        }
-      ],
-      "can_origin_replace": "minecraft:snow_block",
-      "state": {
-        "Name": "minecraft:packed_ice"
+        "rules": []
+      },
+      "target": {
+        "blocks": [
+          "minecraft:dirt",
+          "minecraft:grass_block",
+          "minecraft:podzol",
+          "minecraft:coarse_dirt",
+          "minecraft:mycelium",
+          "minecraft:snow_block",
+          "minecraft:ice"
+        ],
+        "type": "minecraft:matching_blocks"
       },
       "radius": {
         "type": "minecraft:uniform",
@@ -2484,9 +2527,10 @@
           "min_inclusive": 2,
           "max_inclusive": 3
         }
-      }
+      },
+      "half_height": 1
     },
-    "type": "minecraft:ice_patch"
+    "type": "minecraft:disk"
   },
   "ice_spike": {
     "config": {},
@@ -2817,7 +2861,7 @@
           "type": "minecraft:attached_to_leaves"
         },
         {
-          "probability": 0.05,
+          "probability": 0.01,
           "type": "minecraft:beehive"
         }
       ],
@@ -2830,7 +2874,7 @@
         "type": "minecraft:simple_state_provider"
       },
       "minimum_size": {
-        "limit": 1,
+        "limit": 2,
         "lower_size": 0,
         "upper_size": 2,
         "type": "minecraft:two_layers_feature_size"
@@ -2854,16 +2898,13 @@
         "type": "minecraft:random_spread_foliage_placer"
       },
       "root_placer": {
-        "max_root_width": 8,
-        "max_root_length": 15,
-        "y_offset": {
+        "trunk_offset_y": {
           "type": "minecraft:uniform",
           "value": {
             "min_inclusive": 1,
             "max_inclusive": 3
           }
         },
-        "random_skew_chance": 0.2,
         "root_provider": {
           "state": {
             "Properties": {
@@ -2873,16 +2914,33 @@
           },
           "type": "minecraft:simple_state_provider"
         },
-        "can_grow_through": "#minecraft:mangrove_roots_can_grow_through",
-        "muddy_roots_in": "minecraft:mud",
-        "muddy_roots_provider": {
-          "state": {
-            "Properties": {
-              "axis": "y"
+        "above_root_placement": {
+          "above_root_provider": {
+            "state": {
+              "Name": "minecraft:moss_carpet"
             },
-            "Name": "minecraft:muddy_mangrove_roots"
+            "type": "minecraft:simple_state_provider"
           },
-          "type": "minecraft:simple_state_provider"
+          "above_root_placement_chance": 0.5
+        },
+        "mangrove_root_placement": {
+          "max_root_width": 8,
+          "max_root_length": 15,
+          "random_skew_chance": 0.2,
+          "can_grow_through": "#minecraft:mangrove_roots_can_grow_through",
+          "muddy_roots_in": [
+            "minecraft:mud",
+            "minecraft:muddy_mangrove_roots"
+          ],
+          "muddy_roots_provider": {
+            "state": {
+              "Properties": {
+                "axis": "y"
+              },
+              "Name": "minecraft:muddy_mangrove_roots"
+            },
+            "type": "minecraft:simple_state_provider"
+          }
         },
         "type": "minecraft:mangrove_root_placer"
       },
@@ -2925,7 +2983,7 @@
       "features": [
         {
           "feature": "minecraft:tall_mangrove_checked",
-          "chance": 0.75
+          "chance": 0.85
         }
       ],
       "default": "minecraft:mangrove_checked"
@@ -5864,7 +5922,7 @@
           "type": "minecraft:attached_to_leaves"
         },
         {
-          "probability": 0.05,
+          "probability": 0.01,
           "type": "minecraft:beehive"
         }
       ],
@@ -5877,9 +5935,9 @@
         "type": "minecraft:simple_state_provider"
       },
       "minimum_size": {
-        "limit": 1,
+        "limit": 3,
         "lower_size": 0,
-        "upper_size": 3,
+        "upper_size": 2,
         "type": "minecraft:two_layers_feature_size"
       },
       "foliage_provider": {
@@ -5901,16 +5959,13 @@
         "type": "minecraft:random_spread_foliage_placer"
       },
       "root_placer": {
-        "max_root_width": 8,
-        "max_root_length": 15,
-        "y_offset": {
+        "trunk_offset_y": {
           "type": "minecraft:uniform",
           "value": {
             "min_inclusive": 3,
             "max_inclusive": 7
           }
         },
-        "random_skew_chance": 0.2,
         "root_provider": {
           "state": {
             "Properties": {
@@ -5920,16 +5975,33 @@
           },
           "type": "minecraft:simple_state_provider"
         },
-        "can_grow_through": "#minecraft:mangrove_roots_can_grow_through",
-        "muddy_roots_in": "minecraft:mud",
-        "muddy_roots_provider": {
-          "state": {
-            "Properties": {
-              "axis": "y"
+        "above_root_placement": {
+          "above_root_provider": {
+            "state": {
+              "Name": "minecraft:moss_carpet"
             },
-            "Name": "minecraft:muddy_mangrove_roots"
+            "type": "minecraft:simple_state_provider"
           },
-          "type": "minecraft:simple_state_provider"
+          "above_root_placement_chance": 0.5
+        },
+        "mangrove_root_placement": {
+          "max_root_width": 8,
+          "max_root_length": 15,
+          "random_skew_chance": 0.2,
+          "can_grow_through": "#minecraft:mangrove_roots_can_grow_through",
+          "muddy_roots_in": [
+            "minecraft:mud",
+            "minecraft:muddy_mangrove_roots"
+          ],
+          "muddy_roots_provider": {
+            "state": {
+              "Properties": {
+                "axis": "y"
+              },
+              "Name": "minecraft:muddy_mangrove_roots"
+            },
+            "type": "minecraft:simple_state_provider"
+          }
         },
         "type": "minecraft:mangrove_root_placer"
       },
