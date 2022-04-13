@@ -1,41 +1,25 @@
 {
   "config": {
-    "half_height": 1,
-    "targets": [
-      {
-        "Name": "minecraft:dirt"
-      },
-      {
-        "Properties": {
-          "snowy": "false"
+    "state_provider": {
+      "fallback": {
+        "state": {
+          "Name": "minecraft:packed_ice"
         },
-        "Name": "minecraft:grass_block"
+        "type": "minecraft:simple_state_provider"
       },
-      {
-        "Properties": {
-          "snowy": "false"
-        },
-        "Name": "minecraft:podzol"
-      },
-      {
-        "Name": "minecraft:coarse_dirt"
-      },
-      {
-        "Properties": {
-          "snowy": "false"
-        },
-        "Name": "minecraft:mycelium"
-      },
-      {
-        "Name": "minecraft:snow_block"
-      },
-      {
-        "Name": "minecraft:ice"
-      }
-    ],
-    "can_origin_replace": "minecraft:snow_block",
-    "state": {
-      "Name": "minecraft:packed_ice"
+      "rules": []
+    },
+    "target": {
+      "blocks": [
+        "minecraft:dirt",
+        "minecraft:grass_block",
+        "minecraft:podzol",
+        "minecraft:coarse_dirt",
+        "minecraft:mycelium",
+        "minecraft:snow_block",
+        "minecraft:ice"
+      ],
+      "type": "minecraft:matching_blocks"
     },
     "radius": {
       "type": "minecraft:uniform",
@@ -43,7 +27,8 @@
         "min_inclusive": 2,
         "max_inclusive": 3
       }
-    }
+    },
+    "half_height": 1
   },
-  "type": "minecraft:ice_patch"
+  "type": "minecraft:disk"
 }

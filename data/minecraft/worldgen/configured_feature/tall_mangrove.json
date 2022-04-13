@@ -39,7 +39,7 @@
         "type": "minecraft:attached_to_leaves"
       },
       {
-        "probability": 0.05,
+        "probability": 0.01,
         "type": "minecraft:beehive"
       }
     ],
@@ -52,9 +52,9 @@
       "type": "minecraft:simple_state_provider"
     },
     "minimum_size": {
-      "limit": 1,
+      "limit": 3,
       "lower_size": 0,
-      "upper_size": 3,
+      "upper_size": 2,
       "type": "minecraft:two_layers_feature_size"
     },
     "foliage_provider": {
@@ -76,16 +76,13 @@
       "type": "minecraft:random_spread_foliage_placer"
     },
     "root_placer": {
-      "max_root_width": 8,
-      "max_root_length": 15,
-      "y_offset": {
+      "trunk_offset_y": {
         "type": "minecraft:uniform",
         "value": {
           "min_inclusive": 3,
           "max_inclusive": 7
         }
       },
-      "random_skew_chance": 0.2,
       "root_provider": {
         "state": {
           "Properties": {
@@ -95,16 +92,33 @@
         },
         "type": "minecraft:simple_state_provider"
       },
-      "can_grow_through": "#minecraft:mangrove_roots_can_grow_through",
-      "muddy_roots_in": "minecraft:mud",
-      "muddy_roots_provider": {
-        "state": {
-          "Properties": {
-            "axis": "y"
+      "above_root_placement": {
+        "above_root_provider": {
+          "state": {
+            "Name": "minecraft:moss_carpet"
           },
-          "Name": "minecraft:muddy_mangrove_roots"
+          "type": "minecraft:simple_state_provider"
         },
-        "type": "minecraft:simple_state_provider"
+        "above_root_placement_chance": 0.5
+      },
+      "mangrove_root_placement": {
+        "max_root_width": 8,
+        "max_root_length": 15,
+        "random_skew_chance": 0.2,
+        "can_grow_through": "#minecraft:mangrove_roots_can_grow_through",
+        "muddy_roots_in": [
+          "minecraft:mud",
+          "minecraft:muddy_mangrove_roots"
+        ],
+        "muddy_roots_provider": {
+          "state": {
+            "Properties": {
+              "axis": "y"
+            },
+            "Name": "minecraft:muddy_mangrove_roots"
+          },
+          "type": "minecraft:simple_state_provider"
+        }
       },
       "type": "minecraft:mangrove_root_placer"
     },
