@@ -17,8 +17,18 @@
   },
   "criteria": {
     "allay_deliver_item_to_player": {
-      "trigger": "minecraft:item_delivered_to_player",
-      "conditions": {}
+      "trigger": "minecraft:thrown_item_picked_up_by_player",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "type": "minecraft:allay"
+            },
+            "entity": "this"
+          }
+        ]
+      }
     }
   },
   "requirements": [

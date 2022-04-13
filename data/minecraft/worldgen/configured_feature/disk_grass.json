@@ -1,23 +1,57 @@
 {
   "config": {
-    "half_height": 2,
-    "targets": [
-      {
-        "Name": "minecraft:dirt"
+    "state_provider": {
+      "fallback": {
+        "state": {
+          "Name": "minecraft:dirt"
+        },
+        "type": "minecraft:simple_state_provider"
       },
-      {
-        "Name": "minecraft:mud"
-      }
-    ],
-    "can_origin_replace": [
-      "minecraft:water",
-      "minecraft:mud"
-    ],
-    "state": {
-      "Properties": {
-        "snowy": "false"
-      },
-      "Name": "minecraft:grass_block"
+      "rules": [
+        {
+          "if_true": {
+            "predicate": {
+              "predicates": [
+                {
+                  "offset": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "type": "minecraft:solid"
+                },
+                {
+                  "offset": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "fluids": "minecraft:water",
+                  "type": "minecraft:matching_fluids"
+                }
+              ],
+              "type": "minecraft:any_of"
+            },
+            "type": "minecraft:not"
+          },
+          "then": {
+            "state": {
+              "Properties": {
+                "snowy": "false"
+              },
+              "Name": "minecraft:grass_block"
+            },
+            "type": "minecraft:simple_state_provider"
+          }
+        }
+      ]
+    },
+    "target": {
+      "blocks": [
+        "minecraft:dirt",
+        "minecraft:mud"
+      ],
+      "type": "minecraft:matching_blocks"
     },
     "radius": {
       "type": "minecraft:uniform",
@@ -25,7 +59,8 @@
         "min_inclusive": 2,
         "max_inclusive": 6
       }
-    }
+    },
+    "half_height": 2
   },
-  "type": "minecraft:surface_disk"
+  "type": "minecraft:disk"
 }
