@@ -69,10 +69,10 @@ def main(version: str | None, file, reset: bool, fetch: bool, undo: int | None, 
 	start_date = versions[process_versions[0]]['releaseTime'] if process_versions else None
 	init_exports(start_date, reset, fetch, undo, export, branch)
 
-	# try:
-	# 	os.remove('versions.json')
-	# except OSError:
-	# 	pass
+	try:
+		os.remove('versions.json')
+	except OSError:
+		pass
 
 	if process_versions:
 		click.echo(f'🚧 Processing versions: {", ".join(process_versions)}')
@@ -472,6 +472,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	if 'registries' in exports:
 		for key, entries in sorted(registries.items()):
 			create_summary(entries, f'registries/{key}', bin=False)
+		create_summary(sorted(registries.keys()), 'registries', clear=False, bin=False)
 
 	# === export version.json to all ===
 	for export in exports:
