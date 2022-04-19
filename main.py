@@ -28,10 +28,11 @@ APRIL_FOOLS = ('15w14a', '3D Shareware v1.34', '20w14infinite', '22w13oneblockat
 @click.option('--undo', default=0, help='Undos N commits')
 @click.option('--commit', is_flag=True, help='Whether to commit the exports')
 @click.option('--export', '-e', multiple=True, default=tuple(), type=click.Choice([*EXPORTS, 'all'], case_sensitive=True))
+@click.option('--fixtags', is_flag=True, help='Whether to fix all the tags')
 @click.option('--push', is_flag=True, help='Whether to push to the remote after each commit')
 @click.option('--force', is_flag=True, help='Whether to force create a tag and force push')
 @click.option('--branch', help='The export branch prefix to use')
-def main(version: str | None, file, reset: bool, fetch: bool, undo: int | None, commit: bool, export: tuple[str], push: bool, force: bool, branch: str | None):
+def main(version: str | None, file, reset: bool, fetch: bool, undo: int | None, commit: bool, export: tuple[str], fixtags: bool, push: bool, force: bool, branch: str | None):
 	dotenv.load_dotenv()
 	if 'all' in export:
 		export = EXPORTS
@@ -89,7 +90,10 @@ def main(version: str | None, file, reset: bool, fetch: bool, undo: int | None, 
 				remaining = t2 - t0 + int(t2 - t1) * (n - i - 1)
 				click.echo(f'✅ Done {v} ({i+1} / {n}) {format_time(t2 - t1)} ({format_time(t2 - t0)} / {format_time(remaining)})')
 
-	if not version and push:
+	if fixtags:
+		fix_tags(export, branch)
+
+	if (not version or fixtags) and push:
 		create_commit(None, None, push, force, export, branch)
 
 
@@ -493,7 +497,7 @@ def init_exports(start_date: str | None, reset: bool, fetch: bool, undo: int, ex
 		os.makedirs(export, exist_ok=True)
 		os.chdir(export)
 		subprocess.run(['git', 'init', '-q'])
-		subprocess.run(['git', 'checkout', '-q', '-b', export_branch])
+		subprocess.run(['git', 'checkout', '-q', '-b', export_branch], capture_output=True)
 		subprocess.run(['git', 'config', 'user.name', 'actions-user'])
 		subprocess.run(['git', 'config', 'user.email', 'actions@github.com'])
 		if os.getenv('github-repository'):
@@ -537,6 +541,25 @@ def create_commit(version: str | None, date: str | None, push: bool, force: bool
 				subprocess.run(['git', 'push', '-q', '--tags', 'origin', export_branch])
 		os.chdir('..')
 		click.echo(f'🚀 Created commit on {export_branch} branch')
+
+
+def fix_tags(exports: tuple[str], branch: str | None):
+	for export in exports:
+		export_branch = f'{branch}-{export}' if branch else export
+		os.chdir(export)
+		taglist = subprocess.run(['git', 'tag', '-l'], capture_output=True).stdout.decode('utf-8')
+		subprocess.run(['git', 'tag', '-d', *taglist.split('\n')], capture_output=True)
+		click.echo(f'🔥 Deleted {len(taglist)} tags in {export_branch} branch')
+		commits = [c
+			for c in subprocess.run(['git', 'log', '--format=%h %f'], capture_output=True).stdout.decode('utf-8').split('\n')
+			if re.match('^.* .*$', c) and not c.endswith('Initial-commit')
+		]
+		for c in commits:
+			ref, message = c.split(' ')
+			version = re.match(f'^Update-{export}-for-(.*)$', message.strip())[1]
+			subprocess.run(['git', 'tag', f'{version}-{export}', ref.strip()],  capture_output=True)
+		os.chdir('..')
+		click.echo(f'✨ Created {len(commits)} tags in {export_branch} branch')
 
 
 if __name__ == '__main__':
