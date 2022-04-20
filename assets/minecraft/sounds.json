@@ -7186,12 +7186,30 @@
   },
   "block.sculk_shrieker.step": {
     "sounds": [
-      "block/sculk/step1",
-      "block/sculk/step2",
-      "block/sculk/step3",
-      "block/sculk/step4",
-      "block/sculk/step5",
-      "block/sculk/step6"
+      {
+        "name": "block/sculk/step1",
+        "volume": 1
+      },
+      {
+        "name": "block/sculk/step2",
+        "volume": 1
+      },
+      {
+        "name": "block/sculk/step3",
+        "volume": 1
+      },
+      {
+        "name": "block/sculk/step4",
+        "volume": 1
+      },
+      {
+        "name": "block/sculk/step5",
+        "volume": 1
+      },
+      {
+        "name": "block/sculk/step6",
+        "volume": 1
+      }
     ],
     "subtitle": "subtitles.block.generic.footsteps"
   },
@@ -8736,17 +8754,6 @@
     ],
     "subtitle": "subtitles.entity.allay.death"
   },
-  "entity.allay.flap": {
-    "sounds": [
-      {
-        "name": "entity.phantom.flap",
-        "pitch": 2.0,
-        "type": "event",
-        "volume": 0.2
-      }
-    ],
-    "subtitle": "subtitles.entity.allay.flap"
-  },
   "entity.allay.hurt": {
     "sounds": [
       {
@@ -8808,15 +8815,14 @@
     ],
     "subtitle": "subtitles.entity.allay.item_taken"
   },
-  "entity.allay.throw": {
+  "entity.allay.item_thrown": {
     "sounds": [
       {
-        "name": "entity.witch.throw",
-        "type": "event",
+        "name": "mob/allay/item_thrown1",
         "volume": 0.25
       }
     ],
-    "subtitle": "subtitles.entity.allay.throw"
+    "subtitle": "subtitles.entity.allay.item_thrown"
   },
   "entity.armor_stand.break": {
     "sounds": [
@@ -14654,6 +14660,51 @@
     ],
     "subtitle": "subtitles.entity.tadpole.flop"
   },
+  "entity.tadpole.grow_up": {
+    "sounds": [
+      {
+        "name": "mob/frog/idle1",
+        "pitch": 1.2,
+        "volume": 0.75
+      },
+      {
+        "name": "mob/frog/idle2",
+        "pitch": 1.2,
+        "volume": 0.75
+      },
+      {
+        "name": "mob/frog/idle3",
+        "pitch": 1.2,
+        "volume": 0.75
+      },
+      {
+        "name": "mob/frog/idle4",
+        "pitch": 1.2,
+        "volume": 0.75
+      },
+      {
+        "name": "mob/frog/idle5",
+        "pitch": 1.2,
+        "volume": 0.75
+      },
+      {
+        "name": "mob/frog/idle6",
+        "pitch": 1.2,
+        "volume": 0.75
+      },
+      {
+        "name": "mob/frog/idle7",
+        "pitch": 1.2,
+        "volume": 0.75
+      },
+      {
+        "name": "mob/frog/idle8",
+        "pitch": 1.2,
+        "volume": 0.75
+      }
+    ],
+    "subtitle": "subtitles.entity.tadpole.grow_up"
+  },
   "entity.tadpole.hurt": {
     "sounds": [
       "mob/tadpole/hurt1",
@@ -16321,6 +16372,26 @@
     ],
     "subtitle": "subtitles.item.bucket.empty"
   },
+  "item.bucket.empty_tadpole": {
+    "sounds": [
+      {
+        "name": "item/bucket/empty_fish1",
+        "pitch": 1.5,
+        "volume": 0.5
+      },
+      {
+        "name": "item/bucket/empty_fish2",
+        "pitch": 1.5,
+        "volume": 0.5
+      },
+      {
+        "name": "item/bucket/empty_fish3",
+        "pitch": 1.5,
+        "volume": 0.5
+      }
+    ],
+    "subtitle": "subtitles.item.bucket.empty"
+  },
   "item.bucket.fill": {
     "sounds": [
       "item/bucket/fill1",
@@ -16372,6 +16443,26 @@
       {
         "name": "item/bucket/fill_powder_snow2",
         "pitch": 1.1
+      }
+    ],
+    "subtitle": "subtitles.item.bucket.fill"
+  },
+  "item.bucket.fill_tadpole": {
+    "sounds": [
+      {
+        "name": "item/bucket/fill_fish1",
+        "pitch": 1.5,
+        "volume": 0.5
+      },
+      {
+        "name": "item/bucket/fill_fish2",
+        "pitch": 1.5,
+        "volume": 0.5
+      },
+      {
+        "name": "item/bucket/fill_fish3",
+        "pitch": 1.5,
+        "volume": 0.5
       }
     ],
     "subtitle": "subtitles.item.bucket.fill"
@@ -17316,23 +17407,15 @@
   "music.menu": {
     "sounds": [
       {
-        "name": "music/game/infinite_amethyst",
+        "name": "music/game/swamp/aerie",
         "stream": true
       },
       {
-        "name": "music/game/left_to_bloom",
+        "name": "music/game/swamp/firebugs",
         "stream": true
       },
       {
-        "name": "music/game/one_more_day",
-        "stream": true
-      },
-      {
-        "name": "music/game/stand_tall",
-        "stream": true
-      },
-      {
-        "name": "music/game/wending",
+        "name": "music/game/swamp/labyrinthine",
         "stream": true
       },
       {
@@ -17459,6 +17542,14 @@
   },
   "music.nether.warped_forest": {
     "sounds": []
+  },
+  "music.overworld.deep_dark": {
+    "sounds": [
+      {
+        "name": "music/game/ancestry",
+        "stream": true
+      }
+    ]
   },
   "music.overworld.dripstone_caves": {
     "sounds": [
@@ -17627,37 +17718,72 @@
     "sounds": [
       {
         "name": "music/game/an_ordinary_day",
-        "stream": true
+        "stream": true,
+        "weight": 2
       },
       {
         "name": "music/game/calm1",
-        "stream": true
+        "stream": true,
+        "weight": 2
       },
       {
         "name": "music/game/calm2",
-        "stream": true
+        "stream": true,
+        "weight": 2
       },
       {
         "name": "music/game/calm3",
-        "stream": true
+        "stream": true,
+        "weight": 2
       },
       {
         "name": "music/game/floating_dream",
-        "stream": true
+        "stream": true,
+        "weight": 2
       },
       {
         "name": "music/game/left_to_bloom",
         "stream": true,
         "volume": 0.4,
-        "weight": 2
+        "weight": 4
       },
       {
         "name": "music/game/one_more_day",
         "stream": true,
-        "volume": 0.4
+        "volume": 0.4,
+        "weight": 2
       },
       {
         "name": "music/game/piano3",
+        "stream": true,
+        "weight": 2
+      },
+      {
+        "name": "music/game/swamp/aerie",
+        "stream": true
+      },
+      {
+        "name": "music/game/swamp/firebugs",
+        "stream": true
+      },
+      {
+        "name": "music/game/swamp/labyrinthine",
+        "stream": true
+      }
+    ]
+  },
+  "music.overworld.swamp": {
+    "sounds": [
+      {
+        "name": "music/game/swamp/aerie",
+        "stream": true
+      },
+      {
+        "name": "music/game/swamp/firebugs",
+        "stream": true
+      },
+      {
+        "name": "music/game/swamp/labyrinthine",
         "stream": true
       }
     ]
@@ -17783,6 +17909,198 @@
         "name": "music/game/water/shuniji",
         "stream": true,
         "volume": 0.4
+      }
+    ]
+  },
+  "music.overworld.jungle_and_forest": {
+    "sounds": [
+      {
+        "name": "music/game/calm1",
+        "stream": true
+      },
+      {
+        "name": "music/game/calm2",
+        "stream": true
+      },
+      {
+        "name": "music/game/calm3",
+        "stream": true
+      },
+      {
+        "name": "music/game/comforting_memories",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "music/game/floating_dream",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "music/game/hal1",
+        "stream": true
+      },
+      {
+        "name": "music/game/hal2",
+        "stream": true
+      },
+      {
+        "name": "music/game/hal3",
+        "stream": true
+      },
+      {
+        "name": "music/game/hal4",
+        "stream": true
+      },
+      {
+        "name": "music/game/left_to_bloom",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "music/game/nuance1",
+        "stream": true
+      },
+      {
+        "name": "music/game/nuance2",
+        "stream": true
+      },
+      {
+        "name": "music/game/one_more_day",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "music/game/piano1",
+        "stream": true
+      },
+      {
+        "name": "music/game/piano2",
+        "stream": true
+      },
+      {
+        "name": "music/game/piano3",
+        "stream": true
+      },
+      {
+        "name": "music/game/swamp/aerie",
+        "stream": true
+      },
+      {
+        "name": "music/game/swamp/firebugs",
+        "stream": true
+      },
+      {
+        "name": "music/game/swamp/labyrinthine",
+        "stream": true
+      }
+    ]
+  },
+  "music.overworld.old_growth_taiga": {
+    "sounds": [
+      {
+        "name": "music/game/calm1",
+        "stream": true,
+        "weight": 3
+      },
+      {
+        "name": "music/game/calm2",
+        "stream": true,
+        "weight": 3
+      },
+      {
+        "name": "music/game/calm3",
+        "stream": true,
+        "weight": 3
+      },
+      {
+        "name": "music/game/comforting_memories",
+        "stream": true,
+        "volume": 0.4,
+        "weight": 3
+      },
+      {
+        "name": "music/game/floating_dream",
+        "stream": true,
+        "volume": 0.4,
+        "weight": 3
+      },
+      {
+        "name": "music/game/hal1",
+        "stream": true,
+        "weight": 3
+      },
+      {
+        "name": "music/game/hal2",
+        "stream": true,
+        "weight": 3
+      },
+      {
+        "name": "music/game/hal3",
+        "stream": true,
+        "weight": 3
+      },
+      {
+        "name": "music/game/hal4",
+        "stream": true,
+        "weight": 3
+      },
+      {
+        "name": "music/game/left_to_bloom",
+        "stream": true,
+        "volume": 0.4,
+        "weight": 3
+      },
+      {
+        "name": "music/game/nuance1",
+        "stream": true,
+        "weight": 3
+      },
+      {
+        "name": "music/game/nuance2",
+        "stream": true,
+        "weight": 3
+      },
+      {
+        "name": "music/game/one_more_day",
+        "stream": true,
+        "volume": 0.4,
+        "weight": 3
+      },
+      {
+        "name": "music/game/piano1",
+        "stream": true,
+        "weight": 3
+      },
+      {
+        "name": "music/game/piano2",
+        "stream": true,
+        "weight": 3
+      },
+      {
+        "name": "music/game/piano3",
+        "stream": true,
+        "weight": 3
+      },
+      {
+        "name": "music/game/swamp/aerie",
+        "stream": true
+      },
+      {
+        "name": "music/game/swamp/firebugs",
+        "stream": true
+      },
+      {
+        "name": "music/game/swamp/labyrinthine",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc.5": {
+    "sounds": [
+      {
+        "name": "records/5",
+        "stream": true
       }
     ]
   },
