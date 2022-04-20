@@ -551,9 +551,9 @@ def fix_tags(exports: tuple[str], branch: str | None):
 	for export in exports:
 		export_branch = f'{branch}-{export}' if branch else export
 		os.chdir(export)
-		taglist = subprocess.run(['git', 'tag', '-l'], capture_output=True).stdout.decode('utf-8')
-		subprocess.run(['git', 'tag', '-d', *taglist.split('\n')], capture_output=True)
-		click.echo(f'🔥 Deleted {len(taglist)} tags in {export_branch} branch')
+		taglist = subprocess.run(['git', 'tag', '-l'], capture_output=True).stdout.decode('utf-8').split('\n')
+		subprocess.run(['git', 'tag', '-d', *taglist], capture_output=True)
+		click.echo(f'🔥 Deleted {len(taglist) - 1} tags in {export_branch} branch')
 		commits = [c
 			for c in subprocess.run(['git', 'log', '--format=%h %f'], capture_output=True).stdout.decode('utf-8').split('\n')
 			if re.match('^.* .*$', c) and not c.endswith('Initial-commit')
