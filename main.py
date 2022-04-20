@@ -509,7 +509,7 @@ def init_exports(start_date: str | None, reset: bool, fetch: bool, undo: int, ex
 			remote = f'https://x-access-token:{os.getenv("github-token")}@github.com/{os.getenv("github-repository")}'
 			subprocess.run(['git', 'remote', 'set-url' if 'origin' in remotes else 'add', 'origin', remote])
 		if fetch:
-			subprocess.run(['git', 'fetch', '-q', 'origin'])
+			subprocess.run(['git', 'fetch', '-q', 'origin', export_branch])
 			subprocess.run(['git', 'reset', '-q', '--hard', f'origin/{export_branch}'])
 		elif reset:
 			assert start_date, 'Cannot reset without a version'
