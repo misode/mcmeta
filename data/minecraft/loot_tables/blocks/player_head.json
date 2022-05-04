@@ -2,7 +2,6 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -10,19 +9,20 @@
           "functions": [
             {
               "function": "minecraft:copy_nbt",
-              "source": "block_entity",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "SkullOwner",
-                  "target": "SkullOwner",
-                  "op": "replace"
+                  "target": "SkullOwner"
                 }
-              ]
+              ],
+              "source": "block_entity"
             }
           ],
           "name": "minecraft:player_head"
         }
-      ]
+      ],
+      "rolls": 1.0
     }
   ]
 }

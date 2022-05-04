@@ -1,26 +1,7 @@
 {
   "parent": "minecraft:nether/all_potions",
-  "display": {
-    "icon": {
-      "item": "minecraft:bucket"
-    },
-    "title": {
-      "translate": "advancements.nether.all_effects.title"
-    },
-    "description": {
-      "translate": "advancements.nether.all_effects.description"
-    },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": true
-  },
-  "rewards": {
-    "experience": 1000
-  },
   "criteria": {
     "all_effects": {
-      "trigger": "minecraft:effects_changed",
       "conditions": {
         "effects": {
           "minecraft:absorption": {},
@@ -51,12 +32,31 @@
           "minecraft:weakness": {},
           "minecraft:wither": {}
         }
-      }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.nether.all_effects.description"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "item": "minecraft:bucket"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.nether.all_effects.title"
     }
   },
   "requirements": [
     [
       "all_effects"
     ]
-  ]
+  ],
+  "rewards": {
+    "experience": 1000
+  }
 }

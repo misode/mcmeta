@@ -2,34 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:copy_nbt",
-              "source": "block_entity",
-              "ops": [
-                {
-                  "source": "Bees",
-                  "target": "BlockEntityTag.Bees",
-                  "op": "replace"
-                }
-              ]
-            },
-            {
-              "function": "minecraft:copy_state",
-              "block": "minecraft:bee_nest",
-              "properties": [
-                "honey_level"
-              ]
-            }
-          ],
-          "name": "minecraft:bee_nest"
-        }
-      ],
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -44,7 +17,34 @@
             ]
           }
         }
-      ]
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_nbt",
+              "ops": [
+                {
+                  "op": "replace",
+                  "source": "Bees",
+                  "target": "BlockEntityTag.Bees"
+                }
+              ],
+              "source": "block_entity"
+            },
+            {
+              "block": "minecraft:bee_nest",
+              "function": "minecraft:copy_state",
+              "properties": [
+                "honey_level"
+              ]
+            }
+          ],
+          "name": "minecraft:bee_nest"
+        }
+      ],
+      "rolls": 1.0
     }
   ]
 }

@@ -1,15 +1,22 @@
 {
+  "type": "minecraft:block_column",
   "config": {
+    "allowed_placement": {
+      "type": "minecraft:matching_blocks",
+      "blocks": "minecraft:air"
+    },
+    "direction": "down",
     "layers": [
       {
         "height": {
+          "type": "minecraft:weighted_list",
           "distribution": [
             {
               "data": {
                 "type": "minecraft:uniform",
                 "value": {
-                  "min_inclusive": 0,
-                  "max_inclusive": 3
+                  "max_inclusive": 3,
+                  "min_inclusive": 0
                 }
               },
               "weight": 5
@@ -18,85 +25,78 @@
               "data": {
                 "type": "minecraft:uniform",
                 "value": {
-                  "min_inclusive": 1,
-                  "max_inclusive": 7
+                  "max_inclusive": 7,
+                  "min_inclusive": 1
                 }
               },
               "weight": 1
             }
-          ],
-          "type": "minecraft:weighted_list"
+          ]
         },
         "provider": {
+          "type": "minecraft:weighted_state_provider",
           "entries": [
             {
               "data": {
+                "Name": "minecraft:cave_vines_plant",
                 "Properties": {
                   "berries": "false"
-                },
-                "Name": "minecraft:cave_vines_plant"
+                }
               },
               "weight": 4
             },
             {
               "data": {
+                "Name": "minecraft:cave_vines_plant",
                 "Properties": {
                   "berries": "true"
-                },
-                "Name": "minecraft:cave_vines_plant"
+                }
               },
               "weight": 1
             }
-          ],
-          "type": "minecraft:weighted_state_provider"
+          ]
         }
       },
       {
         "height": 1,
         "provider": {
+          "type": "minecraft:randomized_int_state_provider",
+          "property": "age",
           "source": {
+            "type": "minecraft:weighted_state_provider",
             "entries": [
               {
                 "data": {
+                  "Name": "minecraft:cave_vines",
                   "Properties": {
-                    "berries": "false",
-                    "age": "0"
-                  },
-                  "Name": "minecraft:cave_vines"
+                    "age": "0",
+                    "berries": "false"
+                  }
                 },
                 "weight": 4
               },
               {
                 "data": {
+                  "Name": "minecraft:cave_vines",
                   "Properties": {
-                    "berries": "true",
-                    "age": "0"
-                  },
-                  "Name": "minecraft:cave_vines"
+                    "age": "0",
+                    "berries": "true"
+                  }
                 },
                 "weight": 1
               }
-            ],
-            "type": "minecraft:weighted_state_provider"
+            ]
           },
-          "property": "age",
           "values": {
             "type": "minecraft:uniform",
             "value": {
-              "min_inclusive": 23,
-              "max_inclusive": 25
+              "max_inclusive": 25,
+              "min_inclusive": 23
             }
-          },
-          "type": "minecraft:randomized_int_state_provider"
+          }
         }
       }
     ],
-    "direction": "down",
-    "allowed_placement": {
-      "blocks": "minecraft:air",
-      "type": "minecraft:matching_blocks"
-    },
     "prioritize_tip": true
-  },
-  "type": "minecraft:block_column"
+  }
 }

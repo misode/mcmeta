@@ -2,40 +2,40 @@
   "feature": "minecraft:spore_blossom",
   "placement": [
     {
-      "count": 25,
-      "type": "minecraft:count"
+      "type": "minecraft:count",
+      "count": 25
     },
     {
       "type": "minecraft:in_square"
     },
     {
+      "type": "minecraft:height_range",
       "height": {
-        "min_inclusive": {
-          "above_bottom": 0
-        },
+        "type": "minecraft:uniform",
         "max_inclusive": {
           "absolute": 256
         },
-        "type": "minecraft:uniform"
-      },
-      "type": "minecraft:height_range"
+        "min_inclusive": {
+          "above_bottom": 0
+        }
+      }
     },
     {
+      "type": "minecraft:environment_scan",
+      "allowed_search_condition": {
+        "type": "minecraft:matching_blocks",
+        "blocks": "minecraft:air"
+      },
       "direction_of_search": "up",
+      "max_steps": 12,
       "target_condition": {
         "type": "minecraft:solid"
-      },
-      "allowed_search_condition": {
-        "blocks": "minecraft:air",
-        "type": "minecraft:matching_blocks"
-      },
-      "max_steps": 12,
-      "type": "minecraft:environment_scan"
+      }
     },
     {
+      "type": "minecraft:random_offset",
       "xz_spread": 0,
-      "y_spread": -1,
-      "type": "minecraft:random_offset"
+      "y_spread": -1
     },
     {
       "type": "minecraft:biome"

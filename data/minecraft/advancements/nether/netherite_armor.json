@@ -1,27 +1,7 @@
 {
   "parent": "minecraft:nether/obtain_ancient_debris",
-  "display": {
-    "icon": {
-      "item": "minecraft:netherite_chestplate",
-      "nbt": "{Damage:0}"
-    },
-    "title": {
-      "translate": "advancements.nether.netherite_armor.title"
-    },
-    "description": {
-      "translate": "advancements.nether.netherite_armor.description"
-    },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
-  "rewards": {
-    "experience": 100
-  },
   "criteria": {
     "netherite_armor": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -45,12 +25,32 @@
             ]
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.nether.netherite_armor.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:netherite_chestplate",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.nether.netherite_armor.title"
     }
   },
   "requirements": [
     [
       "netherite_armor"
     ]
-  ]
+  ],
+  "rewards": {
+    "experience": 100
+  }
 }

@@ -1,25 +1,18 @@
 {
   "parent": "minecraft:husbandry/wax_on",
-  "display": {
-    "icon": {
-      "item": "minecraft:stone_axe",
-      "nbt": "{Damage:0}"
-    },
-    "title": {
-      "translate": "advancements.husbandry.wax_off.title"
-    },
-    "description": {
-      "translate": "advancements.husbandry.wax_off.description"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "wax_off": {
-      "trigger": "minecraft:item_used_on_block",
       "conditions": {
+        "item": {
+          "items": [
+            "minecraft:wooden_axe",
+            "minecraft:golden_axe",
+            "minecraft:stone_axe",
+            "minecraft:iron_axe",
+            "minecraft:diamond_axe",
+            "minecraft:netherite_axe"
+          ]
+        },
         "location": {
           "block": {
             "blocks": [
@@ -41,18 +34,25 @@
               "minecraft:waxed_oxidized_cut_copper_stairs"
             ]
           }
-        },
-        "item": {
-          "items": [
-            "minecraft:wooden_axe",
-            "minecraft:golden_axe",
-            "minecraft:stone_axe",
-            "minecraft:iron_axe",
-            "minecraft:diamond_axe",
-            "minecraft:netherite_axe"
-          ]
         }
-      }
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.husbandry.wax_off.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:stone_axe",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.husbandry.wax_off.title"
     }
   },
   "requirements": [

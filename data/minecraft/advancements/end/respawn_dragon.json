@@ -1,34 +1,34 @@
 {
   "parent": "minecraft:end/kill_dragon",
-  "display": {
-    "icon": {
-      "item": "minecraft:end_crystal"
-    },
-    "title": {
-      "translate": "advancements.end.respawn_dragon.title"
-    },
-    "description": {
-      "translate": "advancements.end.respawn_dragon.description"
-    },
-    "frame": "goal",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "summoned_dragon": {
-      "trigger": "minecraft:summoned_entity",
       "conditions": {
         "entity": [
           {
             "condition": "minecraft:entity_properties",
+            "entity": "this",
             "predicate": {
               "type": "minecraft:ender_dragon"
-            },
-            "entity": "this"
+            }
           }
         ]
-      }
+      },
+      "trigger": "minecraft:summoned_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.end.respawn_dragon.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:end_crystal"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.end.respawn_dragon.title"
     }
   },
   "requirements": [

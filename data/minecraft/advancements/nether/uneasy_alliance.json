@@ -1,45 +1,45 @@
 {
   "parent": "minecraft:nether/return_to_sender",
-  "display": {
-    "icon": {
-      "item": "minecraft:ghast_tear"
-    },
-    "title": {
-      "translate": "advancements.nether.uneasy_alliance.title"
-    },
-    "description": {
-      "translate": "advancements.nether.uneasy_alliance.description"
-    },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
-  "rewards": {
-    "experience": 100
-  },
   "criteria": {
     "killed_ghast": {
-      "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": [
           {
             "condition": "minecraft:entity_properties",
+            "entity": "this",
             "predicate": {
               "type": "minecraft:ghast",
               "location": {
                 "dimension": "minecraft:overworld"
               }
-            },
-            "entity": "this"
+            }
           }
         ]
-      }
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.nether.uneasy_alliance.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:ghast_tear"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.nether.uneasy_alliance.title"
     }
   },
   "requirements": [
     [
       "killed_ghast"
     ]
-  ]
+  ],
+  "rewards": {
+    "experience": 100
+  }
 }

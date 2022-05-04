@@ -1,26 +1,33 @@
 {
+  "type": "minecraft:flower",
   "config": {
-    "tries": 96,
-    "xz_spread": 6,
-    "y_spread": 2,
     "feature": {
       "feature": {
+        "type": "minecraft:simple_block",
         "config": {
           "to_place": {
-            "seed": 2345,
+            "type": "minecraft:dual_noise_provider",
             "noise": {
-              "firstOctave": -3,
               "amplitudes": [
                 1.0
-              ]
+              ],
+              "firstOctave": -3
             },
             "scale": 1.0,
+            "seed": 2345,
+            "slow_noise": {
+              "amplitudes": [
+                1.0
+              ],
+              "firstOctave": -10
+            },
+            "slow_scale": 1.0,
             "states": [
               {
+                "Name": "minecraft:tall_grass",
                 "Properties": {
                   "half": "lower"
-                },
-                "Name": "minecraft:tall_grass"
+                }
               },
               {
                 "Name": "minecraft:allium"
@@ -47,29 +54,22 @@
             "variety": [
               1,
               3
-            ],
-            "slow_noise": {
-              "firstOctave": -10,
-              "amplitudes": [
-                1.0
-              ]
-            },
-            "slow_scale": 1.0,
-            "type": "minecraft:dual_noise_provider"
+            ]
           }
-        },
-        "type": "minecraft:simple_block"
+        }
       },
       "placement": [
         {
+          "type": "minecraft:block_predicate_filter",
           "predicate": {
-            "blocks": "minecraft:air",
-            "type": "minecraft:matching_blocks"
-          },
-          "type": "minecraft:block_predicate_filter"
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
         }
       ]
-    }
-  },
-  "type": "minecraft:flower"
+    },
+    "tries": 96,
+    "xz_spread": 6,
+    "y_spread": 2
+  }
 }

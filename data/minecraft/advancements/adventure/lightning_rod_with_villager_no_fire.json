@@ -1,27 +1,21 @@
 {
   "parent": "minecraft:adventure/root",
-  "display": {
-    "icon": {
-      "item": "minecraft:lightning_rod"
-    },
-    "title": {
-      "translate": "advancements.adventure.lightning_rod_with_villager_no_fire.title"
-    },
-    "description": {
-      "translate": "advancements.adventure.lightning_rod_with_villager_no_fire.description"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "lightning_rod_with_villager_no_fire": {
-      "trigger": "minecraft:lightning_strike",
       "conditions": {
+        "bystander": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:villager"
+            }
+          }
+        ],
         "lightning": [
           {
             "condition": "minecraft:entity_properties",
+            "entity": "this",
             "predicate": {
               "distance": {
                 "absolute": {
@@ -29,23 +23,29 @@
                 }
               },
               "type_specific": {
-                "blocks_set_on_fire": 0,
-                "type": "lightning"
+                "type": "lightning",
+                "blocks_set_on_fire": 0
               }
-            },
-            "entity": "this"
-          }
-        ],
-        "bystander": [
-          {
-            "condition": "minecraft:entity_properties",
-            "predicate": {
-              "type": "minecraft:villager"
-            },
-            "entity": "this"
+            }
           }
         ]
-      }
+      },
+      "trigger": "minecraft:lightning_strike"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.adventure.lightning_rod_with_villager_no_fire.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:lightning_rod"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.adventure.lightning_rod_with_villager_no_fire.title"
     }
   },
   "requirements": [
