@@ -1,29 +1,29 @@
 {
+  "type": "minecraft:vegetation_patch",
   "config": {
-    "vegetation_chance": 0.05,
-    "xz_radius": {
-      "type": "minecraft:uniform",
-      "value": {
-        "min_inclusive": 4,
-        "max_inclusive": 7
+    "depth": 3,
+    "extra_bottom_block_chance": 0.8,
+    "extra_edge_column_chance": 0.7,
+    "ground_state": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:clay"
       }
     },
-    "extra_edge_column_chance": 0.7,
-    "extra_bottom_block_chance": 0.8,
-    "vertical_range": 2,
+    "replaceable": "#minecraft:lush_ground_replaceable",
+    "surface": "floor",
+    "vegetation_chance": 0.05,
     "vegetation_feature": {
       "feature": "minecraft:dripleaf",
       "placement": []
     },
-    "surface": "floor",
-    "depth": 3,
-    "replaceable": "#minecraft:lush_ground_replaceable",
-    "ground_state": {
-      "state": {
-        "Name": "minecraft:clay"
-      },
-      "type": "minecraft:simple_state_provider"
+    "vertical_range": 2,
+    "xz_radius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 7,
+        "min_inclusive": 4
+      }
     }
-  },
-  "type": "minecraft:vegetation_patch"
+  }
 }

@@ -1,24 +1,13 @@
 {
   "parent": "minecraft:husbandry/safely_harvest_honey",
-  "display": {
-    "icon": {
-      "item": "minecraft:honeycomb"
-    },
-    "title": {
-      "translate": "advancements.husbandry.wax_on.title"
-    },
-    "description": {
-      "translate": "advancements.husbandry.wax_on.description"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "wax_on": {
-      "trigger": "minecraft:item_used_on_block",
       "conditions": {
+        "item": {
+          "items": [
+            "minecraft:honeycomb"
+          ]
+        },
         "location": {
           "block": {
             "blocks": [
@@ -40,13 +29,24 @@
               "minecraft:oxidized_cut_copper_stairs"
             ]
           }
-        },
-        "item": {
-          "items": [
-            "minecraft:honeycomb"
-          ]
         }
-      }
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.husbandry.wax_on.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:honeycomb"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.husbandry.wax_on.title"
     }
   },
   "requirements": [

@@ -2,7 +2,6 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -14,26 +13,27 @@
           ],
           "name": "minecraft:composter"
         }
-      ]
+      ],
+      "rolls": 1.0
     },
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "minecraft:composter",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "level": "8"
+          }
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
           "name": "minecraft:bone_meal"
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:block_state_property",
-          "block": "minecraft:composter",
-          "properties": {
-            "level": "8"
-          }
-        }
-      ]
+      "rolls": 1.0
     }
   ]
 }

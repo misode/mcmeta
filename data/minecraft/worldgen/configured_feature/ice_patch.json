@@ -1,15 +1,25 @@
 {
+  "type": "minecraft:disk",
   "config": {
+    "half_height": 1,
+    "radius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 3,
+        "min_inclusive": 2
+      }
+    },
     "state_provider": {
       "fallback": {
+        "type": "minecraft:simple_state_provider",
         "state": {
           "Name": "minecraft:packed_ice"
-        },
-        "type": "minecraft:simple_state_provider"
+        }
       },
       "rules": []
     },
     "target": {
+      "type": "minecraft:matching_blocks",
       "blocks": [
         "minecraft:dirt",
         "minecraft:grass_block",
@@ -18,17 +28,7 @@
         "minecraft:mycelium",
         "minecraft:snow_block",
         "minecraft:ice"
-      ],
-      "type": "minecraft:matching_blocks"
-    },
-    "radius": {
-      "type": "minecraft:uniform",
-      "value": {
-        "min_inclusive": 2,
-        "max_inclusive": 3
-      }
-    },
-    "half_height": 1
-  },
-  "type": "minecraft:disk"
+      ]
+    }
+  }
 }

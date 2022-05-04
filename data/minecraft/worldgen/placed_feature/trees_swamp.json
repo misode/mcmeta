@@ -2,7 +2,9 @@
   "feature": "minecraft:swamp_oak",
   "placement": [
     {
+      "type": "minecraft:count",
       "count": {
+        "type": "minecraft:weighted_list",
         "distribution": [
           {
             "data": 2,
@@ -12,36 +14,34 @@
             "data": 3,
             "weight": 1
           }
-        ],
-        "type": "minecraft:weighted_list"
-      },
-      "type": "minecraft:count"
+        ]
+      }
     },
     {
       "type": "minecraft:in_square"
     },
     {
-      "max_water_depth": 2,
-      "type": "minecraft:surface_water_depth_filter"
+      "type": "minecraft:surface_water_depth_filter",
+      "max_water_depth": 2
     },
     {
-      "heightmap": "OCEAN_FLOOR",
-      "type": "minecraft:heightmap"
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
     },
     {
       "type": "minecraft:biome"
     },
     {
+      "type": "minecraft:block_predicate_filter",
       "predicate": {
+        "type": "minecraft:would_survive",
         "state": {
+          "Name": "minecraft:oak_sapling",
           "Properties": {
             "stage": "0"
-          },
-          "Name": "minecraft:oak_sapling"
-        },
-        "type": "minecraft:would_survive"
-      },
-      "type": "minecraft:block_predicate_filter"
+          }
+        }
+      }
     }
   ]
 }

@@ -2,7 +2,6 @@
   "type": "minecraft:fishing",
   "pools": [
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -17,13 +16,13 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "function": "minecraft:set_damage",
+              "add": false,
               "damage": {
                 "type": "minecraft:uniform",
-                "min": 0.0,
-                "max": 0.25
+                "max": 0.25,
+                "min": 0.0
               },
-              "add": false
+              "function": "minecraft:set_damage"
             },
             {
               "function": "minecraft:enchant_with_levels",
@@ -37,13 +36,13 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "function": "minecraft:set_damage",
+              "add": false,
               "damage": {
                 "type": "minecraft:uniform",
-                "min": 0.0,
-                "max": 0.25
+                "max": 0.25,
+                "min": 0.0
               },
-              "add": false
+              "function": "minecraft:set_damage"
             },
             {
               "function": "minecraft:enchant_with_levels",
@@ -68,7 +67,8 @@
           "type": "minecraft:item",
           "name": "minecraft:nautilus_shell"
         }
-      ]
+      ],
+      "rolls": 1.0
     }
   ]
 }

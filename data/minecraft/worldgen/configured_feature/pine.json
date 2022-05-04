@@ -1,58 +1,58 @@
 {
+  "type": "minecraft:tree",
   "config": {
     "decorators": [],
-    "ignore_vines": true,
-    "force_dirt": false,
     "dirt_provider": {
+      "type": "minecraft:simple_state_provider",
       "state": {
         "Name": "minecraft:dirt"
-      },
-      "type": "minecraft:simple_state_provider"
-    },
-    "minimum_size": {
-      "limit": 2,
-      "lower_size": 0,
-      "upper_size": 2,
-      "type": "minecraft:two_layers_feature_size"
-    },
-    "foliage_provider": {
-      "state": {
-        "Properties": {
-          "waterlogged": "false",
-          "persistent": "false",
-          "distance": "7"
-        },
-        "Name": "minecraft:spruce_leaves"
-      },
-      "type": "minecraft:simple_state_provider"
+      }
     },
     "foliage_placer": {
-      "radius": 1,
-      "offset": 1,
+      "type": "minecraft:pine_foliage_placer",
       "height": {
         "type": "minecraft:uniform",
         "value": {
-          "min_inclusive": 3,
-          "max_inclusive": 4
+          "max_inclusive": 4,
+          "min_inclusive": 3
         }
       },
-      "type": "minecraft:pine_foliage_placer"
+      "offset": 1,
+      "radius": 1
     },
-    "trunk_provider": {
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
       "state": {
+        "Name": "minecraft:spruce_leaves",
         "Properties": {
-          "axis": "y"
-        },
-        "Name": "minecraft:spruce_log"
-      },
-      "type": "minecraft:simple_state_provider"
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "force_dirt": false,
+    "ignore_vines": true,
+    "minimum_size": {
+      "type": "minecraft:two_layers_feature_size",
+      "limit": 2,
+      "lower_size": 0,
+      "upper_size": 2
     },
     "trunk_placer": {
+      "type": "minecraft:straight_trunk_placer",
       "base_height": 6,
       "height_rand_a": 4,
-      "height_rand_b": 0,
-      "type": "minecraft:straight_trunk_placer"
+      "height_rand_b": 0
+    },
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:spruce_log",
+        "Properties": {
+          "axis": "y"
+        }
+      }
     }
-  },
-  "type": "minecraft:tree"
+  }
 }

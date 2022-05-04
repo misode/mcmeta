@@ -1,22 +1,22 @@
 {
   "processors": [
     {
+      "processor_type": "minecraft:rule",
       "rules": [
         {
-          "output_state": {
-            "Name": "minecraft:mossy_cobblestone"
-          },
           "input_predicate": {
             "block": "minecraft:cobblestone",
-            "probability": 0.7,
-            "predicate_type": "minecraft:random_block_match"
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.7
           },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:mossy_cobblestone"
           }
         }
-      ],
-      "processor_type": "minecraft:rule"
+      ]
     }
   ]
 }

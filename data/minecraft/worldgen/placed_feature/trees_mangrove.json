@@ -2,37 +2,37 @@
   "feature": "minecraft:mangrove_vegetation",
   "placement": [
     {
-      "count": 30,
-      "type": "minecraft:count"
+      "type": "minecraft:count",
+      "count": 30
     },
     {
       "type": "minecraft:in_square"
     },
     {
-      "max_water_depth": 5,
-      "type": "minecraft:surface_water_depth_filter"
+      "type": "minecraft:surface_water_depth_filter",
+      "max_water_depth": 5
     },
     {
-      "heightmap": "OCEAN_FLOOR",
-      "type": "minecraft:heightmap"
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
     },
     {
       "type": "minecraft:biome"
     },
     {
+      "type": "minecraft:block_predicate_filter",
       "predicate": {
+        "type": "minecraft:would_survive",
         "state": {
+          "Name": "minecraft:mangrove_propagule",
           "Properties": {
-            "waterlogged": "false",
-            "stage": "0",
+            "age": "0",
             "hanging": "false",
-            "age": "0"
-          },
-          "Name": "minecraft:mangrove_propagule"
-        },
-        "type": "minecraft:would_survive"
-      },
-      "type": "minecraft:block_predicate_filter"
+            "stage": "0",
+            "waterlogged": "false"
+          }
+        }
+      }
     }
   ]
 }

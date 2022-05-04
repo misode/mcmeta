@@ -2,8 +2,12 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
@@ -14,24 +18,20 @@
             },
             {
               "function": "minecraft:copy_nbt",
-              "source": "block_entity",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "Patterns",
-                  "target": "BlockEntityTag.Patterns",
-                  "op": "replace"
+                  "target": "BlockEntityTag.Patterns"
                 }
-              ]
+              ],
+              "source": "block_entity"
             }
           ],
           "name": "minecraft:orange_banner"
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ]
+      "rolls": 1.0
     }
   ]
 }

@@ -1,52 +1,52 @@
 {
+  "type": "minecraft:random_patch",
   "config": {
-    "tries": 96,
-    "xz_spread": 7,
-    "y_spread": 3,
     "feature": {
       "feature": {
+        "type": "minecraft:simple_block",
         "config": {
           "to_place": {
+            "type": "minecraft:simple_state_provider",
             "state": {
+              "Name": "minecraft:fire",
               "Properties": {
-                "west": "false",
-                "up": "false",
-                "south": "false",
-                "north": "false",
+                "age": "0",
                 "east": "false",
-                "age": "0"
-              },
-              "Name": "minecraft:fire"
-            },
-            "type": "minecraft:simple_state_provider"
+                "north": "false",
+                "south": "false",
+                "up": "false",
+                "west": "false"
+              }
+            }
           }
-        },
-        "type": "minecraft:simple_block"
+        }
       },
       "placement": [
         {
+          "type": "minecraft:block_predicate_filter",
           "predicate": {
+            "type": "minecraft:all_of",
             "predicates": [
               {
-                "blocks": "minecraft:air",
-                "type": "minecraft:matching_blocks"
+                "type": "minecraft:matching_blocks",
+                "blocks": "minecraft:air"
               },
               {
+                "type": "minecraft:matching_blocks",
+                "blocks": "minecraft:netherrack",
                 "offset": [
                   0,
                   -1,
                   0
-                ],
-                "blocks": "minecraft:netherrack",
-                "type": "minecraft:matching_blocks"
+                ]
               }
-            ],
-            "type": "minecraft:all_of"
-          },
-          "type": "minecraft:block_predicate_filter"
+            ]
+          }
         }
       ]
-    }
-  },
-  "type": "minecraft:random_patch"
+    },
+    "tries": 96,
+    "xz_spread": 7,
+    "y_spread": 3
+  }
 }

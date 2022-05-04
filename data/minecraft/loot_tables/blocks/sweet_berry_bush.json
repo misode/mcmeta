@@ -1,86 +1,86 @@
 {
   "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ],
   "pools": [
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:sweet_berries"
-        }
-      ],
       "conditions": [
         {
-          "condition": "minecraft:block_state_property",
           "block": "minecraft:sweet_berry_bush",
+          "condition": "minecraft:block_state_property",
           "properties": {
             "age": "3"
           }
         }
       ],
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": {
-            "type": "minecraft:uniform",
-            "min": 2.0,
-            "max": 3.0
-          },
-          "add": false
-        },
-        {
-          "function": "minecraft:apply_bonus",
-          "enchantment": "minecraft:fortune",
-          "formula": "minecraft:uniform_bonus_count",
-          "parameters": {
-            "bonusMultiplier": 1
-          }
-        }
-      ]
-    },
-    {
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
           "name": "minecraft:sweet_berries"
         }
       ],
+      "functions": [
+        {
+          "add": false,
+          "count": {
+            "type": "minecraft:uniform",
+            "max": 3.0,
+            "min": 2.0
+          },
+          "function": "minecraft:set_count"
+        },
+        {
+          "enchantment": "minecraft:fortune",
+          "formula": "minecraft:uniform_bonus_count",
+          "function": "minecraft:apply_bonus",
+          "parameters": {
+            "bonusMultiplier": 1
+          }
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
       "conditions": [
         {
-          "condition": "minecraft:block_state_property",
           "block": "minecraft:sweet_berry_bush",
+          "condition": "minecraft:block_state_property",
           "properties": {
             "age": "2"
           }
         }
       ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:sweet_berries"
+        }
+      ],
       "functions": [
         {
-          "function": "minecraft:set_count",
+          "add": false,
           "count": {
             "type": "minecraft:uniform",
-            "min": 1.0,
-            "max": 2.0
+            "max": 2.0,
+            "min": 1.0
           },
-          "add": false
+          "function": "minecraft:set_count"
         },
         {
-          "function": "minecraft:apply_bonus",
           "enchantment": "minecraft:fortune",
           "formula": "minecraft:uniform_bonus_count",
+          "function": "minecraft:apply_bonus",
           "parameters": {
             "bonusMultiplier": 1
           }
         }
-      ]
-    }
-  ],
-  "functions": [
-    {
-      "function": "minecraft:explosion_decay"
+      ],
+      "rolls": 1.0
     }
   ]
 }

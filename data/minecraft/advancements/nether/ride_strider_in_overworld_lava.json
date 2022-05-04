@@ -1,28 +1,17 @@
 {
   "parent": "minecraft:nether/ride_strider",
-  "display": {
-    "icon": {
-      "item": "minecraft:warped_fungus_on_a_stick",
-      "nbt": "{Damage:0}"
-    },
-    "title": {
-      "translate": "advancements.nether.ride_strider_in_overworld_lava.title"
-    },
-    "description": {
-      "translate": "advancements.nether.ride_strider_in_overworld_lava.description"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "ride_entity_distance": {
-      "trigger": "minecraft:ride_entity_in_lava",
       "conditions": {
+        "distance": {
+          "horizontal": {
+            "min": 50.0
+          }
+        },
         "player": [
           {
             "condition": "minecraft:entity_properties",
+            "entity": "this",
             "predicate": {
               "location": {
                 "dimension": "minecraft:overworld"
@@ -30,16 +19,27 @@
               "vehicle": {
                 "type": "minecraft:strider"
               }
-            },
-            "entity": "this"
+            }
           }
-        ],
-        "distance": {
-          "horizontal": {
-            "min": 50.0
-          }
-        }
-      }
+        ]
+      },
+      "trigger": "minecraft:ride_entity_in_lava"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.nether.ride_strider_in_overworld_lava.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:warped_fungus_on_a_stick",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.nether.ride_strider_in_overworld_lava.title"
     }
   },
   "requirements": [

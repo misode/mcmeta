@@ -1,25 +1,25 @@
 {
   "processors": [
     {
+      "processor_type": "minecraft:rule",
       "rules": [
         {
-          "output_state": {
-            "Properties": {
-              "age": "0"
-            },
-            "Name": "minecraft:melon_stem"
-          },
           "input_predicate": {
             "block": "minecraft:wheat",
-            "probability": 0.1,
-            "predicate_type": "minecraft:random_block_match"
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
           },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:melon_stem",
+            "Properties": {
+              "age": "0"
+            }
           }
         }
-      ],
-      "processor_type": "minecraft:rule"
+      ]
     }
   ]
 }

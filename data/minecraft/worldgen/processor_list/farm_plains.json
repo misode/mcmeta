@@ -1,57 +1,57 @@
 {
   "processors": [
     {
+      "processor_type": "minecraft:rule",
       "rules": [
         {
-          "output_state": {
-            "Properties": {
-              "age": "0"
-            },
-            "Name": "minecraft:carrots"
-          },
           "input_predicate": {
             "block": "minecraft:wheat",
-            "probability": 0.3,
-            "predicate_type": "minecraft:random_block_match"
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
           },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:carrots",
+            "Properties": {
+              "age": "0"
+            }
           }
         },
         {
-          "output_state": {
-            "Properties": {
-              "age": "0"
-            },
-            "Name": "minecraft:potatoes"
-          },
           "input_predicate": {
             "block": "minecraft:wheat",
-            "probability": 0.2,
-            "predicate_type": "minecraft:random_block_match"
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.2
           },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:potatoes",
+            "Properties": {
+              "age": "0"
+            }
           }
         },
         {
-          "output_state": {
-            "Properties": {
-              "age": "0"
-            },
-            "Name": "minecraft:beetroots"
-          },
           "input_predicate": {
             "block": "minecraft:wheat",
-            "probability": 0.1,
-            "predicate_type": "minecraft:random_block_match"
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
           },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:beetroots",
+            "Properties": {
+              "age": "0"
+            }
           }
         }
-      ],
-      "processor_type": "minecraft:rule"
+      ]
     }
   ]
 }

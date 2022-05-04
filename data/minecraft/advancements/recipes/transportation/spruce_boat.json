@@ -1,22 +1,17 @@
 {
   "parent": "minecraft:recipes/root",
-  "rewards": {
-    "recipes": [
-      "minecraft:spruce_boat"
-    ]
-  },
   "criteria": {
-    "in_water": {
-      "trigger": "minecraft:enter_block",
-      "conditions": {
-        "block": "minecraft:water"
-      }
-    },
     "has_the_recipe": {
-      "trigger": "minecraft:recipe_unlocked",
       "conditions": {
         "recipe": "minecraft:spruce_boat"
-      }
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "in_water": {
+      "conditions": {
+        "block": "minecraft:water"
+      },
+      "trigger": "minecraft:enter_block"
     }
   },
   "requirements": [
@@ -24,5 +19,10 @@
       "in_water",
       "has_the_recipe"
     ]
-  ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:spruce_boat"
+    ]
+  }
 }

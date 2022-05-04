@@ -1,12 +1,12 @@
 {
+  "type": "minecraft:flower",
   "config": {
-    "tries": 64,
-    "xz_spread": 7,
-    "y_spread": 3,
     "feature": {
       "feature": {
+        "type": "minecraft:simple_block",
         "config": {
           "to_place": {
+            "type": "minecraft:weighted_state_provider",
             "entries": [
               {
                 "data": {
@@ -20,22 +20,22 @@
                 },
                 "weight": 1
               }
-            ],
-            "type": "minecraft:weighted_state_provider"
+            ]
           }
-        },
-        "type": "minecraft:simple_block"
+        }
       },
       "placement": [
         {
+          "type": "minecraft:block_predicate_filter",
           "predicate": {
-            "blocks": "minecraft:air",
-            "type": "minecraft:matching_blocks"
-          },
-          "type": "minecraft:block_predicate_filter"
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
         }
       ]
-    }
-  },
-  "type": "minecraft:flower"
+    },
+    "tries": 64,
+    "xz_spread": 7,
+    "y_spread": 3
+  }
 }

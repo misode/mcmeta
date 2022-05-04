@@ -1,24 +1,11 @@
 {
   "parent": "minecraft:adventure/sleep_in_bed",
-  "display": {
-    "icon": {
-      "item": "minecraft:jukebox"
-    },
-    "title": {
-      "translate": "advancements.adventure.play_jukebox_in_meadows.title"
-    },
-    "description": {
-      "translate": "advancements.adventure.play_jukebox_in_meadows.description"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "play_jukebox_in_meadows": {
-      "trigger": "minecraft:item_used_on_block",
       "conditions": {
+        "item": {
+          "tag": "minecraft:music_discs"
+        },
         "location": {
           "biome": "minecraft:meadow",
           "block": {
@@ -26,11 +13,24 @@
               "minecraft:jukebox"
             ]
           }
-        },
-        "item": {
-          "tag": "minecraft:music_discs"
         }
-      }
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.adventure.play_jukebox_in_meadows.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:jukebox"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.adventure.play_jukebox_in_meadows.title"
     }
   },
   "requirements": [

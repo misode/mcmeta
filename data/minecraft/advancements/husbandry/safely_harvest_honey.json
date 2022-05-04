@@ -1,36 +1,36 @@
 {
   "parent": "minecraft:husbandry/root",
-  "display": {
-    "icon": {
-      "item": "minecraft:honey_bottle"
-    },
-    "title": {
-      "translate": "advancements.husbandry.safely_harvest_honey.title"
-    },
-    "description": {
-      "translate": "advancements.husbandry.safely_harvest_honey.description"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "safely_harvest_honey": {
-      "trigger": "minecraft:item_used_on_block",
       "conditions": {
-        "location": {
-          "smokey": true,
-          "block": {
-            "tag": "minecraft:beehives"
-          }
-        },
         "item": {
           "items": [
             "minecraft:glass_bottle"
           ]
+        },
+        "location": {
+          "block": {
+            "tag": "minecraft:beehives"
+          },
+          "smokey": true
         }
-      }
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.husbandry.safely_harvest_honey.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:honey_bottle"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.husbandry.safely_harvest_honey.title"
     }
   },
   "requirements": [
