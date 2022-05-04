@@ -3,25 +3,19 @@
   "children": {
     "from": {
       "type": "argument",
-      "parser": "minecraft:block_pos",
       "children": {
         "to": {
           "type": "argument",
-          "parser": "minecraft:block_pos",
           "children": {
             "block": {
               "type": "argument",
-              "parser": "minecraft:block_state",
               "children": {
-                "replace": {
+                "destroy": {
                   "type": "literal",
-                  "children": {
-                    "filter": {
-                      "type": "argument",
-                      "parser": "minecraft:block_predicate",
-                      "executable": true
-                    }
-                  },
+                  "executable": true
+                },
+                "hollow": {
+                  "type": "literal",
                   "executable": true
                 },
                 "keep": {
@@ -32,20 +26,26 @@
                   "type": "literal",
                   "executable": true
                 },
-                "hollow": {
+                "replace": {
                   "type": "literal",
-                  "executable": true
-                },
-                "destroy": {
-                  "type": "literal",
+                  "children": {
+                    "filter": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "minecraft:block_predicate"
+                    }
+                  },
                   "executable": true
                 }
               },
-              "executable": true
+              "executable": true,
+              "parser": "minecraft:block_state"
             }
-          }
+          },
+          "parser": "minecraft:block_pos"
         }
-      }
+      },
+      "parser": "minecraft:block_pos"
     }
   }
 }

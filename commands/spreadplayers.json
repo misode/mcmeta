@@ -3,68 +3,68 @@
   "children": {
     "center": {
       "type": "argument",
-      "parser": "minecraft:vec2",
       "children": {
         "spreadDistance": {
           "type": "argument",
-          "parser": "brigadier:float",
-          "properties": {
-            "min": 0.0
-          },
           "children": {
             "maxRange": {
               "type": "argument",
-              "parser": "brigadier:float",
-              "properties": {
-                "min": 1.0
-              },
               "children": {
                 "respectTeams": {
                   "type": "argument",
-                  "parser": "brigadier:bool",
                   "children": {
                     "targets": {
                       "type": "argument",
+                      "executable": true,
                       "parser": "minecraft:entity",
                       "properties": {
-                        "amount": "multiple",
-                        "type": "entities"
-                      },
-                      "executable": true
+                        "type": "entities",
+                        "amount": "multiple"
+                      }
                     }
-                  }
+                  },
+                  "parser": "brigadier:bool"
                 },
                 "under": {
                   "type": "literal",
                   "children": {
                     "maxHeight": {
                       "type": "argument",
-                      "parser": "brigadier:integer",
                       "children": {
                         "respectTeams": {
                           "type": "argument",
-                          "parser": "brigadier:bool",
                           "children": {
                             "targets": {
                               "type": "argument",
+                              "executable": true,
                               "parser": "minecraft:entity",
                               "properties": {
-                                "amount": "multiple",
-                                "type": "entities"
-                              },
-                              "executable": true
+                                "type": "entities",
+                                "amount": "multiple"
+                              }
                             }
-                          }
+                          },
+                          "parser": "brigadier:bool"
                         }
-                      }
+                      },
+                      "parser": "brigadier:integer"
                     }
                   }
                 }
+              },
+              "parser": "brigadier:float",
+              "properties": {
+                "min": 1.0
               }
             }
+          },
+          "parser": "brigadier:float",
+          "properties": {
+            "min": 0.0
           }
         }
-      }
+      },
+      "parser": "minecraft:vec2"
     }
   }
 }

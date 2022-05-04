@@ -3,11 +3,9 @@
   "children": {
     "pos": {
       "type": "argument",
-      "parser": "minecraft:block_pos",
       "children": {
         "block": {
           "type": "argument",
-          "parser": "minecraft:block_state",
           "children": {
             "destroy": {
               "type": "literal",
@@ -22,9 +20,11 @@
               "executable": true
             }
           },
-          "executable": true
+          "executable": true,
+          "parser": "minecraft:block_state"
         }
-      }
+      },
+      "parser": "minecraft:block_pos"
     }
   }
 }

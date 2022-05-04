@@ -3,26 +3,26 @@
   "children": {
     "targets": {
       "type": "argument",
-      "parser": "minecraft:entity",
-      "properties": {
-        "amount": "multiple",
-        "type": "players"
-      },
       "children": {
         "pos": {
           "type": "argument",
-          "parser": "minecraft:block_pos",
           "children": {
             "angle": {
               "type": "argument",
-              "parser": "minecraft:angle",
-              "executable": true
+              "executable": true,
+              "parser": "minecraft:angle"
             }
           },
-          "executable": true
+          "executable": true,
+          "parser": "minecraft:block_pos"
         }
       },
-      "executable": true
+      "executable": true,
+      "parser": "minecraft:entity",
+      "properties": {
+        "type": "players",
+        "amount": "multiple"
+      }
     }
   },
   "executable": true

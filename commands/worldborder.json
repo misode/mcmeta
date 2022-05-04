@@ -6,46 +6,22 @@
       "children": {
         "distance": {
           "type": "argument",
-          "parser": "brigadier:double",
-          "properties": {
-            "min": -59999968.0,
-            "max": 59999968.0
-          },
           "children": {
             "time": {
               "type": "argument",
+              "executable": true,
               "parser": "brigadier:integer",
               "properties": {
                 "min": 0
-              },
-              "executable": true
+              }
             }
           },
-          "executable": true
-        }
-      }
-    },
-    "set": {
-      "type": "literal",
-      "children": {
-        "distance": {
-          "type": "argument",
+          "executable": true,
           "parser": "brigadier:double",
           "properties": {
-            "min": -59999968.0,
-            "max": 59999968.0
-          },
-          "children": {
-            "time": {
-              "type": "argument",
-              "parser": "brigadier:integer",
-              "properties": {
-                "min": 0
-              },
-              "executable": true
-            }
-          },
-          "executable": true
+            "max": 59999968.0,
+            "min": -59999968.0
+          }
         }
       }
     },
@@ -54,8 +30,8 @@
       "children": {
         "pos": {
           "type": "argument",
-          "parser": "minecraft:vec2",
-          "executable": true
+          "executable": true,
+          "parser": "minecraft:vec2"
         }
       }
     },
@@ -67,11 +43,11 @@
           "children": {
             "damagePerBlock": {
               "type": "argument",
+              "executable": true,
               "parser": "brigadier:float",
               "properties": {
                 "min": 0.0
-              },
-              "executable": true
+              }
             }
           }
         },
@@ -80,11 +56,11 @@
           "children": {
             "distance": {
               "type": "argument",
+              "executable": true,
               "parser": "brigadier:float",
               "properties": {
                 "min": 0.0
-              },
-              "executable": true
+              }
             }
           }
         }
@@ -94,6 +70,30 @@
       "type": "literal",
       "executable": true
     },
+    "set": {
+      "type": "literal",
+      "children": {
+        "distance": {
+          "type": "argument",
+          "children": {
+            "time": {
+              "type": "argument",
+              "executable": true,
+              "parser": "brigadier:integer",
+              "properties": {
+                "min": 0
+              }
+            }
+          },
+          "executable": true,
+          "parser": "brigadier:double",
+          "properties": {
+            "max": 59999968.0,
+            "min": -59999968.0
+          }
+        }
+      }
+    },
     "warning": {
       "type": "literal",
       "children": {
@@ -102,11 +102,11 @@
           "children": {
             "distance": {
               "type": "argument",
+              "executable": true,
               "parser": "brigadier:integer",
               "properties": {
                 "min": 0
-              },
-              "executable": true
+              }
             }
           }
         },
@@ -115,11 +115,11 @@
           "children": {
             "time": {
               "type": "argument",
+              "executable": true,
               "parser": "brigadier:integer",
               "properties": {
                 "min": 0
-              },
-              "executable": true
+              }
             }
           }
         }

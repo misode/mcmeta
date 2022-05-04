@@ -2,7 +2,6 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -28,18 +27,18 @@
               "functions": [
                 {
                   "function": "minecraft:copy_nbt",
-                  "source": "block_entity",
                   "ops": [
                     {
+                      "op": "replace",
                       "source": "Bees",
-                      "target": "BlockEntityTag.Bees",
-                      "op": "replace"
+                      "target": "BlockEntityTag.Bees"
                     }
-                  ]
+                  ],
+                  "source": "block_entity"
                 },
                 {
-                  "function": "minecraft:copy_state",
                   "block": "minecraft:beehive",
+                  "function": "minecraft:copy_state",
                   "properties": [
                     "honey_level"
                   ]
@@ -53,7 +52,8 @@
             }
           ]
         }
-      ]
+      ],
+      "rolls": 1.0
     }
   ]
 }

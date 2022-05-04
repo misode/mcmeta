@@ -6,60 +6,27 @@
       "children": {
         "targets": {
           "type": "argument",
-          "parser": "minecraft:entity",
-          "properties": {
-            "amount": "multiple",
-            "type": "players"
-          },
           "children": {
             "amount": {
               "type": "argument",
-              "parser": "brigadier:integer",
               "children": {
-                "points": {
+                "levels": {
                   "type": "literal",
                   "executable": true
                 },
-                "levels": {
+                "points": {
                   "type": "literal",
                   "executable": true
                 }
               },
-              "executable": true
+              "executable": true,
+              "parser": "brigadier:integer"
             }
-          }
-        }
-      }
-    },
-    "set": {
-      "type": "literal",
-      "children": {
-        "targets": {
-          "type": "argument",
+          },
           "parser": "minecraft:entity",
           "properties": {
-            "amount": "multiple",
-            "type": "players"
-          },
-          "children": {
-            "amount": {
-              "type": "argument",
-              "parser": "brigadier:integer",
-              "properties": {
-                "min": 0
-              },
-              "children": {
-                "points": {
-                  "type": "literal",
-                  "executable": true
-                },
-                "levels": {
-                  "type": "literal",
-                  "executable": true
-                }
-              },
-              "executable": true
-            }
+            "type": "players",
+            "amount": "multiple"
           }
         }
       }
@@ -69,20 +36,53 @@
       "children": {
         "targets": {
           "type": "argument",
-          "parser": "minecraft:entity",
-          "properties": {
-            "amount": "single",
-            "type": "players"
-          },
           "children": {
-            "points": {
-              "type": "literal",
-              "executable": true
-            },
             "levels": {
               "type": "literal",
               "executable": true
+            },
+            "points": {
+              "type": "literal",
+              "executable": true
             }
+          },
+          "parser": "minecraft:entity",
+          "properties": {
+            "type": "players",
+            "amount": "single"
+          }
+        }
+      }
+    },
+    "set": {
+      "type": "literal",
+      "children": {
+        "targets": {
+          "type": "argument",
+          "children": {
+            "amount": {
+              "type": "argument",
+              "children": {
+                "levels": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "points": {
+                  "type": "literal",
+                  "executable": true
+                }
+              },
+              "executable": true,
+              "parser": "brigadier:integer",
+              "properties": {
+                "min": 0
+              }
+            }
+          },
+          "parser": "minecraft:entity",
+          "properties": {
+            "type": "players",
+            "amount": "multiple"
           }
         }
       }

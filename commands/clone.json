@@ -3,33 +3,36 @@
   "children": {
     "begin": {
       "type": "argument",
-      "parser": "minecraft:block_pos",
       "children": {
         "end": {
           "type": "argument",
-          "parser": "minecraft:block_pos",
           "children": {
             "destination": {
               "type": "argument",
-              "parser": "minecraft:block_pos",
               "children": {
-                "replace": {
+                "filtered": {
                   "type": "literal",
                   "children": {
-                    "force": {
-                      "type": "literal",
-                      "executable": true
-                    },
-                    "move": {
-                      "type": "literal",
-                      "executable": true
-                    },
-                    "normal": {
-                      "type": "literal",
-                      "executable": true
+                    "filter": {
+                      "type": "argument",
+                      "children": {
+                        "force": {
+                          "type": "literal",
+                          "executable": true
+                        },
+                        "move": {
+                          "type": "literal",
+                          "executable": true
+                        },
+                        "normal": {
+                          "type": "literal",
+                          "executable": true
+                        }
+                      },
+                      "executable": true,
+                      "parser": "minecraft:block_predicate"
                     }
-                  },
-                  "executable": true
+                  }
                 },
                 "masked": {
                   "type": "literal",
@@ -49,36 +52,33 @@
                   },
                   "executable": true
                 },
-                "filtered": {
+                "replace": {
                   "type": "literal",
                   "children": {
-                    "filter": {
-                      "type": "argument",
-                      "parser": "minecraft:block_predicate",
-                      "children": {
-                        "force": {
-                          "type": "literal",
-                          "executable": true
-                        },
-                        "move": {
-                          "type": "literal",
-                          "executable": true
-                        },
-                        "normal": {
-                          "type": "literal",
-                          "executable": true
-                        }
-                      },
+                    "force": {
+                      "type": "literal",
+                      "executable": true
+                    },
+                    "move": {
+                      "type": "literal",
+                      "executable": true
+                    },
+                    "normal": {
+                      "type": "literal",
                       "executable": true
                     }
-                  }
+                  },
+                  "executable": true
                 }
               },
-              "executable": true
+              "executable": true,
+              "parser": "minecraft:block_pos"
             }
-          }
+          },
+          "parser": "minecraft:block_pos"
         }
-      }
+      },
+      "parser": "minecraft:block_pos"
     }
   }
 }

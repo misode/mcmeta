@@ -3,42 +3,42 @@
   "children": {
     "targets": {
       "type": "argument",
-      "parser": "minecraft:entity",
-      "properties": {
-        "amount": "multiple",
-        "type": "entities"
-      },
       "children": {
         "add": {
           "type": "literal",
           "children": {
             "name": {
               "type": "argument",
+              "executable": true,
               "parser": "brigadier:string",
               "properties": {
                 "type": "word"
-              },
-              "executable": true
-            }
-          }
-        },
-        "remove": {
-          "type": "literal",
-          "children": {
-            "name": {
-              "type": "argument",
-              "parser": "brigadier:string",
-              "properties": {
-                "type": "word"
-              },
-              "executable": true
+              }
             }
           }
         },
         "list": {
           "type": "literal",
           "executable": true
+        },
+        "remove": {
+          "type": "literal",
+          "children": {
+            "name": {
+              "type": "argument",
+              "executable": true,
+              "parser": "brigadier:string",
+              "properties": {
+                "type": "word"
+              }
+            }
+          }
         }
+      },
+      "parser": "minecraft:entity",
+      "properties": {
+        "type": "entities",
+        "amount": "multiple"
       }
     }
   }

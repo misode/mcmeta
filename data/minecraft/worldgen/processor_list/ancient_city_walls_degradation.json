@@ -1,66 +1,66 @@
 {
   "processors": [
     {
-      "rottable_blocks": "#minecraft:ancient_city_replaceable",
       "integrity": 0.95,
-      "processor_type": "minecraft:block_rot"
+      "processor_type": "minecraft:block_rot",
+      "rottable_blocks": "#minecraft:ancient_city_replaceable"
     },
     {
+      "processor_type": "minecraft:rule",
       "rules": [
         {
-          "output_state": {
-            "Name": "minecraft:cracked_deepslate_bricks"
-          },
           "input_predicate": {
             "block": "minecraft:deepslate_bricks",
-            "probability": 0.3,
-            "predicate_type": "minecraft:random_block_match"
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
           },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:cracked_deepslate_bricks"
           }
         },
         {
-          "output_state": {
-            "Name": "minecraft:cracked_deepslate_tiles"
-          },
           "input_predicate": {
             "block": "minecraft:deepslate_tiles",
-            "probability": 0.3,
-            "predicate_type": "minecraft:random_block_match"
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
           },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:cracked_deepslate_tiles"
           }
         },
         {
-          "output_state": {
-            "Name": "minecraft:air"
-          },
           "input_predicate": {
             "block": "minecraft:deepslate_tile_slab",
-            "probability": 0.3,
-            "predicate_type": "minecraft:random_block_match"
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
           },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:air"
           }
         },
         {
-          "output_state": {
-            "Name": "minecraft:air"
-          },
           "input_predicate": {
             "block": "minecraft:soul_lantern",
-            "probability": 0.05,
-            "predicate_type": "minecraft:random_block_match"
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.05
           },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:air"
           }
         }
-      ],
-      "processor_type": "minecraft:rule"
+      ]
     },
     {
       "processor_type": "minecraft:protected_blocks",

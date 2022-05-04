@@ -1,78 +1,78 @@
 {
+  "type": "minecraft:canyon",
   "config": {
-    "lava_level": {
-      "above_bottom": 8
-    },
     "debug_settings": {
-      "water_state": {
+      "air_state": {
+        "Name": "minecraft:warped_button",
         "Properties": {
-          "waterlogged": "false",
-          "lit": "false",
-          "candles": "1"
-        },
-        "Name": "minecraft:candle"
-      },
-      "lava_state": {
-        "Name": "minecraft:orange_stained_glass"
+          "face": "wall",
+          "facing": "north",
+          "powered": "false"
+        }
       },
       "barrier_state": {
         "Name": "minecraft:glass"
       },
-      "air_state": {
+      "lava_state": {
+        "Name": "minecraft:orange_stained_glass"
+      },
+      "water_state": {
+        "Name": "minecraft:candle",
         "Properties": {
-          "powered": "false",
-          "facing": "north",
-          "face": "wall"
-        },
-        "Name": "minecraft:warped_button"
-      }
-    },
-    "replaceable": "#minecraft:overworld_carver_replaceables",
-    "probability": 0.01,
-    "y": {
-      "min_inclusive": {
-        "absolute": 10
-      },
-      "max_inclusive": {
-        "absolute": 67
-      },
-      "type": "minecraft:uniform"
-    },
-    "yScale": 3.0,
-    "vertical_rotation": {
-      "type": "minecraft:uniform",
-      "value": {
-        "min_inclusive": -0.125,
-        "max_exclusive": 0.125
-      }
-    },
-    "shape": {
-      "horizontal_radius_factor": {
-        "type": "minecraft:uniform",
-        "value": {
-          "min_inclusive": 0.75,
-          "max_exclusive": 1.0
+          "candles": "1",
+          "lit": "false",
+          "waterlogged": "false"
         }
-      },
-      "vertical_radius_default_factor": 1.0,
-      "vertical_radius_center_factor": 0.0,
+      }
+    },
+    "lava_level": {
+      "above_bottom": 8
+    },
+    "probability": 0.01,
+    "replaceable": "#minecraft:overworld_carver_replaceables",
+    "shape": {
       "distance_factor": {
         "type": "minecraft:uniform",
         "value": {
-          "min_inclusive": 0.75,
-          "max_exclusive": 1.0
+          "max_exclusive": 1.0,
+          "min_inclusive": 0.75
+        }
+      },
+      "horizontal_radius_factor": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_exclusive": 1.0,
+          "min_inclusive": 0.75
         }
       },
       "thickness": {
         "type": "minecraft:trapezoid",
         "value": {
-          "min": 0.0,
           "max": 6.0,
+          "min": 0.0,
           "plateau": 2.0
         }
       },
+      "vertical_radius_center_factor": 0.0,
+      "vertical_radius_default_factor": 1.0,
       "width_smoothness": 3
-    }
-  },
-  "type": "minecraft:canyon"
+    },
+    "vertical_rotation": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_exclusive": 0.125,
+        "min_inclusive": -0.125
+      }
+    },
+    "y": {
+      "type": "minecraft:uniform",
+      "max_inclusive": {
+        "absolute": 67
+      },
+      "min_inclusive": {
+        "absolute": 10
+      }
+    },
+    "yScale": 3.0
+  }
 }

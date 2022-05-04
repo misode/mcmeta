@@ -1,0 +1,81 @@
+{
+  "type": "literal",
+  "children": {
+    "feature": {
+      "type": "literal",
+      "children": {
+        "feature": {
+          "type": "argument",
+          "children": {
+            "pos": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:block_pos"
+            }
+          },
+          "executable": true,
+          "parser": "minecraft:resource",
+          "properties": {
+            "registry": "minecraft:worldgen/configured_feature"
+          }
+        }
+      }
+    },
+    "jigsaw": {
+      "type": "literal",
+      "children": {
+        "pool": {
+          "type": "argument",
+          "children": {
+            "target": {
+              "type": "argument",
+              "children": {
+                "max_depth": {
+                  "type": "argument",
+                  "children": {
+                    "position": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "minecraft:block_pos"
+                    }
+                  },
+                  "executable": true,
+                  "parser": "brigadier:integer",
+                  "properties": {
+                    "max": 7,
+                    "min": 1
+                  }
+                }
+              },
+              "parser": "minecraft:resource_location"
+            }
+          },
+          "parser": "minecraft:resource",
+          "properties": {
+            "registry": "minecraft:worldgen/template_pool"
+          }
+        }
+      }
+    },
+    "structure": {
+      "type": "literal",
+      "children": {
+        "structure": {
+          "type": "argument",
+          "children": {
+            "pos": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:block_pos"
+            }
+          },
+          "executable": true,
+          "parser": "minecraft:resource",
+          "properties": {
+            "registry": "minecraft:worldgen/structure"
+          }
+        }
+      }
+    }
+  }
+}

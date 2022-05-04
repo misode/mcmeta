@@ -1,383 +1,97 @@
 {
   "type": "literal",
   "children": {
-    "replace": {
+    "give": {
       "type": "literal",
       "children": {
-        "entity": {
-          "type": "literal",
+        "players": {
+          "type": "argument",
           "children": {
-            "entities": {
-              "type": "argument",
-              "parser": "minecraft:entity",
-              "properties": {
-                "amount": "multiple",
-                "type": "entities"
-              },
+            "fish": {
+              "type": "literal",
               "children": {
-                "slot": {
+                "loot_table": {
                   "type": "argument",
-                  "parser": "minecraft:item_slot",
                   "children": {
-                    "fish": {
-                      "type": "literal",
-                      "children": {
-                        "loot_table": {
-                          "type": "argument",
-                          "parser": "minecraft:resource_location",
-                          "children": {
-                            "pos": {
-                              "type": "argument",
-                              "parser": "minecraft:block_pos",
-                              "children": {
-                                "tool": {
-                                  "type": "argument",
-                                  "parser": "minecraft:item_stack",
-                                  "executable": true
-                                },
-                                "mainhand": {
-                                  "type": "literal",
-                                  "executable": true
-                                },
-                                "offhand": {
-                                  "type": "literal",
-                                  "executable": true
-                                }
-                              },
-                              "executable": true
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "loot": {
-                      "type": "literal",
-                      "children": {
-                        "loot_table": {
-                          "type": "argument",
-                          "parser": "minecraft:resource_location",
-                          "executable": true
-                        }
-                      }
-                    },
-                    "kill": {
-                      "type": "literal",
-                      "children": {
-                        "target": {
-                          "type": "argument",
-                          "parser": "minecraft:entity",
-                          "properties": {
-                            "amount": "single",
-                            "type": "entities"
-                          },
-                          "executable": true
-                        }
-                      }
-                    },
-                    "mine": {
-                      "type": "literal",
-                      "children": {
-                        "pos": {
-                          "type": "argument",
-                          "parser": "minecraft:block_pos",
-                          "children": {
-                            "tool": {
-                              "type": "argument",
-                              "parser": "minecraft:item_stack",
-                              "executable": true
-                            },
-                            "mainhand": {
-                              "type": "literal",
-                              "executable": true
-                            },
-                            "offhand": {
-                              "type": "literal",
-                              "executable": true
-                            }
-                          },
-                          "executable": true
-                        }
-                      }
-                    },
-                    "count": {
+                    "pos": {
                       "type": "argument",
-                      "parser": "brigadier:integer",
-                      "properties": {
-                        "min": 0
-                      },
                       "children": {
-                        "fish": {
+                        "mainhand": {
                           "type": "literal",
-                          "children": {
-                            "loot_table": {
-                              "type": "argument",
-                              "parser": "minecraft:resource_location",
-                              "children": {
-                                "pos": {
-                                  "type": "argument",
-                                  "parser": "minecraft:block_pos",
-                                  "children": {
-                                    "tool": {
-                                      "type": "argument",
-                                      "parser": "minecraft:item_stack",
-                                      "executable": true
-                                    },
-                                    "mainhand": {
-                                      "type": "literal",
-                                      "executable": true
-                                    },
-                                    "offhand": {
-                                      "type": "literal",
-                                      "executable": true
-                                    }
-                                  },
-                                  "executable": true
-                                }
-                              }
-                            }
-                          }
+                          "executable": true
                         },
-                        "loot": {
+                        "offhand": {
                           "type": "literal",
-                          "children": {
-                            "loot_table": {
-                              "type": "argument",
-                              "parser": "minecraft:resource_location",
-                              "executable": true
-                            }
-                          }
+                          "executable": true
                         },
-                        "kill": {
-                          "type": "literal",
-                          "children": {
-                            "target": {
-                              "type": "argument",
-                              "parser": "minecraft:entity",
-                              "properties": {
-                                "amount": "single",
-                                "type": "entities"
-                              },
-                              "executable": true
-                            }
-                          }
-                        },
-                        "mine": {
-                          "type": "literal",
-                          "children": {
-                            "pos": {
-                              "type": "argument",
-                              "parser": "minecraft:block_pos",
-                              "children": {
-                                "tool": {
-                                  "type": "argument",
-                                  "parser": "minecraft:item_stack",
-                                  "executable": true
-                                },
-                                "mainhand": {
-                                  "type": "literal",
-                                  "executable": true
-                                },
-                                "offhand": {
-                                  "type": "literal",
-                                  "executable": true
-                                }
-                              },
-                              "executable": true
-                            }
-                          }
+                        "tool": {
+                          "type": "argument",
+                          "executable": true,
+                          "parser": "minecraft:item_stack"
                         }
-                      }
+                      },
+                      "executable": true,
+                      "parser": "minecraft:block_pos"
                     }
+                  },
+                  "parser": "minecraft:resource_location"
+                }
+              }
+            },
+            "kill": {
+              "type": "literal",
+              "children": {
+                "target": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:entity",
+                  "properties": {
+                    "type": "entities",
+                    "amount": "single"
                   }
                 }
               }
-            }
-          }
-        },
-        "block": {
-          "type": "literal",
-          "children": {
-            "targetPos": {
-              "type": "argument",
-              "parser": "minecraft:block_pos",
+            },
+            "loot": {
+              "type": "literal",
               "children": {
-                "slot": {
+                "loot_table": {
                   "type": "argument",
-                  "parser": "minecraft:item_slot",
+                  "executable": true,
+                  "parser": "minecraft:resource_location"
+                }
+              }
+            },
+            "mine": {
+              "type": "literal",
+              "children": {
+                "pos": {
+                  "type": "argument",
                   "children": {
-                    "fish": {
+                    "mainhand": {
                       "type": "literal",
-                      "children": {
-                        "loot_table": {
-                          "type": "argument",
-                          "parser": "minecraft:resource_location",
-                          "children": {
-                            "pos": {
-                              "type": "argument",
-                              "parser": "minecraft:block_pos",
-                              "children": {
-                                "tool": {
-                                  "type": "argument",
-                                  "parser": "minecraft:item_stack",
-                                  "executable": true
-                                },
-                                "mainhand": {
-                                  "type": "literal",
-                                  "executable": true
-                                },
-                                "offhand": {
-                                  "type": "literal",
-                                  "executable": true
-                                }
-                              },
-                              "executable": true
-                            }
-                          }
-                        }
-                      }
+                      "executable": true
                     },
-                    "loot": {
+                    "offhand": {
                       "type": "literal",
-                      "children": {
-                        "loot_table": {
-                          "type": "argument",
-                          "parser": "minecraft:resource_location",
-                          "executable": true
-                        }
-                      }
+                      "executable": true
                     },
-                    "kill": {
-                      "type": "literal",
-                      "children": {
-                        "target": {
-                          "type": "argument",
-                          "parser": "minecraft:entity",
-                          "properties": {
-                            "amount": "single",
-                            "type": "entities"
-                          },
-                          "executable": true
-                        }
-                      }
-                    },
-                    "mine": {
-                      "type": "literal",
-                      "children": {
-                        "pos": {
-                          "type": "argument",
-                          "parser": "minecraft:block_pos",
-                          "children": {
-                            "tool": {
-                              "type": "argument",
-                              "parser": "minecraft:item_stack",
-                              "executable": true
-                            },
-                            "mainhand": {
-                              "type": "literal",
-                              "executable": true
-                            },
-                            "offhand": {
-                              "type": "literal",
-                              "executable": true
-                            }
-                          },
-                          "executable": true
-                        }
-                      }
-                    },
-                    "count": {
+                    "tool": {
                       "type": "argument",
-                      "parser": "brigadier:integer",
-                      "properties": {
-                        "min": 0
-                      },
-                      "children": {
-                        "fish": {
-                          "type": "literal",
-                          "children": {
-                            "loot_table": {
-                              "type": "argument",
-                              "parser": "minecraft:resource_location",
-                              "children": {
-                                "pos": {
-                                  "type": "argument",
-                                  "parser": "minecraft:block_pos",
-                                  "children": {
-                                    "tool": {
-                                      "type": "argument",
-                                      "parser": "minecraft:item_stack",
-                                      "executable": true
-                                    },
-                                    "mainhand": {
-                                      "type": "literal",
-                                      "executable": true
-                                    },
-                                    "offhand": {
-                                      "type": "literal",
-                                      "executable": true
-                                    }
-                                  },
-                                  "executable": true
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "loot": {
-                          "type": "literal",
-                          "children": {
-                            "loot_table": {
-                              "type": "argument",
-                              "parser": "minecraft:resource_location",
-                              "executable": true
-                            }
-                          }
-                        },
-                        "kill": {
-                          "type": "literal",
-                          "children": {
-                            "target": {
-                              "type": "argument",
-                              "parser": "minecraft:entity",
-                              "properties": {
-                                "amount": "single",
-                                "type": "entities"
-                              },
-                              "executable": true
-                            }
-                          }
-                        },
-                        "mine": {
-                          "type": "literal",
-                          "children": {
-                            "pos": {
-                              "type": "argument",
-                              "parser": "minecraft:block_pos",
-                              "children": {
-                                "tool": {
-                                  "type": "argument",
-                                  "parser": "minecraft:item_stack",
-                                  "executable": true
-                                },
-                                "mainhand": {
-                                  "type": "literal",
-                                  "executable": true
-                                },
-                                "offhand": {
-                                  "type": "literal",
-                                  "executable": true
-                                }
-                              },
-                              "executable": true
-                            }
-                          }
-                        }
-                      }
+                      "executable": true,
+                      "parser": "minecraft:item_stack"
                     }
-                  }
+                  },
+                  "executable": true,
+                  "parser": "minecraft:block_pos"
                 }
               }
             }
+          },
+          "parser": "minecraft:entity",
+          "properties": {
+            "type": "players",
+            "amount": "multiple"
           }
         }
       }
@@ -387,24 +101,16 @@
       "children": {
         "targetPos": {
           "type": "argument",
-          "parser": "minecraft:block_pos",
           "children": {
             "fish": {
               "type": "literal",
               "children": {
                 "loot_table": {
                   "type": "argument",
-                  "parser": "minecraft:resource_location",
                   "children": {
                     "pos": {
                       "type": "argument",
-                      "parser": "minecraft:block_pos",
                       "children": {
-                        "tool": {
-                          "type": "argument",
-                          "parser": "minecraft:item_stack",
-                          "executable": true
-                        },
                         "mainhand": {
                           "type": "literal",
                           "executable": true
@@ -412,10 +118,31 @@
                         "offhand": {
                           "type": "literal",
                           "executable": true
+                        },
+                        "tool": {
+                          "type": "argument",
+                          "executable": true,
+                          "parser": "minecraft:item_stack"
                         }
                       },
-                      "executable": true
+                      "executable": true,
+                      "parser": "minecraft:block_pos"
                     }
+                  },
+                  "parser": "minecraft:resource_location"
+                }
+              }
+            },
+            "kill": {
+              "type": "literal",
+              "children": {
+                "target": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:entity",
+                  "properties": {
+                    "type": "entities",
+                    "amount": "single"
                   }
                 }
               }
@@ -425,22 +152,8 @@
               "children": {
                 "loot_table": {
                   "type": "argument",
-                  "parser": "minecraft:resource_location",
-                  "executable": true
-                }
-              }
-            },
-            "kill": {
-              "type": "literal",
-              "children": {
-                "target": {
-                  "type": "argument",
-                  "parser": "minecraft:entity",
-                  "properties": {
-                    "amount": "single",
-                    "type": "entities"
-                  },
-                  "executable": true
+                  "executable": true,
+                  "parser": "minecraft:resource_location"
                 }
               }
             },
@@ -449,13 +162,7 @@
               "children": {
                 "pos": {
                   "type": "argument",
-                  "parser": "minecraft:block_pos",
                   "children": {
-                    "tool": {
-                      "type": "argument",
-                      "parser": "minecraft:item_stack",
-                      "executable": true
-                    },
                     "mainhand": {
                       "type": "literal",
                       "executable": true
@@ -463,105 +170,398 @@
                     "offhand": {
                       "type": "literal",
                       "executable": true
+                    },
+                    "tool": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "minecraft:item_stack"
                     }
                   },
-                  "executable": true
+                  "executable": true,
+                  "parser": "minecraft:block_pos"
                 }
               }
             }
-          }
+          },
+          "parser": "minecraft:block_pos"
         }
       }
     },
-    "give": {
+    "replace": {
       "type": "literal",
       "children": {
-        "players": {
-          "type": "argument",
-          "parser": "minecraft:entity",
-          "properties": {
-            "amount": "multiple",
-            "type": "players"
-          },
+        "block": {
+          "type": "literal",
           "children": {
-            "fish": {
-              "type": "literal",
+            "targetPos": {
+              "type": "argument",
               "children": {
-                "loot_table": {
+                "slot": {
                   "type": "argument",
-                  "parser": "minecraft:resource_location",
                   "children": {
-                    "pos": {
+                    "count": {
                       "type": "argument",
-                      "parser": "minecraft:block_pos",
                       "children": {
-                        "tool": {
-                          "type": "argument",
-                          "parser": "minecraft:item_stack",
-                          "executable": true
-                        },
-                        "mainhand": {
+                        "fish": {
                           "type": "literal",
-                          "executable": true
+                          "children": {
+                            "loot_table": {
+                              "type": "argument",
+                              "children": {
+                                "pos": {
+                                  "type": "argument",
+                                  "children": {
+                                    "mainhand": {
+                                      "type": "literal",
+                                      "executable": true
+                                    },
+                                    "offhand": {
+                                      "type": "literal",
+                                      "executable": true
+                                    },
+                                    "tool": {
+                                      "type": "argument",
+                                      "executable": true,
+                                      "parser": "minecraft:item_stack"
+                                    }
+                                  },
+                                  "executable": true,
+                                  "parser": "minecraft:block_pos"
+                                }
+                              },
+                              "parser": "minecraft:resource_location"
+                            }
+                          }
                         },
-                        "offhand": {
+                        "kill": {
                           "type": "literal",
-                          "executable": true
+                          "children": {
+                            "target": {
+                              "type": "argument",
+                              "executable": true,
+                              "parser": "minecraft:entity",
+                              "properties": {
+                                "type": "entities",
+                                "amount": "single"
+                              }
+                            }
+                          }
+                        },
+                        "loot": {
+                          "type": "literal",
+                          "children": {
+                            "loot_table": {
+                              "type": "argument",
+                              "executable": true,
+                              "parser": "minecraft:resource_location"
+                            }
+                          }
+                        },
+                        "mine": {
+                          "type": "literal",
+                          "children": {
+                            "pos": {
+                              "type": "argument",
+                              "children": {
+                                "mainhand": {
+                                  "type": "literal",
+                                  "executable": true
+                                },
+                                "offhand": {
+                                  "type": "literal",
+                                  "executable": true
+                                },
+                                "tool": {
+                                  "type": "argument",
+                                  "executable": true,
+                                  "parser": "minecraft:item_stack"
+                                }
+                              },
+                              "executable": true,
+                              "parser": "minecraft:block_pos"
+                            }
+                          }
                         }
                       },
-                      "executable": true
+                      "parser": "brigadier:integer",
+                      "properties": {
+                        "min": 0
+                      }
+                    },
+                    "fish": {
+                      "type": "literal",
+                      "children": {
+                        "loot_table": {
+                          "type": "argument",
+                          "children": {
+                            "pos": {
+                              "type": "argument",
+                              "children": {
+                                "mainhand": {
+                                  "type": "literal",
+                                  "executable": true
+                                },
+                                "offhand": {
+                                  "type": "literal",
+                                  "executable": true
+                                },
+                                "tool": {
+                                  "type": "argument",
+                                  "executable": true,
+                                  "parser": "minecraft:item_stack"
+                                }
+                              },
+                              "executable": true,
+                              "parser": "minecraft:block_pos"
+                            }
+                          },
+                          "parser": "minecraft:resource_location"
+                        }
+                      }
+                    },
+                    "kill": {
+                      "type": "literal",
+                      "children": {
+                        "target": {
+                          "type": "argument",
+                          "executable": true,
+                          "parser": "minecraft:entity",
+                          "properties": {
+                            "type": "entities",
+                            "amount": "single"
+                          }
+                        }
+                      }
+                    },
+                    "loot": {
+                      "type": "literal",
+                      "children": {
+                        "loot_table": {
+                          "type": "argument",
+                          "executable": true,
+                          "parser": "minecraft:resource_location"
+                        }
+                      }
+                    },
+                    "mine": {
+                      "type": "literal",
+                      "children": {
+                        "pos": {
+                          "type": "argument",
+                          "children": {
+                            "mainhand": {
+                              "type": "literal",
+                              "executable": true
+                            },
+                            "offhand": {
+                              "type": "literal",
+                              "executable": true
+                            },
+                            "tool": {
+                              "type": "argument",
+                              "executable": true,
+                              "parser": "minecraft:item_stack"
+                            }
+                          },
+                          "executable": true,
+                          "parser": "minecraft:block_pos"
+                        }
+                      }
                     }
-                  }
-                }
-              }
-            },
-            "loot": {
-              "type": "literal",
-              "children": {
-                "loot_table": {
-                  "type": "argument",
-                  "parser": "minecraft:resource_location",
-                  "executable": true
-                }
-              }
-            },
-            "kill": {
-              "type": "literal",
-              "children": {
-                "target": {
-                  "type": "argument",
-                  "parser": "minecraft:entity",
-                  "properties": {
-                    "amount": "single",
-                    "type": "entities"
                   },
-                  "executable": true
+                  "parser": "minecraft:item_slot"
                 }
-              }
-            },
-            "mine": {
-              "type": "literal",
+              },
+              "parser": "minecraft:block_pos"
+            }
+          }
+        },
+        "entity": {
+          "type": "literal",
+          "children": {
+            "entities": {
+              "type": "argument",
               "children": {
-                "pos": {
+                "slot": {
                   "type": "argument",
-                  "parser": "minecraft:block_pos",
                   "children": {
-                    "tool": {
+                    "count": {
                       "type": "argument",
-                      "parser": "minecraft:item_stack",
-                      "executable": true
+                      "children": {
+                        "fish": {
+                          "type": "literal",
+                          "children": {
+                            "loot_table": {
+                              "type": "argument",
+                              "children": {
+                                "pos": {
+                                  "type": "argument",
+                                  "children": {
+                                    "mainhand": {
+                                      "type": "literal",
+                                      "executable": true
+                                    },
+                                    "offhand": {
+                                      "type": "literal",
+                                      "executable": true
+                                    },
+                                    "tool": {
+                                      "type": "argument",
+                                      "executable": true,
+                                      "parser": "minecraft:item_stack"
+                                    }
+                                  },
+                                  "executable": true,
+                                  "parser": "minecraft:block_pos"
+                                }
+                              },
+                              "parser": "minecraft:resource_location"
+                            }
+                          }
+                        },
+                        "kill": {
+                          "type": "literal",
+                          "children": {
+                            "target": {
+                              "type": "argument",
+                              "executable": true,
+                              "parser": "minecraft:entity",
+                              "properties": {
+                                "type": "entities",
+                                "amount": "single"
+                              }
+                            }
+                          }
+                        },
+                        "loot": {
+                          "type": "literal",
+                          "children": {
+                            "loot_table": {
+                              "type": "argument",
+                              "executable": true,
+                              "parser": "minecraft:resource_location"
+                            }
+                          }
+                        },
+                        "mine": {
+                          "type": "literal",
+                          "children": {
+                            "pos": {
+                              "type": "argument",
+                              "children": {
+                                "mainhand": {
+                                  "type": "literal",
+                                  "executable": true
+                                },
+                                "offhand": {
+                                  "type": "literal",
+                                  "executable": true
+                                },
+                                "tool": {
+                                  "type": "argument",
+                                  "executable": true,
+                                  "parser": "minecraft:item_stack"
+                                }
+                              },
+                              "executable": true,
+                              "parser": "minecraft:block_pos"
+                            }
+                          }
+                        }
+                      },
+                      "parser": "brigadier:integer",
+                      "properties": {
+                        "min": 0
+                      }
                     },
-                    "mainhand": {
+                    "fish": {
                       "type": "literal",
-                      "executable": true
+                      "children": {
+                        "loot_table": {
+                          "type": "argument",
+                          "children": {
+                            "pos": {
+                              "type": "argument",
+                              "children": {
+                                "mainhand": {
+                                  "type": "literal",
+                                  "executable": true
+                                },
+                                "offhand": {
+                                  "type": "literal",
+                                  "executable": true
+                                },
+                                "tool": {
+                                  "type": "argument",
+                                  "executable": true,
+                                  "parser": "minecraft:item_stack"
+                                }
+                              },
+                              "executable": true,
+                              "parser": "minecraft:block_pos"
+                            }
+                          },
+                          "parser": "minecraft:resource_location"
+                        }
+                      }
                     },
-                    "offhand": {
+                    "kill": {
                       "type": "literal",
-                      "executable": true
+                      "children": {
+                        "target": {
+                          "type": "argument",
+                          "executable": true,
+                          "parser": "minecraft:entity",
+                          "properties": {
+                            "type": "entities",
+                            "amount": "single"
+                          }
+                        }
+                      }
+                    },
+                    "loot": {
+                      "type": "literal",
+                      "children": {
+                        "loot_table": {
+                          "type": "argument",
+                          "executable": true,
+                          "parser": "minecraft:resource_location"
+                        }
+                      }
+                    },
+                    "mine": {
+                      "type": "literal",
+                      "children": {
+                        "pos": {
+                          "type": "argument",
+                          "children": {
+                            "mainhand": {
+                              "type": "literal",
+                              "executable": true
+                            },
+                            "offhand": {
+                              "type": "literal",
+                              "executable": true
+                            },
+                            "tool": {
+                              "type": "argument",
+                              "executable": true,
+                              "parser": "minecraft:item_stack"
+                            }
+                          },
+                          "executable": true,
+                          "parser": "minecraft:block_pos"
+                        }
+                      }
                     }
                   },
-                  "executable": true
+                  "parser": "minecraft:item_slot"
                 }
+              },
+              "parser": "minecraft:entity",
+              "properties": {
+                "type": "entities",
+                "amount": "multiple"
               }
             }
           }
@@ -573,24 +573,16 @@
       "children": {
         "targetPos": {
           "type": "argument",
-          "parser": "minecraft:vec3",
           "children": {
             "fish": {
               "type": "literal",
               "children": {
                 "loot_table": {
                   "type": "argument",
-                  "parser": "minecraft:resource_location",
                   "children": {
                     "pos": {
                       "type": "argument",
-                      "parser": "minecraft:block_pos",
                       "children": {
-                        "tool": {
-                          "type": "argument",
-                          "parser": "minecraft:item_stack",
-                          "executable": true
-                        },
                         "mainhand": {
                           "type": "literal",
                           "executable": true
@@ -598,10 +590,31 @@
                         "offhand": {
                           "type": "literal",
                           "executable": true
+                        },
+                        "tool": {
+                          "type": "argument",
+                          "executable": true,
+                          "parser": "minecraft:item_stack"
                         }
                       },
-                      "executable": true
+                      "executable": true,
+                      "parser": "minecraft:block_pos"
                     }
+                  },
+                  "parser": "minecraft:resource_location"
+                }
+              }
+            },
+            "kill": {
+              "type": "literal",
+              "children": {
+                "target": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:entity",
+                  "properties": {
+                    "type": "entities",
+                    "amount": "single"
                   }
                 }
               }
@@ -611,22 +624,8 @@
               "children": {
                 "loot_table": {
                   "type": "argument",
-                  "parser": "minecraft:resource_location",
-                  "executable": true
-                }
-              }
-            },
-            "kill": {
-              "type": "literal",
-              "children": {
-                "target": {
-                  "type": "argument",
-                  "parser": "minecraft:entity",
-                  "properties": {
-                    "amount": "single",
-                    "type": "entities"
-                  },
-                  "executable": true
+                  "executable": true,
+                  "parser": "minecraft:resource_location"
                 }
               }
             },
@@ -635,13 +634,7 @@
               "children": {
                 "pos": {
                   "type": "argument",
-                  "parser": "minecraft:block_pos",
                   "children": {
-                    "tool": {
-                      "type": "argument",
-                      "parser": "minecraft:item_stack",
-                      "executable": true
-                    },
                     "mainhand": {
                       "type": "literal",
                       "executable": true
@@ -649,13 +642,20 @@
                     "offhand": {
                       "type": "literal",
                       "executable": true
+                    },
+                    "tool": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "minecraft:item_stack"
                     }
                   },
-                  "executable": true
+                  "executable": true,
+                  "parser": "minecraft:block_pos"
                 }
               }
             }
-          }
+          },
+          "parser": "minecraft:vec3"
         }
       }
     }

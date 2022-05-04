@@ -1,25 +1,23 @@
 {
-  "precipitation": "rain",
-  "temperature": 0.9,
-  "downfall": 1.0,
-  "effects": {
-    "mood_sound": {
-      "sound": "minecraft:ambient.cave",
-      "tick_delay": 6000,
-      "block_search_extent": 8,
-      "offset": 2.0
-    },
-    "sky_color": 7842047,
-    "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011
-  },
   "carvers": {
     "air": [
       "minecraft:cave",
       "minecraft:cave_extra_underground",
       "minecraft:canyon"
     ]
+  },
+  "downfall": 1.0,
+  "effects": {
+    "fog_color": 12638463,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000
+    },
+    "sky_color": 7842047,
+    "water_color": 4159204,
+    "water_fog_color": 329011
   },
   "features": [
     [],
@@ -83,36 +81,38 @@
       "minecraft:freeze_top_layer"
     ]
   ],
+  "precipitation": "rain",
+  "spawn_costs": {},
   "spawners": {
-    "monster": [],
-    "creature": [
-      {
-        "type": "minecraft:mooshroom",
-        "weight": 8,
-        "minCount": 4,
-        "maxCount": 8
-      }
-    ],
     "ambient": [
       {
         "type": "minecraft:bat",
-        "weight": 10,
+        "maxCount": 8,
         "minCount": 8,
-        "maxCount": 8
+        "weight": 10
       }
     ],
     "axolotls": [],
+    "creature": [
+      {
+        "type": "minecraft:mooshroom",
+        "maxCount": 8,
+        "minCount": 4,
+        "weight": 8
+      }
+    ],
+    "misc": [],
+    "monster": [],
     "underground_water_creature": [
       {
         "type": "minecraft:glow_squid",
-        "weight": 10,
+        "maxCount": 6,
         "minCount": 4,
-        "maxCount": 6
+        "weight": 10
       }
     ],
-    "water_creature": [],
     "water_ambient": [],
-    "misc": []
+    "water_creature": []
   },
-  "spawn_costs": {}
+  "temperature": 0.9
 }

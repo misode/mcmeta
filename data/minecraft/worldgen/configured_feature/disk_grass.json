@@ -1,66 +1,66 @@
 {
+  "type": "minecraft:disk",
   "config": {
+    "half_height": 2,
+    "radius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 6,
+        "min_inclusive": 2
+      }
+    },
     "state_provider": {
       "fallback": {
+        "type": "minecraft:simple_state_provider",
         "state": {
           "Name": "minecraft:dirt"
-        },
-        "type": "minecraft:simple_state_provider"
+        }
       },
       "rules": [
         {
           "if_true": {
+            "type": "minecraft:not",
             "predicate": {
+              "type": "minecraft:any_of",
               "predicates": [
                 {
+                  "type": "minecraft:solid",
                   "offset": [
                     0,
                     1,
                     0
-                  ],
-                  "type": "minecraft:solid"
+                  ]
                 },
                 {
+                  "type": "minecraft:matching_fluids",
+                  "fluids": "minecraft:water",
                   "offset": [
                     0,
                     1,
                     0
-                  ],
-                  "fluids": "minecraft:water",
-                  "type": "minecraft:matching_fluids"
+                  ]
                 }
-              ],
-              "type": "minecraft:any_of"
-            },
-            "type": "minecraft:not"
+              ]
+            }
           },
           "then": {
+            "type": "minecraft:simple_state_provider",
             "state": {
+              "Name": "minecraft:grass_block",
               "Properties": {
                 "snowy": "false"
-              },
-              "Name": "minecraft:grass_block"
-            },
-            "type": "minecraft:simple_state_provider"
+              }
+            }
           }
         }
       ]
     },
     "target": {
+      "type": "minecraft:matching_blocks",
       "blocks": [
         "minecraft:dirt",
         "minecraft:mud"
-      ],
-      "type": "minecraft:matching_blocks"
-    },
-    "radius": {
-      "type": "minecraft:uniform",
-      "value": {
-        "min_inclusive": 2,
-        "max_inclusive": 6
-      }
-    },
-    "half_height": 2
-  },
-  "type": "minecraft:disk"
+      ]
+    }
+  }
 }

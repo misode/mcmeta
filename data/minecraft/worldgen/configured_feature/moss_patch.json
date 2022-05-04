@@ -1,29 +1,29 @@
 {
+  "type": "minecraft:vegetation_patch",
   "config": {
-    "vegetation_chance": 0.8,
-    "xz_radius": {
-      "type": "minecraft:uniform",
-      "value": {
-        "min_inclusive": 4,
-        "max_inclusive": 7
+    "depth": 1,
+    "extra_bottom_block_chance": 0.0,
+    "extra_edge_column_chance": 0.3,
+    "ground_state": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:moss_block"
       }
     },
-    "extra_edge_column_chance": 0.3,
-    "extra_bottom_block_chance": 0.0,
-    "vertical_range": 5,
+    "replaceable": "#minecraft:moss_replaceable",
+    "surface": "floor",
+    "vegetation_chance": 0.8,
     "vegetation_feature": {
       "feature": "minecraft:moss_vegetation",
       "placement": []
     },
-    "surface": "floor",
-    "depth": 1,
-    "replaceable": "#minecraft:moss_replaceable",
-    "ground_state": {
-      "state": {
-        "Name": "minecraft:moss_block"
-      },
-      "type": "minecraft:simple_state_provider"
+    "vertical_range": 5,
+    "xz_radius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 7,
+        "min_inclusive": 4
+      }
     }
-  },
-  "type": "minecraft:vegetation_patch"
+  }
 }

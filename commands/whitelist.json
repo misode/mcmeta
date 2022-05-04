@@ -1,7 +1,17 @@
 {
   "type": "literal",
   "children": {
-    "on": {
+    "add": {
+      "type": "literal",
+      "children": {
+        "targets": {
+          "type": "argument",
+          "executable": true,
+          "parser": "minecraft:game_profile"
+        }
+      }
+    },
+    "list": {
       "type": "literal",
       "executable": true
     },
@@ -9,33 +19,23 @@
       "type": "literal",
       "executable": true
     },
-    "list": {
+    "on": {
       "type": "literal",
       "executable": true
     },
-    "add": {
+    "reload": {
       "type": "literal",
-      "children": {
-        "targets": {
-          "type": "argument",
-          "parser": "minecraft:game_profile",
-          "executable": true
-        }
-      }
+      "executable": true
     },
     "remove": {
       "type": "literal",
       "children": {
         "targets": {
           "type": "argument",
-          "parser": "minecraft:game_profile",
-          "executable": true
+          "executable": true,
+          "parser": "minecraft:game_profile"
         }
       }
-    },
-    "reload": {
-      "type": "literal",
-      "executable": true
     }
   }
 }

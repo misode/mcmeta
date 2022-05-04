@@ -1,11 +1,9 @@
 {
   "processors": [
     {
+      "processor_type": "minecraft:rule",
       "rules": [
         {
-          "output_state": {
-            "Name": "minecraft:oak_planks"
-          },
           "input_predicate": {
             "block": "minecraft:dirt_path",
             "predicate_type": "minecraft:block_match"
@@ -13,31 +11,28 @@
           "location_predicate": {
             "block": "minecraft:water",
             "predicate_type": "minecraft:block_match"
+          },
+          "output_state": {
+            "Name": "minecraft:oak_planks"
           }
         },
         {
-          "output_state": {
-            "Properties": {
-              "snowy": "false"
-            },
-            "Name": "minecraft:grass_block"
-          },
           "input_predicate": {
             "block": "minecraft:dirt_path",
-            "probability": 0.1,
-            "predicate_type": "minecraft:random_block_match"
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
           },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:grass_block",
+            "Properties": {
+              "snowy": "false"
+            }
           }
         },
         {
-          "output_state": {
-            "Properties": {
-              "level": "0"
-            },
-            "Name": "minecraft:water"
-          },
           "input_predicate": {
             "block": "minecraft:grass_block",
             "predicate_type": "minecraft:block_match"
@@ -45,15 +40,15 @@
           "location_predicate": {
             "block": "minecraft:water",
             "predicate_type": "minecraft:block_match"
+          },
+          "output_state": {
+            "Name": "minecraft:water",
+            "Properties": {
+              "level": "0"
+            }
           }
         },
         {
-          "output_state": {
-            "Properties": {
-              "level": "0"
-            },
-            "Name": "minecraft:water"
-          },
           "input_predicate": {
             "block": "minecraft:dirt",
             "predicate_type": "minecraft:block_match"
@@ -61,10 +56,15 @@
           "location_predicate": {
             "block": "minecraft:water",
             "predicate_type": "minecraft:block_match"
+          },
+          "output_state": {
+            "Name": "minecraft:water",
+            "Properties": {
+              "level": "0"
+            }
           }
         }
-      ],
-      "processor_type": "minecraft:rule"
+      ]
     }
   ]
 }

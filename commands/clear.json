@@ -3,29 +3,29 @@
   "children": {
     "targets": {
       "type": "argument",
-      "parser": "minecraft:entity",
-      "properties": {
-        "amount": "multiple",
-        "type": "players"
-      },
       "children": {
         "item": {
           "type": "argument",
-          "parser": "minecraft:item_predicate",
           "children": {
             "maxCount": {
               "type": "argument",
+              "executable": true,
               "parser": "brigadier:integer",
               "properties": {
                 "min": 0
-              },
-              "executable": true
+              }
             }
           },
-          "executable": true
+          "executable": true,
+          "parser": "minecraft:item_predicate"
         }
       },
-      "executable": true
+      "executable": true,
+      "parser": "minecraft:entity",
+      "properties": {
+        "type": "players",
+        "amount": "multiple"
+      }
     }
   },
   "executable": true

@@ -1,23 +1,7 @@
 {
   "parent": "minecraft:nether/root",
-  "display": {
-    "icon": {
-      "item": "minecraft:crying_obsidian"
-    },
-    "title": {
-      "translate": "advancements.nether.obtain_crying_obsidian.title"
-    },
-    "description": {
-      "translate": "advancements.nether.obtain_crying_obsidian.description"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "crying_obsidian": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -26,7 +10,23 @@
             ]
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.nether.obtain_crying_obsidian.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:crying_obsidian"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.nether.obtain_crying_obsidian.title"
     }
   },
   "requirements": [

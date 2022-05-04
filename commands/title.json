@@ -3,12 +3,17 @@
   "children": {
     "targets": {
       "type": "argument",
-      "parser": "minecraft:entity",
-      "properties": {
-        "amount": "multiple",
-        "type": "players"
-      },
       "children": {
+        "actionbar": {
+          "type": "literal",
+          "children": {
+            "title": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:component"
+            }
+          }
+        },
         "clear": {
           "type": "literal",
           "executable": true
@@ -17,33 +22,13 @@
           "type": "literal",
           "executable": true
         },
-        "title": {
-          "type": "literal",
-          "children": {
-            "title": {
-              "type": "argument",
-              "parser": "minecraft:component",
-              "executable": true
-            }
-          }
-        },
         "subtitle": {
           "type": "literal",
           "children": {
             "title": {
               "type": "argument",
-              "parser": "minecraft:component",
-              "executable": true
-            }
-          }
-        },
-        "actionbar": {
-          "type": "literal",
-          "children": {
-            "title": {
-              "type": "argument",
-              "parser": "minecraft:component",
-              "executable": true
+              "executable": true,
+              "parser": "minecraft:component"
             }
           }
         },
@@ -52,32 +37,47 @@
           "children": {
             "fadeIn": {
               "type": "argument",
-              "parser": "brigadier:integer",
-              "properties": {
-                "min": 0
-              },
               "children": {
                 "stay": {
                   "type": "argument",
-                  "parser": "brigadier:integer",
-                  "properties": {
-                    "min": 0
-                  },
                   "children": {
                     "fadeOut": {
                       "type": "argument",
+                      "executable": true,
                       "parser": "brigadier:integer",
                       "properties": {
                         "min": 0
-                      },
-                      "executable": true
+                      }
                     }
+                  },
+                  "parser": "brigadier:integer",
+                  "properties": {
+                    "min": 0
                   }
                 }
+              },
+              "parser": "brigadier:integer",
+              "properties": {
+                "min": 0
               }
             }
           }
+        },
+        "title": {
+          "type": "literal",
+          "children": {
+            "title": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:component"
+            }
+          }
         }
+      },
+      "parser": "minecraft:entity",
+      "properties": {
+        "type": "players",
+        "amount": "multiple"
       }
     }
   }

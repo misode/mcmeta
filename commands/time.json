@@ -1,45 +1,23 @@
 {
   "type": "literal",
   "children": {
-    "set": {
-      "type": "literal",
-      "children": {
-        "day": {
-          "type": "literal",
-          "executable": true
-        },
-        "noon": {
-          "type": "literal",
-          "executable": true
-        },
-        "night": {
-          "type": "literal",
-          "executable": true
-        },
-        "midnight": {
-          "type": "literal",
-          "executable": true
-        },
-        "time": {
-          "type": "argument",
-          "parser": "minecraft:time",
-          "executable": true
-        }
-      }
-    },
     "add": {
       "type": "literal",
       "children": {
         "time": {
           "type": "argument",
-          "parser": "minecraft:time",
-          "executable": true
+          "executable": true,
+          "parser": "minecraft:time"
         }
       }
     },
     "query": {
       "type": "literal",
       "children": {
+        "day": {
+          "type": "literal",
+          "executable": true
+        },
         "daytime": {
           "type": "literal",
           "executable": true
@@ -47,10 +25,32 @@
         "gametime": {
           "type": "literal",
           "executable": true
-        },
+        }
+      }
+    },
+    "set": {
+      "type": "literal",
+      "children": {
         "day": {
           "type": "literal",
           "executable": true
+        },
+        "midnight": {
+          "type": "literal",
+          "executable": true
+        },
+        "night": {
+          "type": "literal",
+          "executable": true
+        },
+        "noon": {
+          "type": "literal",
+          "executable": true
+        },
+        "time": {
+          "type": "argument",
+          "executable": true,
+          "parser": "minecraft:time"
         }
       }
     }

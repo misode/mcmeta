@@ -3,41 +3,30 @@
   "children": {
     "name": {
       "type": "argument",
-      "parser": "minecraft:particle",
       "children": {
         "pos": {
           "type": "argument",
-          "parser": "minecraft:vec3",
           "children": {
             "delta": {
               "type": "argument",
-              "parser": "minecraft:vec3",
               "children": {
                 "speed": {
                   "type": "argument",
-                  "parser": "brigadier:float",
-                  "properties": {
-                    "min": 0.0
-                  },
                   "children": {
                     "count": {
                       "type": "argument",
-                      "parser": "brigadier:integer",
-                      "properties": {
-                        "min": 0
-                      },
                       "children": {
                         "force": {
                           "type": "literal",
                           "children": {
                             "viewers": {
                               "type": "argument",
+                              "executable": true,
                               "parser": "minecraft:entity",
                               "properties": {
-                                "amount": "multiple",
-                                "type": "players"
-                              },
-                              "executable": true
+                                "type": "players",
+                                "amount": "multiple"
+                              }
                             }
                           },
                           "executable": true
@@ -47,28 +36,39 @@
                           "children": {
                             "viewers": {
                               "type": "argument",
+                              "executable": true,
                               "parser": "minecraft:entity",
                               "properties": {
-                                "amount": "multiple",
-                                "type": "players"
-                              },
-                              "executable": true
+                                "type": "players",
+                                "amount": "multiple"
+                              }
                             }
                           },
                           "executable": true
                         }
                       },
-                      "executable": true
+                      "executable": true,
+                      "parser": "brigadier:integer",
+                      "properties": {
+                        "min": 0
+                      }
                     }
+                  },
+                  "parser": "brigadier:float",
+                  "properties": {
+                    "min": 0.0
                   }
                 }
-              }
+              },
+              "parser": "minecraft:vec3"
             }
           },
-          "executable": true
+          "executable": true,
+          "parser": "minecraft:vec3"
         }
       },
-      "executable": true
+      "executable": true,
+      "parser": "minecraft:particle"
     }
   }
 }

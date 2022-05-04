@@ -3,55 +3,46 @@
   "children": {
     "target": {
       "type": "argument",
-      "parser": "minecraft:entity",
-      "properties": {
-        "amount": "single",
-        "type": "entities"
-      },
       "children": {
         "attribute": {
           "type": "argument",
-          "parser": "minecraft:resource",
-          "properties": {
-            "registry": "minecraft:attribute"
-          },
           "children": {
-            "get": {
-              "type": "literal",
-              "children": {
-                "scale": {
-                  "type": "argument",
-                  "parser": "brigadier:double",
-                  "executable": true
-                }
-              },
-              "executable": true
-            },
             "base": {
               "type": "literal",
               "children": {
-                "set": {
-                  "type": "literal",
-                  "children": {
-                    "value": {
-                      "type": "argument",
-                      "parser": "brigadier:double",
-                      "executable": true
-                    }
-                  }
-                },
                 "get": {
                   "type": "literal",
                   "children": {
                     "scale": {
                       "type": "argument",
-                      "parser": "brigadier:double",
-                      "executable": true
+                      "executable": true,
+                      "parser": "brigadier:double"
                     }
                   },
                   "executable": true
+                },
+                "set": {
+                  "type": "literal",
+                  "children": {
+                    "value": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "brigadier:double"
+                    }
+                  }
                 }
               }
+            },
+            "get": {
+              "type": "literal",
+              "children": {
+                "scale": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "brigadier:double"
+                }
+              },
+              "executable": true
             },
             "modifier": {
               "type": "literal",
@@ -61,18 +52,12 @@
                   "children": {
                     "uuid": {
                       "type": "argument",
-                      "parser": "minecraft:uuid",
                       "children": {
                         "name": {
                           "type": "argument",
-                          "parser": "brigadier:string",
-                          "properties": {
-                            "type": "phrase"
-                          },
                           "children": {
                             "value": {
                               "type": "argument",
-                              "parser": "brigadier:double",
                               "children": {
                                 "add": {
                                   "type": "literal",
@@ -86,11 +71,17 @@
                                   "type": "literal",
                                   "executable": true
                                 }
-                              }
+                              },
+                              "parser": "brigadier:double"
                             }
+                          },
+                          "parser": "brigadier:string",
+                          "properties": {
+                            "type": "phrase"
                           }
                         }
-                      }
+                      },
+                      "parser": "minecraft:uuid"
                     }
                   }
                 },
@@ -99,8 +90,8 @@
                   "children": {
                     "uuid": {
                       "type": "argument",
-                      "parser": "minecraft:uuid",
-                      "executable": true
+                      "executable": true,
+                      "parser": "minecraft:uuid"
                     }
                   }
                 },
@@ -112,15 +103,15 @@
                       "children": {
                         "uuid": {
                           "type": "argument",
-                          "parser": "minecraft:uuid",
                           "children": {
                             "scale": {
                               "type": "argument",
-                              "parser": "brigadier:double",
-                              "executable": true
+                              "executable": true,
+                              "parser": "brigadier:double"
                             }
                           },
-                          "executable": true
+                          "executable": true,
+                          "parser": "minecraft:uuid"
                         }
                       }
                     }
@@ -128,8 +119,17 @@
                 }
               }
             }
+          },
+          "parser": "minecraft:resource",
+          "properties": {
+            "registry": "minecraft:attribute"
           }
         }
+      },
+      "parser": "minecraft:entity",
+      "properties": {
+        "type": "entities",
+        "amount": "single"
       }
     }
   }

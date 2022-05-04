@@ -1,16 +1,27 @@
 {
   "type": "literal",
   "children": {
+    "clear": {
+      "type": "literal",
+      "children": {
+        "function": {
+          "type": "argument",
+          "executable": true,
+          "parser": "brigadier:string",
+          "properties": {
+            "type": "greedy"
+          }
+        }
+      }
+    },
     "function": {
       "type": "literal",
       "children": {
         "function": {
           "type": "argument",
-          "parser": "minecraft:function",
           "children": {
             "time": {
               "type": "argument",
-              "parser": "minecraft:time",
               "children": {
                 "append": {
                   "type": "literal",
@@ -21,22 +32,11 @@
                   "executable": true
                 }
               },
-              "executable": true
+              "executable": true,
+              "parser": "minecraft:time"
             }
-          }
-        }
-      }
-    },
-    "clear": {
-      "type": "literal",
-      "children": {
-        "function": {
-          "type": "argument",
-          "parser": "brigadier:string",
-          "properties": {
-            "type": "greedy"
           },
-          "executable": true
+          "parser": "minecraft:function"
         }
       }
     }

@@ -3,23 +3,23 @@
   "children": {
     "target": {
       "type": "argument",
-      "parser": "minecraft:entity",
-      "properties": {
-        "amount": "single",
-        "type": "entities"
-      },
       "children": {
         "player": {
           "type": "argument",
+          "executable": true,
           "parser": "minecraft:entity",
           "properties": {
-            "amount": "single",
-            "type": "players"
-          },
-          "executable": true
+            "type": "players",
+            "amount": "single"
+          }
         }
       },
-      "executable": true
+      "executable": true,
+      "parser": "minecraft:entity",
+      "properties": {
+        "type": "entities",
+        "amount": "single"
+      }
     }
   },
   "executable": true

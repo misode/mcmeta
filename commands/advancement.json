@@ -6,49 +6,38 @@
       "children": {
         "targets": {
           "type": "argument",
-          "parser": "minecraft:entity",
-          "properties": {
-            "amount": "multiple",
-            "type": "players"
-          },
           "children": {
-            "only": {
+            "everything": {
               "type": "literal",
-              "children": {
-                "advancement": {
-                  "type": "argument",
-                  "parser": "minecraft:resource_location",
-                  "children": {
-                    "criterion": {
-                      "type": "argument",
-                      "parser": "brigadier:string",
-                      "properties": {
-                        "type": "greedy"
-                      },
-                      "executable": true
-                    }
-                  },
-                  "executable": true
-                }
-              }
+              "executable": true
             },
             "from": {
               "type": "literal",
               "children": {
                 "advancement": {
                   "type": "argument",
-                  "parser": "minecraft:resource_location",
-                  "executable": true
+                  "executable": true,
+                  "parser": "minecraft:resource_location"
                 }
               }
             },
-            "until": {
+            "only": {
               "type": "literal",
               "children": {
                 "advancement": {
                   "type": "argument",
-                  "parser": "minecraft:resource_location",
-                  "executable": true
+                  "children": {
+                    "criterion": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "brigadier:string",
+                      "properties": {
+                        "type": "greedy"
+                      }
+                    }
+                  },
+                  "executable": true,
+                  "parser": "minecraft:resource_location"
                 }
               }
             },
@@ -57,15 +46,26 @@
               "children": {
                 "advancement": {
                   "type": "argument",
-                  "parser": "minecraft:resource_location",
-                  "executable": true
+                  "executable": true,
+                  "parser": "minecraft:resource_location"
                 }
               }
             },
-            "everything": {
+            "until": {
               "type": "literal",
-              "executable": true
+              "children": {
+                "advancement": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:resource_location"
+                }
+              }
             }
+          },
+          "parser": "minecraft:entity",
+          "properties": {
+            "type": "players",
+            "amount": "multiple"
           }
         }
       }
@@ -75,49 +75,38 @@
       "children": {
         "targets": {
           "type": "argument",
-          "parser": "minecraft:entity",
-          "properties": {
-            "amount": "multiple",
-            "type": "players"
-          },
           "children": {
-            "only": {
+            "everything": {
               "type": "literal",
-              "children": {
-                "advancement": {
-                  "type": "argument",
-                  "parser": "minecraft:resource_location",
-                  "children": {
-                    "criterion": {
-                      "type": "argument",
-                      "parser": "brigadier:string",
-                      "properties": {
-                        "type": "greedy"
-                      },
-                      "executable": true
-                    }
-                  },
-                  "executable": true
-                }
-              }
+              "executable": true
             },
             "from": {
               "type": "literal",
               "children": {
                 "advancement": {
                   "type": "argument",
-                  "parser": "minecraft:resource_location",
-                  "executable": true
+                  "executable": true,
+                  "parser": "minecraft:resource_location"
                 }
               }
             },
-            "until": {
+            "only": {
               "type": "literal",
               "children": {
                 "advancement": {
                   "type": "argument",
-                  "parser": "minecraft:resource_location",
-                  "executable": true
+                  "children": {
+                    "criterion": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "brigadier:string",
+                      "properties": {
+                        "type": "greedy"
+                      }
+                    }
+                  },
+                  "executable": true,
+                  "parser": "minecraft:resource_location"
                 }
               }
             },
@@ -126,15 +115,26 @@
               "children": {
                 "advancement": {
                   "type": "argument",
-                  "parser": "minecraft:resource_location",
-                  "executable": true
+                  "executable": true,
+                  "parser": "minecraft:resource_location"
                 }
               }
             },
-            "everything": {
+            "until": {
               "type": "literal",
-              "executable": true
+              "children": {
+                "advancement": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:resource_location"
+                }
+              }
             }
+          },
+          "parser": "minecraft:entity",
+          "properties": {
+            "type": "players",
+            "amount": "multiple"
           }
         }
       }
