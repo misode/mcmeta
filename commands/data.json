@@ -4747,25 +4747,43 @@
     "locate": {
       "type": "literal",
       "children": {
-        "structure": {
-          "type": "argument",
-          "executable": true,
-          "parser": "minecraft:resource_or_tag",
-          "properties": {
-            "registry": "minecraft:worldgen/structure"
-          }
-        }
-      }
-    },
-    "locatebiome": {
-      "type": "literal",
-      "children": {
         "biome": {
-          "type": "argument",
-          "executable": true,
-          "parser": "minecraft:resource_or_tag",
-          "properties": {
-            "registry": "minecraft:worldgen/biome"
+          "type": "literal",
+          "children": {
+            "biome": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:resource_or_tag",
+              "properties": {
+                "registry": "minecraft:worldgen/biome"
+              }
+            }
+          }
+        },
+        "poi": {
+          "type": "literal",
+          "children": {
+            "poi": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:resource_or_tag",
+              "properties": {
+                "registry": "minecraft:point_of_interest_type"
+              }
+            }
+          }
+        },
+        "structure": {
+          "type": "literal",
+          "children": {
+            "structure": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:resource_or_tag",
+              "properties": {
+                "registry": "minecraft:worldgen/structure"
+              }
+            }
           }
         }
       }
@@ -5659,6 +5677,55 @@
               "properties": {
                 "registry": "minecraft:worldgen/structure"
               }
+            }
+          }
+        },
+        "template": {
+          "type": "literal",
+          "children": {
+            "template": {
+              "type": "argument",
+              "children": {
+                "pos": {
+                  "type": "argument",
+                  "children": {
+                    "rotation": {
+                      "type": "argument",
+                      "children": {
+                        "mirror": {
+                          "type": "argument",
+                          "children": {
+                            "integrity": {
+                              "type": "argument",
+                              "children": {
+                                "seed": {
+                                  "type": "argument",
+                                  "executable": true,
+                                  "parser": "brigadier:integer"
+                                }
+                              },
+                              "executable": true,
+                              "parser": "brigadier:float",
+                              "properties": {
+                                "max": 1.0,
+                                "min": 0.0
+                              }
+                            }
+                          },
+                          "executable": true,
+                          "parser": "minecraft:template_mirror"
+                        }
+                      },
+                      "executable": true,
+                      "parser": "minecraft:template_rotation"
+                    }
+                  },
+                  "executable": true,
+                  "parser": "minecraft:block_pos"
+                }
+              },
+              "executable": true,
+              "parser": "minecraft:resource_location"
             }
           }
         }
