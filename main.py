@@ -220,7 +220,10 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 
 	# === get vanilla worldgen ===
 	if 'data' in exports or 'data-json' in exports or 'summary' in exports or 'registries' in exports:
-		if versions[version]['index'] <= versions['1.18-pre1']['index']:
+		if versions[version]['index'] <= versions['22w19a']['index']:
+			shutil.copytree('generated/reports/minecraft', 'data/data/minecraft', dirs_exist_ok=True)
+			shutil.copytree('generated/reports/minecraft', 'data-json/data/minecraft', dirs_exist_ok=True)
+		elif versions[version]['index'] <= versions['1.18-pre1']['index']:
 			shutil.copytree('generated/reports/worldgen', 'data/data', dirs_exist_ok=True)
 			shutil.copytree('generated/reports/worldgen', 'data-json/data', dirs_exist_ok=True)
 		elif versions[version]['index'] <= versions['20w28a']['index']:
