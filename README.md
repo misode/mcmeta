@@ -18,7 +18,7 @@ Each of the following branches has a commit per version. Starting from 1.14, upd
 * [**atlas**](https://github.com/misode/mcmeta/tree/atlas) - Texture atlases of blocks, items and entities
 
 ## Sources
-* [Version manifest](https://launchermeta.mojang.com/mc/game/version_manifest_v2.json), a list of versions and metadata, client and server jars by following links
+* [Version manifest](https://piston-meta.mojang.com/mc/game/version_manifest_v2.json), a list of versions and metadata, client and server jars by following links
 * Sound files from Mojang's API following the version manifest
 * Data generator using the following command:
   ```sh
