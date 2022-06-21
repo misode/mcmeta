@@ -60,7 +60,7 @@ def main(version: str | None, file, reset: bool, fetch: bool, undo: str | None, 
 		export = EXPORTS
 
 	# === fetch manifest ===
-	manifest = requests.get('https://launchermeta.mojang.com/mc/game/version_manifest_v2.json').json()
+	manifest = requests.get('https://piston-meta.mojang.com/mc/game/version_manifest_v2.json').json()
 	for v in manifest['versions']:
 		v['id'] = v['id'].replace(' Pre-Release ', '-pre')
 	version_ids = [v['id'] for v in manifest['versions']]
