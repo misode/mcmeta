@@ -20,9 +20,10 @@ Each of the following branches has a commit per version. Starting from 1.14, upd
 ## Sources
 * [Version manifest](https://piston-meta.mojang.com/mc/game/version_manifest_v2.json), a list of versions and metadata, client and server jars by following links
 * Sound files from Mojang's API following the version manifest
-* Data generator using the following command:
+* Data generator using the following commands (depending on version):
   ```sh
-  java -cp server.jar net.minecraft.data.Main --server --reports
+  java -cp server.jar net.minecraft.data.Main --reports
+  java -DbundlerMainClass=net.minecraft.data.Main -jar server.jar --reports
   ```
 * Slicedlime's [examples repo](https://github.com/slicedlime/examples) for worldgen changes before 1.18-pre1
 
