@@ -92,10 +92,10 @@ def main(version: str | None, file, reset: bool, fetch: bool, undo: str | None, 
 	start_date = versions[process_versions[0]]['releaseTime'] if process_versions else None
 	init_exports(start_date, reset, fetch, undo, export, branch)
 
-	# try:
-	# 	os.remove('versions.json')
-	# except OSError:
-	# 	pass
+	try:
+		os.remove('versions.json')
+	except OSError:
+		pass
 
 	if process_versions:
 		click.echo(f'🚧 Processing versions: {", ".join(process_versions)}')
@@ -483,6 +483,8 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		create_summary(dict(sorted(sounds.items())), 'summary/sounds')
 		create_summary(commands, 'summary/commands')
 		create_summary(version_metas, 'summary/versions')
+		with open(f'summary/version.txt', 'w') as f:
+			f.write(version + '\n')
 
 	# === create texture atlas ===
 	if 'atlas' in exports:
