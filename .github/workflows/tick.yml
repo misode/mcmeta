@@ -36,6 +36,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - uses: actions/cache@v3
+        with:
+          path: '.cache'
+          key: mcmeta
+
       - run: python main.py --version ${{ needs.check.outputs.id }} --fetch --export all --commit --push
         env:
           github-username: misode

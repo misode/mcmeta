@@ -146,52 +146,54 @@ def expand_version_range(version: str | None, versions: dict[str]):
 
 
 def get_version_meta(version: str, versions: dict[str], jar: str = None):
-	os.makedirs('tmp', exist_ok=True)
+	def create_version_meta():
+		os.makedirs('tmp', exist_ok=True)
 
-	if not jar:
-		launchermeta_url = versions[version]['url']
-		launchermeta = requests.get(launchermeta_url).json() if type(launchermeta_url) is str else launchermeta_url
+		if not jar:
+			launchermeta = json.loads(fetch_meta('versionmeta', versions[version]).decode('utf-8'))
+			client = fetch_meta('jar', launchermeta['downloads']['client'])
+			jar_path = 'tmp/client.jar'
+			with open(jar_path, 'wb') as f:
+				f.write(client)
+		else:
+			jar_path = jar
 
-		client_url = launchermeta['downloads']['client']['url']
-		client = requests.get(client_url).content
-		jar = 'tmp/client.jar'
-		with open(jar, 'wb') as f:
-			f.write(client)
+		with zipfile.ZipFile(jar_path, 'r') as f:
+			f.extract('version.json', 'tmp')
 
-	with zipfile.ZipFile(jar, 'r') as f:
-		f.extract('version.json', 'tmp')
+		with open('tmp/version.json', 'r') as f:
+			data = json.load(f)
 
-	with open('tmp/version.json', 'r') as f:
-		data = json.load(f)
+		pack = data['pack_version']
 
-	pack = data['pack_version']
+		meta = {
+			'id': version,
+			'name': data['name'],
+			'release_target': data['release_target'],
+			'type': versions[version]['type'],
+			'stable': data['stable'],
+			'data_version': data['world_version'],
+			'protocol_version': data['protocol_version'],
+			'data_pack_version': pack if type(pack) == int else pack['data'],
+			'resource_pack_version': pack if type(pack) == int else pack['resource'],
+			'build_time': data['build_time'],
+			'release_time': versions[version]['releaseTime'],
+			'sha1': versions[version]['sha1']
+		}
 
-	return {
-		'id': version,
-		'name': data['name'],
-		'release_target': data['release_target'],
-		'type': versions[version]['type'],
-		'stable': data['stable'],
-		'data_version': data['world_version'],
-		'protocol_version': data['protocol_version'],
-		'data_pack_version': pack if type(pack) == int else pack['data'],
-		'resource_pack_version': pack if type(pack) == int else pack['resource'],
-		'build_time': data['build_time'],
-		'release_time': versions[version]['releaseTime'],
-		'sha1': versions[version]['sha1']
-	}
+		return json.dumps(meta, indent=None).encode('utf-8')
+
+	return json.loads(cache(f'version-{versions[version]["sha1"]}', create_version_meta).decode('utf-8'))
 
 
 def process(version: str, versions: dict[str], exports: tuple[str]):
 	version_ids = list(versions.keys())
 
 	# === fetch version jars ===
-	launchermeta_url = versions[version]['url']
-	launchermeta = requests.get(launchermeta_url).json() if type(launchermeta_url) is str else launchermeta_url
+	launchermeta = json.loads(fetch_meta('versionmeta', versions[version]).decode('utf-8'))
 
 	for side in ['server', 'client']:
-		side_url = launchermeta['downloads'][side]['url']
-		side_content = requests.get(side_url).content
+		side_content = fetch_meta('jar', launchermeta['downloads'][side])
 		with open(f'{side}.jar', 'wb') as f:
 			f.write(side_content)
 
@@ -240,8 +242,9 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			}
 		}
 		for e in ['data', 'data-json']:
-				with open(f'{e}/pack.mcmeta', 'w') as f:
-					json.dump(pack, f, indent=4)
+			os.makedirs(e, exist_ok=True)
+			with open(f'{e}/pack.mcmeta', 'w') as f:
+				json.dump(pack, f, indent=4)
 
 	# === run data generators ===
 	if 'data' in exports or 'data-json' in exports or 'summary' in exports or 'registries' in exports:
@@ -276,7 +279,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 				if sha is None and id == '20w28a':
 					sha = 'd304a1dcf330005e617a78cef4e492ab3e2c09b0'
 				if sha:
-					content = requests.get(f'https://raw.githubusercontent.com/slicedlime/examples/{sha}/vanilla_worldgen.zip').content
+					content = fetch(f'slicedlime-{sha}', f'https://raw.githubusercontent.com/slicedlime/examples/{sha}/vanilla_worldgen.zip')
 					with open('vanilla_worldgen.zip', 'wb') as f:
 						f.write(content)
 					zip = zipfile.ZipFile('vanilla_worldgen.zip', 'r')
@@ -361,15 +364,22 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	# === collect summary of registries ===
 	if 'summary' in exports or 'registries' in exports:
 		registries = dict()
+		contents = dict()
 		with open('generated/reports/registries.json', 'r') as f:
 			for key, data in json.load(f).items():
 				entries = [e.removeprefix('minecraft:') for e in data['entries'].keys()]
 				registries[key.removeprefix('minecraft:')] = sorted(entries)
 
-		def listfiles(path: str, ext: str = 'json'):
+		def add_file_registry(id: str, path: str, ext: str = 'json'):
 			files = glob.glob(f'{path}/**/*.{ext}', recursive=True)
 			entries = [e.replace('\\', '/', -1).removeprefix(f'{path}/').removesuffix(f'.{ext}') for e in files]
-			return sorted(entries)
+			registries[id] = sorted(entries)
+			if ext == 'json':
+				content = dict()
+				for i, file in enumerate(files):
+					with open(file, 'r') as f:
+						content[entries[i]] = json.load(f)
+				contents[id] = content
 
 		registry_overrides = {
 			'advancements': 'advancement',
@@ -391,14 +401,14 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			for typ in [t for t in types if t not in ['tags', 'worldgen', 'structures']]:
 				registry_key = (pattern + typ).replace('tags/', 'tag/')
 				registry_key = registry_overrides.get(registry_key, registry_key)
-				registries[registry_key] = listfiles(full_pattern + typ)
+				add_file_registry(registry_key, full_pattern + typ)
 
-		registries['structure'] = listfiles('data/data/minecraft/structures', 'nbt')
+		add_file_registry('structure', 'data/data/minecraft/structures', 'nbt')
 
 		for path, key in [('blockstates', 'block_definition'), ('font', 'font'), ('models', 'model')]:
-			registries[key] = listfiles(f'assets/assets/minecraft/{path}')
+			add_file_registry(key, f'assets/assets/minecraft/{path}')
 
-		registries['texture'] = listfiles('assets/assets/minecraft/textures', 'png')
+		add_file_registry('texture', 'assets/assets/minecraft/textures', 'png')
 
 	# === simplify blocks report ===
 	if 'summary' in exports:
@@ -413,31 +423,22 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	# === download resources ===
 	def get_resource(hash: str):
 		url = f'https://resources.download.minecraft.net/{hash[0:2]}/{hash}'
-		return requests.get(url)
+		return fetch(f'resource-{hash}', url)
 
 	if 'summary' in exports:
 		assets_hash = launchermeta['assetIndex']['sha1']
 		assets_url = launchermeta['assetIndex']['url']
-		assets = requests.get(assets_url).json()
+		assets = json.loads(fetch(f'assets-{assets_hash}', assets_url).decode('utf-8'))
 
-		try:
-			with open(f'resources/hash.txt', 'r') as f:
-				cached = assets_hash == f.read()
-		except:
-			cached = False
-		if not cached:
-			if 'assets' in exports:
-				click.echo(f'Downloading {len(assets["objects"])} resources')
-				shutil.rmtree('resources', ignore_errors=True)
-				os.makedirs('resources', exist_ok=True)
-				for key, object in assets['objects'].items():
-					sound = get_resource(object['hash'])
-					os.makedirs(os.path.normpath(os.path.join(f'resources/{key}', '..')), exist_ok=True)
-					with open(f'resources/{key}', 'wb') as f:
-						f.write(sound.content)
-
-			with open(f'resources/hash.txt', 'w') as f:
-				f.write(assets_hash)
+		if 'assets' in exports:
+			click.echo(f'Downloading {len(assets["objects"])} resources')
+			shutil.rmtree('resources', ignore_errors=True)
+			os.makedirs('resources', exist_ok=True)
+			for key, object in assets['objects'].items():
+				sound = get_resource(object['hash'])
+				os.makedirs(os.path.normpath(os.path.join(f'resources/{key}', '..')), exist_ok=True)
+				with open(f'resources/{key}', 'wb') as f:
+					f.write(sound.content)
 
 		for export, pattern in [('assets', '*.*'), ('assets-json', '*.json')]:
 			if export in exports:
@@ -483,6 +484,11 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		create_summary(dict(sorted(sounds.items())), 'summary/sounds')
 		create_summary(commands, 'summary/commands')
 		create_summary(version_metas, 'summary/versions')
+
+		for key in contents:
+			part = 'assets' if key in ['block_definition', 'font', 'model'] else 'data'
+			create_summary(dict(sorted(contents[key].items())), f'summary/{part}/{key}', bin=True)
+
 		with open(f'summary/version.txt', 'w') as f:
 			f.write(version + '\n')
 
@@ -529,7 +535,8 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 
 	# === copy pack.mcmeta to json exports ===
 	for export in ['assets', 'data']:
-		shutil.copyfile(f'{export}/pack.mcmeta', f'{export}-json/pack.mcmeta')
+		if export in exports:
+			shutil.copyfile(f'{export}/pack.mcmeta', f'{export}-json/pack.mcmeta')
 
 
 def init_exports(start_date: str | None, reset: bool, fetch: bool, undo: str | None, exports: tuple[str], branch: str | None):
@@ -600,6 +607,29 @@ def fix_tags(exports: tuple[str], branch: str | None):
 			subprocess.run(['git', 'tag', f'{version}-{export}', ref.strip()],  capture_output=True)
 		os.chdir('..')
 		click.echo(f'✨ Created {len(commits)} tags in {export_branch} branch')
+
+
+def fetch_meta(prefix: str, obj):
+	assert 'sha1' in obj
+	assert 'url' in obj
+	return fetch(f'{prefix}-{obj["sha1"]}', obj['url'])
+
+
+def fetch(key: str, url: str):
+	return cache(key, lambda: requests.get(url).content)
+
+
+def cache(key: str, factory):
+	os.makedirs('.cache', exist_ok=True)
+	cache_path = f'.cache/{key}'
+	if os.path.exists(cache_path):
+		with open(cache_path, 'rb') as f:
+			return f.read()
+	else:
+		content = factory()
+		with open(cache_path, 'wb') as f:
+			f.write(content)
+		return content
 
 
 if __name__ == '__main__':
