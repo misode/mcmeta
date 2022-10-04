@@ -98,11 +98,17 @@ def main(version: str | None, file, reset: bool, fetch: bool, undo: str | None, 
 		pass
 
 	if process_versions:
-		click.echo(f'🚧 Processing versions: {", ".join(process_versions)}')
+		click.echo(f'📃 Processing versions: {", ".join(process_versions)}')
 		t0 = time.time()
 		for i, v in enumerate(process_versions):
+			click.echo(f'🚧 Processing {v}...')
 			t1 = time.time()
-			process(v, versions, export)
+			try:
+				process(v, versions, export)
+			except ValueError as e:
+				click.echo(f'💥 Failed to process {v}: {e}')
+				return
+
 			if commit:
 				create_commit(v, versions[v]['releaseTime'], push, force, export, branch)
 			t2 = time.time()
@@ -190,6 +196,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	version_ids = list(versions.keys())
 
 	# === fetch version jars ===
+	click.echo('   ⬇️  Downloading version')
 	launchermeta = json.loads(fetch_meta('versionmeta', versions[version]).decode('utf-8'))
 
 	for side in ['server', 'client']:
@@ -215,6 +222,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 						jar.extract(file, f'{part}-json')
 
 	# === update version metas ===
+	click.echo('   🏷️  Updating versions')
 	try:
 		with open('versions.json', 'r') as f:
 			version_metas = json.load(f)
@@ -248,7 +256,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 
 	# === run data generators ===
 	if 'data' in exports or 'data-json' in exports or 'summary' in exports or 'registries' in exports:
-		click.echo('Running data generator')
+		click.echo('   ⚙️  Running data generator')
 		shutil.rmtree('generated', ignore_errors=True)
 		if versions[version]['index'] <= versions['21w39a']['index']:
 			subprocess.run(['java', '-DbundlerMainClass=net.minecraft.data.Main', '-jar', 'server.jar', '--reports'], capture_output=True)
@@ -264,7 +272,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			shutil.copytree('generated/reports/worldgen', 'data/data', dirs_exist_ok=True)
 			shutil.copytree('generated/reports/worldgen', 'data-json/data', dirs_exist_ok=True)
 		elif versions[version]['index'] <= versions['20w28a']['index']:
-			click.echo('Downloading vanilla worldgen')
+			click.echo('   ⬇️  Downloading vanilla worldgen')
 			username = os.getenv('github-username')
 			token = os.getenv('github-token')
 			auth = requests.auth.HTTPBasicAuth(username, token) if username and token else None
@@ -272,8 +280,10 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			released = datetime.datetime.fromisoformat(versions[version]['releaseTime'])
 			released += datetime.timedelta(days=1)
 			res = requests.get(f'https://api.github.com/repos/slicedlime/examples/commits?until={released.isoformat()}', headers=headers, auth=auth)
-			click.echo(f'Remaining GitHub requests: {res.headers["X-RateLimit-Remaining"]}/{res.headers["X-RateLimit-Limit"]}')
+			click.echo(f'      Remaining GitHub requests: {res.headers["X-RateLimit-Remaining"]}/{res.headers["X-RateLimit-Limit"]}')
 			commits = res.json()
+			if 'message' in commits:
+				raise ValueError(f'Cannot get vanilla worldgen: {commits["message"]}')
 			for id in version_ids[versions[version]['index']:]:
 				sha = next((c['sha'] for c in commits if re.match(f'Update to {id}\\.?$', c['commit']['message'])), None)
 				if sha is None and id == '20w28a':
@@ -426,12 +436,13 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		return fetch(f'resource-{hash}', url)
 
 	if 'summary' in exports:
+		click.echo('   🔊 Downloading sounds')
 		assets_hash = launchermeta['assetIndex']['sha1']
 		assets_url = launchermeta['assetIndex']['url']
 		assets = json.loads(fetch(f'assets-{assets_hash}', assets_url).decode('utf-8'))
 
 		if 'assets' in exports:
-			click.echo(f'Downloading {len(assets["objects"])} resources')
+			click.echo(f'      Downloading {len(assets["objects"])} resources')
 			shutil.rmtree('resources', ignore_errors=True)
 			os.makedirs('resources', exist_ok=True)
 			for key, object in assets['objects'].items():
@@ -494,7 +505,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 
 	# === create texture atlas ===
 	if 'atlas' in exports:
-		click.echo('Packing textures into atlas')
+		click.echo('   🗺️ Packing textures into atlas')
 		atlases = [
 			('blocks', ['block'], 1024),
 			('items', ['item'], 512),
