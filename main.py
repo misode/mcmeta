@@ -175,7 +175,7 @@ def get_version_meta(version: str, versions: dict[str], jar: str = None):
 		meta = {
 			'id': version,
 			'name': data['name'],
-			'release_target': data['release_target'],
+			'release_target': data.get('release_target', None),
 			'type': versions[version]['type'],
 			'stable': data['stable'],
 			'data_version': data['world_version'],
@@ -255,7 +255,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 				json.dump(pack, f, indent=4)
 
 	# === run data generators ===
-	if 'data' in exports or 'data-json' in exports or 'summary' in exports or 'registries' in exports:
+	if (versions[version]['index'] > versions['22w42a']['index'] and ('data' in exports or 'data-json' in exports)) or 'summary' in exports or 'registries' in exports:
 		click.echo('   ⚙️  Running data generator')
 		shutil.rmtree('generated', ignore_errors=True)
 		if versions[version]['index'] <= versions['21w39a']['index']:
@@ -265,7 +265,9 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 
 	# === get vanilla worldgen ===
 	if 'data' in exports or 'data-json' in exports or 'summary' in exports or 'registries' in exports:
-		if versions[version]['index'] <= versions['22w19a']['index']:
+		if versions[version]['index'] <= versions['22w42a']['index']:
+			pass
+		elif versions[version]['index'] <= versions['22w19a']['index']:
 			shutil.copytree('generated/reports/minecraft', 'data/data/minecraft', dirs_exist_ok=True)
 			shutil.copytree('generated/reports/minecraft', 'data-json/data/minecraft', dirs_exist_ok=True)
 		elif versions[version]['index'] <= versions['1.18-pre1']['index']:
@@ -391,6 +393,11 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 						content[entries[i]] = json.load(f)
 				contents[id] = content
 
+		def add_folder_registry(id: str, path: str):
+			files = glob.glob(f'{path}/*/')
+			entries = [e.replace('\\', '/', -1).removeprefix(f'{path}/').removesuffix('/') for e in files]
+			registries[id] = sorted(entries)
+
 		registry_overrides = {
 			'advancements': 'advancement',
 			'loot_tables': 'loot_table',
@@ -408,12 +415,14 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 				e.replace('\\', '/', -1).removeprefix(full_pattern).removesuffix('/')
 				for e in glob.glob(f'{full_pattern}*/')
 			]
-			for typ in [t for t in types if t not in ['tags', 'worldgen', 'structures']]:
+			for typ in [t for t in types if t not in ['tags', 'worldgen', 'structures', 'datapacks']]:
 				registry_key = (pattern + typ).replace('tags/', 'tag/')
 				registry_key = registry_overrides.get(registry_key, registry_key)
 				add_file_registry(registry_key, full_pattern + typ)
 
 		add_file_registry('structure', 'data/data/minecraft/structures', 'nbt')
+
+		add_folder_registry('datapack', 'data/data/minecraft/datapacks')
 
 		for path, key in [('blockstates', 'block_definition'), ('font', 'font'), ('models', 'model')]:
 			add_file_registry(key, f'assets/assets/minecraft/{path}')
@@ -449,7 +458,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 				sound = get_resource(object['hash'])
 				os.makedirs(os.path.normpath(os.path.join(f'resources/{key}', '..')), exist_ok=True)
 				with open(f'resources/{key}', 'wb') as f:
-					f.write(sound.content)
+					f.write(sound)
 
 		for export, pattern in [('assets', '*.*'), ('assets-json', '*.json')]:
 			if export in exports:
@@ -505,7 +514,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 
 	# === create texture atlas ===
 	if 'atlas' in exports:
-		click.echo('   🗺️ Packing textures into atlas')
+		click.echo('   🗺️  Packing textures into atlas')
 		atlases = [
 			('blocks', ['block'], 1024),
 			('items', ['item'], 512),
@@ -598,7 +607,10 @@ def create_commit(version: str | None, date: str | None, push: bool, force: bool
 			else:
 				subprocess.run(['git', 'push', '-q', '--tags', 'origin', export_branch])
 		os.chdir('..')
-		click.echo(f'🚀 Created commit on {export_branch} branch')
+		if version:
+			click.echo(f'🚀 Created commit on {export_branch} branch')
+		elif push:
+			click.echo(f'🚀 Pushed to {export_branch} branch')
 
 
 def fix_tags(exports: tuple[str], branch: str | None):
