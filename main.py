@@ -555,7 +555,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 
 	# === copy pack.mcmeta to json exports ===
 	for export in ['assets', 'data']:
-		if export in exports:
+		if f'{export}-json' in exports:
 			shutil.copyfile(f'{export}/pack.mcmeta', f'{export}-json/pack.mcmeta')
 
 

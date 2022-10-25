@@ -39,7 +39,9 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: '.cache'
-          key: mcmeta
+          key: mcmeta-${{ needs.check.outputs.id }}
+          restore-keys: |
+            mcmeta-
 
       - run: python main.py --version ${{ needs.check.outputs.id }} --fetch --export all --commit --push
         env:
