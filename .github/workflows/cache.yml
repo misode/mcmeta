@@ -2,6 +2,11 @@ name: 'Cache'
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version'
+        type: string
+        required: true
 
 jobs:
   run:
@@ -20,18 +25,14 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: 'Get latest version'
-        id: version
-        run: echo "id=$(curl -s https://raw.githubusercontent.com/misode/mcmeta/summary/version.txt)" >> $GITHUB_OUTPUT
-
       - uses: actions/cache@v3
         with:
           path: '.cache'
-          key: mcmeta-${{ steps.version.outputs.id }}
+          key: mcmeta-${{ inputs.version }}
           restore-keys: |
             mcmeta-
 
-      - run: python main.py --reset --version ${{ steps.version.outputs.id }} -e data -e assets -e summary -e registries
+      - run: python main.py --version ${{ inputs.version }} --reset -e data -e assets -e summary -e registries
         env:
           github-username: misode
           github-token: ${{ secrets.GITHUB_TOKEN }}
