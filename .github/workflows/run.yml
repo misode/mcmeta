@@ -7,6 +7,11 @@ on:
         description: 'Version'
         type: string
         required: true
+      commit:
+        description: 'Commit and push'
+        type: boolean
+        required: true
+        default: false
 
 jobs:
   run:
@@ -32,7 +37,7 @@ jobs:
           restore-keys: |
             mcmeta-
 
-      - run: python main.py --version ${{ inputs.version }} --fetch --export all --commit --push
+      - run: python main.py --version ${{ inputs.version }} --fetch --export all${{ inputs.commit && ' --commit --push' || '' }}
         env:
           github-username: misode
           github-token: ${{ secrets.GITHUB_TOKEN }}
