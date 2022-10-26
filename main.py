@@ -157,7 +157,7 @@ def get_version_meta(version: str, versions: dict[str], jar: str = None):
 
 		if not jar:
 			launchermeta = json.loads(fetch_meta('versionmeta', versions[version]).decode('utf-8'))
-			client = fetch_meta('jar', launchermeta['downloads']['client'])
+			client = fetch_meta('jar', launchermeta['downloads']['client'], cache=False)
 			jar_path = 'tmp/client.jar'
 			with open(jar_path, 'wb') as f:
 				f.write(client)
@@ -200,7 +200,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	launchermeta = json.loads(fetch_meta('versionmeta', versions[version]).decode('utf-8'))
 
 	for side in ['server', 'client']:
-		side_content = fetch_meta('jar', launchermeta['downloads'][side])
+		side_content = fetch_meta('jar', launchermeta['downloads'][side], cache=False)
 		with open(f'{side}.jar', 'wb') as f:
 			f.write(side_content)
 
@@ -632,10 +632,13 @@ def fix_tags(exports: tuple[str], branch: str | None):
 		click.echo(f'✨ Created {len(commits)} tags in {export_branch} branch')
 
 
-def fetch_meta(prefix: str, obj):
+def fetch_meta(prefix: str, obj, cache=True):
 	assert 'sha1' in obj
 	assert 'url' in obj
-	return fetch(f'{prefix}-{obj["sha1"]}', obj['url'])
+	if cache:
+		return fetch(f'{prefix}-{obj["sha1"]}', obj['url'])
+	else:
+		return requests.get(obj['url']).content
 
 
 def fetch(key: str, url: str):
