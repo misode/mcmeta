@@ -2149,21 +2149,10 @@
     "defaultgamemode": {
       "type": "literal",
       "children": {
-        "adventure": {
-          "type": "literal",
-          "executable": true
-        },
-        "creative": {
-          "type": "literal",
-          "executable": true
-        },
-        "spectator": {
-          "type": "literal",
-          "executable": true
-        },
-        "survival": {
-          "type": "literal",
-          "executable": true
+        "gamemode": {
+          "type": "argument",
+          "executable": true,
+          "parser": "minecraft:gamemode"
         }
       }
     },
@@ -3934,8 +3923,8 @@
     "gamemode": {
       "type": "literal",
       "children": {
-        "adventure": {
-          "type": "literal",
+        "gamemode": {
+          "type": "argument",
           "children": {
             "target": {
               "type": "argument",
@@ -3947,52 +3936,8 @@
               }
             }
           },
-          "executable": true
-        },
-        "creative": {
-          "type": "literal",
-          "children": {
-            "target": {
-              "type": "argument",
-              "executable": true,
-              "parser": "minecraft:entity",
-              "properties": {
-                "type": "players",
-                "amount": "multiple"
-              }
-            }
-          },
-          "executable": true
-        },
-        "spectator": {
-          "type": "literal",
-          "children": {
-            "target": {
-              "type": "argument",
-              "executable": true,
-              "parser": "minecraft:entity",
-              "properties": {
-                "type": "players",
-                "amount": "multiple"
-              }
-            }
-          },
-          "executable": true
-        },
-        "survival": {
-          "type": "literal",
-          "children": {
-            "target": {
-              "type": "argument",
-              "executable": true,
-              "parser": "minecraft:entity",
-              "properties": {
-                "type": "players",
-                "amount": "multiple"
-              }
-            }
-          },
-          "executable": true
+          "executable": true,
+          "parser": "minecraft:gamemode"
         }
       }
     },
@@ -6361,14 +6306,28 @@
     "publish": {
       "type": "literal",
       "children": {
-        "port": {
+        "allowCommands": {
           "type": "argument",
+          "children": {
+            "gamemode": {
+              "type": "argument",
+              "children": {
+                "port": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "brigadier:integer",
+                  "properties": {
+                    "max": 65535,
+                    "min": 0
+                  }
+                }
+              },
+              "executable": true,
+              "parser": "minecraft:gamemode"
+            }
+          },
           "executable": true,
-          "parser": "brigadier:integer",
-          "properties": {
-            "max": 65535,
-            "min": 0
-          }
+          "parser": "brigadier:bool"
         }
       },
       "executable": true
