@@ -6510,60 +6510,231 @@
       "top": "minecraft:block/chipped_anvil_top"
     }
   },
-  "block/chiseled_bookshelf_stage0": {
-    "parent": "minecraft:block/template_chiseled_bookshelf",
+  "block/chiseled_bookshelf": {
+    "parent": "block/block",
     "textures": {
-      "front": "minecraft:block/chiseled_bookshelf_stage0",
-      "side": "minecraft:block/chiseled_bookshelf_side",
-      "top": "minecraft:block/chiseled_bookshelf_top"
+      "top": "block/chiseled_bookshelf_top",
+      "side": "block/chiseled_bookshelf_side",
+      "particle": "#top"
+    },
+    "elements": [
+      {
+        "name": "chiseled_bookshelf_body",
+        "from": [
+          0,
+          0,
+          0
+        ],
+        "to": [
+          16,
+          16,
+          16
+        ],
+        "faces": {
+          "east": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#side",
+            "cullface": "east"
+          },
+          "south": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#side",
+            "cullface": "south"
+          },
+          "west": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#side",
+            "cullface": "west"
+          },
+          "up": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#top",
+            "cullface": "up"
+          },
+          "down": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#top",
+            "cullface": "down"
+          }
+        }
+      }
+    ]
+  },
+  "block/chiseled_bookshelf_empty_slot_bottom_left": {
+    "parent": "minecraft:block/template_chiseled_bookshelf_slot_bottom_left",
+    "textures": {
+      "texture": "minecraft:block/chiseled_bookshelf_empty"
     }
   },
-  "block/chiseled_bookshelf_stage1": {
-    "parent": "minecraft:block/template_chiseled_bookshelf",
+  "block/chiseled_bookshelf_empty_slot_bottom_mid": {
+    "parent": "minecraft:block/template_chiseled_bookshelf_slot_bottom_mid",
     "textures": {
-      "front": "minecraft:block/chiseled_bookshelf_stage1",
-      "side": "minecraft:block/chiseled_bookshelf_side",
-      "top": "minecraft:block/chiseled_bookshelf_top"
+      "texture": "minecraft:block/chiseled_bookshelf_empty"
     }
   },
-  "block/chiseled_bookshelf_stage2": {
-    "parent": "minecraft:block/template_chiseled_bookshelf",
+  "block/chiseled_bookshelf_empty_slot_bottom_right": {
+    "parent": "minecraft:block/template_chiseled_bookshelf_slot_bottom_right",
     "textures": {
-      "front": "minecraft:block/chiseled_bookshelf_stage2",
-      "side": "minecraft:block/chiseled_bookshelf_side",
-      "top": "minecraft:block/chiseled_bookshelf_top"
+      "texture": "minecraft:block/chiseled_bookshelf_empty"
     }
   },
-  "block/chiseled_bookshelf_stage3": {
-    "parent": "minecraft:block/template_chiseled_bookshelf",
+  "block/chiseled_bookshelf_empty_slot_top_left": {
+    "parent": "minecraft:block/template_chiseled_bookshelf_slot_top_left",
     "textures": {
-      "front": "minecraft:block/chiseled_bookshelf_stage3",
-      "side": "minecraft:block/chiseled_bookshelf_side",
-      "top": "minecraft:block/chiseled_bookshelf_top"
+      "texture": "minecraft:block/chiseled_bookshelf_empty"
     }
   },
-  "block/chiseled_bookshelf_stage4": {
-    "parent": "minecraft:block/template_chiseled_bookshelf",
+  "block/chiseled_bookshelf_empty_slot_top_mid": {
+    "parent": "minecraft:block/template_chiseled_bookshelf_slot_top_mid",
     "textures": {
-      "front": "minecraft:block/chiseled_bookshelf_stage4",
-      "side": "minecraft:block/chiseled_bookshelf_side",
-      "top": "minecraft:block/chiseled_bookshelf_top"
+      "texture": "minecraft:block/chiseled_bookshelf_empty"
     }
   },
-  "block/chiseled_bookshelf_stage5": {
-    "parent": "minecraft:block/template_chiseled_bookshelf",
+  "block/chiseled_bookshelf_empty_slot_top_right": {
+    "parent": "minecraft:block/template_chiseled_bookshelf_slot_top_right",
     "textures": {
-      "front": "minecraft:block/chiseled_bookshelf_stage5",
-      "side": "minecraft:block/chiseled_bookshelf_side",
-      "top": "minecraft:block/chiseled_bookshelf_top"
+      "texture": "minecraft:block/chiseled_bookshelf_empty"
     }
   },
-  "block/chiseled_bookshelf_stage6": {
-    "parent": "minecraft:block/template_chiseled_bookshelf",
+  "block/chiseled_bookshelf_inventory": {
+    "parent": "block/block",
     "textures": {
-      "front": "minecraft:block/chiseled_bookshelf_stage6",
-      "side": "minecraft:block/chiseled_bookshelf_side",
-      "top": "minecraft:block/chiseled_bookshelf_top"
+      "top": "block/chiseled_bookshelf_top",
+      "side": "block/chiseled_bookshelf_side",
+      "front": "block/chiseled_bookshelf_empty",
+      "particle": "#top"
+    },
+    "elements": [
+      {
+        "name": "chiseled_bookshelf_body",
+        "from": [
+          0,
+          0,
+          0
+        ],
+        "to": [
+          16,
+          16,
+          16
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#front"
+          },
+          "east": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#side"
+          },
+          "south": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#side"
+          },
+          "west": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#side"
+          },
+          "up": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#top"
+          },
+          "down": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#top"
+          }
+        }
+      }
+    ]
+  },
+  "block/chiseled_bookshelf_occupied_slot_bottom_left": {
+    "parent": "minecraft:block/template_chiseled_bookshelf_slot_bottom_left",
+    "textures": {
+      "texture": "minecraft:block/chiseled_bookshelf_occupied"
+    }
+  },
+  "block/chiseled_bookshelf_occupied_slot_bottom_mid": {
+    "parent": "minecraft:block/template_chiseled_bookshelf_slot_bottom_mid",
+    "textures": {
+      "texture": "minecraft:block/chiseled_bookshelf_occupied"
+    }
+  },
+  "block/chiseled_bookshelf_occupied_slot_bottom_right": {
+    "parent": "minecraft:block/template_chiseled_bookshelf_slot_bottom_right",
+    "textures": {
+      "texture": "minecraft:block/chiseled_bookshelf_occupied"
+    }
+  },
+  "block/chiseled_bookshelf_occupied_slot_top_left": {
+    "parent": "minecraft:block/template_chiseled_bookshelf_slot_top_left",
+    "textures": {
+      "texture": "minecraft:block/chiseled_bookshelf_occupied"
+    }
+  },
+  "block/chiseled_bookshelf_occupied_slot_top_mid": {
+    "parent": "minecraft:block/template_chiseled_bookshelf_slot_top_mid",
+    "textures": {
+      "texture": "minecraft:block/chiseled_bookshelf_occupied"
+    }
+  },
+  "block/chiseled_bookshelf_occupied_slot_top_right": {
+    "parent": "minecraft:block/template_chiseled_bookshelf_slot_top_right",
+    "textures": {
+      "texture": "minecraft:block/chiseled_bookshelf_occupied"
     }
   },
   "block/chiseled_deepslate": {
@@ -43444,17 +43615,191 @@
       }
     ]
   },
-  "block/template_chiseled_bookshelf": {
-    "parent": "block/cube",
+  "block/template_chiseled_bookshelf_slot_bottom_left": {
     "textures": {
-      "particle": "#down",
-      "down": "#top",
-      "up": "#top",
-      "north": "#front",
-      "east": "#side",
-      "south": "#side",
-      "west": "#side"
-    }
+      "texture": "#texture"
+    },
+    "elements": [
+      {
+        "from": [
+          10,
+          0,
+          0
+        ],
+        "to": [
+          16,
+          8,
+          0
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              0,
+              8,
+              6,
+              16
+            ],
+            "texture": "#texture",
+            "cullface": "north"
+          }
+        }
+      }
+    ]
+  },
+  "block/template_chiseled_bookshelf_slot_bottom_mid": {
+    "textures": {
+      "texture": "#texture"
+    },
+    "elements": [
+      {
+        "from": [
+          5,
+          0,
+          0
+        ],
+        "to": [
+          10,
+          8,
+          0
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              6,
+              8,
+              11,
+              16
+            ],
+            "texture": "#texture",
+            "cullface": "north"
+          }
+        }
+      }
+    ]
+  },
+  "block/template_chiseled_bookshelf_slot_bottom_right": {
+    "textures": {
+      "texture": "#texture"
+    },
+    "elements": [
+      {
+        "from": [
+          0,
+          0,
+          0
+        ],
+        "to": [
+          5,
+          8,
+          0
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              11,
+              8,
+              16,
+              16
+            ],
+            "texture": "#texture",
+            "cullface": "north"
+          }
+        }
+      }
+    ]
+  },
+  "block/template_chiseled_bookshelf_slot_top_left": {
+    "textures": {
+      "texture": "#texture"
+    },
+    "elements": [
+      {
+        "from": [
+          10,
+          8,
+          0
+        ],
+        "to": [
+          16,
+          16,
+          0
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              0,
+              0,
+              6,
+              8
+            ],
+            "texture": "#texture",
+            "cullface": "north"
+          }
+        }
+      }
+    ]
+  },
+  "block/template_chiseled_bookshelf_slot_top_mid": {
+    "textures": {
+      "texture": "#texture"
+    },
+    "elements": [
+      {
+        "from": [
+          5,
+          8,
+          0
+        ],
+        "to": [
+          10,
+          16,
+          0
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              6,
+              0,
+              11,
+              8
+            ],
+            "texture": "#texture",
+            "cullface": "north"
+          }
+        }
+      }
+    ]
+  },
+  "block/template_chiseled_bookshelf_slot_top_right": {
+    "textures": {
+      "texture": "#texture"
+    },
+    "elements": [
+      {
+        "from": [
+          0,
+          8,
+          0
+        ],
+        "to": [
+          5,
+          16,
+          0
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              11,
+              0,
+              16,
+              8
+            ],
+            "texture": "#texture",
+            "cullface": "north"
+          }
+        }
+      }
+    ]
   },
   "block/template_chorus_flower": {
     "parent": "block/block",
@@ -61467,7 +61812,7 @@
     "parent": "minecraft:block/chipped_anvil"
   },
   "item/chiseled_bookshelf": {
-    "parent": "minecraft:block/chiseled_bookshelf_stage0"
+    "parent": "minecraft:block/chiseled_bookshelf_inventory"
   },
   "item/chiseled_deepslate": {
     "parent": "minecraft:block/chiseled_deepslate"
@@ -66153,6 +66498,9 @@
   },
   "item/piglin_brute_spawn_egg": {
     "parent": "minecraft:item/template_spawn_egg"
+  },
+  "item/piglin_head": {
+    "parent": "minecraft:item/template_skull"
   },
   "item/piglin_spawn_egg": {
     "parent": "minecraft:item/template_spawn_egg"
