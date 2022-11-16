@@ -424,7 +424,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 
 		add_folder_registry('datapack', 'data/data/minecraft/datapacks')
 
-		for path, key in [('blockstates', 'block_definition'), ('font', 'font'), ('models', 'model')]:
+		for path, key in [('atlases', 'atlas'), ('blockstates', 'block_definition'), ('font', 'font'), ('models', 'model')]:
 			add_file_registry(key, f'assets/assets/minecraft/{path}')
 
 		add_file_registry('texture', 'assets/assets/minecraft/textures', 'png')
