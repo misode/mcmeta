@@ -273,6 +273,7 @@
           "children": {
             "pos": {
               "type": "argument",
+              "executable": true,
               "parser": "minecraft:block_pos",
               "redirect": [
                 "execute"
@@ -1207,6 +1208,21 @@
         }
       }
     },
+    "summon": {
+      "type": "literal",
+      "children": {
+        "entity": {
+          "type": "argument",
+          "parser": "minecraft:resource",
+          "properties": {
+            "registry": "minecraft:entity_type"
+          },
+          "redirect": [
+            "execute"
+          ]
+        }
+      }
+    },
     "unless": {
       "type": "literal",
       "children": {
@@ -1389,6 +1405,7 @@
           "children": {
             "pos": {
               "type": "argument",
+              "executable": true,
               "parser": "minecraft:block_pos",
               "redirect": [
                 "execute"
