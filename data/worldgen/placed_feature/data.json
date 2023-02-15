@@ -487,6 +487,40 @@
       }
     ]
   },
+  "cherry_bees_005": {
+    "feature": "minecraft:cherry_bees_005",
+    "placement": [
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:would_survive",
+          "state": {
+            "Name": "minecraft:cherry_sapling",
+            "Properties": {
+              "stage": "0"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "cherry_checked": {
+    "feature": "minecraft:cherry",
+    "placement": [
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:would_survive",
+          "state": {
+            "Name": "minecraft:cherry_sapling",
+            "Properties": {
+              "stage": "0"
+            }
+          }
+        }
+      }
+    ]
+  },
   "chorus_plant": {
     "feature": "minecraft:chorus_plant",
     "placement": [
@@ -914,6 +948,27 @@
             }
           }
         }
+      }
+    ]
+  },
+  "flower_cherry": {
+    "feature": "minecraft:flower_cherry",
+    "placement": [
+      {
+        "type": "minecraft:noise_threshold_count",
+        "above_noise": 10,
+        "below_noise": 5,
+        "noise_level": -0.8
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "MOTION_BLOCKING"
+      },
+      {
+        "type": "minecraft:biome"
       }
     ]
   },
@@ -4664,6 +4719,53 @@
       },
       {
         "type": "minecraft:biome"
+      }
+    ]
+  },
+  "trees_cherry": {
+    "feature": "minecraft:cherry_bees_005",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": {
+          "type": "minecraft:weighted_list",
+          "distribution": [
+            {
+              "data": 10,
+              "weight": 9
+            },
+            {
+              "data": 11,
+              "weight": 1
+            }
+          ]
+        }
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:surface_water_depth_filter",
+        "max_water_depth": 0
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "OCEAN_FLOOR"
+      },
+      {
+        "type": "minecraft:biome"
+      },
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:would_survive",
+          "state": {
+            "Name": "minecraft:cherry_sapling",
+            "Properties": {
+              "stage": "0"
+            }
+          }
+        }
       }
     ]
   },

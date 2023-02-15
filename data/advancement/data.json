@@ -6328,10 +6328,10 @@
         "minecraft:soul_sand_valley"
       ],
       [
-        "minecraft:warped_forest"
+        "minecraft:crimson_forest"
       ],
       [
-        "minecraft:crimson_forest"
+        "minecraft:warped_forest"
       ],
       [
         "minecraft:basalt_deltas"
@@ -23864,18 +23864,6 @@
         },
         "trigger": "minecraft:inventory_changed"
       },
-      "has_stick": {
-        "conditions": {
-          "items": [
-            {
-              "items": [
-                "minecraft:stick"
-              ]
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
       "has_string": {
         "conditions": {
           "items": [
@@ -23910,7 +23898,6 @@
     "requirements": [
       [
         "has_string",
-        "has_stick",
         "has_iron_ingot",
         "has_tripwire_hook",
         "has_the_recipe"
@@ -26797,26 +26784,20 @@
   "recipes/decorations/crafting_table": {
     "parent": "minecraft:recipes/root",
     "criteria": {
-      "has_planks": {
-        "conditions": {
-          "items": [
-            {
-              "tag": "minecraft:planks"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
       "has_the_recipe": {
         "conditions": {
           "recipe": "minecraft:crafting_table"
         },
         "trigger": "minecraft:recipe_unlocked"
+      },
+      "unlock_right_away": {
+        "conditions": {},
+        "trigger": "minecraft:tick"
       }
     },
     "requirements": [
       [
-        "has_planks",
+        "unlock_right_away",
         "has_the_recipe"
       ]
     ],
@@ -33199,18 +33180,6 @@
         },
         "trigger": "minecraft:inventory_changed"
       },
-      "has_stick": {
-        "conditions": {
-          "items": [
-            {
-              "items": [
-                "minecraft:stick"
-              ]
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
       "has_the_recipe": {
         "conditions": {
           "recipe": "minecraft:soul_campfire"
@@ -33220,7 +33189,6 @@
     },
     "requirements": [
       [
-        "has_stick",
         "has_soul_sand",
         "has_the_recipe"
       ]
@@ -43449,6 +43417,40 @@
         "impossible"
       ]
     ]
+  },
+  "recipes/tools/brush": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_string": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:string"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:brush"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_string",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:brush"
+      ]
+    }
   },
   "recipes/tools/clock": {
     "parent": "minecraft:recipes/root",
