@@ -377,10 +377,11 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	if 'summary' in exports or 'registries' in exports:
 		registries = dict()
 		contents = dict()
-		with open('generated/reports/registries.json', 'r') as f:
-			for key, data in json.load(f).items():
-				entries = [e.removeprefix('minecraft:') for e in data['entries'].keys()]
-				registries[key.removeprefix('minecraft:')] = sorted(entries)
+		if os.path.isfile('generated/reports/registries.json'):
+			with open('generated/reports/registries.json', 'r') as f:
+				for key, data in json.load(f).items():
+					entries = [e.removeprefix('minecraft:') for e in data['entries'].keys()]
+					registries[key.removeprefix('minecraft:')] = sorted(entries)
 
 		def add_file_registry(id: str, path: str, ext: str = 'json'):
 			files = glob.glob(f'{path}/**/*.{ext}', recursive=True)
@@ -432,12 +433,13 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	# === simplify blocks report ===
 	if 'summary' in exports:
 		blocks = dict()
-		with open('generated/reports/blocks.json', 'r') as f:
-			for key, data in json.load(f).items():
-				properties = data.get('properties')
-				if properties:
-					default = next(s.get('properties') for s in data['states'] if s.get('default'))
-					blocks[key.removeprefix('minecraft:')] = (properties, default)
+		if os.path.isfile('generated/reports/blocks.json'):
+			with open('generated/reports/blocks.json', 'r') as f:
+				for key, data in json.load(f).items():
+					properties = data.get('properties')
+					if properties:
+						default = next(s.get('properties') for s in data['states'] if s.get('default'))
+						blocks[key.removeprefix('minecraft:')] = (properties, default)
 
 	# === download resources ===
 	def get_resource(hash: str):
@@ -476,8 +478,10 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 
 	# === read commands report ===
 	if 'summary' in exports:
-		with open('generated/reports/commands.json', 'r') as f:
-			commands = json.load(f)
+		commands = dict()
+		if os.path.isfile('generated/reports/commands.json'):
+			with open('generated/reports/commands.json', 'r') as f:
+				commands = json.load(f)
 
 	# === export summary ===
 	def create_summary(data, path, clear=True, bin=True):
