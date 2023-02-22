@@ -1,0 +1,29 @@
+{
+  "type": "literal",
+  "children": {
+    "allowCommands": {
+      "type": "argument",
+      "children": {
+        "gamemode": {
+          "type": "argument",
+          "children": {
+            "port": {
+              "type": "argument",
+              "executable": true,
+              "parser": "brigadier:integer",
+              "properties": {
+                "max": 65535,
+                "min": 0
+              }
+            }
+          },
+          "executable": true,
+          "parser": "minecraft:gamemode"
+        }
+      },
+      "executable": true,
+      "parser": "brigadier:bool"
+    }
+  },
+  "executable": true
+}

@@ -1,0 +1,129 @@
+{
+  "type": "literal",
+  "children": {
+    "add": {
+      "type": "literal",
+      "children": {
+        "distance": {
+          "type": "argument",
+          "children": {
+            "time": {
+              "type": "argument",
+              "executable": true,
+              "parser": "brigadier:integer",
+              "properties": {
+                "min": 0
+              }
+            }
+          },
+          "executable": true,
+          "parser": "brigadier:double",
+          "properties": {
+            "max": 59999968.0,
+            "min": -59999968.0
+          }
+        }
+      }
+    },
+    "center": {
+      "type": "literal",
+      "children": {
+        "pos": {
+          "type": "argument",
+          "executable": true,
+          "parser": "minecraft:vec2"
+        }
+      }
+    },
+    "damage": {
+      "type": "literal",
+      "children": {
+        "amount": {
+          "type": "literal",
+          "children": {
+            "damagePerBlock": {
+              "type": "argument",
+              "executable": true,
+              "parser": "brigadier:float",
+              "properties": {
+                "min": 0.0
+              }
+            }
+          }
+        },
+        "buffer": {
+          "type": "literal",
+          "children": {
+            "distance": {
+              "type": "argument",
+              "executable": true,
+              "parser": "brigadier:float",
+              "properties": {
+                "min": 0.0
+              }
+            }
+          }
+        }
+      }
+    },
+    "get": {
+      "type": "literal",
+      "executable": true
+    },
+    "set": {
+      "type": "literal",
+      "children": {
+        "distance": {
+          "type": "argument",
+          "children": {
+            "time": {
+              "type": "argument",
+              "executable": true,
+              "parser": "brigadier:integer",
+              "properties": {
+                "min": 0
+              }
+            }
+          },
+          "executable": true,
+          "parser": "brigadier:double",
+          "properties": {
+            "max": 59999968.0,
+            "min": -59999968.0
+          }
+        }
+      }
+    },
+    "warning": {
+      "type": "literal",
+      "children": {
+        "distance": {
+          "type": "literal",
+          "children": {
+            "distance": {
+              "type": "argument",
+              "executable": true,
+              "parser": "brigadier:integer",
+              "properties": {
+                "min": 0
+              }
+            }
+          }
+        },
+        "time": {
+          "type": "literal",
+          "children": {
+            "time": {
+              "type": "argument",
+              "executable": true,
+              "parser": "brigadier:integer",
+              "properties": {
+                "min": 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

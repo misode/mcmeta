@@ -1,0 +1,253 @@
+{
+  "type": "literal",
+  "children": {
+    "modify": {
+      "type": "literal",
+      "children": {
+        "block": {
+          "type": "literal",
+          "children": {
+            "pos": {
+              "type": "argument",
+              "children": {
+                "slot": {
+                  "type": "argument",
+                  "children": {
+                    "modifier": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "minecraft:resource_location"
+                    }
+                  },
+                  "parser": "minecraft:item_slot"
+                }
+              },
+              "parser": "minecraft:block_pos"
+            }
+          }
+        },
+        "entity": {
+          "type": "literal",
+          "children": {
+            "targets": {
+              "type": "argument",
+              "children": {
+                "slot": {
+                  "type": "argument",
+                  "children": {
+                    "modifier": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "minecraft:resource_location"
+                    }
+                  },
+                  "parser": "minecraft:item_slot"
+                }
+              },
+              "parser": "minecraft:entity",
+              "properties": {
+                "type": "entities",
+                "amount": "multiple"
+              }
+            }
+          }
+        }
+      }
+    },
+    "replace": {
+      "type": "literal",
+      "children": {
+        "block": {
+          "type": "literal",
+          "children": {
+            "pos": {
+              "type": "argument",
+              "children": {
+                "slot": {
+                  "type": "argument",
+                  "children": {
+                    "from": {
+                      "type": "literal",
+                      "children": {
+                        "block": {
+                          "type": "literal",
+                          "children": {
+                            "source": {
+                              "type": "argument",
+                              "children": {
+                                "sourceSlot": {
+                                  "type": "argument",
+                                  "children": {
+                                    "modifier": {
+                                      "type": "argument",
+                                      "executable": true,
+                                      "parser": "minecraft:resource_location"
+                                    }
+                                  },
+                                  "executable": true,
+                                  "parser": "minecraft:item_slot"
+                                }
+                              },
+                              "parser": "minecraft:block_pos"
+                            }
+                          }
+                        },
+                        "entity": {
+                          "type": "literal",
+                          "children": {
+                            "source": {
+                              "type": "argument",
+                              "children": {
+                                "sourceSlot": {
+                                  "type": "argument",
+                                  "children": {
+                                    "modifier": {
+                                      "type": "argument",
+                                      "executable": true,
+                                      "parser": "minecraft:resource_location"
+                                    }
+                                  },
+                                  "executable": true,
+                                  "parser": "minecraft:item_slot"
+                                }
+                              },
+                              "parser": "minecraft:entity",
+                              "properties": {
+                                "type": "entities",
+                                "amount": "single"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "with": {
+                      "type": "literal",
+                      "children": {
+                        "item": {
+                          "type": "argument",
+                          "children": {
+                            "count": {
+                              "type": "argument",
+                              "executable": true,
+                              "parser": "brigadier:integer",
+                              "properties": {
+                                "max": 64,
+                                "min": 1
+                              }
+                            }
+                          },
+                          "executable": true,
+                          "parser": "minecraft:item_stack"
+                        }
+                      }
+                    }
+                  },
+                  "parser": "minecraft:item_slot"
+                }
+              },
+              "parser": "minecraft:block_pos"
+            }
+          }
+        },
+        "entity": {
+          "type": "literal",
+          "children": {
+            "targets": {
+              "type": "argument",
+              "children": {
+                "slot": {
+                  "type": "argument",
+                  "children": {
+                    "from": {
+                      "type": "literal",
+                      "children": {
+                        "block": {
+                          "type": "literal",
+                          "children": {
+                            "source": {
+                              "type": "argument",
+                              "children": {
+                                "sourceSlot": {
+                                  "type": "argument",
+                                  "children": {
+                                    "modifier": {
+                                      "type": "argument",
+                                      "executable": true,
+                                      "parser": "minecraft:resource_location"
+                                    }
+                                  },
+                                  "executable": true,
+                                  "parser": "minecraft:item_slot"
+                                }
+                              },
+                              "parser": "minecraft:block_pos"
+                            }
+                          }
+                        },
+                        "entity": {
+                          "type": "literal",
+                          "children": {
+                            "source": {
+                              "type": "argument",
+                              "children": {
+                                "sourceSlot": {
+                                  "type": "argument",
+                                  "children": {
+                                    "modifier": {
+                                      "type": "argument",
+                                      "executable": true,
+                                      "parser": "minecraft:resource_location"
+                                    }
+                                  },
+                                  "executable": true,
+                                  "parser": "minecraft:item_slot"
+                                }
+                              },
+                              "parser": "minecraft:entity",
+                              "properties": {
+                                "type": "entities",
+                                "amount": "single"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "with": {
+                      "type": "literal",
+                      "children": {
+                        "item": {
+                          "type": "argument",
+                          "children": {
+                            "count": {
+                              "type": "argument",
+                              "executable": true,
+                              "parser": "brigadier:integer",
+                              "properties": {
+                                "max": 64,
+                                "min": 1
+                              }
+                            }
+                          },
+                          "executable": true,
+                          "parser": "minecraft:item_stack"
+                        }
+                      }
+                    }
+                  },
+                  "parser": "minecraft:item_slot"
+                }
+              },
+              "parser": "minecraft:entity",
+              "properties": {
+                "type": "entities",
+                "amount": "multiple"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "type": "literal",
+  "children": {
+    "target": {
+      "type": "argument",
+      "children": {
+        "attribute": {
+          "type": "argument",
+          "children": {
+            "base": {
+              "type": "literal",
+              "children": {
+                "get": {
+                  "type": "literal",
+                  "children": {
+                    "scale": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "brigadier:double"
+                    }
+                  },
+                  "executable": true
+                },
+                "set": {
+                  "type": "literal",
+                  "children": {
+                    "value": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "brigadier:double"
+                    }
+                  }
+                }
+              }
+            },
+            "get": {
+              "type": "literal",
+              "children": {
+                "scale": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "brigadier:double"
+                }
+              },
+              "executable": true
+            },
+            "modifier": {
+              "type": "literal",
+              "children": {
+                "add": {
+                  "type": "literal",
+                  "children": {
+                    "uuid": {
+                      "type": "argument",
+                      "children": {
+                        "name": {
+                          "type": "argument",
+                          "children": {
+                            "value": {
+                              "type": "argument",
+                              "children": {
+                                "add": {
+                                  "type": "literal",
+                                  "executable": true
+                                },
+                                "multiply": {
+                                  "type": "literal",
+                                  "executable": true
+                                },
+                                "multiply_base": {
+                                  "type": "literal",
+                                  "executable": true
+                                }
+                              },
+                              "parser": "brigadier:double"
+                            }
+                          },
+                          "parser": "brigadier:string",
+                          "properties": {
+                            "type": "phrase"
+                          }
+                        }
+                      },
+                      "parser": "minecraft:uuid"
+                    }
+                  }
+                },
+                "remove": {
+                  "type": "literal",
+                  "children": {
+                    "uuid": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "minecraft:uuid"
+                    }
+                  }
+                },
+                "value": {
+                  "type": "literal",
+                  "children": {
+                    "get": {
+                      "type": "literal",
+                      "children": {
+                        "uuid": {
+                          "type": "argument",
+                          "children": {
+                            "scale": {
+                              "type": "argument",
+                              "executable": true,
+                              "parser": "brigadier:double"
+                            }
+                          },
+                          "executable": true,
+                          "parser": "minecraft:uuid"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "parser": "minecraft:resource",
+          "properties": {
+            "registry": "minecraft:attribute"
+          }
+        }
+      },
+      "parser": "minecraft:entity",
+      "properties": {
+        "type": "entities",
+        "amount": "single"
+      }
+    }
+  }
+}

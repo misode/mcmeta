@@ -1,0 +1,223 @@
+{
+  "type": "literal",
+  "children": {
+    "add": {
+      "type": "literal",
+      "children": {
+        "team": {
+          "type": "argument",
+          "children": {
+            "displayName": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:component"
+            }
+          },
+          "executable": true,
+          "parser": "brigadier:string",
+          "properties": {
+            "type": "word"
+          }
+        }
+      }
+    },
+    "empty": {
+      "type": "literal",
+      "children": {
+        "team": {
+          "type": "argument",
+          "executable": true,
+          "parser": "minecraft:team"
+        }
+      }
+    },
+    "join": {
+      "type": "literal",
+      "children": {
+        "team": {
+          "type": "argument",
+          "children": {
+            "members": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:score_holder",
+              "properties": {
+                "amount": "multiple"
+              }
+            }
+          },
+          "executable": true,
+          "parser": "minecraft:team"
+        }
+      }
+    },
+    "leave": {
+      "type": "literal",
+      "children": {
+        "members": {
+          "type": "argument",
+          "executable": true,
+          "parser": "minecraft:score_holder",
+          "properties": {
+            "amount": "multiple"
+          }
+        }
+      }
+    },
+    "list": {
+      "type": "literal",
+      "children": {
+        "team": {
+          "type": "argument",
+          "executable": true,
+          "parser": "minecraft:team"
+        }
+      },
+      "executable": true
+    },
+    "modify": {
+      "type": "literal",
+      "children": {
+        "team": {
+          "type": "argument",
+          "children": {
+            "collisionRule": {
+              "type": "literal",
+              "children": {
+                "always": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "never": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "pushOtherTeams": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "pushOwnTeam": {
+                  "type": "literal",
+                  "executable": true
+                }
+              }
+            },
+            "color": {
+              "type": "literal",
+              "children": {
+                "value": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:color"
+                }
+              }
+            },
+            "deathMessageVisibility": {
+              "type": "literal",
+              "children": {
+                "always": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "hideForOtherTeams": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "hideForOwnTeam": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "never": {
+                  "type": "literal",
+                  "executable": true
+                }
+              }
+            },
+            "displayName": {
+              "type": "literal",
+              "children": {
+                "displayName": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:component"
+                }
+              }
+            },
+            "friendlyFire": {
+              "type": "literal",
+              "children": {
+                "allowed": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "brigadier:bool"
+                }
+              }
+            },
+            "nametagVisibility": {
+              "type": "literal",
+              "children": {
+                "always": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "hideForOtherTeams": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "hideForOwnTeam": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "never": {
+                  "type": "literal",
+                  "executable": true
+                }
+              }
+            },
+            "prefix": {
+              "type": "literal",
+              "children": {
+                "prefix": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:component"
+                }
+              }
+            },
+            "seeFriendlyInvisibles": {
+              "type": "literal",
+              "children": {
+                "allowed": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "brigadier:bool"
+                }
+              }
+            },
+            "suffix": {
+              "type": "literal",
+              "children": {
+                "suffix": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:component"
+                }
+              }
+            }
+          },
+          "parser": "minecraft:team"
+        }
+      }
+    },
+    "remove": {
+      "type": "literal",
+      "children": {
+        "team": {
+          "type": "argument",
+          "executable": true,
+          "parser": "minecraft:team"
+        }
+      }
+    }
+  }
+}

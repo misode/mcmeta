@@ -1,0 +1,70 @@
+{
+  "type": "literal",
+  "children": {
+    "center": {
+      "type": "argument",
+      "children": {
+        "spreadDistance": {
+          "type": "argument",
+          "children": {
+            "maxRange": {
+              "type": "argument",
+              "children": {
+                "respectTeams": {
+                  "type": "argument",
+                  "children": {
+                    "targets": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "minecraft:entity",
+                      "properties": {
+                        "type": "entities",
+                        "amount": "multiple"
+                      }
+                    }
+                  },
+                  "parser": "brigadier:bool"
+                },
+                "under": {
+                  "type": "literal",
+                  "children": {
+                    "maxHeight": {
+                      "type": "argument",
+                      "children": {
+                        "respectTeams": {
+                          "type": "argument",
+                          "children": {
+                            "targets": {
+                              "type": "argument",
+                              "executable": true,
+                              "parser": "minecraft:entity",
+                              "properties": {
+                                "type": "entities",
+                                "amount": "multiple"
+                              }
+                            }
+                          },
+                          "parser": "brigadier:bool"
+                        }
+                      },
+                      "parser": "brigadier:integer"
+                    }
+                  }
+                }
+              },
+              "parser": "brigadier:float",
+              "properties": {
+                "min": 1.0
+              }
+            }
+          },
+          "parser": "brigadier:float",
+          "properties": {
+            "min": 0.0
+          }
+        }
+      },
+      "parser": "minecraft:vec2"
+    }
+  }
+}

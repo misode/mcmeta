@@ -1,0 +1,192 @@
+{
+  "type": "literal",
+  "children": {
+    "add": {
+      "type": "literal",
+      "children": {
+        "id": {
+          "type": "argument",
+          "children": {
+            "name": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:component"
+            }
+          },
+          "parser": "minecraft:resource_location"
+        }
+      }
+    },
+    "get": {
+      "type": "literal",
+      "children": {
+        "id": {
+          "type": "argument",
+          "children": {
+            "max": {
+              "type": "literal",
+              "executable": true
+            },
+            "players": {
+              "type": "literal",
+              "executable": true
+            },
+            "value": {
+              "type": "literal",
+              "executable": true
+            },
+            "visible": {
+              "type": "literal",
+              "executable": true
+            }
+          },
+          "parser": "minecraft:resource_location"
+        }
+      }
+    },
+    "list": {
+      "type": "literal",
+      "executable": true
+    },
+    "remove": {
+      "type": "literal",
+      "children": {
+        "id": {
+          "type": "argument",
+          "executable": true,
+          "parser": "minecraft:resource_location"
+        }
+      }
+    },
+    "set": {
+      "type": "literal",
+      "children": {
+        "id": {
+          "type": "argument",
+          "children": {
+            "color": {
+              "type": "literal",
+              "children": {
+                "blue": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "green": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "pink": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "purple": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "red": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "white": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "yellow": {
+                  "type": "literal",
+                  "executable": true
+                }
+              }
+            },
+            "max": {
+              "type": "literal",
+              "children": {
+                "max": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "brigadier:integer",
+                  "properties": {
+                    "min": 1
+                  }
+                }
+              }
+            },
+            "name": {
+              "type": "literal",
+              "children": {
+                "name": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:component"
+                }
+              }
+            },
+            "players": {
+              "type": "literal",
+              "children": {
+                "targets": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:entity",
+                  "properties": {
+                    "type": "players",
+                    "amount": "multiple"
+                  }
+                }
+              },
+              "executable": true
+            },
+            "style": {
+              "type": "literal",
+              "children": {
+                "notched_10": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "notched_12": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "notched_20": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "notched_6": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "progress": {
+                  "type": "literal",
+                  "executable": true
+                }
+              }
+            },
+            "value": {
+              "type": "literal",
+              "children": {
+                "value": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "brigadier:integer",
+                  "properties": {
+                    "min": 0
+                  }
+                }
+              }
+            },
+            "visible": {
+              "type": "literal",
+              "children": {
+                "visible": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "brigadier:bool"
+                }
+              }
+            }
+          },
+          "parser": "minecraft:resource_location"
+        }
+      }
+    }
+  }
+}

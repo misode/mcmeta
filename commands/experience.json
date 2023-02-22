@@ -1,0 +1,91 @@
+{
+  "type": "literal",
+  "children": {
+    "add": {
+      "type": "literal",
+      "children": {
+        "targets": {
+          "type": "argument",
+          "children": {
+            "amount": {
+              "type": "argument",
+              "children": {
+                "levels": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "points": {
+                  "type": "literal",
+                  "executable": true
+                }
+              },
+              "executable": true,
+              "parser": "brigadier:integer"
+            }
+          },
+          "parser": "minecraft:entity",
+          "properties": {
+            "type": "players",
+            "amount": "multiple"
+          }
+        }
+      }
+    },
+    "query": {
+      "type": "literal",
+      "children": {
+        "targets": {
+          "type": "argument",
+          "children": {
+            "levels": {
+              "type": "literal",
+              "executable": true
+            },
+            "points": {
+              "type": "literal",
+              "executable": true
+            }
+          },
+          "parser": "minecraft:entity",
+          "properties": {
+            "type": "players",
+            "amount": "single"
+          }
+        }
+      }
+    },
+    "set": {
+      "type": "literal",
+      "children": {
+        "targets": {
+          "type": "argument",
+          "children": {
+            "amount": {
+              "type": "argument",
+              "children": {
+                "levels": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "points": {
+                  "type": "literal",
+                  "executable": true
+                }
+              },
+              "executable": true,
+              "parser": "brigadier:integer",
+              "properties": {
+                "min": 0
+              }
+            }
+          },
+          "parser": "minecraft:entity",
+          "properties": {
+            "type": "players",
+            "amount": "multiple"
+          }
+        }
+      }
+    }
+  }
+}
