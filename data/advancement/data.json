@@ -5332,6 +5332,12 @@
         },
         "trigger": "minecraft:placed_block"
       },
+      "torchflower": {
+        "conditions": {
+          "block": "minecraft:torchflower_crop"
+        },
+        "trigger": "minecraft:placed_block"
+      },
       "wheat": {
         "conditions": {
           "block": "minecraft:wheat"
@@ -5360,7 +5366,8 @@
         "pumpkin_stem",
         "melon_stem",
         "beetroots",
-        "nether_wart"
+        "nether_wart",
+        "torchflower"
       ]
     ]
   },
@@ -12731,11 +12738,11 @@
   "recipes/building_blocks/glass": {
     "parent": "minecraft:recipes/root",
     "criteria": {
-      "has_sand": {
+      "has_smelts_to_glass": {
         "conditions": {
           "items": [
             {
-              "tag": "minecraft:sand"
+              "tag": "minecraft:smelts_to_glass"
             }
           ]
         },
@@ -12750,7 +12757,7 @@
     },
     "requirements": [
       [
-        "has_sand",
+        "has_smelts_to_glass",
         "has_the_recipe"
       ]
     ],
@@ -43417,40 +43424,6 @@
         "impossible"
       ]
     ]
-  },
-  "recipes/tools/brush": {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-      "has_string": {
-        "conditions": {
-          "items": [
-            {
-              "items": [
-                "minecraft:string"
-              ]
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "has_the_recipe": {
-        "conditions": {
-          "recipe": "minecraft:brush"
-        },
-        "trigger": "minecraft:recipe_unlocked"
-      }
-    },
-    "requirements": [
-      [
-        "has_string",
-        "has_the_recipe"
-      ]
-    ],
-    "rewards": {
-      "recipes": [
-        "minecraft:brush"
-      ]
-    }
   },
   "recipes/tools/clock": {
     "parent": "minecraft:recipes/root",
