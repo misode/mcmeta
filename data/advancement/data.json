@@ -66,6 +66,22 @@
         },
         "trigger": "minecraft:location"
       },
+      "minecraft:cherry_grove": {
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "location": {
+                  "biome": "minecraft:cherry_grove"
+                }
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:location"
+      },
       "minecraft:cold_ocean": {
         "conditions": {
           "player": [
@@ -863,6 +879,9 @@
       ],
       [
         "minecraft:birch_forest"
+      ],
+      [
+        "minecraft:cherry_grove"
       ],
       [
         "minecraft:cold_ocean"
@@ -4309,6 +4328,20 @@
         },
         "trigger": "minecraft:bred_animals"
       },
+      "minecraft:camel": {
+        "conditions": {
+          "child": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:camel"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:bred_animals"
+      },
       "minecraft:cat": {
         "conditions": {
           "child": [
@@ -4556,6 +4589,20 @@
         },
         "trigger": "minecraft:bred_animals"
       },
+      "minecraft:sniffer": {
+        "conditions": {
+          "child": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:sniffer"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:bred_animals"
+      },
       "minecraft:strider": {
         "conditions": {
           "child": [
@@ -4683,6 +4730,12 @@
       ],
       [
         "minecraft:axolotl"
+      ],
+      [
+        "minecraft:camel"
+      ],
+      [
+        "minecraft:sniffer"
       ],
       [
         "minecraft:turtle"
@@ -7641,6 +7694,208 @@
       ]
     }
   },
+  "recipes/building_blocks/bamboo_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_bamboo": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:bamboo"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bamboo_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_bamboo",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bamboo_block"
+      ]
+    }
+  },
+  "recipes/building_blocks/bamboo_mosaic_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_bamboo_mosaic": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:bamboo_mosaic"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bamboo_mosaic_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_bamboo_mosaic",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bamboo_mosaic_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/bamboo_mosaic_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_bamboo_mosaic": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:bamboo_mosaic"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bamboo_mosaic_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_bamboo_mosaic",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bamboo_mosaic_stairs"
+      ]
+    }
+  },
+  "recipes/building_blocks/bamboo_planks": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_logs": {
+        "conditions": {
+          "items": [
+            {
+              "tag": "minecraft:bamboo_blocks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bamboo_planks"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_logs",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bamboo_planks"
+      ]
+    }
+  },
+  "recipes/building_blocks/bamboo_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:bamboo_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bamboo_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bamboo_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/bamboo_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:bamboo_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bamboo_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bamboo_stairs"
+      ]
+    }
+  },
   "recipes/building_blocks/birch_planks": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -8627,6 +8882,174 @@
     "rewards": {
       "recipes": [
         "minecraft:brown_wool"
+      ]
+    }
+  },
+  "recipes/building_blocks/cherry_planks": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_log": {
+        "conditions": {
+          "items": [
+            {
+              "tag": "minecraft:cherry_logs"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cherry_planks"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_log",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cherry_planks"
+      ]
+    }
+  },
+  "recipes/building_blocks/cherry_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:cherry_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cherry_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cherry_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/cherry_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:cherry_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cherry_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cherry_stairs"
+      ]
+    }
+  },
+  "recipes/building_blocks/cherry_wood": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_log": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:cherry_log"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cherry_wood"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_log",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cherry_wood"
+      ]
+    }
+  },
+  "recipes/building_blocks/chiseled_bookshelf": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_book": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:book"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:chiseled_bookshelf"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_book",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:chiseled_bookshelf"
       ]
     }
   },
@@ -21133,6 +21556,40 @@
       ]
     }
   },
+  "recipes/building_blocks/stripped_cherry_wood": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_log": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:stripped_cherry_log"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:stripped_cherry_wood"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_log",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:stripped_cherry_wood"
+      ]
+    }
+  },
   "recipes/building_blocks/stripped_crimson_hyphae": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -24934,6 +25391,40 @@
       ]
     }
   },
+  "recipes/decorations/acacia_hanging_sign": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_stripped_logs": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:stripped_acacia_log"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:acacia_hanging_sign"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_stripped_logs",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:acacia_hanging_sign"
+      ]
+    }
+  },
   "recipes/decorations/acacia_sign": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -25104,6 +25595,142 @@
       ]
     }
   },
+  "recipes/decorations/bamboo_fence": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:bamboo_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bamboo_fence"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bamboo_fence"
+      ]
+    }
+  },
+  "recipes/decorations/bamboo_hanging_sign": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_stripped_logs": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:stripped_bamboo_block"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bamboo_hanging_sign"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_stripped_logs",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bamboo_hanging_sign"
+      ]
+    }
+  },
+  "recipes/decorations/bamboo_mosaic": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_bamboo_slab": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:bamboo_slab"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bamboo_mosaic"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_bamboo_slab",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bamboo_mosaic"
+      ]
+    }
+  },
+  "recipes/decorations/bamboo_sign": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:bamboo_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bamboo_sign"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bamboo_sign"
+      ]
+    }
+  },
   "recipes/decorations/barrel": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -25212,6 +25839,40 @@
     "rewards": {
       "recipes": [
         "minecraft:birch_fence"
+      ]
+    }
+  },
+  "recipes/decorations/birch_hanging_sign": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_stripped_logs": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:stripped_birch_log"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:birch_hanging_sign"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_stripped_logs",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:birch_hanging_sign"
       ]
     }
   },
@@ -26588,6 +27249,108 @@
       ]
     }
   },
+  "recipes/decorations/cherry_fence": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:cherry_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cherry_fence"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cherry_fence"
+      ]
+    }
+  },
+  "recipes/decorations/cherry_hanging_sign": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_stripped_logs": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:stripped_cherry_log"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cherry_hanging_sign"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_stripped_logs",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cherry_hanging_sign"
+      ]
+    }
+  },
+  "recipes/decorations/cherry_sign": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:cherry_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cherry_sign"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cherry_sign"
+      ]
+    }
+  },
   "recipes/decorations/chest": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -26845,6 +27608,40 @@
     "rewards": {
       "recipes": [
         "minecraft:crimson_fence"
+      ]
+    }
+  },
+  "recipes/decorations/crimson_hanging_sign": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_stripped_logs": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:stripped_crimson_stem"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:crimson_hanging_sign"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_stripped_logs",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:crimson_hanging_sign"
       ]
     }
   },
@@ -27248,6 +28045,40 @@
       ]
     }
   },
+  "recipes/decorations/dark_oak_hanging_sign": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_stripped_logs": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:stripped_dark_oak_log"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dark_oak_hanging_sign"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_stripped_logs",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dark_oak_hanging_sign"
+      ]
+    }
+  },
   "recipes/decorations/dark_oak_sign": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -27279,6 +28110,38 @@
     "rewards": {
       "recipes": [
         "minecraft:dark_oak_sign"
+      ]
+    }
+  },
+  "recipes/decorations/decorated_pot_simple": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_brick": {
+        "conditions": {
+          "items": [
+            {
+              "tag": "minecraft:decorated_pot_shards"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:decorated_pot_simple"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_brick",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:decorated_pot_simple"
       ]
     }
   },
@@ -29011,6 +29874,40 @@
       ]
     }
   },
+  "recipes/decorations/jungle_hanging_sign": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_stripped_logs": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:stripped_jungle_log"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:jungle_hanging_sign"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_stripped_logs",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:jungle_hanging_sign"
+      ]
+    }
+  },
   "recipes/decorations/jungle_sign": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -30556,6 +31453,40 @@
       ]
     }
   },
+  "recipes/decorations/mangrove_hanging_sign": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_stripped_logs": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:stripped_mangrove_log"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:mangrove_hanging_sign"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_stripped_logs",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:mangrove_hanging_sign"
+      ]
+    }
+  },
   "recipes/decorations/mangrove_sign": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -30961,6 +31892,40 @@
     "rewards": {
       "recipes": [
         "minecraft:oak_fence"
+      ]
+    }
+  },
+  "recipes/decorations/oak_hanging_sign": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_stripped_logs": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:stripped_oak_log"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:oak_hanging_sign"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_stripped_logs",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:oak_hanging_sign"
       ]
     }
   },
@@ -33306,6 +34271,40 @@
       ]
     }
   },
+  "recipes/decorations/spruce_hanging_sign": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_stripped_logs": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:stripped_spruce_log"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:spruce_hanging_sign"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_stripped_logs",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:spruce_hanging_sign"
+      ]
+    }
+  },
   "recipes/decorations/spruce_sign": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -33541,6 +34540,40 @@
     "rewards": {
       "recipes": [
         "minecraft:warped_fence"
+      ]
+    }
+  },
+  "recipes/decorations/warped_hanging_sign": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_stripped_logs": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:stripped_warped_stem"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:warped_hanging_sign"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_stripped_logs",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:warped_hanging_sign"
       ]
     }
   },
@@ -36141,6 +37174,74 @@
       ]
     }
   },
+  "recipes/misc/coast_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_coast_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:coast_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:coast_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_coast_armor_trim_smithing_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:coast_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/coast_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:coast_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:coast_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_smithing_trim_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:coast_armor_trim_smithing_template_smithing_trim"
+      ]
+    }
+  },
   "recipes/misc/conduit": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -36541,6 +37642,40 @@
       ]
     }
   },
+  "recipes/misc/cyan_dye_from_pitcher_plant": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_pitcher_plant": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:pitcher_plant"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cyan_dye_from_pitcher_plant"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_pitcher_plant",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cyan_dye_from_pitcher_plant"
+      ]
+    }
+  },
   "recipes/misc/diamond": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -36708,6 +37843,74 @@
     "rewards": {
       "recipes": [
         "minecraft:diamond_from_smelting_diamond_ore"
+      ]
+    }
+  },
+  "recipes/misc/dune_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dune_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:dune_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dune_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_dune_armor_trim_smithing_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dune_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/dune_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:dune_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dune_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_smithing_trim_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dune_armor_trim_smithing_template_smithing_trim"
       ]
     }
   },
@@ -36912,6 +38115,74 @@
     "rewards": {
       "recipes": [
         "minecraft:ender_eye"
+      ]
+    }
+  },
+  "recipes/misc/eye_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_eye_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:eye_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:eye_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_eye_armor_trim_smithing_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:eye_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/eye_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:eye_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:eye_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_smithing_trim_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:eye_armor_trim_smithing_template_smithing_trim"
       ]
     }
   },
@@ -37771,6 +39042,74 @@
     "rewards": {
       "recipes": [
         "minecraft:green_dye"
+      ]
+    }
+  },
+  "recipes/misc/host_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_host_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:host_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:host_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_host_armor_trim_smithing_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:host_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/host_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:host_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:host_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_smithing_trim_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:host_armor_trim_smithing_template_smithing_trim"
       ]
     }
   },
@@ -39623,6 +40962,40 @@
       ]
     }
   },
+  "recipes/misc/netherite_upgrade_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_netherite_upgrade_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:netherite_upgrade_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:netherite_upgrade_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_netherite_upgrade_smithing_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:netherite_upgrade_smithing_template"
+      ]
+    }
+  },
   "recipes/misc/orange_dye_from_orange_tulip": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -39704,6 +41077,40 @@
       ]
     }
   },
+  "recipes/misc/orange_dye_from_torchflower": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:orange_dye_from_torchflower"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_torchflower": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:torchflower"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_torchflower",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:orange_dye_from_torchflower"
+      ]
+    }
+  },
   "recipes/misc/paper": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -39769,6 +41176,40 @@
     "rewards": {
       "recipes": [
         "minecraft:pink_dye_from_peony"
+      ]
+    }
+  },
+  "recipes/misc/pink_dye_from_pink_petals": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_pink_petals": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:pink_petals"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:pink_dye_from_pink_petals"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_pink_petals",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:pink_dye_from_pink_petals"
       ]
     }
   },
@@ -40036,6 +41477,74 @@
       ]
     }
   },
+  "recipes/misc/raiser_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_raiser_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:raiser_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:raiser_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_raiser_armor_trim_smithing_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:raiser_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/raiser_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:raiser_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:raiser_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_smithing_trim_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:raiser_armor_trim_smithing_template_smithing_trim"
+      ]
+    }
+  },
   "recipes/misc/raw_copper": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -40274,6 +41783,278 @@
       ]
     }
   },
+  "recipes/misc/rib_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_rib_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:rib_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:rib_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_rib_armor_trim_smithing_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:rib_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/rib_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:rib_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:rib_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_smithing_trim_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:rib_armor_trim_smithing_template_smithing_trim"
+      ]
+    }
+  },
+  "recipes/misc/sentry_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_sentry_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:sentry_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:sentry_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_sentry_armor_trim_smithing_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:sentry_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/sentry_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:sentry_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:sentry_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_smithing_trim_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:sentry_armor_trim_smithing_template_smithing_trim"
+      ]
+    }
+  },
+  "recipes/misc/shaper_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_shaper_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:shaper_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:shaper_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_shaper_armor_trim_smithing_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:shaper_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/shaper_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:shaper_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:shaper_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_smithing_trim_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:shaper_armor_trim_smithing_template_smithing_trim"
+      ]
+    }
+  },
+  "recipes/misc/silence_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_silence_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:silence_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:silence_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_silence_armor_trim_smithing_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:silence_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/silence_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:silence_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:silence_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_smithing_trim_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:silence_armor_trim_smithing_template_smithing_trim"
+      ]
+    }
+  },
   "recipes/misc/skull_banner_pattern": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -40339,6 +42120,142 @@
     "rewards": {
       "recipes": [
         "minecraft:slime_ball"
+      ]
+    }
+  },
+  "recipes/misc/snout_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_snout_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:snout_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:snout_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_snout_armor_trim_smithing_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:snout_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/snout_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:snout_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:snout_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_smithing_trim_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:snout_armor_trim_smithing_template_smithing_trim"
+      ]
+    }
+  },
+  "recipes/misc/spire_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_spire_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:spire_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:spire_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_spire_armor_trim_smithing_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:spire_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/spire_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:spire_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:spire_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_smithing_trim_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:spire_armor_trim_smithing_template_smithing_trim"
       ]
     }
   },
@@ -40476,6 +42393,278 @@
       ]
     }
   },
+  "recipes/misc/tide_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tide_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tide_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:tide_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_tide_armor_trim_smithing_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tide_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/tide_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:tide_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tide_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_smithing_trim_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tide_armor_trim_smithing_template_smithing_trim"
+      ]
+    }
+  },
+  "recipes/misc/vex_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:vex_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_vex_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:vex_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_vex_armor_trim_smithing_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:vex_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/vex_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:vex_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:vex_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_smithing_trim_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:vex_armor_trim_smithing_template_smithing_trim"
+      ]
+    }
+  },
+  "recipes/misc/ward_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:ward_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_ward_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:ward_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_ward_armor_trim_smithing_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:ward_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/ward_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:ward_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:ward_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_smithing_trim_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:ward_armor_trim_smithing_template_smithing_trim"
+      ]
+    }
+  },
+  "recipes/misc/wayfinder_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:wayfinder_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_wayfinder_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:wayfinder_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_wayfinder_armor_trim_smithing_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:wayfinder_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/wayfinder_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:wayfinder_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:wayfinder_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_smithing_trim_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:wayfinder_armor_trim_smithing_template_smithing_trim"
+      ]
+    }
+  },
   "recipes/misc/wheat": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -40575,6 +42764,74 @@
     "rewards": {
       "recipes": [
         "minecraft:white_dye_from_lily_of_the_valley"
+      ]
+    }
+  },
+  "recipes/misc/wild_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:wild_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_wild_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:wild_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_wild_armor_trim_smithing_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:wild_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/wild_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:wild_armor_trim_smithing_template"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:wild_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_smithing_trim_template",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:wild_armor_trim_smithing_template_smithing_trim"
       ]
     }
   },
@@ -40850,6 +43107,176 @@
       ]
     }
   },
+  "recipes/redstone/bamboo_button": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:bamboo_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bamboo_button"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bamboo_button"
+      ]
+    }
+  },
+  "recipes/redstone/bamboo_door": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:bamboo_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bamboo_door"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bamboo_door"
+      ]
+    }
+  },
+  "recipes/redstone/bamboo_fence_gate": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:bamboo_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bamboo_fence_gate"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bamboo_fence_gate"
+      ]
+    }
+  },
+  "recipes/redstone/bamboo_pressure_plate": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:bamboo_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bamboo_pressure_plate"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bamboo_pressure_plate"
+      ]
+    }
+  },
+  "recipes/redstone/bamboo_trapdoor": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:bamboo_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bamboo_trapdoor"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bamboo_trapdoor"
+      ]
+    }
+  },
   "recipes/redstone/birch_button": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -41017,6 +43444,210 @@
     "rewards": {
       "recipes": [
         "minecraft:birch_trapdoor"
+      ]
+    }
+  },
+  "recipes/redstone/calibrated_sculk_sensor": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_amethyst_shard": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:amethyst_shard"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:calibrated_sculk_sensor"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_amethyst_shard",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:calibrated_sculk_sensor"
+      ]
+    }
+  },
+  "recipes/redstone/cherry_button": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:cherry_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cherry_button"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cherry_button"
+      ]
+    }
+  },
+  "recipes/redstone/cherry_door": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:cherry_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cherry_door"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cherry_door"
+      ]
+    }
+  },
+  "recipes/redstone/cherry_fence_gate": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:cherry_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cherry_fence_gate"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cherry_fence_gate"
+      ]
+    }
+  },
+  "recipes/redstone/cherry_pressure_plate": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:cherry_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cherry_pressure_plate"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cherry_pressure_plate"
+      ]
+    }
+  },
+  "recipes/redstone/cherry_trapdoor": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:cherry_planks"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cherry_trapdoor"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_planks",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cherry_trapdoor"
       ]
     }
   },
@@ -43425,6 +46056,40 @@
       ]
     ]
   },
+  "recipes/tools/brush": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_ingot": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:copper_ingot"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:brush"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_copper_ingot",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:brush"
+      ]
+    }
+  },
   "recipes/tools/clock": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -44612,6 +47277,66 @@
       ]
     }
   },
+  "recipes/transportation/bamboo_chest_raft": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_boat": {
+        "conditions": {
+          "items": [
+            {
+              "tag": "minecraft:boats"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bamboo_chest_raft"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_boat",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bamboo_chest_raft"
+      ]
+    }
+  },
+  "recipes/transportation/bamboo_raft": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bamboo_raft"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "in_water": {
+        "conditions": {
+          "block": "minecraft:water"
+        },
+        "trigger": "minecraft:enter_block"
+      }
+    },
+    "requirements": [
+      [
+        "in_water",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bamboo_raft"
+      ]
+    }
+  },
   "recipes/transportation/birch_boat": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -44703,6 +47428,66 @@
     "rewards": {
       "recipes": [
         "minecraft:carrot_on_a_stick"
+      ]
+    }
+  },
+  "recipes/transportation/cherry_boat": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cherry_boat"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "in_water": {
+        "conditions": {
+          "block": "minecraft:water"
+        },
+        "trigger": "minecraft:enter_block"
+      }
+    },
+    "requirements": [
+      [
+        "in_water",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cherry_boat"
+      ]
+    }
+  },
+  "recipes/transportation/cherry_chest_boat": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_boat": {
+        "conditions": {
+          "items": [
+            {
+              "tag": "minecraft:boats"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cherry_chest_boat"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_boat",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cherry_chest_boat"
       ]
     }
   },
