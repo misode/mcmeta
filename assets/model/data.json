@@ -31797,6 +31797,7 @@
   "block/potted_azalea_bush": {
     "parent": "minecraft:block/template_potted_azalea_bush",
     "textures": {
+      "plant": "minecraft:block/potted_azalea_bush_plant",
       "side": "minecraft:block/potted_azalea_bush_side",
       "top": "minecraft:block/potted_azalea_bush_top"
     }
@@ -32358,6 +32359,7 @@
   "block/potted_flowering_azalea_bush": {
     "parent": "minecraft:block/template_potted_azalea_bush",
     "textures": {
+      "plant": "minecraft:block/potted_flowering_azalea_bush_plant",
       "side": "minecraft:block/potted_flowering_azalea_bush_side",
       "top": "minecraft:block/potted_flowering_azalea_bush_top"
     }
@@ -40877,13 +40879,8 @@
     }
   },
   "block/sniffer_egg": {
-    "parent": "block/block",
-    "texture_size": [
-      40,
-      32
-    ],
     "textures": {
-      "particle": "#all"
+      "particle": "#north"
     },
     "elements": [
       {
@@ -40902,55 +40899,57 @@
             "uv": [
               0,
               0,
-              5.6,
-              8
+              14,
+              16
             ],
-            "texture": "#all"
+            "texture": "#north"
           },
           "east": {
             "uv": [
-              5.6,
-              8,
-              10.4,
+              0,
+              0,
+              12,
               16
             ],
-            "texture": "#all"
+            "texture": "#east"
           },
           "south": {
             "uv": [
               0,
-              8,
-              5.6,
+              0,
+              14,
               16
             ],
-            "texture": "#all"
+            "texture": "#south"
           },
           "west": {
             "uv": [
-              5.6,
               0,
-              10.4,
-              8
+              0,
+              12,
+              16
             ],
-            "texture": "#all"
+            "texture": "#west"
           },
           "up": {
             "uv": [
-              16,
-              6,
-              10.4,
-              0
+              0,
+              0,
+              14,
+              12
             ],
-            "texture": "#all"
+            "texture": "#top",
+            "cullface": "up"
           },
           "down": {
             "uv": [
-              16,
-              6,
-              10.4,
+              0,
+              0,
+              14,
               12
             ],
-            "texture": "#all"
+            "texture": "#bottom",
+            "cullface": "down"
           }
         }
       }
@@ -40959,19 +40958,34 @@
   "block/sniffer_egg_not_cracked": {
     "parent": "minecraft:block/sniffer_egg",
     "textures": {
-      "all": "minecraft:block/sniffer_egg_not_cracked"
+      "bottom": "minecraft:block/sniffer_egg_not_cracked_bottom",
+      "east": "minecraft:block/sniffer_egg_not_cracked_east",
+      "north": "minecraft:block/sniffer_egg_not_cracked_north",
+      "south": "minecraft:block/sniffer_egg_not_cracked_south",
+      "top": "minecraft:block/sniffer_egg_not_cracked_top",
+      "west": "minecraft:block/sniffer_egg_not_cracked_west"
     }
   },
   "block/sniffer_egg_slightly_cracked": {
     "parent": "minecraft:block/sniffer_egg",
     "textures": {
-      "all": "minecraft:block/sniffer_egg_slightly_cracked"
+      "bottom": "minecraft:block/sniffer_egg_slightly_cracked_bottom",
+      "east": "minecraft:block/sniffer_egg_slightly_cracked_east",
+      "north": "minecraft:block/sniffer_egg_slightly_cracked_north",
+      "south": "minecraft:block/sniffer_egg_slightly_cracked_south",
+      "top": "minecraft:block/sniffer_egg_slightly_cracked_top",
+      "west": "minecraft:block/sniffer_egg_slightly_cracked_west"
     }
   },
   "block/sniffer_egg_very_cracked": {
     "parent": "minecraft:block/sniffer_egg",
     "textures": {
-      "all": "minecraft:block/sniffer_egg_very_cracked"
+      "bottom": "minecraft:block/sniffer_egg_very_cracked_bottom",
+      "east": "minecraft:block/sniffer_egg_very_cracked_east",
+      "north": "minecraft:block/sniffer_egg_very_cracked_north",
+      "south": "minecraft:block/sniffer_egg_very_cracked_south",
+      "top": "minecraft:block/sniffer_egg_very_cracked_top",
+      "west": "minecraft:block/sniffer_egg_very_cracked_west"
     }
   },
   "block/snow_block": {
@@ -54509,8 +54523,7 @@
     "textures": {
       "particle": "block/flower_pot",
       "flowerpot": "block/flower_pot",
-      "dirt": "block/dirt",
-      "azalea_plant": "block/potted_azalea_bush_plant"
+      "dirt": "block/dirt"
     },
     "elements": [
       {
@@ -54976,7 +54989,7 @@
               16,
               16
             ],
-            "texture": "#azalea_plant"
+            "texture": "#plant"
           },
           "south": {
             "uv": [
@@ -54985,7 +54998,7 @@
               16,
               16
             ],
-            "texture": "#azalea_plant"
+            "texture": "#plant"
           }
         }
       },
@@ -55018,7 +55031,7 @@
               16,
               16
             ],
-            "texture": "#azalea_plant"
+            "texture": "#plant"
           },
           "east": {
             "uv": [
@@ -55027,7 +55040,7 @@
               16,
               16
             ],
-            "texture": "#azalea_plant"
+            "texture": "#plant"
           }
         }
       }
@@ -58790,12 +58803,6 @@
     "parent": "minecraft:block/cross",
     "textures": {
       "cross": "minecraft:block/torchflower_crop_stage1"
-    }
-  },
-  "block/torchflower_crop_stage2": {
-    "parent": "minecraft:block/cross",
-    "textures": {
-      "cross": "minecraft:block/torchflower_crop_stage2"
     }
   },
   "block/tripwire_attached_n": {
@@ -64616,7 +64623,7 @@
         ],
         "translation": [
           0,
-          0.5,
+          4,
           0
         ],
         "scale": [
@@ -64633,7 +64640,7 @@
         ],
         "translation": [
           0,
-          0.5,
+          4,
           0
         ],
         "scale": [
@@ -64694,8 +64701,8 @@
           0
         ],
         "translation": [
-          0,
-          0.5,
+          4,
+          2,
           0
         ],
         "scale": [
@@ -64711,8 +64718,8 @@
           0
         ],
         "translation": [
-          0,
-          0.5,
+          -4,
+          2,
           0
         ],
         "scale": [
@@ -64754,7 +64761,7 @@
         ],
         "translation": [
           0,
-          0.5,
+          4,
           0
         ],
         "scale": [
@@ -64771,7 +64778,7 @@
         ],
         "translation": [
           0,
-          0.5,
+          4,
           0
         ],
         "scale": [
@@ -64812,8 +64819,8 @@
           90
         ],
         "translation": [
-          0,
-          0.5,
+          -4,
+          2,
           0
         ],
         "scale": [
@@ -64829,8 +64836,8 @@
           -90
         ],
         "translation": [
-          0,
-          0.5,
+          4,
+          2,
           0
         ],
         "scale": [
@@ -67795,7 +67802,7 @@
         "translation": [
           0,
           16,
-          7
+          0
         ],
         "scale": [
           1.5,

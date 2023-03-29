@@ -4591,7 +4591,16 @@
       },
       "minecraft:sniffer": {
         "conditions": {
-          "child": [
+          "parent": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:sniffer"
+              }
+            }
+          ],
+          "partner": [
             {
               "condition": "minecraft:entity_properties",
               "entity": "this",
@@ -4735,13 +4744,13 @@
         "minecraft:camel"
       ],
       [
-        "minecraft:sniffer"
-      ],
-      [
         "minecraft:turtle"
       ],
       [
         "minecraft:frog"
+      ],
+      [
+        "minecraft:sniffer"
       ]
     ],
     "rewards": {
@@ -5379,6 +5388,12 @@
         },
         "trigger": "minecraft:placed_block"
       },
+      "pitcher_pod": {
+        "conditions": {
+          "block": "minecraft:pitcher_crop"
+        },
+        "trigger": "minecraft:placed_block"
+      },
       "pumpkin_stem": {
         "conditions": {
           "block": "minecraft:pumpkin_stem"
@@ -5420,7 +5435,8 @@
         "melon_stem",
         "beetroots",
         "nether_wart",
-        "torchflower"
+        "torchflower",
+        "pitcher_pod"
       ]
     ]
   },
