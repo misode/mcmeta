@@ -292,7 +292,16 @@
     },
     "minecraft:sniffer": {
       "conditions": {
-        "child": [
+        "parent": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:sniffer"
+            }
+          }
+        ],
+        "partner": [
           {
             "condition": "minecraft:entity_properties",
             "entity": "this",
@@ -436,13 +445,13 @@
       "minecraft:camel"
     ],
     [
-      "minecraft:sniffer"
-    ],
-    [
       "minecraft:turtle"
     ],
     [
       "minecraft:frog"
+    ],
+    [
+      "minecraft:sniffer"
     ]
   ],
   "rewards": {
