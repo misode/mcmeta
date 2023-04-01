@@ -3210,6 +3210,106 @@
       ]
     ]
   },
+  "adventure/vote_1": {
+    "parent": "minecraft:adventure/root",
+    "criteria": {
+      "vote_1": {
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "stats": [
+                    {
+                      "type": "minecraft:custom",
+                      "stat": "minecraft:votes",
+                      "value": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:voted"
+      }
+    },
+    "display": {
+      "announce_to_chat": true,
+      "description": {
+        "translate": "advancements.adventure.vote_1.description"
+      },
+      "frame": "goal",
+      "hidden": false,
+      "icon": {
+        "item": "minecraft:firework_rocket"
+      },
+      "show_toast": true,
+      "title": {
+        "translate": "advancements.adventure.vote_1.title"
+      }
+    },
+    "requirements": [
+      [
+        "vote_1"
+      ]
+    ]
+  },
+  "adventure/vote_256": {
+    "parent": "minecraft:adventure/root",
+    "criteria": {
+      "vote_256": {
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "stats": [
+                    {
+                      "type": "minecraft:custom",
+                      "stat": "minecraft:votes",
+                      "value": {
+                        "min": 256
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:voted"
+      }
+    },
+    "display": {
+      "announce_to_chat": true,
+      "description": {
+        "translate": "advancements.adventure.vote_256.description"
+      },
+      "frame": "goal",
+      "hidden": false,
+      "icon": {
+        "item": "minecraft:poisonous_potato"
+      },
+      "show_toast": true,
+      "title": {
+        "translate": "advancements.adventure.vote_256.title"
+      }
+    },
+    "requirements": [
+      [
+        "vote_256"
+      ]
+    ]
+  },
   "adventure/walk_on_powder_snow_with_leather_boots": {
     "parent": "minecraft:adventure/sleep_in_bed",
     "criteria": {
@@ -7202,6 +7302,40 @@
       ]
     }
   },
+  "recipes/brewing/copper_sink": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:copper_block"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:copper_sink"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_copper",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:copper_sink"
+      ]
+    }
+  },
   "recipes/brewing/fermented_spider_eye": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -7503,6 +7637,40 @@
     "rewards": {
       "recipes": [
         "minecraft:acacia_wood"
+      ]
+    }
+  },
+  "recipes/building_blocks/air_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_glass_bottle": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:glass_bottle"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:air_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_glass_bottle",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:air_block"
       ]
     }
   },
@@ -16215,6 +16383,40 @@
       ]
     }
   },
+  "recipes/building_blocks/packed_air": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_air_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:air_block"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:packed_air"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_air_block",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:packed_air"
+      ]
+    }
+  },
   "recipes/building_blocks/packed_ice": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -24457,6 +24659,40 @@
       ]
     }
   },
+  "recipes/combat/diamond_drows": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_diamond": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:diamond"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:diamond_drows"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_diamond",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:diamond_drows"
+      ]
+    }
+  },
   "recipes/combat/diamond_helmet": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -25336,6 +25572,40 @@
     "rewards": {
       "recipes": [
         "minecraft:turtle_helmet"
+      ]
+    }
+  },
+  "recipes/combat/wob": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_string": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:string"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:wob"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_string",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:wob"
       ]
     }
   },
@@ -40437,6 +40707,40 @@
       ]
     }
   },
+  "recipes/misc/m_banner_pattern": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:m_banner_pattern"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "is_sus": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:suspicious_sand"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "is_sus",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:m_banner_pattern"
+      ]
+    }
+  },
   "recipes/misc/magenta_dye_from_allium": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -42341,6 +42645,40 @@
       ]
     }
   },
+  "recipes/misc/string_concatenation": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_a_bucket_full_of_shut_up": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:air"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:string_concatenation"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_a_bucket_full_of_shut_up",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:string_concatenation"
+      ]
+    }
+  },
   "recipes/misc/sugar_from_honey_bottle": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -43463,6 +43801,74 @@
       ]
     }
   },
+  "recipes/redstone/bit_from_name_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_name": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:name"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bit_from_name_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_name",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bit_from_name_stonecutting"
+      ]
+    }
+  },
+  "recipes/redstone/bit_from_tag_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_tag": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:tag"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bit_from_tag_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_tag",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bit_from_tag_stonecutting"
+      ]
+    }
+  },
   "recipes/redstone/calibrated_sculk_sensor": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -44517,6 +44923,74 @@
       ]
     }
   },
+  "recipes/redstone/left_curly": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_bit": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:bit"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:left_curly"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_bit",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:left_curly"
+      ]
+    }
+  },
+  "recipes/redstone/left_square": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_bit": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:bit"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:left_square"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_bit",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:left_square"
+      ]
+    }
+  },
   "recipes/redstone/lever": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -44789,6 +45263,40 @@
       ]
     }
   },
+  "recipes/redstone/name_from_name_tag_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_name_tag": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:name_tag"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:name_from_name_tag_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_name_tag",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:name_from_name_tag_stonecutting"
+      ]
+    }
+  },
   "recipes/redstone/note_block": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -45027,6 +45535,38 @@
       ]
     }
   },
+  "recipes/redstone/pickaxe_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_pickaxe": {
+        "conditions": {
+          "items": [
+            {
+              "tag": "minecraft:pickaxes"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:pickaxe_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_pickaxe",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:pickaxe_block"
+      ]
+    }
+  },
   "recipes/redstone/piston": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -45058,6 +45598,40 @@
     "rewards": {
       "recipes": [
         "minecraft:piston"
+      ]
+    }
+  },
+  "recipes/redstone/place_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_hopper": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:hopper"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:place_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_hopper",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:place_block"
       ]
     }
   },
@@ -45435,6 +46009,74 @@
       ]
     }
   },
+  "recipes/redstone/right_curly": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_bit": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:bit"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:right_curly"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_bit",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:right_curly"
+      ]
+    }
+  },
+  "recipes/redstone/right_square": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_bit": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:bit"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:right_square"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_bit",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:right_square"
+      ]
+    }
+  },
   "recipes/redstone/slime_block": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -45738,6 +46380,40 @@
     "rewards": {
       "recipes": [
         "minecraft:stone_pressure_plate"
+      ]
+    }
+  },
+  "recipes/redstone/tag_from_name_tag_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_name_tag": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:name_tag"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tag_from_name_tag_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_name_tag",
+        "has_the_recipe"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tag_from_name_tag_stonecutting"
       ]
     }
   },
