@@ -5,20 +5,7 @@
       "rules": [
         {
           "input_predicate": {
-            "block": "minecraft:sand",
-            "predicate_type": "minecraft:random_block_match",
-            "probability": 0.2
-          },
-          "location_predicate": {
-            "predicate_type": "minecraft:always_true"
-          },
-          "output_state": {
-            "Name": "minecraft:gravel"
-          }
-        },
-        {
-          "input_predicate": {
-            "block": "minecraft:sand",
+            "block": "minecraft:gravel",
             "predicate_type": "minecraft:random_block_match",
             "probability": 0.2
           },
@@ -31,7 +18,7 @@
         },
         {
           "input_predicate": {
-            "block": "minecraft:sand",
+            "block": "minecraft:gravel",
             "predicate_type": "minecraft:random_block_match",
             "probability": 0.1
           },
@@ -40,6 +27,19 @@
           },
           "output_state": {
             "Name": "minecraft:coarse_dirt"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:mud_bricks",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:packed_mud"
           }
         }
       ]
@@ -51,35 +51,7 @@
           {
             "block_entity_modifier": {
               "type": "minecraft:append_loot",
-              "loot_table": "minecraft:archaeology/trail_ruins"
-            },
-            "input_predicate": {
-              "predicate_type": "minecraft:tag_match",
-              "tag": "minecraft:trail_ruins_replaceable"
-            },
-            "location_predicate": {
-              "predicate_type": "minecraft:always_true"
-            },
-            "output_state": {
-              "Name": "minecraft:suspicious_sand",
-              "Properties": {
-                "dusted": "0"
-              }
-            }
-          }
-        ]
-      },
-      "limit": 6,
-      "processor_type": "minecraft:capped"
-    },
-    {
-      "delegate": {
-        "processor_type": "minecraft:rule",
-        "rules": [
-          {
-            "block_entity_modifier": {
-              "type": "minecraft:append_loot",
-              "loot_table": "minecraft:archaeology/trail_ruins"
+              "loot_table": "minecraft:archaeology/trail_ruins_common"
             },
             "input_predicate": {
               "predicate_type": "minecraft:tag_match",
@@ -97,7 +69,35 @@
           }
         ]
       },
-      "limit": 2,
+      "limit": 6,
+      "processor_type": "minecraft:capped"
+    },
+    {
+      "delegate": {
+        "processor_type": "minecraft:rule",
+        "rules": [
+          {
+            "block_entity_modifier": {
+              "type": "minecraft:append_loot",
+              "loot_table": "minecraft:archaeology/trail_ruins_rare"
+            },
+            "input_predicate": {
+              "predicate_type": "minecraft:tag_match",
+              "tag": "minecraft:trail_ruins_replaceable"
+            },
+            "location_predicate": {
+              "predicate_type": "minecraft:always_true"
+            },
+            "output_state": {
+              "Name": "minecraft:suspicious_gravel",
+              "Properties": {
+                "dusted": "0"
+              }
+            }
+          }
+        ]
+      },
+      "limit": 3,
       "processor_type": "minecraft:capped"
     }
   ]
