@@ -2,10 +2,8 @@
   "alt": {
     "providers": [
       {
-        "type": "space",
-        "advances": {
-          " ": 4
-        }
+        "type": "reference",
+        "id": "minecraft:include/space"
       },
       {
         "type": "bitmap",
@@ -35,12 +33,41 @@
   "default": {
     "providers": [
       {
-        "type": "space",
-        "advances": {
-          " ": 4,
-          "\u200c": 0
-        }
+        "type": "reference",
+        "id": "minecraft:include/space"
       },
+      {
+        "type": "reference",
+        "id": "minecraft:include/default"
+      },
+      {
+        "type": "reference",
+        "id": "minecraft:include/unifont"
+      }
+    ]
+  },
+  "illageralt": {
+    "providers": [
+      {
+        "type": "reference",
+        "id": "minecraft:include/space"
+      },
+      {
+        "type": "bitmap",
+        "file": "minecraft:font/asciillager.png",
+        "ascent": 7,
+        "chars": [
+          "!,-.0123456789?a",
+          "bcdefghijklmnopq",
+          "rstuvwxyzABCDEFG",
+          "HIJKLMNOPQRSTUVW",
+          "XYZ\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000"
+        ]
+      }
+    ]
+  },
+  "include/default": {
+    "providers": [
       {
         "type": "bitmap",
         "file": "minecraft:font/nonlatin_european.png",
@@ -220,37 +247,10 @@
           "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2205\u2208\u0000",
           "\u2261\u00b1\u2265\u2264\u2320\u2321\u00f7\u2248\u00b0\u2219\u0000\u221a\u207f\u00b2\u25a0\u0000"
         ]
-      },
-      {
-        "type": "legacy_unicode",
-        "sizes": "minecraft:font/glyph_sizes.bin",
-        "template": "minecraft:font/unicode_page_%s.png"
       }
     ]
   },
-  "illageralt": {
-    "providers": [
-      {
-        "type": "space",
-        "advances": {
-          " ": 4
-        }
-      },
-      {
-        "type": "bitmap",
-        "file": "minecraft:font/asciillager.png",
-        "ascent": 7,
-        "chars": [
-          "!,-.0123456789?a",
-          "bcdefghijklmnopq",
-          "rstuvwxyzABCDEFG",
-          "HIJKLMNOPQRSTUVW",
-          "XYZ\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000"
-        ]
-      }
-    ]
-  },
-  "uniform": {
+  "include/space": {
     "providers": [
       {
         "type": "space",
@@ -258,11 +258,21 @@
           " ": 4,
           "\u200c": 0
         }
+      }
+    ]
+  },
+  "include/unifont": {
+    "providers": []
+  },
+  "uniform": {
+    "providers": [
+      {
+        "type": "reference",
+        "id": "minecraft:include/space"
       },
       {
-        "type": "legacy_unicode",
-        "sizes": "minecraft:font/glyph_sizes.bin",
-        "template": "minecraft:font/unicode_page_%s.png"
+        "type": "reference",
+        "id": "minecraft:include/unifont"
       }
     ]
   }
