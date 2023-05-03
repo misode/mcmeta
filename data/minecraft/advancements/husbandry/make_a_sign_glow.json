@@ -3,16 +3,24 @@
   "criteria": {
     "make_a_sign_glow": {
       "conditions": {
-        "item": {
-          "items": [
-            "minecraft:glow_ink_sac"
-          ]
-        },
-        "location": {
-          "block": {
-            "tag": "minecraft:all_signs"
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "tag": "minecraft:all_signs"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": [
+                "minecraft:glow_ink_sac"
+              ]
+            }
           }
-        }
+        ]
       },
       "trigger": "minecraft:item_used_on_block"
     }
@@ -36,5 +44,6 @@
     [
       "make_a_sign_glow"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

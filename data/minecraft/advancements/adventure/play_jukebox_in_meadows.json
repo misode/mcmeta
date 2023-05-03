@@ -3,17 +3,25 @@
   "criteria": {
     "play_jukebox_in_meadows": {
       "conditions": {
-        "item": {
-          "tag": "minecraft:music_discs"
-        },
-        "location": {
-          "biome": "minecraft:meadow",
-          "block": {
-            "blocks": [
-              "minecraft:jukebox"
-            ]
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "biome": "minecraft:meadow",
+              "block": {
+                "blocks": [
+                  "minecraft:jukebox"
+                ]
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "tag": "minecraft:music_discs"
+            }
           }
-        }
+        ]
       },
       "trigger": "minecraft:item_used_on_block"
     }
@@ -37,5 +45,6 @@
     [
       "play_jukebox_in_meadows"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

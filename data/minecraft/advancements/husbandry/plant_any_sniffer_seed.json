@@ -3,13 +3,23 @@
   "criteria": {
     "pitcher_pod": {
       "conditions": {
-        "block": "minecraft:pitcher_crop"
+        "location": [
+          {
+            "block": "minecraft:pitcher_crop",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
       },
       "trigger": "minecraft:placed_block"
     },
     "torchflower": {
       "conditions": {
-        "block": "minecraft:torchflower_crop"
+        "location": [
+          {
+            "block": "minecraft:torchflower_crop",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
       },
       "trigger": "minecraft:placed_block"
     }
@@ -34,5 +44,6 @@
       "torchflower",
       "pitcher_pod"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }
