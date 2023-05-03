@@ -3,17 +3,25 @@
   "criteria": {
     "safely_harvest_honey": {
       "conditions": {
-        "item": {
-          "items": [
-            "minecraft:glass_bottle"
-          ]
-        },
-        "location": {
-          "block": {
-            "tag": "minecraft:beehives"
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "tag": "minecraft:beehives"
+              },
+              "smokey": true
+            }
           },
-          "smokey": true
-        }
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": [
+                "minecraft:glass_bottle"
+              ]
+            }
+          }
+        ]
       },
       "trigger": "minecraft:item_used_on_block"
     }
@@ -37,5 +45,6 @@
     [
       "safely_harvest_honey"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

@@ -3,21 +3,29 @@
   "criteria": {
     "charge_respawn_anchor": {
       "conditions": {
-        "item": {
-          "items": [
-            "minecraft:glowstone"
-          ]
-        },
-        "location": {
-          "block": {
-            "blocks": [
-              "minecraft:respawn_anchor"
-            ],
-            "state": {
-              "charges": "4"
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": [
+                  "minecraft:respawn_anchor"
+                ],
+                "state": {
+                  "charges": "4"
+                }
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": [
+                "minecraft:glowstone"
+              ]
             }
           }
-        }
+        ]
       },
       "trigger": "minecraft:item_used_on_block"
     }
@@ -41,5 +49,6 @@
     [
       "charge_respawn_anchor"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }
