@@ -452,7 +452,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		assets_url = launchermeta['assetIndex']['url']
 		assets = json.loads(fetch(f'assets-{assets_hash}', assets_url).decode('utf-8'))
 
-		if 'assets' in exports:
+		if 'assets' in exports or 'summary' in exports:
 			click.echo(f'      Downloading {len(assets["objects"])} resources')
 			shutil.rmtree('resources', ignore_errors=True)
 			os.makedirs('resources', exist_ok=True)
