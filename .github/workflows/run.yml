@@ -7,6 +7,16 @@ on:
         description: 'Version'
         type: string
         required: true
+      commit:
+        description: 'Commit and push'
+        type: boolean
+        required: true
+        default: false
+      export:
+        description: 'Export'
+        type: string
+        required: true
+        default: 'all'
       force:
         description: 'Undo and force'
         type: boolean
@@ -15,11 +25,6 @@ on:
       undo:
         description: 'Reset to version'
         type: string
-      commit:
-        description: 'Commit and push'
-        type: boolean
-        required: true
-        default: false
 
 jobs:
   run:
@@ -45,7 +50,7 @@ jobs:
           restore-keys: |
             mcmeta-
 
-      - run: python main.py${{ inputs.force && format(' --undo {0}', inputs.undo) || '' }} --version ${{ inputs.version }} --fetch --export all${{ inputs.commit && ' --commit --push' || '' }}${{ inputs.force && ' --force' || '' }}
+      - run: python main.py${{ inputs.force && format(' --undo {0}', inputs.undo) || '' }} --version ${{ inputs.version }} --fetch --export ${{ inputs.export }}${{ inputs.commit && ' --commit --push' || '' }}${{ inputs.force && ' --force' || '' }}
         env:
           github-username: misode
           github-token: ${{ secrets.GITHUB_TOKEN }}
