@@ -4446,6 +4446,19 @@
                 }
               }
             },
+            "function": {
+              "type": "literal",
+              "children": {
+                "function": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:function",
+                  "redirect": [
+                    "execute"
+                  ]
+                }
+              }
+            },
             "loaded": {
               "type": "literal",
               "children": {
@@ -5590,6 +5603,19 @@
                 }
               }
             },
+            "function": {
+              "type": "literal",
+              "children": {
+                "function": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:function",
+                  "redirect": [
+                    "execute"
+                  ]
+                }
+              }
+            },
             "loaded": {
               "type": "literal",
               "children": {
@@ -6004,6 +6030,73 @@
       "children": {
         "name": {
           "type": "argument",
+          "children": {
+            "arguments": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:nbt_compound_tag"
+            },
+            "with": {
+              "type": "literal",
+              "children": {
+                "block": {
+                  "type": "literal",
+                  "children": {
+                    "sourcePos": {
+                      "type": "argument",
+                      "children": {
+                        "path": {
+                          "type": "argument",
+                          "executable": true,
+                          "parser": "minecraft:nbt_path"
+                        }
+                      },
+                      "executable": true,
+                      "parser": "minecraft:block_pos"
+                    }
+                  }
+                },
+                "entity": {
+                  "type": "literal",
+                  "children": {
+                    "source": {
+                      "type": "argument",
+                      "children": {
+                        "path": {
+                          "type": "argument",
+                          "executable": true,
+                          "parser": "minecraft:nbt_path"
+                        }
+                      },
+                      "executable": true,
+                      "parser": "minecraft:entity",
+                      "properties": {
+                        "type": "entities",
+                        "amount": "single"
+                      }
+                    }
+                  }
+                },
+                "storage": {
+                  "type": "literal",
+                  "children": {
+                    "source": {
+                      "type": "argument",
+                      "children": {
+                        "path": {
+                          "type": "argument",
+                          "executable": true,
+                          "parser": "minecraft:nbt_path"
+                        }
+                      },
+                      "executable": true,
+                      "parser": "minecraft:resource_location"
+                    }
+                  }
+                }
+              }
+            }
+          },
           "executable": true,
           "parser": "minecraft:function"
         }
@@ -8443,6 +8536,101 @@
       },
       "executable": true
     },
+    "random": {
+      "type": "literal",
+      "children": {
+        "reset": {
+          "type": "literal",
+          "children": {
+            "*": {
+              "type": "literal",
+              "children": {
+                "seed": {
+                  "type": "argument",
+                  "children": {
+                    "includeWorldSeed": {
+                      "type": "argument",
+                      "children": {
+                        "includeSequenceId": {
+                          "type": "argument",
+                          "executable": true,
+                          "parser": "brigadier:bool"
+                        }
+                      },
+                      "executable": true,
+                      "parser": "brigadier:bool"
+                    }
+                  },
+                  "executable": true,
+                  "parser": "brigadier:integer"
+                }
+              },
+              "executable": true
+            },
+            "sequence": {
+              "type": "argument",
+              "children": {
+                "seed": {
+                  "type": "argument",
+                  "children": {
+                    "includeWorldSeed": {
+                      "type": "argument",
+                      "children": {
+                        "includeSequenceId": {
+                          "type": "argument",
+                          "executable": true,
+                          "parser": "brigadier:bool"
+                        }
+                      },
+                      "executable": true,
+                      "parser": "brigadier:bool"
+                    }
+                  },
+                  "executable": true,
+                  "parser": "brigadier:integer"
+                }
+              },
+              "executable": true,
+              "parser": "minecraft:resource_location"
+            }
+          }
+        },
+        "roll": {
+          "type": "literal",
+          "children": {
+            "range": {
+              "type": "argument",
+              "children": {
+                "sequence": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:resource_location"
+                }
+              },
+              "executable": true,
+              "parser": "minecraft:int_range"
+            }
+          }
+        },
+        "value": {
+          "type": "literal",
+          "children": {
+            "range": {
+              "type": "argument",
+              "children": {
+                "sequence": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:resource_location"
+                }
+              },
+              "executable": true,
+              "parser": "minecraft:int_range"
+            }
+          }
+        }
+      }
+    },
     "recipe": {
       "type": "literal",
       "children": {
@@ -8503,6 +8691,9 @@
     "return": {
       "type": "literal",
       "children": {
+        "run": {
+          "type": "literal"
+        },
         "value": {
           "type": "argument",
           "executable": true,
