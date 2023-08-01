@@ -1,0 +1,95 @@
+{
+  "type": "literal",
+  "children": {
+    "reset": {
+      "type": "literal",
+      "children": {
+        "*": {
+          "type": "literal",
+          "children": {
+            "seed": {
+              "type": "argument",
+              "children": {
+                "includeWorldSeed": {
+                  "type": "argument",
+                  "children": {
+                    "includeSequenceId": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "brigadier:bool"
+                    }
+                  },
+                  "executable": true,
+                  "parser": "brigadier:bool"
+                }
+              },
+              "executable": true,
+              "parser": "brigadier:integer"
+            }
+          },
+          "executable": true
+        },
+        "sequence": {
+          "type": "argument",
+          "children": {
+            "seed": {
+              "type": "argument",
+              "children": {
+                "includeWorldSeed": {
+                  "type": "argument",
+                  "children": {
+                    "includeSequenceId": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "brigadier:bool"
+                    }
+                  },
+                  "executable": true,
+                  "parser": "brigadier:bool"
+                }
+              },
+              "executable": true,
+              "parser": "brigadier:integer"
+            }
+          },
+          "executable": true,
+          "parser": "minecraft:resource_location"
+        }
+      }
+    },
+    "roll": {
+      "type": "literal",
+      "children": {
+        "range": {
+          "type": "argument",
+          "children": {
+            "sequence": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:resource_location"
+            }
+          },
+          "executable": true,
+          "parser": "minecraft:int_range"
+        }
+      }
+    },
+    "value": {
+      "type": "literal",
+      "children": {
+        "range": {
+          "type": "argument",
+          "children": {
+            "sequence": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:resource_location"
+            }
+          },
+          "executable": true,
+          "parser": "minecraft:int_range"
+        }
+      }
+    }
+  }
+}

@@ -3,6 +3,73 @@
   "children": {
     "name": {
       "type": "argument",
+      "children": {
+        "arguments": {
+          "type": "argument",
+          "executable": true,
+          "parser": "minecraft:nbt_compound_tag"
+        },
+        "with": {
+          "type": "literal",
+          "children": {
+            "block": {
+              "type": "literal",
+              "children": {
+                "sourcePos": {
+                  "type": "argument",
+                  "children": {
+                    "path": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "minecraft:nbt_path"
+                    }
+                  },
+                  "executable": true,
+                  "parser": "minecraft:block_pos"
+                }
+              }
+            },
+            "entity": {
+              "type": "literal",
+              "children": {
+                "source": {
+                  "type": "argument",
+                  "children": {
+                    "path": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "minecraft:nbt_path"
+                    }
+                  },
+                  "executable": true,
+                  "parser": "minecraft:entity",
+                  "properties": {
+                    "type": "entities",
+                    "amount": "single"
+                  }
+                }
+              }
+            },
+            "storage": {
+              "type": "literal",
+              "children": {
+                "source": {
+                  "type": "argument",
+                  "children": {
+                    "path": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "minecraft:nbt_path"
+                    }
+                  },
+                  "executable": true,
+                  "parser": "minecraft:resource_location"
+                }
+              }
+            }
+          }
+        }
+      },
       "executable": true,
       "parser": "minecraft:function"
     }
