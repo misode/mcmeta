@@ -9903,6 +9903,71 @@
         }
       }
     },
+    "tick": {
+      "type": "literal",
+      "children": {
+        "freeze": {
+          "type": "literal",
+          "executable": true
+        },
+        "query": {
+          "type": "literal",
+          "executable": true
+        },
+        "rate": {
+          "type": "literal",
+          "children": {
+            "rate": {
+              "type": "argument",
+              "executable": true,
+              "parser": "brigadier:float",
+              "properties": {
+                "max": 10000.0,
+                "min": 1.0
+              }
+            }
+          }
+        },
+        "sprint": {
+          "type": "literal",
+          "children": {
+            "stop": {
+              "type": "literal",
+              "executable": true
+            },
+            "time": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:time",
+              "properties": {
+                "min": 1
+              }
+            }
+          }
+        },
+        "step": {
+          "type": "literal",
+          "children": {
+            "stop": {
+              "type": "literal",
+              "executable": true
+            },
+            "time": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:time",
+              "properties": {
+                "min": 1
+              }
+            }
+          }
+        },
+        "unfreeze": {
+          "type": "literal",
+          "executable": true
+        }
+      }
+    },
     "time": {
       "type": "literal",
       "children": {
