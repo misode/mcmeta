@@ -409,6 +409,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			'advancements': 'advancement',
 			'loot_tables': 'loot_table',
 			'recipes': 'recipe',
+			'structures': 'structure',
 			'tag/blocks': 'tag/block',
 			'tag/entity_types': 'tag/entity_type',
 			'tag/fluids': 'tag/fluid',
@@ -416,18 +417,25 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			'tag/items': 'tag/item',
 		}
 
-		for pattern in ['', 'worldgen/', 'tags/', 'tags/worldgen/']:
-			full_pattern = f'data/data/minecraft/{pattern}'
-			types = [
-				e.replace('\\', '/', -1).removeprefix(full_pattern).removesuffix('/')
-				for e in glob.glob(f'{full_pattern}*/')
-			]
-			for typ in [t for t in types if t not in ['tags', 'worldgen', 'structures', 'datapacks']]:
-				registry_key = (pattern + typ).replace('tags/', 'tag/')
-				registry_key = registry_overrides.get(registry_key, registry_key)
-				add_file_registry(registry_key, full_pattern + typ)
+		experiments = [
+			e.replace('\\', '/', -1).removeprefix('data/data/minecraft/datapacks/').removesuffix('/')
+			for e in glob.glob(f'data/data/minecraft/datapacks/*/')
+		]
 
-		add_file_registry('structure', 'data/data/minecraft/structures', 'nbt')
+		for experiment in [None, *experiments]:
+			experiment_pattern = f'datapacks/{experiment}/data/minecraft/' if experiment else ''
+			for pattern in ['', 'worldgen/', 'tags/', 'tags/worldgen/']:
+				full_pattern = f'data/data/minecraft/{experiment_pattern}{pattern}'
+				types = [
+					e.replace('\\', '/', -1).removeprefix(full_pattern).removesuffix('/')
+					for e in glob.glob(f'{full_pattern}*/')
+				]
+				for typ in [t for t in types if t not in ['tags', 'worldgen', 'datapacks']]:
+					registry_key = (pattern + typ).replace('tags/', 'tag/')
+					registry_key = registry_overrides.get(registry_key, registry_key)
+					output_key = registry_key if experiment is None else f'experiment/{experiment}/{registry_key}'
+					extension = 'nbt' if typ == 'structures' else 'json'
+					add_file_registry(output_key, full_pattern + typ, extension)
 
 		add_folder_registry('datapack', 'data/data/minecraft/datapacks')
 
@@ -587,6 +595,8 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 
 		shutil.rmtree('diff/commands', ignore_errors=True)
 		os.makedirs('diff/commands', exist_ok=True)
+		if 'children' not in commands:
+			commands['children'] = {}
 		for key, command in sorted(commands['children'].items()):
 			with open(f'diff/commands/{key}.json', 'w') as f:
 				json.dump(command, f, indent=2)
@@ -638,7 +648,7 @@ def init_exports(start_date: str | None, reset: bool, fetch: bool, undo: str | N
 		elif reset:
 			assert start_date, 'Cannot reset without a version'
 			shutil.copyfile('../.gitattributes', f'.gitattributes')
-			subprocess.run(['git', 'add', '.'])
+			subprocess.run(['git', 'add', '.'], capture_output=True)
 			os.environ['GIT_AUTHOR_DATE'] = start_date
 			os.environ['GIT_COMMITTER_DATE'] = start_date
 			subprocess.run(['git', 'commit', '-q', '-m', f'🎉 Initial commit'])
@@ -654,7 +664,7 @@ def create_commit(version: str | None, date: str | None, push: bool, force: bool
 		os.chdir(export)
 		if version:
 			assert date
-			subprocess.run(['git', 'add', '.'])
+			subprocess.run(['git', 'add', '.'], capture_output=True)
 			os.environ['GIT_AUTHOR_DATE'] = date
 			os.environ['GIT_COMMITTER_DATE'] = date
 			subprocess.run(['git', 'commit', '-q', '-m', f'🚀 Update {export} for {version}'])
