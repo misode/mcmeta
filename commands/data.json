@@ -8908,6 +8908,16 @@
                 "objective": {
                   "type": "argument",
                   "children": {
+                    "displayautoupdate": {
+                      "type": "literal",
+                      "children": {
+                        "value": {
+                          "type": "argument",
+                          "executable": true,
+                          "parser": "brigadier:bool"
+                        }
+                      }
+                    },
                     "displayname": {
                       "type": "literal",
                       "children": {
@@ -8917,6 +8927,36 @@
                           "parser": "minecraft:component"
                         }
                       }
+                    },
+                    "numberformat": {
+                      "type": "literal",
+                      "children": {
+                        "blank": {
+                          "type": "literal",
+                          "executable": true
+                        },
+                        "fixed": {
+                          "type": "literal",
+                          "children": {
+                            "contents": {
+                              "type": "argument",
+                              "executable": true,
+                              "parser": "minecraft:component"
+                            }
+                          }
+                        },
+                        "styled": {
+                          "type": "literal",
+                          "children": {
+                            "style": {
+                              "type": "argument",
+                              "executable": true,
+                              "parser": "minecraft:style"
+                            }
+                          }
+                        }
+                      },
+                      "executable": true
                     },
                     "rendertype": {
                       "type": "literal",
@@ -8992,6 +9032,82 @@
                   "parser": "minecraft:score_holder",
                   "properties": {
                     "amount": "multiple"
+                  }
+                }
+              }
+            },
+            "display": {
+              "type": "literal",
+              "children": {
+                "name": {
+                  "type": "literal",
+                  "children": {
+                    "targets": {
+                      "type": "argument",
+                      "children": {
+                        "objective": {
+                          "type": "argument",
+                          "children": {
+                            "name": {
+                              "type": "argument",
+                              "executable": true,
+                              "parser": "minecraft:component"
+                            }
+                          },
+                          "executable": true,
+                          "parser": "minecraft:objective"
+                        }
+                      },
+                      "parser": "minecraft:score_holder",
+                      "properties": {
+                        "amount": "multiple"
+                      }
+                    }
+                  }
+                },
+                "numberformat": {
+                  "type": "literal",
+                  "children": {
+                    "targets": {
+                      "type": "argument",
+                      "children": {
+                        "objective": {
+                          "type": "argument",
+                          "children": {
+                            "blank": {
+                              "type": "literal",
+                              "executable": true
+                            },
+                            "fixed": {
+                              "type": "literal",
+                              "children": {
+                                "contents": {
+                                  "type": "argument",
+                                  "executable": true,
+                                  "parser": "minecraft:component"
+                                }
+                              }
+                            },
+                            "styled": {
+                              "type": "literal",
+                              "children": {
+                                "style": {
+                                  "type": "argument",
+                                  "executable": true,
+                                  "parser": "minecraft:style"
+                                }
+                              }
+                            }
+                          },
+                          "executable": true,
+                          "parser": "minecraft:objective"
+                        }
+                      },
+                      "parser": "minecraft:score_holder",
+                      "properties": {
+                        "amount": "multiple"
+                      }
+                    }
                   }
                 }
               }
