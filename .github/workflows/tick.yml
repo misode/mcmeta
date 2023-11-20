@@ -23,12 +23,6 @@ jobs:
     if: ${{ needs.check.outputs.id != '' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.SANDSTONE_PAT }}
-          repository: sandstone-mc/sandstone
-          event-type: minecraft-update
-
       - uses: actions/checkout@v2
 
       - uses: actions/setup-python@v2
