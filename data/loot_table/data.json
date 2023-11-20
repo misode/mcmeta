@@ -10840,60 +10840,6 @@
     ],
     "random_sequence": "minecraft:blocks/granite_wall"
   },
-  "blocks/grass": {
-    "type": "minecraft:block",
-    "pools": [
-      {
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:alternatives",
-            "children": [
-              {
-                "type": "minecraft:item",
-                "conditions": [
-                  {
-                    "condition": "minecraft:match_tool",
-                    "predicate": {
-                      "items": [
-                        "minecraft:shears"
-                      ]
-                    }
-                  }
-                ],
-                "name": "minecraft:grass"
-              },
-              {
-                "type": "minecraft:item",
-                "conditions": [
-                  {
-                    "chance": 0.125,
-                    "condition": "minecraft:random_chance"
-                  }
-                ],
-                "functions": [
-                  {
-                    "enchantment": "minecraft:fortune",
-                    "formula": "minecraft:uniform_bonus_count",
-                    "function": "minecraft:apply_bonus",
-                    "parameters": {
-                      "bonusMultiplier": 2
-                    }
-                  },
-                  {
-                    "function": "minecraft:explosion_decay"
-                  }
-                ],
-                "name": "minecraft:wheat_seeds"
-              }
-            ]
-          }
-        ],
-        "rolls": 1.0
-      }
-    ],
-    "random_sequence": "minecraft:blocks/grass"
-  },
   "blocks/grass_block": {
     "type": "minecraft:block",
     "pools": [
@@ -23198,6 +23144,60 @@
     ],
     "random_sequence": "minecraft:blocks/seagrass"
   },
+  "blocks/short_grass": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                      "items": [
+                        "minecraft:shears"
+                      ]
+                    }
+                  }
+                ],
+                "name": "minecraft:short_grass"
+              },
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "chance": 0.125,
+                    "condition": "minecraft:random_chance"
+                  }
+                ],
+                "functions": [
+                  {
+                    "enchantment": "minecraft:fortune",
+                    "formula": "minecraft:uniform_bonus_count",
+                    "function": "minecraft:apply_bonus",
+                    "parameters": {
+                      "bonusMultiplier": 2
+                    }
+                  },
+                  {
+                    "function": "minecraft:explosion_decay"
+                  }
+                ],
+                "name": "minecraft:wheat_seeds"
+              }
+            ]
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/short_grass"
+  },
   "blocks/shroomlight": {
     "type": "minecraft:block",
     "pools": [
@@ -25709,7 +25709,7 @@
                     "function": "minecraft:set_count"
                   }
                 ],
-                "name": "minecraft:grass"
+                "name": "minecraft:short_grass"
               },
               {
                 "type": "minecraft:item",
@@ -25777,7 +25777,7 @@
                     "function": "minecraft:set_count"
                   }
                 ],
-                "name": "minecraft:grass"
+                "name": "minecraft:short_grass"
               },
               {
                 "type": "minecraft:item",
@@ -35392,7 +35392,7 @@
           },
           {
             "type": "minecraft:item",
-            "name": "minecraft:grass",
+            "name": "minecraft:short_grass",
             "weight": 5
           },
           {
