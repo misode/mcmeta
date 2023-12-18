@@ -4752,6 +4752,20 @@
   "husbandry/bred_all_animals": {
     "parent": "minecraft:husbandry/breed_an_animal",
     "criteria": {
+      "minecraft:armadillo": {
+        "conditions": {
+          "child": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:armadillo"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:bred_animals"
+      },
       "minecraft:axolotl": {
         "conditions": {
           "child": [
@@ -5191,6 +5205,9 @@
       ],
       [
         "minecraft:camel"
+      ],
+      [
+        "minecraft:armadillo"
       ],
       [
         "minecraft:turtle"
@@ -27013,12 +27030,46 @@
   "recipes/combat/turtle_helmet": {
     "parent": "minecraft:recipes/root",
     "criteria": {
-      "has_scute": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:turtle_helmet"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_turtle_scute": {
         "conditions": {
           "items": [
             {
               "items": [
-                "minecraft:scute"
+                "minecraft:turtle_scute"
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_turtle_scute"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:turtle_helmet"
+      ]
+    }
+  },
+  "recipes/combat/wolf_armor": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_armadillo_scute": {
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:armadillo_scute"
               ]
             }
           ]
@@ -27027,7 +27078,7 @@
       },
       "has_the_recipe": {
         "conditions": {
-          "recipe": "minecraft:turtle_helmet"
+          "recipe": "minecraft:wolf_armor"
         },
         "trigger": "minecraft:recipe_unlocked"
       }
@@ -27035,12 +27086,12 @@
     "requirements": [
       [
         "has_the_recipe",
-        "has_scute"
+        "has_armadillo_scute"
       ]
     ],
     "rewards": {
       "recipes": [
-        "minecraft:turtle_helmet"
+        "minecraft:wolf_armor"
       ]
     }
   },
