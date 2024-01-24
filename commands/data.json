@@ -10264,6 +10264,41 @@
         "teleport"
       ]
     },
+    "transfer": {
+      "type": "literal",
+      "children": {
+        "hostname": {
+          "type": "argument",
+          "children": {
+            "port": {
+              "type": "argument",
+              "children": {
+                "players": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:entity",
+                  "properties": {
+                    "type": "players",
+                    "amount": "multiple"
+                  }
+                }
+              },
+              "executable": true,
+              "parser": "brigadier:integer",
+              "properties": {
+                "max": 65535,
+                "min": 1
+              }
+            }
+          },
+          "executable": true,
+          "parser": "brigadier:string",
+          "properties": {
+            "type": "phrase"
+          }
+        }
+      }
+    },
     "trigger": {
       "type": "literal",
       "children": {
