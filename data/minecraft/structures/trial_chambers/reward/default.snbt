@@ -82,8 +82,14 @@
     }, 
     {
       nbt: {
-        LootTable: "minecraft:chests/trial_chambers/reward", 
-        id: "minecraft:chest"
+        id: "minecraft:vault", 
+        config: {
+          key_item: {
+            Count: 1b, 
+            id: "minecraft:trial_key"
+          }, 
+          loot_table: "minecraft:chests/trial_chambers/reward"
+        }
       }, 
       pos: [1, 1, 1], 
       state: 4
@@ -107,11 +113,10 @@
     }, 
     {
       Properties: {
-        waterlogged: "false", 
         facing: "south", 
-        type: "single"
+        vault_state: "inactive"
       }, 
-      Name: "minecraft:chest"
+      Name: "minecraft:vault"
     }
   ]
 }
