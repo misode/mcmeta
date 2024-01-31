@@ -58141,6 +58141,157 @@
       }
     ]
   },
+  "block/template_vault": {
+    "parent": "block/block",
+    "textures": {
+      "particle": "#side"
+    },
+    "elements": [
+      {
+        "name": "cage",
+        "from": [
+          0,
+          0,
+          0
+        ],
+        "to": [
+          16,
+          16,
+          16
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#front",
+            "cullface": "north"
+          },
+          "east": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#side",
+            "cullface": "east"
+          },
+          "south": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#side",
+            "cullface": "south"
+          },
+          "west": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#side",
+            "cullface": "west"
+          },
+          "up": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#top",
+            "cullface": "up"
+          },
+          "down": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#bottom"
+          }
+        }
+      },
+      {
+        "name": "cage_inverted_faces",
+        "from": [
+          15.998,
+          3.002,
+          0.002
+        ],
+        "to": [
+          0.002,
+          15.998,
+          15.998
+        ],
+        "faces": {
+          "north": {
+            "uv": [
+              16,
+              0,
+              0,
+              13
+            ],
+            "texture": "#front"
+          },
+          "east": {
+            "uv": [
+              16,
+              0,
+              0,
+              13
+            ],
+            "texture": "#side"
+          },
+          "south": {
+            "uv": [
+              16,
+              0,
+              0,
+              13
+            ],
+            "texture": "#side"
+          },
+          "west": {
+            "uv": [
+              16,
+              0,
+              0,
+              13
+            ],
+            "texture": "#side"
+          },
+          "up": {
+            "uv": [
+              16,
+              0,
+              0,
+              16
+            ],
+            "texture": "#top"
+          },
+          "down": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#bottom"
+          }
+        }
+      }
+    ]
+  },
   "block/template_wall_post": {
     "textures": {
       "particle": "#wall"
@@ -63691,6 +63842,42 @@
     "parent": "minecraft:block/template_two_turtle_eggs",
     "textures": {
       "all": "minecraft:block/turtle_egg_very_cracked"
+    }
+  },
+  "block/vault": {
+    "parent": "minecraft:block/template_vault",
+    "textures": {
+      "bottom": "minecraft:block/vault_bottom",
+      "front": "minecraft:block/vault_front_off",
+      "side": "minecraft:block/vault_side_off",
+      "top": "minecraft:block/vault_top_off"
+    }
+  },
+  "block/vault_active": {
+    "parent": "minecraft:block/template_vault",
+    "textures": {
+      "bottom": "minecraft:block/vault_bottom",
+      "front": "minecraft:block/vault_front_on",
+      "side": "minecraft:block/vault_side_on",
+      "top": "minecraft:block/vault_top_on"
+    }
+  },
+  "block/vault_ejecting_reward": {
+    "parent": "minecraft:block/template_vault",
+    "textures": {
+      "bottom": "minecraft:block/vault_bottom",
+      "front": "minecraft:block/vault_front_ejecting",
+      "side": "minecraft:block/vault_side_on",
+      "top": "minecraft:block/vault_top_ejecting"
+    }
+  },
+  "block/vault_unlocking": {
+    "parent": "minecraft:block/template_vault",
+    "textures": {
+      "bottom": "minecraft:block/vault_bottom",
+      "front": "minecraft:block/vault_front_ejecting",
+      "side": "minecraft:block/vault_side_on",
+      "top": "minecraft:block/vault_top_on"
     }
   },
   "block/verdant_froglight": {
@@ -77678,6 +77865,9 @@
     "textures": {
       "layer0": "minecraft:block/twisting_vines_plant"
     }
+  },
+  "item/vault": {
+    "parent": "minecraft:block/vault"
   },
   "item/verdant_froglight": {
     "parent": "minecraft:block/verdant_froglight"
