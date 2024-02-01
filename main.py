@@ -351,7 +351,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 				root = json.load(f)
 
 			for path, order in sorts:
-				*parts, last = [int(p) if re.match('\d+', p) else p for p in path.split('.')]
+				*parts, last = [int(p) if re.match('\\d+', p) else p for p in path.split('.')]
 				node = root
 				for p in parts:
 					if node is None:
