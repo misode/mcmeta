@@ -39,7 +39,6 @@ import time
 import image_packer.packer
 import nbtlib
 import multiprocessing
-import random
 
 EXPORTS = ('assets', 'assets-json', 'data', 'data-json', 'summary', 'registries', 'atlas', 'diff')
 
@@ -729,8 +728,6 @@ def get_resource(hash: str):
 
 
 def fetch(key: str, url: str):
-	if random.random() < 0.01:
-		raise ValueError("Random fetch error")
 	return cache(key, lambda: requests.get(url).content)
 
 
