@@ -39,6 +39,7 @@ import time
 import image_packer.packer
 import nbtlib
 import multiprocessing
+import random
 
 EXPORTS = ('assets', 'assets-json', 'data', 'data-json', 'summary', 'registries', 'atlas', 'diff')
 
@@ -157,20 +158,23 @@ def get_version_meta(version: str, versions: dict[str], jar: str = None):
 	def create_version_meta():
 		os.makedirs('tmp', exist_ok=True)
 
-		if not jar:
-			launchermeta = json.loads(fetch_meta('versionmeta', versions[version]).decode('utf-8'))
-			client = fetch_meta('jar', launchermeta['downloads']['client'], cache=False)
-			jar_path = 'tmp/client.jar'
-			with open(jar_path, 'wb') as f:
-				f.write(client)
-		else:
-			jar_path = jar
+		def get_version_json():
+			if not jar:
+				launchermeta = json.loads(fetch_meta('versionmeta', versions[version]).decode('utf-8'))
+				client = fetch_meta('jar', launchermeta['downloads']['client'], cache=False)
+				jar_path = 'tmp/client.jar'
+				with open(jar_path, 'wb') as f:
+					f.write(client)
+			else:
+				jar_path = jar
 
-		with zipfile.ZipFile(jar_path, 'r') as f:
-			f.extract('version.json', 'tmp')
+			with zipfile.ZipFile(jar_path, 'r') as f:
+				f.extract('version.json', 'tmp')
 
-		with open('tmp/version.json', 'r') as f:
-			data = json.load(f)
+			with open('tmp/version.json', 'r') as f:
+				return json.load(f)
+
+		data = retry(get_version_json)
 
 		pack = data['pack_version']
 
@@ -199,10 +203,11 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 
 	# === fetch version jars ===
 	click.echo('   ⬇️  Downloading version')
-	launchermeta = json.loads(fetch_meta('versionmeta', versions[version]).decode('utf-8'))
+	launchermeta_bytes = retry(fetch_meta, 'versionmeta', versions[version])
+	launchermeta = json.loads(launchermeta_bytes.decode('utf-8'))
 
 	for side in ['server', 'client']:
-		side_content = fetch_meta('jar', launchermeta['downloads'][side], cache=False)
+		side_content = retry(fetch_meta, 'jar', launchermeta['downloads'][side], cache=False)
 		with open(f'{side}.jar', 'wb') as f:
 			f.write(side_content)
 
@@ -294,7 +299,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 				if sha is None and id == '20w28a':
 					sha = 'd304a1dcf330005e617a78cef4e492ab3e2c09b0'
 				if sha:
-					content = fetch(f'slicedlime-{sha}', f'https://raw.githubusercontent.com/slicedlime/examples/{sha}/vanilla_worldgen.zip')
+					content = retry(fetch, f'slicedlime-{sha}', f'https://raw.githubusercontent.com/slicedlime/examples/{sha}/vanilla_worldgen.zip')
 					with open('vanilla_worldgen.zip', 'wb') as f:
 						f.write(content)
 					zip = zipfile.ZipFile('vanilla_worldgen.zip', 'r')
@@ -460,7 +465,8 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		click.echo('   🔊 Downloading sounds')
 		assets_hash = launchermeta['assetIndex']['sha1']
 		assets_url = launchermeta['assetIndex']['url']
-		assets = json.loads(fetch(f'assets-{assets_hash}', assets_url).decode('utf-8'))
+		assets_bytes = retry(fetch, f'assets-{assets_hash}', assets_url)
+		assets = json.loads(assets_bytes.decode('utf-8'))
 
 		if 'assets' in exports or 'summary' in exports or 'diff' in exports:
 			click.echo(f'      Downloading {len(assets["objects"])} resources')
@@ -719,10 +725,12 @@ def download_resource(resource: tuple):
 
 def get_resource(hash: str):
 	url = f'https://resources.download.minecraft.net/{hash[0:2]}/{hash}'
-	return fetch(f'resource-{hash}', url)
+	return retry(fetch, f'resource-{hash}', url)
 
 
 def fetch(key: str, url: str):
+	if random.random() < 0.01:
+		raise ValueError("Random fetch error")
 	return cache(key, lambda: requests.get(url).content)
 
 
@@ -737,6 +745,21 @@ def cache(key: str, factory):
 		with open(cache_path, 'wb') as f:
 			f.write(content)
 		return content
+
+
+def retry(fn, *args, **kwargs):
+	retry_count = 0
+	while True:
+		try:
+			return fn(*args, **kwargs)
+		except Exception as e:
+			if retry_count < 3:
+				print(f"Retrying {fn.__name__} after error: {e}")
+				time.sleep(4**retry_count)
+				retry_count += 1
+			else:
+				e.add_note('Max retry attempts reached')
+				raise e
 
 
 if __name__ == '__main__':
