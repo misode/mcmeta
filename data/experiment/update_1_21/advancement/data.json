@@ -16,6 +16,20 @@
         },
         "trigger": "minecraft:player_killed_entity"
       },
+      "minecraft:bogged": {
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:bogged"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
       "minecraft:breeze": {
         "conditions": {
           "entity": [
@@ -541,7 +555,8 @@
         "minecraft:zombie_villager",
         "minecraft:zombie",
         "minecraft:zombified_piglin",
-        "minecraft:breeze"
+        "minecraft:breeze",
+        "minecraft:bogged"
       ]
     ],
     "sends_telemetry_event": true
@@ -557,6 +572,20 @@
               "entity": "this",
               "predicate": {
                 "type": "minecraft:blaze"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
+      "minecraft:bogged": {
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:bogged"
               }
             }
           ]
@@ -1158,6 +1187,9 @@
       ],
       [
         "minecraft:breeze"
+      ],
+      [
+        "minecraft:bogged"
       ]
     ],
     "rewards": {
