@@ -451,6 +451,8 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	# === simplify blocks report ===
 	if 'summary' in exports or 'diff' in exports:
 		blocks = dict()
+		block_definitions = dict()
+		item_components = dict()
 		if os.path.isfile('generated/reports/blocks.json'):
 			with open('generated/reports/blocks.json', 'r') as f:
 				for key, data in json.load(f).items():
@@ -458,6 +460,17 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 					if properties:
 						default = next(s.get('properties') for s in data['states'] if s.get('default'))
 						blocks[key.removeprefix('minecraft:')] = (properties, default)
+					else:
+						blocks[key.removeprefix('minecraft:')] = ({}, {})
+					definition = data.get('definition')
+					if definition:
+						block_definitions[key.removeprefix('minecraft:')] = definition
+		if os.path.isfile('generated/reports/items.json'):
+			with open('generated/reports/items.json', 'r') as f:
+				for key, data in json.load(f).items():
+					components = data.get('components')
+					if components:
+						item_components[key.removeprefix('minecraft:')] = components
 
 	# === download resources ===
 	if 'summary' in exports or 'diff' in exports:
@@ -519,6 +532,8 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	if 'summary' in exports:
 		create_summary(dict(sorted(registries.items())), 'summary/registries')
 		create_summary(dict(sorted(blocks.items())), 'summary/blocks')
+		create_summary(dict(sorted(block_definitions.items())), 'summary/block_definitions')
+		create_summary(dict(sorted(item_components.items())), 'summary/item_components')
 		create_summary(dict(sorted(sounds.items())), 'summary/sounds')
 		create_summary(commands, 'summary/commands')
 		create_summary(version_metas, 'summary/versions')
@@ -614,8 +629,19 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		for key, block in sorted(blocks.items()):
 			with open(f'diff/blocks/{key}.json', 'w') as f:
 				data = {
+					'definition': block_definitions.get(key, {}), 
 					'properties': block[0],
 					'default': block[1],
+				}
+				json.dump(data, f, indent=2)
+				f.write('\n')
+
+		shutil.rmtree('diff/items', ignore_errors=True)
+		os.makedirs('diff/items', exist_ok=True)
+		for key, components in sorted(item_components.items()):
+			with open(f'diff/items/{key}.json', 'w') as f:
+				data = {
+					'components': item_components.get(key, []),
 				}
 				json.dump(data, f, indent=2)
 				f.write('\n')
