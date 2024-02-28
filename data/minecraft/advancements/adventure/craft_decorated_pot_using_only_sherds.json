@@ -5,16 +5,16 @@
       "conditions": {
         "ingredients": [
           {
-            "tag": "minecraft:decorated_pot_sherds"
+            "items": "#minecraft:decorated_pot_sherds"
           },
           {
-            "tag": "minecraft:decorated_pot_sherds"
+            "items": "#minecraft:decorated_pot_sherds"
           },
           {
-            "tag": "minecraft:decorated_pot_sherds"
+            "items": "#minecraft:decorated_pot_sherds"
           },
           {
-            "tag": "minecraft:decorated_pot_sherds"
+            "items": "#minecraft:decorated_pot_sherds"
           }
         ],
         "recipe_id": "minecraft:decorated_pot"
@@ -27,8 +27,15 @@
       "translate": "advancements.adventure.craft_decorated_pot_using_only_sherds.description"
     },
     "icon": {
-      "item": "minecraft:decorated_pot",
-      "nbt": "{BlockEntityTag:{id:\"minecraft:decorated_pot\",sherds:[\"minecraft:brick\",\"minecraft:heart_pottery_sherd\",\"minecraft:brick\",\"minecraft:explorer_pottery_sherd\"]}}"
+      "components": {
+        "minecraft:pot_decorations": [
+          "minecraft:brick",
+          "minecraft:heart_pottery_sherd",
+          "minecraft:brick",
+          "minecraft:explorer_pottery_sherd"
+        ]
+      },
+      "id": "minecraft:decorated_pot"
     },
     "title": {
       "translate": "advancements.adventure.craft_decorated_pot_using_only_sherds.title"

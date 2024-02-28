@@ -8,19 +8,11 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "function": "minecraft:copy_nbt",
-              "ops": [
-                {
-                  "op": "replace",
-                  "source": "SkullOwner",
-                  "target": "SkullOwner"
-                },
-                {
-                  "op": "replace",
-                  "source": "note_block_sound",
-                  "target": "BlockEntityTag.note_block_sound"
-                }
+              "components": [
+                "minecraft:profile",
+                "minecraft:note_block_sound"
               ],
+              "function": "minecraft:copy_components",
               "source": "block_entity"
             }
           ],
