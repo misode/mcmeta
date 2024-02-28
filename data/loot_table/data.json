@@ -592,9 +592,7 @@
                       {
                         "condition": "minecraft:match_tool",
                         "predicate": {
-                          "items": [
-                            "minecraft:shears"
-                          ]
+                          "items": "minecraft:shears"
                         }
                       },
                       {
@@ -650,9 +648,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
+                    "items": "minecraft:shears"
                   }
                 },
                 {
@@ -1013,7 +1009,7 @@
                       {
                         "condition": "minecraft:match_tool",
                         "predicate": {
-                          "tag": "minecraft:cluster_max_harvestables"
+                          "items": "#minecraft:cluster_max_harvestables"
                         }
                       }
                     ],
@@ -1298,9 +1294,7 @@
                       {
                         "condition": "minecraft:match_tool",
                         "predicate": {
-                          "items": [
-                            "minecraft:shears"
-                          ]
+                          "items": "minecraft:shears"
                         }
                       },
                       {
@@ -1356,9 +1350,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
+                    "items": "minecraft:shears"
                   }
                 },
                 {
@@ -1846,7 +1838,10 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
+                "components": [
+                  "minecraft:custom_name"
+                ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -1889,7 +1884,10 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
+                "components": [
+                  "minecraft:custom_name"
+                ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -1926,14 +1924,10 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Bees",
-                    "target": "BlockEntityTag.Bees"
-                  }
+                "components": [
+                  "minecraft:bees"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               },
               {
@@ -1980,14 +1974,10 @@
                 ],
                 "functions": [
                   {
-                    "function": "minecraft:copy_nbt",
-                    "ops": [
-                      {
-                        "op": "replace",
-                        "source": "Bees",
-                        "target": "BlockEntityTag.Bees"
-                      }
+                    "components": [
+                      "minecraft:bees"
                     ],
+                    "function": "minecraft:copy_components",
                     "source": "block_entity"
                   },
                   {
@@ -2276,9 +2266,7 @@
                       {
                         "condition": "minecraft:match_tool",
                         "predicate": {
-                          "items": [
-                            "minecraft:shears"
-                          ]
+                          "items": "minecraft:shears"
                         }
                       },
                       {
@@ -2334,9 +2322,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
+                    "items": "minecraft:shears"
                   }
                 },
                 {
@@ -2612,18 +2598,11 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Patterns",
-                    "target": "BlockEntityTag.Patterns"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:banner_patterns"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -2838,39 +2817,14 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Lock",
-                    "target": "BlockEntityTag.Lock"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTable",
-                    "target": "BlockEntityTag.LootTable"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTableSeed",
-                    "target": "BlockEntityTag.LootTableSeed"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:container",
+                  "minecraft:lock",
+                  "minecraft:container_loot"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
-              },
-              {
-                "type": "minecraft:shulker_box",
-                "entries": [
-                  {
-                    "type": "minecraft:dynamic",
-                    "name": "minecraft:contents"
-                  }
-                ],
-                "function": "minecraft:set_contents"
               }
             ],
             "name": "minecraft:black_shulker_box"
@@ -3098,7 +3052,10 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
+                "components": [
+                  "minecraft:custom_name"
+                ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -3125,18 +3082,11 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Patterns",
-                    "target": "BlockEntityTag.Patterns"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:banner_patterns"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -3403,39 +3353,14 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Lock",
-                    "target": "BlockEntityTag.Lock"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTable",
-                    "target": "BlockEntityTag.LootTable"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTableSeed",
-                    "target": "BlockEntityTag.LootTableSeed"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:container",
+                  "minecraft:lock",
+                  "minecraft:container_loot"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
-              },
-              {
-                "type": "minecraft:shulker_box",
-                "entries": [
-                  {
-                    "type": "minecraft:dynamic",
-                    "name": "minecraft:contents"
-                  }
-                ],
-                "function": "minecraft:set_contents"
               }
             ],
             "name": "minecraft:blue_shulker_box"
@@ -3743,7 +3668,10 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
+                "components": [
+                  "minecraft:custom_name"
+                ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -3868,18 +3796,11 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Patterns",
-                    "target": "BlockEntityTag.Patterns"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:banner_patterns"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -4175,39 +4096,14 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Lock",
-                    "target": "BlockEntityTag.Lock"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTable",
-                    "target": "BlockEntityTag.LootTable"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTableSeed",
-                    "target": "BlockEntityTag.LootTableSeed"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:container",
+                  "minecraft:lock",
+                  "minecraft:container_loot"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
-              },
-              {
-                "type": "minecraft:shulker_box",
-                "entries": [
-                  {
-                    "type": "minecraft:dynamic",
-                    "name": "minecraft:contents"
-                  }
-                ],
-                "function": "minecraft:set_contents"
               }
             ],
             "name": "minecraft:brown_shulker_box"
@@ -4958,9 +4854,7 @@
                       {
                         "condition": "minecraft:match_tool",
                         "predicate": {
-                          "items": [
-                            "minecraft:shears"
-                          ]
+                          "items": "minecraft:shears"
                         }
                       },
                       {
@@ -5016,9 +4910,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
+                    "items": "minecraft:shears"
                   }
                 },
                 {
@@ -5294,7 +5186,10 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
+                "components": [
+                  "minecraft:custom_name"
+                ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -5929,9 +5824,7 @@
                       {
                         "condition": "minecraft:match_tool",
                         "predicate": {
-                          "items": [
-                            "minecraft:shears"
-                          ]
+                          "items": "minecraft:shears"
                         }
                       },
                       {
@@ -6952,18 +6845,11 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Patterns",
-                    "target": "BlockEntityTag.Patterns"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:banner_patterns"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -7178,39 +7064,14 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Lock",
-                    "target": "BlockEntityTag.Lock"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTable",
-                    "target": "BlockEntityTag.LootTable"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTableSeed",
-                    "target": "BlockEntityTag.LootTableSeed"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:container",
+                  "minecraft:lock",
+                  "minecraft:container_loot"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
-              },
-              {
-                "type": "minecraft:shulker_box",
-                "entries": [
-                  {
-                    "type": "minecraft:dynamic",
-                    "name": "minecraft:contents"
-                  }
-                ],
-                "function": "minecraft:set_contents"
               }
             ],
             "name": "minecraft:cyan_shulker_box"
@@ -7499,9 +7360,7 @@
                       {
                         "condition": "minecraft:match_tool",
                         "predicate": {
-                          "items": [
-                            "minecraft:shears"
-                          ]
+                          "items": "minecraft:shears"
                         }
                       },
                       {
@@ -7557,9 +7416,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
+                    "items": "minecraft:shears"
                   }
                 },
                 {
@@ -7625,9 +7482,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
+                    "items": "minecraft:shears"
                   }
                 },
                 {
@@ -8156,9 +8011,7 @@
                   {
                     "condition": "minecraft:match_tool",
                     "predicate": {
-                      "items": [
-                        "minecraft:shears"
-                      ]
+                      "items": "minecraft:shears"
                     }
                   }
                 ],
@@ -8465,14 +8318,10 @@
                 "type": "minecraft:item",
                 "functions": [
                   {
-                    "function": "minecraft:copy_nbt",
-                    "ops": [
-                      {
-                        "op": "replace",
-                        "source": "sherds",
-                        "target": "BlockEntityTag.sherds"
-                      }
+                    "components": [
+                      "minecraft:pot_decorations"
                     ],
+                    "function": "minecraft:copy_components",
                     "source": "block_entity"
                   }
                 ],
@@ -9404,7 +9253,10 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
+                "components": [
+                  "minecraft:custom_name"
+                ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -9505,7 +9357,10 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
+                "components": [
+                  "minecraft:custom_name"
+                ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -9603,7 +9458,10 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
+                "components": [
+                  "minecraft:custom_name"
+                ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -9959,9 +9817,7 @@
                   {
                     "condition": "minecraft:match_tool",
                     "predicate": {
-                      "items": [
-                        "minecraft:shears"
-                      ]
+                      "items": "minecraft:shears"
                     }
                   }
                 ],
@@ -10190,9 +10046,7 @@
                       {
                         "condition": "minecraft:match_tool",
                         "predicate": {
-                          "items": [
-                            "minecraft:shears"
-                          ]
+                          "items": "minecraft:shears"
                         }
                       },
                       {
@@ -10248,9 +10102,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
+                    "items": "minecraft:shears"
                   }
                 },
                 {
@@ -10331,7 +10183,10 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
+                "components": [
+                  "minecraft:custom_name"
+                ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -10494,9 +10349,7 @@
               {
                 "condition": "minecraft:match_tool",
                 "predicate": {
-                  "items": [
-                    "minecraft:shears"
-                  ]
+                  "items": "minecraft:shears"
                 }
               }
             ],
@@ -10966,18 +10819,11 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Patterns",
-                    "target": "BlockEntityTag.Patterns"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:banner_patterns"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -11192,39 +11038,14 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Lock",
-                    "target": "BlockEntityTag.Lock"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTable",
-                    "target": "BlockEntityTag.LootTable"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTableSeed",
-                    "target": "BlockEntityTag.LootTableSeed"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:container",
+                  "minecraft:lock",
+                  "minecraft:container_loot"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
-              },
-              {
-                "type": "minecraft:shulker_box",
-                "entries": [
-                  {
-                    "type": "minecraft:dynamic",
-                    "name": "minecraft:contents"
-                  }
-                ],
-                "function": "minecraft:set_contents"
               }
             ],
             "name": "minecraft:gray_shulker_box"
@@ -11354,18 +11175,11 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Patterns",
-                    "target": "BlockEntityTag.Patterns"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:banner_patterns"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -11580,39 +11394,14 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Lock",
-                    "target": "BlockEntityTag.Lock"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTable",
-                    "target": "BlockEntityTag.LootTable"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTableSeed",
-                    "target": "BlockEntityTag.LootTableSeed"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:container",
+                  "minecraft:lock",
+                  "minecraft:container_loot"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
-              },
-              {
-                "type": "minecraft:shulker_box",
-                "entries": [
-                  {
-                    "type": "minecraft:dynamic",
-                    "name": "minecraft:contents"
-                  }
-                ],
-                "function": "minecraft:set_contents"
               }
             ],
             "name": "minecraft:green_shulker_box"
@@ -11757,9 +11546,7 @@
           {
             "condition": "minecraft:match_tool",
             "predicate": {
-              "items": [
-                "minecraft:shears"
-              ]
+              "items": "minecraft:shears"
             }
           }
         ],
@@ -11873,7 +11660,10 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
+                "components": [
+                  "minecraft:custom_name"
+                ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -12557,9 +12347,7 @@
                       {
                         "condition": "minecraft:match_tool",
                         "predicate": {
-                          "items": [
-                            "minecraft:shears"
-                          ]
+                          "items": "minecraft:shears"
                         }
                       },
                       {
@@ -12616,9 +12404,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
+                    "items": "minecraft:shears"
                   }
                 },
                 {
@@ -13092,9 +12878,7 @@
             "offsetY": 1,
             "predicate": {
               "block": {
-                "blocks": [
-                  "minecraft:large_fern"
-                ],
+                "blocks": "minecraft:large_fern",
                 "state": {
                   "half": "upper"
                 }
@@ -13112,9 +12896,7 @@
                   {
                     "condition": "minecraft:match_tool",
                     "predicate": {
-                      "items": [
-                        "minecraft:shears"
-                      ]
+                      "items": "minecraft:shears"
                     }
                   }
                 ],
@@ -13160,9 +12942,7 @@
             "offsetY": -1,
             "predicate": {
               "block": {
-                "blocks": [
-                  "minecraft:large_fern"
-                ],
+                "blocks": "minecraft:large_fern",
                 "state": {
                   "half": "lower"
                 }
@@ -13180,9 +12960,7 @@
                   {
                     "condition": "minecraft:match_tool",
                     "predicate": {
-                      "items": [
-                        "minecraft:shears"
-                      ]
+                      "items": "minecraft:shears"
                     }
                   }
                 ],
@@ -13294,18 +13072,11 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Patterns",
-                    "target": "BlockEntityTag.Patterns"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:banner_patterns"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -13520,39 +13291,14 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Lock",
-                    "target": "BlockEntityTag.Lock"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTable",
-                    "target": "BlockEntityTag.LootTable"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTableSeed",
-                    "target": "BlockEntityTag.LootTableSeed"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:container",
+                  "minecraft:lock",
+                  "minecraft:container_loot"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
-              },
-              {
-                "type": "minecraft:shulker_box",
-                "entries": [
-                  {
-                    "type": "minecraft:dynamic",
-                    "name": "minecraft:contents"
-                  }
-                ],
-                "function": "minecraft:set_contents"
               }
             ],
             "name": "minecraft:light_blue_shulker_box"
@@ -13682,18 +13428,11 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Patterns",
-                    "target": "BlockEntityTag.Patterns"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:banner_patterns"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -13908,39 +13647,14 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Lock",
-                    "target": "BlockEntityTag.Lock"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTable",
-                    "target": "BlockEntityTag.LootTable"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTableSeed",
-                    "target": "BlockEntityTag.LootTableSeed"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:container",
+                  "minecraft:lock",
+                  "minecraft:container_loot"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
-              },
-              {
-                "type": "minecraft:shulker_box",
-                "entries": [
-                  {
-                    "type": "minecraft:dynamic",
-                    "name": "minecraft:contents"
-                  }
-                ],
-                "function": "minecraft:set_contents"
               }
             ],
             "name": "minecraft:light_gray_shulker_box"
@@ -14184,18 +13898,11 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Patterns",
-                    "target": "BlockEntityTag.Patterns"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:banner_patterns"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -14410,39 +14117,14 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Lock",
-                    "target": "BlockEntityTag.Lock"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTable",
-                    "target": "BlockEntityTag.LootTable"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTableSeed",
-                    "target": "BlockEntityTag.LootTableSeed"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:container",
+                  "minecraft:lock",
+                  "minecraft:container_loot"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
-              },
-              {
-                "type": "minecraft:shulker_box",
-                "entries": [
-                  {
-                    "type": "minecraft:dynamic",
-                    "name": "minecraft:contents"
-                  }
-                ],
-                "function": "minecraft:set_contents"
               }
             ],
             "name": "minecraft:lime_shulker_box"
@@ -14614,18 +14296,11 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Patterns",
-                    "target": "BlockEntityTag.Patterns"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:banner_patterns"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -14840,39 +14515,14 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Lock",
-                    "target": "BlockEntityTag.Lock"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTable",
-                    "target": "BlockEntityTag.LootTable"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTableSeed",
-                    "target": "BlockEntityTag.LootTableSeed"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:container",
+                  "minecraft:lock",
+                  "minecraft:container_loot"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
-              },
-              {
-                "type": "minecraft:shulker_box",
-                "entries": [
-                  {
-                    "type": "minecraft:dynamic",
-                    "name": "minecraft:contents"
-                  }
-                ],
-                "function": "minecraft:set_contents"
               }
             ],
             "name": "minecraft:magenta_shulker_box"
@@ -15140,9 +14790,7 @@
                       {
                         "condition": "minecraft:match_tool",
                         "predicate": {
-                          "items": [
-                            "minecraft:shears"
-                          ]
+                          "items": "minecraft:shears"
                         }
                       },
                       {
@@ -16396,9 +16044,7 @@
           {
             "condition": "minecraft:match_tool",
             "predicate": {
-              "items": [
-                "minecraft:shears"
-              ]
+              "items": "minecraft:shears"
             }
           }
         ],
@@ -16687,9 +16333,7 @@
                       {
                         "condition": "minecraft:match_tool",
                         "predicate": {
-                          "items": [
-                            "minecraft:shears"
-                          ]
+                          "items": "minecraft:shears"
                         }
                       },
                       {
@@ -16745,9 +16389,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
+                    "items": "minecraft:shears"
                   }
                 },
                 {
@@ -16813,9 +16455,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
+                    "items": "minecraft:shears"
                   }
                 },
                 {
@@ -17143,18 +16783,11 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Patterns",
-                    "target": "BlockEntityTag.Patterns"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:banner_patterns"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -17369,39 +17002,14 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Lock",
-                    "target": "BlockEntityTag.Lock"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTable",
-                    "target": "BlockEntityTag.LootTable"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTableSeed",
-                    "target": "BlockEntityTag.LootTableSeed"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:container",
+                  "minecraft:lock",
+                  "minecraft:container_loot"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
-              },
-              {
-                "type": "minecraft:shulker_box",
-                "entries": [
-                  {
-                    "type": "minecraft:dynamic",
-                    "name": "minecraft:contents"
-                  }
-                ],
-                "function": "minecraft:set_contents"
               }
             ],
             "name": "minecraft:orange_shulker_box"
@@ -17845,18 +17453,11 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Patterns",
-                    "target": "BlockEntityTag.Patterns"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:banner_patterns"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -18148,39 +17749,14 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Lock",
-                    "target": "BlockEntityTag.Lock"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTable",
-                    "target": "BlockEntityTag.LootTable"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTableSeed",
-                    "target": "BlockEntityTag.LootTableSeed"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:container",
+                  "minecraft:lock",
+                  "minecraft:container_loot"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
-              },
-              {
-                "type": "minecraft:shulker_box",
-                "entries": [
-                  {
-                    "type": "minecraft:dynamic",
-                    "name": "minecraft:contents"
-                  }
-                ],
-                "function": "minecraft:set_contents"
               }
             ],
             "name": "minecraft:pink_shulker_box"
@@ -18534,19 +18110,11 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "SkullOwner",
-                    "target": "SkullOwner"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "note_block_sound",
-                    "target": "BlockEntityTag.note_block_sound"
-                  }
+                "components": [
+                  "minecraft:profile",
+                  "minecraft:note_block_sound"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -20973,18 +20541,11 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Patterns",
-                    "target": "BlockEntityTag.Patterns"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:banner_patterns"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -21199,39 +20760,14 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Lock",
-                    "target": "BlockEntityTag.Lock"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTable",
-                    "target": "BlockEntityTag.LootTable"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTableSeed",
-                    "target": "BlockEntityTag.LootTableSeed"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:container",
+                  "minecraft:lock",
+                  "minecraft:container_loot"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
-              },
-              {
-                "type": "minecraft:shulker_box",
-                "entries": [
-                  {
-                    "type": "minecraft:dynamic",
-                    "name": "minecraft:contents"
-                  }
-                ],
-                "function": "minecraft:set_contents"
               }
             ],
             "name": "minecraft:purple_shulker_box"
@@ -21662,18 +21198,11 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Patterns",
-                    "target": "BlockEntityTag.Patterns"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:banner_patterns"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -22186,39 +21715,14 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Lock",
-                    "target": "BlockEntityTag.Lock"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTable",
-                    "target": "BlockEntityTag.LootTable"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTableSeed",
-                    "target": "BlockEntityTag.LootTableSeed"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:container",
+                  "minecraft:lock",
+                  "minecraft:container_loot"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
-              },
-              {
-                "type": "minecraft:shulker_box",
-                "entries": [
-                  {
-                    "type": "minecraft:dynamic",
-                    "name": "minecraft:contents"
-                  }
-                ],
-                "function": "minecraft:set_contents"
               }
             ],
             "name": "minecraft:red_shulker_box"
@@ -23127,9 +22631,7 @@
           {
             "condition": "minecraft:match_tool",
             "predicate": {
-              "items": [
-                "minecraft:shears"
-              ]
+              "items": "minecraft:shears"
             }
           }
         ],
@@ -23159,9 +22661,7 @@
                   {
                     "condition": "minecraft:match_tool",
                     "predicate": {
-                      "items": [
-                        "minecraft:shears"
-                      ]
+                      "items": "minecraft:shears"
                     }
                   }
                 ],
@@ -23229,39 +22729,14 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Lock",
-                    "target": "BlockEntityTag.Lock"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTable",
-                    "target": "BlockEntityTag.LootTable"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTableSeed",
-                    "target": "BlockEntityTag.LootTableSeed"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:container",
+                  "minecraft:lock",
+                  "minecraft:container_loot"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
-              },
-              {
-                "type": "minecraft:shulker_box",
-                "entries": [
-                  {
-                    "type": "minecraft:dynamic",
-                    "name": "minecraft:contents"
-                  }
-                ],
-                "function": "minecraft:set_contents"
               }
             ],
             "name": "minecraft:shulker_box"
@@ -23349,9 +22824,7 @@
           {
             "condition": "minecraft:match_tool",
             "predicate": {
-              "items": [
-                "minecraft:shears"
-              ]
+              "items": "minecraft:shears"
             }
           }
         ],
@@ -23402,7 +22875,10 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
+                "components": [
+                  "minecraft:custom_name"
+                ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -24467,9 +23943,7 @@
                       {
                         "condition": "minecraft:match_tool",
                         "predicate": {
-                          "items": [
-                            "minecraft:shears"
-                          ]
+                          "items": "minecraft:shears"
                         }
                       },
                       {
@@ -24525,9 +23999,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
+                    "items": "minecraft:shears"
                   }
                 },
                 {
@@ -25676,9 +25148,7 @@
             "offsetY": 1,
             "predicate": {
               "block": {
-                "blocks": [
-                  "minecraft:tall_grass"
-                ],
+                "blocks": "minecraft:tall_grass",
                 "state": {
                   "half": "upper"
                 }
@@ -25696,9 +25166,7 @@
                   {
                     "condition": "minecraft:match_tool",
                     "predicate": {
-                      "items": [
-                        "minecraft:shears"
-                      ]
+                      "items": "minecraft:shears"
                     }
                   }
                 ],
@@ -25744,9 +25212,7 @@
             "offsetY": -1,
             "predicate": {
               "block": {
-                "blocks": [
-                  "minecraft:tall_grass"
-                ],
+                "blocks": "minecraft:tall_grass",
                 "state": {
                   "half": "lower"
                 }
@@ -25764,9 +25230,7 @@
                   {
                     "condition": "minecraft:match_tool",
                     "predicate": {
-                      "items": [
-                        "minecraft:shears"
-                      ]
+                      "items": "minecraft:shears"
                     }
                   }
                 ],
@@ -25809,9 +25273,7 @@
           {
             "condition": "minecraft:match_tool",
             "predicate": {
-              "items": [
-                "minecraft:shears"
-              ]
+              "items": "minecraft:shears"
             }
           }
         ],
@@ -26004,7 +25466,10 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
+                "components": [
+                  "minecraft:custom_name"
+                ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -26267,9 +25732,7 @@
                       {
                         "condition": "minecraft:match_tool",
                         "predicate": {
-                          "items": [
-                            "minecraft:shears"
-                          ]
+                          "items": "minecraft:shears"
                         }
                       },
                       {
@@ -26332,9 +25795,7 @@
                       {
                         "condition": "minecraft:match_tool",
                         "predicate": {
-                          "items": [
-                            "minecraft:shears"
-                          ]
+                          "items": "minecraft:shears"
                         }
                       },
                       {
@@ -26413,9 +25874,7 @@
           {
             "condition": "minecraft:match_tool",
             "predicate": {
-              "items": [
-                "minecraft:shears"
-              ]
+              "items": "minecraft:shears"
             }
           }
         ],
@@ -27463,9 +26922,7 @@
                       {
                         "condition": "minecraft:match_tool",
                         "predicate": {
-                          "items": [
-                            "minecraft:shears"
-                          ]
+                          "items": "minecraft:shears"
                         }
                       },
                       {
@@ -27528,9 +26985,7 @@
                       {
                         "condition": "minecraft:match_tool",
                         "predicate": {
-                          "items": [
-                            "minecraft:shears"
-                          ]
+                          "items": "minecraft:shears"
                         }
                       },
                       {
@@ -27680,18 +27135,11 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Patterns",
-                    "target": "BlockEntityTag.Patterns"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:banner_patterns"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -27906,39 +27354,14 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Lock",
-                    "target": "BlockEntityTag.Lock"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTable",
-                    "target": "BlockEntityTag.LootTable"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTableSeed",
-                    "target": "BlockEntityTag.LootTableSeed"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:container",
+                  "minecraft:lock",
+                  "minecraft:container_loot"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
-              },
-              {
-                "type": "minecraft:shulker_box",
-                "entries": [
-                  {
-                    "type": "minecraft:dynamic",
-                    "name": "minecraft:contents"
-                  }
-                ],
-                "function": "minecraft:set_contents"
               }
             ],
             "name": "minecraft:white_shulker_box"
@@ -28126,18 +27549,11 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Patterns",
-                    "target": "BlockEntityTag.Patterns"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:banner_patterns"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
               }
             ],
@@ -28352,39 +27768,14 @@
             "type": "minecraft:item",
             "functions": [
               {
-                "function": "minecraft:copy_name",
-                "source": "block_entity"
-              },
-              {
-                "function": "minecraft:copy_nbt",
-                "ops": [
-                  {
-                    "op": "replace",
-                    "source": "Lock",
-                    "target": "BlockEntityTag.Lock"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTable",
-                    "target": "BlockEntityTag.LootTable"
-                  },
-                  {
-                    "op": "replace",
-                    "source": "LootTableSeed",
-                    "target": "BlockEntityTag.LootTableSeed"
-                  }
+                "components": [
+                  "minecraft:custom_name",
+                  "minecraft:container",
+                  "minecraft:lock",
+                  "minecraft:container_loot"
                 ],
+                "function": "minecraft:copy_components",
                 "source": "block_entity"
-              },
-              {
-                "type": "minecraft:shulker_box",
-                "entries": [
-                  {
-                    "type": "minecraft:dynamic",
-                    "name": "minecraft:contents"
-                  }
-                ],
-                "function": "minecraft:set_contents"
               }
             ],
             "name": "minecraft:yellow_shulker_box"
@@ -37405,7 +36796,7 @@
                 "function": "minecraft:furnace_smelt"
               }
             ],
-            "name": "minecraft:gameplay/fishing/fish"
+            "value": "minecraft:gameplay/fishing/fish"
           }
         ],
         "rolls": 1.0
@@ -37751,7 +37142,7 @@
                 "function": "minecraft:furnace_smelt"
               }
             ],
-            "name": "minecraft:gameplay/fishing/fish"
+            "value": "minecraft:gameplay/fishing/fish"
           }
         ],
         "rolls": 1.0
@@ -38811,7 +38202,7 @@
         "entries": [
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:entities/sheep"
+            "value": "minecraft:entities/sheep"
           }
         ],
         "rolls": 1.0
@@ -38837,7 +38228,7 @@
         "entries": [
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:entities/sheep"
+            "value": "minecraft:entities/sheep"
           }
         ],
         "rolls": 1.0
@@ -38863,7 +38254,7 @@
         "entries": [
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:entities/sheep"
+            "value": "minecraft:entities/sheep"
           }
         ],
         "rolls": 1.0
@@ -38889,7 +38280,7 @@
         "entries": [
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:entities/sheep"
+            "value": "minecraft:entities/sheep"
           }
         ],
         "rolls": 1.0
@@ -38915,7 +38306,7 @@
         "entries": [
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:entities/sheep"
+            "value": "minecraft:entities/sheep"
           }
         ],
         "rolls": 1.0
@@ -38941,7 +38332,7 @@
         "entries": [
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:entities/sheep"
+            "value": "minecraft:entities/sheep"
           }
         ],
         "rolls": 1.0
@@ -38967,7 +38358,7 @@
         "entries": [
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:entities/sheep"
+            "value": "minecraft:entities/sheep"
           }
         ],
         "rolls": 1.0
@@ -38993,7 +38384,7 @@
         "entries": [
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:entities/sheep"
+            "value": "minecraft:entities/sheep"
           }
         ],
         "rolls": 1.0
@@ -39019,7 +38410,7 @@
         "entries": [
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:entities/sheep"
+            "value": "minecraft:entities/sheep"
           }
         ],
         "rolls": 1.0
@@ -39045,7 +38436,7 @@
         "entries": [
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:entities/sheep"
+            "value": "minecraft:entities/sheep"
           }
         ],
         "rolls": 1.0
@@ -39071,7 +38462,7 @@
         "entries": [
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:entities/sheep"
+            "value": "minecraft:entities/sheep"
           }
         ],
         "rolls": 1.0
@@ -39097,7 +38488,7 @@
         "entries": [
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:entities/sheep"
+            "value": "minecraft:entities/sheep"
           }
         ],
         "rolls": 1.0
@@ -39123,7 +38514,7 @@
         "entries": [
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:entities/sheep"
+            "value": "minecraft:entities/sheep"
           }
         ],
         "rolls": 1.0
@@ -39149,7 +38540,7 @@
         "entries": [
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:entities/sheep"
+            "value": "minecraft:entities/sheep"
           }
         ],
         "rolls": 1.0
@@ -39175,7 +38566,7 @@
         "entries": [
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:entities/sheep"
+            "value": "minecraft:entities/sheep"
           }
         ],
         "rolls": 1.0
@@ -39201,7 +38592,7 @@
         "entries": [
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:entities/sheep"
+            "value": "minecraft:entities/sheep"
           }
         ],
         "rolls": 1.0
@@ -40531,8 +39922,8 @@
         "entries": [
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:gameplay/fishing/junk",
             "quality": -2,
+            "value": "minecraft:gameplay/fishing/junk",
             "weight": 10
           },
           {
@@ -40549,14 +39940,14 @@
                 }
               }
             ],
-            "name": "minecraft:gameplay/fishing/treasure",
             "quality": 2,
+            "value": "minecraft:gameplay/fishing/treasure",
             "weight": 5
           },
           {
             "type": "minecraft:loot_table",
-            "name": "minecraft:gameplay/fishing/fish",
             "quality": -1,
+            "value": "minecraft:gameplay/fishing/fish",
             "weight": 85
           }
         ],
@@ -40701,27 +40092,14 @@
             "type": "minecraft:item",
             "conditions": [
               {
-                "condition": "minecraft:any_of",
-                "terms": [
-                  {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:jungle"
-                    }
-                  },
-                  {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:sparse_jungle"
-                    }
-                  },
-                  {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:bamboo_jungle"
-                    }
-                  }
-                ]
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "biomes": [
+                    "minecraft:jungle",
+                    "minecraft:sparse_jungle",
+                    "minecraft:bamboo_jungle"
+                  ]
+                }
               }
             ],
             "name": "minecraft:bamboo",
@@ -41692,6 +41070,10 @@
   "pots/trial_chambers/corridor": {
     "type": "minecraft:chest",
     "random_sequence": "minecraft:pots/trial_chambers/corridor"
+  },
+  "shearing/bogged": {
+    "type": "minecraft:shearing",
+    "random_sequence": "minecraft:shearing/bogged"
   },
   "spawners/trial_chamber/consumables": {
     "type": "minecraft:chest",
