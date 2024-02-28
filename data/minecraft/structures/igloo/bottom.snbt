@@ -65,11 +65,11 @@
               uses: 0, 
               rewardExp: 1b, 
               buy: {
-                Count: 36b, 
+                count: 36, 
                 id: "minecraft:rotten_flesh"
               }, 
               sell: {
-                Count: 1b, 
+                count: 1, 
                 id: "minecraft:emerald"
               }
             }, 
@@ -78,11 +78,11 @@
               uses: 0, 
               rewardExp: 1b, 
               buy: {
-                Count: 9b, 
+                count: 9, 
                 id: "minecraft:gold_ingot"
               }, 
               sell: {
-                Count: 1b, 
+                count: 1, 
                 id: "minecraft:emerald"
               }
             }
@@ -1232,12 +1232,14 @@
         Fuel: 0b, 
         Items: [
           {
+            count: 1, 
             Slot: 1b, 
-            Count: 1b, 
-            id: "minecraft:splash_potion", 
-            tag: {
-              Potion: "minecraft:weakness"
-            }
+            components: {
+              "minecraft:potion_contents": {
+                potion: "minecraft:weakness"
+              }
+            }, 
+            id: "minecraft:splash_potion"
           }
         ], 
         id: "minecraft:brewing_stand", 

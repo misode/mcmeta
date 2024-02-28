@@ -102,27 +102,14 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "minecraft:any_of",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:jungle"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:sparse_jungle"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:bamboo_jungle"
-                  }
-                }
-              ]
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:jungle",
+                  "minecraft:sparse_jungle",
+                  "minecraft:bamboo_jungle"
+                ]
+              }
             }
           ],
           "name": "minecraft:bamboo",
