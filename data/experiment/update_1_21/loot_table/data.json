@@ -290,6 +290,27 @@
     ],
     "random_sequence": "minecraft:blocks/exposed_copper_trapdoor"
   },
+  "blocks/heavy_core": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:heavy_core"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/heavy_core"
+  },
   "blocks/oxidized_chiseled_copper": {
     "type": "minecraft:block",
     "pools": [
@@ -1873,25 +1894,203 @@
         "bonus_rolls": 0.0,
         "entries": [
           {
+            "type": "minecraft:loot_table",
+            "value": "minecraft:chests/trial_chambers/reward_rare",
+            "weight": 8
+          },
+          {
+            "type": "minecraft:loot_table",
+            "value": "minecraft:chests/trial_chambers/reward_common",
+            "weight": 2
+          }
+        ],
+        "rolls": 1.0
+      },
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:loot_table",
+            "value": "minecraft:chests/trial_chambers/reward_common"
+          }
+        ],
+        "rolls": {
+          "type": "minecraft:uniform",
+          "max": 3.0,
+          "min": 1.0
+        }
+      },
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "chance": 0.25,
+            "condition": "minecraft:random_chance"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:loot_table",
+            "value": "minecraft:chests/trial_chambers/reward_unique"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:chests/trial_chambers/reward"
+  },
+  "chests/trial_chambers/reward_common": {
+    "type": "minecraft:chest",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
             "type": "minecraft:item",
             "functions": [
               {
                 "add": false,
                 "count": {
                   "type": "minecraft:uniform",
-                  "max": 6.0,
+                  "max": 8.0,
+                  "min": 2.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:arrow",
+            "weight": 4
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 8.0,
+                  "min": 2.0
+                },
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:set_potion",
+                "id": "minecraft:poison"
+              }
+            ],
+            "name": "minecraft:tipped_arrow",
+            "weight": 4
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 8.0,
                   "min": 2.0
                 },
                 "function": "minecraft:set_count"
               }
             ],
             "name": "minecraft:emerald",
-            "weight": 8
+            "weight": 4
           },
           {
             "type": "minecraft:item",
-            "name": "minecraft:iron_horse_armor",
-            "weight": 8
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 3.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:wind_charge",
+            "weight": 3
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 4.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:iron_ingot",
+            "weight": 3
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 2.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:honey_bottle",
+            "weight": 3
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 12.0,
+                  "min": 4.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:wind_charge"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 2.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:diamond"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:chests/trial_chambers/reward_common"
+  },
+  "chests/trial_chambers/reward_rare": {
+    "type": "minecraft:chest",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:emerald_block",
+            "weight": 3
           },
           {
             "type": "minecraft:item",
@@ -1900,14 +2099,14 @@
                 "add": false,
                 "damage": {
                   "type": "minecraft:uniform",
-                  "max": 0.8,
-                  "min": 0.15
+                  "max": 1.0,
+                  "min": 0.5
                 },
                 "function": "minecraft:set_damage"
               }
             ],
             "name": "minecraft:shield",
-            "weight": 6
+            "weight": 3
           },
           {
             "type": "minecraft:item",
@@ -1916,30 +2115,14 @@
                 "function": "minecraft:enchant_with_levels",
                 "levels": {
                   "type": "minecraft:uniform",
-                  "max": 20.0,
-                  "min": 10.0
-                },
-                "treasure": true
-              }
-            ],
-            "name": "minecraft:iron_boots",
-            "weight": 6
-          },
-          {
-            "type": "minecraft:item",
-            "functions": [
-              {
-                "function": "minecraft:enchant_with_levels",
-                "levels": {
-                  "type": "minecraft:uniform",
-                  "max": 20.0,
-                  "min": 10.0
+                  "max": 15.0,
+                  "min": 5.0
                 },
                 "treasure": true
               }
             ],
             "name": "minecraft:iron_chestplate",
-            "weight": 6
+            "weight": 3
           },
           {
             "type": "minecraft:item",
@@ -1948,46 +2131,14 @@
                 "function": "minecraft:enchant_with_levels",
                 "levels": {
                   "type": "minecraft:uniform",
-                  "max": 20.0,
-                  "min": 10.0
-                },
-                "treasure": true
-              }
-            ],
-            "name": "minecraft:iron_leggings",
-            "weight": 6
-          },
-          {
-            "type": "minecraft:item",
-            "functions": [
-              {
-                "function": "minecraft:enchant_with_levels",
-                "levels": {
-                  "type": "minecraft:uniform",
-                  "max": 20.0,
-                  "min": 10.0
-                },
-                "treasure": true
-              }
-            ],
-            "name": "minecraft:iron_helmet",
-            "weight": 6
-          },
-          {
-            "type": "minecraft:item",
-            "functions": [
-              {
-                "function": "minecraft:enchant_with_levels",
-                "levels": {
-                  "type": "minecraft:uniform",
-                  "max": 20.0,
-                  "min": 10.0
+                  "max": 15.0,
+                  "min": 5.0
                 },
                 "treasure": true
               }
             ],
             "name": "minecraft:iron_axe",
-            "weight": 6
+            "weight": 3
           },
           {
             "type": "minecraft:item",
@@ -1996,55 +2147,13 @@
                 "function": "minecraft:enchant_with_levels",
                 "levels": {
                   "type": "minecraft:uniform",
-                  "max": 20.0,
-                  "min": 10.0
+                  "max": 15.0,
+                  "min": 5.0
                 },
                 "treasure": true
               }
             ],
-            "name": "minecraft:iron_pickaxe",
-            "weight": 6
-          },
-          {
-            "type": "minecraft:item",
-            "functions": [
-              {
-                "function": "minecraft:enchant_with_levels",
-                "levels": {
-                  "type": "minecraft:uniform",
-                  "max": 20.0,
-                  "min": 10.0
-                },
-                "treasure": true
-              }
-            ],
-            "name": "minecraft:iron_shovel",
-            "weight": 6
-          },
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:saddle",
-            "weight": 6
-          },
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:golden_horse_armor",
-            "weight": 6
-          },
-          {
-            "type": "minecraft:item",
-            "functions": [
-              {
-                "function": "minecraft:enchant_with_levels",
-                "levels": {
-                  "type": "minecraft:uniform",
-                  "max": 20.0,
-                  "min": 10.0
-                },
-                "treasure": true
-              }
-            ],
-            "name": "minecraft:diamond_axe",
+            "name": "minecraft:bow",
             "weight": 3
           },
           {
@@ -2055,13 +2164,13 @@
                 "levels": {
                   "type": "minecraft:uniform",
                   "max": 20.0,
-                  "min": 10.0
+                  "min": 5.0
                 },
                 "treasure": true
               }
             ],
             "name": "minecraft:crossbow",
-            "weight": 3
+            "weight": 2
           },
           {
             "type": "minecraft:item",
@@ -2070,24 +2179,35 @@
                 "function": "minecraft:enchant_with_levels",
                 "levels": {
                   "type": "minecraft:uniform",
-                  "max": 20.0,
-                  "min": 10.0
+                  "max": 15.0,
+                  "min": 5.0
+                },
+                "treasure": true
+              }
+            ],
+            "name": "minecraft:diamond_axe",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:enchant_with_levels",
+                "levels": {
+                  "type": "minecraft:uniform",
+                  "max": 15.0,
+                  "min": 5.0
                 },
                 "treasure": true
               }
             ],
             "name": "minecraft:diamond_chestplate",
-            "weight": 3
+            "weight": 2
           },
           {
             "type": "minecraft:item",
-            "name": "minecraft:diamond_horse_armor",
-            "weight": 3
-          },
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:enchanted_golden_apple",
-            "weight": 3
+            "name": "minecraft:golden_apple",
+            "weight": 2
           },
           {
             "type": "minecraft:item",
@@ -2105,22 +2225,6 @@
               }
             ],
             "name": "minecraft:book",
-            "weight": 12
-          },
-          {
-            "type": "minecraft:item",
-            "functions": [
-              {
-                "add": false,
-                "count": {
-                  "type": "minecraft:uniform",
-                  "max": 3.0,
-                  "min": 1.0
-                },
-                "function": "minecraft:set_count"
-              }
-            ],
-            "name": "minecraft:diamond",
             "weight": 2
           },
           {
@@ -2138,17 +2242,52 @@
               }
             ],
             "name": "minecraft:book",
-            "weight": 5
+            "weight": 2
           }
         ],
-        "rolls": {
-          "type": "minecraft:uniform",
-          "max": 6.0,
-          "min": 2.0
-        }
+        "rolls": 1.0
       }
     ],
-    "random_sequence": "minecraft:chests/trial_chambers/reward"
+    "random_sequence": "minecraft:chests/trial_chambers/reward_rare"
+  },
+  "chests/trial_chambers/reward_unique": {
+    "type": "minecraft:chest",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:enchanted_golden_apple",
+            "weight": 3
+          },
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:bolt_armor_trim_smithing_template",
+            "weight": 3
+          },
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:flow_armor_trim_smithing_template",
+            "weight": 3
+          },
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:flow_banner_pattern"
+          },
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:guster_banner_pattern"
+          },
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:heavy_core"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:chests/trial_chambers/reward_unique"
   },
   "chests/trial_chambers/supply": {
     "type": "minecraft:chest",
@@ -2781,21 +2920,21 @@
                 "add": false,
                 "count": {
                   "type": "minecraft:uniform",
-                  "max": 6.0,
-                  "min": 4.0
+                  "max": 2.0,
+                  "min": 1.0
                 },
                 "function": "minecraft:set_count"
               },
               {
                 "count": {
                   "type": "minecraft:uniform",
-                  "max": 1.0,
-                  "min": 0.0
+                  "max": 2.0,
+                  "min": 1.0
                 },
                 "function": "minecraft:looting_enchant"
               }
             ],
-            "name": "minecraft:wind_charge"
+            "name": "minecraft:breeze_rod"
           }
         ],
         "rolls": 1.0
