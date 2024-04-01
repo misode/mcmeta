@@ -8,27 +8,31 @@
       },
       {
         "type": "minecraft:attached_to_leaves",
-        "block_provider": {
-          "type": "minecraft:randomized_int_state_provider",
-          "property": "age",
-          "source": {
-            "type": "minecraft:simple_state_provider",
-            "state": {
-              "Name": "minecraft:mangrove_propagule",
-              "Properties": {
-                "age": "0",
-                "hanging": "true",
-                "stage": "0",
-                "waterlogged": "false"
+        "block_provider": [
+          {
+            "type": "minecraft:randomized_int_state_provider",
+            "property": "age",
+            "source": {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:mangrove_propagule",
+                "Properties": {
+                  "age": "0",
+                  "hanging": "true",
+                  "stage": "0",
+                  "waterlogged": "false"
+                }
+              }
+            },
+            "values": {
+              "type": "minecraft:uniform",
+              "value": {
+                "max_inclusive": 4,
+                "min_inclusive": 0
               }
             }
-          },
-          "values": {
-            "type": "minecraft:uniform",
-            "max_inclusive": 4,
-            "min_inclusive": 0
           }
-        },
+        ],
         "directions": [
           "down"
         ],
@@ -39,6 +43,7 @@
       },
       {
         "type": "minecraft:beehive",
+        "fixed_height": true,
         "probability": 0.01
       }
     ],
@@ -115,8 +120,10 @@
       },
       "trunk_offset_y": {
         "type": "minecraft:uniform",
-        "max_inclusive": 3,
-        "min_inclusive": 1
+        "value": {
+          "max_inclusive": 3,
+          "min_inclusive": 1
+        }
       }
     },
     "trunk_placer": {
@@ -125,16 +132,21 @@
       "can_grow_through": "#minecraft:mangrove_logs_can_grow_through",
       "extra_branch_length": {
         "type": "minecraft:uniform",
-        "max_inclusive": 1,
-        "min_inclusive": 0
+        "value": {
+          "max_inclusive": 1,
+          "min_inclusive": 0
+        }
       },
       "extra_branch_steps": {
         "type": "minecraft:uniform",
-        "max_inclusive": 4,
-        "min_inclusive": 1
+        "value": {
+          "max_inclusive": 4,
+          "min_inclusive": 1
+        }
       },
       "height_rand_a": 1,
       "height_rand_b": 4,
+      "megabush": true,
       "place_branch_per_log_probability": 0.5
     },
     "trunk_provider": {
