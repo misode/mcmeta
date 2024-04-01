@@ -82,33 +82,40 @@
     }, 
     {
       nbt: {
-        normal_config: {
-          ticks_between_spawn: 20, 
-          spawn_potentials: [
-            {
-              data: {
-                entity: {
-                  id: "minecraft:spider"
-                }
-              }, 
-              weight: 1
-            }
-          ], 
-          simultaneous_mobs: 3.0f, 
-          simultaneous_mobs_added_per_player: 0.5f
-        }, 
-        ominous_config: {
-          loot_tables_to_eject: [
-            {
-              data: "minecraft:spawners/ominous/trial_chamber/key", 
-              weight: 3
+        cooldown_ends_at: 0L, 
+        registered_players: [], 
+        required_player_range: 14, 
+        ticks_between_spawn: 20, 
+        spawn_potentials: [
+          {
+            data: {
+              entity: {
+                id: "minecraft:spider"
+              }
             }, 
-            {
-              data: "minecraft:spawners/ominous/trial_chamber/consumables", 
-              weight: 7
-            }
-          ]
-        }
+            weight: 1
+          }
+        ], 
+        spawn_range: 4, 
+        total_mobs_added_per_player: 2.0f, 
+        next_mob_spawns_at: 0L, 
+        current_mobs: [], 
+        total_mobs_spawned: 0, 
+        loot_tables_to_eject: [
+          {
+            data: "minecraft:spawners/trial_chamber/consumables", 
+            weight: 1
+          }, 
+          {
+            data: "minecraft:spawners/trial_chamber/key", 
+            weight: 1
+          }
+        ], 
+        simultaneous_mobs: 3.0f, 
+        id: "minecraft:trial_spawner", 
+        simultaneous_mobs_added_per_player: 2.0f, 
+        target_cooldown_length: 36000, 
+        total_mobs: 6.0f
       }, 
       pos: [1, 1, 1], 
       state: 6
@@ -138,7 +145,6 @@
     }, 
     {
       Properties: {
-        ominous: "false", 
         trial_spawner_state: "waiting_for_players"
       }, 
       Name: "minecraft:trial_spawner"

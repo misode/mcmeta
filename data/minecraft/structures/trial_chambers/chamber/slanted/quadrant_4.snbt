@@ -736,7 +736,7 @@
     }, 
     {
       pos: [6, 4, 9], 
-      state: 5
+      state: 1
     }, 
     {
       pos: [7, 4, 0], 
@@ -752,7 +752,7 @@
     }, 
     {
       pos: [7, 4, 9], 
-      state: 5
+      state: 1
     }, 
     {
       pos: [8, 4, 0], 
@@ -760,7 +760,7 @@
     }, 
     {
       pos: [8, 4, 9], 
-      state: 5
+      state: 1
     }, 
     {
       pos: [9, 4, 1], 
@@ -1636,10 +1636,6 @@
     }, 
     {
       pos: [2, 2, 6], 
-      state: 6
-    }, 
-    {
-      pos: [2, 2, 7], 
       state: 6
     }, 
     {
@@ -4048,16 +4044,16 @@
     }, 
     {
       nbt: {
-        joint: "rollable", 
+        joint: "aligned", 
         final_state: "minecraft:air", 
-        name: "minecraft:quadrant", 
+        name: "minecraft:empty", 
         placement_priority: 0, 
-        pool: "minecraft:empty", 
+        pool: "minecraft:trial_chambers/reward/all", 
         selection_priority: 0, 
         id: "minecraft:jigsaw", 
-        target: "minecraft:empty"
+        target: "minecraft:reward_connector"
       }, 
-      pos: [7, 2, 9], 
+      pos: [2, 2, 7], 
       state: 9
     }, 
     {
@@ -4071,8 +4067,22 @@
         id: "minecraft:jigsaw", 
         target: "minecraft:empty"
       }, 
-      pos: [9, 2, 2], 
+      pos: [7, 2, 9], 
       state: 10
+    }, 
+    {
+      nbt: {
+        joint: "rollable", 
+        final_state: "minecraft:air", 
+        name: "minecraft:quadrant", 
+        placement_priority: 0, 
+        pool: "minecraft:empty", 
+        selection_priority: 0, 
+        id: "minecraft:jigsaw", 
+        target: "minecraft:empty"
+      }, 
+      pos: [9, 2, 2], 
+      state: 11
     }
   ], 
   palette: [
@@ -4116,6 +4126,12 @@
     {
       Properties: {
         orientation: "west_up"
+      }, 
+      Name: "minecraft:jigsaw"
+    }, 
+    {
+      Properties: {
+        orientation: "north_up"
       }, 
       Name: "minecraft:jigsaw"
     }, 
