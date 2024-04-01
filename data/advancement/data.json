@@ -1291,8 +1291,8 @@
               "pattern": "minecraft:border"
             }
           ],
-          "minecraft:hide_additional_tooltip": {},
-          "minecraft:item_name": "{\"color\":\"gold\",\"translate\":\"block.minecraft.ominous_banner\"}"
+          "minecraft:custom_name": "{\"color\":\"gold\",\"translate\":\"block.minecraft.ominous_banner\"}",
+          "minecraft:hide_additional_tooltip": {}
         },
         "count": 1,
         "id": "minecraft:white_banner"
@@ -1595,6 +1595,34 @@
         },
         "trigger": "minecraft:player_killed_entity"
       },
+      "minecraft:plaguewhale": {
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:plaguewhale"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
+      "minecraft:poisonous_potato_zombie": {
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:poisonous_potato_zombie"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
       "minecraft:ravager": {
         "conditions": {
           "entity": [
@@ -1687,6 +1715,20 @@
               "entity": "this",
               "predicate": {
                 "type": "minecraft:stray"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
+      "minecraft:toxifin": {
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:toxifin"
               }
             }
           ]
@@ -1852,6 +1894,7 @@
         "minecraft:piglin",
         "minecraft:piglin_brute",
         "minecraft:pillager",
+        "minecraft:plaguewhale",
         "minecraft:ravager",
         "minecraft:shulker",
         "minecraft:silverfish",
@@ -1859,6 +1902,7 @@
         "minecraft:slime",
         "minecraft:spider",
         "minecraft:stray",
+        "minecraft:toxifin",
         "minecraft:vex",
         "minecraft:vindicator",
         "minecraft:witch",
@@ -1867,7 +1911,8 @@
         "minecraft:zoglin",
         "minecraft:zombie_villager",
         "minecraft:zombie",
-        "minecraft:zombified_piglin"
+        "minecraft:zombified_piglin",
+        "minecraft:poisonous_potato_zombie"
       ]
     ],
     "sends_telemetry_event": true
@@ -2127,6 +2172,34 @@
         },
         "trigger": "minecraft:player_killed_entity"
       },
+      "minecraft:plaguewhale": {
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:plaguewhale"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
+      "minecraft:poisonous_potato_zombie": {
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:poisonous_potato_zombie"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
       "minecraft:ravager": {
         "conditions": {
           "entity": [
@@ -2219,6 +2292,20 @@
               "entity": "this",
               "predicate": {
                 "type": "minecraft:stray"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
+      "minecraft:toxifin": {
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:toxifin"
               }
             }
           ]
@@ -2421,6 +2508,9 @@
         "minecraft:pillager"
       ],
       [
+        "minecraft:plaguewhale"
+      ],
+      [
         "minecraft:ravager"
       ],
       [
@@ -2440,6 +2530,9 @@
       ],
       [
         "minecraft:stray"
+      ],
+      [
+        "minecraft:toxifin"
       ],
       [
         "minecraft:vex"
@@ -2467,6 +2560,9 @@
       ],
       [
         "minecraft:zombified_piglin"
+      ],
+      [
+        "minecraft:poisonous_potato_zombie"
       ]
     ],
     "rewards": {
@@ -3732,11 +3828,11 @@
                           "pattern": "minecraft:border"
                         }
                       ],
+                      "minecraft:custom_name": "{\"color\":\"gold\",\"translate\":\"block.minecraft.ominous_banner\"}",
                       "minecraft:enchantments": {
                         "levels": {}
                       },
                       "minecraft:hide_additional_tooltip": {},
-                      "minecraft:item_name": "{\"color\":\"gold\",\"translate\":\"block.minecraft.ominous_banner\"}",
                       "minecraft:lore": [],
                       "minecraft:max_stack_size": 16,
                       "minecraft:rarity": "common",
@@ -3793,8 +3889,8 @@
               "pattern": "minecraft:border"
             }
           ],
-          "minecraft:hide_additional_tooltip": {},
-          "minecraft:item_name": "{\"color\":\"gold\",\"translate\":\"block.minecraft.ominous_banner\"}"
+          "minecraft:custom_name": "{\"color\":\"gold\",\"translate\":\"block.minecraft.ominous_banner\"}",
+          "minecraft:hide_additional_tooltip": {}
         },
         "count": 1,
         "id": "minecraft:white_banner"
@@ -4549,6 +4645,38 @@
         },
         "trigger": "minecraft:consume_item"
       },
+      "poisonous_potato_chips": {
+        "conditions": {
+          "item": {
+            "items": "minecraft:poisonous_potato_chips"
+          }
+        },
+        "trigger": "minecraft:consume_item"
+      },
+      "poisonous_potato_fries": {
+        "conditions": {
+          "item": {
+            "items": "minecraft:poisonous_potato_fries"
+          }
+        },
+        "trigger": "minecraft:consume_item"
+      },
+      "poisonous_potato_slices": {
+        "conditions": {
+          "item": {
+            "items": "minecraft:poisonous_potato_slices"
+          }
+        },
+        "trigger": "minecraft:consume_item"
+      },
+      "poisonous_potato_sticks": {
+        "conditions": {
+          "item": {
+            "items": "minecraft:poisonous_potato_sticks"
+          }
+        },
+        "trigger": "minecraft:consume_item"
+      },
       "porkchop": {
         "conditions": {
           "item": {
@@ -4734,6 +4862,18 @@
       ],
       [
         "poisonous_potato"
+      ],
+      [
+        "poisonous_potato_sticks"
+      ],
+      [
+        "poisonous_potato_slices"
+      ],
+      [
+        "poisonous_potato_fries"
+      ],
+      [
+        "poisonous_potato_chips"
       ],
       [
         "golden_carrot"
@@ -7694,6 +7834,935 @@
     ],
     "sends_telemetry_event": true
   },
+  "potato/all_potatoed": {
+    "parent": "minecraft:potato/enter_the_potato",
+    "criteria": {
+      "minecraft:arboretum": {
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "location": {
+                  "biomes": "minecraft:arboretum"
+                }
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:location"
+      },
+      "minecraft:corruption": {
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "location": {
+                  "biomes": "minecraft:corruption"
+                }
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:location"
+      },
+      "minecraft:fields": {
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "location": {
+                  "biomes": "minecraft:fields"
+                }
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:location"
+      },
+      "minecraft:hash": {
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "location": {
+                  "biomes": "minecraft:hash"
+                }
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:location"
+      },
+      "minecraft:wasteland": {
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "location": {
+                  "biomes": "minecraft:wasteland"
+                }
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:location"
+      }
+    },
+    "display": {
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.all_potatoed.description"
+      },
+      "frame": "challenge",
+      "icon": {
+        "count": 1,
+        "id": "minecraft:gravtater"
+      },
+      "title": {
+        "translate": "advancements.potato.all_potatoed.title"
+      }
+    },
+    "requirements": [
+      [
+        "minecraft:fields"
+      ],
+      [
+        "minecraft:arboretum"
+      ],
+      [
+        "minecraft:hash"
+      ],
+      [
+        "minecraft:wasteland"
+      ],
+      [
+        "minecraft:corruption"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/bring_home_the_corruption": {
+    "parent": "minecraft:potato/enter_the_potato",
+    "criteria": {
+      "bring_home_the_corruption": {
+        "trigger": "minecraft:bring_home_corruption"
+      }
+    },
+    "display": {
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.bring_home_the_corruption.description"
+      },
+      "hidden": true,
+      "icon": {
+        "count": 1,
+        "id": "minecraft:corrupted_peelgrass_block"
+      },
+      "title": {
+        "translate": "advancements.potato.bring_home_the_corruption.title"
+      }
+    },
+    "requirements": [
+      [
+        "bring_home_the_corruption"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/craft_poisonous_potato_chips": {
+    "parent": "minecraft:potato/root",
+    "criteria": {
+      "poisonous_potato_chips": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato_chips"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "display": {
+      "announce_to_chat": false,
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.craft_poisonous_potato_chips.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:poisonous_potato_chips"
+      },
+      "title": {
+        "translate": "advancements.potato.craft_poisonous_potato_chips.title"
+      }
+    },
+    "requirements": [
+      [
+        "poisonous_potato_chips"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/craft_poisonous_potato_fries": {
+    "parent": "minecraft:potato/root",
+    "criteria": {
+      "poisonous_potato_fries": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato_fries"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "display": {
+      "announce_to_chat": false,
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.craft_poisonous_potato_fries.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:poisonous_potato_fries"
+      },
+      "title": {
+        "translate": "advancements.potato.craft_poisonous_potato_fries.title"
+      }
+    },
+    "requirements": [
+      [
+        "poisonous_potato_fries"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/craft_poisonous_potato_slices": {
+    "parent": "minecraft:potato/root",
+    "criteria": {
+      "poisonous_potato_slices": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato_slices"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "display": {
+      "announce_to_chat": false,
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.craft_poisonous_potato_slices.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:poisonous_potato_slices"
+      },
+      "title": {
+        "translate": "advancements.potato.craft_poisonous_potato_slices.title"
+      }
+    },
+    "requirements": [
+      [
+        "poisonous_potato_slices"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/craft_poisonous_potato_sticks": {
+    "parent": "minecraft:potato/root",
+    "criteria": {
+      "poisonous_potato_sticks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato_sticks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "display": {
+      "announce_to_chat": false,
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.craft_poisonous_potato_sticks.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:poisonous_potato_sticks"
+      },
+      "title": {
+        "translate": "advancements.potato.craft_poisonous_potato_sticks.title"
+      }
+    },
+    "requirements": [
+      [
+        "poisonous_potato_sticks"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/eat_armor": {
+    "parent": "minecraft:potato/root",
+    "criteria": {
+      "eat_armor": {
+        "trigger": "minecraft:eat_armor"
+      }
+    },
+    "display": {
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.eat_armor.description"
+      },
+      "hidden": true,
+      "icon": {
+        "count": 1,
+        "id": "minecraft:poisonous_potato_chestplate"
+      },
+      "title": {
+        "translate": "advancements.potato.eat_armor.title"
+      }
+    },
+    "requirements": [
+      [
+        "eat_armor"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/enter_the_potato": {
+    "parent": "minecraft:potato/root",
+    "criteria": {
+      "entered_potato": {
+        "conditions": {
+          "to": "minecraft:potato"
+        },
+        "trigger": "minecraft:changed_dimension"
+      }
+    },
+    "display": {
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.enter_the_potato.description"
+      },
+      "hidden": true,
+      "icon": {
+        "count": 1,
+        "id": "minecraft:potato_of_knowledge"
+      },
+      "title": {
+        "translate": "advancements.potato.enter_the_potato.title"
+      }
+    },
+    "requirements": [
+      [
+        "entered_potato"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/get_oily": {
+    "parent": "minecraft:potato/root",
+    "criteria": {
+      "refine_potato_oil": {
+        "conditions": {
+          "result_predicate": {
+            "type": "standard",
+            "item_predicate": {
+              "items": "minecraft:potato_oil"
+            }
+          }
+        },
+        "trigger": "minecraft:potato_refined"
+      }
+    },
+    "display": {
+      "announce_to_chat": false,
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.get_oily.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:potato_oil"
+      },
+      "title": {
+        "translate": "advancements.potato.get_oily.title"
+      }
+    },
+    "requirements": [
+      [
+        "refine_potato_oil"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/get_peeled": {
+    "parent": "minecraft:potato/root",
+    "criteria": {
+      "get_peeled": {
+        "trigger": "minecraft:get_peeled"
+      }
+    },
+    "display": {
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.get_peeled.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:potato_peels"
+      },
+      "title": {
+        "translate": "advancements.potato.get_peeled.title"
+      }
+    },
+    "requirements": [
+      [
+        "get_peeled"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/good_plant": {
+    "parent": "minecraft:potato/rumbled",
+    "criteria": {
+      "compost_staff": {
+        "trigger": "minecraft:compost_staff"
+      }
+    },
+    "display": {
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.good_plant.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:potato_staff"
+      },
+      "title": {
+        "translate": "advancements.potato.good_plant.title"
+      }
+    },
+    "requirements": [
+      [
+        "compost_staff"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/lubricate": {
+    "parent": "minecraft:potato/get_oily",
+    "criteria": {
+      "lubricate_item": {
+        "conditions": {
+          "result_predicate": {
+            "type": "lubrication",
+            "item_predicate": {},
+            "min_lubrication": 1
+          }
+        },
+        "trigger": "minecraft:potato_refined"
+      }
+    },
+    "display": {
+      "announce_to_chat": false,
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.lubricate.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:potato_oil"
+      },
+      "title": {
+        "translate": "advancements.potato.lubricate.title"
+      }
+    },
+    "requirements": [
+      [
+        "lubricate_item"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/lubricate_boots": {
+    "parent": "minecraft:potato/lubricate",
+    "criteria": {
+      "lubricate_boots": {
+        "conditions": {
+          "result_predicate": {
+            "type": "lubrication",
+            "item_predicate": {
+              "items": "#minecraft:foot_armor"
+            },
+            "min_lubrication": 1
+          }
+        },
+        "trigger": "minecraft:potato_refined"
+      }
+    },
+    "display": {
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.lubricate_boots.description"
+      },
+      "hidden": true,
+      "icon": {
+        "count": 1,
+        "id": "minecraft:poisonous_pota_toes"
+      },
+      "title": {
+        "translate": "advancements.potato.lubricate_boots.title"
+      }
+    },
+    "requirements": [
+      [
+        "lubricate_boots"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/lubricate_whee": {
+    "parent": "minecraft:potato/lubricate",
+    "criteria": {
+      "throw_lubricated_item": {
+        "conditions": {
+          "min_lubrication": 1
+        },
+        "trigger": "minecraft:throw_lubricated"
+      }
+    },
+    "display": {
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.lubricate_whee.description"
+      },
+      "hidden": true,
+      "icon": {
+        "count": 1,
+        "id": "minecraft:ice"
+      },
+      "title": {
+        "translate": "advancements.potato.lubricate_whee.title"
+      }
+    },
+    "requirements": [
+      [
+        "throw_lubricated_item"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/mega_lubricate": {
+    "parent": "minecraft:potato/get_oily",
+    "criteria": {
+      "mega_lubricate_item": {
+        "conditions": {
+          "result_predicate": {
+            "type": "lubrication",
+            "item_predicate": {},
+            "min_lubrication": 10
+          }
+        },
+        "trigger": "minecraft:potato_refined"
+      }
+    },
+    "display": {
+      "announce_to_chat": false,
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.mega_lubricate.description"
+      },
+      "hidden": true,
+      "icon": {
+        "components": {
+          "minecraft:explicit_foil": true
+        },
+        "count": 1,
+        "id": "minecraft:potato_oil"
+      },
+      "title": {
+        "translate": "advancements.potato.mega_lubricate.title"
+      }
+    },
+    "requirements": [
+      [
+        "mega_lubricate_item"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/mega_lubricate_whee": {
+    "parent": "minecraft:potato/lubricate_whee",
+    "criteria": {
+      "throw_mega_lubricated_item": {
+        "conditions": {
+          "min_lubrication": 10
+        },
+        "trigger": "minecraft:throw_lubricated"
+      }
+    },
+    "display": {
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.mega_lubricate_whee.description"
+      },
+      "hidden": true,
+      "icon": {
+        "components": {
+          "minecraft:explicit_foil": true
+        },
+        "count": 1,
+        "id": "minecraft:ice"
+      },
+      "title": {
+        "translate": "advancements.potato.mega_lubricate_whee.title"
+      }
+    },
+    "requirements": [
+      [
+        "throw_mega_lubricated_item"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/peel_all_the_things": {
+    "parent": "minecraft:potato/potato_peeler",
+    "criteria": {
+      "peel_armor": {
+        "trigger": "minecraft:peel_potato_armor"
+      },
+      "peel_block": {
+        "trigger": "minecraft:peel_block"
+      },
+      "peel_sheep": {
+        "trigger": "minecraft:peel_potato_sheep"
+      }
+    },
+    "display": {
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.peel_all_the_things.description"
+      },
+      "frame": "challenge",
+      "hidden": true,
+      "icon": {
+        "count": 1,
+        "id": "minecraft:potato_peeler"
+      },
+      "title": {
+        "translate": "advancements.potato.peel_all_the_things.title"
+      }
+    },
+    "requirements": [
+      [
+        "peel_block"
+      ],
+      [
+        "peel_sheep"
+      ],
+      [
+        "peel_armor"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/poisonous_potato_gourmet": {
+    "parent": "minecraft:potato/poisonous_potato_taster",
+    "criteria": {
+      "ate_poisonous_potato_chips": {
+        "conditions": {
+          "item": {
+            "items": "minecraft:poisonous_potato_chips"
+          }
+        },
+        "trigger": "minecraft:consume_item"
+      },
+      "ate_poisonous_potato_fries": {
+        "conditions": {
+          "item": {
+            "items": "minecraft:poisonous_potato_fries"
+          }
+        },
+        "trigger": "minecraft:consume_item"
+      },
+      "ate_poisonous_potato_slices": {
+        "conditions": {
+          "item": {
+            "items": "minecraft:poisonous_potato_slices"
+          }
+        },
+        "trigger": "minecraft:consume_item"
+      },
+      "ate_poisonous_potato_sticks": {
+        "conditions": {
+          "item": {
+            "items": "minecraft:poisonous_potato_sticks"
+          }
+        },
+        "trigger": "minecraft:consume_item"
+      }
+    },
+    "display": {
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.poisonous_potato_gourmet.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:poisonous_potato_chips"
+      },
+      "title": {
+        "translate": "advancements.potato.poisonous_potato_gourmet.title"
+      }
+    },
+    "requirements": [
+      [
+        "ate_poisonous_potato_sticks"
+      ],
+      [
+        "ate_poisonous_potato_slices"
+      ],
+      [
+        "ate_poisonous_potato_fries"
+      ],
+      [
+        "ate_poisonous_potato_chips"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/poisonous_potato_taster": {
+    "parent": "minecraft:potato/root",
+    "criteria": {
+      "ate_poisonous_potato_slices": {
+        "conditions": {
+          "item": {
+            "items": "minecraft:poisonous_potato_slices"
+          }
+        },
+        "trigger": "minecraft:consume_item"
+      },
+      "ate_poisonous_potato_sticks": {
+        "conditions": {
+          "item": {
+            "items": "minecraft:poisonous_potato_sticks"
+          }
+        },
+        "trigger": "minecraft:consume_item"
+      }
+    },
+    "display": {
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.poisonous_potato_taster.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:poisonous_potato_sticks"
+      },
+      "title": {
+        "translate": "advancements.potato.poisonous_potato_taster.title"
+      }
+    },
+    "requirements": [
+      [
+        "ate_poisonous_potato_sticks"
+      ],
+      [
+        "ate_poisonous_potato_slices"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/potato_peeler": {
+    "parent": "minecraft:potato/root",
+    "criteria": {
+      "potato_peeler": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peeler"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "display": {
+      "announce_to_chat": false,
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.potato_peeler.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:potato_peeler"
+      },
+      "title": {
+        "translate": "advancements.potato.potato_peeler.title"
+      }
+    },
+    "requirements": [
+      [
+        "potato_peeler"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/root": {
+    "criteria": {
+      "joined_world": {
+        "trigger": "minecraft:location"
+      }
+    },
+    "display": {
+      "announce_to_chat": false,
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.root.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:poisonous_potato"
+      },
+      "show_toast": false,
+      "title": {
+        "translate": "advancements.potato.root.title"
+      }
+    },
+    "requirements": [
+      [
+        "joined_world"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/rumbled": {
+    "parent": "minecraft:potato/root",
+    "criteria": {
+      "rumble_plant": {
+        "trigger": "minecraft:rumble_plant"
+      }
+    },
+    "display": {
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.rumbled.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:poisonous_potato_plant"
+      },
+      "show_toast": false,
+      "title": {
+        "translate": "advancements.potato.rumbled.title"
+      }
+    },
+    "requirements": [
+      [
+        "rumble_plant"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/sweet_potato_talker": {
+    "parent": "minecraft:potato/root",
+    "criteria": {
+      "said_potato": {
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "minecraft:player",
+                  "stats": [
+                    {
+                      "type": "minecraft:custom",
+                      "stat": "minecraft:said_potato",
+                      "value": {
+                        "min": 99
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:said_potato"
+      }
+    },
+    "display": {
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.sweet_potato_talker.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:potato_flower"
+      },
+      "title": {
+        "translate": "advancements.potato.sweet_potato_talker.title"
+      }
+    },
+    "requirements": [
+      [
+        "said_potato"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "potato/well_done": {
+    "parent": "minecraft:potato/root",
+    "criteria": {
+      "well_done": {
+        "conditions": {
+          "recipe_id": "minecraft:overcooked_potatoes"
+        },
+        "trigger": "minecraft:recipe_crafted"
+      }
+    },
+    "display": {
+      "background": "minecraft:textures/gui/advancements/backgrounds/potato.png",
+      "description": {
+        "translate": "advancements.potato.well_done.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:charcoal"
+      },
+      "title": {
+        "translate": "advancements.potato.well_done.title"
+      }
+    },
+    "requirements": [
+      [
+        "well_done"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
   "recipes/brewing/blaze_powder": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -8078,6 +9147,38 @@
       ]
     }
   },
+  "recipes/building_blocks/amber_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_amber_gem": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:amber_gem"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:amber_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_amber_gem"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:amber_block"
+      ]
+    }
+  },
   "recipes/building_blocks/amethyst_block": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -8267,6 +9368,198 @@
     "rewards": {
       "recipes": [
         "minecraft:andesite_stairs_from_andesite_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/baked_potato_brick_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:baked_potato_brick_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:baked_potato_brick_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/baked_potato_brick_slab_from_baked_potato_bricks_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:baked_potato_brick_slab_from_baked_potato_bricks_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:baked_potato_brick_slab_from_baked_potato_bricks_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/baked_potato_brick_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:baked_potato_brick_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:baked_potato_brick_stairs"
+      ]
+    }
+  },
+  "recipes/building_blocks/baked_potato_brick_stairs_from_baked_potato_bricks_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:baked_potato_brick_stairs_from_baked_potato_bricks_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:baked_potato_brick_stairs_from_baked_potato_bricks_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/baked_potato_brick_wall_from_baked_potato_bricks_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:baked_potato_brick_wall_from_baked_potato_bricks_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:baked_potato_brick_wall_from_baked_potato_bricks_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/baked_potato_bricks": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_baked_potato": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:baked_potato"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:baked_potato_bricks"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_baked_potato"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:baked_potato_bricks"
       ]
     }
   },
@@ -9292,6 +10585,198 @@
     "rewards": {
       "recipes": [
         "minecraft:brown_terracotta"
+      ]
+    }
+  },
+  "recipes/building_blocks/charred_baked_potato_brick_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_charred_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:charred_baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:charred_baked_potato_brick_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_charred_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:charred_baked_potato_brick_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/charred_baked_potato_brick_slab_from_charred_baked_potato_bricks_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_charred_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:charred_baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:charred_baked_potato_brick_slab_from_charred_baked_potato_bricks_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_charred_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:charred_baked_potato_brick_slab_from_charred_baked_potato_bricks_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/charred_baked_potato_brick_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_charred_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:charred_baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:charred_baked_potato_brick_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_charred_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:charred_baked_potato_brick_stairs"
+      ]
+    }
+  },
+  "recipes/building_blocks/charred_baked_potato_brick_stairs_from_charred_baked_potato_bricks_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_charred_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:charred_baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:charred_baked_potato_brick_stairs_from_charred_baked_potato_bricks_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_charred_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:charred_baked_potato_brick_stairs_from_charred_baked_potato_bricks_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/charred_baked_potato_brick_wall_from_charred_baked_potato_bricks_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_charred_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:charred_baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:charred_baked_potato_brick_wall_from_charred_baked_potato_bricks_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_charred_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:charred_baked_potato_brick_wall_from_charred_baked_potato_bricks_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/charred_baked_potato_bricks": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:charred_baked_potato_bricks"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:charred_baked_potato_bricks"
       ]
     }
   },
@@ -10360,6 +11845,38 @@
     "rewards": {
       "recipes": [
         "minecraft:cobblestone_stairs_from_cobblestone_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/compressed_poisonous_potato_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_poisonous_potato_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:compressed_poisonous_potato_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_poisonous_potato_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:compressed_poisonous_potato_block"
       ]
     }
   },
@@ -12678,6 +14195,38 @@
       ]
     }
   },
+  "recipes/building_blocks/double_compressed_poisonous_potato_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_compressed_poisonous_potato_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:compressed_poisonous_potato_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:double_compressed_poisonous_potato_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_compressed_poisonous_potato_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:double_compressed_poisonous_potato_block"
+      ]
+    }
+  },
   "recipes/building_blocks/dried_kelp_block": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -14566,6 +16115,198 @@
       ]
     }
   },
+  "recipes/building_blocks/expired_baked_potato_brick_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_expired_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:expired_baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:expired_baked_potato_brick_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_expired_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:expired_baked_potato_brick_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/expired_baked_potato_brick_slab_from_expired_baked_potato_bricks_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_expired_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:expired_baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:expired_baked_potato_brick_slab_from_expired_baked_potato_bricks_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_expired_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:expired_baked_potato_brick_slab_from_expired_baked_potato_bricks_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/expired_baked_potato_brick_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_expired_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:expired_baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:expired_baked_potato_brick_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_expired_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:expired_baked_potato_brick_stairs"
+      ]
+    }
+  },
+  "recipes/building_blocks/expired_baked_potato_brick_stairs_from_expired_baked_potato_bricks_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_expired_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:expired_baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:expired_baked_potato_brick_stairs_from_expired_baked_potato_bricks_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_expired_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:expired_baked_potato_brick_stairs_from_expired_baked_potato_bricks_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/expired_baked_potato_brick_wall_from_expired_baked_potato_bricks_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_expired_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:expired_baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:expired_baked_potato_brick_wall_from_expired_baked_potato_bricks_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_expired_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:expired_baked_potato_brick_wall_from_expired_baked_potato_bricks_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/expired_baked_potato_bricks": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_poisonous_potato": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:expired_baked_potato_bricks"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_poisonous_potato"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:expired_baked_potato_bricks"
+      ]
+    }
+  },
   "recipes/building_blocks/exposed_cut_copper": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -14819,6 +16560,38 @@
     "rewards": {
       "recipes": [
         "minecraft:exposed_cut_copper_stairs_from_exposed_cut_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/floatato": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_ghast_tear": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:ghast_tear"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:floatato"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_ghast_tear"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:floatato"
       ]
     }
   },
@@ -17630,6 +19403,38 @@
       ]
     }
   },
+  "recipes/building_blocks/poisonous_potato_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_poisonous_potato": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poisonous_potato_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_poisonous_potato"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poisonous_potato_block"
+      ]
+    }
+  },
   "recipes/building_blocks/polished_andesite": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -19326,6 +21131,294 @@
       ]
     }
   },
+  "recipes/building_blocks/potato_planks": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_logs": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_stem"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_planks"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_logs"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_planks"
+      ]
+    }
+  },
+  "recipes/building_blocks/potato_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/potato_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_stairs"
+      ]
+    }
+  },
+  "recipes/building_blocks/potone": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_taterstone": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:taterstone"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potone"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_taterstone"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potone"
+      ]
+    }
+  },
+  "recipes/building_blocks/potone_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potone": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potone"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potone_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potone"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potone_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/potone_slab_from_potone_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potone": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potone"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potone_slab_from_potone_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potone"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potone_slab_from_potone_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/potone_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potone": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potone"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potone_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potone"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potone_stairs"
+      ]
+    }
+  },
+  "recipes/building_blocks/potone_stairs_from_potone_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potone": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potone"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potone_stairs_from_potone_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potone"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potone_stairs_from_potone_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/potone_wall_from_potone_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potone": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potone"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potone_wall_from_potone_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potone"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potone_wall_from_potone_stonecutting"
+      ]
+    }
+  },
   "recipes/building_blocks/prismarine": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -19974,6 +22067,38 @@
     "rewards": {
       "recipes": [
         "minecraft:purpur_stairs_from_purpur_block_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/quadruple_compressed_poisonous_potato_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:quadruple_compressed_poisonous_potato_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_triple_compressed_poisonous_potato_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:triple_compressed_poisonous_potato_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_triple_compressed_poisonous_potato_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:quadruple_compressed_poisonous_potato_block"
       ]
     }
   },
@@ -22648,6 +24773,166 @@
       ]
     }
   },
+  "recipes/building_blocks/taterstone_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_taterstone": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:taterstone"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:taterstone_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_taterstone"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:taterstone_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/taterstone_slab_from_taterstone_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_taterstone": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:taterstone"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:taterstone_slab_from_taterstone_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_taterstone"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:taterstone_slab_from_taterstone_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/taterstone_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_taterstone": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:taterstone"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:taterstone_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_taterstone"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:taterstone_stairs"
+      ]
+    }
+  },
+  "recipes/building_blocks/taterstone_stairs_from_taterstone_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_taterstone": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:taterstone"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:taterstone_stairs_from_taterstone_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_taterstone"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:taterstone_stairs_from_taterstone_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/taterstone_wall_from_taterstone_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_taterstone": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:taterstone"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:taterstone_wall_from_taterstone_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_taterstone"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:taterstone_wall_from_taterstone_stonecutting"
+      ]
+    }
+  },
   "recipes/building_blocks/terracotta": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -22709,6 +24994,38 @@
     "rewards": {
       "recipes": [
         "minecraft:tinted_glass"
+      ]
+    }
+  },
+  "recipes/building_blocks/triple_compressed_poisonous_potato_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_double_compressed_poisonous_potato_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:double_compressed_poisonous_potato_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:triple_compressed_poisonous_potato_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_double_compressed_poisonous_potato_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:triple_compressed_poisonous_potato_block"
       ]
     }
   },
@@ -24921,6 +27238,38 @@
       ]
     }
   },
+  "recipes/combat/big_brain": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_skull": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:wither_skeleton_skull"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:big_brain"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_skull"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:big_brain"
+      ]
+    }
+  },
   "recipes/combat/bow": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -25775,6 +28124,70 @@
       ]
     }
   },
+  "recipes/combat/poisonous_pota_toes": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_poisonous_potato": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poisonous_pota_toes"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_poisonous_potato"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poisonous_pota_toes"
+      ]
+    }
+  },
+  "recipes/combat/poisonous_potato_chestplate": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_poisonous_potato": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poisonous_potato_chestplate"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_poisonous_potato"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poisonous_potato_chestplate"
+      ]
+    }
+  },
   "recipes/combat/shield": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -25900,6 +28313,38 @@
     "rewards": {
       "recipes": [
         "minecraft:turtle_helmet"
+      ]
+    }
+  },
+  "recipes/combat/vicious_potato": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_skull": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:wither_skeleton_skull"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:vicious_potato"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_skull"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:vicious_potato"
       ]
     }
   },
@@ -26188,6 +28633,38 @@
     "rewards": {
       "recipes": [
         "minecraft:armor_stand"
+      ]
+    }
+  },
+  "recipes/decorations/baked_potato_brick_wall": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:baked_potato_brick_wall"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:baked_potato_brick_wall"
       ]
     }
   },
@@ -27513,6 +29990,38 @@
     "rewards": {
       "recipes": [
         "minecraft:chain"
+      ]
+    }
+  },
+  "recipes/decorations/charred_baked_potato_brick_wall": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_charred_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:charred_baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:charred_baked_potato_brick_wall"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_charred_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:charred_baked_potato_brick_wall"
       ]
     }
   },
@@ -28861,6 +31370,38 @@
     "rewards": {
       "recipes": [
         "minecraft:ender_chest"
+      ]
+    }
+  },
+  "recipes/decorations/expired_baked_potato_brick_wall": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_expired_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:expired_baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:expired_baked_potato_brick_wall"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_expired_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:expired_baked_potato_brick_wall"
       ]
     }
   },
@@ -31918,6 +34459,38 @@
       ]
     }
   },
+  "recipes/decorations/poisonous_potato_cutter": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potone": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potone"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poisonous_potato_cutter"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potone"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poisonous_potato_cutter"
+      ]
+    }
+  },
   "recipes/decorations/polished_blackstone_brick_wall": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -32235,6 +34808,134 @@
     "rewards": {
       "recipes": [
         "minecraft:polished_deepslate_wall_from_polished_deepslate_stonecutting"
+      ]
+    }
+  },
+  "recipes/decorations/potato_fence": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_fence"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_fence"
+      ]
+    }
+  },
+  "recipes/decorations/potato_hanging_sign": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_stripped_logs": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_stem"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_hanging_sign"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_stripped_logs"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_hanging_sign"
+      ]
+    }
+  },
+  "recipes/decorations/potato_sign": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_sign"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_sign"
+      ]
+    }
+  },
+  "recipes/decorations/potone_wall": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potone": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potone"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potone_wall"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potone"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potone_wall"
       ]
     }
   },
@@ -33476,6 +36177,38 @@
       ]
     }
   },
+  "recipes/decorations/taterstone_wall": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_taterstone": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:taterstone"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:taterstone_wall"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_taterstone"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:taterstone_wall"
+      ]
+    }
+  },
   "recipes/decorations/torch": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -34106,6 +36839,38 @@
       ]
     }
   },
+  "recipes/food/baked_potato_bricks_from_terredepomme": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_terredepomme": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:terredepomme"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:baked_potato_bricks_from_terredepomme"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_terredepomme"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:baked_potato_bricks_from_terredepomme"
+      ]
+    }
+  },
   "recipes/food/baked_potato_from_campfire_cooking": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -34263,6 +37028,38 @@
     "rewards": {
       "recipes": [
         "minecraft:cake"
+      ]
+    }
+  },
+  "recipes/food/compressed_poisonous_potato_block_from_double_compressed_poisonous_potato_block_unpacking": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_compressed_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:double_compressed_poisonous_potato_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:compressed_poisonous_potato_block_from_double_compressed_poisonous_potato_block_unpacking"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_compressed_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:compressed_poisonous_potato_block_from_double_compressed_poisonous_potato_block_unpacking"
       ]
     }
   },
@@ -34970,6 +37767,38 @@
       ]
     }
   },
+  "recipes/food/double_compressed_poisonous_potato_block_from_triple_compressed_poisonous_potato_block_unpacking": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_compressed_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:triple_compressed_poisonous_potato_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:double_compressed_poisonous_potato_block_from_triple_compressed_poisonous_potato_block_unpacking"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_compressed_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:double_compressed_poisonous_potato_block_from_triple_compressed_poisonous_potato_block_unpacking"
+      ]
+    }
+  },
   "recipes/food/dried_kelp": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -35098,6 +37927,38 @@
       ]
     }
   },
+  "recipes/food/enchanted_golden_poisonous_potato": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_gold_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:gold_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:enchanted_golden_poisonous_potato"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_gold_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:enchanted_golden_poisonous_potato"
+      ]
+    }
+  },
   "recipes/food/golden_apple": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -35130,6 +37991,70 @@
       ]
     }
   },
+  "recipes/food/golden_poisonous_potato": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_gold_ingot": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:gold_ingot"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:golden_poisonous_potato"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_gold_ingot"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:golden_poisonous_potato"
+      ]
+    }
+  },
+  "recipes/food/hash_browns_from_campfire_cooking": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:hash_browns_from_campfire_cooking"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:hash_browns_from_campfire_cooking"
+      ]
+    }
+  },
   "recipes/food/honey_bottle": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -35159,6 +38084,38 @@
     "rewards": {
       "recipes": [
         "minecraft:honey_bottle"
+      ]
+    }
+  },
+  "recipes/food/hot_potato": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato": {
+        "conditions": {
+          "items": [
+            {
+              "items": "#minecraft:heatable_potatos"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:hot_potato"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:hot_potato"
       ]
     }
   },
@@ -35224,6 +38181,326 @@
     "rewards": {
       "recipes": [
         "minecraft:mushroom_stew"
+      ]
+    }
+  },
+  "recipes/food/poisonous_potato_block_from_compressed_poisonous_potato_block_unpacking": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_compressed_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:compressed_poisonous_potato_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poisonous_potato_block_from_compressed_poisonous_potato_block_unpacking"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_compressed_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poisonous_potato_block_from_compressed_poisonous_potato_block_unpacking"
+      ]
+    }
+  },
+  "recipes/food/poisonous_potato_chips": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_poisonous_potato": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato_slices"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poisonous_potato_chips"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_poisonous_potato"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poisonous_potato_chips"
+      ]
+    }
+  },
+  "recipes/food/poisonous_potato_chips_from_campfire_cooking": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_poisonous_potato_slices": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato_slices"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poisonous_potato_chips_from_campfire_cooking"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_poisonous_potato_slices"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poisonous_potato_chips_from_campfire_cooking"
+      ]
+    }
+  },
+  "recipes/food/poisonous_potato_chips_from_smoking": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_poisonous_potato_slices": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato_slices"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poisonous_potato_chips_from_smoking"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_poisonous_potato_slices"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poisonous_potato_chips_from_smoking"
+      ]
+    }
+  },
+  "recipes/food/poisonous_potato_fries": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_poisonous_potato": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato_sticks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poisonous_potato_fries"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_poisonous_potato"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poisonous_potato_fries"
+      ]
+    }
+  },
+  "recipes/food/poisonous_potato_fries_from_campfire_cooking": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_poisonous_potato_sticks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato_sticks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poisonous_potato_fries_from_campfire_cooking"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_poisonous_potato_sticks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poisonous_potato_fries_from_campfire_cooking"
+      ]
+    }
+  },
+  "recipes/food/poisonous_potato_fries_from_smoking": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_poisonous_potato_sticks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato_sticks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poisonous_potato_fries_from_smoking"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_poisonous_potato_sticks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poisonous_potato_fries_from_smoking"
+      ]
+    }
+  },
+  "recipes/food/poisonous_potato_from_poisonous_potato_block_unpacking": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_compressed_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poisonous_potato_from_poisonous_potato_block_unpacking"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_compressed_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poisonous_potato_from_poisonous_potato_block_unpacking"
+      ]
+    }
+  },
+  "recipes/food/poisonous_potato_slices_from_poisonous_potato_poisonous_potato_cutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_poisonous_potato": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poisonous_potato_slices_from_poisonous_potato_poisonous_potato_cutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_poisonous_potato"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poisonous_potato_slices_from_poisonous_potato_poisonous_potato_cutting"
+      ]
+    }
+  },
+  "recipes/food/poisonous_potato_sticks_from_poisonous_potato_poisonous_potato_cutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_poisonous_potato": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poisonous_potato_sticks_from_poisonous_potato_poisonous_potato_cutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_poisonous_potato"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poisonous_potato_sticks_from_poisonous_potato_poisonous_potato_cutting"
       ]
     }
   },
@@ -35334,6 +38611,70 @@
       ]
     }
   },
+  "recipes/food/triple_compressed_poisonous_potato_block_from_quadruple_compressed_poisonous_potato_block_unpacking": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_compressed_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:quadruple_compressed_poisonous_potato_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:triple_compressed_poisonous_potato_block_from_quadruple_compressed_poisonous_potato_block_unpacking"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_compressed_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:triple_compressed_poisonous_potato_block_from_quadruple_compressed_poisonous_potato_block_unpacking"
+      ]
+    }
+  },
+  "recipes/misc/amber_gem": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_amber_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:amber_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:amber_gem"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_amber_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:amber_gem"
+      ]
+    }
+  },
   "recipes/misc/beacon": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -35430,6 +38771,70 @@
       ]
     }
   },
+  "recipes/misc/black_potato_peels": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:black_potato_peels"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:black_potato_peels"
+      ]
+    }
+  },
+  "recipes/misc/black_potato_peels_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_black_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:black_potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:black_potato_peels_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_black_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:black_potato_peels_block"
+      ]
+    }
+  },
   "recipes/misc/blue_dye": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -35491,6 +38896,70 @@
     "rewards": {
       "recipes": [
         "minecraft:blue_dye_from_cornflower"
+      ]
+    }
+  },
+  "recipes/misc/blue_potato_peels": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:blue_potato_peels"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:blue_potato_peels"
+      ]
+    }
+  },
+  "recipes/misc/blue_potato_peels_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_blue_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:blue_potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:blue_potato_peels_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_blue_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:blue_potato_peels_block"
       ]
     }
   },
@@ -35705,6 +39174,70 @@
     "rewards": {
       "recipes": [
         "minecraft:brown_dye"
+      ]
+    }
+  },
+  "recipes/misc/brown_potato_peels": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:brown_potato_peels"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:brown_potato_peels"
+      ]
+    }
+  },
+  "recipes/misc/brown_potato_peels_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_brown_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:brown_potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:brown_potato_peels_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_brown_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:brown_potato_peels_block"
       ]
     }
   },
@@ -36295,6 +39828,38 @@
       ]
     }
   },
+  "recipes/misc/corrupted_potato_peels": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_corrupted_potato_peels_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:corrupted_potato_peels_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:corrupted_potato_peels"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_corrupted_potato_peels_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:corrupted_potato_peels"
+      ]
+    }
+  },
   "recipes/misc/creeper_banner_pattern": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -36399,6 +39964,70 @@
     "rewards": {
       "recipes": [
         "minecraft:cyan_dye_from_pitcher_plant"
+      ]
+    }
+  },
+  "recipes/misc/cyan_potato_peels": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cyan_potato_peels"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cyan_potato_peels"
+      ]
+    }
+  },
+  "recipes/misc/cyan_potato_peels_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_cyan_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:cyan_potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cyan_potato_peels_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_cyan_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cyan_potato_peels_block"
       ]
     }
   },
@@ -37635,6 +41264,70 @@
       ]
     }
   },
+  "recipes/misc/gray_potato_peels": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:gray_potato_peels"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:gray_potato_peels"
+      ]
+    }
+  },
+  "recipes/misc/gray_potato_peels_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_gray_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:gray_potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:gray_potato_peels_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_gray_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:gray_potato_peels_block"
+      ]
+    }
+  },
   "recipes/misc/green_dye": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -37664,6 +41357,70 @@
     "rewards": {
       "recipes": [
         "minecraft:green_dye"
+      ]
+    }
+  },
+  "recipes/misc/green_potato_peels": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:green_potato_peels"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:green_potato_peels"
+      ]
+    }
+  },
+  "recipes/misc/green_potato_peels_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_green_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:green_potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:green_potato_peels_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_green_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:green_potato_peels_block"
       ]
     }
   },
@@ -38668,6 +42425,70 @@
       ]
     }
   },
+  "recipes/misc/light_blue_potato_peels": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:light_blue_potato_peels"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:light_blue_potato_peels"
+      ]
+    }
+  },
+  "recipes/misc/light_blue_potato_peels_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_light_blue_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:light_blue_potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:light_blue_potato_peels_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_light_blue_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:light_blue_potato_peels_block"
+      ]
+    }
+  },
   "recipes/misc/light_gray_dye_from_azure_bluet": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -38850,6 +42671,70 @@
       ]
     }
   },
+  "recipes/misc/light_gray_potato_peels": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:light_gray_potato_peels"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:light_gray_potato_peels"
+      ]
+    }
+  },
+  "recipes/misc/light_gray_potato_peels_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_light_gray_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:light_gray_potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:light_gray_potato_peels_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_light_gray_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:light_gray_potato_peels_block"
+      ]
+    }
+  },
   "recipes/misc/lime_dye": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -38922,6 +42807,70 @@
     "rewards": {
       "recipes": [
         "minecraft:lime_dye_from_smelting"
+      ]
+    }
+  },
+  "recipes/misc/lime_potato_peels": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:lime_potato_peels"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:lime_potato_peels"
+      ]
+    }
+  },
+  "recipes/misc/lime_potato_peels_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_lime_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:lime_potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:lime_potato_peels_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_lime_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:lime_potato_peels_block"
       ]
     }
   },
@@ -39137,6 +43086,70 @@
     "rewards": {
       "recipes": [
         "minecraft:magenta_dye_from_purple_and_pink"
+      ]
+    }
+  },
+  "recipes/misc/magenta_potato_peels": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:magenta_potato_peels"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:magenta_potato_peels"
+      ]
+    }
+  },
+  "recipes/misc/magenta_potato_peels_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_magenta_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:magenta_potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:magenta_potato_peels_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_magenta_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:magenta_potato_peels_block"
       ]
     }
   },
@@ -39567,6 +43580,102 @@
       ]
     }
   },
+  "recipes/misc/orange_potato_peels": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:orange_potato_peels"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:orange_potato_peels"
+      ]
+    }
+  },
+  "recipes/misc/orange_potato_peels_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_orange_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:orange_potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:orange_potato_peels_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_orange_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:orange_potato_peels_block"
+      ]
+    }
+  },
+  "recipes/misc/overcooked_potatoes": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_charred": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:charred_baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:overcooked_potatoes"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_charred"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:overcooked_potatoes"
+      ]
+    }
+  },
   "recipes/misc/paper": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -39738,6 +43847,102 @@
       ]
     }
   },
+  "recipes/misc/pink_potato_peels": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:pink_potato_peels"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:pink_potato_peels"
+      ]
+    }
+  },
+  "recipes/misc/pink_potato_peels_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_pink_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:pink_potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:pink_potato_peels_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_pink_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:pink_potato_peels_block"
+      ]
+    }
+  },
+  "recipes/misc/poisonous_polytra": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_poisonous_potato": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poisonous_polytra"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_poisonous_potato"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poisonous_polytra"
+      ]
+    }
+  },
   "recipes/misc/popped_chorus_fruit": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -39767,6 +43972,134 @@
     "rewards": {
       "recipes": [
         "minecraft:popped_chorus_fruit"
+      ]
+    }
+  },
+  "recipes/misc/potato_eye": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_poisonous_potato": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_eye"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_poisonous_potato"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_eye"
+      ]
+    }
+  },
+  "recipes/misc/potato_hammer": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_poisonous_potato": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_hammer"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_poisonous_potato"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_hammer"
+      ]
+    }
+  },
+  "recipes/misc/potato_peels": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_peels"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_peels"
+      ]
+    }
+  },
+  "recipes/misc/potato_peels_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_peels_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_white_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_white_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_peels_block"
       ]
     }
   },
@@ -39842,6 +44175,70 @@
     "rewards": {
       "recipes": [
         "minecraft:purple_dye"
+      ]
+    }
+  },
+  "recipes/misc/purple_potato_peels": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:purple_potato_peels"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:purple_potato_peels"
+      ]
+    }
+  },
+  "recipes/misc/purple_potato_peels_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_purple_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:purple_potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:purple_potato_peels_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_purple_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:purple_potato_peels_block"
       ]
     }
   },
@@ -40194,6 +44591,70 @@
     "rewards": {
       "recipes": [
         "minecraft:red_dye_from_tulip"
+      ]
+    }
+  },
+  "recipes/misc/red_potato_peels": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:red_potato_peels"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:red_potato_peels"
+      ]
+    }
+  },
+  "recipes/misc/red_potato_peels_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_red_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:red_potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:red_potato_peels_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_red_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:red_potato_peels_block"
       ]
     }
   },
@@ -40837,6 +45298,38 @@
       ]
     }
   },
+  "recipes/misc/toxic_resin": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_oil": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato_oil"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:toxic_resin"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_oil"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:toxic_resin"
+      ]
+    }
+  },
   "recipes/misc/vex_armor_trim_smithing_template": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -41282,6 +45775,70 @@
     "rewards": {
       "recipes": [
         "minecraft:yellow_dye_from_sunflower"
+      ]
+    }
+  },
+  "recipes/misc/yellow_potato_peels": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:yellow_potato_peels"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:yellow_potato_peels"
+      ]
+    }
+  },
+  "recipes/misc/yellow_potato_peels_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:yellow_potato_peels_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_yellow_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:yellow_potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_yellow_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:yellow_potato_peels_block"
       ]
     }
   },
@@ -42405,6 +46962,38 @@
       ]
     }
   },
+  "recipes/redstone/floatater": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_floatato": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:floatato"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:floatater"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_floatato"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:floatater"
+      ]
+    }
+  },
   "recipes/redstone/heavy_weighted_pressure_plate": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -43330,6 +47919,198 @@
     "rewards": {
       "recipes": [
         "minecraft:polished_blackstone_pressure_plate"
+      ]
+    }
+  },
+  "recipes/redstone/potato_battery": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_poisonous_potato": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poisonous_potato"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_battery"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_poisonous_potato"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_battery"
+      ]
+    }
+  },
+  "recipes/redstone/potato_button": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_button"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_button"
+      ]
+    }
+  },
+  "recipes/redstone/potato_door": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_door"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_door"
+      ]
+    }
+  },
+  "recipes/redstone/potato_fence_gate": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_fence_gate"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_fence_gate"
+      ]
+    }
+  },
+  "recipes/redstone/potato_pressure_plate": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_pressure_plate"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_pressure_plate"
+      ]
+    }
+  },
+  "recipes/redstone/potato_trapdoor": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_trapdoor"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_trapdoor"
       ]
     }
   },
@@ -44316,6 +49097,38 @@
       ]
     }
   },
+  "recipes/tools/corrupted_potato_peels_block": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_corrupted_potato_peels": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:corrupted_potato_peels"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:corrupted_potato_peels_block"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_corrupted_potato_peels"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:corrupted_potato_peels_block"
+      ]
+    }
+  },
   "recipes/tools/diamond_axe": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -44516,6 +49329,38 @@
     "rewards": {
       "recipes": [
         "minecraft:flint_and_steel"
+      ]
+    }
+  },
+  "recipes/tools/frying_table": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_potato_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potato_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:frying_table"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_potato_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:frying_table"
       ]
     }
   },
@@ -44775,6 +49620,38 @@
       ]
     }
   },
+  "recipes/tools/lashing_potato": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:lashing_potato"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_toxic_beam": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:toxic_beam"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_toxic_beam"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:lashing_potato"
+      ]
+    }
+  },
   "recipes/tools/lead": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -44932,6 +49809,70 @@
     "rewards": {
       "recipes": [
         "minecraft:netherite_shovel_smithing"
+      ]
+    }
+  },
+  "recipes/tools/potato_peeler": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_shears": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:shears"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_peeler"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_shears"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_peeler"
+      ]
+    }
+  },
+  "recipes/tools/potato_refinery": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_baked_potato_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:baked_potato_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:potato_refinery"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_baked_potato_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:potato_refinery"
       ]
     }
   },
@@ -45156,6 +50097,38 @@
     "rewards": {
       "recipes": [
         "minecraft:stone_shovel"
+      ]
+    }
+  },
+  "recipes/tools/trident": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dent": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dent"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:trident"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dent"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:trident"
       ]
     }
   },

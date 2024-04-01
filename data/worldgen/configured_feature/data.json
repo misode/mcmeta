@@ -124,8 +124,10 @@
       },
       "distribution_points": {
         "type": "minecraft:uniform",
-        "max_inclusive": 4,
-        "min_inclusive": 3
+        "value": {
+          "max_inclusive": 4,
+          "min_inclusive": 3
+        }
       },
       "invalid_blocks_threshold": 1,
       "layers": {
@@ -139,17 +141,135 @@
       "noise_multiplier": 0.05,
       "outer_wall_distance": {
         "type": "minecraft:uniform",
-        "max_inclusive": 6,
-        "min_inclusive": 4
+        "value": {
+          "max_inclusive": 6,
+          "min_inclusive": 4
+        }
       },
       "placements_require_layer0_alternate": true,
       "point_offset": {
         "type": "minecraft:uniform",
-        "max_inclusive": 2,
-        "min_inclusive": 1
+        "value": {
+          "max_inclusive": 2,
+          "min_inclusive": 1
+        }
       },
       "use_alternate_layer0_chance": 0.083,
       "use_potential_placements_chance": 0.35
+    }
+  },
+  "arboretum_trees": {
+    "type": "minecraft:random_selector",
+    "config": {
+      "default": "minecraft:oak_checked",
+      "features": [
+        {
+          "chance": 0.05,
+          "feature": "minecraft:oak_checked"
+        },
+        {
+          "chance": 0.05,
+          "feature": "minecraft:birch_checked"
+        },
+        {
+          "chance": 0.05,
+          "feature": "minecraft:fancy_oak_checked"
+        },
+        {
+          "chance": 0.05,
+          "feature": "minecraft:spruce_checked"
+        },
+        {
+          "chance": 0.05,
+          "feature": "minecraft:pine_checked"
+        },
+        {
+          "chance": 0.05,
+          "feature": "minecraft:acacia_checked"
+        },
+        {
+          "chance": 0.02,
+          "feature": "minecraft:cherry_checked"
+        },
+        {
+          "chance": 0.02,
+          "feature": "minecraft:potato_checked"
+        },
+        {
+          "chance": 0.02,
+          "feature": "minecraft:jungle_bush"
+        },
+        {
+          "chance": 0.05,
+          "feature": "minecraft:jungle_tree"
+        },
+        {
+          "chance": 0.02,
+          "feature": "minecraft:mangrove_checked"
+        },
+        {
+          "chance": 0.025,
+          "feature": {
+            "feature": "minecraft:huge_brown_mushroom",
+            "placement": []
+          }
+        },
+        {
+          "chance": 0.025,
+          "feature": {
+            "feature": "minecraft:huge_red_mushroom",
+            "placement": []
+          }
+        },
+        {
+          "chance": 0.02,
+          "feature": "minecraft:cherry_bees_005"
+        },
+        {
+          "chance": 0.05,
+          "feature": "minecraft:super_birch_bees_0002"
+        },
+        {
+          "chance": 0.05,
+          "feature": "minecraft:birch_bees_0002"
+        },
+        {
+          "chance": 0.05,
+          "feature": "minecraft:fancy_oak_bees_0002"
+        },
+        {
+          "chance": 0.05,
+          "feature": "minecraft:oak_bees_002"
+        },
+        {
+          "chance": 0.05,
+          "feature": "minecraft:super_birch_bees"
+        },
+        {
+          "chance": 0.05,
+          "feature": "minecraft:spruce_on_snow"
+        },
+        {
+          "chance": 0.05,
+          "feature": "minecraft:oak_bees_0002"
+        },
+        {
+          "chance": 0.01,
+          "feature": "minecraft:tall_mangrove_checked"
+        },
+        {
+          "chance": 0.01,
+          "feature": "minecraft:dark_oak_checked"
+        },
+        {
+          "chance": 0.01,
+          "feature": "minecraft:mega_jungle_tree_checked"
+        },
+        {
+          "chance": 0.003,
+          "feature": "minecraft:mother_potato_checked"
+        }
+      ]
     }
   },
   "azalea_tree": {
@@ -209,8 +329,10 @@
         "base_height": 4,
         "bend_length": {
           "type": "minecraft:uniform",
-          "max_inclusive": 2,
-          "min_inclusive": 1
+          "value": {
+            "max_inclusive": 2,
+            "min_inclusive": 1
+          }
         },
         "height_rand_a": 2,
         "height_rand_b": 0,
@@ -267,8 +389,10 @@
     "config": {
       "radius": {
         "type": "minecraft:uniform",
-        "max_inclusive": 7,
-        "min_inclusive": 3
+        "value": {
+          "max_inclusive": 7,
+          "min_inclusive": 3
+        }
       },
       "state": {
         "Name": "minecraft:basalt",
@@ -343,6 +467,7 @@
       "decorators": [
         {
           "type": "minecraft:beehive",
+          "fixed_height": true,
           "probability": 0.002
         }
       ],
@@ -400,6 +525,7 @@
       "decorators": [
         {
           "type": "minecraft:beehive",
+          "fixed_height": true,
           "probability": 0.02
         }
       ],
@@ -457,6 +583,7 @@
       "decorators": [
         {
           "type": "minecraft:beehive",
+          "fixed_height": true,
           "probability": 0.05
         }
       ],
@@ -525,8 +652,10 @@
     "config": {
       "radius": {
         "type": "minecraft:uniform",
-        "max_inclusive": 7,
-        "min_inclusive": 3
+        "value": {
+          "max_inclusive": 7,
+          "min_inclusive": 3
+        }
       },
       "state": {
         "Name": "minecraft:blackstone"
@@ -560,24 +689,30 @@
               {
                 "data": {
                   "type": "minecraft:uniform",
-                  "max_inclusive": 19,
-                  "min_inclusive": 0
+                  "value": {
+                    "max_inclusive": 19,
+                    "min_inclusive": 0
+                  }
                 },
                 "weight": 2
               },
               {
                 "data": {
                   "type": "minecraft:uniform",
-                  "max_inclusive": 2,
-                  "min_inclusive": 0
+                  "value": {
+                    "max_inclusive": 2,
+                    "min_inclusive": 0
+                  }
                 },
                 "weight": 3
               },
               {
                 "data": {
                   "type": "minecraft:uniform",
-                  "max_inclusive": 6,
-                  "min_inclusive": 0
+                  "value": {
+                    "max_inclusive": 6,
+                    "min_inclusive": 0
+                  }
                 },
                 "weight": 10
               }
@@ -639,8 +774,10 @@
             },
             "values": {
               "type": "minecraft:uniform",
-              "max_inclusive": 25,
-              "min_inclusive": 23
+              "value": {
+                "max_inclusive": 25,
+                "min_inclusive": 23
+              }
             }
           }
         }
@@ -664,16 +801,20 @@
               {
                 "data": {
                   "type": "minecraft:uniform",
-                  "max_inclusive": 3,
-                  "min_inclusive": 0
+                  "value": {
+                    "max_inclusive": 3,
+                    "min_inclusive": 0
+                  }
                 },
                 "weight": 5
               },
               {
                 "data": {
                   "type": "minecraft:uniform",
-                  "max_inclusive": 7,
-                  "min_inclusive": 1
+                  "value": {
+                    "max_inclusive": 7,
+                    "min_inclusive": 1
+                  }
                 },
                 "weight": 1
               }
@@ -735,8 +876,10 @@
             },
             "values": {
               "type": "minecraft:uniform",
-              "max_inclusive": 25,
-              "min_inclusive": 23
+              "value": {
+                "max_inclusive": 25,
+                "min_inclusive": 23
+              }
             }
           }
         }
@@ -805,13 +948,17 @@
         },
         "branch_end_offset_from_top": {
           "type": "minecraft:uniform",
-          "max_inclusive": 0,
-          "min_inclusive": -1
+          "value": {
+            "max_inclusive": 0,
+            "min_inclusive": -1
+          }
         },
         "branch_horizontal_length": {
           "type": "minecraft:uniform",
-          "max_inclusive": 4,
-          "min_inclusive": 2
+          "value": {
+            "max_inclusive": 4,
+            "min_inclusive": 2
+          }
         },
         "branch_start_offset_from_top": {
           "max_inclusive": -3,
@@ -837,6 +984,7 @@
       "decorators": [
         {
           "type": "minecraft:beehive",
+          "fixed_height": true,
           "probability": 0.05
         }
       ],
@@ -897,13 +1045,17 @@
         },
         "branch_end_offset_from_top": {
           "type": "minecraft:uniform",
-          "max_inclusive": 0,
-          "min_inclusive": -1
+          "value": {
+            "max_inclusive": 0,
+            "min_inclusive": -1
+          }
         },
         "branch_horizontal_length": {
           "type": "minecraft:uniform",
-          "max_inclusive": 4,
-          "min_inclusive": 2
+          "value": {
+            "max_inclusive": 4,
+            "min_inclusive": 2
+          }
         },
         "branch_start_offset_from_top": {
           "max_inclusive": -3,
@@ -949,8 +1101,10 @@
       "vertical_range": 5,
       "xz_radius": {
         "type": "minecraft:uniform",
-        "max_inclusive": 7,
-        "min_inclusive": 4
+        "value": {
+          "max_inclusive": 7,
+          "min_inclusive": 4
+        }
       }
     }
   },
@@ -976,9 +1130,19 @@
       "vertical_range": 2,
       "xz_radius": {
         "type": "minecraft:uniform",
-        "max_inclusive": 7,
-        "min_inclusive": 4
+        "value": {
+          "max_inclusive": 7,
+          "min_inclusive": 4
+        }
       }
+    }
+  },
+  "corrputed_buds": {
+    "type": "minecraft:potato_buds",
+    "config": {
+      "max_height": 12,
+      "spread_height": 4,
+      "spread_width": 8
     }
   },
   "crimson_forest_vegetation": {
@@ -1076,6 +1240,7 @@
           "minecraft:cornflower",
           "minecraft:wither_rose",
           "minecraft:lily_of_the_valley",
+          "minecraft:potato_flower",
           "minecraft:brown_mushroom",
           "minecraft:red_mushroom",
           "minecraft:wheat",
@@ -1159,6 +1324,7 @@
           "minecraft:cornflower",
           "minecraft:wither_rose",
           "minecraft:lily_of_the_valley",
+          "minecraft:potato_flower",
           "minecraft:brown_mushroom",
           "minecraft:red_mushroom",
           "minecraft:wheat",
@@ -1308,13 +1474,17 @@
       },
       "rim_size": {
         "type": "minecraft:uniform",
-        "max_inclusive": 2,
-        "min_inclusive": 0
+        "value": {
+          "max_inclusive": 2,
+          "min_inclusive": 0
+        }
       },
       "size": {
         "type": "minecraft:uniform",
-        "max_inclusive": 7,
-        "min_inclusive": 3
+        "value": {
+          "max_inclusive": 7,
+          "min_inclusive": 3
+        }
       }
     }
   },
@@ -1328,8 +1498,10 @@
       "half_height": 1,
       "radius": {
         "type": "minecraft:uniform",
-        "max_inclusive": 3,
-        "min_inclusive": 2
+        "value": {
+          "max_inclusive": 3,
+          "min_inclusive": 2
+        }
       },
       "state_provider": {
         "fallback": {
@@ -1344,7 +1516,8 @@
         "type": "minecraft:matching_blocks",
         "blocks": [
           "minecraft:dirt",
-          "minecraft:clay"
+          "minecraft:clay",
+          "minecraft:terredepomme"
         ]
       }
     }
@@ -1355,8 +1528,10 @@
       "half_height": 2,
       "radius": {
         "type": "minecraft:uniform",
-        "max_inclusive": 6,
-        "min_inclusive": 2
+        "value": {
+          "max_inclusive": 6,
+          "min_inclusive": 2
+        }
       },
       "state_provider": {
         "fallback": {
@@ -1408,6 +1583,7 @@
         "type": "minecraft:matching_blocks",
         "blocks": [
           "minecraft:dirt",
+          "minecraft:terredepomme",
           "minecraft:mud"
         ]
       }
@@ -1419,8 +1595,10 @@
       "half_height": 2,
       "radius": {
         "type": "minecraft:uniform",
-        "max_inclusive": 5,
-        "min_inclusive": 2
+        "value": {
+          "max_inclusive": 5,
+          "min_inclusive": 2
+        }
       },
       "state_provider": {
         "fallback": {
@@ -1435,7 +1613,10 @@
         "type": "minecraft:matching_blocks",
         "blocks": [
           "minecraft:dirt",
-          "minecraft:grass_block"
+          "minecraft:grass_block",
+          "minecraft:terredepomme",
+          "minecraft:peelgrass_block",
+          "minecraft:corrupted_peelgrass_block"
         ]
       }
     }
@@ -1446,8 +1627,10 @@
       "half_height": 2,
       "radius": {
         "type": "minecraft:uniform",
-        "max_inclusive": 6,
-        "min_inclusive": 2
+        "value": {
+          "max_inclusive": 6,
+          "min_inclusive": 2
+        }
       },
       "state_provider": {
         "fallback": {
@@ -1480,7 +1663,10 @@
         "type": "minecraft:matching_blocks",
         "blocks": [
           "minecraft:dirt",
-          "minecraft:grass_block"
+          "minecraft:grass_block",
+          "minecraft:terredepomme",
+          "minecraft:peelgrass_block",
+          "minecraft:corrupted_peelgrass_block"
         ]
       }
     }
@@ -1566,8 +1752,10 @@
                       {
                         "data": {
                           "type": "minecraft:uniform",
-                          "max_inclusive": 4,
-                          "min_inclusive": 0
+                          "value": {
+                            "max_inclusive": 4,
+                            "min_inclusive": 0
+                          }
                         },
                         "weight": 2
                       },
@@ -1628,8 +1816,10 @@
                       {
                         "data": {
                           "type": "minecraft:uniform",
-                          "max_inclusive": 4,
-                          "min_inclusive": 0
+                          "value": {
+                            "max_inclusive": 4,
+                            "min_inclusive": 0
+                          }
                         },
                         "weight": 2
                       },
@@ -1690,8 +1880,10 @@
                       {
                         "data": {
                           "type": "minecraft:uniform",
-                          "max_inclusive": 4,
-                          "min_inclusive": 0
+                          "value": {
+                            "max_inclusive": 4,
+                            "min_inclusive": 0
+                          }
                         },
                         "weight": 2
                       },
@@ -1752,8 +1944,10 @@
                       {
                         "data": {
                           "type": "minecraft:uniform",
-                          "max_inclusive": 4,
-                          "min_inclusive": 0
+                          "value": {
+                            "max_inclusive": 4,
+                            "min_inclusive": 0
+                          }
                         },
                         "weight": 2
                       },
@@ -1803,19 +1997,25 @@
       "chance_of_dripstone_column_at_max_distance_from_center": 0.1,
       "density": {
         "type": "minecraft:uniform",
-        "max_exclusive": 0.7,
-        "min_inclusive": 0.3
+        "value": {
+          "max_exclusive": 0.7,
+          "min_inclusive": 0.3
+        }
       },
       "dripstone_block_layer_thickness": {
         "type": "minecraft:uniform",
-        "max_inclusive": 4,
-        "min_inclusive": 2
+        "value": {
+          "max_inclusive": 4,
+          "min_inclusive": 2
+        }
       },
       "floor_to_ceiling_search_range": 12,
       "height": {
         "type": "minecraft:uniform",
-        "max_inclusive": 6,
-        "min_inclusive": 3
+        "value": {
+          "max_inclusive": 6,
+          "min_inclusive": 3
+        }
       },
       "height_deviation": 3,
       "max_distance_from_center_affecting_height_bias": 8,
@@ -1823,15 +2023,19 @@
       "max_stalagmite_stalactite_height_diff": 1,
       "radius": {
         "type": "minecraft:uniform",
-        "max_inclusive": 8,
-        "min_inclusive": 2
+        "value": {
+          "max_inclusive": 8,
+          "min_inclusive": 2
+        }
       },
       "wetness": {
         "type": "minecraft:clamped_normal",
-        "deviation": 0.3,
-        "max": 0.9,
-        "mean": 0.1,
-        "min": 0.1
+        "value": {
+          "deviation": 0.3,
+          "max": 0.9,
+          "mean": 0.1,
+          "min": 0.1
+        }
       }
     }
   },
@@ -1922,6 +2126,7 @@
       "decorators": [
         {
           "type": "minecraft:beehive",
+          "fixed_height": true,
           "probability": 1.0
         }
       ],
@@ -1980,6 +2185,7 @@
       "decorators": [
         {
           "type": "minecraft:beehive",
+          "fixed_height": true,
           "probability": 0.002
         }
       ],
@@ -2038,6 +2244,7 @@
       "decorators": [
         {
           "type": "minecraft:beehive",
+          "fixed_height": true,
           "probability": 0.02
         }
       ],
@@ -2096,6 +2303,7 @@
       "decorators": [
         {
           "type": "minecraft:beehive",
+          "fixed_height": true,
           "probability": 0.05
         }
       ],
@@ -2428,6 +2636,9 @@
                 },
                 {
                   "Name": "minecraft:lily_of_the_valley"
+                },
+                {
+                  "Name": "minecraft:potato_flower"
                 }
               ]
             }
@@ -2735,6 +2946,39 @@
         },
         {
           "feature": {
+            "type": "minecraft:random_patch",
+            "config": {
+              "feature": {
+                "feature": {
+                  "type": "minecraft:simple_block",
+                  "config": {
+                    "to_place": {
+                      "type": "minecraft:simple_state_provider",
+                      "state": {
+                        "Name": "minecraft:potato_flower"
+                      }
+                    }
+                  }
+                },
+                "placement": [
+                  {
+                    "type": "minecraft:block_predicate_filter",
+                    "predicate": {
+                      "type": "minecraft:matching_blocks",
+                      "blocks": "minecraft:air"
+                    }
+                  }
+                ]
+              },
+              "tries": 96,
+              "xz_spread": 7,
+              "y_spread": 3
+            }
+          },
+          "placement": []
+        },
+        {
+          "feature": {
             "type": "minecraft:no_bonemeal_flower",
             "config": {
               "feature": {
@@ -2843,6 +3087,7 @@
       "block": "minecraft:glow_lichen",
       "can_be_placed_on": [
         "minecraft:stone",
+        "minecraft:potone",
         "minecraft:andesite",
         "minecraft:diorite",
         "minecraft:granite",
@@ -2860,6 +3105,10 @@
   },
   "glowstone_extra": {
     "type": "minecraft:glowstone_blob",
+    "config": {}
+  },
+  "hash_well": {
+    "type": "minecraft:hash_well",
     "config": {}
   },
   "huge_brown_mushroom": {
@@ -2936,8 +3185,10 @@
       "half_height": 1,
       "radius": {
         "type": "minecraft:uniform",
-        "max_inclusive": 3,
-        "min_inclusive": 2
+        "value": {
+          "max_inclusive": 3,
+          "min_inclusive": 2
+        }
       },
       "state_provider": {
         "fallback": {
@@ -2952,7 +3203,10 @@
         "type": "minecraft:matching_blocks",
         "blocks": [
           "minecraft:dirt",
+          "minecraft:terredepomme",
           "minecraft:grass_block",
+          "minecraft:peelgrass_block",
+          "minecraft:corrupted_peelgrass_block",
           "minecraft:podzol",
           "minecraft:coarse_dirt",
           "minecraft:mycelium",
@@ -3179,48 +3433,203 @@
     "config": {
       "height": {
         "type": "minecraft:uniform",
-        "max_inclusive": 10,
-        "min_inclusive": 5
+        "value": {
+          "max_inclusive": 10,
+          "min_inclusive": 5
+        }
       },
       "reach": {
         "type": "minecraft:uniform",
-        "max_inclusive": 3,
-        "min_inclusive": 2
+        "value": {
+          "max_inclusive": 3,
+          "min_inclusive": 2
+        }
+      },
+      "state": {
+        "Name": "minecraft:basalt",
+        "Properties": {
+          "axis": "y"
+        }
       }
     }
   },
   "large_dripstone": {
     "type": "minecraft:large_dripstone",
     "config": {
+      "block": "minecraft:pointed_dripstone",
       "column_radius": {
         "type": "minecraft:uniform",
-        "max_inclusive": 19,
-        "min_inclusive": 3
+        "value": {
+          "max_inclusive": 19,
+          "min_inclusive": 3
+        }
       },
       "floor_to_ceiling_search_range": 30,
       "height_scale": {
         "type": "minecraft:uniform",
-        "max_exclusive": 2.0,
-        "min_inclusive": 0.4
+        "value": {
+          "max_exclusive": 2.0,
+          "min_inclusive": 0.4
+        }
       },
       "max_column_radius_to_cave_height_ratio": 0.33,
       "min_bluntness_for_wind": 0.6,
       "min_radius_for_wind": 4,
       "stalactite_bluntness": {
         "type": "minecraft:uniform",
-        "max_exclusive": 0.9,
-        "min_inclusive": 0.3
+        "value": {
+          "max_exclusive": 0.9,
+          "min_inclusive": 0.3
+        }
       },
       "stalagmite_bluntness": {
         "type": "minecraft:uniform",
-        "max_exclusive": 1.0,
-        "min_inclusive": 0.4
+        "value": {
+          "max_exclusive": 1.0,
+          "min_inclusive": 0.4
+        }
       },
       "wind_speed": {
         "type": "minecraft:uniform",
-        "max_exclusive": 0.3,
-        "min_inclusive": 0.0
+        "value": {
+          "max_exclusive": 0.3,
+          "min_inclusive": 0.0
+        }
       }
+    }
+  },
+  "large_potato_columns": {
+    "type": "minecraft:basalt_columns",
+    "config": {
+      "height": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_inclusive": 15,
+          "min_inclusive": 2
+        }
+      },
+      "reach": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_inclusive": 1,
+          "min_inclusive": 0
+        }
+      },
+      "state": {
+        "Name": "minecraft:black_potato_peels_block"
+      }
+    }
+  },
+  "large_potatostone": {
+    "type": "minecraft:large_dripstone",
+    "config": {
+      "block": "minecraft:potato_bud",
+      "column_radius": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_inclusive": 12,
+          "min_inclusive": 6
+        }
+      },
+      "floor_to_ceiling_search_range": 50,
+      "height_scale": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_exclusive": 2.0,
+          "min_inclusive": 0.4
+        }
+      },
+      "max_column_radius_to_cave_height_ratio": 1.0,
+      "min_bluntness_for_wind": 0.6,
+      "min_radius_for_wind": 4,
+      "stalactite_bluntness": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_exclusive": 0.9,
+          "min_inclusive": 0.3
+        }
+      },
+      "stalagmite_bluntness": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_exclusive": 0.8,
+          "min_inclusive": 0.6
+        }
+      },
+      "wind_speed": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_exclusive": 0.3,
+          "min_inclusive": 0.2
+        }
+      }
+    }
+  },
+  "leaf_pile": {
+    "type": "minecraft:random_patch",
+    "config": {
+      "feature": {
+        "feature": {
+          "type": "minecraft:block_column",
+          "config": {
+            "allowed_placement": {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:air"
+            },
+            "direction": "up",
+            "layers": [
+              {
+                "height": {
+                  "type": "minecraft:biased_to_bottom",
+                  "value": {
+                    "max_inclusive": 3,
+                    "min_inclusive": 1
+                  }
+                },
+                "provider": {
+                  "type": "minecraft:simple_state_provider",
+                  "state": {
+                    "Name": "minecraft:lime_potato_peels_block"
+                  }
+                }
+              }
+            ],
+            "prioritize_tip": false
+          }
+        },
+        "placement": [
+          {
+            "type": "minecraft:block_predicate_filter",
+            "predicate": {
+              "type": "minecraft:all_of",
+              "predicates": [
+                {
+                  "type": "minecraft:matching_blocks",
+                  "blocks": [
+                    "minecraft:lime_potato_peels_block",
+                    "minecraft:air"
+                  ]
+                },
+                {
+                  "type": "minecraft:not",
+                  "predicate": {
+                    "type": "minecraft:matching_blocks",
+                    "blocks": "minecraft:air",
+                    "offset": [
+                      0,
+                      -1,
+                      0
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "tries": 10,
+      "xz_spread": 7,
+      "y_spread": 3
     }
   },
   "lush_caves_clay": {
@@ -3246,27 +3655,31 @@
         },
         {
           "type": "minecraft:attached_to_leaves",
-          "block_provider": {
-            "type": "minecraft:randomized_int_state_provider",
-            "property": "age",
-            "source": {
-              "type": "minecraft:simple_state_provider",
-              "state": {
-                "Name": "minecraft:mangrove_propagule",
-                "Properties": {
-                  "age": "0",
-                  "hanging": "true",
-                  "stage": "0",
-                  "waterlogged": "false"
+          "block_provider": [
+            {
+              "type": "minecraft:randomized_int_state_provider",
+              "property": "age",
+              "source": {
+                "type": "minecraft:simple_state_provider",
+                "state": {
+                  "Name": "minecraft:mangrove_propagule",
+                  "Properties": {
+                    "age": "0",
+                    "hanging": "true",
+                    "stage": "0",
+                    "waterlogged": "false"
+                  }
+                }
+              },
+              "values": {
+                "type": "minecraft:uniform",
+                "value": {
+                  "max_inclusive": 4,
+                  "min_inclusive": 0
                 }
               }
-            },
-            "values": {
-              "type": "minecraft:uniform",
-              "max_inclusive": 4,
-              "min_inclusive": 0
             }
-          },
+          ],
           "directions": [
             "down"
           ],
@@ -3277,6 +3690,7 @@
         },
         {
           "type": "minecraft:beehive",
+          "fixed_height": true,
           "probability": 0.01
         }
       ],
@@ -3353,8 +3767,10 @@
         },
         "trunk_offset_y": {
           "type": "minecraft:uniform",
-          "max_inclusive": 3,
-          "min_inclusive": 1
+          "value": {
+            "max_inclusive": 3,
+            "min_inclusive": 1
+          }
         }
       },
       "trunk_placer": {
@@ -3363,16 +3779,21 @@
         "can_grow_through": "#minecraft:mangrove_logs_can_grow_through",
         "extra_branch_length": {
           "type": "minecraft:uniform",
-          "max_inclusive": 1,
-          "min_inclusive": 0
+          "value": {
+            "max_inclusive": 1,
+            "min_inclusive": 0
+          }
         },
         "extra_branch_steps": {
           "type": "minecraft:uniform",
-          "max_inclusive": 4,
-          "min_inclusive": 1
+          "value": {
+            "max_inclusive": 4,
+            "min_inclusive": 1
+          }
         },
         "height_rand_a": 1,
         "height_rand_b": 4,
+        "megabush": true,
         "place_branch_per_log_probability": 0.5
       },
       "trunk_provider": {
@@ -3497,8 +3918,10 @@
         "type": "minecraft:mega_pine_foliage_placer",
         "crown_height": {
           "type": "minecraft:uniform",
-          "max_inclusive": 7,
-          "min_inclusive": 3
+          "value": {
+            "max_inclusive": 7,
+            "min_inclusive": 3
+          }
         },
         "offset": 0,
         "radius": 0
@@ -3566,8 +3989,10 @@
         "type": "minecraft:mega_pine_foliage_placer",
         "crown_height": {
           "type": "minecraft:uniform",
-          "max_inclusive": 17,
-          "min_inclusive": 13
+          "value": {
+            "max_inclusive": 17,
+            "min_inclusive": 13
+          }
         },
         "offset": 0,
         "radius": 0
@@ -3634,8 +4059,10 @@
       "vertical_range": 5,
       "xz_radius": {
         "type": "minecraft:uniform",
-        "max_inclusive": 7,
-        "min_inclusive": 4
+        "value": {
+          "max_inclusive": 7,
+          "min_inclusive": 4
+        }
       }
     }
   },
@@ -3661,8 +4088,10 @@
       "vertical_range": 5,
       "xz_radius": {
         "type": "minecraft:uniform",
-        "max_inclusive": 2,
-        "min_inclusive": 1
+        "value": {
+          "max_inclusive": 2,
+          "min_inclusive": 1
+        }
       }
     }
   },
@@ -3671,8 +4100,10 @@
     "config": {
       "depth": {
         "type": "minecraft:uniform",
-        "max_inclusive": 2,
-        "min_inclusive": 1
+        "value": {
+          "max_inclusive": 2,
+          "min_inclusive": 1
+        }
       },
       "extra_bottom_block_chance": 0.0,
       "extra_edge_column_chance": 0.3,
@@ -3692,8 +4123,10 @@
       "vertical_range": 5,
       "xz_radius": {
         "type": "minecraft:uniform",
-        "max_inclusive": 7,
-        "min_inclusive": 4
+        "value": {
+          "max_inclusive": 7,
+          "min_inclusive": 4
+        }
       }
     }
   },
@@ -3737,6 +4170,173 @@
             "weight": 10
           }
         ]
+      }
+    }
+  },
+  "mother_potato_tree": {
+    "type": "minecraft:tree",
+    "config": {
+      "decorators": [
+        {
+          "type": "minecraft:attached_to_leaves",
+          "block_provider": [
+            {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:potato_pedicule",
+                "Properties": {
+                  "axis": "y",
+                  "waterlogged": "false"
+                }
+              }
+            },
+            {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:potato_fruit"
+              }
+            }
+          ],
+          "directions": [
+            "down"
+          ],
+          "exclusion_radius_xz": 1,
+          "exclusion_radius_y": 0,
+          "probability": 0.1,
+          "required_empty_blocks": 3
+        },
+        {
+          "type": "minecraft:attached_to_leaves",
+          "block_provider": [
+            {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:potato_pedicule",
+                "Properties": {
+                  "axis": "y",
+                  "waterlogged": "false"
+                }
+              }
+            },
+            {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:potato_fruit"
+              }
+            }
+          ],
+          "directions": [
+            "down"
+          ],
+          "exclusion_radius_xz": 1,
+          "exclusion_radius_y": 0,
+          "probability": 0.5,
+          "required_empty_blocks": 3,
+          "use_logs": true
+        },
+        {
+          "type": "minecraft:beehive",
+          "fixed_height": true,
+          "probability": 1.0
+        },
+        {
+          "type": "minecraft:beehive",
+          "fixed_height": false,
+          "probability": 0.5
+        },
+        {
+          "type": "minecraft:beehive",
+          "fixed_height": false,
+          "probability": 0.5
+        },
+        {
+          "type": "minecraft:beehive",
+          "fixed_height": false,
+          "probability": 0.5
+        },
+        {
+          "type": "minecraft:beehive",
+          "fixed_height": false,
+          "probability": 0.5
+        },
+        {
+          "type": "minecraft:beehive",
+          "fixed_height": false,
+          "probability": 0.5
+        },
+        {
+          "type": "minecraft:beehive",
+          "fixed_height": false,
+          "probability": 0.5
+        }
+      ],
+      "dirt_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:dirt"
+        }
+      },
+      "foliage_placer": {
+        "type": "minecraft:acacia_foliage_placer",
+        "offset": 0,
+        "radius": {
+          "type": "minecraft:uniform",
+          "value": {
+            "max_inclusive": 4,
+            "min_inclusive": 3
+          }
+        }
+      },
+      "foliage_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:potato_leaves",
+          "Properties": {
+            "distance": "7",
+            "persistent": "false",
+            "waterlogged": "false"
+          }
+        }
+      },
+      "force_dirt": false,
+      "ignore_vines": true,
+      "minimum_size": {
+        "type": "minecraft:two_layers_feature_size",
+        "limit": 3,
+        "lower_size": 0,
+        "upper_size": 2
+      },
+      "trunk_placer": {
+        "type": "minecraft:upwards_branching_trunk_placer",
+        "base_height": 32,
+        "can_grow_through": "#minecraft:logs",
+        "extra_branch_length": {
+          "type": "minecraft:uniform",
+          "value": {
+            "max_inclusive": 1,
+            "min_inclusive": 0
+          }
+        },
+        "extra_branch_steps": {
+          "type": "minecraft:uniform",
+          "value": {
+            "max_inclusive": 10,
+            "min_inclusive": 1
+          }
+        },
+        "height_rand_a": 1,
+        "height_rand_b": 20,
+        "megabush": false,
+        "place_branch_per_log_probability": 0.4
+      },
+      "trunk_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:potato_stem",
+          "Properties": {
+            "axis": "y"
+          }
+        }
       }
     }
   },
@@ -3837,6 +4437,7 @@
       "decorators": [
         {
           "type": "minecraft:beehive",
+          "fixed_height": true,
           "probability": 0.002
         }
       ],
@@ -3894,6 +4495,7 @@
       "decorators": [
         {
           "type": "minecraft:beehive",
+          "fixed_height": true,
           "probability": 0.02
         }
       ],
@@ -3951,6 +4553,7 @@
       "decorators": [
         {
           "type": "minecraft:beehive",
+          "fixed_height": true,
           "probability": 0.05
         }
       ],
@@ -4000,6 +4603,24 @@
           }
         }
       }
+    }
+  },
+  "ore_amber": {
+    "type": "minecraft:ore",
+    "config": {
+      "discard_chance_on_air_exposure": 0.0,
+      "size": 6,
+      "targets": [
+        {
+          "state": {
+            "Name": "minecraft:resin_ore"
+          },
+          "target": {
+            "block": "minecraft:potone",
+            "predicate_type": "minecraft:block_match"
+          }
+        }
+      ]
     }
   },
   "ore_ancient_debris_large": {
@@ -4169,6 +4790,15 @@
             "predicate_type": "minecraft:tag_match",
             "tag": "minecraft:deepslate_ore_replaceables"
           }
+        },
+        {
+          "state": {
+            "Name": "minecraft:potone_copper_ore"
+          },
+          "target": {
+            "block": "minecraft:potone",
+            "predicate_type": "minecraft:block_match"
+          }
         }
       ]
     }
@@ -4195,6 +4825,15 @@
           "target": {
             "predicate_type": "minecraft:tag_match",
             "tag": "minecraft:deepslate_ore_replaceables"
+          }
+        },
+        {
+          "state": {
+            "Name": "minecraft:potone_copper_ore"
+          },
+          "target": {
+            "block": "minecraft:potone",
+            "predicate_type": "minecraft:block_match"
           }
         }
       ]
@@ -4223,6 +4862,15 @@
             "predicate_type": "minecraft:tag_match",
             "tag": "minecraft:deepslate_ore_replaceables"
           }
+        },
+        {
+          "state": {
+            "Name": "minecraft:potone_diamond_ore"
+          },
+          "target": {
+            "block": "minecraft:potone",
+            "predicate_type": "minecraft:block_match"
+          }
         }
       ]
     }
@@ -4249,6 +4897,15 @@
           "target": {
             "predicate_type": "minecraft:tag_match",
             "tag": "minecraft:deepslate_ore_replaceables"
+          }
+        },
+        {
+          "state": {
+            "Name": "minecraft:potone_diamond_ore"
+          },
+          "target": {
+            "block": "minecraft:potone",
+            "predicate_type": "minecraft:block_match"
           }
         }
       ]
@@ -4277,6 +4934,15 @@
             "predicate_type": "minecraft:tag_match",
             "tag": "minecraft:deepslate_ore_replaceables"
           }
+        },
+        {
+          "state": {
+            "Name": "minecraft:potone_diamond_ore"
+          },
+          "target": {
+            "block": "minecraft:potone",
+            "predicate_type": "minecraft:block_match"
+          }
         }
       ]
     }
@@ -4303,6 +4969,15 @@
           "target": {
             "predicate_type": "minecraft:tag_match",
             "tag": "minecraft:deepslate_ore_replaceables"
+          }
+        },
+        {
+          "state": {
+            "Name": "minecraft:potone_diamond_ore"
+          },
+          "target": {
+            "block": "minecraft:potone",
+            "predicate_type": "minecraft:block_match"
           }
         }
       ]
@@ -4394,6 +5069,15 @@
             "predicate_type": "minecraft:tag_match",
             "tag": "minecraft:deepslate_ore_replaceables"
           }
+        },
+        {
+          "state": {
+            "Name": "minecraft:potone_gold_ore"
+          },
+          "target": {
+            "block": "minecraft:potone",
+            "predicate_type": "minecraft:block_match"
+          }
         }
       ]
     }
@@ -4420,6 +5104,15 @@
           "target": {
             "predicate_type": "minecraft:tag_match",
             "tag": "minecraft:deepslate_ore_replaceables"
+          }
+        },
+        {
+          "state": {
+            "Name": "minecraft:potone_gold_ore"
+          },
+          "target": {
+            "block": "minecraft:potone",
+            "predicate_type": "minecraft:block_match"
           }
         }
       ]
@@ -4479,6 +5172,24 @@
       ]
     }
   },
+  "ore_gravtater": {
+    "type": "minecraft:ore",
+    "config": {
+      "discard_chance_on_air_exposure": 0.0,
+      "size": 33,
+      "targets": [
+        {
+          "state": {
+            "Name": "minecraft:gravtater"
+          },
+          "target": {
+            "predicate_type": "minecraft:tag_match",
+            "tag": "minecraft:base_stone_overworld"
+          }
+        }
+      ]
+    }
+  },
   "ore_infested": {
     "type": "minecraft:ore",
     "config": {
@@ -4532,6 +5243,15 @@
             "predicate_type": "minecraft:tag_match",
             "tag": "minecraft:deepslate_ore_replaceables"
           }
+        },
+        {
+          "state": {
+            "Name": "minecraft:potone_iron_ore"
+          },
+          "target": {
+            "block": "minecraft:potone",
+            "predicate_type": "minecraft:block_match"
+          }
         }
       ]
     }
@@ -4558,6 +5278,15 @@
           "target": {
             "predicate_type": "minecraft:tag_match",
             "tag": "minecraft:deepslate_ore_replaceables"
+          }
+        },
+        {
+          "state": {
+            "Name": "minecraft:potone_iron_ore"
+          },
+          "target": {
+            "block": "minecraft:potone",
+            "predicate_type": "minecraft:block_match"
           }
         }
       ]
@@ -4586,6 +5315,15 @@
             "predicate_type": "minecraft:tag_match",
             "tag": "minecraft:deepslate_ore_replaceables"
           }
+        },
+        {
+          "state": {
+            "Name": "minecraft:potone_lapis_ore"
+          },
+          "target": {
+            "block": "minecraft:potone",
+            "predicate_type": "minecraft:block_match"
+          }
         }
       ]
     }
@@ -4612,6 +5350,15 @@
           "target": {
             "predicate_type": "minecraft:tag_match",
             "tag": "minecraft:deepslate_ore_replaceables"
+          }
+        },
+        {
+          "state": {
+            "Name": "minecraft:potone_lapis_ore"
+          },
+          "target": {
+            "block": "minecraft:potone",
+            "predicate_type": "minecraft:block_match"
           }
         }
       ]
@@ -4648,6 +5395,33 @@
           "target": {
             "block": "minecraft:netherrack",
             "predicate_type": "minecraft:block_match"
+          }
+        }
+      ]
+    }
+  },
+  "ore_poisonous_potato": {
+    "type": "minecraft:ore",
+    "config": {
+      "discard_chance_on_air_exposure": 0.0,
+      "size": 9,
+      "targets": [
+        {
+          "state": {
+            "Name": "minecraft:poisonous_potato_ore"
+          },
+          "target": {
+            "predicate_type": "minecraft:tag_match",
+            "tag": "minecraft:stone_ore_replaceables"
+          }
+        },
+        {
+          "state": {
+            "Name": "minecraft:deepslate_poisonous_potato_ore"
+          },
+          "target": {
+            "predicate_type": "minecraft:tag_match",
+            "tag": "minecraft:deepslate_ore_replaceables"
           }
         }
       ]
@@ -4700,6 +5474,18 @@
             "predicate_type": "minecraft:tag_match",
             "tag": "minecraft:deepslate_ore_replaceables"
           }
+        },
+        {
+          "state": {
+            "Name": "minecraft:potone_redstone_ore",
+            "Properties": {
+              "lit": "false"
+            }
+          },
+          "target": {
+            "block": "minecraft:potone",
+            "predicate_type": "minecraft:block_match"
+          }
         }
       ]
     }
@@ -4716,6 +5502,24 @@
           },
           "target": {
             "block": "minecraft:netherrack",
+            "predicate_type": "minecraft:block_match"
+          }
+        }
+      ]
+    }
+  },
+  "ore_taterstone": {
+    "type": "minecraft:ore",
+    "config": {
+      "discard_chance_on_air_exposure": 0.0,
+      "size": 33,
+      "targets": [
+        {
+          "state": {
+            "Name": "minecraft:taterstone"
+          },
+          "target": {
+            "block": "minecraft:potone",
             "predicate_type": "minecraft:block_match"
           }
         }
@@ -4739,6 +5543,14 @@
         }
       ]
     }
+  },
+  "park_lane": {
+    "type": "minecraft:park_lane",
+    "config": {}
+  },
+  "park_lane_surface": {
+    "type": "minecraft:park_lane_surface",
+    "config": {}
   },
   "patch_berry_bush": {
     "type": "minecraft:random_patch",
@@ -4770,7 +5582,11 @@
                 },
                 {
                   "type": "minecraft:matching_blocks",
-                  "blocks": "minecraft:grass_block",
+                  "blocks": [
+                    "minecraft:grass_block",
+                    "minecraft:peelgrass_block",
+                    "minecraft:corrupted_peelgrass_block"
+                  ],
                   "offset": [
                     0,
                     -1,
@@ -4833,8 +5649,10 @@
               {
                 "height": {
                   "type": "minecraft:biased_to_bottom",
-                  "max_inclusive": 3,
-                  "min_inclusive": 1
+                  "value": {
+                    "max_inclusive": 3,
+                    "min_inclusive": 1
+                  }
                 },
                 "provider": {
                   "type": "minecraft:simple_state_provider",
@@ -5159,6 +5977,139 @@
       "y_spread": 3
     }
   },
+  "patch_potato": {
+    "type": "minecraft:random_patch",
+    "config": {
+      "feature": {
+        "feature": {
+          "type": "minecraft:simple_block",
+          "config": {
+            "to_place": {
+              "type": "minecraft:weighted_state_provider",
+              "entries": [
+                {
+                  "data": {
+                    "Name": "minecraft:potatoes",
+                    "Properties": {
+                      "age": "0",
+                      "tater_boost": "0"
+                    }
+                  },
+                  "weight": 1
+                },
+                {
+                  "data": {
+                    "Name": "minecraft:potatoes",
+                    "Properties": {
+                      "age": "1",
+                      "tater_boost": "0"
+                    }
+                  },
+                  "weight": 2
+                },
+                {
+                  "data": {
+                    "Name": "minecraft:potatoes",
+                    "Properties": {
+                      "age": "2",
+                      "tater_boost": "0"
+                    }
+                  },
+                  "weight": 3
+                },
+                {
+                  "data": {
+                    "Name": "minecraft:potatoes",
+                    "Properties": {
+                      "age": "3",
+                      "tater_boost": "0"
+                    }
+                  },
+                  "weight": 4
+                },
+                {
+                  "data": {
+                    "Name": "minecraft:potatoes",
+                    "Properties": {
+                      "age": "4",
+                      "tater_boost": "0"
+                    }
+                  },
+                  "weight": 5
+                },
+                {
+                  "data": {
+                    "Name": "minecraft:potatoes",
+                    "Properties": {
+                      "age": "5",
+                      "tater_boost": "0"
+                    }
+                  },
+                  "weight": 6
+                },
+                {
+                  "data": {
+                    "Name": "minecraft:potatoes",
+                    "Properties": {
+                      "age": "6",
+                      "tater_boost": "0"
+                    }
+                  },
+                  "weight": 7
+                },
+                {
+                  "data": {
+                    "Name": "minecraft:potatoes",
+                    "Properties": {
+                      "age": "7",
+                      "tater_boost": "0"
+                    }
+                  },
+                  "weight": 8
+                },
+                {
+                  "data": {
+                    "Name": "minecraft:potato_flower"
+                  },
+                  "weight": 5
+                }
+              ]
+            }
+          }
+        },
+        "placement": [
+          {
+            "type": "minecraft:block_predicate_filter",
+            "predicate": {
+              "type": "minecraft:all_of",
+              "predicates": [
+                {
+                  "type": "minecraft:matching_blocks",
+                  "blocks": "minecraft:air"
+                },
+                {
+                  "type": "minecraft:matching_blocks",
+                  "blocks": [
+                    "minecraft:peelgrass_block",
+                    "minecraft:corrupted_peelgrass_block",
+                    "minecraft:gravtater"
+                  ],
+                  "offset": [
+                    0,
+                    -1,
+                    0
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "tries": 128,
+      "xz_spread": 7,
+      "y_spread": 3
+    }
+  },
   "patch_pumpkin": {
     "type": "minecraft:random_patch",
     "config": {
@@ -5186,7 +6137,11 @@
                 },
                 {
                   "type": "minecraft:matching_blocks",
-                  "blocks": "minecraft:grass_block",
+                  "blocks": [
+                    "minecraft:grass_block",
+                    "minecraft:peelgrass_block",
+                    "minecraft:corrupted_peelgrass_block"
+                  ],
                   "offset": [
                     0,
                     -1,
@@ -5293,8 +6248,10 @@
               {
                 "height": {
                   "type": "minecraft:biased_to_bottom",
-                  "max_inclusive": 4,
-                  "min_inclusive": 2
+                  "value": {
+                    "max_inclusive": 4,
+                    "min_inclusive": 2
+                  }
                 },
                 "provider": {
                   "type": "minecraft:simple_state_provider",
@@ -5576,6 +6533,17 @@
       }
     }
   },
+  "pile_potato_fruit": {
+    "type": "minecraft:block_pile",
+    "config": {
+      "state_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:potato_fruit"
+        }
+      }
+    }
+  },
   "pile_pumpkin": {
     "type": "minecraft:block_pile",
     "config": {
@@ -5629,8 +6597,10 @@
         "type": "minecraft:pine_foliage_placer",
         "height": {
           "type": "minecraft:uniform",
-          "max_inclusive": 4,
-          "min_inclusive": 3
+          "value": {
+            "max_inclusive": 4,
+            "min_inclusive": 3
+          }
         },
         "offset": 1,
         "radius": 1
@@ -5744,6 +6714,479 @@
       ]
     }
   },
+  "poison": {
+    "type": "minecraft:delta_feature",
+    "config": {
+      "contents": {
+        "Name": "minecraft:light",
+        "Properties": {
+          "level": "15",
+          "waterlogged": "true"
+        }
+      },
+      "rim": {
+        "Name": "minecraft:slime_block"
+      },
+      "rim_size": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_inclusive": 2,
+          "min_inclusive": 0
+        }
+      },
+      "size": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_inclusive": 7,
+          "min_inclusive": 3
+        }
+      }
+    }
+  },
+  "potato_cloud": {
+    "type": "minecraft:cloud",
+    "config": {
+      "state": {
+        "Name": "minecraft:floatato"
+      }
+    }
+  },
+  "potato_field": {
+    "type": "minecraft:potato_field",
+    "config": {}
+  },
+  "potato_geode": {
+    "type": "minecraft:geode",
+    "config": {
+      "blocks": {
+        "alternate_inner_layer_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:poisonous_potato_block"
+          }
+        },
+        "cannot_replace": "#minecraft:features_cannot_replace",
+        "filling_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:air"
+          }
+        },
+        "inner_layer_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:terredepomme"
+          }
+        },
+        "inner_placements": [],
+        "invalid_blocks": "#minecraft:geode_invalid_blocks",
+        "middle_layer_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:granite"
+          }
+        },
+        "outer_layer_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:cobblestone"
+          }
+        }
+      },
+      "crack": {
+        "base_crack_size": 2.0,
+        "crack_point_offset": 2,
+        "generate_crack_chance": 0.95
+      },
+      "distribution_points": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_inclusive": 4,
+          "min_inclusive": 3
+        }
+      },
+      "invalid_blocks_threshold": 1,
+      "layers": {
+        "filling": 1.7,
+        "inner_layer": 2.2,
+        "middle_layer": 3.2,
+        "outer_layer": 4.2
+      },
+      "max_gen_offset": 16,
+      "min_gen_offset": -16,
+      "noise_multiplier": 0.05,
+      "outer_wall_distance": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_inclusive": 6,
+          "min_inclusive": 4
+        }
+      },
+      "placements_require_layer0_alternate": true,
+      "point_offset": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_inclusive": 2,
+          "min_inclusive": 1
+        }
+      },
+      "use_alternate_layer0_chance": 0.083,
+      "use_potential_placements_chance": 0.35
+    }
+  },
+  "potato_leaf": {
+    "type": "minecraft:simple_block",
+    "config": {
+      "to_place": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:potato_leaves",
+          "Properties": {
+            "distance": "7",
+            "persistent": "false",
+            "waterlogged": "false"
+          }
+        }
+      }
+    }
+  },
+  "potato_sprouts": {
+    "type": "minecraft:nether_forest_vegetation",
+    "config": {
+      "spread_height": 4,
+      "spread_width": 8,
+      "state_provider": {
+        "type": "minecraft:weighted_state_provider",
+        "entries": [
+          {
+            "data": {
+              "Name": "minecraft:potato_sprouts"
+            },
+            "weight": 2
+          },
+          {
+            "data": {
+              "Name": "minecraft:potatoes",
+              "Properties": {
+                "age": "0",
+                "tater_boost": "0"
+              }
+            },
+            "weight": 4
+          },
+          {
+            "data": {
+              "Name": "minecraft:potatoes",
+              "Properties": {
+                "age": "4",
+                "tater_boost": "0"
+              }
+            },
+            "weight": 5
+          },
+          {
+            "data": {
+              "Name": "minecraft:potatoes",
+              "Properties": {
+                "age": "7",
+                "tater_boost": "0"
+              }
+            },
+            "weight": 5
+          },
+          {
+            "data": {
+              "Name": "minecraft:short_grass"
+            },
+            "weight": 5
+          },
+          {
+            "data": {
+              "Name": "minecraft:tall_grass",
+              "Properties": {
+                "half": "lower"
+              }
+            },
+            "weight": 3
+          }
+        ]
+      }
+    }
+  },
+  "potato_tree": {
+    "type": "minecraft:tree",
+    "config": {
+      "decorators": [
+        {
+          "type": "minecraft:attached_to_leaves",
+          "block_provider": [
+            {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:potato_pedicule",
+                "Properties": {
+                  "axis": "y",
+                  "waterlogged": "false"
+                }
+              }
+            },
+            {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:potato_fruit"
+              }
+            }
+          ],
+          "directions": [
+            "down"
+          ],
+          "exclusion_radius_xz": 1,
+          "exclusion_radius_y": 0,
+          "probability": 0.005,
+          "required_empty_blocks": 3
+        },
+        {
+          "type": "minecraft:attached_to_leaves",
+          "block_provider": [
+            {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:potato_pedicule",
+                "Properties": {
+                  "axis": "y",
+                  "waterlogged": "false"
+                }
+              }
+            },
+            {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:potato_fruit"
+              }
+            }
+          ],
+          "directions": [
+            "down"
+          ],
+          "exclusion_radius_xz": 1,
+          "exclusion_radius_y": 0,
+          "probability": 0.05,
+          "required_empty_blocks": 3,
+          "use_logs": true
+        },
+        {
+          "type": "minecraft:beehive",
+          "fixed_height": true,
+          "probability": 0.01
+        }
+      ],
+      "dirt_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:dirt"
+        }
+      },
+      "foliage_placer": {
+        "type": "minecraft:acacia_foliage_placer",
+        "offset": 0,
+        "radius": {
+          "type": "minecraft:uniform",
+          "value": {
+            "max_inclusive": 3,
+            "min_inclusive": 2
+          }
+        }
+      },
+      "foliage_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:potato_leaves",
+          "Properties": {
+            "distance": "7",
+            "persistent": "false",
+            "waterlogged": "false"
+          }
+        }
+      },
+      "force_dirt": false,
+      "ignore_vines": true,
+      "minimum_size": {
+        "type": "minecraft:two_layers_feature_size",
+        "limit": 3,
+        "lower_size": 0,
+        "upper_size": 2
+      },
+      "trunk_placer": {
+        "type": "minecraft:upwards_branching_trunk_placer",
+        "base_height": 2,
+        "can_grow_through": "#minecraft:logs",
+        "extra_branch_length": {
+          "type": "minecraft:uniform",
+          "value": {
+            "max_inclusive": 1,
+            "min_inclusive": 0
+          }
+        },
+        "extra_branch_steps": {
+          "type": "minecraft:uniform",
+          "value": {
+            "max_inclusive": 6,
+            "min_inclusive": 1
+          }
+        },
+        "height_rand_a": 1,
+        "height_rand_b": 12,
+        "megabush": false,
+        "place_branch_per_log_probability": 0.5
+      },
+      "trunk_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:potato_stem",
+          "Properties": {
+            "axis": "y"
+          }
+        }
+      }
+    }
+  },
+  "potato_tree_tall": {
+    "type": "minecraft:tree",
+    "config": {
+      "decorators": [
+        {
+          "type": "minecraft:attached_to_leaves",
+          "block_provider": [
+            {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:potato_pedicule",
+                "Properties": {
+                  "axis": "y",
+                  "waterlogged": "false"
+                }
+              }
+            },
+            {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:potato_fruit"
+              }
+            }
+          ],
+          "directions": [
+            "down"
+          ],
+          "exclusion_radius_xz": 1,
+          "exclusion_radius_y": 0,
+          "probability": 0.02,
+          "required_empty_blocks": 3
+        },
+        {
+          "type": "minecraft:attached_to_leaves",
+          "block_provider": [
+            {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:potato_pedicule",
+                "Properties": {
+                  "axis": "y",
+                  "waterlogged": "false"
+                }
+              }
+            },
+            {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:potato_fruit"
+              }
+            }
+          ],
+          "directions": [
+            "down"
+          ],
+          "exclusion_radius_xz": 1,
+          "exclusion_radius_y": 0,
+          "probability": 0.3,
+          "required_empty_blocks": 3,
+          "use_logs": true
+        },
+        {
+          "type": "minecraft:beehive",
+          "fixed_height": false,
+          "probability": 0.5
+        }
+      ],
+      "dirt_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:dirt"
+        }
+      },
+      "foliage_placer": {
+        "type": "minecraft:acacia_foliage_placer",
+        "offset": 0,
+        "radius": {
+          "type": "minecraft:uniform",
+          "value": {
+            "max_inclusive": 4,
+            "min_inclusive": 2
+          }
+        }
+      },
+      "foliage_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:potato_leaves",
+          "Properties": {
+            "distance": "7",
+            "persistent": "false",
+            "waterlogged": "false"
+          }
+        }
+      },
+      "force_dirt": false,
+      "ignore_vines": true,
+      "minimum_size": {
+        "type": "minecraft:two_layers_feature_size",
+        "limit": 3,
+        "lower_size": 0,
+        "upper_size": 2
+      },
+      "trunk_placer": {
+        "type": "minecraft:upwards_branching_trunk_placer",
+        "base_height": 4,
+        "can_grow_through": "#minecraft:logs",
+        "extra_branch_length": {
+          "type": "minecraft:uniform",
+          "value": {
+            "max_inclusive": 1,
+            "min_inclusive": 0
+          }
+        },
+        "extra_branch_steps": {
+          "type": "minecraft:uniform",
+          "value": {
+            "max_inclusive": 8,
+            "min_inclusive": 1
+          }
+        },
+        "height_rand_a": 20,
+        "height_rand_b": 20,
+        "megabush": false,
+        "place_branch_per_log_probability": 0.4
+      },
+      "trunk_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:potato_stem",
+          "Properties": {
+            "axis": "y"
+          }
+        }
+      }
+    }
+  },
   "rooted_azalea_tree": {
     "type": "minecraft:root_system",
     "config": {
@@ -5816,8 +7259,10 @@
       "charge_count": 10,
       "extra_rare_growths": {
         "type": "minecraft:uniform",
-        "max_inclusive": 3,
-        "min_inclusive": 1
+        "value": {
+          "max_inclusive": 3,
+          "min_inclusive": 1
+        }
       },
       "growth_rounds": 0,
       "spread_attempts": 64,
@@ -5842,6 +7287,7 @@
       "block": "minecraft:sculk_vein",
       "can_be_placed_on": [
         "minecraft:stone",
+        "minecraft:potone",
         "minecraft:andesite",
         "minecraft:diorite",
         "minecraft:granite",
@@ -5914,10 +7360,34 @@
     "config": {
       "height": {
         "type": "minecraft:uniform",
-        "max_inclusive": 4,
-        "min_inclusive": 1
+        "value": {
+          "max_inclusive": 4,
+          "min_inclusive": 1
+        }
       },
-      "reach": 1
+      "reach": 1,
+      "state": {
+        "Name": "minecraft:basalt",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    }
+  },
+  "small_debris_columns": {
+    "type": "minecraft:basalt_columns",
+    "config": {
+      "height": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_inclusive": 4,
+          "min_inclusive": 1
+        }
+      },
+      "reach": 1,
+      "state": {
+        "Name": "minecraft:ancient_debris"
+      }
     }
   },
   "spore_blossom": {
@@ -5985,13 +7455,15 @@
       },
       "valid_blocks": [
         "minecraft:stone",
+        "minecraft:potone",
         "minecraft:granite",
         "minecraft:diorite",
         "minecraft:andesite",
         "minecraft:deepslate",
         "minecraft:tuff",
         "minecraft:calcite",
-        "minecraft:dirt"
+        "minecraft:dirt",
+        "minecraft:terredepomme"
       ]
     }
   },
@@ -6039,6 +7511,7 @@
       },
       "valid_blocks": [
         "minecraft:stone",
+        "minecraft:potone",
         "minecraft:granite",
         "minecraft:diorite",
         "minecraft:andesite",
@@ -6046,6 +7519,7 @@
         "minecraft:tuff",
         "minecraft:calcite",
         "minecraft:dirt",
+        "minecraft:terredepomme",
         "minecraft:snow_block",
         "minecraft:powder_snow",
         "minecraft:packed_ice"
@@ -6066,18 +7540,24 @@
         "type": "minecraft:spruce_foliage_placer",
         "offset": {
           "type": "minecraft:uniform",
-          "max_inclusive": 2,
-          "min_inclusive": 0
+          "value": {
+            "max_inclusive": 2,
+            "min_inclusive": 0
+          }
         },
         "radius": {
           "type": "minecraft:uniform",
-          "max_inclusive": 3,
-          "min_inclusive": 2
+          "value": {
+            "max_inclusive": 3,
+            "min_inclusive": 2
+          }
         },
         "trunk_height": {
           "type": "minecraft:uniform",
-          "max_inclusive": 2,
-          "min_inclusive": 1
+          "value": {
+            "max_inclusive": 2,
+            "min_inclusive": 1
+          }
         }
       },
       "foliage_provider": {
@@ -6122,6 +7602,7 @@
       "decorators": [
         {
           "type": "minecraft:beehive",
+          "fixed_height": true,
           "probability": 1.0
         }
       ],
@@ -6179,6 +7660,7 @@
       "decorators": [
         {
           "type": "minecraft:beehive",
+          "fixed_height": true,
           "probability": 0.002
         }
       ],
@@ -6297,27 +7779,31 @@
         },
         {
           "type": "minecraft:attached_to_leaves",
-          "block_provider": {
-            "type": "minecraft:randomized_int_state_provider",
-            "property": "age",
-            "source": {
-              "type": "minecraft:simple_state_provider",
-              "state": {
-                "Name": "minecraft:mangrove_propagule",
-                "Properties": {
-                  "age": "0",
-                  "hanging": "true",
-                  "stage": "0",
-                  "waterlogged": "false"
+          "block_provider": [
+            {
+              "type": "minecraft:randomized_int_state_provider",
+              "property": "age",
+              "source": {
+                "type": "minecraft:simple_state_provider",
+                "state": {
+                  "Name": "minecraft:mangrove_propagule",
+                  "Properties": {
+                    "age": "0",
+                    "hanging": "true",
+                    "stage": "0",
+                    "waterlogged": "false"
+                  }
+                }
+              },
+              "values": {
+                "type": "minecraft:uniform",
+                "value": {
+                  "max_inclusive": 4,
+                  "min_inclusive": 0
                 }
               }
-            },
-            "values": {
-              "type": "minecraft:uniform",
-              "max_inclusive": 4,
-              "min_inclusive": 0
             }
-          },
+          ],
           "directions": [
             "down"
           ],
@@ -6328,6 +7814,7 @@
         },
         {
           "type": "minecraft:beehive",
+          "fixed_height": true,
           "probability": 0.01
         }
       ],
@@ -6404,8 +7891,10 @@
         },
         "trunk_offset_y": {
           "type": "minecraft:uniform",
-          "max_inclusive": 7,
-          "min_inclusive": 3
+          "value": {
+            "max_inclusive": 7,
+            "min_inclusive": 3
+          }
         }
       },
       "trunk_placer": {
@@ -6414,16 +7903,21 @@
         "can_grow_through": "#minecraft:mangrove_logs_can_grow_through",
         "extra_branch_length": {
           "type": "minecraft:uniform",
-          "max_inclusive": 1,
-          "min_inclusive": 0
+          "value": {
+            "max_inclusive": 1,
+            "min_inclusive": 0
+          }
         },
         "extra_branch_steps": {
           "type": "minecraft:uniform",
-          "max_inclusive": 6,
-          "min_inclusive": 1
+          "value": {
+            "max_inclusive": 6,
+            "min_inclusive": 1
+          }
         },
         "height_rand_a": 1,
         "height_rand_b": 9,
+        "megabush": true,
         "place_branch_per_log_probability": 0.5
       },
       "trunk_provider": {
@@ -6623,6 +8117,10 @@
       ]
     }
   },
+  "twisted_potato": {
+    "type": "minecraft:twisted_potato",
+    "config": {}
+  },
   "twisting_vines": {
     "type": "minecraft:twisting_vines",
     "config": {
@@ -6645,6 +8143,85 @@
       "floor_search_range": 5,
       "placement_probability_per_valid_position": 0.5,
       "placement_radius_around_floor": 1
+    }
+  },
+  "venomous_column": {
+    "type": "minecraft:random_patch",
+    "config": {
+      "feature": {
+        "feature": {
+          "type": "minecraft:block_column",
+          "config": {
+            "allowed_placement": {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:air"
+            },
+            "direction": "up",
+            "layers": [
+              {
+                "height": {
+                  "type": "minecraft:biased_to_bottom",
+                  "value": {
+                    "max_inclusive": 3,
+                    "min_inclusive": 1
+                  }
+                },
+                "provider": {
+                  "type": "minecraft:simple_state_provider",
+                  "state": {
+                    "Name": "minecraft:gravtater"
+                  }
+                }
+              },
+              {
+                "height": 1,
+                "provider": {
+                  "type": "minecraft:simple_state_provider",
+                  "state": {
+                    "Name": "minecraft:vicious_potato",
+                    "Properties": {
+                      "enabled": "false"
+                    }
+                  }
+                }
+              }
+            ],
+            "prioritize_tip": true
+          }
+        },
+        "placement": [
+          {
+            "type": "minecraft:block_predicate_filter",
+            "predicate": {
+              "type": "minecraft:all_of",
+              "predicates": [
+                {
+                  "type": "minecraft:matching_blocks",
+                  "blocks": [
+                    "minecraft:lime_potato_peels_block",
+                    "minecraft:air"
+                  ]
+                },
+                {
+                  "type": "minecraft:not",
+                  "predicate": {
+                    "type": "minecraft:matching_blocks",
+                    "blocks": "minecraft:air",
+                    "offset": [
+                      0,
+                      -1,
+                      0
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "tries": 30,
+      "xz_spread": 7,
+      "y_spread": 3
     }
   },
   "vines": {
@@ -6790,6 +8367,7 @@
           "minecraft:cornflower",
           "minecraft:wither_rose",
           "minecraft:lily_of_the_valley",
+          "minecraft:potato_flower",
           "minecraft:brown_mushroom",
           "minecraft:red_mushroom",
           "minecraft:wheat",
@@ -6873,6 +8451,7 @@
           "minecraft:cornflower",
           "minecraft:wither_rose",
           "minecraft:lily_of_the_valley",
+          "minecraft:potato_flower",
           "minecraft:brown_mushroom",
           "minecraft:red_mushroom",
           "minecraft:wheat",

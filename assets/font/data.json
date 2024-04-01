@@ -40,6 +40,14 @@
         "type": "reference",
         "id": "minecraft:include/default",
         "filter": {
+          "uniform": false,
+          "potato": false
+        }
+      },
+      {
+        "type": "reference",
+        "id": "minecraft:include/potato",
+        "filter": {
           "uniform": false
         }
       },
@@ -71,6 +79,14 @@
   },
   "include/default": {
     "providers": [
+      {
+        "type": "bitmap",
+        "file": "minecraft:font/potato.png",
+        "ascent": 7,
+        "chars": [
+          "\ud83e\udd54"
+        ]
+      },
       {
         "type": "bitmap",
         "file": "minecraft:font/nonlatin_european.png",
@@ -250,6 +266,28 @@
           "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2205\u2208\u0000",
           "\u2261\u00b1\u2265\u2264\u2320\u2321\u00f7\u2248\u00b0\u2219\u0000\u221a\u207f\u00b2\u25a0\u0000"
         ]
+      }
+    ]
+  },
+  "include/potato": {
+    "providers": [
+      {
+        "type": "bitmap",
+        "file": "minecraft:font/potato.png",
+        "ascent": 7,
+        "chars": [
+          "\ud83e\udd54"
+        ]
+      },
+      {
+        "type": "ttf",
+        "file": "minecraft:potatis.ttf",
+        "shift": [
+          0,
+          1
+        ],
+        "size": 11.0,
+        "oversample": 2.0
       }
     ]
   },
