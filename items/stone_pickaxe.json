@@ -1,12 +1,20 @@
 {
   "components": [
     {
-      "type": "minecraft:rarity",
-      "value": "common"
-    },
-    {
-      "type": "minecraft:damage",
-      "value": 0
+      "type": "minecraft:tool",
+      "value": {
+        "rules": [
+          {
+            "blocks": "#minecraft:incorrect_for_stone_tool",
+            "correct_for_drops": false
+          },
+          {
+            "blocks": "#minecraft:mineable/pickaxe",
+            "correct_for_drops": true,
+            "speed": 4.0
+          }
+        ]
+      }
     },
     {
       "type": "minecraft:attribute_modifiers",
@@ -42,6 +50,16 @@
       }
     },
     {
+      "type": "minecraft:enchantments",
+      "value": {
+        "levels": {}
+      }
+    },
+    {
+      "type": "minecraft:max_stack_size",
+      "value": 1
+    },
+    {
       "type": "minecraft:lore",
       "value": []
     },
@@ -50,34 +68,16 @@
       "value": 131
     },
     {
-      "type": "minecraft:repair_cost",
+      "type": "minecraft:rarity",
+      "value": "common"
+    },
+    {
+      "type": "minecraft:damage",
       "value": 0
     },
     {
-      "type": "minecraft:enchantments",
-      "value": {
-        "levels": {}
-      }
-    },
-    {
-      "type": "minecraft:tool",
-      "value": {
-        "rules": [
-          {
-            "blocks": "#minecraft:incorrect_for_stone_tool",
-            "correct_for_drops": false
-          },
-          {
-            "blocks": "#minecraft:mineable/pickaxe",
-            "correct_for_drops": true,
-            "speed": 4.0
-          }
-        ]
-      }
-    },
-    {
-      "type": "minecraft:max_stack_size",
-      "value": 1
+      "type": "minecraft:repair_cost",
+      "value": 0
     }
   ]
 }
