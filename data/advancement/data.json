@@ -1090,6 +1090,58 @@
     ],
     "sends_telemetry_event": true
   },
+  "adventure/blowback": {
+    "parent": "minecraft:adventure/minecraft_trials_edition",
+    "criteria": {
+      "blowback": {
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:breeze"
+              }
+            }
+          ],
+          "killing_blow": {
+            "direct_entity": {
+              "type": "minecraft:breeze_wind_charge"
+            },
+            "tags": [
+              {
+                "expected": true,
+                "id": "minecraft:is_projectile"
+              }
+            ]
+          }
+        },
+        "trigger": "minecraft:player_killed_entity"
+      }
+    },
+    "display": {
+      "description": {
+        "translate": "advancements.adventure.blowback.description"
+      },
+      "frame": "challenge",
+      "icon": {
+        "count": 1,
+        "id": "minecraft:wind_charge"
+      },
+      "title": {
+        "translate": "advancements.adventure.blowback.title"
+      }
+    },
+    "requirements": [
+      [
+        "blowback"
+      ]
+    ],
+    "rewards": {
+      "experience": 40
+    },
+    "sends_telemetry_event": true
+  },
   "adventure/brush_armadillo": {
     "parent": "minecraft:adventure/root",
     "criteria": {
@@ -1223,6 +1275,35 @@
     "requirements": [
       [
         "pot_crafted_using_only_sherds"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "adventure/crafters_crafting_crafters": {
+    "parent": "minecraft:adventure/root",
+    "criteria": {
+      "crafter_crafted_crafter": {
+        "conditions": {
+          "recipe_id": "minecraft:crafter"
+        },
+        "trigger": "minecraft:crafter_recipe_crafted"
+      }
+    },
+    "display": {
+      "description": {
+        "translate": "advancements.adventure.crafters_crafting_crafters.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:crafter"
+      },
+      "title": {
+        "translate": "advancements.adventure.crafters_crafting_crafters.title"
+      }
+    },
+    "requirements": [
+      [
+        "crafter_crafted_crafter"
       ]
     ],
     "sends_telemetry_event": true
@@ -1391,6 +1472,34 @@
               "entity": "this",
               "predicate": {
                 "type": "minecraft:blaze"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
+      "minecraft:bogged": {
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:bogged"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
+      "minecraft:breeze": {
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:breeze"
               }
             }
           ]
@@ -1875,6 +1984,8 @@
     "requirements": [
       [
         "minecraft:blaze",
+        "minecraft:bogged",
+        "minecraft:breeze",
         "minecraft:cave_spider",
         "minecraft:creeper",
         "minecraft:drowned",
@@ -1923,6 +2034,34 @@
               "entity": "this",
               "predicate": {
                 "type": "minecraft:blaze"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
+      "minecraft:bogged": {
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:bogged"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
+      "minecraft:breeze": {
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:breeze"
               }
             }
           ]
@@ -2410,6 +2549,12 @@
         "minecraft:blaze"
       ],
       [
+        "minecraft:bogged"
+      ],
+      [
+        "minecraft:breeze"
+      ],
+      [
         "minecraft:cave_spider"
       ],
       [
@@ -2541,6 +2686,67 @@
     ],
     "sends_telemetry_event": true
   },
+  "adventure/lighten_up": {
+    "parent": "minecraft:adventure/minecraft_trials_edition",
+    "criteria": {
+      "lighten_up": {
+        "conditions": {
+          "location": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": [
+                    "minecraft:oxidized_copper_bulb",
+                    "minecraft:weathered_copper_bulb",
+                    "minecraft:exposed_copper_bulb",
+                    "minecraft:waxed_oxidized_copper_bulb",
+                    "minecraft:waxed_weathered_copper_bulb",
+                    "minecraft:waxed_exposed_copper_bulb"
+                  ],
+                  "state": {
+                    "lit": "true"
+                  }
+                }
+              }
+            },
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "items": [
+                  "minecraft:wooden_axe",
+                  "minecraft:golden_axe",
+                  "minecraft:stone_axe",
+                  "minecraft:iron_axe",
+                  "minecraft:diamond_axe",
+                  "minecraft:netherite_axe"
+                ]
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:item_used_on_block"
+      }
+    },
+    "display": {
+      "description": {
+        "translate": "advancements.adventure.lighten_up.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:copper_bulb"
+      },
+      "title": {
+        "translate": "advancements.adventure.lighten_up.title"
+      }
+    },
+    "requirements": [
+      [
+        "lighten_up"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
   "adventure/lightning_rod_with_villager_no_fire": {
     "parent": "minecraft:adventure/root",
     "criteria": {
@@ -2595,6 +2801,45 @@
     ],
     "sends_telemetry_event": true
   },
+  "adventure/minecraft_trials_edition": {
+    "parent": "minecraft:adventure/root",
+    "criteria": {
+      "minecraft_trials_edition": {
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "location": {
+                  "structures": "minecraft:trial_chambers"
+                }
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:location"
+      }
+    },
+    "display": {
+      "description": {
+        "translate": "advancements.adventure.minecraft_trials_edition.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:chiseled_tuff"
+      },
+      "title": {
+        "translate": "advancements.adventure.minecraft_trials_edition.title"
+      }
+    },
+    "requirements": [
+      [
+        "minecraft_trials_edition"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
   "adventure/ol_betsy": {
     "parent": "minecraft:adventure/root",
     "criteria": {
@@ -2624,6 +2869,59 @@
         "shot_crossbow"
       ]
     ],
+    "sends_telemetry_event": true
+  },
+  "adventure/overoverkill": {
+    "parent": "minecraft:adventure/minecraft_trials_edition",
+    "criteria": {
+      "overoverkill": {
+        "conditions": {
+          "damage": {
+            "type": {
+              "direct_entity": {
+                "type": "minecraft:player",
+                "equipment": {
+                  "mainhand": {
+                    "items": "minecraft:mace"
+                  }
+                }
+              },
+              "tags": [
+                {
+                  "expected": true,
+                  "id": "minecraft:is_player_attack"
+                }
+              ]
+            },
+            "dealt": {
+              "min": 100.0
+            }
+          }
+        },
+        "trigger": "minecraft:player_hurt_entity"
+      }
+    },
+    "display": {
+      "description": {
+        "translate": "advancements.adventure.overoverkill.description"
+      },
+      "frame": "challenge",
+      "icon": {
+        "count": 1,
+        "id": "minecraft:mace"
+      },
+      "title": {
+        "translate": "advancements.adventure.overoverkill.title"
+      }
+    },
+    "requirements": [
+      [
+        "overoverkill"
+      ]
+    ],
+    "rewards": {
+      "experience": 50
+    },
     "sends_telemetry_event": true
   },
   "adventure/play_jukebox_in_meadows": {
@@ -2851,6 +3149,54 @@
       [
         "chiseled_bookshelf",
         "comparator"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "adventure/revaulting": {
+    "parent": "minecraft:adventure/under_lock_and_key",
+    "criteria": {
+      "revaulting": {
+        "conditions": {
+          "location": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "minecraft:vault",
+                  "state": {
+                    "ominous": "true"
+                  }
+                }
+              }
+            },
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "items": "minecraft:ominous_trial_key"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:item_used_on_block"
+      }
+    },
+    "display": {
+      "description": {
+        "translate": "advancements.adventure.revaulting.description"
+      },
+      "frame": "goal",
+      "icon": {
+        "count": 1,
+        "id": "minecraft:ominous_trial_key"
+      },
+      "title": {
+        "translate": "advancements.adventure.revaulting.title"
+      }
+    },
+    "requirements": [
+      [
+        "revaulting"
       ]
     ],
     "sends_telemetry_event": true
@@ -3499,6 +3845,12 @@
   "adventure/trim_with_any_armor_pattern": {
     "parent": "minecraft:adventure/root",
     "criteria": {
+      "armor_trimmed_minecraft:bolt_armor_trim_smithing_template_smithing_trim": {
+        "conditions": {
+          "recipe_id": "minecraft:bolt_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_crafted"
+      },
       "armor_trimmed_minecraft:coast_armor_trim_smithing_template_smithing_trim": {
         "conditions": {
           "recipe_id": "minecraft:coast_armor_trim_smithing_template_smithing_trim"
@@ -3514,6 +3866,12 @@
       "armor_trimmed_minecraft:eye_armor_trim_smithing_template_smithing_trim": {
         "conditions": {
           "recipe_id": "minecraft:eye_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_crafted"
+      },
+      "armor_trimmed_minecraft:flow_armor_trim_smithing_template_smithing_trim": {
+        "conditions": {
+          "recipe_id": "minecraft:flow_armor_trim_smithing_template_smithing_trim"
         },
         "trigger": "minecraft:recipe_crafted"
       },
@@ -3610,9 +3968,11 @@
     },
     "requirements": [
       [
+        "armor_trimmed_minecraft:bolt_armor_trim_smithing_template_smithing_trim",
         "armor_trimmed_minecraft:coast_armor_trim_smithing_template_smithing_trim",
         "armor_trimmed_minecraft:dune_armor_trim_smithing_template_smithing_trim",
         "armor_trimmed_minecraft:eye_armor_trim_smithing_template_smithing_trim",
+        "armor_trimmed_minecraft:flow_armor_trim_smithing_template_smithing_trim",
         "armor_trimmed_minecraft:host_armor_trim_smithing_template_smithing_trim",
         "armor_trimmed_minecraft:raiser_armor_trim_smithing_template_smithing_trim",
         "armor_trimmed_minecraft:rib_armor_trim_smithing_template_smithing_trim",
@@ -3680,6 +4040,53 @@
     "rewards": {
       "experience": 65
     },
+    "sends_telemetry_event": true
+  },
+  "adventure/under_lock_and_key": {
+    "parent": "minecraft:adventure/minecraft_trials_edition",
+    "criteria": {
+      "under_lock_and_key": {
+        "conditions": {
+          "location": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "minecraft:vault",
+                  "state": {
+                    "ominous": "false"
+                  }
+                }
+              }
+            },
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "items": "minecraft:trial_key"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:item_used_on_block"
+      }
+    },
+    "display": {
+      "description": {
+        "translate": "advancements.adventure.under_lock_and_key.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:trial_key"
+      },
+      "title": {
+        "translate": "advancements.adventure.under_lock_and_key.title"
+      }
+    },
+    "requirements": [
+      [
+        "under_lock_and_key"
+      ]
+    ],
     "sends_telemetry_event": true
   },
   "adventure/very_very_frightening": {
@@ -3892,6 +4299,48 @@
     "requirements": [
       [
         "walk_on_powder_snow_with_leather_boots"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "adventure/who_needs_rockets": {
+    "parent": "minecraft:adventure/minecraft_trials_edition",
+    "criteria": {
+      "who_needs_rockets": {
+        "conditions": {
+          "cause": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:wind_charge"
+              }
+            }
+          ],
+          "distance": {
+            "y": {
+              "min": 7.0
+            }
+          }
+        },
+        "trigger": "minecraft:fall_after_explosion"
+      }
+    },
+    "display": {
+      "description": {
+        "translate": "advancements.adventure.who_needs_rockets.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:wind_charge"
+      },
+      "title": {
+        "translate": "advancements.adventure.who_needs_rockets.title"
+      }
+    },
+    "requirements": [
+      [
+        "who_needs_rockets"
       ]
     ],
     "sends_telemetry_event": true
@@ -6324,7 +6773,7 @@
             "predicates": {
               "minecraft:enchantments": [
                 {
-                  "enchantment": "minecraft:silk_touch",
+                  "enchantments": "minecraft:silk_touch",
                   "levels": {
                     "min": 1
                   }
@@ -6861,21 +7310,27 @@
             "minecraft:haste": {},
             "minecraft:hero_of_the_village": {},
             "minecraft:hunger": {},
+            "minecraft:infested": {},
             "minecraft:invisibility": {},
             "minecraft:jump_boost": {},
             "minecraft:levitation": {},
             "minecraft:mining_fatigue": {},
             "minecraft:nausea": {},
             "minecraft:night_vision": {},
+            "minecraft:oozing": {},
             "minecraft:poison": {},
+            "minecraft:raid_omen": {},
             "minecraft:regeneration": {},
             "minecraft:resistance": {},
             "minecraft:slow_falling": {},
             "minecraft:slowness": {},
             "minecraft:speed": {},
             "minecraft:strength": {},
+            "minecraft:trial_omen": {},
             "minecraft:water_breathing": {},
             "minecraft:weakness": {},
+            "minecraft:weaving": {},
+            "minecraft:wind_charged": {},
             "minecraft:wither": {}
           }
         },
@@ -6913,9 +7368,11 @@
         "conditions": {
           "effects": {
             "minecraft:fire_resistance": {},
+            "minecraft:infested": {},
             "minecraft:invisibility": {},
             "minecraft:jump_boost": {},
             "minecraft:night_vision": {},
+            "minecraft:oozing": {},
             "minecraft:poison": {},
             "minecraft:regeneration": {},
             "minecraft:resistance": {},
@@ -6924,7 +7381,9 @@
             "minecraft:speed": {},
             "minecraft:strength": {},
             "minecraft:water_breathing": {},
-            "minecraft:weakness": {}
+            "minecraft:weakness": {},
+            "minecraft:weaving": {},
+            "minecraft:wind_charged": {}
           }
         },
         "trigger": "minecraft:effects_changed"
@@ -9787,6 +10246,102 @@
       ]
     }
   },
+  "recipes/building_blocks/chiseled_copper": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_cut_copper_slab": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:cut_copper_slab"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:chiseled_copper"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_cut_copper_slab"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:chiseled_copper"
+      ]
+    }
+  },
+  "recipes/building_blocks/chiseled_copper_from_copper_block_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:chiseled_copper_from_copper_block_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:chiseled_copper_from_copper_block_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/chiseled_copper_from_cut_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_cut_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:cut_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:chiseled_copper_from_cut_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_cut_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:chiseled_copper_from_cut_copper_stonecutting"
+      ]
+    }
+  },
   "recipes/building_blocks/chiseled_deepslate": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -10343,6 +10898,198 @@
       ]
     }
   },
+  "recipes/building_blocks/chiseled_tuff": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:chiseled_tuff"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff_slab": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff_slab"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff_slab"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:chiseled_tuff"
+      ]
+    }
+  },
+  "recipes/building_blocks/chiseled_tuff_bricks": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:chiseled_tuff_bricks"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff_brick_slab": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff_brick_slab"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff_brick_slab"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:chiseled_tuff_bricks"
+      ]
+    }
+  },
+  "recipes/building_blocks/chiseled_tuff_bricks_from_polished_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_polished_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:polished_tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:chiseled_tuff_bricks_from_polished_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_polished_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:chiseled_tuff_bricks_from_polished_tuff_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/chiseled_tuff_bricks_from_tuff_bricks_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:chiseled_tuff_bricks_from_tuff_bricks_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:chiseled_tuff_bricks_from_tuff_bricks_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/chiseled_tuff_bricks_from_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:chiseled_tuff_bricks_from_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:chiseled_tuff_bricks_from_tuff_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/chiseled_tuff_from_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:chiseled_tuff_from_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:chiseled_tuff_from_tuff_stonecutting"
+      ]
+    }
+  },
   "recipes/building_blocks/clay": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -10724,6 +11471,70 @@
     "rewards": {
       "recipes": [
         "minecraft:copper_block"
+      ]
+    }
+  },
+  "recipes/building_blocks/copper_grate": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:copper_grate"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:copper_grate"
+      ]
+    }
+  },
+  "recipes/building_blocks/copper_grate_from_copper_block_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:copper_grate_from_copper_block_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:copper_grate_from_copper_block_stonecutting"
       ]
     }
   },
@@ -14898,6 +15709,166 @@
       ]
     }
   },
+  "recipes/building_blocks/exposed_chiseled_copper": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_exposed_cut_copper_slab": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:exposed_cut_copper_slab"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:exposed_chiseled_copper"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_exposed_cut_copper_slab"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:exposed_chiseled_copper"
+      ]
+    }
+  },
+  "recipes/building_blocks/exposed_chiseled_copper_from_exposed_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_exposed_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:exposed_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:exposed_chiseled_copper_from_exposed_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_exposed_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:exposed_chiseled_copper_from_exposed_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/exposed_chiseled_copper_from_exposed_cut_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_exposed_cut_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:exposed_cut_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:exposed_chiseled_copper_from_exposed_cut_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_exposed_cut_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:exposed_chiseled_copper_from_exposed_cut_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/exposed_copper_grate": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_exposed_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:exposed_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:exposed_copper_grate"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_exposed_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:exposed_copper_grate"
+      ]
+    }
+  },
+  "recipes/building_blocks/exposed_copper_grate_from_exposed_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_exposed_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:exposed_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:exposed_copper_grate_from_exposed_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_exposed_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:exposed_copper_grate_from_exposed_copper_stonecutting"
+      ]
+    }
+  },
   "recipes/building_blocks/exposed_cut_copper": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -17535,6 +18506,166 @@
       ]
     }
   },
+  "recipes/building_blocks/oxidized_chiseled_copper": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_oxidized_cut_copper_slab": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:oxidized_cut_copper_slab"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:oxidized_chiseled_copper"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_oxidized_cut_copper_slab"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:oxidized_chiseled_copper"
+      ]
+    }
+  },
+  "recipes/building_blocks/oxidized_chiseled_copper_from_oxidized_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_oxidized_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:oxidized_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:oxidized_chiseled_copper_from_oxidized_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_oxidized_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:oxidized_chiseled_copper_from_oxidized_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/oxidized_chiseled_copper_from_oxidized_cut_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_oxidized_cut_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:oxidized_cut_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:oxidized_chiseled_copper_from_oxidized_cut_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_oxidized_cut_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:oxidized_chiseled_copper_from_oxidized_cut_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/oxidized_copper_grate": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_oxidized_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:oxidized_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:oxidized_copper_grate"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_oxidized_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:oxidized_copper_grate"
+      ]
+    }
+  },
+  "recipes/building_blocks/oxidized_copper_grate_from_oxidized_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_oxidized_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:oxidized_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:oxidized_copper_grate_from_oxidized_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_oxidized_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:oxidized_copper_grate_from_oxidized_copper_stonecutting"
+      ]
+    }
+  },
   "recipes/building_blocks/oxidized_cut_copper": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -19655,6 +20786,262 @@
     "rewards": {
       "recipes": [
         "minecraft:polished_granite_stairs_from_polished_granite_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/polished_tuff": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:polished_tuff"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:polished_tuff"
+      ]
+    }
+  },
+  "recipes/building_blocks/polished_tuff_from_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:polished_tuff_from_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:polished_tuff_from_tuff_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/polished_tuff_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_polished_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:polished_tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:polished_tuff_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_polished_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:polished_tuff_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/polished_tuff_slab_from_polished_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_polished_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:polished_tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:polished_tuff_slab_from_polished_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_polished_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:polished_tuff_slab_from_polished_tuff_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/polished_tuff_slab_from_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:polished_tuff_slab_from_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:polished_tuff_slab_from_tuff_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/polished_tuff_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_polished_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:polished_tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:polished_tuff_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_polished_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:polished_tuff_stairs"
+      ]
+    }
+  },
+  "recipes/building_blocks/polished_tuff_stairs_from_polished_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_polished_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:polished_tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:polished_tuff_stairs_from_polished_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_polished_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:polished_tuff_stairs_from_polished_tuff_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/polished_tuff_stairs_from_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:polished_tuff_stairs_from_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:polished_tuff_stairs_from_tuff_stonecutting"
       ]
     }
   },
@@ -23044,6 +24431,486 @@
       ]
     }
   },
+  "recipes/building_blocks/tuff_brick_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_brick_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_brick_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/tuff_brick_slab_from_polished_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_polished_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:polished_tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_brick_slab_from_polished_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_polished_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_brick_slab_from_polished_tuff_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/tuff_brick_slab_from_tuff_bricks_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_brick_slab_from_tuff_bricks_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_brick_slab_from_tuff_bricks_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/tuff_brick_slab_from_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_brick_slab_from_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_brick_slab_from_tuff_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/tuff_brick_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_brick_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_brick_stairs"
+      ]
+    }
+  },
+  "recipes/building_blocks/tuff_brick_stairs_from_polished_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_polished_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:polished_tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_brick_stairs_from_polished_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_polished_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_brick_stairs_from_polished_tuff_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/tuff_brick_stairs_from_tuff_bricks_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_brick_stairs_from_tuff_bricks_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_brick_stairs_from_tuff_bricks_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/tuff_brick_stairs_from_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_brick_stairs_from_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_brick_stairs_from_tuff_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/tuff_bricks": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_polished_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:polished_tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_bricks"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_polished_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_bricks"
+      ]
+    }
+  },
+  "recipes/building_blocks/tuff_bricks_from_polished_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_polished_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:polished_tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_bricks_from_polished_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_polished_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_bricks_from_polished_tuff_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/tuff_bricks_from_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_bricks_from_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_bricks_from_tuff_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/tuff_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/tuff_slab_from_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_slab_from_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_slab_from_tuff_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/tuff_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_stairs"
+      ]
+    }
+  },
+  "recipes/building_blocks/tuff_stairs_from_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_stairs_from_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_stairs_from_tuff_stonecutting"
+      ]
+    }
+  },
   "recipes/building_blocks/warped_hyphae": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -23172,6 +25039,134 @@
       ]
     }
   },
+  "recipes/building_blocks/waxed_chiseled_copper": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_chiseled_copper"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_cut_copper_slab": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_cut_copper_slab"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_cut_copper_slab"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_chiseled_copper"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_chiseled_copper_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_chiseled_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:chiseled_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_chiseled_copper_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_chiseled_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_chiseled_copper_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_chiseled_copper_from_waxed_copper_block_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_chiseled_copper_from_waxed_copper_block_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_copper_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_copper_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_copper_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_chiseled_copper_from_waxed_copper_block_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_chiseled_copper_from_waxed_cut_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_chiseled_copper_from_waxed_cut_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_cut_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_cut_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_cut_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_chiseled_copper_from_waxed_cut_copper_stonecutting"
+      ]
+    }
+  },
   "recipes/building_blocks/waxed_copper_block_from_honeycomb": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -23201,6 +25196,198 @@
     "rewards": {
       "recipes": [
         "minecraft:waxed_copper_block_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_copper_bulb_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_bulb": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_bulb"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_copper_bulb_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_bulb"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_copper_bulb_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_copper_door_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_door": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_door"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_copper_door_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_door"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_copper_door_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_copper_grate": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_copper_grate"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_copper_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_copper_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_copper_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_copper_grate"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_copper_grate_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_grate": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_grate"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_copper_grate_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_grate"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_copper_grate_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_copper_grate_from_waxed_copper_block_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_copper_grate_from_waxed_copper_block_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_copper_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_copper_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_copper_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_copper_grate_from_waxed_copper_block_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_copper_trapdoor_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_trapdoor": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_trapdoor"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_copper_trapdoor_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_trapdoor"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_copper_trapdoor_from_honeycomb"
       ]
     }
   },
@@ -23556,6 +25743,198 @@
       ]
     }
   },
+  "recipes/building_blocks/waxed_exposed_chiseled_copper": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_exposed_chiseled_copper"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_exposed_cut_copper_slab": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_exposed_cut_copper_slab"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_exposed_cut_copper_slab"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_exposed_chiseled_copper"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_exposed_chiseled_copper_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_exposed_chiseled_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:exposed_chiseled_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_exposed_chiseled_copper_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_exposed_chiseled_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_exposed_chiseled_copper_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_exposed_chiseled_copper_from_waxed_exposed_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_exposed_chiseled_copper_from_waxed_exposed_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_exposed_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_exposed_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_exposed_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_exposed_chiseled_copper_from_waxed_exposed_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_exposed_chiseled_copper_from_waxed_exposed_cut_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_exposed_chiseled_copper_from_waxed_exposed_cut_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_exposed_cut_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_exposed_cut_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_exposed_cut_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_exposed_chiseled_copper_from_waxed_exposed_cut_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_exposed_copper_bulb_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_exposed_copper_bulb": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:exposed_copper_bulb"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_exposed_copper_bulb_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_exposed_copper_bulb"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_exposed_copper_bulb_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_exposed_copper_door_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_exposed_copper_door": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:exposed_copper_door"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_exposed_copper_door_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_exposed_copper_door"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_exposed_copper_door_from_honeycomb"
+      ]
+    }
+  },
   "recipes/building_blocks/waxed_exposed_copper_from_honeycomb": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -23585,6 +25964,134 @@
     "rewards": {
       "recipes": [
         "minecraft:waxed_exposed_copper_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_exposed_copper_grate": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_exposed_copper_grate"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_exposed_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_exposed_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_exposed_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_exposed_copper_grate"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_exposed_copper_grate_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_exposed_copper_grate": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:exposed_copper_grate"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_exposed_copper_grate_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_exposed_copper_grate"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_exposed_copper_grate_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_exposed_copper_grate_from_waxed_exposed_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_exposed_copper_grate_from_waxed_exposed_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_exposed_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_exposed_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_exposed_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_exposed_copper_grate_from_waxed_exposed_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_exposed_copper_trapdoor_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_exposed_copper_trapdoor": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:exposed_copper_trapdoor"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_exposed_copper_trapdoor_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_exposed_copper_trapdoor"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_exposed_copper_trapdoor_from_honeycomb"
       ]
     }
   },
@@ -23940,6 +26447,198 @@
       ]
     }
   },
+  "recipes/building_blocks/waxed_oxidized_chiseled_copper": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_oxidized_chiseled_copper"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_oxidized_cut_copper_slab": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_oxidized_cut_copper_slab"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_oxidized_cut_copper_slab"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_oxidized_chiseled_copper"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_oxidized_chiseled_copper_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_oxidized_chiseled_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:oxidized_chiseled_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_oxidized_chiseled_copper_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_oxidized_chiseled_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_oxidized_chiseled_copper_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_oxidized_chiseled_copper_from_waxed_oxidized_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_oxidized_chiseled_copper_from_waxed_oxidized_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_oxidized_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_oxidized_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_oxidized_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_oxidized_chiseled_copper_from_waxed_oxidized_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_oxidized_chiseled_copper_from_waxed_oxidized_cut_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_oxidized_chiseled_copper_from_waxed_oxidized_cut_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_oxidized_cut_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_oxidized_cut_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_oxidized_cut_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_oxidized_chiseled_copper_from_waxed_oxidized_cut_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_oxidized_copper_bulb_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_oxidized_copper_bulb": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:oxidized_copper_bulb"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_oxidized_copper_bulb_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_oxidized_copper_bulb"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_oxidized_copper_bulb_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_oxidized_copper_door_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_oxidized_copper_door": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:oxidized_copper_door"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_oxidized_copper_door_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_oxidized_copper_door"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_oxidized_copper_door_from_honeycomb"
+      ]
+    }
+  },
   "recipes/building_blocks/waxed_oxidized_copper_from_honeycomb": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -23969,6 +26668,134 @@
     "rewards": {
       "recipes": [
         "minecraft:waxed_oxidized_copper_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_oxidized_copper_grate": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_oxidized_copper_grate"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_oxidized_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_oxidized_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_oxidized_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_oxidized_copper_grate"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_oxidized_copper_grate_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_oxidized_copper_grate": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:oxidized_copper_grate"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_oxidized_copper_grate_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_oxidized_copper_grate"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_oxidized_copper_grate_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_oxidized_copper_grate_from_waxed_oxidized_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_oxidized_copper_grate_from_waxed_oxidized_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_oxidized_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_oxidized_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_oxidized_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_oxidized_copper_grate_from_waxed_oxidized_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_oxidized_copper_trapdoor_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_oxidized_copper_trapdoor": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:oxidized_copper_trapdoor"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_oxidized_copper_trapdoor_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_oxidized_copper_trapdoor"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_oxidized_copper_trapdoor_from_honeycomb"
       ]
     }
   },
@@ -24324,6 +27151,198 @@
       ]
     }
   },
+  "recipes/building_blocks/waxed_weathered_chiseled_copper": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_weathered_chiseled_copper"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_weathered_cut_copper_slab": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_weathered_cut_copper_slab"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_weathered_cut_copper_slab"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_weathered_chiseled_copper"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_weathered_chiseled_copper_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_weathered_chiseled_copper_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_weathered_chiseled_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:weathered_chiseled_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_weathered_chiseled_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_weathered_chiseled_copper_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_weathered_chiseled_copper_from_waxed_weathered_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_weathered_chiseled_copper_from_waxed_weathered_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_weathered_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_weathered_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_weathered_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_weathered_chiseled_copper_from_waxed_weathered_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_weathered_chiseled_copper_from_waxed_weathered_cut_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_weathered_chiseled_copper_from_waxed_weathered_cut_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_weathered_cut_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_weathered_cut_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_weathered_cut_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_weathered_chiseled_copper_from_waxed_weathered_cut_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_weathered_copper_bulb_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_weathered_copper_bulb_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_weathered_copper_bulb": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:weathered_copper_bulb"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_weathered_copper_bulb"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_weathered_copper_bulb_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_weathered_copper_door_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_weathered_copper_door_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_weathered_copper_door": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:weathered_copper_door"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_weathered_copper_door"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_weathered_copper_door_from_honeycomb"
+      ]
+    }
+  },
   "recipes/building_blocks/waxed_weathered_copper_from_honeycomb": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -24353,6 +27372,134 @@
     "rewards": {
       "recipes": [
         "minecraft:waxed_weathered_copper_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_weathered_copper_grate": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_weathered_copper_grate"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_weathered_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_weathered_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_weathered_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_weathered_copper_grate"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_weathered_copper_grate_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_weathered_copper_grate_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_weathered_copper_grate": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:weathered_copper_grate"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_weathered_copper_grate"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_weathered_copper_grate_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_weathered_copper_grate_from_waxed_weathered_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_weathered_copper_grate_from_waxed_weathered_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_weathered_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_weathered_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_weathered_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_weathered_copper_grate_from_waxed_weathered_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_weathered_copper_trapdoor_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_weathered_copper_trapdoor_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_weathered_copper_trapdoor": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:weathered_copper_trapdoor"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_weathered_copper_trapdoor"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_weathered_copper_trapdoor_from_honeycomb"
       ]
     }
   },
@@ -24705,6 +27852,166 @@
     "rewards": {
       "recipes": [
         "minecraft:waxed_weathered_cut_copper_stairs_from_waxed_weathered_cut_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/weathered_chiseled_copper": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:weathered_chiseled_copper"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_weathered_cut_copper_slab": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:weathered_cut_copper_slab"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_weathered_cut_copper_slab"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:weathered_chiseled_copper"
+      ]
+    }
+  },
+  "recipes/building_blocks/weathered_chiseled_copper_from_weathered_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:weathered_chiseled_copper_from_weathered_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_weathered_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:weathered_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_weathered_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:weathered_chiseled_copper_from_weathered_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/weathered_chiseled_copper_from_weathered_cut_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:weathered_chiseled_copper_from_weathered_cut_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_weathered_cut_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:weathered_cut_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_weathered_cut_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:weathered_chiseled_copper_from_weathered_cut_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/weathered_copper_grate": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:weathered_copper_grate"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_weathered_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:weathered_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_weathered_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:weathered_copper_grate"
+      ]
+    }
+  },
+  "recipes/building_blocks/weathered_copper_grate_from_weathered_copper_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:weathered_copper_grate_from_weathered_copper_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_weathered_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:weathered_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_weathered_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:weathered_copper_grate_from_weathered_copper_stonecutting"
       ]
     }
   },
@@ -25944,6 +29251,49 @@
     "rewards": {
       "recipes": [
         "minecraft:leather_leggings"
+      ]
+    }
+  },
+  "recipes/combat/mace": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_breeze_rod": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:breeze_rod"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_heavy_core": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:heavy_core"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:mace"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_breeze_rod",
+        "has_heavy_core"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:mace"
       ]
     }
   },
@@ -32570,6 +35920,102 @@
       ]
     }
   },
+  "recipes/decorations/polished_tuff_wall": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_polished_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:polished_tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:polished_tuff_wall"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_polished_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:polished_tuff_wall"
+      ]
+    }
+  },
+  "recipes/decorations/polished_tuff_wall_from_polished_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_polished_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:polished_tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:polished_tuff_wall_from_polished_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_polished_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:polished_tuff_wall_from_polished_tuff_stonecutting"
+      ]
+    }
+  },
+  "recipes/decorations/polished_tuff_wall_from_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:polished_tuff_wall_from_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:polished_tuff_wall_from_tuff_stonecutting"
+      ]
+    }
+  },
   "recipes/decorations/prismarine_wall": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -33837,6 +37283,198 @@
     "rewards": {
       "recipes": [
         "minecraft:torch"
+      ]
+    }
+  },
+  "recipes/decorations/tuff_brick_wall": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_brick_wall"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_brick_wall"
+      ]
+    }
+  },
+  "recipes/decorations/tuff_brick_wall_from_polished_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_polished_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:polished_tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_brick_wall_from_polished_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_polished_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_brick_wall_from_polished_tuff_stonecutting"
+      ]
+    }
+  },
+  "recipes/decorations/tuff_brick_wall_from_tuff_bricks_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_brick_wall_from_tuff_bricks_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_brick_wall_from_tuff_bricks_stonecutting"
+      ]
+    }
+  },
+  "recipes/decorations/tuff_brick_wall_from_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_brick_wall_from_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_brick_wall_from_tuff_stonecutting"
+      ]
+    }
+  },
+  "recipes/decorations/tuff_wall": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_wall"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_wall"
+      ]
+    }
+  },
+  "recipes/decorations/tuff_wall_from_tuff_stonecutting": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:tuff_wall_from_tuff_stonecutting"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_tuff": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:tuff"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_tuff"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:tuff_wall_from_tuff_stonecutting"
       ]
     }
   },
@@ -35826,6 +39464,70 @@
       ]
     }
   },
+  "recipes/misc/bolt_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_bolt_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:bolt_armor_trim_smithing_template"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bolt_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_bolt_armor_trim_smithing_template"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bolt_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/bolt_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:bolt_armor_trim_smithing_template"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:bolt_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_smithing_trim_template"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:bolt_armor_trim_smithing_template_smithing_trim"
+      ]
+    }
+  },
   "recipes/misc/bone_meal": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -37275,6 +40977,70 @@
     "rewards": {
       "recipes": [
         "minecraft:firework_rocket_simple"
+      ]
+    }
+  },
+  "recipes/misc/flow_armor_trim_smithing_template": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_flow_armor_trim_smithing_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:flow_armor_trim_smithing_template"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:flow_armor_trim_smithing_template"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_flow_armor_trim_smithing_template"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:flow_armor_trim_smithing_template"
+      ]
+    }
+  },
+  "recipes/misc/flow_armor_trim_smithing_template_smithing_trim": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_smithing_trim_template": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:flow_armor_trim_smithing_template"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:flow_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_smithing_trim_template"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:flow_armor_trim_smithing_template_smithing_trim"
       ]
     }
   },
@@ -41521,6 +45287,38 @@
       ]
     }
   },
+  "recipes/misc/wind_charge": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_breeze_rod": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:breeze_rod"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:wind_charge"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_breeze_rod"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:wind_charge"
+      ]
+    }
+  },
   "recipes/misc/writable_book": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -42321,6 +46119,134 @@
       ]
     }
   },
+  "recipes/redstone/copper_bulb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:copper_bulb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:copper_bulb"
+      ]
+    }
+  },
+  "recipes/redstone/copper_door": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_ingot": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_ingot"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:copper_door"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_ingot"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:copper_door"
+      ]
+    }
+  },
+  "recipes/redstone/copper_trapdoor": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_ingot": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_ingot"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:copper_trapdoor"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_ingot"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:copper_trapdoor"
+      ]
+    }
+  },
+  "recipes/redstone/crafter": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dropper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dropper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:crafter"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dropper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:crafter"
+      ]
+    }
+  },
   "recipes/redstone/crimson_button": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -42734,6 +46660,38 @@
     "rewards": {
       "recipes": [
         "minecraft:dropper"
+      ]
+    }
+  },
+  "recipes/redstone/exposed_copper_bulb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_exposed_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:exposed_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:exposed_copper_bulb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_exposed_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:exposed_copper_bulb"
       ]
     }
   },
@@ -43566,6 +47524,38 @@
     "rewards": {
       "recipes": [
         "minecraft:observer"
+      ]
+    }
+  },
+  "recipes/redstone/oxidized_copper_bulb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_oxidized_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:oxidized_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:oxidized_copper_bulb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_oxidized_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:oxidized_copper_bulb"
       ]
     }
   },
@@ -44537,6 +48527,166 @@
     "rewards": {
       "recipes": [
         "minecraft:warped_trapdoor"
+      ]
+    }
+  },
+  "recipes/redstone/waxed_copper_bulb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_copper_bulb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_copper_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_copper_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_copper_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_copper_bulb"
+      ]
+    }
+  },
+  "recipes/redstone/waxed_exposed_copper_bulb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_exposed_copper_bulb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_exposed_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_exposed_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_exposed_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_exposed_copper_bulb"
+      ]
+    }
+  },
+  "recipes/redstone/waxed_oxidized_copper_bulb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_oxidized_copper_bulb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_oxidized_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_oxidized_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_oxidized_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_oxidized_copper_bulb"
+      ]
+    }
+  },
+  "recipes/redstone/waxed_weathered_copper_bulb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_weathered_copper_bulb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_waxed_weathered_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:waxed_weathered_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_waxed_weathered_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_weathered_copper_bulb"
+      ]
+    }
+  },
+  "recipes/redstone/weathered_copper_bulb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:weathered_copper_bulb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_weathered_copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:weathered_copper"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_weathered_copper"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:weathered_copper_bulb"
       ]
     }
   },
