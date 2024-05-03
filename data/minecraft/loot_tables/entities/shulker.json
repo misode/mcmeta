@@ -5,9 +5,13 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "chance": 0.5,
-          "condition": "minecraft:random_chance_with_looting",
-          "looting_multiplier": 0.0625
+          "chance": {
+            "type": "minecraft:linear",
+            "base": 0.5,
+            "per_level_above_first": 0.0625
+          },
+          "condition": "minecraft:random_chance_with_enchanted_bonus",
+          "enchantment": "minecraft:looting"
         }
       ],
       "entries": [
