@@ -76,11 +76,22 @@
           },
           "enchanted": "attacker",
           "requirements": {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "type": "#minecraft:sensitive_to_bane_of_arthropods"
-            }
+            "condition": "minecraft:all_of",
+            "terms": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "type": "#minecraft:sensitive_to_bane_of_arthropods"
+                }
+              },
+              {
+                "condition": "minecraft:damage_source_properties",
+                "predicate": {
+                  "is_direct": true
+                }
+              }
+            ]
           }
         }
       ]
@@ -207,6 +218,7 @@
         }
       ]
     },
+    "exclusive_set": "#minecraft:exclusive_set/damage",
     "max_cost": {
       "base": 65,
       "per_level_above_first": 9
@@ -350,6 +362,7 @@
         }
       ]
     },
+    "exclusive_set": "#minecraft:exclusive_set/damage",
     "max_cost": {
       "base": 25,
       "per_level_above_first": 8
@@ -499,7 +512,8 @@
                 "type": "minecraft:set_block_properties",
                 "properties": {
                   "lit": "true"
-                }
+                },
+                "trigger_game_event": "minecraft:block_change"
               },
               {
                 "type": "minecraft:damage_item",
@@ -511,9 +525,13 @@
             "condition": "minecraft:location_check",
             "predicate": {
               "block": {
+                "blocks": "#minecraft:fire_aspect_lightable",
                 "state": {
                   "lit": "false"
                 }
+              },
+              "fluid": {
+                "fluids": "minecraft:empty"
               }
             }
           }
@@ -530,7 +548,13 @@
               "per_level_above_first": 4.0
             }
           },
-          "enchanted": "attacker"
+          "enchanted": "attacker",
+          "requirements": {
+            "condition": "minecraft:damage_source_properties",
+            "predicate": {
+              "is_direct": true
+            }
+          }
         }
       ]
     },
@@ -543,10 +567,11 @@
       "base": 10,
       "per_level_above_first": 20
     },
+    "primary_items": "#minecraft:enchantable/sword",
     "slots": [
       "mainhand"
     ],
-    "supported_items": "#minecraft:enchantable/sword",
+    "supported_items": "#minecraft:enchantable/fire_aspect",
     "weight": 2
   },
   "fire_protection": {
@@ -726,8 +751,8 @@
                   ]
                 },
                 {
-                  "type": "minecraft:matching_fluids",
-                  "fluids": "minecraft:water"
+                  "type": "minecraft:matching_blocks",
+                  "blocks": "minecraft:water"
                 },
                 {
                   "type": "minecraft:unobstructed"
@@ -743,7 +768,8 @@
                 "base": 3.0,
                 "per_level_above_first": 1.0
               }
-            }
+            },
+            "trigger_game_event": "minecraft:block_place"
           },
           "requirements": {
             "condition": "minecraft:entity_properties",
@@ -1326,18 +1352,14 @@
       "translate": "enchantment.minecraft.quick_charge"
     },
     "effects": {
-      "minecraft:crossbow_charge_time": [
-        {
-          "effect": {
-            "type": "minecraft:add",
-            "value": {
-              "type": "minecraft:linear",
-              "base": -0.25,
-              "per_level_above_first": -0.25
-            }
-          }
+      "minecraft:crossbow_charge_time": {
+        "type": "minecraft:add",
+        "value": {
+          "type": "minecraft:linear",
+          "base": -0.25,
+          "per_level_above_first": -0.25
         }
-      ],
+      },
       "minecraft:crossbow_charging_sounds": [
         {
           "end": "minecraft:item.crossbow.loading_end",
@@ -1414,18 +1436,14 @@
         "minecraft:item.trident.riptide_2",
         "minecraft:item.trident.riptide_3"
       ],
-      "minecraft:trident_spin_attack_strength": [
-        {
-          "effect": {
-            "type": "minecraft:add",
-            "value": {
-              "type": "minecraft:linear",
-              "base": 1.5,
-              "per_level_above_first": 0.75
-            }
-          }
+      "minecraft:trident_spin_attack_strength": {
+        "type": "minecraft:add",
+        "value": {
+          "type": "minecraft:linear",
+          "base": 1.5,
+          "per_level_above_first": 0.75
         }
-      ]
+      }
     },
     "exclusive_set": "#minecraft:exclusive_set/riptide",
     "max_cost": {
@@ -1438,7 +1456,7 @@
       "per_level_above_first": 7
     },
     "slots": [
-      "mainhand"
+      "hand"
     ],
     "supported_items": "#minecraft:enchantable/trident",
     "weight": 2
@@ -1945,7 +1963,7 @@
     },
     "primary_items": "#minecraft:enchantable/chest_armor",
     "slots": [
-      "armor"
+      "any"
     ],
     "supported_items": "#minecraft:enchantable/armor",
     "weight": 1
@@ -2020,7 +2038,7 @@
       "per_level_above_first": 8
     },
     "slots": [
-      "mainhand"
+      "any"
     ],
     "supported_items": "#minecraft:enchantable/durability",
     "weight": 5
