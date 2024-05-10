@@ -13,7 +13,8 @@
               "type": "minecraft:set_block_properties",
               "properties": {
                 "lit": "true"
-              }
+              },
+              "trigger_game_event": "minecraft:block_change"
             },
             {
               "type": "minecraft:damage_item",
@@ -25,9 +26,13 @@
           "condition": "minecraft:location_check",
           "predicate": {
             "block": {
+              "blocks": "#minecraft:fire_aspect_lightable",
               "state": {
                 "lit": "false"
               }
+            },
+            "fluid": {
+              "fluids": "minecraft:empty"
             }
           }
         }
@@ -44,7 +49,13 @@
             "per_level_above_first": 4.0
           }
         },
-        "enchanted": "attacker"
+        "enchanted": "attacker",
+        "requirements": {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "is_direct": true
+          }
+        }
       }
     ]
   },
@@ -57,9 +68,10 @@
     "base": 10,
     "per_level_above_first": 20
   },
+  "primary_items": "#minecraft:enchantable/sword",
   "slots": [
     "mainhand"
   ],
-  "supported_items": "#minecraft:enchantable/sword",
+  "supported_items": "#minecraft:enchantable/fire_aspect",
   "weight": 2
 }
