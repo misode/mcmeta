@@ -196,48 +196,39 @@
                     "add": {
                       "type": "literal",
                       "children": {
-                        "uuid": {
+                        "id": {
                           "type": "argument",
                           "children": {
-                            "name": {
+                            "value": {
                               "type": "argument",
                               "children": {
-                                "value": {
-                                  "type": "argument",
-                                  "children": {
-                                    "add_multiplied_base": {
-                                      "type": "literal",
-                                      "executable": true
-                                    },
-                                    "add_multiplied_total": {
-                                      "type": "literal",
-                                      "executable": true
-                                    },
-                                    "add_value": {
-                                      "type": "literal",
-                                      "executable": true
-                                    }
-                                  },
-                                  "parser": "brigadier:double"
+                                "add_multiplied_base": {
+                                  "type": "literal",
+                                  "executable": true
+                                },
+                                "add_multiplied_total": {
+                                  "type": "literal",
+                                  "executable": true
+                                },
+                                "add_value": {
+                                  "type": "literal",
+                                  "executable": true
                                 }
                               },
-                              "parser": "brigadier:string",
-                              "properties": {
-                                "type": "phrase"
-                              }
+                              "parser": "brigadier:double"
                             }
                           },
-                          "parser": "minecraft:uuid"
+                          "parser": "minecraft:resource_location"
                         }
                       }
                     },
                     "remove": {
                       "type": "literal",
                       "children": {
-                        "uuid": {
+                        "id": {
                           "type": "argument",
                           "executable": true,
-                          "parser": "minecraft:uuid"
+                          "parser": "minecraft:resource_location"
                         }
                       }
                     },
@@ -247,7 +238,7 @@
                         "get": {
                           "type": "literal",
                           "children": {
-                            "uuid": {
+                            "id": {
                               "type": "argument",
                               "children": {
                                 "scale": {
@@ -257,7 +248,7 @@
                                 }
                               },
                               "executable": true,
-                              "parser": "minecraft:uuid"
+                              "parser": "minecraft:resource_location"
                             }
                           }
                         }
@@ -6474,6 +6465,17 @@
           "executable": true
         },
         "enderPearlsVanishOnDeath": {
+          "type": "literal",
+          "children": {
+            "value": {
+              "type": "argument",
+              "executable": true,
+              "parser": "brigadier:bool"
+            }
+          },
+          "executable": true
+        },
+        "entitiesWithPassengersCanUsePortals": {
           "type": "literal",
           "children": {
             "value": {

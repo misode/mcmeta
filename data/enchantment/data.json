@@ -13,9 +13,8 @@
             "per_level_above_first": 4.0
           },
           "attribute": "minecraft:player.submerged_mining_speed",
-          "name": "enchantment.aqua_affinity",
-          "operation": "add_multiplied_total",
-          "uuid": "60b1b7db-fffd-4ad0-817c-d6c6a93d8a45"
+          "id": "minecraft:enchantment.aqua_affinity",
+          "operation": "add_multiplied_total"
         }
       ]
     },
@@ -150,9 +149,8 @@
             "per_level_above_first": 0.15
           },
           "attribute": "minecraft:generic.explosion_knockback_resistance",
-          "name": "enchantment.blast_protection",
-          "operation": "add_value",
-          "uuid": "40a9968f-5c66-4e2f-b7f4-2ec2f4b3e450"
+          "id": "minecraft:enchantment.blast_protection",
+          "operation": "add_value"
         }
       ],
       "minecraft:damage_protection": [
@@ -268,14 +266,18 @@
                 "condition": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
-                  "type": "minecraft:trident",
-                  "location": {
-                    "block": {
-                      "blocks": "minecraft:lightning_rod"
-                    },
-                    "can_see_sky": true
-                  }
+                  "type": "minecraft:trident"
                 }
+              },
+              {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "can_see_sky": true
+                }
+              },
+              {
+                "block": "minecraft:lightning_rod",
+                "condition": "minecraft:block_state_property"
               }
             ]
           }
@@ -392,9 +394,8 @@
             "per_level_above_first": 0.33333334
           },
           "attribute": "minecraft:generic.water_movement_efficiency",
-          "name": "enchantment.depth_strider",
-          "operation": "add_value",
-          "uuid": "11dc269a-4476-46c0-aff3-9e17d7eb6801"
+          "id": "minecraft:enchantment.depth_strider",
+          "operation": "add_value"
         }
       ]
     },
@@ -427,9 +428,8 @@
             "added": 1.0
           },
           "attribute": "minecraft:player.mining_efficiency",
-          "name": "enchantment.efficiency",
-          "operation": "add_value",
-          "uuid": "3ceb37c0-db62-46b5-bd02-785457b01d96"
+          "id": "minecraft:enchantment.efficiency",
+          "operation": "add_value"
         }
       ]
     },
@@ -588,9 +588,8 @@
             "per_level_above_first": -0.15
           },
           "attribute": "minecraft:generic.burning_time",
-          "name": "enchantment.fire_protection",
-          "operation": "add_multiplied_base",
-          "uuid": "b572ecd2-ac0c-4071-abde-9594af072a37"
+          "id": "minecraft:enchantment.fire_protection",
+          "operation": "add_multiplied_base"
         }
       ],
       "minecraft:damage_protection": [
@@ -742,17 +741,21 @@
               "type": "minecraft:all_of",
               "predicates": [
                 {
-                  "type": "minecraft:matching_blocks",
-                  "blocks": "minecraft:air",
+                  "type": "minecraft:matching_block_tag",
                   "offset": [
                     0,
                     1,
                     0
-                  ]
+                  ],
+                  "tag": "minecraft:air"
                 },
                 {
                   "type": "minecraft:matching_blocks",
                   "blocks": "minecraft:water"
+                },
+                {
+                  "type": "minecraft:matching_fluids",
+                  "fluids": "minecraft:water"
                 },
                 {
                   "type": "minecraft:unobstructed"
@@ -1385,7 +1388,8 @@
       "per_level_above_first": 20
     },
     "slots": [
-      "mainhand"
+      "mainhand",
+      "offhand"
     ],
     "supported_items": "#minecraft:enchantable/crossbow",
     "weight": 5
@@ -1404,9 +1408,8 @@
             "per_level_above_first": 1.0
           },
           "attribute": "minecraft:generic.oxygen_bonus",
-          "name": "enchantment.respiration",
-          "operation": "add_value",
-          "uuid": "07a65791-f64d-4e79-86c7-f83932f007ec"
+          "id": "minecraft:enchantment.respiration",
+          "operation": "add_value"
         }
       ]
     },
@@ -1587,9 +1590,8 @@
               "per_level_above_first": 0.0105
             },
             "attribute": "minecraft:generic.movement_speed",
-            "name": "Soul speed boost",
-            "operation": "add_value",
-            "uuid": "87f46a96-686f-4796-b035-22e16ee9e038"
+            "id": "minecraft:enchantment.soul_speed",
+            "operation": "add_value"
           },
           "requirements": {
             "condition": "minecraft:all_of",
@@ -1683,9 +1685,8 @@
             "type": "minecraft:attribute",
             "amount": 1.0,
             "attribute": "minecraft:generic.movement_efficiency",
-            "name": "Soul speed movement efficiency",
-            "operation": "add_value",
-            "uuid": "b9716dbd-50df-4080-850e-70347d24e687"
+            "id": "minecraft:enchantment.soul_speed",
+            "operation": "add_value"
           },
           "requirements": {
             "condition": "minecraft:entity_properties",
@@ -1857,9 +1858,8 @@
             }
           },
           "attribute": "minecraft:player.sweeping_damage_ratio",
-          "name": "enchantment.sweeping_edge",
-          "operation": "add_value",
-          "uuid": "5d3d087b-debe-4037-b53e-d84f3ff51f17"
+          "id": "minecraft:enchantment.sweeping_edge",
+          "operation": "add_value"
         }
       ]
     },
@@ -1892,9 +1892,8 @@
             "per_level_above_first": 0.15
           },
           "attribute": "minecraft:player.sneaking_speed",
-          "name": "enchantment.swift_sneak",
-          "operation": "add_value",
-          "uuid": "92437d00-c3a7-4f2e-8f6c-1f21585d5dd0"
+          "id": "minecraft:enchantment.swift_sneak",
+          "operation": "add_value"
         }
       ]
     },
