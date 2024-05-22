@@ -32,14 +32,18 @@
               "condition": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "type": "minecraft:trident",
-                "location": {
-                  "block": {
-                    "blocks": "minecraft:lightning_rod"
-                  },
-                  "can_see_sky": true
-                }
+                "type": "minecraft:trident"
               }
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "can_see_sky": true
+              }
+            },
+            {
+              "block": "minecraft:lightning_rod",
+              "condition": "minecraft:block_state_property"
             }
           ]
         }
