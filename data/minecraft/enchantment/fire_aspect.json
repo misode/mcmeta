@@ -4,40 +4,6 @@
     "translate": "enchantment.minecraft.fire_aspect"
   },
   "effects": {
-    "minecraft:hit_block": [
-      {
-        "effect": {
-          "type": "minecraft:all_of",
-          "effects": [
-            {
-              "type": "minecraft:set_block_properties",
-              "properties": {
-                "lit": "true"
-              },
-              "trigger_game_event": "minecraft:block_change"
-            },
-            {
-              "type": "minecraft:damage_item",
-              "amount": 1.0
-            }
-          ]
-        },
-        "requirements": {
-          "condition": "minecraft:location_check",
-          "predicate": {
-            "block": {
-              "blocks": "#minecraft:fire_aspect_lightable",
-              "state": {
-                "lit": "false"
-              }
-            },
-            "fluid": {
-              "fluids": "minecraft:empty"
-            }
-          }
-        }
-      }
-    ],
     "minecraft:post_attack": [
       {
         "affected": "victim",
