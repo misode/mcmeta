@@ -503,40 +503,6 @@
       "translate": "enchantment.minecraft.fire_aspect"
     },
     "effects": {
-      "minecraft:hit_block": [
-        {
-          "effect": {
-            "type": "minecraft:all_of",
-            "effects": [
-              {
-                "type": "minecraft:set_block_properties",
-                "properties": {
-                  "lit": "true"
-                },
-                "trigger_game_event": "minecraft:block_change"
-              },
-              {
-                "type": "minecraft:damage_item",
-                "amount": 1.0
-              }
-            ]
-          },
-          "requirements": {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "block": {
-                "blocks": "#minecraft:fire_aspect_lightable",
-                "state": {
-                  "lit": "false"
-                }
-              },
-              "fluid": {
-                "fluids": "minecraft:empty"
-              }
-            }
-          }
-        }
-      ],
       "minecraft:post_attack": [
         {
           "affected": "victim",
@@ -2079,9 +2045,17 @@
             "block_interaction": "trigger",
             "immune_blocks": "#minecraft:blocks_wind_charge_explosions",
             "knockback_multiplier": {
-              "type": "minecraft:linear",
-              "base": 0.5,
-              "per_level_above_first": 0.25
+              "type": "minecraft:lookup",
+              "fallback": {
+                "type": "minecraft:linear",
+                "base": 1.5,
+                "per_level_above_first": 0.35
+              },
+              "values": [
+                1.2,
+                1.75,
+                2.2
+              ]
             },
             "large_particle": {
               "type": "minecraft:gust_emitter_large"
