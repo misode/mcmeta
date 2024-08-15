@@ -1,13 +1,18 @@
 {
-    "targets": [
-        "swap"
-    ],
+    "targets": {
+        "swap": {}
+    },
     "passes": [
         {
             "name": "box_blur",
-            "intarget": "minecraft:main",
-            "outtarget": "swap",
-            "use_linear_filter": true,
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "minecraft:main",
+                    "bilinear": true
+                }
+            ],
+            "output": "swap",
             "uniforms": [
                 {
                     "name": "BlurDir",
@@ -17,9 +22,14 @@
         },
         {
             "name": "box_blur",
-            "intarget": "swap",
-            "outtarget": "minecraft:main",
-            "use_linear_filter": true,
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "swap",
+                    "bilinear": true
+                }
+            ],
+            "output": "minecraft:main",
             "uniforms": [
                 {
                     "name": "BlurDir",
@@ -28,9 +38,14 @@
             ]
         }, {
             "name": "box_blur",
-            "intarget": "minecraft:main",
-            "outtarget": "swap",
-            "use_linear_filter": true,
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "minecraft:main",
+                    "bilinear": true
+                }
+            ],
+            "output": "swap",
             "uniforms": [
                 {
                     "name": "BlurDir",
@@ -41,9 +56,14 @@
         },
         {
             "name": "box_blur",
-            "intarget": "swap",
-            "outtarget": "minecraft:main",
-            "use_linear_filter": true,
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "swap",
+                    "bilinear": true
+                }
+            ],
+            "output": "minecraft:main",
             "uniforms": [
                 {
                     "name": "BlurDir",
@@ -53,9 +73,14 @@
             ]
         }, {
             "name": "box_blur",
-            "intarget": "minecraft:main",
-            "outtarget": "swap",
-            "use_linear_filter": true,
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "minecraft:main",
+                    "bilinear": true
+                }
+            ],
+            "output": "swap",
             "uniforms": [
                 {
                     "name": "BlurDir",
@@ -66,9 +91,14 @@
         },
         {
             "name": "box_blur",
-            "intarget": "swap",
-            "outtarget": "minecraft:main",
-            "use_linear_filter": true,
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "swap",
+                    "bilinear": true
+                }
+            ],
+            "output": "minecraft:main",
             "uniforms": [
                 {
                     "name": "BlurDir",

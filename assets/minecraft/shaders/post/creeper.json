@@ -1,12 +1,17 @@
 {
-    "targets": [
-        "swap"
-    ],
+    "targets": {
+        "swap": {}
+    },
     "passes": [
         {
             "name": "color_convolve",
-            "intarget": "minecraft:main",
-            "outtarget": "swap",
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "minecraft:main"
+                }
+            ],
+            "output": "swap",
             "uniforms": [
                 {
                     "name": "RedMatrix",
@@ -24,8 +29,13 @@
         },
         {
             "name": "bits",
-            "intarget": "swap",
-            "outtarget": "minecraft:main",
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "swap"
+                }
+            ],
+            "output": "minecraft:main",
             "uniforms": [
                 {
                     "name": "Resolution",

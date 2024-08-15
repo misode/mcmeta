@@ -1,6 +1,6 @@
 #version 150
 
-uniform sampler2D DiffuseSampler;
+uniform sampler2D InSampler;
 uniform sampler2D BlurSampler;
 
 in vec2 texCoord;
@@ -13,7 +13,7 @@ uniform vec4 Vignette;
 out vec4 fragColor;
 
 void main() {
-    vec4 ScaledTexel = texture(DiffuseSampler, scaledCoord);
+    vec4 ScaledTexel = texture(InSampler, scaledCoord);
     vec4 BlurTexel = texture(BlurSampler, texCoord);
     vec4 OutTexel = ScaledTexel;
 

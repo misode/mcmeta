@@ -1,69 +1,77 @@
 {
-    "targets": [
-        "water",
-        "translucent",
-        "itemEntity",
-        "particles",
-        "clouds",
-        "weather",
-        "final"
-    ],
+    "targets" : {
+        "final": {}
+    },
     "passes": [
         {
             "name": "transparency",
-            "intarget": "minecraft:main",
-            "outtarget": "final",
-            "auxtargets": [
+            "inputs": [
                 {
-                    "name": "DiffuseDepthSampler",
-                    "id": "minecraft:main:depth"
+                    "sampler_name": "Main",
+                    "target": "minecraft:main"
                 },
                 {
-                    "name": "TranslucentSampler",
-                    "id": "translucent"
+                    "sampler_name": "MainDepth",
+                    "target": "minecraft:main",
+                    "use_depth_buffer": true
                 },
                 {
-                    "name": "TranslucentDepthSampler",
-                    "id": "translucent:depth"
+                    "sampler_name": "Translucent",
+                    "target": "minecraft:translucent"
                 },
                 {
-                    "name": "ItemEntitySampler",
-                    "id": "itemEntity"
+                    "sampler_name": "TranslucentDepth",
+                    "target": "minecraft:translucent",
+                    "use_depth_buffer": true
                 },
                 {
-                    "name": "ItemEntityDepthSampler",
-                    "id": "itemEntity:depth"
+                    "sampler_name": "ItemEntity",
+                    "target": "minecraft:item_entity"
                 },
                 {
-                    "name": "ParticlesSampler",
-                    "id": "particles"
+                    "sampler_name": "ItemEntityDepth",
+                    "target": "minecraft:item_entity",
+                    "use_depth_buffer": true
                 },
                 {
-                    "name": "ParticlesDepthSampler",
-                    "id": "particles:depth"
+                    "sampler_name": "Particles",
+                    "target": "minecraft:particles"
                 },
                 {
-                    "name": "CloudsSampler",
-                    "id": "clouds"
+                    "sampler_name": "ParticlesDepth",
+                    "target": "minecraft:particles",
+                    "use_depth_buffer": true
                 },
                 {
-                    "name": "CloudsDepthSampler",
-                    "id": "clouds:depth"
+                    "sampler_name": "Clouds",
+                    "target": "minecraft:clouds"
                 },
                 {
-                    "name": "WeatherSampler",
-                    "id": "weather"
+                    "sampler_name": "CloudsDepth",
+                    "target": "minecraft:clouds",
+                    "use_depth_buffer": true
                 },
                 {
-                    "name": "WeatherDepthSampler",
-                    "id": "weather:depth"
+                    "sampler_name": "Weather",
+                    "target": "minecraft:weather"
+                },
+                {
+                    "sampler_name": "WeatherDepth",
+                    "target": "minecraft:weather",
+                    "use_depth_buffer": true
                 }
-            ]
+            ],
+            "output": "final"
         },
         {
             "name": "blit",
-            "intarget": "final",
-            "outtarget": "minecraft:main"
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "final"
+                }
+            ],
+            "output": "minecraft:main"
         }
     ]
 }
