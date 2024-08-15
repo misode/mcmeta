@@ -1,12 +1,17 @@
 {
-    "targets": [
-        "swap"
-    ],
+    "targets": {
+        "swap": {}
+    },
     "passes": [
         {
             "name": "invert",
-            "intarget": "minecraft:main",
-            "outtarget": "swap",
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "minecraft:main"
+                }
+            ],
+            "output": "swap",
             "uniforms": [
                 {
                     "name": "InverseAmount",
@@ -16,8 +21,13 @@
         },
         {
             "name": "blit",
-            "intarget": "swap",
-            "outtarget": "minecraft:main"
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "swap"
+                }
+            ],
+            "output": "minecraft:main"
         }
     ]
 }

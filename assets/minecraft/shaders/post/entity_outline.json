@@ -1,19 +1,28 @@
 {
-    "targets": [
-        "swap",
-        "final"
-    ],
+    "targets": {
+        "swap": {}
+    },
     "passes": [
         {
             "name": "entity_outline",
-            "intarget": "final",
-            "outtarget": "swap"
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "minecraft:entity_outline"
+                }
+            ],
+            "output": "swap"
         },
         {
             "name": "entity_outline_box_blur",
-            "intarget": "swap",
-            "outtarget": "final",
-            "use_linear_filter": true,
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "swap",
+                    "bilinear": true
+                }
+            ],
+            "output": "minecraft:entity_outline",
             "uniforms": [
                 {
                     "name": "BlurDir",
@@ -23,9 +32,14 @@
         },
         {
             "name": "entity_outline_box_blur",
-            "intarget": "final",
-            "outtarget": "swap",
-            "use_linear_filter": true,
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "minecraft:entity_outline",
+                    "bilinear": true
+                }
+            ],
+            "output": "swap",
             "uniforms": [
                 {
                     "name": "BlurDir",
@@ -35,8 +49,13 @@
         },
         {
             "name": "blit",
-            "intarget": "swap",
-            "outtarget": "final"
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "swap"
+                }
+            ],
+            "output": "minecraft:entity_outline"
         }
     ]
 }
