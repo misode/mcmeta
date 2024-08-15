@@ -1,16 +1,21 @@
 {
-    "targets": [
-        "largeBlur",
-        "smallBlur",
-        "temp",
-        "swap"
-    ],
+    "targets": {
+        "large_blur": {},
+        "small_blur": {},
+        "temp": {},
+        "swap": {}
+    },
     "passes": [
         {
             "name": "box_blur",
-            "intarget": "minecraft:main",
-            "outtarget": "temp",
-            "use_linear_filter": true,
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "minecraft:main",
+                    "bilinear": true
+                }
+            ],
+            "output": "temp",
             "uniforms": [
                 {
                     "name": "BlurDir",
@@ -24,9 +29,14 @@
         },
         {
             "name": "box_blur",
-            "intarget": "temp",
-            "outtarget": "largeBlur",
-            "use_linear_filter": true,
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "temp",
+                    "bilinear": true
+                }
+            ],
+            "output": "large_blur",
             "uniforms": [
                 {
                     "name": "BlurDir",
@@ -40,9 +50,14 @@
         },
         {
             "name": "box_blur",
-            "intarget": "minecraft:main",
-            "outtarget": "temp",
-            "use_linear_filter": true,
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "minecraft:main",
+                    "bilinear": true
+                }
+            ],
+            "output": "temp",
             "uniforms": [
                 {
                     "name": "BlurDir",
@@ -56,9 +71,14 @@
         },
         {
             "name": "box_blur",
-            "intarget": "temp",
-            "outtarget": "smallBlur",
-            "use_linear_filter": true,
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "temp",
+                    "bilinear": true
+                }
+            ],
+            "output": "small_blur",
             "uniforms": [
                 {
                     "name": "BlurDir",
@@ -72,14 +92,17 @@
         },
         {
             "name": "spider",
-            "intarget": "minecraft:main",
-            "outtarget": "temp",
-            "auxtargets": [
+            "inputs": [
                 {
-                    "name": "BlurSampler",
-                    "id": "largeBlur"
+                    "sampler_name": "In",
+                    "target": "minecraft:main"
+                },
+                {
+                    "sampler_name": "Blur",
+                    "target": "large_blur"
                 }
             ],
+            "output": "temp",
             "uniforms": [
                 {
                     "name": "InScale",
@@ -101,14 +124,17 @@
         },
         {
             "name": "spider",
-            "intarget": "smallBlur",
-            "outtarget": "swap",
-            "auxtargets": [
+            "inputs": [
                 {
-                    "name": "BlurSampler",
-                    "id": "temp"
+                    "sampler_name": "In",
+                    "target": "small_blur"
+                },
+                {
+                    "sampler_name": "Blur",
+                    "target": "temp"
                 }
             ],
+            "output": "swap",
             "uniforms": [
                 {
                     "name": "InScale",
@@ -134,14 +160,17 @@
         },
         {
             "name": "spider",
-            "intarget": "smallBlur",
-            "outtarget": "temp",
-            "auxtargets": [
+            "inputs": [
                 {
-                    "name": "BlurSampler",
-                    "id": "swap"
+                    "sampler_name": "In",
+                    "target": "small_blur"
+                },
+                {
+                    "sampler_name": "Blur",
+                    "target": "swap"
                 }
             ],
+            "output": "temp",
             "uniforms": [
                 {
                     "name": "InScale",
@@ -167,14 +196,17 @@
         },
         {
             "name": "spider",
-            "intarget": "smallBlur",
-            "outtarget": "swap",
-            "auxtargets": [
+            "inputs": [
                 {
-                    "name": "BlurSampler",
-                    "id": "temp"
+                    "sampler_name": "In",
+                    "target": "small_blur"
+                },
+                {
+                    "sampler_name": "Blur",
+                    "target": "temp"
                 }
             ],
+            "output": "swap",
             "uniforms": [
                 {
                     "name": "InScale",
@@ -196,14 +228,17 @@
         },
         {
             "name": "spider",
-            "intarget": "smallBlur",
-            "outtarget": "temp",
-            "auxtargets": [
+            "inputs": [
                 {
-                    "name": "BlurSampler",
-                    "id": "swap"
+                    "sampler_name": "In",
+                    "target": "small_blur"
+                },
+                {
+                    "sampler_name": "Blur",
+                    "target": "swap"
                 }
             ],
+            "output": "temp",
             "uniforms": [
                 {
                     "name": "InScale",
@@ -221,8 +256,13 @@
         },
         {
             "name": "blit",
-            "intarget": "temp",
-            "outtarget": "minecraft:main",
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "temp"
+                }
+            ],
+            "output": "minecraft:main",
             "uniforms": [
                 {
                     "name": "ColorModulate",
