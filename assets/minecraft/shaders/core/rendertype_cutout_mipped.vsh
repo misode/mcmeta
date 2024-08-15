@@ -13,7 +13,7 @@ uniform sampler2D Sampler2;
 
 uniform mat4 ModelViewMat;
 uniform mat4 ProjMat;
-uniform vec3 ChunkOffset;
+uniform vec3 ModelOffset;
 uniform int FogShape;
 
 out float vertexDistance;
@@ -21,7 +21,7 @@ out vec4 vertexColor;
 out vec2 texCoord0;
 
 void main() {
-    vec3 pos = Position + ChunkOffset;
+    vec3 pos = Position + ModelOffset;
     gl_Position = ProjMat * ModelViewMat * vec4(pos, 1.0);
 
     vertexDistance = fog_distance(pos, FogShape);

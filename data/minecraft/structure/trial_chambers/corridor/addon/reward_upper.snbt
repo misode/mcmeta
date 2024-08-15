@@ -39,10 +39,6 @@
       state: 0
     }, 
     {
-      pos: [0, 0, 0], 
-      state: 2
-    }, 
-    {
       pos: [0, 0, 1], 
       state: 2
     }, 
@@ -151,16 +147,16 @@
       state: 2
     }, 
     {
+      pos: [2, 2, 1], 
+      state: 2
+    }, 
+    {
       pos: [2, 2, 2], 
       state: 2
     }, 
     {
       pos: [3, 2, 0], 
       state: 3
-    }, 
-    {
-      pos: [3, 2, 1], 
-      state: 2
     }, 
     {
       pos: [3, 2, 2], 
@@ -242,6 +238,20 @@
       nbt: {
         joint: "aligned", 
         final_state: "minecraft:air", 
+        name: "minecraft:addon_upper", 
+        placement_priority: 0, 
+        pool: "minecraft:empty", 
+        selection_priority: 0, 
+        id: "minecraft:jigsaw", 
+        target: "minecraft:empty"
+      }, 
+      pos: [0, 0, 0], 
+      state: 4
+    }, 
+    {
+      nbt: {
+        joint: "aligned", 
+        final_state: "minecraft:air", 
         name: "minecraft:empty", 
         placement_priority: 0, 
         pool: "minecraft:trial_chambers/reward/all", 
@@ -249,8 +259,8 @@
         id: "minecraft:jigsaw", 
         target: "minecraft:reward_connector"
       }, 
-      pos: [2, 2, 1], 
-      state: 4
+      pos: [3, 2, 1], 
+      state: 5
     }
   ], 
   palette: [
@@ -269,6 +279,12 @@
         axis: "y"
       }, 
       Name: "minecraft:chain"
+    }, 
+    {
+      Properties: {
+        orientation: "down_north"
+      }, 
+      Name: "minecraft:jigsaw"
     }, 
     {
       Properties: {
