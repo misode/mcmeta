@@ -5902,7 +5902,7 @@
         "add": {
           "type": "literal",
           "children": {
-            "targets": {
+            "target": {
               "type": "argument",
               "children": {
                 "amount": {
@@ -5932,7 +5932,7 @@
         "query": {
           "type": "literal",
           "children": {
-            "targets": {
+            "target": {
               "type": "argument",
               "children": {
                 "levels": {
@@ -5955,7 +5955,7 @@
         "set": {
           "type": "literal",
           "children": {
-            "targets": {
+            "target": {
               "type": "argument",
               "children": {
                 "amount": {
@@ -6592,6 +6592,21 @@
               "type": "argument",
               "executable": true,
               "parser": "brigadier:integer"
+            }
+          },
+          "executable": true
+        },
+        "minecartMaxSpeed": {
+          "type": "literal",
+          "children": {
+            "value": {
+              "type": "argument",
+              "executable": true,
+              "parser": "brigadier:integer",
+              "properties": {
+                "max": 1000,
+                "min": 1
+              }
             }
           },
           "executable": true
