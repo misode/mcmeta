@@ -3,28 +3,31 @@
     "minecraft:attribute_modifiers": {
       "modifiers": []
     },
+    "minecraft:consumable": {
+      "on_consume_effects": [
+        {
+          "type": "minecraft:apply_effects",
+          "effects": [
+            {
+              "amplifier": 1,
+              "duration": 100,
+              "id": "minecraft:regeneration",
+              "show_icon": true
+            },
+            {
+              "duration": 2400,
+              "id": "minecraft:absorption",
+              "show_icon": true
+            }
+          ]
+        }
+      ]
+    },
     "minecraft:enchantments": {
       "levels": {}
     },
     "minecraft:food": {
       "can_always_eat": true,
-      "effects": [
-        {
-          "effect": {
-            "amplifier": 1,
-            "duration": 100,
-            "id": "minecraft:regeneration",
-            "show_icon": true
-          }
-        },
-        {
-          "effect": {
-            "duration": 2400,
-            "id": "minecraft:absorption",
-            "show_icon": true
-          }
-        }
-      ],
       "nutrition": 4,
       "saturation": 9.6
     },
