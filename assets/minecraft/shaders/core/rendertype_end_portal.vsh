@@ -1,6 +1,6 @@
 #version 150
 
-#moj_import <projection.glsl>
+#moj_import <minecraft:projection.glsl>
 
 in vec3 Position;
 
