@@ -1,61 +1,12 @@
 {
-    "targets": {
-        "swap": {}
-    },
-    "passes": [
-        {
-            "name": "entity_outline",
-            "inputs": [
-                {
-                    "sampler_name": "In",
-                    "target": "minecraft:entity_outline"
-                }
-            ],
-            "output": "swap"
-        },
-        {
-            "name": "entity_outline_box_blur",
-            "inputs": [
-                {
-                    "sampler_name": "In",
-                    "target": "swap",
-                    "bilinear": true
-                }
-            ],
-            "output": "minecraft:entity_outline",
-            "uniforms": [
-                {
-                    "name": "BlurDir",
-                    "values": [ 1.0, 0.0 ]
-                }
-            ]
-        },
-        {
-            "name": "entity_outline_box_blur",
-            "inputs": [
-                {
-                    "sampler_name": "In",
-                    "target": "minecraft:entity_outline",
-                    "bilinear": true
-                }
-            ],
-            "output": "swap",
-            "uniforms": [
-                {
-                    "name": "BlurDir",
-                    "values": [ 0.0, 1.0 ]
-                }
-            ]
-        },
-        {
-            "name": "blit",
-            "inputs": [
-                {
-                    "sampler_name": "In",
-                    "target": "swap"
-                }
-            ],
-            "output": "minecraft:entity_outline"
-        }
+    "vertex": "minecraft:post/sobel",
+    "fragment": "minecraft:post/entity_sobel",
+    "samplers": [
+        { "name": "InSampler" }
+    ],
+    "uniforms": [
+        { "name": "ProjMat", "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] },
+        { "name": "InSize",  "type": "float",     "count": 2,  "values": [ 1.0, 1.0 ] },
+        { "name": "OutSize", "type": "float",     "count": 2,  "values": [ 1.0, 1.0 ] }
     ]
 }
