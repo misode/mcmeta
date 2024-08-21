@@ -1,12 +1,6 @@
 {
-    "blend": {
-        "func": "add",
-        "srcrgb": "one",
-        "dstrgb": "zero"
-    },
-    "vertex": "blur",
-    "fragment": "entity_outline_box_blur",
-    "attributes": [ "Position" ],
+    "vertex": "minecraft:post/blur",
+    "fragment": "minecraft:post/box_blur",
     "samplers": [
         { "name": "InSampler" }
     ],
@@ -14,6 +8,8 @@
         { "name": "ProjMat",          "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] },
         { "name": "InSize",           "type": "float",     "count": 2,  "values": [ 1.0, 1.0 ] },
         { "name": "OutSize",          "type": "float",     "count": 2,  "values": [ 1.0, 1.0 ] },
-        { "name": "BlurDir",          "type": "float",     "count": 2,  "values": [ 1.0, 1.0 ] }
+        { "name": "BlurDir",          "type": "float",     "count": 2,  "values": [ 1.0, 1.0 ] },
+        { "name": "Radius",           "type": "float",     "count": 1,  "values": [ 5.0 ] },
+        { "name": "RadiusMultiplier", "type": "float",     "count": 1,  "values": [ 1.0 ] }
     ]
 }
