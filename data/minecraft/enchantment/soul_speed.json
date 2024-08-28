@@ -7,15 +7,27 @@
     "minecraft:location_changed": [
       {
         "effect": {
-          "type": "minecraft:attribute",
-          "amount": {
-            "type": "minecraft:linear",
-            "base": 0.0405,
-            "per_level_above_first": 0.0105
-          },
-          "attribute": "minecraft:movement_speed",
-          "id": "minecraft:enchantment.soul_speed",
-          "operation": "add_value"
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:attribute",
+              "amount": {
+                "type": "minecraft:linear",
+                "base": 0.0405,
+                "per_level_above_first": 0.0105
+              },
+              "attribute": "minecraft:movement_speed",
+              "id": "minecraft:enchantment.soul_speed",
+              "operation": "add_value"
+            },
+            {
+              "type": "minecraft:attribute",
+              "amount": 1.0,
+              "attribute": "minecraft:movement_efficiency",
+              "id": "minecraft:enchantment.soul_speed",
+              "operation": "add_value"
+            }
+          ]
         },
         "requirements": {
           "condition": "minecraft:all_of",
@@ -102,26 +114,6 @@
               ]
             }
           ]
-        }
-      },
-      {
-        "effect": {
-          "type": "minecraft:attribute",
-          "amount": 1.0,
-          "attribute": "minecraft:movement_efficiency",
-          "id": "minecraft:enchantment.soul_speed",
-          "operation": "add_value"
-        },
-        "requirements": {
-          "condition": "minecraft:entity_properties",
-          "entity": "this",
-          "predicate": {
-            "movement_affected_by": {
-              "block": {
-                "blocks": "#minecraft:soul_speed_blocks"
-              }
-            }
-          }
         }
       },
       {
