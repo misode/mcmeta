@@ -1,72 +1,6 @@
 {
-  "type": "minecraft:entity",
+  "type": "minecraft:shearing",
   "pools": [
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            },
-            {
-              "conditions": [
-                {
-                  "condition": "minecraft:any_of",
-                  "terms": [
-                    {
-                      "condition": "minecraft:entity_properties",
-                      "entity": "this",
-                      "predicate": {
-                        "flags": {
-                          "is_on_fire": true
-                        }
-                      }
-                    },
-                    {
-                      "condition": "minecraft:entity_properties",
-                      "entity": "direct_attacker",
-                      "predicate": {
-                        "equipment": {
-                          "mainhand": {
-                            "predicates": {
-                              "minecraft:enchantments": [
-                                {
-                                  "enchantments": "#minecraft:smelts_loot"
-                                }
-                              ]
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ]
-                }
-              ],
-              "function": "minecraft:furnace_smelt"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 1.0,
-                "min": 0.0
-              },
-              "enchantment": "minecraft:looting",
-              "function": "minecraft:enchanted_count_increase"
-            }
-          ],
-          "name": "minecraft:mutton"
-        }
-      ],
-      "rolls": 1.0
-    },
     {
       "bonus_rolls": 0.0,
       "entries": [
@@ -88,7 +22,7 @@
                   }
                 }
               ],
-              "value": "minecraft:entities/sheep/white"
+              "value": "minecraft:shearing/sheep/white"
             },
             {
               "type": "minecraft:loot_table",
@@ -105,7 +39,7 @@
                   }
                 }
               ],
-              "value": "minecraft:entities/sheep/orange"
+              "value": "minecraft:shearing/sheep/orange"
             },
             {
               "type": "minecraft:loot_table",
@@ -122,7 +56,7 @@
                   }
                 }
               ],
-              "value": "minecraft:entities/sheep/magenta"
+              "value": "minecraft:shearing/sheep/magenta"
             },
             {
               "type": "minecraft:loot_table",
@@ -139,7 +73,7 @@
                   }
                 }
               ],
-              "value": "minecraft:entities/sheep/light_blue"
+              "value": "minecraft:shearing/sheep/light_blue"
             },
             {
               "type": "minecraft:loot_table",
@@ -156,7 +90,7 @@
                   }
                 }
               ],
-              "value": "minecraft:entities/sheep/yellow"
+              "value": "minecraft:shearing/sheep/yellow"
             },
             {
               "type": "minecraft:loot_table",
@@ -173,7 +107,7 @@
                   }
                 }
               ],
-              "value": "minecraft:entities/sheep/lime"
+              "value": "minecraft:shearing/sheep/lime"
             },
             {
               "type": "minecraft:loot_table",
@@ -190,7 +124,7 @@
                   }
                 }
               ],
-              "value": "minecraft:entities/sheep/pink"
+              "value": "minecraft:shearing/sheep/pink"
             },
             {
               "type": "minecraft:loot_table",
@@ -207,7 +141,7 @@
                   }
                 }
               ],
-              "value": "minecraft:entities/sheep/gray"
+              "value": "minecraft:shearing/sheep/gray"
             },
             {
               "type": "minecraft:loot_table",
@@ -224,7 +158,7 @@
                   }
                 }
               ],
-              "value": "minecraft:entities/sheep/light_gray"
+              "value": "minecraft:shearing/sheep/light_gray"
             },
             {
               "type": "minecraft:loot_table",
@@ -241,7 +175,7 @@
                   }
                 }
               ],
-              "value": "minecraft:entities/sheep/cyan"
+              "value": "minecraft:shearing/sheep/cyan"
             },
             {
               "type": "minecraft:loot_table",
@@ -258,7 +192,7 @@
                   }
                 }
               ],
-              "value": "minecraft:entities/sheep/purple"
+              "value": "minecraft:shearing/sheep/purple"
             },
             {
               "type": "minecraft:loot_table",
@@ -275,7 +209,7 @@
                   }
                 }
               ],
-              "value": "minecraft:entities/sheep/blue"
+              "value": "minecraft:shearing/sheep/blue"
             },
             {
               "type": "minecraft:loot_table",
@@ -292,7 +226,7 @@
                   }
                 }
               ],
-              "value": "minecraft:entities/sheep/brown"
+              "value": "minecraft:shearing/sheep/brown"
             },
             {
               "type": "minecraft:loot_table",
@@ -309,7 +243,7 @@
                   }
                 }
               ],
-              "value": "minecraft:entities/sheep/green"
+              "value": "minecraft:shearing/sheep/green"
             },
             {
               "type": "minecraft:loot_table",
@@ -326,7 +260,7 @@
                   }
                 }
               ],
-              "value": "minecraft:entities/sheep/red"
+              "value": "minecraft:shearing/sheep/red"
             },
             {
               "type": "minecraft:loot_table",
@@ -343,7 +277,7 @@
                   }
                 }
               ],
-              "value": "minecraft:entities/sheep/black"
+              "value": "minecraft:shearing/sheep/black"
             }
           ]
         }
@@ -351,5 +285,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "minecraft:entities/sheep"
+  "random_sequence": "minecraft:shearing/sheep"
 }
