@@ -82,47 +82,9 @@
     }, 
     {
       nbt: {
-        normal_config: {
-          ticks_between_spawn: 20, 
-          spawn_potentials: [
-            {
-              data: {
-                entity: {
-                  id: "minecraft:stray"
-                }
-              }, 
-              weight: 1
-            }
-          ], 
-          simultaneous_mobs: 3.0f, 
-          simultaneous_mobs_added_per_player: 0.5f
-        }, 
-        ominous_config: {
-          spawn_potentials: [
-            {
-              data: {
-                equipment: {
-                  slot_drop_chances: 0.0f, 
-                  loot_table: "minecraft:equipment/trial_chamber_ranged"
-                }, 
-                entity: {
-                  id: "minecraft:stray"
-                }
-              }, 
-              weight: 1
-            }
-          ], 
-          loot_tables_to_eject: [
-            {
-              data: "minecraft:spawners/ominous/trial_chamber/key", 
-              weight: 3
-            }, 
-            {
-              data: "minecraft:spawners/ominous/trial_chamber/consumables", 
-              weight: 7
-            }
-          ]
-        }
+        normal_config: "minecraft:trial_chamber/ranged/stray/normal", 
+        id: "minecraft:trial_spawner", 
+        ominous_config: "minecraft:trial_chamber/ranged/stray/ominous"
       }, 
       pos: [1, 1, 1], 
       state: 5
