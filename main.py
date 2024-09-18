@@ -438,7 +438,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 					registry_key = (pattern + typ).replace('tags/', 'tag/')
 					registry_key = registry_overrides.get(registry_key, registry_key)
 					output_key = registry_key if experiment is None else f'experiment/{experiment}/{registry_key}'
-					extension = 'nbt' if (typ == 'structures' or typ == 'structure') else 'json'
+					extension = 'nbt' if (pattern == '' and typ in ('structures','structure')) else 'json'
 					add_file_registry(output_key, full_pattern + typ, extension)
 
 		add_folder_registry('datapack', 'data/data/minecraft/datapacks')
