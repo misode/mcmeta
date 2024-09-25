@@ -25,8 +25,8 @@ vec3 notGamma(vec3 x) {
 }
 
 void main() {
-    float block_brightness = get_brightness(texCoord.x) * BlockFactor;
-    float sky_brightness = get_brightness(texCoord.y) * SkyFactor;
+    float block_brightness = get_brightness(floor(texCoord.x * 16) / 15) * BlockFactor;
+    float sky_brightness = get_brightness(floor(texCoord.y * 16) / 15) * SkyFactor;
 
     // cubic nonsense, dips to yellowish in the middle, white when fully saturated
     vec3 color = vec3(
