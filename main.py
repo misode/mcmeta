@@ -551,8 +551,8 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		atlases = [
 			('blocks', ['block'], 1024),
 			('items', ['item'], 512),
-			('entities', ['entity', 'entity/**'], 2048),
-			('all', ['block', 'item', 'entity', 'entity/**'], 2048)
+			('entities', ['entity', 'entity/*', 'entity/*/*'], 2048),
+			('all', ['block', 'item', 'entity', 'entity/*', 'entity/*/*'], 2048)
 		]
 		for name, folders, width in atlases:
 			os.makedirs(f'atlas/{name}', exist_ok=True)
