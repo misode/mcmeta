@@ -1,27 +1,27 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bundle": {
-      "conditions": {
-        "items": [
-          {
-            "items": "#minecraft:bundles"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "minecraft:white_bundle"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_dye": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:white_dye"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_bundle"
+      "has_white_dye"
     ]
   ],
   "rewards": {
