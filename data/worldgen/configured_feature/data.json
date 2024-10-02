@@ -1061,6 +1061,7 @@
           "minecraft:acacia_sapling",
           "minecraft:cherry_sapling",
           "minecraft:dark_oak_sapling",
+          "minecraft:pale_oak_sapling",
           "minecraft:mangrove_propagule",
           "minecraft:dandelion",
           "minecraft:torchflower",
@@ -1144,6 +1145,7 @@
           "minecraft:acacia_sapling",
           "minecraft:cherry_sapling",
           "minecraft:dark_oak_sapling",
+          "minecraft:pale_oak_sapling",
           "minecraft:mangrove_propagule",
           "minecraft:dandelion",
           "minecraft:torchflower",
@@ -4744,6 +4746,211 @@
       ]
     }
   },
+  "pale_garden_vegetation": {
+    "type": "minecraft:random_selector",
+    "config": {
+      "default": "minecraft:pale_oak_checked",
+      "features": [
+        {
+          "chance": 0.2,
+          "feature": "minecraft:pale_oak_creaking_checked"
+        },
+        {
+          "chance": 0.8,
+          "feature": "minecraft:pale_oak_checked"
+        }
+      ]
+    }
+  },
+  "pale_moss_patch_bonemeal": {
+    "type": "minecraft:vegetation_patch",
+    "config": {
+      "depth": 1,
+      "extra_bottom_block_chance": 0.0,
+      "extra_edge_column_chance": 0.75,
+      "ground_state": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:pale_moss_block"
+        }
+      },
+      "replaceable": "#minecraft:moss_replaceable",
+      "surface": "floor",
+      "vegetation_chance": 0.6,
+      "vegetation_feature": {
+        "feature": "minecraft:pale_moss_vegetation",
+        "placement": []
+      },
+      "vertical_range": 5,
+      "xz_radius": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 2,
+        "min_inclusive": 1
+      }
+    }
+  },
+  "pale_moss_vegetation": {
+    "type": "minecraft:simple_block",
+    "config": {
+      "to_place": {
+        "type": "minecraft:weighted_state_provider",
+        "entries": [
+          {
+            "data": {
+              "Name": "minecraft:pale_moss_carpet",
+              "Properties": {
+                "bottom": "false",
+                "east": "none",
+                "north": "none",
+                "south": "none",
+                "west": "none"
+              }
+            },
+            "weight": 25
+          },
+          {
+            "data": {
+              "Name": "minecraft:short_grass"
+            },
+            "weight": 50
+          },
+          {
+            "data": {
+              "Name": "minecraft:tall_grass",
+              "Properties": {
+                "half": "lower"
+              }
+            },
+            "weight": 10
+          }
+        ]
+      }
+    }
+  },
+  "pale_oak": {
+    "type": "minecraft:tree",
+    "config": {
+      "decorators": [
+        {
+          "type": "minecraft:pale_moss",
+          "ground_probability": 0.8,
+          "leaves_probability": 0.15,
+          "trunk_probability": 0.4
+        }
+      ],
+      "dirt_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:dirt"
+        }
+      },
+      "foliage_placer": {
+        "type": "minecraft:dark_oak_foliage_placer",
+        "offset": 0,
+        "radius": 0
+      },
+      "foliage_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:pale_oak_leaves",
+          "Properties": {
+            "distance": "7",
+            "persistent": "false",
+            "waterlogged": "false"
+          }
+        }
+      },
+      "force_dirt": false,
+      "ignore_vines": true,
+      "minimum_size": {
+        "type": "minecraft:three_layers_feature_size",
+        "limit": 1,
+        "lower_size": 0,
+        "middle_size": 1,
+        "upper_limit": 1,
+        "upper_size": 2
+      },
+      "trunk_placer": {
+        "type": "minecraft:dark_oak_trunk_placer",
+        "base_height": 6,
+        "height_rand_a": 2,
+        "height_rand_b": 1
+      },
+      "trunk_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:pale_oak_log",
+          "Properties": {
+            "axis": "y"
+          }
+        }
+      }
+    }
+  },
+  "pale_oak_creaking": {
+    "type": "minecraft:tree",
+    "config": {
+      "decorators": [
+        {
+          "type": "minecraft:pale_moss",
+          "ground_probability": 0.8,
+          "leaves_probability": 0.15,
+          "trunk_probability": 0.4
+        },
+        {
+          "type": "minecraft:creaking_heart",
+          "probability": 1.0
+        }
+      ],
+      "dirt_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:dirt"
+        }
+      },
+      "foliage_placer": {
+        "type": "minecraft:dark_oak_foliage_placer",
+        "offset": 0,
+        "radius": 0
+      },
+      "foliage_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:pale_oak_leaves",
+          "Properties": {
+            "distance": "7",
+            "persistent": "false",
+            "waterlogged": "false"
+          }
+        }
+      },
+      "force_dirt": false,
+      "ignore_vines": true,
+      "minimum_size": {
+        "type": "minecraft:three_layers_feature_size",
+        "limit": 1,
+        "lower_size": 0,
+        "middle_size": 1,
+        "upper_limit": 1,
+        "upper_size": 2
+      },
+      "trunk_placer": {
+        "type": "minecraft:dark_oak_trunk_placer",
+        "base_height": 6,
+        "height_rand_a": 2,
+        "height_rand_b": 1
+      },
+      "trunk_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:pale_oak_log",
+          "Properties": {
+            "axis": "y"
+          }
+        }
+      }
+    }
+  },
   "patch_berry_bush": {
     "type": "minecraft:random_patch",
     "config": {
@@ -6768,6 +6975,7 @@
           "minecraft:acacia_sapling",
           "minecraft:cherry_sapling",
           "minecraft:dark_oak_sapling",
+          "minecraft:pale_oak_sapling",
           "minecraft:mangrove_propagule",
           "minecraft:dandelion",
           "minecraft:torchflower",
@@ -6851,6 +7059,7 @@
           "minecraft:acacia_sapling",
           "minecraft:cherry_sapling",
           "minecraft:dark_oak_sapling",
+          "minecraft:pale_oak_sapling",
           "minecraft:mangrove_propagule",
           "minecraft:dandelion",
           "minecraft:torchflower",
