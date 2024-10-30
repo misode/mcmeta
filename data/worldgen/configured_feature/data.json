@@ -2529,6 +2529,37 @@
       "y_spread": 2
     }
   },
+  "flower_pale_garden": {
+    "type": "minecraft:flower",
+    "config": {
+      "feature": {
+        "feature": {
+          "type": "minecraft:simple_block",
+          "config": {
+            "schedule_tick": true,
+            "to_place": {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:closed_eyeblossom"
+              }
+            }
+          }
+        },
+        "placement": [
+          {
+            "type": "minecraft:block_predicate_filter",
+            "predicate": {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:air"
+            }
+          }
+        ]
+      },
+      "tries": 1,
+      "xz_spread": 0,
+      "y_spread": 0
+    }
+  },
   "flower_plain": {
     "type": "minecraft:flower",
     "config": {
@@ -4746,20 +4777,78 @@
       ]
     }
   },
+  "pale_forest_flowers": {
+    "type": "minecraft:random_patch",
+    "config": {
+      "feature": {
+        "feature": {
+          "type": "minecraft:simple_block",
+          "config": {
+            "schedule_tick": true,
+            "to_place": {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:closed_eyeblossom"
+              }
+            }
+          }
+        },
+        "placement": [
+          {
+            "type": "minecraft:block_predicate_filter",
+            "predicate": {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:air"
+            }
+          }
+        ]
+      },
+      "tries": 96,
+      "xz_spread": 7,
+      "y_spread": 3
+    }
+  },
   "pale_garden_vegetation": {
     "type": "minecraft:random_selector",
     "config": {
       "default": "minecraft:pale_oak_checked",
       "features": [
         {
-          "chance": 0.2,
+          "chance": 0.1,
           "feature": "minecraft:pale_oak_creaking_checked"
         },
         {
-          "chance": 0.8,
+          "chance": 0.9,
           "feature": "minecraft:pale_oak_checked"
         }
       ]
+    }
+  },
+  "pale_moss_patch": {
+    "type": "minecraft:vegetation_patch",
+    "config": {
+      "depth": 1,
+      "extra_bottom_block_chance": 0.0,
+      "extra_edge_column_chance": 0.75,
+      "ground_state": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:pale_moss_block"
+        }
+      },
+      "replaceable": "#minecraft:moss_replaceable",
+      "surface": "floor",
+      "vegetation_chance": 0.3,
+      "vegetation_feature": {
+        "feature": "minecraft:pale_moss_vegetation",
+        "placement": []
+      },
+      "vertical_range": 5,
+      "xz_radius": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 4,
+        "min_inclusive": 2
+      }
     }
   },
   "pale_moss_patch_bonemeal": {
@@ -4812,7 +4901,7 @@
             "data": {
               "Name": "minecraft:short_grass"
             },
-            "weight": 50
+            "weight": 25
           },
           {
             "data": {
@@ -4838,6 +4927,59 @@
           "trunk_probability": 0.4
         }
       ],
+      "dirt_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:dirt"
+        }
+      },
+      "foliage_placer": {
+        "type": "minecraft:dark_oak_foliage_placer",
+        "offset": 0,
+        "radius": 0
+      },
+      "foliage_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:pale_oak_leaves",
+          "Properties": {
+            "distance": "7",
+            "persistent": "false",
+            "waterlogged": "false"
+          }
+        }
+      },
+      "force_dirt": false,
+      "ignore_vines": true,
+      "minimum_size": {
+        "type": "minecraft:three_layers_feature_size",
+        "limit": 1,
+        "lower_size": 0,
+        "middle_size": 1,
+        "upper_limit": 1,
+        "upper_size": 2
+      },
+      "trunk_placer": {
+        "type": "minecraft:dark_oak_trunk_placer",
+        "base_height": 6,
+        "height_rand_a": 2,
+        "height_rand_b": 1
+      },
+      "trunk_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:pale_oak_log",
+          "Properties": {
+            "axis": "y"
+          }
+        }
+      }
+    }
+  },
+  "pale_oak_bonemeal": {
+    "type": "minecraft:tree",
+    "config": {
+      "decorators": [],
       "dirt_provider": {
         "type": "minecraft:simple_state_provider",
         "state": {

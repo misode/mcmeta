@@ -5446,6 +5446,27 @@
     ],
     "random_sequence": "minecraft:blocks/chiseled_red_sandstone"
   },
+  "blocks/chiseled_resin_bricks": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:chiseled_resin_bricks"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/chiseled_resin_bricks"
+  },
   "blocks/chiseled_sandstone": {
     "type": "minecraft:block",
     "pools": [
@@ -5637,6 +5658,27 @@
       }
     ],
     "random_sequence": "minecraft:blocks/clay"
+  },
+  "blocks/closed_eyeblossom": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:closed_eyeblossom"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/closed_eyeblossom"
   },
   "blocks/coal_block": {
     "type": "minecraft:block",
@@ -6443,6 +6485,72 @@
   },
   "blocks/creaking_heart": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                      "predicates": {
+                        "minecraft:enchantments": [
+                          {
+                            "enchantments": "minecraft:silk_touch",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ],
+                "name": "minecraft:creaking_heart"
+              },
+              {
+                "type": "minecraft:item",
+                "functions": [
+                  {
+                    "add": false,
+                    "count": {
+                      "type": "minecraft:uniform",
+                      "max": 3.0,
+                      "min": 1.0
+                    },
+                    "function": "minecraft:set_count"
+                  },
+                  {
+                    "enchantment": "minecraft:fortune",
+                    "formula": "minecraft:uniform_bonus_count",
+                    "function": "minecraft:apply_bonus",
+                    "parameters": {
+                      "bonusMultiplier": 1
+                    }
+                  },
+                  {
+                    "function": "minecraft:limit_count",
+                    "limit": {
+                      "max": 9.0
+                    }
+                  },
+                  {
+                    "function": "minecraft:explosion_decay"
+                  }
+                ],
+                "name": "minecraft:resin_clump"
+              }
+            ]
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/creaking_heart"
   },
   "blocks/creeper_head": {
@@ -17284,6 +17392,27 @@
     ],
     "random_sequence": "minecraft:blocks/ochre_froglight"
   },
+  "blocks/open_eyeblossom": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:open_eyeblossom"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/open_eyeblossom"
+  },
   "blocks/orange_banner": {
     "type": "minecraft:block",
     "pools": [
@@ -17957,74 +18086,550 @@
   },
   "blocks/pale_hanging_moss": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:any_of",
+            "terms": [
+              {
+                "condition": "minecraft:match_tool",
+                "predicate": {
+                  "items": "minecraft:shears"
+                }
+              },
+              {
+                "condition": "minecraft:match_tool",
+                "predicate": {
+                  "predicates": {
+                    "minecraft:enchantments": [
+                      {
+                        "enchantments": "minecraft:silk_touch",
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pale_hanging_moss"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_hanging_moss"
   },
   "blocks/pale_moss_block": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pale_moss_block"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_moss_block"
   },
   "blocks/pale_moss_carpet": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "block": "minecraft:pale_moss_carpet",
+                "condition": "minecraft:block_state_property",
+                "properties": {
+                  "bottom": "true"
+                }
+              }
+            ],
+            "functions": [
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:pale_moss_carpet"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_moss_carpet"
   },
   "blocks/pale_oak_button": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pale_oak_button"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_oak_button"
   },
   "blocks/pale_oak_door": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "block": "minecraft:pale_oak_door",
+                "condition": "minecraft:block_state_property",
+                "properties": {
+                  "half": "lower"
+                }
+              }
+            ],
+            "name": "minecraft:pale_oak_door"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_oak_door"
   },
   "blocks/pale_oak_fence": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pale_oak_fence"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_oak_fence"
   },
   "blocks/pale_oak_fence_gate": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pale_oak_fence_gate"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_oak_fence_gate"
   },
   "blocks/pale_oak_hanging_sign": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pale_oak_hanging_sign"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_oak_hanging_sign"
   },
   "blocks/pale_oak_leaves": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:any_of",
+                    "terms": [
+                      {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                          "items": "minecraft:shears"
+                        }
+                      },
+                      {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                          "predicates": {
+                            "minecraft:enchantments": [
+                              {
+                                "enchantments": "minecraft:silk_touch",
+                                "levels": {
+                                  "min": 1
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "name": "minecraft:pale_oak_leaves"
+              },
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:survives_explosion"
+                  },
+                  {
+                    "chances": [
+                      0.05,
+                      0.0625,
+                      0.083333336,
+                      0.1
+                    ],
+                    "condition": "minecraft:table_bonus",
+                    "enchantment": "minecraft:fortune"
+                  }
+                ],
+                "name": "minecraft:pale_oak_sapling"
+              }
+            ]
+          }
+        ],
+        "rolls": 1.0
+      },
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:any_of",
+              "terms": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "items": "minecraft:shears"
+                  }
+                },
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "chances": [
+                  0.02,
+                  0.022222223,
+                  0.025,
+                  0.033333335,
+                  0.1
+                ],
+                "condition": "minecraft:table_bonus",
+                "enchantment": "minecraft:fortune"
+              }
+            ],
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 2.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:stick"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_oak_leaves"
   },
   "blocks/pale_oak_log": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pale_oak_log"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_oak_log"
   },
   "blocks/pale_oak_planks": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pale_oak_planks"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_oak_planks"
   },
   "blocks/pale_oak_pressure_plate": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pale_oak_pressure_plate"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_oak_pressure_plate"
   },
   "blocks/pale_oak_sapling": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pale_oak_sapling"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_oak_sapling"
   },
   "blocks/pale_oak_sign": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pale_oak_sign"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_oak_sign"
   },
   "blocks/pale_oak_slab": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "add": false,
+                "conditions": [
+                  {
+                    "block": "minecraft:pale_oak_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:pale_oak_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_oak_slab"
   },
   "blocks/pale_oak_stairs": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pale_oak_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_oak_stairs"
   },
   "blocks/pale_oak_trapdoor": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pale_oak_trapdoor"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_oak_trapdoor"
   },
   "blocks/pale_oak_wood": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pale_oak_wood"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/pale_oak_wood"
   },
   "blocks/pearlescent_froglight": {
@@ -20036,6 +20641,42 @@
     ],
     "random_sequence": "minecraft:blocks/potted_cherry_sapling"
   },
+  "blocks/potted_closed_eyeblossom": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:flower_pot"
+          }
+        ],
+        "rolls": 1.0
+      },
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:closed_eyeblossom"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/potted_closed_eyeblossom"
+  },
   "blocks/potted_cornflower": {
     "type": "minecraft:block",
     "pools": [
@@ -20468,6 +21109,42 @@
     ],
     "random_sequence": "minecraft:blocks/potted_oak_sapling"
   },
+  "blocks/potted_open_eyeblossom": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:flower_pot"
+          }
+        ],
+        "rolls": 1.0
+      },
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:open_eyeblossom"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/potted_open_eyeblossom"
+  },
   "blocks/potted_orange_tulip": {
     "type": "minecraft:block",
     "pools": [
@@ -20542,6 +21219,38 @@
   },
   "blocks/potted_pale_oak_sapling": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:flower_pot"
+          }
+        ],
+        "rolls": 1.0
+      },
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pale_oak_sapling"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/potted_pale_oak_sapling"
   },
   "blocks/potted_pink_tulip": {
@@ -22833,6 +23542,221 @@
       }
     ],
     "random_sequence": "minecraft:blocks/repeater"
+  },
+  "blocks/resin_block": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:resin_block"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/resin_block"
+  },
+  "blocks/resin_brick_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:resin_brick_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/resin_brick_slab"
+  },
+  "blocks/resin_brick_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:resin_brick_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/resin_brick_stairs"
+  },
+  "blocks/resin_brick_wall": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:resin_brick_wall"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/resin_brick_wall"
+  },
+  "blocks/resin_bricks": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:resin_bricks"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/resin_bricks"
+  },
+  "blocks/resin_clump": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "add": true,
+                "conditions": [
+                  {
+                    "block": "minecraft:resin_clump",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "down": "true"
+                    }
+                  }
+                ],
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "add": true,
+                "conditions": [
+                  {
+                    "block": "minecraft:resin_clump",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "up": "true"
+                    }
+                  }
+                ],
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "add": true,
+                "conditions": [
+                  {
+                    "block": "minecraft:resin_clump",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "north": "true"
+                    }
+                  }
+                ],
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "add": true,
+                "conditions": [
+                  {
+                    "block": "minecraft:resin_clump",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "south": "true"
+                    }
+                  }
+                ],
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "add": true,
+                "conditions": [
+                  {
+                    "block": "minecraft:resin_clump",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "west": "true"
+                    }
+                  }
+                ],
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "add": true,
+                "conditions": [
+                  {
+                    "block": "minecraft:resin_clump",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "east": "true"
+                    }
+                  }
+                ],
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "add": true,
+                "count": -1.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:resin_clump"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/resin_clump"
   },
   "blocks/respawn_anchor": {
     "type": "minecraft:block",
@@ -25733,10 +26657,44 @@
   },
   "blocks/stripped_pale_oak_log": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:stripped_pale_oak_log"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/stripped_pale_oak_log"
   },
   "blocks/stripped_pale_oak_wood": {
     "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:stripped_pale_oak_wood"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
     "random_sequence": "minecraft:blocks/stripped_pale_oak_wood"
   },
   "blocks/stripped_spruce_log": {
@@ -39100,6 +40058,38 @@
             ],
             "name": "minecraft:beetroot_seeds",
             "weight": 10
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 4.0,
+                  "min": 2.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:resin_clump",
+            "weight": 50
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 2.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:resin_brick",
+            "weight": 50
           }
         ],
         "rolls": {
