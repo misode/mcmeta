@@ -453,7 +453,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			'post_effect': 'post_effect',
 		}
 
-		for path, key in asset_registries:
+		for path, key in asset_registries.items():
 			add_file_registry(key, f'assets/assets/minecraft/{path}')
 
 		add_file_registry('texture', 'assets/assets/minecraft/textures', 'png')
