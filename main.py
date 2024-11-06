@@ -443,7 +443,17 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 
 		add_folder_registry('datapack', 'data/data/minecraft/datapacks')
 
-		for path, key in [('atlases', 'atlas'), ('blockstates', 'block_definition'), ('font', 'font'), ('models', 'model')]:
+		asset_registries = {
+			'atlases': 'atlas',
+			'blockstates': 'block_definition',
+			'equipment': 'equipment',
+			'font': 'font',
+			'items': 'item_definition',
+			'models': 'model',
+			'post_effect': 'post_effect',
+		}
+
+		for path, key in asset_registries:
 			add_file_registry(key, f'assets/assets/minecraft/{path}')
 
 		add_file_registry('texture', 'assets/assets/minecraft/textures', 'png')
