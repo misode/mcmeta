@@ -2017,8 +2017,25 @@
   },
   "chest": {
     "model": {
-      "type": "minecraft:condition",
-      "on_false": {
+      "type": "minecraft:select",
+      "cases": [
+        {
+          "model": {
+            "type": "minecraft:special",
+            "base": "minecraft:item/chest",
+            "model": {
+              "type": "minecraft:chest",
+              "texture": "minecraft:christmas"
+            }
+          },
+          "when": [
+            "12-24",
+            "12-25",
+            "12-26"
+          ]
+        }
+      ],
+      "fallback": {
         "type": "minecraft:special",
         "base": "minecraft:item/chest",
         "model": {
@@ -2026,15 +2043,8 @@
           "texture": "minecraft:normal"
         }
       },
-      "on_true": {
-        "type": "minecraft:special",
-        "base": "minecraft:item/chest",
-        "model": {
-          "type": "minecraft:chest",
-          "texture": "minecraft:christmas"
-        }
-      },
-      "property": "minecraft:xmas"
+      "pattern": "MM-dd",
+      "property": "minecraft:local_time"
     }
   },
   "chest_minecart": {
@@ -12643,8 +12653,25 @@
   },
   "trapped_chest": {
     "model": {
-      "type": "minecraft:condition",
-      "on_false": {
+      "type": "minecraft:select",
+      "cases": [
+        {
+          "model": {
+            "type": "minecraft:special",
+            "base": "minecraft:item/trapped_chest",
+            "model": {
+              "type": "minecraft:chest",
+              "texture": "minecraft:christmas"
+            }
+          },
+          "when": [
+            "12-24",
+            "12-25",
+            "12-26"
+          ]
+        }
+      ],
+      "fallback": {
         "type": "minecraft:special",
         "base": "minecraft:item/trapped_chest",
         "model": {
@@ -12652,15 +12679,8 @@
           "texture": "minecraft:trapped"
         }
       },
-      "on_true": {
-        "type": "minecraft:special",
-        "base": "minecraft:item/trapped_chest",
-        "model": {
-          "type": "minecraft:chest",
-          "texture": "minecraft:christmas"
-        }
-      },
-      "property": "minecraft:xmas"
+      "pattern": "MM-dd",
+      "property": "minecraft:local_time"
     }
   },
   "trial_key": {
