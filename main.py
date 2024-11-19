@@ -549,7 +549,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		create_summary(version_metas, 'summary/versions')
 
 		for key in contents:
-			part = 'assets' if key in ['block_definition', 'font', 'model'] else 'data'
+			part = 'assets' if key in asset_registries.values() else 'data'
 			create_summary(dict(sorted(contents[key].items())), f'summary/{part}/{key}', bin=True)
 
 		with open(f'summary/version.txt', 'w') as f:
