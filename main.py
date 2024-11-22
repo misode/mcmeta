@@ -39,6 +39,7 @@ import time
 import image_packer.packer
 import nbtlib
 import multiprocessing
+import traceback
 
 EXPORTS = ('assets', 'assets-json', 'assets-tiny', 'data', 'data-json', 'summary', 'registries', 'atlas', 'diff')
 
@@ -109,6 +110,7 @@ def main(version: str | None, file, reset: bool, fetch: bool, undo: str | None, 
 				process(v, versions, export)
 			except ValueError as e:
 				click.echo(f'💥 Failed to process {v}: {e}')
+				traceback.print_exc()
 				return
 
 			if commit:
@@ -201,7 +203,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	version_ids = list(versions.keys())
 
 	# === fetch version jars ===
-	click.echo('   ⬇️  Downloading version')
+	click.echo('   ⬇️ Downloading version')
 	launchermeta_bytes = retry(fetch_meta, 'versionmeta', versions[version])
 	launchermeta = json.loads(launchermeta_bytes.decode('utf-8'))
 
@@ -231,7 +233,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 						jar.extract(file, f'{part}-tiny')
 
 	# === update version metas ===
-	click.echo('   🏷️  Updating versions')
+	click.echo('   🏷️ Updating versions')
 	try:
 		with open('versions.json', 'r') as f:
 			version_metas = json.load(f)
@@ -266,7 +268,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 
 	# === run data generators ===
 	if (versions[version]['index'] > versions['22w42a']['index'] and ('data' in exports or 'data-json' in exports)) or 'summary' in exports or 'registries' in exports or 'diff' in exports:
-		click.echo('   ⚙️  Running data generator')
+		click.echo('   ⚙️ Running data generator')
 		shutil.rmtree('generated', ignore_errors=True)
 		if versions[version]['index'] <= versions['21w39a']['index']:
 			subprocess.run(['java', '-DbundlerMainClass=net.minecraft.data.Main', '-jar', 'server.jar', '--reports'], capture_output=True)
@@ -284,7 +286,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			shutil.copytree('generated/reports/worldgen', 'data/data', dirs_exist_ok=True)
 			shutil.copytree('generated/reports/worldgen', 'data-json/data', dirs_exist_ok=True)
 		elif versions[version]['index'] <= versions['20w28a']['index']:
-			click.echo('   ⬇️  Downloading vanilla worldgen')
+			click.echo('   ⬇️ Downloading vanilla worldgen')
 			username = os.getenv('github-username')
 			token = os.getenv('github-token')
 			auth = requests.auth.HTTPBasicAuth(username, token) if username and token else None
@@ -386,8 +388,38 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 				with open(f'{export}{file.removeprefix("data")}', 'w') as f:
 					json.dump(root, f, indent=2)
 
+	# === download resources ===
+	if 'assets' in exports or 'assets-json' in exports or 'summary' in exports or 'diff' in exports:
+		click.echo('   🔊 Downloading assets')
+		assets_hash = launchermeta['assetIndex']['sha1']
+		assets_url = launchermeta['assetIndex']['url']
+		assets_bytes = retry(fetch, f'assets-{assets_hash}', assets_url)
+		assets = json.loads(assets_bytes.decode('utf-8'))
+
+		click.echo(f'      Downloading {len(assets["objects"])} resources')
+		shutil.rmtree('resources', ignore_errors=True)
+		os.makedirs('resources', exist_ok=True)
+		with multiprocessing.Pool(20) as pool:
+			pool.map(download_resource, assets['objects'].items())
+
+		for export, pattern in [('assets', '*.*'), ('assets-json', '*.json')]:
+			if export in exports or (export == 'assets' and ('diff' in exports or 'summary' in exports)):
+				for path in glob.glob(f'resources/**/{pattern}', recursive=True):
+					if path.endswith('hash.txt'):
+						continue
+					target = f'{export}/assets{path.removeprefix("resources")}'
+					if path.endswith('pack.mcmeta'):
+						target = f'{export}/pack.mcmeta'
+					os.makedirs(os.path.normpath(os.path.join(target, '..')), exist_ok=True)
+					shutil.copyfile(path, target)
+
+		if 'summary' in exports or 'diff' in exports:
+			with open(f'resources/minecraft/sounds.json', 'r') as f:
+				sounds: dict = json.load(f)
+
 	# === collect summary of registries ===
 	if 'summary' in exports or 'registries' in exports or 'diff' in exports:
+		click.echo('   🔎 Collect registries')
 		registries = dict()
 		contents = dict()
 		if os.path.isfile('generated/reports/registries.json'):
@@ -403,8 +435,11 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			if ext == 'json':
 				content = dict()
 				for i, file in enumerate(files):
-					with open(file, 'r') as f:
-						content[entries[i]] = json.load(f)
+					try:
+						with open(file, 'r', encoding='utf-8') as f:
+							content[entries[i]] = json.load(f)
+					except BaseException as e:
+						click.echo(f'     ⚠️ Failed to read file {file}: {e}')
 				contents[id] = content
 
 		def add_folder_registry(id: str, path: str):
@@ -452,6 +487,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			'equipment': 'equipment',
 			'font': 'font',
 			'items': 'item_definition',
+			'lang': 'lang',
 			'models': 'model',
 			'post_effect': 'post_effect',
 		}
@@ -460,6 +496,9 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			add_file_registry(key, f'assets/assets/minecraft/{path}')
 
 		add_file_registry('texture', 'assets/assets/minecraft/textures', 'png')
+		add_file_registry('sound', 'assets/assets/minecraft/sounds', 'ogg')
+
+		registries['lang'] = [e for e in registries['lang'] if e != "deprecated"]
 
 	# === simplify blocks report ===
 	if 'summary' in exports or 'diff' in exports:
@@ -484,35 +523,6 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 					components = data.get('components')
 					if components:
 						item_components[key.removeprefix('minecraft:')] = components
-
-	# === download resources ===
-	if 'assets' in exports or 'assets-json' in exports or 'summary' in exports or 'diff' in exports:
-		click.echo('   🔊 Downloading assets')
-		assets_hash = launchermeta['assetIndex']['sha1']
-		assets_url = launchermeta['assetIndex']['url']
-		assets_bytes = retry(fetch, f'assets-{assets_hash}', assets_url)
-		assets = json.loads(assets_bytes.decode('utf-8'))
-
-		click.echo(f'      Downloading {len(assets["objects"])} resources')
-		shutil.rmtree('resources', ignore_errors=True)
-		os.makedirs('resources', exist_ok=True)
-		with multiprocessing.Pool(20) as pool:
-			pool.map(download_resource, assets['objects'].items())
-
-		for export, pattern in [('assets', '*.*'), ('assets-json', '*.json')]:
-			if export in exports or (export == 'assets' and 'diff' in exports):
-				for path in glob.glob(f'resources/**/{pattern}', recursive=True):
-					if path.endswith('hash.txt'):
-						continue
-					target = f'{export}/assets{path.removeprefix("resources")}'
-					if path.endswith('pack.mcmeta'):
-						target = f'{export}/pack.mcmeta'
-					os.makedirs(os.path.normpath(os.path.join(target, '..')), exist_ok=True)
-					shutil.copyfile(path, target)
-
-		if 'summary' in exports or 'diff' in exports:
-			with open(f'resources/minecraft/sounds.json', 'r') as f:
-				sounds: dict = json.load(f)
 
 	# === read commands report ===
 	if 'summary' in exports or 'diff' in exports:
@@ -560,7 +570,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 
 	# === create texture atlas ===
 	if 'atlas' in exports:
-		click.echo('   🗺️  Packing textures into atlas')
+		click.echo('   🗺️ Packing textures into atlas')
 		atlases = [
 			('blocks', ['block'], 1024),
 			('items', ['item'], 512),
