@@ -495,8 +495,9 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		for path, key in asset_registries.items():
 			add_file_registry(key, f'assets/assets/minecraft/{path}')
 
-		add_file_registry('texture', 'assets/assets/minecraft/textures', 'png')
+		add_file_registry('resourcepack', 'assets/assets/minecraft/resourcepacks', 'zip')
 		add_file_registry('sound', 'assets/assets/minecraft/sounds', 'ogg')
+		add_file_registry('texture', 'assets/assets/minecraft/textures', 'png')
 
 		registries['lang'] = [e for e in registries['lang'] if e != "deprecated"]
 
