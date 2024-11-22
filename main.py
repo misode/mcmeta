@@ -538,9 +538,9 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			with open(f'{path}/data.msgpack', 'wb') as f:
 				f.write(msgpack.packb(data))
 			with open(f'{path}/data.json.gz', 'wb') as f:
-				f.write(gzip.compress(json.dumps(data).encode('utf-8'), mtime=None))
+				f.write(gzip.compress(json.dumps(data).encode('utf-8'), mtime=0))
 			with open(f'{path}/data.msgpack.gz', 'wb') as f:
-				f.write(gzip.compress(msgpack.packb(data), mtime=None))
+				f.write(gzip.compress(msgpack.packb(data), mtime=0))
 
 	if 'summary' in exports:
 		create_summary(dict(sorted(registries.items())), 'summary/registries')
