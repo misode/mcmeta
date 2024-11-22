@@ -613,6 +613,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		shutil.rmtree('diff/assets/minecraft/lang', ignore_errors=True)
 		os.makedirs('diff/assets/minecraft/lang', exist_ok=True)
 		shutil.copyfile('assets/assets/minecraft/lang/en_us.json', 'diff/assets/minecraft/lang/en_us.json')
+		shutil.copyfile('assets/assets/minecraft/lang/deprecated.json', 'diff/assets/minecraft/lang/deprecated.json')
 
 		shutil.rmtree('diff/registries', ignore_errors=True)
 		os.makedirs('diff/registries', exist_ok=True)
