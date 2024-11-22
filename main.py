@@ -40,7 +40,7 @@ import image_packer.packer
 import nbtlib
 import multiprocessing
 
-EXPORTS = ('assets', 'assets-json', 'data', 'data-json', 'summary', 'registries', 'atlas', 'diff')
+EXPORTS = ('assets', 'assets-json', 'assets-tiny', 'data', 'data-json', 'summary', 'registries', 'atlas', 'diff')
 
 APRIL_FOOLS = ('15w14a', '3D Shareware v1.34', '20w14infinite', '22w13oneblockatatime', '23w13a_or_b', '24w14potato')
 
@@ -213,6 +213,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	# === extract client jar ===
 	shutil.rmtree('assets/assets', ignore_errors=True)
 	shutil.rmtree('assets-json/assets', ignore_errors=True)
+	shutil.rmtree('assets-tiny/assets', ignore_errors=True)
 	shutil.rmtree('data/data', ignore_errors=True)
 	shutil.rmtree('data-json/data', ignore_errors=True)
 	with zipfile.ZipFile('client.jar', 'r') as jar:
@@ -226,6 +227,8 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 					jar.extract(file, part)
 					if f'{part}-json' in exports and file.endswith('.json'):
 						jar.extract(file, f'{part}-json')
+					if part == 'assets' and 'assets-tiny' in exports:
+						jar.extract(file, f'{part}-tiny')
 
 	# === update version metas ===
 	click.echo('   🏷️  Updating versions')
@@ -483,19 +486,18 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 						item_components[key.removeprefix('minecraft:')] = components
 
 	# === download resources ===
-	if 'summary' in exports or 'diff' in exports:
-		click.echo('   🔊 Downloading sounds')
+	if 'assets' in exports or 'assets-json' in exports or 'summary' in exports or 'diff' in exports:
+		click.echo('   🔊 Downloading assets')
 		assets_hash = launchermeta['assetIndex']['sha1']
 		assets_url = launchermeta['assetIndex']['url']
 		assets_bytes = retry(fetch, f'assets-{assets_hash}', assets_url)
 		assets = json.loads(assets_bytes.decode('utf-8'))
 
-		if 'assets' in exports or 'summary' in exports or 'diff' in exports:
-			click.echo(f'      Downloading {len(assets["objects"])} resources')
-			shutil.rmtree('resources', ignore_errors=True)
-			os.makedirs('resources', exist_ok=True)
-			with multiprocessing.Pool(20) as pool:
-				pool.map(download_resource, assets['objects'].items())
+		click.echo(f'      Downloading {len(assets["objects"])} resources')
+		shutil.rmtree('resources', ignore_errors=True)
+		os.makedirs('resources', exist_ok=True)
+		with multiprocessing.Pool(20) as pool:
+			pool.map(download_resource, assets['objects'].items())
 
 		for export, pattern in [('assets', '*.*'), ('assets-json', '*.json')]:
 			if export in exports or (export == 'assets' and 'diff' in exports):
@@ -507,6 +509,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 						target = f'{export}/pack.mcmeta'
 					os.makedirs(os.path.normpath(os.path.join(target, '..')), exist_ok=True)
 					shutil.copyfile(path, target)
+
 		if 'summary' in exports or 'diff' in exports:
 			with open(f'resources/minecraft/sounds.json', 'r') as f:
 				sounds: dict = json.load(f)
@@ -667,6 +670,8 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	for export in ['assets', 'data']:
 		if f'{export}-json' in exports:
 			shutil.copyfile(f'{export}/pack.mcmeta', f'{export}-json/pack.mcmeta')
+		if export == 'assets' and 'assets-tiny' in exports:
+			shutil.copyfile(f'{export}/pack.mcmeta', f'{export}-tiny/pack.mcmeta')
 
 
 def init_exports(start_date: str | None, reset: bool, fetch: bool, undo: str | None, exports: tuple[str], branch: str | None):
