@@ -312,81 +312,83 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 					break
 
 	# === reconstruct dimensions ===
-	if versions[version]['index'] <= versions['22w11a']['index'] and not os.path.isdir('data/data/minecraft/dimension'):
-		with open('data/data/minecraft/worldgen/world_preset/normal.json', 'r') as f:
-			world_preset = json.load(f)
-		for key, dimension in world_preset['dimensions'].items():
-			preset = dimension['generator'].get('biome_source', dict()).get('preset', '')
-			try:
-				with open(f'generated/reports/biome_parameters/{preset.replace(":", "/")}.json', 'r') as f:
-					parameters = json.load(f)
-					if parameters:
-						parameters['type'] = 'minecraft:multi_noise'
-						dimension['generator']['biome_source'] = parameters
-			except:
-				pass
-			for e in ['data', 'data-json']:
-				os.makedirs(f'{e}/data/minecraft/dimension/', exist_ok=True)
-				with open(f'{e}/data/minecraft/dimension/{key.removeprefix("minecraft:")}.json', 'w') as f:
-					json.dump(dimension, f, indent=2)
+	if 'data' in exports or 'data-json' in exports or 'summary' in exports or 'diff' in exports:
+		if versions[version]['index'] <= versions['22w11a']['index'] and not os.path.isdir('data/data/minecraft/dimension'):
+			with open('data/data/minecraft/worldgen/world_preset/normal.json', 'r') as f:
+				world_preset = json.load(f)
+			for key, dimension in world_preset['dimensions'].items():
+				preset = dimension['generator'].get('biome_source', dict()).get('preset', '')
+				try:
+					with open(f'generated/reports/biome_parameters/{preset.replace(":", "/")}.json', 'r') as f:
+						parameters = json.load(f)
+						if parameters:
+							parameters['type'] = 'minecraft:multi_noise'
+							dimension['generator']['biome_source'] = parameters
+				except:
+					pass
+				for e in ['data', 'data-json']:
+					os.makedirs(f'{e}/data/minecraft/dimension/', exist_ok=True)
+					with open(f'{e}/data/minecraft/dimension/{key.removeprefix("minecraft:")}.json', 'w') as f:
+						json.dump(dimension, f, indent=2)
 
 	# === stabilize ordering in some data files ===
-	reorders = [
-		('advancements/adventure/adventuring_time',
-			[('criteria', None), ('requirements', lambda e: e[0])]),
-		('advancements/husbandry/complete_catalogue',
-			[('criteria', None), ('requirements', lambda e: e[0])]),
-		('advancements/nether/all_effects',
-			[('criteria.all_effects.conditions.effects', None)]),
-		('advancements/nether/all_potions',
-			[('criteria.all_effects.conditions.effects', None)]),
-		('loot_tables/chests/shipwreck_supply',
-			[('pools.0.entries.[name=minecraft:suspicious_stew].functions.0.effects', lambda e: e['type'])]),
-		('loot_tables/chests/ancient_city_ice_box',
-			[('pools.0.entries.[name=minecraft:suspicious_stew].functions.0.effects', lambda e: e['type'])]),
-		('loot_tables/gameplay/hero_of_the_village/fletcher_gift',
-			[('pools.0.entries', lambda e: (e.get('functions')[-1].get('tag') or e.get('functions')[-1].get('id')) if e.get('functions') else e.get('name'))]),
-		('worldgen/noise_settings/*', [('structures.structures', None)]),
-		('worldgen/noise_settings/*', [('structures', None)]),
-		('worldgen/configured_structure_feature/*', [('spawn_overrides', None)]),
-		('worldgen/structure/*', [('spawn_overrides', None)]),
-		('worldgen/flat_level_generator_preset/*', [('settings.structure_overrides', None)]),
-		('worldgen/world_preset/*', [('dimensions', None)]),
-	]
+	if 'data' in exports or 'data-json' in exports or 'summary' in exports or 'diff' in exports:
+		reorders = [
+			('advancements/adventure/adventuring_time',
+				[('criteria', None), ('requirements', lambda e: e[0])]),
+			('advancements/husbandry/complete_catalogue',
+				[('criteria', None), ('requirements', lambda e: e[0])]),
+			('advancements/nether/all_effects',
+				[('criteria.all_effects.conditions.effects', None)]),
+			('advancements/nether/all_potions',
+				[('criteria.all_effects.conditions.effects', None)]),
+			('loot_tables/chests/shipwreck_supply',
+				[('pools.0.entries.[name=minecraft:suspicious_stew].functions.0.effects', lambda e: e['type'])]),
+			('loot_tables/chests/ancient_city_ice_box',
+				[('pools.0.entries.[name=minecraft:suspicious_stew].functions.0.effects', lambda e: e['type'])]),
+			('loot_tables/gameplay/hero_of_the_village/fletcher_gift',
+				[('pools.0.entries', lambda e: (e.get('functions')[-1].get('tag') or e.get('functions')[-1].get('id')) if e.get('functions') else e.get('name'))]),
+			('worldgen/noise_settings/*', [('structures.structures', None)]),
+			('worldgen/noise_settings/*', [('structures', None)]),
+			('worldgen/configured_structure_feature/*', [('spawn_overrides', None)]),
+			('worldgen/structure/*', [('spawn_overrides', None)]),
+			('worldgen/flat_level_generator_preset/*', [('settings.structure_overrides', None)]),
+			('worldgen/world_preset/*', [('dimensions', None)]),
+		]
 
-	for filepath, sorts in reorders:
-		for file in glob.glob(f'data/data/minecraft/{filepath}.json'):
-			with open(file, 'r') as f:
-				root = json.load(f)
+		for filepath, sorts in reorders:
+			for file in glob.glob(f'data/data/minecraft/{filepath}.json'):
+				with open(file, 'r') as f:
+					root = json.load(f)
 
-			for path, order in sorts:
-				*parts, last = [int(p) if re.match('\\d+', p) else p for p in path.split('.')]
-				node = root
-				for p in parts:
-					if node is None:
+				for path, order in sorts:
+					*parts, last = [int(p) if re.match('\\d+', p) else p for p in path.split('.')]
+					node = root
+					for p in parts:
+						if node is None:
+							break
+						if type(p) == str and p.startswith('['):
+							key, value = p[1:-1].split('=')
+							node = next((e for e in node if key in e and e[key] == value), None)
+						elif type(node) == list:
+							node = node[p]
+						elif hasattr(node, 'get'):
+							node = node.get(p, None)
+						else:
+							node = None
+					if node is None or last not in node:
 						break
-					if type(p) == str and p.startswith('['):
-						key, value = p[1:-1].split('=')
-						node = next((e for e in node if key in e and e[key] == value), None)
-					elif type(node) == list:
-						node = node[p]
-					elif hasattr(node, 'get'):
-						node = node.get(p, None)
-					else:
-						node = None
-				if node is None or last not in node:
-					break
-				if type(node[last]) == dict:
-					node[last] = dict(sorted(node[last].items(), key=order))
-				elif type(node[last]) == list:
-					node[last] = sorted(node[last], key=order)
+					if type(node[last]) == dict:
+						node[last] = dict(sorted(node[last].items(), key=order))
+					elif type(node[last]) == list:
+						node[last] = sorted(node[last], key=order)
 
-			needs_export = set(['data', 'data-json']).intersection(exports)
-			if 'diff' in exports:
-				needs_export.add('data')
-			for export in needs_export:
-				with open(f'{export}{file.removeprefix("data")}', 'w') as f:
-					json.dump(root, f, indent=2)
+				needs_export = set(['data', 'data-json']).intersection(exports)
+				if 'diff' in exports:
+					needs_export.add('data')
+				for export in needs_export:
+					with open(f'{export}{file.removeprefix("data")}', 'w') as f:
+						json.dump(root, f, indent=2)
 
 	# === download resources ===
 	if 'assets' in exports or 'assets-json' in exports or 'summary' in exports or 'diff' in exports:
