@@ -7,6 +7,7 @@ Each of the following branches has a commit per version. Starting from 1.14, upd
 * [**summary**](https://github.com/misode/mcmeta/tree/summary) - Branch with condensed reports from the data generator or assets, in a variety of formats.
   * [**blocks**](https://github.com/misode/mcmeta/blob/summary/blocks/data.json) - Containing block state properties and defaults for all necessary blocks.
   * [**commands**](https://github.com/misode/mcmeta/blob/summary/commands/data.json) - The brigadier command tree.
+  * [**item_components**](https://github.com/misode/mcmeta/blob/summary/item_components/data.json) - The default item components added in 1.20.5.
   * [**registries**](https://github.com/misode/mcmeta/blob/summary/registries/data.json) - Collections of resource locations. Including the generated registries, data, and assets.
   * [**sounds**](https://github.com/misode/mcmeta/blob/summary/sounds/data.json) - The sounds.json from assets.
   * [**versions**](https://github.com/misode/mcmeta/blob/summary/versions/data.json) - A list of versions up to that point ordered with the most recent first. Each entry has the same format as the `version.json` at the root of each branch.
@@ -15,6 +16,8 @@ Each of the following branches has a commit per version. Starting from 1.14, upd
 * [**data-json**](https://github.com/misode/mcmeta/tree/data-json) - The same as **data** but only containing json files, so excluding structures.
 * [**assets**](https://github.com/misode/mcmeta/tree/assets) - The vanilla assets is if they would appear in a resource pack.
 * [**assets-json**](https://github.com/misode/mcmeta/tree/assets-json) - The same as **assets** but only containing json files, so excluding textures, sounds and shaders.
+* [**assets-tiny**](https://github.com/misode/mcmeta/tree/assets-tiny) - The same as **assets** but only containing files from the jar, so excluding sounds, non-english languages.
+* [**diff**](https://github.com/misode/mcmeta/tree/diff) - A combination of **assets**, **data**, and **summary** made to be easily viewable as a diff.
 * [**atlas**](https://github.com/misode/mcmeta/tree/atlas) - Texture atlases of blocks, items and entities
 
 ## Sources
