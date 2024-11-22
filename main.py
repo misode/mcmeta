@@ -681,8 +681,6 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 	for export in ['assets', 'data']:
 		if f'{export}-json' in exports:
 			shutil.copyfile(f'{export}/pack.mcmeta', f'{export}-json/pack.mcmeta')
-		if export == 'assets' and 'assets-tiny' in exports:
-			shutil.copyfile(f'{export}/pack.mcmeta', f'{export}-tiny/pack.mcmeta')
 
 
 def init_exports(start_date: str | None, reset: bool, fetch: bool, undo: str | None, exports: tuple[str], branch: str | None):
