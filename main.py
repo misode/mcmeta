@@ -744,7 +744,10 @@ def fix_tags(exports: tuple[str], branch: str | None):
 		export_branch = f'{branch}-{export}' if branch else export
 		os.chdir(export)
 		taglist = subprocess.run(['git', 'tag', '-l'], capture_output=True).stdout.decode('utf-8').split('\n')
-		subprocess.run(['git', 'tag', '-d', *taglist], capture_output=True)
+		batch_size = 100
+		for i in range(0, len(taglist), batch_size):
+				batch = taglist[i:i + batch_size]
+				subprocess.run(['git', 'tag', '-d', *batch], capture_output=True)
 		click.echo(f'🔥 Deleted {len(taglist) - 1} tags in {export_branch} branch')
 		commits = [c
 			for c in subprocess.run(['git', 'log', '--format=%h %f'], capture_output=True).stdout.decode('utf-8').split('\n')
