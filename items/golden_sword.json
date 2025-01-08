@@ -26,7 +26,9 @@
       "levels": {}
     },
     "minecraft:item_model": "minecraft:golden_sword",
-    "minecraft:item_name": "{\"translate\":\"item.minecraft.golden_sword\"}",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.golden_sword"
+    },
     "minecraft:lore": [],
     "minecraft:max_damage": 32,
     "minecraft:max_stack_size": 1,
@@ -36,6 +38,7 @@
       "items": "#minecraft:gold_tool_materials"
     },
     "minecraft:tool": {
+      "can_destroy_blocks_in_creative": false,
       "damage_per_block": 2,
       "rules": [
         {
@@ -44,10 +47,15 @@
           "speed": 15.0
         },
         {
+          "blocks": "#minecraft:sword_instantly_mines",
+          "speed": 3.4028235e+38
+        },
+        {
           "blocks": "#minecraft:sword_efficient",
           "speed": 1.5
         }
       ]
-    }
+    },
+    "minecraft:weapon": {}
   }
 }
