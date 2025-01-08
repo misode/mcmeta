@@ -13591,6 +13591,83 @@
     ],
     "random_sequence": "minecraft:blocks/lava_cauldron"
   },
+  "blocks/leaf_litter": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "add": false,
+                "conditions": [
+                  {
+                    "block": "minecraft:leaf_litter",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "segment_amount": "1"
+                    }
+                  }
+                ],
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "add": false,
+                "conditions": [
+                  {
+                    "block": "minecraft:leaf_litter",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "segment_amount": "2"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "add": false,
+                "conditions": [
+                  {
+                    "block": "minecraft:leaf_litter",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "segment_amount": "3"
+                    }
+                  }
+                ],
+                "count": 3.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "add": false,
+                "conditions": [
+                  {
+                    "block": "minecraft:leaf_litter",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "segment_amount": "4"
+                    }
+                  }
+                ],
+                "count": 4.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:leaf_litter"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/leaf_litter"
+  },
   "blocks/lectern": {
     "type": "minecraft:block",
     "pools": [
@@ -23569,14 +23646,28 @@
     "pools": [
       {
         "bonus_rolls": 0.0,
-        "conditions": [
-          {
-            "condition": "minecraft:survives_explosion"
-          }
-        ],
         "entries": [
           {
             "type": "minecraft:item",
+            "functions": [
+              {
+                "add": false,
+                "conditions": [
+                  {
+                    "block": "minecraft:resin_brick_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
             "name": "minecraft:resin_brick_slab"
           }
         ],
@@ -29936,6 +30027,83 @@
     ],
     "random_sequence": "minecraft:blocks/white_wool"
   },
+  "blocks/wildflowers": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "add": false,
+                "conditions": [
+                  {
+                    "block": "minecraft:wildflowers",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "flower_amount": "1"
+                    }
+                  }
+                ],
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "add": false,
+                "conditions": [
+                  {
+                    "block": "minecraft:wildflowers",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "flower_amount": "2"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "add": false,
+                "conditions": [
+                  {
+                    "block": "minecraft:wildflowers",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "flower_amount": "3"
+                    }
+                  }
+                ],
+                "count": 3.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "add": false,
+                "conditions": [
+                  {
+                    "block": "minecraft:wildflowers",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "flower_amount": "4"
+                    }
+                  }
+                ],
+                "count": 4.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:wildflowers"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/wildflowers"
+  },
   "blocks/wither_rose": {
     "type": "minecraft:block",
     "pools": [
@@ -34682,6 +34850,31 @@
           "max": 8.0,
           "min": 4.0
         }
+      },
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:empty"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 2.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:lodestone",
+            "weight": 2
+          }
+        ],
+        "rolls": 1.0
       }
     ],
     "random_sequence": "minecraft:chests/ruined_portal"

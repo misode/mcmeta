@@ -206,6 +206,23 @@
       }
     ]
   },
+  "birch_bees_0002_leaf_litter": {
+    "feature": "minecraft:birch_bees_0002_leaf_litter",
+    "placement": [
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:would_survive",
+          "state": {
+            "Name": "minecraft:birch_sapling",
+            "Properties": {
+              "stage": "0"
+            }
+          }
+        }
+      }
+    ]
+  },
   "birch_bees_002": {
     "feature": "minecraft:birch_bees_002",
     "placement": [
@@ -225,6 +242,23 @@
   },
   "birch_checked": {
     "feature": "minecraft:birch",
+    "placement": [
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:would_survive",
+          "state": {
+            "Name": "minecraft:birch_sapling",
+            "Properties": {
+              "stage": "0"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "birch_leaf_litter": {
+    "feature": "minecraft:birch_leaf_litter",
     "placement": [
       {
         "type": "minecraft:block_predicate_filter",
@@ -633,6 +667,23 @@
       }
     ]
   },
+  "dark_oak_leaf_litter": {
+    "feature": "minecraft:dark_oak_leaf_litter",
+    "placement": [
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:would_survive",
+          "state": {
+            "Name": "minecraft:dark_oak_sapling",
+            "Properties": {
+              "stage": "0"
+            }
+          }
+        }
+      }
+    ]
+  },
   "delta": {
     "feature": "minecraft:delta",
     "placement": [
@@ -910,8 +961,8 @@
       }
     ]
   },
-  "fancy_oak_bees_0002": {
-    "feature": "minecraft:fancy_oak_bees_0002",
+  "fancy_oak_bees_0002_leaf_litter": {
+    "feature": "minecraft:fancy_oak_bees_0002_leaf_litter",
     "placement": [
       {
         "type": "minecraft:block_predicate_filter",
@@ -946,6 +997,23 @@
   },
   "fancy_oak_checked": {
     "feature": "minecraft:fancy_oak",
+    "placement": [
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:would_survive",
+          "state": {
+            "Name": "minecraft:oak_sapling",
+            "Properties": {
+              "stage": "0"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "fancy_oak_leaf_litter": {
+    "feature": "minecraft:fancy_oak_leaf_litter",
     "placement": [
       {
         "type": "minecraft:block_predicate_filter",
@@ -1952,8 +2020,8 @@
       }
     ]
   },
-  "oak_bees_0002": {
-    "feature": "minecraft:oak_bees_0002",
+  "oak_bees_0002_leaf_litter": {
+    "feature": "minecraft:oak_bees_0002_leaf_litter",
     "placement": [
       {
         "type": "minecraft:block_predicate_filter",
@@ -1988,6 +2056,23 @@
   },
   "oak_checked": {
     "feature": "minecraft:oak",
+    "placement": [
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:would_survive",
+          "state": {
+            "Name": "minecraft:oak_sapling",
+            "Properties": {
+              "stage": "0"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "oak_leaf_litter": {
+    "feature": "minecraft:oak_leaf_litter",
     "placement": [
       {
         "type": "minecraft:block_predicate_filter",
@@ -3415,6 +3500,27 @@
       }
     ]
   },
+  "patch_grass_meadow": {
+    "feature": "minecraft:patch_grass_meadow",
+    "placement": [
+      {
+        "type": "minecraft:noise_threshold_count",
+        "above_noise": 10,
+        "below_noise": 5,
+        "noise_level": -0.8
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "WORLD_SURFACE_WG"
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
   "patch_grass_normal": {
     "feature": "minecraft:patch_grass",
     "placement": [
@@ -3521,6 +3627,25 @@
       {
         "type": "minecraft:heightmap",
         "heightmap": "MOTION_BLOCKING"
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "patch_leaf_litter": {
+    "feature": "minecraft:patch_leaf_litter",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 2
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "WORLD_SURFACE_WG"
       },
       {
         "type": "minecraft:biome"
@@ -4667,7 +4792,7 @@
     ]
   },
   "trees_badlands": {
-    "feature": "minecraft:oak",
+    "feature": "minecraft:oak_leaf_litter",
     "placement": [
       {
         "type": "minecraft:count",
@@ -4760,8 +4885,8 @@
       }
     ]
   },
-  "trees_birch_and_oak": {
-    "feature": "minecraft:trees_birch_and_oak",
+  "trees_birch_and_oak_leaf_litter": {
+    "feature": "minecraft:trees_birch_and_oak_leaf_litter",
     "placement": [
       {
         "type": "minecraft:count",
@@ -5628,6 +5753,50 @@
             "above_bottom": 0
           }
         }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "wildflowers_birch_forest": {
+    "feature": "minecraft:wildflowers_birch_forest",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 3
+      },
+      {
+        "type": "minecraft:rarity_filter",
+        "chance": 2
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "MOTION_BLOCKING"
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "wildflowers_meadow": {
+    "feature": "minecraft:wildflowers_meadow",
+    "placement": [
+      {
+        "type": "minecraft:noise_threshold_count",
+        "above_noise": 10,
+        "below_noise": 5,
+        "noise_level": -0.8
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "MOTION_BLOCKING"
       },
       {
         "type": "minecraft:biome"
