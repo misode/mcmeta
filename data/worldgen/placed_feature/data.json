@@ -3301,6 +3301,25 @@
       }
     ]
   },
+  "patch_bush": {
+    "feature": "minecraft:patch_bush",
+    "placement": [
+      {
+        "type": "minecraft:rarity_filter",
+        "chance": 4
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "MOTION_BLOCKING"
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
   "patch_cactus": {
     "feature": "minecraft:patch_cactus",
     "placement": []
@@ -3441,6 +3460,130 @@
             "above_bottom": 4
           }
         }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "patch_firefly_bush_near_water": {
+    "feature": "minecraft:patch_firefly_bush_near_water",
+    "placement": [
+      {
+        "type": "minecraft:rarity_filter",
+        "chance": 6
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "MOTION_BLOCKING"
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "patch_firefly_bush_near_water_swamp": {
+    "feature": "minecraft:patch_firefly_bush",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 4
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "MOTION_BLOCKING"
+      },
+      {
+        "type": "minecraft:biome"
+      },
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:all_of",
+          "predicates": [
+            {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:air"
+            },
+            {
+              "type": "minecraft:would_survive",
+              "state": {
+                "Name": "minecraft:firefly_bush"
+              }
+            },
+            {
+              "type": "minecraft:any_of",
+              "predicates": [
+                {
+                  "type": "minecraft:matching_fluids",
+                  "fluids": [
+                    "minecraft:water",
+                    "minecraft:flowing_water"
+                  ],
+                  "offset": [
+                    1,
+                    -1,
+                    0
+                  ]
+                },
+                {
+                  "type": "minecraft:matching_fluids",
+                  "fluids": [
+                    "minecraft:water",
+                    "minecraft:flowing_water"
+                  ],
+                  "offset": [
+                    -1,
+                    -1,
+                    0
+                  ]
+                },
+                {
+                  "type": "minecraft:matching_fluids",
+                  "fluids": [
+                    "minecraft:water",
+                    "minecraft:flowing_water"
+                  ],
+                  "offset": [
+                    0,
+                    -1,
+                    1
+                  ]
+                },
+                {
+                  "type": "minecraft:matching_fluids",
+                  "fluids": [
+                    "minecraft:water",
+                    "minecraft:flowing_water"
+                  ],
+                  "offset": [
+                    0,
+                    -1,
+                    -1
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "patch_firefly_bush_swamp": {
+    "feature": "minecraft:patch_firefly_bush_sparse",
+    "placement": [
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "WORLD_SURFACE_WG"
       },
       {
         "type": "minecraft:biome"
