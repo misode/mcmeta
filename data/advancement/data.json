@@ -4155,6 +4155,50 @@
     ],
     "sends_telemetry_event": true
   },
+  "adventure/use_lodestone": {
+    "parent": "minecraft:adventure/root",
+    "criteria": {
+      "use_lodestone": {
+        "conditions": {
+          "location": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "minecraft:lodestone"
+                }
+              }
+            },
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "items": "minecraft:compass"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:item_used_on_block"
+      }
+    },
+    "display": {
+      "description": {
+        "translate": "advancements.adventure.use_lodestone.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:lodestone"
+      },
+      "title": {
+        "translate": "advancements.adventure.use_lodestone.title"
+      }
+    },
+    "requirements": [
+      [
+        "use_lodestone"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
   "adventure/very_very_frightening": {
     "parent": "minecraft:adventure/throw_trident",
     "criteria": {
@@ -6334,13 +6378,13 @@
     },
     "requirements": [
       [
-        "minecraft:warm"
-      ],
-      [
         "minecraft:cold"
       ],
       [
         "minecraft:temperate"
+      ],
+      [
+        "minecraft:warm"
       ]
     ],
     "sends_telemetry_event": true
@@ -8483,50 +8527,6 @@
     "rewards": {
       "experience": 100
     },
-    "sends_telemetry_event": true
-  },
-  "nether/use_lodestone": {
-    "parent": "minecraft:nether/obtain_ancient_debris",
-    "criteria": {
-      "use_lodestone": {
-        "conditions": {
-          "location": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "block": {
-                  "blocks": "minecraft:lodestone"
-                }
-              }
-            },
-            {
-              "condition": "minecraft:match_tool",
-              "predicate": {
-                "items": "minecraft:compass"
-              }
-            }
-          ]
-        },
-        "trigger": "minecraft:item_used_on_block"
-      }
-    },
-    "display": {
-      "description": {
-        "translate": "advancements.nether.use_lodestone.description"
-      },
-      "icon": {
-        "count": 1,
-        "id": "minecraft:lodestone"
-      },
-      "title": {
-        "translate": "advancements.nether.use_lodestone.title"
-      }
-    },
-    "requirements": [
-      [
-        "use_lodestone"
-      ]
-    ],
     "sends_telemetry_event": true
   },
   "recipes/brewing/blaze_powder": {
@@ -39386,7 +39386,7 @@
         "conditions": {
           "items": [
             {
-              "items": "minecraft:egg"
+              "items": "#minecraft:eggs"
             }
           ]
         },
@@ -45573,6 +45573,38 @@
     "rewards": {
       "recipes": [
         "minecraft:paper"
+      ]
+    }
+  },
+  "recipes/misc/pink_dye_from_cactus_flower": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_cactus_flower": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:cactus_flower"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:pink_dye_from_cactus_flower"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_cactus_flower"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:pink_dye_from_cactus_flower"
       ]
     }
   },
