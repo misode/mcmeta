@@ -8,10 +8,11 @@ in vec2 oneTexel;
 uniform vec2 InSize;
 
 uniform float Resolution;
-uniform float Saturation;
 uniform float MosaicSize;
 
 out vec4 fragColor;
+
+const float Saturation = 1.5;
 
 void main() {
     vec2 mosaicInSize = InSize / MosaicSize;
