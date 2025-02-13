@@ -4,16 +4,14 @@ uniform sampler2D InSampler;
 
 in vec2 texCoord;
 in vec2 oneTexel;
-
 uniform vec2 InSize;
 
-uniform vec3 Gray;
 uniform vec3 RedMatrix;
 uniform vec3 GreenMatrix;
 uniform vec3 BlueMatrix;
-uniform vec3 Offset;
-uniform vec3 ColorScale;
-uniform float Saturation;
+
+const vec3 Gray = vec3(0.3, 0.59, 0.11);
+const float Saturation = 1.8;
 
 out vec4 fragColor;
 
@@ -25,9 +23,6 @@ void main() {
     float GreenValue = dot(InTexel.rgb, GreenMatrix);
     float BlueValue = dot(InTexel.rgb, BlueMatrix);
     vec3 OutColor = vec3(RedValue, GreenValue, BlueValue);
-
-    // Offset & Scale
-    OutColor = (OutColor * ColorScale) + Offset;
 
     // Saturation
     float Luma = dot(OutColor, Gray);

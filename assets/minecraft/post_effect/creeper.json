@@ -4,7 +4,8 @@
     },
     "passes": [
         {
-            "program": "minecraft:post/color_convolve",
+            "vertex_shader": "minecraft:post/sobel",
+            "fragment_shader": "minecraft:post/color_convolve",
             "inputs": [
                 {
                     "sampler_name": "In",
@@ -15,20 +16,24 @@
             "uniforms": [
                 {
                     "name": "RedMatrix",
+                    "type": "vec3",
                     "values": [ 0.0, 0.0, 0.0 ]
                 },
                 {
                     "name": "GreenMatrix",
+                    "type": "vec3",
                     "values": [ 0.3, 0.59, 0.11 ]
                 },
                 {
                     "name": "BlueMatrix",
+                    "type": "vec3",
                     "values": [ 0.0, 0.0, 0.0 ]
                 }
             ]
         },
         {
-            "program": "minecraft:post/bits",
+            "vertex_shader": "minecraft:post/sobel",
+            "fragment_shader": "minecraft:post/bits",
             "inputs": [
                 {
                     "sampler_name": "In",
@@ -39,10 +44,12 @@
             "uniforms": [
                 {
                     "name": "Resolution",
+                    "type": "float",
                     "values": [ 16.0 ]
                 },
                 {
                     "name": "MosaicSize",
+                    "type": "float",
                     "values": [ 4.0 ]
                 }
             ]
