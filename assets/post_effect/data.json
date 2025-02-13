@@ -5,7 +5,8 @@
     },
     "passes": [
       {
-        "program": "minecraft:post/box_blur",
+        "vertex_shader": "minecraft:post/blur",
+        "fragment_shader": "minecraft:post/box_blur",
         "inputs": [
           {
             "sampler_name": "In",
@@ -17,6 +18,111 @@
         "uniforms": [
           {
             "name": "BlurDir",
+            "type": "vec2",
+            "values": [
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Radius",
+            "type": "float"
+          }
+        ]
+      },
+      {
+        "vertex_shader": "minecraft:post/blur",
+        "fragment_shader": "minecraft:post/box_blur",
+        "inputs": [
+          {
+            "sampler_name": "In",
+            "target": "swap",
+            "bilinear": true
+          }
+        ],
+        "output": "minecraft:main",
+        "uniforms": [
+          {
+            "name": "BlurDir",
+            "type": "vec2",
+            "values": [
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Radius",
+            "type": "float"
+          }
+        ]
+      },
+      {
+        "vertex_shader": "minecraft:post/blur",
+        "fragment_shader": "minecraft:post/box_blur",
+        "inputs": [
+          {
+            "sampler_name": "In",
+            "target": "minecraft:main",
+            "bilinear": true
+          }
+        ],
+        "output": "swap",
+        "uniforms": [
+          {
+            "name": "BlurDir",
+            "type": "vec2",
+            "values": [
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Radius",
+            "type": "float"
+          }
+        ]
+      },
+      {
+        "vertex_shader": "minecraft:post/blur",
+        "fragment_shader": "minecraft:post/box_blur",
+        "inputs": [
+          {
+            "sampler_name": "In",
+            "target": "swap",
+            "bilinear": true
+          }
+        ],
+        "output": "minecraft:main",
+        "uniforms": [
+          {
+            "name": "BlurDir",
+            "type": "vec2",
+            "values": [
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Radius",
+            "type": "float"
+          }
+        ]
+      },
+      {
+        "vertex_shader": "minecraft:post/blur",
+        "fragment_shader": "minecraft:post/box_blur",
+        "inputs": [
+          {
+            "sampler_name": "In",
+            "target": "minecraft:main",
+            "bilinear": true
+          }
+        ],
+        "output": "swap",
+        "uniforms": [
+          {
+            "name": "BlurDir",
+            "type": "vec2",
             "values": [
               1.0,
               0.0
@@ -25,7 +131,8 @@
         ]
       },
       {
-        "program": "minecraft:post/box_blur",
+        "vertex_shader": "minecraft:post/blur",
+        "fragment_shader": "minecraft:post/box_blur",
         "inputs": [
           {
             "sampler_name": "In",
@@ -37,94 +144,15 @@
         "uniforms": [
           {
             "name": "BlurDir",
+            "type": "vec2",
             "values": [
               0.0,
               1.0
             ]
-          }
-        ]
-      },
-      {
-        "program": "minecraft:post/box_blur",
-        "inputs": [
+          },
           {
-            "sampler_name": "In",
-            "target": "minecraft:main",
-            "bilinear": true
-          }
-        ],
-        "output": "swap",
-        "uniforms": [
-          {
-            "name": "BlurDir",
-            "values": [
-              1.0,
-              0.0
-            ],
-            "RadiusMultiplier": 0.5
-          }
-        ]
-      },
-      {
-        "program": "minecraft:post/box_blur",
-        "inputs": [
-          {
-            "sampler_name": "In",
-            "target": "swap",
-            "bilinear": true
-          }
-        ],
-        "output": "minecraft:main",
-        "uniforms": [
-          {
-            "name": "BlurDir",
-            "values": [
-              0.0,
-              1.0
-            ],
-            "RadiusMultiplier": 0.5
-          }
-        ]
-      },
-      {
-        "program": "minecraft:post/box_blur",
-        "inputs": [
-          {
-            "sampler_name": "In",
-            "target": "minecraft:main",
-            "bilinear": true
-          }
-        ],
-        "output": "swap",
-        "uniforms": [
-          {
-            "name": "BlurDir",
-            "values": [
-              1.0,
-              0.0
-            ],
-            "RadiusMultiplier": 0.25
-          }
-        ]
-      },
-      {
-        "program": "minecraft:post/box_blur",
-        "inputs": [
-          {
-            "sampler_name": "In",
-            "target": "swap",
-            "bilinear": true
-          }
-        ],
-        "output": "minecraft:main",
-        "uniforms": [
-          {
-            "name": "BlurDir",
-            "values": [
-              0.0,
-              1.0
-            ],
-            "RadiusMultiplier": 0.25
+            "name": "Radius",
+            "type": "float"
           }
         ]
       }
@@ -136,7 +164,8 @@
     },
     "passes": [
       {
-        "program": "minecraft:post/color_convolve",
+        "vertex_shader": "minecraft:post/sobel",
+        "fragment_shader": "minecraft:post/color_convolve",
         "inputs": [
           {
             "sampler_name": "In",
@@ -147,6 +176,7 @@
         "uniforms": [
           {
             "name": "RedMatrix",
+            "type": "vec3",
             "values": [
               0.0,
               0.0,
@@ -155,6 +185,7 @@
           },
           {
             "name": "GreenMatrix",
+            "type": "vec3",
             "values": [
               0.3,
               0.59,
@@ -163,6 +194,7 @@
           },
           {
             "name": "BlueMatrix",
+            "type": "vec3",
             "values": [
               0.0,
               0.0,
@@ -172,7 +204,8 @@
         ]
       },
       {
-        "program": "minecraft:post/bits",
+        "vertex_shader": "minecraft:post/sobel",
+        "fragment_shader": "minecraft:post/bits",
         "inputs": [
           {
             "sampler_name": "In",
@@ -183,12 +216,14 @@
         "uniforms": [
           {
             "name": "Resolution",
+            "type": "float",
             "values": [
               16.0
             ]
           },
           {
             "name": "MosaicSize",
+            "type": "float",
             "values": [
               4.0
             ]
@@ -203,7 +238,8 @@
     },
     "passes": [
       {
-        "program": "minecraft:post/entity_outline",
+        "vertex_shader": "minecraft:post/sobel",
+        "fragment_shader": "minecraft:post/entity_sobel",
         "inputs": [
           {
             "sampler_name": "In",
@@ -213,7 +249,8 @@
         "output": "swap"
       },
       {
-        "program": "minecraft:post/entity_outline_box_blur",
+        "vertex_shader": "minecraft:post/blur",
+        "fragment_shader": "minecraft:post/entity_outline_box_blur",
         "inputs": [
           {
             "sampler_name": "In",
@@ -225,6 +262,7 @@
         "uniforms": [
           {
             "name": "BlurDir",
+            "type": "vec2",
             "values": [
               1.0,
               0.0
@@ -233,7 +271,8 @@
         ]
       },
       {
-        "program": "minecraft:post/entity_outline_box_blur",
+        "vertex_shader": "minecraft:post/blur",
+        "fragment_shader": "minecraft:post/entity_outline_box_blur",
         "inputs": [
           {
             "sampler_name": "In",
@@ -245,6 +284,7 @@
         "uniforms": [
           {
             "name": "BlurDir",
+            "type": "vec2",
             "values": [
               0.0,
               1.0
@@ -253,11 +293,24 @@
         ]
       },
       {
-        "program": "minecraft:post/blit",
+        "vertex_shader": "minecraft:post/blit",
+        "fragment_shader": "minecraft:post/blit",
         "inputs": [
           {
             "sampler_name": "In",
             "target": "swap"
+          }
+        ],
+        "uniforms": [
+          {
+            "name": "ColorModulate",
+            "type": "vec4",
+            "values": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
           }
         ],
         "output": "minecraft:entity_outline"
@@ -270,7 +323,8 @@
     },
     "passes": [
       {
-        "program": "minecraft:post/invert",
+        "vertex_shader": "minecraft:post/blit",
+        "fragment_shader": "minecraft:post/invert",
         "inputs": [
           {
             "sampler_name": "In",
@@ -281,6 +335,7 @@
         "uniforms": [
           {
             "name": "InverseAmount",
+            "type": "float",
             "values": [
               0.8
             ]
@@ -288,11 +343,24 @@
         ]
       },
       {
-        "program": "minecraft:post/blit",
+        "vertex_shader": "minecraft:post/blit",
+        "fragment_shader": "minecraft:post/blit",
         "inputs": [
           {
             "sampler_name": "In",
             "target": "swap"
+          }
+        ],
+        "uniforms": [
+          {
+            "name": "ColorModulate",
+            "type": "vec4",
+            "values": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
           }
         ],
         "output": "minecraft:main"
@@ -308,7 +376,8 @@
     },
     "passes": [
       {
-        "program": "minecraft:post/box_blur",
+        "vertex_shader": "minecraft:post/blur",
+        "fragment_shader": "minecraft:post/box_blur",
         "inputs": [
           {
             "sampler_name": "In",
@@ -320,6 +389,7 @@
         "uniforms": [
           {
             "name": "BlurDir",
+            "type": "vec2",
             "values": [
               1.0,
               0.0
@@ -327,6 +397,7 @@
           },
           {
             "name": "Radius",
+            "type": "float",
             "values": [
               15.0
             ]
@@ -334,7 +405,8 @@
         ]
       },
       {
-        "program": "minecraft:post/box_blur",
+        "vertex_shader": "minecraft:post/blur",
+        "fragment_shader": "minecraft:post/box_blur",
         "inputs": [
           {
             "sampler_name": "In",
@@ -346,6 +418,7 @@
         "uniforms": [
           {
             "name": "BlurDir",
+            "type": "vec2",
             "values": [
               0.0,
               1.0
@@ -353,6 +426,7 @@
           },
           {
             "name": "Radius",
+            "type": "float",
             "values": [
               15.0
             ]
@@ -360,7 +434,8 @@
         ]
       },
       {
-        "program": "minecraft:post/box_blur",
+        "vertex_shader": "minecraft:post/blur",
+        "fragment_shader": "minecraft:post/box_blur",
         "inputs": [
           {
             "sampler_name": "In",
@@ -372,6 +447,7 @@
         "uniforms": [
           {
             "name": "BlurDir",
+            "type": "vec2",
             "values": [
               1.0,
               0.0
@@ -379,6 +455,7 @@
           },
           {
             "name": "Radius",
+            "type": "float",
             "values": [
               7.0
             ]
@@ -386,7 +463,8 @@
         ]
       },
       {
-        "program": "minecraft:post/box_blur",
+        "vertex_shader": "minecraft:post/blur",
+        "fragment_shader": "minecraft:post/box_blur",
         "inputs": [
           {
             "sampler_name": "In",
@@ -398,6 +476,7 @@
         "uniforms": [
           {
             "name": "BlurDir",
+            "type": "vec2",
             "values": [
               0.0,
               1.0
@@ -405,6 +484,7 @@
           },
           {
             "name": "Radius",
+            "type": "float",
             "values": [
               7.0
             ]
@@ -412,7 +492,8 @@
         ]
       },
       {
-        "program": "minecraft:post/spider",
+        "vertex_shader": "minecraft:post/rotscale",
+        "fragment_shader": "minecraft:post/spiderclip",
         "inputs": [
           {
             "sampler_name": "In",
@@ -427,6 +508,7 @@
         "uniforms": [
           {
             "name": "InScale",
+            "type": "vec2",
             "values": [
               1.25,
               2.0
@@ -434,13 +516,22 @@
           },
           {
             "name": "InOffset",
+            "type": "vec2",
             "values": [
               -0.125,
               -0.1
             ]
           },
           {
+            "name": "InRotation",
+            "type": "float",
+            "values": [
+              0
+            ]
+          },
+          {
             "name": "Scissor",
+            "type": "vec4",
             "values": [
               0.0,
               0.0,
@@ -450,6 +541,7 @@
           },
           {
             "name": "Vignette",
+            "type": "vec4",
             "values": [
               0.1,
               0.1,
@@ -460,7 +552,8 @@
         ]
       },
       {
-        "program": "minecraft:post/spider",
+        "vertex_shader": "minecraft:post/rotscale",
+        "fragment_shader": "minecraft:post/spiderclip",
         "inputs": [
           {
             "sampler_name": "In",
@@ -475,6 +568,7 @@
         "uniforms": [
           {
             "name": "InScale",
+            "type": "vec2",
             "values": [
               2.35,
               4.2
@@ -482,6 +576,7 @@
           },
           {
             "name": "InOffset",
+            "type": "vec2",
             "values": [
               -1.1,
               -1.5
@@ -489,12 +584,14 @@
           },
           {
             "name": "InRotation",
+            "type": "float",
             "values": [
               -45.0
             ]
           },
           {
             "name": "Scissor",
+            "type": "vec4",
             "values": [
               0.21,
               0.0,
@@ -504,6 +601,7 @@
           },
           {
             "name": "Vignette",
+            "type": "vec4",
             "values": [
               0.31,
               0.1,
@@ -514,7 +612,8 @@
         ]
       },
       {
-        "program": "minecraft:post/spider",
+        "vertex_shader": "minecraft:post/rotscale",
+        "fragment_shader": "minecraft:post/spiderclip",
         "inputs": [
           {
             "sampler_name": "In",
@@ -529,6 +628,7 @@
         "uniforms": [
           {
             "name": "InScale",
+            "type": "vec2",
             "values": [
               2.35,
               4.2
@@ -536,6 +636,7 @@
           },
           {
             "name": "InOffset",
+            "type": "vec2",
             "values": [
               0.45,
               -4.45
@@ -543,12 +644,14 @@
           },
           {
             "name": "InRotation",
+            "type": "float",
             "values": [
               45.0
             ]
           },
           {
             "name": "Scissor",
+            "type": "vec4",
             "values": [
               0.21,
               0.0,
@@ -558,6 +661,7 @@
           },
           {
             "name": "Vignette",
+            "type": "vec4",
             "values": [
               0.31,
               0.1,
@@ -568,7 +672,8 @@
         ]
       },
       {
-        "program": "minecraft:post/spider",
+        "vertex_shader": "minecraft:post/rotscale",
+        "fragment_shader": "minecraft:post/spiderclip",
         "inputs": [
           {
             "sampler_name": "In",
@@ -583,6 +688,7 @@
         "uniforms": [
           {
             "name": "InScale",
+            "type": "vec2",
             "values": [
               2.35,
               2.35
@@ -590,6 +696,7 @@
           },
           {
             "name": "InOffset",
+            "type": "vec2",
             "values": [
               -0.385,
               -1.29
@@ -597,12 +704,24 @@
           },
           {
             "name": "InRotation",
+            "type": "float",
             "values": [
               0.0
             ]
           },
           {
+            "name": "Scissor",
+            "type": "vec4",
+            "values": [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
             "name": "Vignette",
+            "type": "vec4",
             "values": [
               0.31,
               0.1,
@@ -613,7 +732,8 @@
         ]
       },
       {
-        "program": "minecraft:post/spider",
+        "vertex_shader": "minecraft:post/rotscale",
+        "fragment_shader": "minecraft:post/spiderclip",
         "inputs": [
           {
             "sampler_name": "In",
@@ -628,6 +748,7 @@
         "uniforms": [
           {
             "name": "InScale",
+            "type": "vec2",
             "values": [
               2.35,
               2.35
@@ -635,13 +756,32 @@
           },
           {
             "name": "InOffset",
+            "type": "vec2",
             "values": [
               -0.965,
               -1.29
             ]
           },
           {
+            "name": "InRotation",
+            "type": "float",
+            "values": [
+              0
+            ]
+          },
+          {
+            "name": "Scissor",
+            "type": "vec4",
+            "values": [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
             "name": "Vignette",
+            "type": "vec4",
             "values": [
               0.31,
               0.1,
@@ -652,7 +792,8 @@
         ]
       },
       {
-        "program": "minecraft:post/blit",
+        "vertex_shader": "minecraft:post/blit",
+        "fragment_shader": "minecraft:post/blit",
         "inputs": [
           {
             "sampler_name": "In",
@@ -663,6 +804,7 @@
         "uniforms": [
           {
             "name": "ColorModulate",
+            "type": "vec4",
             "values": [
               1.0,
               0.8,
@@ -680,7 +822,8 @@
     },
     "passes": [
       {
-        "program": "minecraft:post/transparency",
+        "vertex_shader": "minecraft:post/screenquad",
+        "fragment_shader": "minecraft:post/transparency",
         "inputs": [
           {
             "sampler_name": "Main",
@@ -740,11 +883,24 @@
         "output": "final"
       },
       {
-        "program": "minecraft:post/blit",
+        "vertex_shader": "minecraft:post/blit",
+        "fragment_shader": "minecraft:post/blit",
         "inputs": [
           {
             "sampler_name": "In",
             "target": "final"
+          }
+        ],
+        "uniforms": [
+          {
+            "name": "ColorModulate",
+            "type": "vec4",
+            "values": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
           }
         ],
         "output": "minecraft:main"
