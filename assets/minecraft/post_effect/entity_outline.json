@@ -4,7 +4,8 @@
     },
     "passes": [
         {
-            "program": "minecraft:post/entity_outline",
+            "vertex_shader": "minecraft:post/sobel",
+            "fragment_shader": "minecraft:post/entity_sobel",
             "inputs": [
                 {
                     "sampler_name": "In",
@@ -14,7 +15,8 @@
             "output": "swap"
         },
         {
-            "program": "minecraft:post/entity_outline_box_blur",
+            "vertex_shader": "minecraft:post/blur",
+            "fragment_shader": "minecraft:post/entity_outline_box_blur",
             "inputs": [
                 {
                     "sampler_name": "In",
@@ -26,12 +28,14 @@
             "uniforms": [
                 {
                     "name": "BlurDir",
+                    "type": "vec2",
                     "values": [ 1.0, 0.0 ]
                 }
             ]
         },
         {
-            "program": "minecraft:post/entity_outline_box_blur",
+            "vertex_shader": "minecraft:post/blur",
+            "fragment_shader": "minecraft:post/entity_outline_box_blur",
             "inputs": [
                 {
                     "sampler_name": "In",
@@ -43,16 +47,25 @@
             "uniforms": [
                 {
                     "name": "BlurDir",
+                    "type": "vec2",
                     "values": [ 0.0, 1.0 ]
                 }
             ]
         },
         {
-            "program": "minecraft:post/blit",
+            "vertex_shader": "minecraft:post/blit",
+            "fragment_shader": "minecraft:post/blit",
             "inputs": [
                 {
                     "sampler_name": "In",
                     "target": "swap"
+                }
+            ],
+            "uniforms": [
+                {
+                    "name": "ColorModulate",
+                    "type": "vec4",
+                    "values": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             ],
             "output": "minecraft:entity_outline"
