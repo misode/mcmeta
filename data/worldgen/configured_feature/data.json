@@ -1228,8 +1228,16 @@
       "default": "minecraft:birch_bees_0002",
       "features": [
         {
+          "chance": 0.00625,
+          "feature": "minecraft:fallen_super_birch_tree"
+        },
+        {
           "chance": 0.5,
           "feature": "minecraft:super_birch_bees_0002"
+        },
+        {
+          "chance": 0.0125,
+          "feature": "minecraft:fallen_birch_tree"
         }
       ]
     }
@@ -1949,8 +1957,16 @@
           "feature": "minecraft:dark_oak_leaf_litter"
         },
         {
+          "chance": 0.0025,
+          "feature": "minecraft:fallen_birch_tree"
+        },
+        {
           "chance": 0.2,
           "feature": "minecraft:birch_leaf_litter"
+        },
+        {
+          "chance": 0.0125,
+          "feature": "minecraft:fallen_oak_tree"
         },
         {
           "chance": 0.1,
@@ -2939,6 +2955,244 @@
     "config": {
       "crystal_invulnerable": false,
       "spikes": []
+    }
+  },
+  "fallen_birch_tree": {
+    "type": "minecraft:fallen_tree",
+    "config": {
+      "log_decorators": [
+        {
+          "type": "minecraft:attached_to_logs",
+          "block_provider": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "minecraft:red_mushroom"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "minecraft:brown_mushroom"
+                },
+                "weight": 1
+              }
+            ]
+          },
+          "directions": [
+            "up"
+          ],
+          "probability": 0.1
+        }
+      ],
+      "log_length": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 8,
+        "min_inclusive": 5
+      },
+      "stump_decorators": [],
+      "trunk_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:birch_log",
+          "Properties": {
+            "axis": "y"
+          }
+        }
+      }
+    }
+  },
+  "fallen_jungle_tree": {
+    "type": "minecraft:fallen_tree",
+    "config": {
+      "log_decorators": [
+        {
+          "type": "minecraft:attached_to_logs",
+          "block_provider": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "minecraft:red_mushroom"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "minecraft:brown_mushroom"
+                },
+                "weight": 1
+              }
+            ]
+          },
+          "directions": [
+            "up"
+          ],
+          "probability": 0.1
+        }
+      ],
+      "log_length": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 11,
+        "min_inclusive": 4
+      },
+      "stump_decorators": [
+        {
+          "type": "minecraft:trunk_vine"
+        }
+      ],
+      "trunk_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:jungle_log",
+          "Properties": {
+            "axis": "y"
+          }
+        }
+      }
+    }
+  },
+  "fallen_oak_tree": {
+    "type": "minecraft:fallen_tree",
+    "config": {
+      "log_decorators": [
+        {
+          "type": "minecraft:attached_to_logs",
+          "block_provider": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "minecraft:red_mushroom"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "minecraft:brown_mushroom"
+                },
+                "weight": 1
+              }
+            ]
+          },
+          "directions": [
+            "up"
+          ],
+          "probability": 0.1
+        }
+      ],
+      "log_length": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 7,
+        "min_inclusive": 4
+      },
+      "stump_decorators": [
+        {
+          "type": "minecraft:trunk_vine"
+        }
+      ],
+      "trunk_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:oak_log",
+          "Properties": {
+            "axis": "y"
+          }
+        }
+      }
+    }
+  },
+  "fallen_spruce_tree": {
+    "type": "minecraft:fallen_tree",
+    "config": {
+      "log_decorators": [
+        {
+          "type": "minecraft:attached_to_logs",
+          "block_provider": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "minecraft:red_mushroom"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "minecraft:brown_mushroom"
+                },
+                "weight": 1
+              }
+            ]
+          },
+          "directions": [
+            "up"
+          ],
+          "probability": 0.1
+        }
+      ],
+      "log_length": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 10,
+        "min_inclusive": 6
+      },
+      "stump_decorators": [],
+      "trunk_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:spruce_log",
+          "Properties": {
+            "axis": "y"
+          }
+        }
+      }
+    }
+  },
+  "fallen_super_birch_tree": {
+    "type": "minecraft:fallen_tree",
+    "config": {
+      "log_decorators": [
+        {
+          "type": "minecraft:attached_to_logs",
+          "block_provider": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "minecraft:red_mushroom"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "minecraft:brown_mushroom"
+                },
+                "weight": 1
+              }
+            ]
+          },
+          "directions": [
+            "up"
+          ],
+          "probability": 0.1
+        }
+      ],
+      "log_length": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 15,
+        "min_inclusive": 5
+      },
+      "stump_decorators": [],
+      "trunk_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:birch_log",
+          "Properties": {
+            "axis": "y"
+          }
+        }
+      }
     }
   },
   "fancy_oak": {
@@ -9467,11 +9721,39 @@
       }
     }
   },
+  "trees_badlands": {
+    "type": "minecraft:random_selector",
+    "config": {
+      "default": "minecraft:oak_leaf_litter",
+      "features": [
+        {
+          "chance": 0.0125,
+          "feature": "minecraft:fallen_oak_tree"
+        }
+      ]
+    }
+  },
+  "trees_birch": {
+    "type": "minecraft:random_selector",
+    "config": {
+      "default": "minecraft:birch_bees_0002",
+      "features": [
+        {
+          "chance": 0.0125,
+          "feature": "minecraft:fallen_birch_tree"
+        }
+      ]
+    }
+  },
   "trees_birch_and_oak_leaf_litter": {
     "type": "minecraft:random_selector",
     "config": {
       "default": "minecraft:oak_bees_0002_leaf_litter",
       "features": [
+        {
+          "chance": 0.0025,
+          "feature": "minecraft:fallen_birch_tree"
+        },
         {
           "chance": 0.2,
           "feature": "minecraft:birch_bees_0002_leaf_litter"
@@ -9479,6 +9761,10 @@
         {
           "chance": 0.1,
           "feature": "minecraft:fancy_oak_bees_0002_leaf_litter"
+        },
+        {
+          "chance": 0.0125,
+          "feature": "minecraft:fallen_oak_tree"
         }
       ]
     }
@@ -9488,6 +9774,10 @@
     "config": {
       "default": "minecraft:oak_bees_002",
       "features": [
+        {
+          "chance": 0.0025,
+          "feature": "minecraft:fallen_birch_tree"
+        },
         {
           "chance": 0.2,
           "feature": "minecraft:birch_bees_002"
@@ -9527,6 +9817,10 @@
         {
           "chance": 0.33333334,
           "feature": "minecraft:mega_jungle_tree_checked"
+        },
+        {
+          "chance": 0.0125,
+          "feature": "minecraft:fallen_jungle_tree"
         }
       ]
     }
@@ -9547,6 +9841,10 @@
         {
           "chance": 0.33333334,
           "feature": "minecraft:pine_checked"
+        },
+        {
+          "chance": 0.0125,
+          "feature": "minecraft:fallen_spruce_tree"
         }
       ]
     }
@@ -9563,6 +9861,10 @@
         {
           "chance": 0.33333334,
           "feature": "minecraft:pine_checked"
+        },
+        {
+          "chance": 0.0125,
+          "feature": "minecraft:fallen_spruce_tree"
         }
       ]
     }
@@ -9581,6 +9883,10 @@
             "feature": "minecraft:fancy_oak_bees_005",
             "placement": []
           }
+        },
+        {
+          "chance": 0.0125,
+          "feature": "minecraft:fallen_oak_tree"
         }
       ]
     }
@@ -9593,6 +9899,22 @@
         {
           "chance": 0.8,
           "feature": "minecraft:acacia_checked"
+        },
+        {
+          "chance": 0.0125,
+          "feature": "minecraft:fallen_oak_tree"
+        }
+      ]
+    }
+  },
+  "trees_snowy": {
+    "type": "minecraft:random_selector",
+    "config": {
+      "default": "minecraft:spruce_checked",
+      "features": [
+        {
+          "chance": 0.0125,
+          "feature": "minecraft:fallen_spruce_tree"
         }
       ]
     }
@@ -9609,6 +9931,10 @@
         {
           "chance": 0.5,
           "feature": "minecraft:jungle_bush"
+        },
+        {
+          "chance": 0.0125,
+          "feature": "minecraft:fallen_jungle_tree"
         }
       ]
     }
@@ -9621,6 +9947,10 @@
         {
           "chance": 0.33333334,
           "feature": "minecraft:pine_checked"
+        },
+        {
+          "chance": 0.0125,
+          "feature": "minecraft:fallen_spruce_tree"
         }
       ]
     }
@@ -9643,12 +9973,20 @@
       "default": "minecraft:oak_checked",
       "features": [
         {
+          "chance": 0.008325,
+          "feature": "minecraft:fallen_spruce_tree"
+        },
+        {
           "chance": 0.666,
           "feature": "minecraft:spruce_checked"
         },
         {
           "chance": 0.1,
           "feature": "minecraft:fancy_oak_checked"
+        },
+        {
+          "chance": 0.0125,
+          "feature": "minecraft:fallen_oak_tree"
         }
       ]
     }
