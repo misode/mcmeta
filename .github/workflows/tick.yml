@@ -21,6 +21,19 @@ jobs:
   update:
     needs: check
     if: ${{ needs.check.outputs.id != '' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - export: assets
+          - export: assets-json
+          - export: assets-tiny
+          - export: data
+          - export: data-json
+          - export: registries
+          - export: diff
+          - export: atlas
+    name: 'update-${{ matrix.export }}'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -28,7 +41,7 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: '3.x'
-      
+
       - run: pip install -r requirements.txt
 
       - uses: actions/setup-java@v2
@@ -39,11 +52,41 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: '.cache'
-          key: mcmeta-${{ needs.check.outputs.id }}
+          key: mcmeta-${{ matrix.export }}-${{ needs.check.outputs.id }}
           restore-keys: |
-            mcmeta-
+            mcmeta-${{ matrix.export }}-
 
-      - run: python main.py --version ${{ needs.check.outputs.id }} --fetch --export all --commit --push
+      - run: python main.py --version ${{ needs.check.outputs.id }} --fetch --export ${{ matrix.export }} --commit --push
+        env:
+          github-username: misode
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-repository: misode/mcmeta
+
+  update-summary:
+    needs: update
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - run: pip install -r requirements.txt
+
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - uses: actions/cache@v3
+        with:
+          path: '.cache'
+          key: mcmeta-summary-${{ needs.check.outputs.id }}
+          restore-keys: |
+            mcmeta-summary-
+
+      - run: python main.py --version ${{ needs.check.outputs.id }} --fetch --export summary --commit --push
         env:
           github-username: misode
           github-token: ${{ secrets.GITHUB_TOKEN }}
