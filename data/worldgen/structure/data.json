@@ -3,6 +3,8 @@
     "type": "minecraft:jigsaw",
     "biomes": "#minecraft:has_structure/ancient_city",
     "max_distance_from_center": 116,
+    "project_start_to_surface": false,
+    "required_exit_type": "none",
     "size": 7,
     "spawn_overrides": {
       "ambient": {
@@ -51,6 +53,8 @@
     "type": "minecraft:jigsaw",
     "biomes": "#minecraft:has_structure/bastion_remnant",
     "max_distance_from_center": 80,
+    "project_start_to_surface": false,
+    "required_exit_type": "none",
     "size": 6,
     "spawn_overrides": {},
     "start_height": {
@@ -63,24 +67,48 @@
   "buried_treasure": {
     "type": "minecraft:buried_treasure",
     "biomes": "#minecraft:has_structure/buried_treasure",
+    "required_exit_type": "none",
     "spawn_overrides": {},
     "step": "underground_structures"
+  },
+  "cave_mine_exit": {
+    "type": "minecraft:jigsaw",
+    "max_distance_from_center": 80,
+    "project_start_to_surface": true,
+    "required_exit_type": "cave",
+    "size": 7,
+    "spawn_overrides": {},
+    "start_height": {
+      "type": "minecraft:uniform",
+      "max_inclusive": {
+        "above_bottom": 120
+      },
+      "min_inclusive": {
+        "above_bottom": 0
+      }
+    },
+    "start_pool": "minecraft:mine_exits/root",
+    "step": "surface_structures",
+    "use_expansion_hack": false
   },
   "desert_pyramid": {
     "type": "minecraft:desert_pyramid",
     "biomes": "#minecraft:has_structure/desert_pyramid",
+    "required_exit_type": "none",
     "spawn_overrides": {},
     "step": "surface_structures"
   },
   "end_city": {
     "type": "minecraft:end_city",
     "biomes": "#minecraft:has_structure/end_city",
+    "required_exit_type": "none",
     "spawn_overrides": {},
     "step": "surface_structures"
   },
   "fortress": {
     "type": "minecraft:fortress",
     "biomes": "#minecraft:has_structure/nether_fortress",
+    "required_exit_type": "none",
     "spawn_overrides": {
       "monster": {
         "bounding_box": "piece",
@@ -123,18 +151,21 @@
   "igloo": {
     "type": "minecraft:igloo",
     "biomes": "#minecraft:has_structure/igloo",
+    "required_exit_type": "none",
     "spawn_overrides": {},
     "step": "surface_structures"
   },
   "jungle_pyramid": {
     "type": "minecraft:jungle_temple",
     "biomes": "#minecraft:has_structure/jungle_temple",
+    "required_exit_type": "none",
     "spawn_overrides": {},
     "step": "surface_structures"
   },
   "mansion": {
     "type": "minecraft:woodland_mansion",
     "biomes": "#minecraft:has_structure/woodland_mansion",
+    "required_exit_type": "none",
     "spawn_overrides": {},
     "step": "surface_structures"
   },
@@ -142,6 +173,7 @@
     "type": "minecraft:mineshaft",
     "biomes": "#minecraft:has_structure/mineshaft",
     "mineshaft_type": "normal",
+    "required_exit_type": "none",
     "spawn_overrides": {},
     "step": "underground_structures"
   },
@@ -149,12 +181,14 @@
     "type": "minecraft:mineshaft",
     "biomes": "#minecraft:has_structure/mineshaft_mesa",
     "mineshaft_type": "mesa",
+    "required_exit_type": "none",
     "spawn_overrides": {},
     "step": "underground_structures"
   },
   "monument": {
     "type": "minecraft:ocean_monument",
     "biomes": "#minecraft:has_structure/ocean_monument",
+    "required_exit_type": "none",
     "spawn_overrides": {
       "axolotls": {
         "bounding_box": "full",
@@ -190,6 +224,7 @@
         "absolute": 32
       }
     },
+    "required_exit_type": "none",
     "spawn_overrides": {},
     "step": "underground_decoration",
     "terrain_adaptation": "beard_thin"
@@ -200,6 +235,7 @@
     "biomes": "#minecraft:has_structure/ocean_ruin_cold",
     "cluster_probability": 0.9,
     "large_probability": 0.3,
+    "required_exit_type": "none",
     "spawn_overrides": {},
     "step": "surface_structures"
   },
@@ -209,6 +245,7 @@
     "biomes": "#minecraft:has_structure/ocean_ruin_warm",
     "cluster_probability": 0.9,
     "large_probability": 0.3,
+    "required_exit_type": "none",
     "spawn_overrides": {},
     "step": "surface_structures"
   },
@@ -217,6 +254,8 @@
     "biomes": "#minecraft:has_structure/pillager_outpost",
     "max_distance_from_center": 80,
     "project_start_to_heightmap": "WORLD_SURFACE_WG",
+    "project_start_to_surface": false,
+    "required_exit_type": "none",
     "size": 7,
     "spawn_overrides": {
       "monster": {
@@ -239,9 +278,25 @@
     "terrain_adaptation": "beard_thin",
     "use_expansion_hack": true
   },
+  "rare_surface_mine_exit": {
+    "type": "minecraft:jigsaw",
+    "max_distance_from_center": 80,
+    "project_start_to_heightmap": "OCEAN_FLOOR_WG",
+    "project_start_to_surface": false,
+    "required_exit_type": "rare_surface",
+    "size": 7,
+    "spawn_overrides": {},
+    "start_height": {
+      "absolute": 0
+    },
+    "start_pool": "minecraft:mine_exits/root",
+    "step": "surface_structures",
+    "use_expansion_hack": false
+  },
   "ruined_portal": {
     "type": "minecraft:ruined_portal",
     "biomes": "#minecraft:has_structure/ruined_portal_standard",
+    "required_exit_type": "none",
     "setups": [
       {
         "air_pocket_probability": 1.0,
@@ -270,6 +325,7 @@
   "ruined_portal_desert": {
     "type": "minecraft:ruined_portal",
     "biomes": "#minecraft:has_structure/ruined_portal_desert",
+    "required_exit_type": "none",
     "setups": [
       {
         "air_pocket_probability": 0.0,
@@ -288,6 +344,7 @@
   "ruined_portal_jungle": {
     "type": "minecraft:ruined_portal",
     "biomes": "#minecraft:has_structure/ruined_portal_jungle",
+    "required_exit_type": "none",
     "setups": [
       {
         "air_pocket_probability": 0.5,
@@ -306,6 +363,7 @@
   "ruined_portal_mountain": {
     "type": "minecraft:ruined_portal",
     "biomes": "#minecraft:has_structure/ruined_portal_mountain",
+    "required_exit_type": "none",
     "setups": [
       {
         "air_pocket_probability": 1.0,
@@ -334,6 +392,7 @@
   "ruined_portal_nether": {
     "type": "minecraft:ruined_portal",
     "biomes": "#minecraft:has_structure/ruined_portal_nether",
+    "required_exit_type": "none",
     "setups": [
       {
         "air_pocket_probability": 0.5,
@@ -352,6 +411,7 @@
   "ruined_portal_ocean": {
     "type": "minecraft:ruined_portal",
     "biomes": "#minecraft:has_structure/ruined_portal_ocean",
+    "required_exit_type": "none",
     "setups": [
       {
         "air_pocket_probability": 0.0,
@@ -370,6 +430,7 @@
   "ruined_portal_swamp": {
     "type": "minecraft:ruined_portal",
     "biomes": "#minecraft:has_structure/ruined_portal_swamp",
+    "required_exit_type": "none",
     "setups": [
       {
         "air_pocket_probability": 0.0,
@@ -389,6 +450,7 @@
     "type": "minecraft:shipwreck",
     "biomes": "#minecraft:has_structure/shipwreck",
     "is_beached": false,
+    "required_exit_type": "none",
     "spawn_overrides": {},
     "step": "surface_structures"
   },
@@ -396,25 +458,43 @@
     "type": "minecraft:shipwreck",
     "biomes": "#minecraft:has_structure/shipwreck_beached",
     "is_beached": true,
+    "required_exit_type": "none",
     "spawn_overrides": {},
     "step": "surface_structures"
   },
   "stronghold": {
     "type": "minecraft:stronghold",
     "biomes": "#minecraft:has_structure/stronghold",
+    "required_exit_type": "none",
     "spawn_overrides": {},
     "step": "surface_structures",
     "terrain_adaptation": "bury"
   },
+  "surface_mine_exit": {
+    "type": "minecraft:jigsaw",
+    "max_distance_from_center": 80,
+    "project_start_to_heightmap": "OCEAN_FLOOR_WG",
+    "project_start_to_surface": false,
+    "required_exit_type": "surface",
+    "size": 7,
+    "spawn_overrides": {},
+    "start_height": {
+      "absolute": 0
+    },
+    "start_pool": "minecraft:mine_exits/root",
+    "step": "surface_structures",
+    "use_expansion_hack": false
+  },
   "swamp_hut": {
     "type": "minecraft:swamp_hut",
     "biomes": "#minecraft:has_structure/swamp_hut",
+    "required_exit_type": "none",
     "spawn_overrides": {
       "creature": {
         "bounding_box": "piece",
         "spawns": [
           {
-            "type": "minecraft:cat",
+            "type": "minecraft:pet_cat",
             "maxCount": 1,
             "minCount": 1,
             "weight": 1
@@ -440,6 +520,8 @@
     "biomes": "#minecraft:has_structure/trail_ruins",
     "max_distance_from_center": 80,
     "project_start_to_heightmap": "WORLD_SURFACE_WG",
+    "project_start_to_surface": false,
+    "required_exit_type": "none",
     "size": 7,
     "spawn_overrides": {},
     "start_height": {
@@ -548,6 +630,8 @@
         ]
       }
     ],
+    "project_start_to_surface": false,
+    "required_exit_type": "none",
     "size": 20,
     "spawn_overrides": {
       "ambient": {
@@ -602,6 +686,8 @@
     "biomes": "#minecraft:has_structure/village_desert",
     "max_distance_from_center": 80,
     "project_start_to_heightmap": "WORLD_SURFACE_WG",
+    "project_start_to_surface": false,
+    "required_exit_type": "none",
     "size": 6,
     "spawn_overrides": {},
     "start_height": {
@@ -617,6 +703,8 @@
     "biomes": "#minecraft:has_structure/village_plains",
     "max_distance_from_center": 80,
     "project_start_to_heightmap": "WORLD_SURFACE_WG",
+    "project_start_to_surface": false,
+    "required_exit_type": "none",
     "size": 6,
     "spawn_overrides": {},
     "start_height": {
@@ -632,6 +720,8 @@
     "biomes": "#minecraft:has_structure/village_savanna",
     "max_distance_from_center": 80,
     "project_start_to_heightmap": "WORLD_SURFACE_WG",
+    "project_start_to_surface": false,
+    "required_exit_type": "none",
     "size": 6,
     "spawn_overrides": {},
     "start_height": {
@@ -647,6 +737,8 @@
     "biomes": "#minecraft:has_structure/village_snowy",
     "max_distance_from_center": 80,
     "project_start_to_heightmap": "WORLD_SURFACE_WG",
+    "project_start_to_surface": false,
+    "required_exit_type": "none",
     "size": 6,
     "spawn_overrides": {},
     "start_height": {
@@ -662,6 +754,8 @@
     "biomes": "#minecraft:has_structure/village_taiga",
     "max_distance_from_center": 80,
     "project_start_to_heightmap": "WORLD_SURFACE_WG",
+    "project_start_to_surface": false,
+    "required_exit_type": "none",
     "size": 6,
     "spawn_overrides": {},
     "start_height": {

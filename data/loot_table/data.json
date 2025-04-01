@@ -9550,6 +9550,27 @@
     ],
     "random_sequence": "minecraft:blocks/diamond_ore"
   },
+  "blocks/dimension_control": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:dimension_control"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/dimension_control"
+  },
   "blocks/diorite": {
     "type": "minecraft:block",
     "pools": [
@@ -16121,6 +16142,80 @@
       }
     ],
     "random_sequence": "minecraft:blocks/melon_stem"
+  },
+  "blocks/mine_crafter": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:mine_crafter"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/mine_crafter"
+  },
+  "blocks/mine_revisitor": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:mine_revisitor"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/mine_revisitor"
+  },
+  "blocks/mob_trophy": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "block": "minecraft:mob_trophy",
+                "function": "minecraft:copy_state",
+                "properties": [
+                  "grade"
+                ]
+              },
+              {
+                "function": "minecraft:copy_components",
+                "include": [
+                  "minecraft:mob_trophy/type"
+                ],
+                "source": "block_entity"
+              }
+            ],
+            "name": "minecraft:mob_trophy"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/mob_trophy"
   },
   "blocks/moss_block": {
     "type": "minecraft:block",
@@ -27588,6 +27683,81 @@
       }
     ],
     "random_sequence": "minecraft:blocks/tripwire_hook"
+  },
+  "blocks/trophy": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "block": "minecraft:trophy",
+                "condition": "minecraft:block_state_property",
+                "properties": {
+                  "type": "gold"
+                }
+              }
+            ],
+            "functions": [
+              {
+                "components": {
+                  "minecraft:trophy/type": "gold"
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:trophy"
+          },
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "block": "minecraft:trophy",
+                "condition": "minecraft:block_state_property",
+                "properties": {
+                  "type": "mega_spud"
+                }
+              }
+            ],
+            "functions": [
+              {
+                "components": {
+                  "minecraft:trophy/type": "mega_spud"
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:trophy"
+          },
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "block": "minecraft:trophy",
+                "condition": "minecraft:block_state_property",
+                "properties": {
+                  "type": "no_medal"
+                }
+              }
+            ],
+            "functions": [
+              {
+                "components": {
+                  "minecraft:trophy/type": "no_medal"
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:trophy"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/trophy"
   },
   "blocks/tube_coral": {
     "type": "minecraft:block",
@@ -40978,6 +41148,10 @@
     "type": "minecraft:entity",
     "random_sequence": "minecraft:entities/allay"
   },
+  "entities/angry_ghast": {
+    "type": "minecraft:entity",
+    "random_sequence": "minecraft:entities/angry_ghast"
+  },
   "entities/armadillo": {
     "type": "minecraft:entity",
     "random_sequence": "minecraft:entities/armadillo"
@@ -41192,29 +41366,6 @@
   },
   "entities/cat": {
     "type": "minecraft:entity",
-    "pools": [
-      {
-        "bonus_rolls": 0.0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "functions": [
-              {
-                "add": false,
-                "count": {
-                  "type": "minecraft:uniform",
-                  "max": 2.0,
-                  "min": 0.0
-                },
-                "function": "minecraft:set_count"
-              }
-            ],
-            "name": "minecraft:string"
-          }
-        ],
-        "rolls": 1.0
-      }
-    ],
     "random_sequence": "minecraft:entities/cat"
   },
   "entities/cave_spider": {
@@ -43042,6 +43193,214 @@
       }
     ],
     "random_sequence": "minecraft:entities/parrot"
+  },
+  "entities/pet_armadillo": {
+    "type": "minecraft:entity",
+    "random_sequence": "minecraft:entities/pet_armadillo"
+  },
+  "entities/pet_axolotl": {
+    "type": "minecraft:entity",
+    "random_sequence": "minecraft:entities/pet_axolotl"
+  },
+  "entities/pet_bee": {
+    "type": "minecraft:entity",
+    "random_sequence": "minecraft:entities/pet_bee"
+  },
+  "entities/pet_cat": {
+    "type": "minecraft:entity",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 2.0,
+                  "min": 0.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:string"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:entities/pet_cat"
+  },
+  "entities/pet_chicken": {
+    "type": "minecraft:entity",
+    "random_sequence": "minecraft:entities/pet_chicken"
+  },
+  "entities/pet_cow": {
+    "type": "minecraft:entity",
+    "random_sequence": "minecraft:entities/pet_cow"
+  },
+  "entities/pet_creeper": {
+    "type": "minecraft:entity",
+    "random_sequence": "minecraft:entities/pet_creeper"
+  },
+  "entities/pet_fox": {
+    "type": "minecraft:entity",
+    "random_sequence": "minecraft:entities/pet_fox"
+  },
+  "entities/pet_frog": {
+    "type": "minecraft:entity",
+    "random_sequence": "minecraft:entities/pet_frog"
+  },
+  "entities/pet_mooshroom": {
+    "type": "minecraft:entity",
+    "random_sequence": "minecraft:entities/pet_mooshroom"
+  },
+  "entities/pet_polar_bear": {
+    "type": "minecraft:entity",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "condition": "minecraft:any_of",
+                    "terms": [
+                      {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                          "flags": {
+                            "is_on_fire": true
+                          }
+                        }
+                      },
+                      {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "direct_attacker",
+                        "predicate": {
+                          "equipment": {
+                            "mainhand": {
+                              "predicates": {
+                                "minecraft:enchantments": [
+                                  {
+                                    "enchantments": "#minecraft:smelts_loot"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "function": "minecraft:furnace_smelt"
+              },
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 2.0,
+                  "min": 0.0
+                },
+                "function": "minecraft:set_count"
+              },
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 1.0,
+                  "min": 0.0
+                },
+                "enchantment": "minecraft:looting",
+                "function": "minecraft:enchanted_count_increase"
+              }
+            ],
+            "name": "minecraft:cod",
+            "weight": 3
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "condition": "minecraft:any_of",
+                    "terms": [
+                      {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                          "flags": {
+                            "is_on_fire": true
+                          }
+                        }
+                      },
+                      {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "direct_attacker",
+                        "predicate": {
+                          "equipment": {
+                            "mainhand": {
+                              "predicates": {
+                                "minecraft:enchantments": [
+                                  {
+                                    "enchantments": "#minecraft:smelts_loot"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "function": "minecraft:furnace_smelt"
+              },
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 2.0,
+                  "min": 0.0
+                },
+                "function": "minecraft:set_count"
+              },
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 1.0,
+                  "min": 0.0
+                },
+                "enchantment": "minecraft:looting",
+                "function": "minecraft:enchanted_count_increase"
+              }
+            ],
+            "name": "minecraft:salmon"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:entities/pet_polar_bear"
+  },
+  "entities/pet_slime": {
+    "type": "minecraft:entity",
+    "random_sequence": "minecraft:entities/pet_slime"
+  },
+  "entities/pet_turtle": {
+    "type": "minecraft:entity",
+    "random_sequence": "minecraft:entities/pet_turtle"
+  },
+  "entities/pet_wolf": {
+    "type": "minecraft:entity",
+    "random_sequence": "minecraft:entities/pet_wolf"
   },
   "entities/phantom": {
     "type": "minecraft:entity",
@@ -47260,6 +47619,332 @@
     ],
     "random_sequence": "minecraft:gameplay/piglin_bartering"
   },
+  "gameplay/room_rewards": {
+    "type": "minecraft:hub_reward",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:barrels"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:hanging"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:corridor_simple"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:fountain"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:storage1"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:storage2"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:tree"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:carpet"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:grassy_h"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:sugar_h"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:wheat_h"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:house"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:pool"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:ship"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:stairs"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:trophy"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:tunnel"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:useless"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:workshop"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:boiler"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key",
+            "weight": 2
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:instant_room": {
+                    "structure": "minecraft:labyrinth"
+                  }
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:shimmering_key"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:gameplay/room_rewards"
+  },
   "gameplay/sniffer_digging": {
     "type": "minecraft:gift",
     "pools": [
@@ -47279,6 +47964,30 @@
       }
     ],
     "random_sequence": "minecraft:gameplay/sniffer_digging"
+  },
+  "mines/eat_your_veggies": {
+    "type": "minecraft:archaeology",
+    "pools": [
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "components": {
+                  "minecraft:trophy/type": "mega_spud"
+                },
+                "function": "minecraft:set_components"
+              }
+            ],
+            "name": "minecraft:trophy"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:mines/eat_your_veggies"
   },
   "pots/trial_chambers/corridor": {
     "type": "minecraft:chest",
