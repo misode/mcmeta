@@ -57,37 +57,12 @@ APRIL_FOOLS = ('15w14a', '3D Shareware v1.34', '20w14infinite', '22w13oneblockat
 @click.option('--push', is_flag=True, help='Whether to push to the remote after each commit')
 @click.option('--force', is_flag=True, help='Whether to force push')
 @click.option('--branch', help='The export branch prefix to use')
-def main(version: str | None, file, reset: bool, fetch: bool, undo: str | None, commit: bool, export: tuple[str], fixtags: bool, push: bool, force: bool, branch: str | None):
+def main(version: str | None, file: str | None, reset: bool, fetch: bool, undo: str | None, commit: bool, export: tuple[str], fixtags: bool, push: bool, force: bool, branch: str | None):
 	dotenv.load_dotenv()
 	if 'all' in export:
 		export = EXPORTS
 
-	# === fetch manifest ===
-	manifest = requests.get('https://piston-meta.mojang.com/mc/game/version_manifest_v2.json').json()
-	for v in manifest['versions']:
-		v['id'] = v['id'].replace(' Pre-Release ', '-pre')
-	version_ids = [v['id'] for v in manifest['versions']]
-
-	# Fix version order anomaly around 1.16.5
-	v1165 = version_ids.index('1.16.5')
-	v20w51a = version_ids.index('20w51a')
-	v1164 = version_ids.index('1.16.4')
-	version_ids = [*version_ids[:v1165], *version_ids[v20w51a:v1164], *version_ids[v1165:v20w51a], *version_ids[v1164:]]
-
-	unordered_versions = { v['id']: dict(**v, index=version_ids.index(v['id'])) for v in manifest['versions'] }
-	versions = { v: unordered_versions[v] for v in version_ids }
-
-	if file:
-		assert version
-		launchermeta = json.load(file)
-		versions[version] = {
-			'id': version,
-			'type': launchermeta['type'],
-			'url': launchermeta,
-			'releaseTime': launchermeta['releaseTime'],
-			'sha1': 'unknown',
-			'index': -1,
-		}
+	versions = retry(fetch_versions, version, file)
 
 	# process and commit each version in the range
 	process_versions = expand_version_range(version, versions)
@@ -137,6 +112,47 @@ def format_time(seconds: float | int):
 	if minutes <= 60:
 		return f'{minutes}m {seconds % 60}s'
 	return f'{int(minutes/60)}h {minutes%60}m {seconds%60}s'
+
+
+def fetch_versions(version: str | None, file: str | None):
+	# === fetch manifest ===
+	manifest = requests.get('https://piston-meta.mojang.com/mc/game/version_manifest_v2.json').json()
+	for v in manifest['versions']:
+		v['id'] = v['id'].replace(' Pre-Release ', '-pre')
+	version_ids = [v['id'] for v in manifest['versions']]
+
+	# Fix version order anomaly around 1.16.5
+	v1165 = version_ids.index('1.16.5')
+	v20w51a = version_ids.index('20w51a')
+	v1164 = version_ids.index('1.16.4')
+	version_ids = [*version_ids[:v1165], *version_ids[v20w51a:v1164], *version_ids[v1165:v20w51a], *version_ids[v1164:]]
+
+	unordered_versions = { v['id']: dict(**v, index=version_ids.index(v['id'])) for v in manifest['versions'] }
+	versions = { v: unordered_versions[v] for v in version_ids }
+
+	if file:
+		assert version
+		launchermeta = json.load(file)
+		versions[version] = {
+			'id': version,
+			'type': launchermeta['type'],
+			'url': launchermeta,
+			'releaseTime': launchermeta['releaseTime'],
+			'sha1': 'unknown',
+			'index': -1,
+		}
+
+	if version:
+		if '..' in version:
+			start, end = version.split('..')
+			if start not in versions:
+				raise ValueError(f'Version {start} not in versions list')
+			if end not in versions:
+				raise ValueError(f'Version {end} not in versions list')
+		elif version not in versions:
+			raise ValueError(f'Version {version} not in versions list')
+
+	return versions
 
 
 def expand_version_range(version: str | None, versions: dict[str]):
