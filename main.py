@@ -407,13 +407,12 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 		for export, pattern in [('assets', '*.*'), ('assets-json', '*.json')]:
 			if export in exports or (export == 'assets' and ('diff' in exports or 'summary' in exports)):
 				for path in glob.glob(f'resources/**/{pattern}', recursive=True):
-					if path.endswith('hash.txt'):
+					if path.endswith('hash.txt') or path.endswith('pack.mcmeta'):
 						continue
 					target = f'{export}/assets{path.removeprefix("resources")}'
-					if path.endswith('pack.mcmeta'):
-						target = f'{export}/pack.mcmeta'
 					os.makedirs(os.path.normpath(os.path.join(target, '..')), exist_ok=True)
 					shutil.copyfile(path, target)
+				shutil.copyfile('resources/pack.mcmeta', f'{export}/pack.mcmeta')
 
 		if 'summary' in exports or 'diff' in exports:
 			with open(f'resources/minecraft/sounds.json', 'r') as f:
@@ -680,7 +679,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			f.write('\n')
 
 	# === copy pack.mcmeta to json exports ===
-	for export in ['assets', 'data']:
+	for export in ['data']:
 		if f'{export}-json' in exports:
 			shutil.copyfile(f'{export}/pack.mcmeta', f'{export}-json/pack.mcmeta')
 
