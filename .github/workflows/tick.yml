@@ -63,7 +63,7 @@ jobs:
           github-repository: misode/mcmeta
 
   update-summary:
-    needs: update
+    needs: ['check', 'update']
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
