@@ -1,0 +1,96 @@
+{
+  "type": "literal",
+  "children": {
+    "list": {
+      "type": "literal",
+      "executable": true
+    },
+    "modify": {
+      "type": "literal",
+      "children": {
+        "waypoint": {
+          "type": "argument",
+          "children": {
+            "color": {
+              "type": "literal",
+              "children": {
+                "color": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:color"
+                },
+                "hex": {
+                  "type": "literal",
+                  "children": {
+                    "color": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "minecraft:hex_color"
+                    }
+                  }
+                },
+                "reset": {
+                  "type": "literal",
+                  "executable": true
+                }
+              }
+            },
+            "fade": {
+              "type": "literal",
+              "children": {
+                "fade_start": {
+                  "type": "argument",
+                  "children": {
+                    "alpha_start": {
+                      "type": "argument",
+                      "children": {
+                        "fade_end": {
+                          "type": "argument",
+                          "children": {
+                            "alpha_end": {
+                              "type": "argument",
+                              "executable": true,
+                              "parser": "brigadier:float",
+                              "properties": {
+                                "max": 1.0,
+                                "min": 0.0
+                              }
+                            }
+                          },
+                          "parser": "brigadier:integer",
+                          "properties": {
+                            "max": 60000000,
+                            "min": 0
+                          }
+                        }
+                      },
+                      "parser": "brigadier:float",
+                      "properties": {
+                        "max": 1.0,
+                        "min": 0.0
+                      }
+                    }
+                  },
+                  "parser": "brigadier:integer",
+                  "properties": {
+                    "max": 60000000,
+                    "min": 0
+                  }
+                },
+                "reset": {
+                  "type": "literal",
+                  "executable": true
+                }
+              }
+            }
+          },
+          "parser": "minecraft:entity",
+          "properties": {
+            "type": "entities",
+            "amount": "single"
+          }
+        }
+      }
+    }
+  }
+}
