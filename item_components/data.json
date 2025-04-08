@@ -1495,6 +1495,27 @@
     "minecraft:repair_cost": 0,
     "minecraft:tooltip_display": {}
   },
+  "black_harness": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:equippable": {
+      "allowed_entities": "#minecraft:can_equip_harness",
+      "asset_id": "minecraft:black_harness",
+      "equip_on_interact": true,
+      "equip_sound": "minecraft:entity.happy_ghast.equip",
+      "slot": "body"
+    },
+    "minecraft:item_model": "minecraft:black_harness",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.black_harness"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 1,
+    "minecraft:rarity": "common",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
   "black_shulker_box": {
     "minecraft:attribute_modifiers": [],
     "minecraft:break_sound": "minecraft:entity.item.break",
@@ -1841,6 +1862,27 @@
     },
     "minecraft:lore": [],
     "minecraft:max_stack_size": 64,
+    "minecraft:rarity": "common",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
+  "blue_harness": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:equippable": {
+      "allowed_entities": "#minecraft:can_equip_harness",
+      "asset_id": "minecraft:blue_harness",
+      "equip_on_interact": true,
+      "equip_sound": "minecraft:entity.happy_ghast.equip",
+      "slot": "body"
+    },
+    "minecraft:item_model": "minecraft:blue_harness",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.blue_harness"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 1,
     "minecraft:rarity": "common",
     "minecraft:repair_cost": 0,
     "minecraft:tooltip_display": {}
@@ -2433,6 +2475,27 @@
     "minecraft:repair_cost": 0,
     "minecraft:tooltip_display": {}
   },
+  "brown_harness": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:equippable": {
+      "allowed_entities": "#minecraft:can_equip_harness",
+      "asset_id": "minecraft:brown_harness",
+      "equip_on_interact": true,
+      "equip_sound": "minecraft:entity.happy_ghast.equip",
+      "slot": "body"
+    },
+    "minecraft:item_model": "minecraft:brown_harness",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.brown_harness"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 1,
+    "minecraft:rarity": "common",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
   "brown_mushroom": {
     "minecraft:attribute_modifiers": [],
     "minecraft:break_sound": "minecraft:entity.item.break",
@@ -2824,7 +2887,18 @@
     "minecraft:tooltip_display": {}
   },
   "carved_pumpkin": {
-    "minecraft:attribute_modifiers": [],
+    "minecraft:attribute_modifiers": [
+      {
+        "type": "minecraft:waypoint_transmit_range",
+        "amount": -1.0,
+        "display": {
+          "type": "hidden"
+        },
+        "id": "minecraft:waypoint_transmit_range_hide",
+        "operation": "add_multiplied_total",
+        "slot": "head"
+      }
+    ],
     "minecraft:break_sound": "minecraft:entity.item.break",
     "minecraft:enchantments": {},
     "minecraft:equippable": {
@@ -2917,6 +2991,9 @@
       {
         "type": "minecraft:armor",
         "amount": 1.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.boots",
         "operation": "add_value",
         "slot": "feet"
@@ -2924,6 +3001,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.boots",
         "operation": "add_value",
         "slot": "feet"
@@ -2959,6 +3039,9 @@
       {
         "type": "minecraft:armor",
         "amount": 5.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.chestplate",
         "operation": "add_value",
         "slot": "chest"
@@ -2966,6 +3049,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.chestplate",
         "operation": "add_value",
         "slot": "chest"
@@ -3001,6 +3087,9 @@
       {
         "type": "minecraft:armor",
         "amount": 2.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.helmet",
         "operation": "add_value",
         "slot": "head"
@@ -3008,6 +3097,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.helmet",
         "operation": "add_value",
         "slot": "head"
@@ -3043,6 +3135,9 @@
       {
         "type": "minecraft:armor",
         "amount": 4.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.leggings",
         "operation": "add_value",
         "slot": "legs"
@@ -3050,6 +3145,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.leggings",
         "operation": "add_value",
         "slot": "legs"
@@ -4468,7 +4566,18 @@
     "minecraft:tooltip_display": {}
   },
   "creeper_head": {
-    "minecraft:attribute_modifiers": [],
+    "minecraft:attribute_modifiers": [
+      {
+        "type": "minecraft:waypoint_transmit_range",
+        "amount": -1.0,
+        "display": {
+          "type": "hidden"
+        },
+        "id": "minecraft:waypoint_transmit_range_hide",
+        "operation": "add_multiplied_total",
+        "slot": "head"
+      }
+    ],
     "minecraft:break_sound": "minecraft:entity.item.break",
     "minecraft:enchantments": {},
     "minecraft:equippable": {
@@ -4988,6 +5097,27 @@
     },
     "minecraft:lore": [],
     "minecraft:max_stack_size": 64,
+    "minecraft:rarity": "common",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
+  "cyan_harness": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:equippable": {
+      "allowed_entities": "#minecraft:can_equip_harness",
+      "asset_id": "minecraft:cyan_harness",
+      "equip_on_interact": true,
+      "equip_sound": "minecraft:entity.happy_ghast.equip",
+      "slot": "body"
+    },
+    "minecraft:item_model": "minecraft:cyan_harness",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.cyan_harness"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 1,
     "minecraft:rarity": "common",
     "minecraft:repair_cost": 0,
     "minecraft:tooltip_display": {}
@@ -5932,6 +6062,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 8.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -5939,6 +6072,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -6000,6 +6136,9 @@
       {
         "type": "minecraft:armor",
         "amount": 3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.boots",
         "operation": "add_value",
         "slot": "feet"
@@ -6007,6 +6146,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 2.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.boots",
         "operation": "add_value",
         "slot": "feet"
@@ -6042,6 +6184,9 @@
       {
         "type": "minecraft:armor",
         "amount": 8.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.chestplate",
         "operation": "add_value",
         "slot": "chest"
@@ -6049,6 +6194,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 2.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.chestplate",
         "operation": "add_value",
         "slot": "chest"
@@ -6084,6 +6232,9 @@
       {
         "type": "minecraft:armor",
         "amount": 3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.helmet",
         "operation": "add_value",
         "slot": "head"
@@ -6091,6 +6242,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 2.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.helmet",
         "operation": "add_value",
         "slot": "head"
@@ -6126,6 +6280,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -6133,6 +6290,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -6179,6 +6339,9 @@
       {
         "type": "minecraft:armor",
         "amount": 11.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.body",
         "operation": "add_value",
         "slot": "body"
@@ -6186,6 +6349,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 2.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.body",
         "operation": "add_value",
         "slot": "body"
@@ -6215,6 +6381,9 @@
       {
         "type": "minecraft:armor",
         "amount": 6.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.leggings",
         "operation": "add_value",
         "slot": "legs"
@@ -6222,6 +6391,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 2.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.leggings",
         "operation": "add_value",
         "slot": "legs"
@@ -6271,6 +6443,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 4.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -6278,6 +6453,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -2.799999952316284,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -6324,6 +6502,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 4.5,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -6331,6 +6512,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -6377,6 +6561,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 6.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -6384,6 +6571,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -2.4000000953674316,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -6599,7 +6789,18 @@
     "minecraft:tooltip_display": {}
   },
   "dragon_head": {
-    "minecraft:attribute_modifiers": [],
+    "minecraft:attribute_modifiers": [
+      {
+        "type": "minecraft:waypoint_transmit_range",
+        "amount": -1.0,
+        "display": {
+          "type": "hidden"
+        },
+        "id": "minecraft:waypoint_transmit_range_hide",
+        "operation": "add_multiplied_total",
+        "slot": "head"
+      }
+    ],
     "minecraft:break_sound": "minecraft:entity.item.break",
     "minecraft:enchantments": {},
     "minecraft:equippable": {
@@ -6613,6 +6814,20 @@
     "minecraft:lore": [],
     "minecraft:max_stack_size": 64,
     "minecraft:rarity": "epic",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
+  "dried_ghast": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:item_model": "minecraft:dried_ghast",
+    "minecraft:item_name": {
+      "translate": "block.minecraft.dried_ghast"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 64,
+    "minecraft:rarity": "uncommon",
     "minecraft:repair_cost": 0,
     "minecraft:tooltip_display": {}
   },
@@ -8066,6 +8281,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 6.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -8073,6 +8291,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -8120,6 +8341,9 @@
       {
         "type": "minecraft:armor",
         "amount": 1.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.boots",
         "operation": "add_value",
         "slot": "feet"
@@ -8127,6 +8351,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.boots",
         "operation": "add_value",
         "slot": "feet"
@@ -8181,6 +8408,9 @@
       {
         "type": "minecraft:armor",
         "amount": 5.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.chestplate",
         "operation": "add_value",
         "slot": "chest"
@@ -8188,6 +8418,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.chestplate",
         "operation": "add_value",
         "slot": "chest"
@@ -8223,6 +8456,9 @@
       {
         "type": "minecraft:armor",
         "amount": 2.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.helmet",
         "operation": "add_value",
         "slot": "head"
@@ -8230,6 +8466,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.helmet",
         "operation": "add_value",
         "slot": "head"
@@ -8265,6 +8504,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -8272,6 +8514,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -8318,6 +8563,9 @@
       {
         "type": "minecraft:armor",
         "amount": 7.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.body",
         "operation": "add_value",
         "slot": "body"
@@ -8325,6 +8573,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.body",
         "operation": "add_value",
         "slot": "body"
@@ -8354,6 +8605,9 @@
       {
         "type": "minecraft:armor",
         "amount": 3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.leggings",
         "operation": "add_value",
         "slot": "legs"
@@ -8361,6 +8615,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.leggings",
         "operation": "add_value",
         "slot": "legs"
@@ -8396,6 +8653,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 1.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -8403,6 +8663,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -2.799999952316284,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -8449,6 +8712,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 1.5,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -8456,6 +8722,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -8502,6 +8771,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -8509,6 +8781,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -2.4000000953674316,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -8775,6 +9050,27 @@
     "minecraft:repair_cost": 0,
     "minecraft:tooltip_display": {}
   },
+  "gray_harness": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:equippable": {
+      "allowed_entities": "#minecraft:can_equip_harness",
+      "asset_id": "minecraft:gray_harness",
+      "equip_on_interact": true,
+      "equip_sound": "minecraft:entity.happy_ghast.equip",
+      "slot": "body"
+    },
+    "minecraft:item_model": "minecraft:gray_harness",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.gray_harness"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 1,
+    "minecraft:rarity": "common",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
   "gray_shulker_box": {
     "minecraft:attribute_modifiers": [],
     "minecraft:break_sound": "minecraft:entity.item.break",
@@ -8983,6 +9279,27 @@
     "minecraft:repair_cost": 0,
     "minecraft:tooltip_display": {}
   },
+  "green_harness": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:equippable": {
+      "allowed_entities": "#minecraft:can_equip_harness",
+      "asset_id": "minecraft:green_harness",
+      "equip_on_interact": true,
+      "equip_sound": "minecraft:entity.happy_ghast.equip",
+      "slot": "body"
+    },
+    "minecraft:item_model": "minecraft:green_harness",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.green_harness"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 1,
+    "minecraft:rarity": "common",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
   "green_shulker_box": {
     "minecraft:attribute_modifiers": [],
     "minecraft:break_sound": "minecraft:entity.item.break",
@@ -9132,6 +9449,20 @@
     "minecraft:item_model": "minecraft:hanging_roots",
     "minecraft:item_name": {
       "translate": "block.minecraft.hanging_roots"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 64,
+    "minecraft:rarity": "common",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
+  "happy_ghast_spawn_egg": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:item_model": "minecraft:happy_ghast_spawn_egg",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.happy_ghast_spawn_egg"
     },
     "minecraft:lore": [],
     "minecraft:max_stack_size": 64,
@@ -9572,6 +9903,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 8.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -9579,6 +9913,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -3.0999999046325684,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -9654,6 +9991,9 @@
       {
         "type": "minecraft:armor",
         "amount": 2.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.boots",
         "operation": "add_value",
         "slot": "feet"
@@ -9661,6 +10001,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.boots",
         "operation": "add_value",
         "slot": "feet"
@@ -9696,6 +10039,9 @@
       {
         "type": "minecraft:armor",
         "amount": 6.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.chestplate",
         "operation": "add_value",
         "slot": "chest"
@@ -9703,6 +10049,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.chestplate",
         "operation": "add_value",
         "slot": "chest"
@@ -9766,6 +10115,9 @@
       {
         "type": "minecraft:armor",
         "amount": 2.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.helmet",
         "operation": "add_value",
         "slot": "head"
@@ -9773,6 +10125,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.helmet",
         "operation": "add_value",
         "slot": "head"
@@ -9808,6 +10163,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -9815,6 +10173,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -1.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -9861,6 +10222,9 @@
       {
         "type": "minecraft:armor",
         "amount": 5.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.body",
         "operation": "add_value",
         "slot": "body"
@@ -9868,6 +10232,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.body",
         "operation": "add_value",
         "slot": "body"
@@ -9912,6 +10279,9 @@
       {
         "type": "minecraft:armor",
         "amount": 5.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.leggings",
         "operation": "add_value",
         "slot": "legs"
@@ -9919,6 +10289,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.leggings",
         "operation": "add_value",
         "slot": "legs"
@@ -9982,6 +10355,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -9989,6 +10365,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -2.799999952316284,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -10035,6 +10414,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 3.5,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -10042,6 +10424,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -10088,6 +10473,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 5.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -10095,6 +10483,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -2.4000000953674316,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -10637,6 +11028,9 @@
       {
         "type": "minecraft:armor",
         "amount": 1.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.boots",
         "operation": "add_value",
         "slot": "feet"
@@ -10644,6 +11038,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.boots",
         "operation": "add_value",
         "slot": "feet"
@@ -10679,6 +11076,9 @@
       {
         "type": "minecraft:armor",
         "amount": 3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.chestplate",
         "operation": "add_value",
         "slot": "chest"
@@ -10686,6 +11086,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.chestplate",
         "operation": "add_value",
         "slot": "chest"
@@ -10721,6 +11124,9 @@
       {
         "type": "minecraft:armor",
         "amount": 1.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.helmet",
         "operation": "add_value",
         "slot": "head"
@@ -10728,6 +11134,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.helmet",
         "operation": "add_value",
         "slot": "head"
@@ -10763,6 +11172,9 @@
       {
         "type": "minecraft:armor",
         "amount": 3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.body",
         "operation": "add_value",
         "slot": "body"
@@ -10770,6 +11182,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.body",
         "operation": "add_value",
         "slot": "body"
@@ -10799,6 +11214,9 @@
       {
         "type": "minecraft:armor",
         "amount": 2.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.leggings",
         "operation": "add_value",
         "slot": "legs"
@@ -10806,6 +11224,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.leggings",
         "operation": "add_value",
         "slot": "legs"
@@ -11018,6 +11439,27 @@
     "minecraft:repair_cost": 0,
     "minecraft:tooltip_display": {}
   },
+  "light_blue_harness": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:equippable": {
+      "allowed_entities": "#minecraft:can_equip_harness",
+      "asset_id": "minecraft:light_blue_harness",
+      "equip_on_interact": true,
+      "equip_sound": "minecraft:entity.happy_ghast.equip",
+      "slot": "body"
+    },
+    "minecraft:item_model": "minecraft:light_blue_harness",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.light_blue_harness"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 1,
+    "minecraft:rarity": "common",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
   "light_blue_shulker_box": {
     "minecraft:attribute_modifiers": [],
     "minecraft:break_sound": "minecraft:entity.item.break",
@@ -11222,6 +11664,27 @@
     },
     "minecraft:lore": [],
     "minecraft:max_stack_size": 64,
+    "minecraft:rarity": "common",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
+  "light_gray_harness": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:equippable": {
+      "allowed_entities": "#minecraft:can_equip_harness",
+      "asset_id": "minecraft:light_gray_harness",
+      "equip_on_interact": true,
+      "equip_sound": "minecraft:entity.happy_ghast.equip",
+      "slot": "body"
+    },
+    "minecraft:item_model": "minecraft:light_gray_harness",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.light_gray_harness"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 1,
     "minecraft:rarity": "common",
     "minecraft:repair_cost": 0,
     "minecraft:tooltip_display": {}
@@ -11504,6 +11967,27 @@
     "minecraft:repair_cost": 0,
     "minecraft:tooltip_display": {}
   },
+  "lime_harness": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:equippable": {
+      "allowed_entities": "#minecraft:can_equip_harness",
+      "asset_id": "minecraft:lime_harness",
+      "equip_on_interact": true,
+      "equip_sound": "minecraft:entity.happy_ghast.equip",
+      "slot": "body"
+    },
+    "minecraft:item_model": "minecraft:lime_harness",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.lime_harness"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 1,
+    "minecraft:rarity": "common",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
   "lime_shulker_box": {
     "minecraft:attribute_modifiers": [],
     "minecraft:break_sound": "minecraft:entity.item.break",
@@ -11638,6 +12122,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 5.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -11645,6 +12132,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -3.4000000953674316,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -11809,6 +12299,27 @@
     },
     "minecraft:lore": [],
     "minecraft:max_stack_size": 64,
+    "minecraft:rarity": "common",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
+  "magenta_harness": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:equippable": {
+      "allowed_entities": "#minecraft:can_equip_harness",
+      "asset_id": "minecraft:magenta_harness",
+      "equip_on_interact": true,
+      "equip_sound": "minecraft:entity.happy_ghast.equip",
+      "slot": "body"
+    },
+    "minecraft:item_model": "minecraft:magenta_harness",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.magenta_harness"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 1,
     "minecraft:rarity": "common",
     "minecraft:repair_cost": 0,
     "minecraft:tooltip_display": {}
@@ -13150,6 +13661,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 9.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -13157,6 +13671,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -13224,6 +13741,9 @@
       {
         "type": "minecraft:armor",
         "amount": 3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.boots",
         "operation": "add_value",
         "slot": "feet"
@@ -13231,6 +13751,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.boots",
         "operation": "add_value",
         "slot": "feet"
@@ -13238,6 +13761,9 @@
       {
         "type": "minecraft:knockback_resistance",
         "amount": 0.10000000149011612,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.boots",
         "operation": "add_value",
         "slot": "feet"
@@ -13276,6 +13802,9 @@
       {
         "type": "minecraft:armor",
         "amount": 8.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.chestplate",
         "operation": "add_value",
         "slot": "chest"
@@ -13283,6 +13812,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.chestplate",
         "operation": "add_value",
         "slot": "chest"
@@ -13290,6 +13822,9 @@
       {
         "type": "minecraft:knockback_resistance",
         "amount": 0.10000000149011612,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.chestplate",
         "operation": "add_value",
         "slot": "chest"
@@ -13328,6 +13863,9 @@
       {
         "type": "minecraft:armor",
         "amount": 3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.helmet",
         "operation": "add_value",
         "slot": "head"
@@ -13335,6 +13873,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.helmet",
         "operation": "add_value",
         "slot": "head"
@@ -13342,6 +13883,9 @@
       {
         "type": "minecraft:knockback_resistance",
         "amount": 0.10000000149011612,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.helmet",
         "operation": "add_value",
         "slot": "head"
@@ -13380,6 +13924,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -13387,6 +13934,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -13454,6 +14004,9 @@
       {
         "type": "minecraft:armor",
         "amount": 6.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.leggings",
         "operation": "add_value",
         "slot": "legs"
@@ -13461,6 +14014,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.leggings",
         "operation": "add_value",
         "slot": "legs"
@@ -13468,6 +14024,9 @@
       {
         "type": "minecraft:knockback_resistance",
         "amount": 0.10000000149011612,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.leggings",
         "operation": "add_value",
         "slot": "legs"
@@ -13506,6 +14065,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 5.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -13513,6 +14075,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -2.799999952316284,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -13579,6 +14144,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 5.5,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -13586,6 +14154,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -13635,6 +14206,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 7.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -13642,6 +14216,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -2.4000000953674316,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -14213,6 +14790,27 @@
     },
     "minecraft:lore": [],
     "minecraft:max_stack_size": 64,
+    "minecraft:rarity": "common",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
+  "orange_harness": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:equippable": {
+      "allowed_entities": "#minecraft:can_equip_harness",
+      "asset_id": "minecraft:orange_harness",
+      "equip_on_interact": true,
+      "equip_sound": "minecraft:entity.happy_ghast.equip",
+      "slot": "body"
+    },
+    "minecraft:item_model": "minecraft:orange_harness",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.orange_harness"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 1,
     "minecraft:rarity": "common",
     "minecraft:repair_cost": 0,
     "minecraft:tooltip_display": {}
@@ -14920,7 +15518,18 @@
     "minecraft:tooltip_display": {}
   },
   "piglin_head": {
-    "minecraft:attribute_modifiers": [],
+    "minecraft:attribute_modifiers": [
+      {
+        "type": "minecraft:waypoint_transmit_range",
+        "amount": -1.0,
+        "display": {
+          "type": "hidden"
+        },
+        "id": "minecraft:waypoint_transmit_range_hide",
+        "operation": "add_multiplied_total",
+        "slot": "head"
+      }
+    ],
     "minecraft:break_sound": "minecraft:entity.item.break",
     "minecraft:enchantments": {},
     "minecraft:equippable": {
@@ -15102,6 +15711,27 @@
     "minecraft:repair_cost": 0,
     "minecraft:tooltip_display": {}
   },
+  "pink_harness": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:equippable": {
+      "allowed_entities": "#minecraft:can_equip_harness",
+      "asset_id": "minecraft:pink_harness",
+      "equip_on_interact": true,
+      "equip_sound": "minecraft:entity.happy_ghast.equip",
+      "slot": "body"
+    },
+    "minecraft:item_model": "minecraft:pink_harness",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.pink_harness"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 1,
+    "minecraft:rarity": "common",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
   "pink_petals": {
     "minecraft:attribute_modifiers": [],
     "minecraft:break_sound": "minecraft:entity.item.break",
@@ -15244,7 +15874,18 @@
     "minecraft:tooltip_display": {}
   },
   "player_head": {
-    "minecraft:attribute_modifiers": [],
+    "minecraft:attribute_modifiers": [
+      {
+        "type": "minecraft:waypoint_transmit_range",
+        "amount": -1.0,
+        "display": {
+          "type": "hidden"
+        },
+        "id": "minecraft:waypoint_transmit_range_hide",
+        "operation": "add_multiplied_total",
+        "slot": "head"
+      }
+    ],
     "minecraft:break_sound": "minecraft:entity.item.break",
     "minecraft:enchantments": {},
     "minecraft:equippable": {
@@ -16257,6 +16898,27 @@
     "minecraft:repair_cost": 0,
     "minecraft:tooltip_display": {}
   },
+  "purple_harness": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:equippable": {
+      "allowed_entities": "#minecraft:can_equip_harness",
+      "asset_id": "minecraft:purple_harness",
+      "equip_on_interact": true,
+      "equip_sound": "minecraft:entity.happy_ghast.equip",
+      "slot": "body"
+    },
+    "minecraft:item_model": "minecraft:purple_harness",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.purple_harness"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 1,
+    "minecraft:rarity": "common",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
   "purple_shulker_box": {
     "minecraft:attribute_modifiers": [],
     "minecraft:break_sound": "minecraft:entity.item.break",
@@ -16826,6 +17488,27 @@
     },
     "minecraft:lore": [],
     "minecraft:max_stack_size": 64,
+    "minecraft:rarity": "common",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
+  "red_harness": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:equippable": {
+      "allowed_entities": "#minecraft:can_equip_harness",
+      "asset_id": "minecraft:red_harness",
+      "equip_on_interact": true,
+      "equip_sound": "minecraft:entity.happy_ghast.equip",
+      "slot": "body"
+    },
+    "minecraft:item_model": "minecraft:red_harness",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.red_harness"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 1,
     "minecraft:rarity": "common",
     "minecraft:repair_cost": 0,
     "minecraft:tooltip_display": {}
@@ -17922,7 +18605,18 @@
     "minecraft:tooltip_display": {}
   },
   "skeleton_skull": {
-    "minecraft:attribute_modifiers": [],
+    "minecraft:attribute_modifiers": [
+      {
+        "type": "minecraft:waypoint_transmit_range",
+        "amount": -1.0,
+        "display": {
+          "type": "hidden"
+        },
+        "id": "minecraft:waypoint_transmit_range_hide",
+        "operation": "add_multiplied_total",
+        "slot": "head"
+      }
+    ],
     "minecraft:break_sound": "minecraft:entity.item.break",
     "minecraft:enchantments": {},
     "minecraft:equippable": {
@@ -18876,6 +19570,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 8.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -18883,6 +19580,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -3.200000047683716,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -19000,6 +19700,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -19007,6 +19710,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -2.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -19053,6 +19759,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 2.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -19060,6 +19769,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -2.799999952316284,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -19120,6 +19832,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 2.5,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -19127,6 +19842,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -19201,6 +19919,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 4.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -19208,6 +19929,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -2.4000000953674316,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -20108,6 +20832,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 8.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -20115,6 +20842,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -2.9000000953674316,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -20378,6 +21108,9 @@
       {
         "type": "minecraft:armor",
         "amount": 2.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.helmet",
         "operation": "add_value",
         "slot": "head"
@@ -20385,6 +21118,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.helmet",
         "operation": "add_value",
         "slot": "head"
@@ -21702,6 +22438,27 @@
     "minecraft:repair_cost": 0,
     "minecraft:tooltip_display": {}
   },
+  "white_harness": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:equippable": {
+      "allowed_entities": "#minecraft:can_equip_harness",
+      "asset_id": "minecraft:white_harness",
+      "equip_on_interact": true,
+      "equip_sound": "minecraft:entity.happy_ghast.equip",
+      "slot": "body"
+    },
+    "minecraft:item_model": "minecraft:white_harness",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.white_harness"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 1,
+    "minecraft:rarity": "common",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
   "white_shulker_box": {
     "minecraft:attribute_modifiers": [],
     "minecraft:break_sound": "minecraft:entity.item.break",
@@ -21861,7 +22618,18 @@
     "minecraft:tooltip_display": {}
   },
   "wither_skeleton_skull": {
-    "minecraft:attribute_modifiers": [],
+    "minecraft:attribute_modifiers": [
+      {
+        "type": "minecraft:waypoint_transmit_range",
+        "amount": -1.0,
+        "display": {
+          "type": "hidden"
+        },
+        "id": "minecraft:waypoint_transmit_range_hide",
+        "operation": "add_multiplied_total",
+        "slot": "head"
+      }
+    ],
     "minecraft:break_sound": "minecraft:entity.item.break",
     "minecraft:enchantments": {},
     "minecraft:equippable": {
@@ -21911,6 +22679,9 @@
       {
         "type": "minecraft:armor",
         "amount": 11.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.body",
         "operation": "add_value",
         "slot": "body"
@@ -21918,6 +22689,9 @@
       {
         "type": "minecraft:armor_toughness",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:armor.body",
         "operation": "add_value",
         "slot": "body"
@@ -21965,6 +22739,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 6.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -21972,6 +22749,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -3.200000047683716,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -22019,6 +22799,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 0.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -22026,6 +22809,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -22072,6 +22858,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 1.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -22079,6 +22868,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -2.799999952316284,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -22125,6 +22917,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 1.5,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -22132,6 +22927,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -22178,6 +22976,9 @@
       {
         "type": "minecraft:attack_damage",
         "amount": 3.0,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_damage",
         "operation": "add_value",
         "slot": "mainhand"
@@ -22185,6 +22986,9 @@
       {
         "type": "minecraft:attack_speed",
         "amount": -2.4000000953674316,
+        "display": {
+          "type": "default"
+        },
         "id": "minecraft:base_attack_speed",
         "operation": "add_value",
         "slot": "mainhand"
@@ -22397,6 +23201,27 @@
     "minecraft:repair_cost": 0,
     "minecraft:tooltip_display": {}
   },
+  "yellow_harness": {
+    "minecraft:attribute_modifiers": [],
+    "minecraft:break_sound": "minecraft:entity.item.break",
+    "minecraft:enchantments": {},
+    "minecraft:equippable": {
+      "allowed_entities": "#minecraft:can_equip_harness",
+      "asset_id": "minecraft:yellow_harness",
+      "equip_on_interact": true,
+      "equip_sound": "minecraft:entity.happy_ghast.equip",
+      "slot": "body"
+    },
+    "minecraft:item_model": "minecraft:yellow_harness",
+    "minecraft:item_name": {
+      "translate": "item.minecraft.yellow_harness"
+    },
+    "minecraft:lore": [],
+    "minecraft:max_stack_size": 1,
+    "minecraft:rarity": "common",
+    "minecraft:repair_cost": 0,
+    "minecraft:tooltip_display": {}
+  },
   "yellow_shulker_box": {
     "minecraft:attribute_modifiers": [],
     "minecraft:break_sound": "minecraft:entity.item.break",
@@ -22483,7 +23308,18 @@
     "minecraft:tooltip_display": {}
   },
   "zombie_head": {
-    "minecraft:attribute_modifiers": [],
+    "minecraft:attribute_modifiers": [
+      {
+        "type": "minecraft:waypoint_transmit_range",
+        "amount": -1.0,
+        "display": {
+          "type": "hidden"
+        },
+        "id": "minecraft:waypoint_transmit_range_hide",
+        "operation": "add_multiplied_total",
+        "slot": "head"
+      }
+    ],
     "minecraft:break_sound": "minecraft:entity.item.break",
     "minecraft:enchantments": {},
     "minecraft:equippable": {

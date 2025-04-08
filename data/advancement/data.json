@@ -1385,6 +1385,311 @@
     ],
     "sends_telemetry_event": true
   },
+  "adventure/heart_transplanter": {
+    "parent": "minecraft:adventure/root",
+    "criteria": {
+      "place_creaking_heart_awake": {
+        "conditions": {
+          "location": [
+            {
+              "block": "minecraft:creaking_heart",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "creaking_heart_state": "awake"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:placed_block"
+      },
+      "place_creaking_heart_dormant": {
+        "conditions": {
+          "location": [
+            {
+              "block": "minecraft:creaking_heart",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "creaking_heart_state": "dormant"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:placed_block"
+      },
+      "place_pale_oak_log": {
+        "conditions": {
+          "location": [
+            {
+              "condition": "minecraft:any_of",
+              "terms": [
+                {
+                  "condition": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                        "block": {
+                          "blocks": "#minecraft:pale_oak_logs",
+                          "state": {
+                            "axis": "y"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "condition": "minecraft:location_check",
+                      "offsetY": -1,
+                      "predicate": {
+                        "block": {
+                          "blocks": "minecraft:creaking_heart",
+                          "state": {
+                            "axis": "y"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "condition": "minecraft:location_check",
+                      "offsetY": -2,
+                      "predicate": {
+                        "block": {
+                          "blocks": "#minecraft:pale_oak_logs",
+                          "state": {
+                            "axis": "y"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "condition": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                        "block": {
+                          "blocks": "#minecraft:pale_oak_logs",
+                          "state": {
+                            "axis": "y"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "condition": "minecraft:location_check",
+                      "offsetY": 1,
+                      "predicate": {
+                        "block": {
+                          "blocks": "minecraft:creaking_heart",
+                          "state": {
+                            "axis": "y"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "condition": "minecraft:location_check",
+                      "offsetY": 2,
+                      "predicate": {
+                        "block": {
+                          "blocks": "#minecraft:pale_oak_logs",
+                          "state": {
+                            "axis": "y"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "condition": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                        "block": {
+                          "blocks": "#minecraft:pale_oak_logs",
+                          "state": {
+                            "axis": "z"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "condition": "minecraft:location_check",
+                      "offsetZ": -1,
+                      "predicate": {
+                        "block": {
+                          "blocks": "minecraft:creaking_heart",
+                          "state": {
+                            "axis": "z"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "condition": "minecraft:location_check",
+                      "offsetZ": -2,
+                      "predicate": {
+                        "block": {
+                          "blocks": "#minecraft:pale_oak_logs",
+                          "state": {
+                            "axis": "z"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "condition": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                        "block": {
+                          "blocks": "#minecraft:pale_oak_logs",
+                          "state": {
+                            "axis": "z"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "condition": "minecraft:location_check",
+                      "offsetZ": 1,
+                      "predicate": {
+                        "block": {
+                          "blocks": "minecraft:creaking_heart",
+                          "state": {
+                            "axis": "z"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "condition": "minecraft:location_check",
+                      "offsetZ": 2,
+                      "predicate": {
+                        "block": {
+                          "blocks": "#minecraft:pale_oak_logs",
+                          "state": {
+                            "axis": "z"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "condition": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                        "block": {
+                          "blocks": "#minecraft:pale_oak_logs",
+                          "state": {
+                            "axis": "x"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "condition": "minecraft:location_check",
+                      "offsetX": -1,
+                      "predicate": {
+                        "block": {
+                          "blocks": "minecraft:creaking_heart",
+                          "state": {
+                            "axis": "x"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "condition": "minecraft:location_check",
+                      "offsetX": -2,
+                      "predicate": {
+                        "block": {
+                          "blocks": "#minecraft:pale_oak_logs",
+                          "state": {
+                            "axis": "x"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "condition": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                        "block": {
+                          "blocks": "#minecraft:pale_oak_logs",
+                          "state": {
+                            "axis": "x"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "condition": "minecraft:location_check",
+                      "offsetX": 1,
+                      "predicate": {
+                        "block": {
+                          "blocks": "minecraft:creaking_heart",
+                          "state": {
+                            "axis": "x"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "condition": "minecraft:location_check",
+                      "offsetX": 2,
+                      "predicate": {
+                        "block": {
+                          "blocks": "#minecraft:pale_oak_logs",
+                          "state": {
+                            "axis": "x"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "trigger": "minecraft:placed_block"
+      }
+    },
+    "display": {
+      "description": {
+        "translate": "advancements.adventure.heart_transplanter.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:creaking_heart"
+      },
+      "title": {
+        "translate": "advancements.adventure.heart_transplanter.title"
+      }
+    },
+    "requirements": [
+      [
+        "place_creaking_heart_dormant",
+        "place_creaking_heart_awake",
+        "place_pale_oak_log"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
   "adventure/hero_of_the_village": {
     "parent": "minecraft:adventure/voluntary_exile",
     "criteria": {
@@ -6500,6 +6805,43 @@
     "requirements": [
       [
         "obtain_sniffer_egg"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
+  "husbandry/place_dried_ghast_in_water": {
+    "parent": "minecraft:husbandry/root",
+    "criteria": {
+      "place_dried_ghast_in_water": {
+        "conditions": {
+          "location": [
+            {
+              "block": "minecraft:dried_ghast",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "waterlogged": "true"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:placed_block"
+      }
+    },
+    "display": {
+      "description": {
+        "translate": "advancements.husbandry.place_dried_ghast_in_water.description"
+      },
+      "icon": {
+        "count": 1,
+        "id": "minecraft:dried_ghast"
+      },
+      "title": {
+        "translate": "advancements.husbandry.place_dried_ghast_in_water.title"
+      }
+    },
+    "requirements": [
+      [
+        "place_dried_ghast_in_water"
       ]
     ],
     "sends_telemetry_event": true
@@ -13929,6 +14271,38 @@
       ]
     }
   },
+  "recipes/building_blocks/dried_ghast": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_ghast_tear": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:ghast_tear"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dried_ghast"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_ghast_tear"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dried_ghast"
+      ]
+    }
+  },
   "recipes/building_blocks/dried_kelp_block": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -14057,6 +14431,38 @@
       ]
     }
   },
+  "recipes/building_blocks/dye_black_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:black_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_black_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_black_harness"
+      ]
+    }
+  },
   "recipes/building_blocks/dye_black_wool": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -14150,6 +14556,38 @@
     "rewards": {
       "recipes": [
         "minecraft:dye_blue_carpet"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_blue_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:blue_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_blue_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_blue_harness"
       ]
     }
   },
@@ -14249,6 +14687,38 @@
       ]
     }
   },
+  "recipes/building_blocks/dye_brown_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:brown_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_brown_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_brown_harness"
+      ]
+    }
+  },
   "recipes/building_blocks/dye_brown_wool": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -14342,6 +14812,38 @@
     "rewards": {
       "recipes": [
         "minecraft:dye_cyan_carpet"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_cyan_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:cyan_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_cyan_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_cyan_harness"
       ]
     }
   },
@@ -14441,6 +14943,38 @@
       ]
     }
   },
+  "recipes/building_blocks/dye_gray_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:gray_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_gray_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_gray_harness"
+      ]
+    }
+  },
   "recipes/building_blocks/dye_gray_wool": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -14534,6 +15068,38 @@
     "rewards": {
       "recipes": [
         "minecraft:dye_green_carpet"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_green_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:green_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_green_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_green_harness"
       ]
     }
   },
@@ -14633,6 +15199,38 @@
       ]
     }
   },
+  "recipes/building_blocks/dye_light_blue_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:light_blue_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_light_blue_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_light_blue_harness"
+      ]
+    }
+  },
   "recipes/building_blocks/dye_light_blue_wool": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -14726,6 +15324,38 @@
     "rewards": {
       "recipes": [
         "minecraft:dye_light_gray_carpet"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_light_gray_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:light_gray_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_light_gray_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_light_gray_harness"
       ]
     }
   },
@@ -14825,6 +15455,38 @@
       ]
     }
   },
+  "recipes/building_blocks/dye_lime_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:lime_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_lime_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_lime_harness"
+      ]
+    }
+  },
   "recipes/building_blocks/dye_lime_wool": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -14918,6 +15580,38 @@
     "rewards": {
       "recipes": [
         "minecraft:dye_magenta_carpet"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_magenta_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:magenta_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_magenta_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_magenta_harness"
       ]
     }
   },
@@ -15017,6 +15711,38 @@
       ]
     }
   },
+  "recipes/building_blocks/dye_orange_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:orange_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_orange_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_orange_harness"
+      ]
+    }
+  },
   "recipes/building_blocks/dye_orange_wool": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -15110,6 +15836,38 @@
     "rewards": {
       "recipes": [
         "minecraft:dye_pink_carpet"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_pink_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:pink_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_pink_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_pink_harness"
       ]
     }
   },
@@ -15209,6 +15967,38 @@
       ]
     }
   },
+  "recipes/building_blocks/dye_purple_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:purple_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_purple_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_purple_harness"
+      ]
+    }
+  },
   "recipes/building_blocks/dye_purple_wool": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -15302,6 +16092,38 @@
     "rewards": {
       "recipes": [
         "minecraft:dye_red_carpet"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_red_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:red_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_red_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_red_harness"
       ]
     }
   },
@@ -15401,6 +16223,38 @@
       ]
     }
   },
+  "recipes/building_blocks/dye_white_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:white_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_white_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_white_harness"
+      ]
+    }
+  },
   "recipes/building_blocks/dye_white_wool": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -15494,6 +16348,38 @@
     "rewards": {
       "recipes": [
         "minecraft:dye_yellow_carpet"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_yellow_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:yellow_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_yellow_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_yellow_harness"
       ]
     }
   },
@@ -52692,6 +53578,102 @@
       ]
     }
   },
+  "recipes/transportation/black_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dried_ghast": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dried_ghast"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:black_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dried_ghast"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:black_harness"
+      ]
+    }
+  },
+  "recipes/transportation/blue_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dried_ghast": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dried_ghast"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:blue_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dried_ghast"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:blue_harness"
+      ]
+    }
+  },
+  "recipes/transportation/brown_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dried_ghast": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dried_ghast"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:brown_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dried_ghast"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:brown_harness"
+      ]
+    }
+  },
   "recipes/transportation/carrot_on_a_stick": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -52813,6 +53795,38 @@
     "rewards": {
       "recipes": [
         "minecraft:chest_minecart"
+      ]
+    }
+  },
+  "recipes/transportation/cyan_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dried_ghast": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dried_ghast"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cyan_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dried_ghast"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cyan_harness"
       ]
     }
   },
@@ -52940,6 +53954,70 @@
       ]
     }
   },
+  "recipes/transportation/gray_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dried_ghast": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dried_ghast"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:gray_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dried_ghast"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:gray_harness"
+      ]
+    }
+  },
+  "recipes/transportation/green_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dried_ghast": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dried_ghast"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:green_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dried_ghast"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:green_harness"
+      ]
+    }
+  },
   "recipes/transportation/hopper_minecart": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -53029,6 +54107,134 @@
     "rewards": {
       "recipes": [
         "minecraft:jungle_chest_boat"
+      ]
+    }
+  },
+  "recipes/transportation/light_blue_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dried_ghast": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dried_ghast"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:light_blue_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dried_ghast"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:light_blue_harness"
+      ]
+    }
+  },
+  "recipes/transportation/light_gray_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dried_ghast": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dried_ghast"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:light_gray_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dried_ghast"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:light_gray_harness"
+      ]
+    }
+  },
+  "recipes/transportation/lime_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dried_ghast": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dried_ghast"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:lime_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dried_ghast"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:lime_harness"
+      ]
+    }
+  },
+  "recipes/transportation/magenta_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dried_ghast": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dried_ghast"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:magenta_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dried_ghast"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:magenta_harness"
       ]
     }
   },
@@ -53184,6 +54390,38 @@
       ]
     }
   },
+  "recipes/transportation/orange_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dried_ghast": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dried_ghast"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:orange_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dried_ghast"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:orange_harness"
+      ]
+    }
+  },
   "recipes/transportation/pale_oak_boat": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -53244,6 +54482,38 @@
       ]
     }
   },
+  "recipes/transportation/pink_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dried_ghast": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dried_ghast"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:pink_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dried_ghast"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:pink_harness"
+      ]
+    }
+  },
   "recipes/transportation/powered_rail": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -53276,6 +54546,38 @@
       ]
     }
   },
+  "recipes/transportation/purple_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dried_ghast": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dried_ghast"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:purple_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dried_ghast"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:purple_harness"
+      ]
+    }
+  },
   "recipes/transportation/rail": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -53305,6 +54607,38 @@
     "rewards": {
       "recipes": [
         "minecraft:rail"
+      ]
+    }
+  },
+  "recipes/transportation/red_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dried_ghast": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dried_ghast"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:red_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dried_ghast"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:red_harness"
       ]
     }
   },
@@ -53429,6 +54763,70 @@
     "rewards": {
       "recipes": [
         "minecraft:warped_fungus_on_a_stick"
+      ]
+    }
+  },
+  "recipes/transportation/white_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dried_ghast": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dried_ghast"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:white_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dried_ghast"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:white_harness"
+      ]
+    }
+  },
+  "recipes/transportation/yellow_harness": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_dried_ghast": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dried_ghast"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:yellow_harness"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_dried_ghast"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:yellow_harness"
       ]
     }
   },

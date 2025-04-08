@@ -4179,6 +4179,25 @@
     "datapack": {
       "type": "literal",
       "children": {
+        "create": {
+          "type": "literal",
+          "children": {
+            "id": {
+              "type": "argument",
+              "children": {
+                "description": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:component"
+                }
+              },
+              "parser": "brigadier:string",
+              "properties": {
+                "type": "phrase"
+              }
+            }
+          }
+        },
         "disable": {
           "type": "literal",
           "children": {
@@ -7139,6 +7158,17 @@
           "executable": true
         },
         "universalAnger": {
+          "type": "literal",
+          "children": {
+            "value": {
+              "type": "argument",
+              "executable": true,
+              "parser": "brigadier:bool"
+            }
+          },
+          "executable": true
+        },
+        "useLocatorBar": {
           "type": "literal",
           "children": {
             "value": {
@@ -11188,11 +11218,111 @@
         }
       }
     },
+    "version": {
+      "type": "literal",
+      "executable": true
+    },
     "w": {
       "type": "literal",
       "redirect": [
         "msg"
       ]
+    },
+    "waypoint": {
+      "type": "literal",
+      "children": {
+        "list": {
+          "type": "literal",
+          "executable": true
+        },
+        "modify": {
+          "type": "literal",
+          "children": {
+            "waypoint": {
+              "type": "argument",
+              "children": {
+                "color": {
+                  "type": "literal",
+                  "children": {
+                    "color": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "minecraft:color"
+                    },
+                    "hex": {
+                      "type": "literal",
+                      "children": {
+                        "color": {
+                          "type": "argument",
+                          "executable": true,
+                          "parser": "minecraft:hex_color"
+                        }
+                      }
+                    },
+                    "reset": {
+                      "type": "literal",
+                      "executable": true
+                    }
+                  }
+                },
+                "fade": {
+                  "type": "literal",
+                  "children": {
+                    "fade_start": {
+                      "type": "argument",
+                      "children": {
+                        "alpha_start": {
+                          "type": "argument",
+                          "children": {
+                            "fade_end": {
+                              "type": "argument",
+                              "children": {
+                                "alpha_end": {
+                                  "type": "argument",
+                                  "executable": true,
+                                  "parser": "brigadier:float",
+                                  "properties": {
+                                    "max": 1.0,
+                                    "min": 0.0
+                                  }
+                                }
+                              },
+                              "parser": "brigadier:integer",
+                              "properties": {
+                                "max": 60000000,
+                                "min": 0
+                              }
+                            }
+                          },
+                          "parser": "brigadier:float",
+                          "properties": {
+                            "max": 1.0,
+                            "min": 0.0
+                          }
+                        }
+                      },
+                      "parser": "brigadier:integer",
+                      "properties": {
+                        "max": 60000000,
+                        "min": 0
+                      }
+                    },
+                    "reset": {
+                      "type": "literal",
+                      "executable": true
+                    }
+                  }
+                }
+              },
+              "parser": "minecraft:entity",
+              "properties": {
+                "type": "entities",
+                "amount": "single"
+              }
+            }
+          }
+        }
+      }
     },
     "weather": {
       "type": "literal",
