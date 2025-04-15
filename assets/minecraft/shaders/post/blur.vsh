@@ -1,11 +1,18 @@
 #version 150
 
+#moj_import <minecraft:projection.glsl>
+
 in vec4 Position;
 
-uniform mat4 ProjMat;
-uniform vec2 InSize;
-uniform vec2 OutSize;
-uniform vec2 BlurDir;
+layout(std140) uniform SamplerInfo {
+    vec2 OutSize;
+    vec2 InSize;
+};
+
+layout(std140) uniform BlurConfig {
+    vec2 BlurDir;
+    float Radius;
+};
 
 out vec2 texCoord;
 out vec2 sampleStep;

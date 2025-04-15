@@ -17,18 +17,20 @@
                 }
             ],
             "output": "temp",
-            "uniforms": [
-                {
-                    "name": "BlurDir",
-                    "type": "vec2",
-                    "values": [ 1.0, 0.0 ]
-                },
-                {
-                    "name": "Radius",
-                    "type": "float",
-                    "values": [ 15.0 ]
-                }
-            ]
+            "uniforms": {
+                "BlurConfig": [
+                    {
+                        "name": "BlurDir",
+                        "type": "vec2",
+                        "value": [ 1.0, 0.0 ]
+                    },
+                    {
+                        "name": "Radius",
+                        "type": "float",
+                        "value": 15.0
+                    }
+                ]
+            }
         },
         {
             "vertex_shader": "minecraft:post/blur",
@@ -41,18 +43,20 @@
                 }
             ],
             "output": "large_blur",
-            "uniforms": [
-                {
-                    "name": "BlurDir",
-                    "type": "vec2",
-                    "values": [ 0.0, 1.0 ]
-                },
-                {
-                    "name": "Radius",
-                    "type": "float",
-                    "values": [ 15.0 ]
-                }
-            ]
+            "uniforms": {
+                "BlurConfig": [
+                    {
+                        "name": "BlurDir",
+                        "type": "vec2",
+                        "value": [ 0.0, 1.0 ]
+                    },
+                    {
+                        "name": "Radius",
+                        "type": "float",
+                        "value": 15.0
+                    }
+                ]
+            }
         },
         {
             "vertex_shader": "minecraft:post/blur",
@@ -65,18 +69,20 @@
                 }
             ],
             "output": "temp",
-            "uniforms": [
-                {
-                    "name": "BlurDir",
-                    "type": "vec2",
-                    "values": [ 1.0, 0.0 ]
-                },
-                {
-                    "name": "Radius",
-                    "type": "float",
-                    "values": [ 7.0 ]
-                }
-            ]
+            "uniforms": {
+                "BlurConfig": [
+                    {
+                        "name": "BlurDir",
+                        "type": "vec2",
+                        "value": [ 1.0, 0.0 ]
+                    },
+                    {
+                        "name": "Radius",
+                        "type": "float",
+                        "value": 7.0
+                    }
+                ]
+            }
         },
         {
             "vertex_shader": "minecraft:post/blur",
@@ -89,18 +95,20 @@
                 }
             ],
             "output": "small_blur",
-            "uniforms": [
-                {
-                    "name": "BlurDir",
-                    "type": "vec2",
-                    "values": [ 0.0, 1.0 ]
-                },
-                {
-                    "name": "Radius",
-                    "type": "float",
-                    "values": [ 7.0 ]
-                }
-            ]
+            "uniforms": {
+                "BlurConfig": [
+                    {
+                        "name": "BlurDir",
+                        "type": "vec2",
+                        "value": [ 0.0, 1.0 ]
+                    },
+                    {
+                        "name": "Radius",
+                        "type": "float",
+                        "value": 7.0
+                    }
+                ]
+            }
         },
         {
             "vertex_shader": "minecraft:post/rotscale",
@@ -116,33 +124,37 @@
                 }
             ],
             "output": "temp",
-            "uniforms": [
-                {
-                    "name": "InScale",
-                    "type": "vec2",
-                    "values": [ 1.25, 2.0 ]
-                },
-                {
-                    "name": "InOffset",
-                    "type": "vec2",
-                    "values": [ -0.125, -0.1 ]
-                },
-                {
-                    "name": "InRotation",
-                    "type": "float",
-                    "values": [ 0 ]
-                },
-                {
-                    "name": "Scissor",
-                    "type": "vec4",
-                    "values": [ 0.0, 0.0, 1.0, 1.0 ]
-                },
-                {
-                    "name": "Vignette",
-                    "type": "vec4",
-                    "values": [ 0.1, 0.1, 0.9, 0.9 ]
-                }
-            ]
+            "uniforms": {
+                "RotScaleConfig": [
+                    {
+                        "name": "InScale",
+                        "type": "vec2",
+                        "value": [ 1.25, 2.0 ]
+                    },
+                    {
+                        "name": "InOffset",
+                        "type": "vec2",
+                        "value": [ -0.125, -0.1 ]
+                    },
+                    {
+                        "name": "InRotation",
+                        "type": "float",
+                        "value": 0.0
+                    }
+                ],
+                "SpiderConfig": [
+                    {
+                        "name": "Scissor",
+                        "type": "vec4",
+                        "value": [ 0.0, 0.0, 1.0, 1.0 ]
+                    },
+                    {
+                        "name": "Vignette",
+                        "type": "vec4",
+                        "value": [ 0.1, 0.1, 0.9, 0.9 ]
+                    }
+                ]
+            }
         },
         {
             "vertex_shader": "minecraft:post/rotscale",
@@ -158,33 +170,37 @@
                 }
             ],
             "output": "swap",
-            "uniforms": [
-                {
-                    "name": "InScale",
-                    "type": "vec2",
-                    "values": [ 2.35, 4.2 ]
-                },
-                {
-                    "name": "InOffset",
-                    "type": "vec2",
-                    "values": [ -1.1, -1.5 ]
-                },
-                {
-                    "name": "InRotation",
-                    "type": "float",
-                    "values": [ -45.0 ]
-                },
-                {
-                    "name": "Scissor",
-                    "type": "vec4",
-                    "values": [ 0.21, 0.0, 0.79, 1.0 ]
-                },
-                {
-                    "name": "Vignette",
-                    "type": "vec4",
-                    "values": [ 0.31, 0.1, 0.69, 0.9 ]
-                }
-            ]
+            "uniforms": {
+                "RotScaleConfig": [
+                    {
+                        "name": "InScale",
+                        "type": "vec2",
+                        "value": [ 2.35, 4.2 ]
+                    },
+                    {
+                        "name": "InOffset",
+                        "type": "vec2",
+                        "value": [ -1.1, -1.5 ]
+                    },
+                    {
+                        "name": "InRotation",
+                        "type": "float",
+                        "value": -45.0
+                    }
+                ],
+                "SpiderConfig": [
+                    {
+                        "name": "Scissor",
+                        "type": "vec4",
+                        "value": [ 0.21, 0.0, 0.79, 1.0 ]
+                    },
+                    {
+                        "name": "Vignette",
+                        "type": "vec4",
+                        "value": [ 0.31, 0.1, 0.69, 0.9 ]
+                    }
+                ]
+            }
         },
         {
             "vertex_shader": "minecraft:post/rotscale",
@@ -200,33 +216,37 @@
                 }
             ],
             "output": "temp",
-            "uniforms": [
-                {
-                    "name": "InScale",
-                    "type": "vec2",
-                    "values": [ 2.35, 4.2 ]
-                },
-                {
-                    "name": "InOffset",
-                    "type": "vec2",
-                    "values": [ 0.45, -4.45 ]
-                },
-                {
-                    "name": "InRotation",
-                    "type": "float",
-                    "values": [ 45.0 ]
-                },
-                {
-                    "name": "Scissor",
-                    "type": "vec4",
-                    "values": [ 0.21, 0.0, 0.79, 1.0 ]
-                },
-                {
-                    "name": "Vignette",
-                    "type": "vec4",
-                    "values": [ 0.31, 0.1, 0.69, 0.9 ]
-                }
-            ]
+            "uniforms": {
+                "RotScaleConfig": [
+                    {
+                        "name": "InScale",
+                        "type": "vec2",
+                        "value": [ 2.35, 4.2 ]
+                    },
+                    {
+                        "name": "InOffset",
+                        "type": "vec2",
+                        "value": [ 0.45, -4.45 ]
+                    },
+                    {
+                        "name": "InRotation",
+                        "type": "float",
+                        "value": 45.0
+                    }
+                ],
+                "SpiderConfig": [
+                    {
+                        "name": "Scissor",
+                        "type": "vec4",
+                        "value": [ 0.21, 0.0, 0.79, 1.0 ]
+                    },
+                    {
+                        "name": "Vignette",
+                        "type": "vec4",
+                        "value": [ 0.31, 0.1, 0.69, 0.9 ]
+                    }
+                ]
+            }
         },
         {
             "vertex_shader": "minecraft:post/rotscale",
@@ -242,33 +262,37 @@
                 }
             ],
             "output": "swap",
-            "uniforms": [
-                {
-                    "name": "InScale",
-                    "type": "vec2",
-                    "values": [ 2.35, 2.35 ]
-                },
-                {
-                    "name": "InOffset",
-                    "type": "vec2",
-                    "values": [ -0.385, -1.29 ]
-                },
-                {
-                    "name": "InRotation",
-                    "type": "float",
-                    "values": [ 0.0 ]
-                },
-                {
-                    "name": "Scissor",
-                    "type": "vec4",
-                    "values": [ 0.0, 0.0, 1.0, 1.0 ]
-                },
-                {
-                    "name": "Vignette",
-                    "type": "vec4",
-                    "values": [ 0.31, 0.1, 0.69, 0.9 ]
-                }
-            ]
+            "uniforms": {
+                "RotScaleConfig": [
+                    {
+                        "name": "InScale",
+                        "type": "vec2",
+                        "value": [ 2.35, 2.35 ]
+                    },
+                    {
+                        "name": "InOffset",
+                        "type": "vec2",
+                        "value": [ -0.385, -1.29 ]
+                    },
+                    {
+                        "name": "InRotation",
+                        "type": "float",
+                        "value": 0.0
+                    }
+                ],
+                "SpiderConfig": [
+                    {
+                        "name": "Scissor",
+                        "type": "vec4",
+                        "value": [ 0.0, 0.0, 1.0, 1.0 ]
+                    },
+                    {
+                        "name": "Vignette",
+                        "type": "vec4",
+                        "value": [ 0.31, 0.1, 0.69, 0.9 ]
+                    }
+                ]
+            }
         },
         {
             "vertex_shader": "minecraft:post/rotscale",
@@ -284,33 +308,37 @@
                 }
             ],
             "output": "temp",
-            "uniforms": [
-                {
-                    "name": "InScale",
-                    "type": "vec2",
-                    "values": [ 2.35, 2.35 ]
-                },
-                {
-                    "name": "InOffset",
-                    "type": "vec2",
-                    "values": [ -0.965, -1.29 ]
-                },
-                {
-                    "name": "InRotation",
-                    "type": "float",
-                    "values": [ 0 ]
-                },
-                {
-                    "name": "Scissor",
-                    "type": "vec4",
-                    "values": [ 0.0, 0.0, 1.0, 1.0 ]
-                },
-                {
-                    "name": "Vignette",
-                    "type": "vec4",
-                    "values": [ 0.31, 0.1, 0.69, 0.9 ]
-                }
-            ]
+            "uniforms": {
+                "RotScaleConfig": [
+                    {
+                        "name": "InScale",
+                        "type": "vec2",
+                        "value": [ 2.35, 2.35 ]
+                    },
+                    {
+                        "name": "InOffset",
+                        "type": "vec2",
+                        "value": [ -0.965, -1.29 ]
+                    },
+                    {
+                        "name": "InRotation",
+                        "type": "float",
+                        "value": 0.0
+                    }
+                ],
+                "SpiderConfig": [
+                    {
+                        "name": "Scissor",
+                        "type": "vec4",
+                        "value": [ 0.0, 0.0, 1.0, 1.0 ]
+                    },
+                    {
+                        "name": "Vignette",
+                        "type": "vec4",
+                        "value": [ 0.31, 0.1, 0.69, 0.9 ]
+                    }
+                ]
+            }
         },
         {
             "vertex_shader": "minecraft:post/blit",
@@ -322,13 +350,15 @@
                 }
             ],
             "output": "minecraft:main",
-            "uniforms": [
-                {
-                    "name": "ColorModulate",
-                    "type": "vec4",
-                    "values": [ 1.0, 0.8, 0.8, 1.0 ]
-                }
-            ]
+            "uniforms": {
+                "BlitConfig": [
+                    {
+                        "name": "ColorModulate",
+                        "type": "vec4",
+                        "value": [ 1.0, 0.8, 0.8, 1.0 ]
+                    }
+                ]
+            }
         }
     ]
 }

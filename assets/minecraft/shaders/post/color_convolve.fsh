@@ -4,11 +4,17 @@ uniform sampler2D InSampler;
 
 in vec2 texCoord;
 in vec2 oneTexel;
-uniform vec2 InSize;
 
-uniform vec3 RedMatrix;
-uniform vec3 GreenMatrix;
-uniform vec3 BlueMatrix;
+layout(std140) uniform SamplerInfo {
+    vec2 OutSize;
+    vec2 InSize;
+};
+
+layout(std140) uniform ColorConfig {
+    vec3 RedMatrix;
+    vec3 GreenMatrix;
+    vec3 BlueMatrix;
+};
 
 const vec3 Gray = vec3(0.3, 0.59, 0.11);
 const float Saturation = 1.8;

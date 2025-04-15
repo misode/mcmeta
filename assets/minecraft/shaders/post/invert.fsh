@@ -4,7 +4,9 @@ uniform sampler2D InSampler;
 
 in vec2 texCoord;
 
-uniform float InverseAmount;
+layout(std140) uniform InvertConfig {
+    float InverseAmount;
+};
 
 out vec4 fragColor;
 

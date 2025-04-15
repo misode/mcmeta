@@ -1,6 +1,6 @@
 #version 150
 
-uniform vec4 ColorModulator;
+#moj_import <minecraft:dynamictransforms.glsl>
 
 in vec4 vertexColor;
 

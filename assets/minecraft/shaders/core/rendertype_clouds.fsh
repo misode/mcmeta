@@ -2,9 +2,6 @@
 
 #moj_import <minecraft:fog.glsl>
 
-uniform float FogStart;
-uniform float FogEnd;
-uniform vec4 FogColor;
 
 in float vertexDistance;
 in vec4 vertexColor;
@@ -12,5 +9,7 @@ in vec4 vertexColor;
 out vec4 fragColor;
 
 void main() {
-    fragColor = linear_fog(vertexColor, vertexDistance, FogStart, FogEnd, FogColor);
+    vec4 color = vertexColor;
+    color.a *= linear_fog_fade(vertexDistance, 0, FogCloudsEnd);
+    fragColor = color;
 }
