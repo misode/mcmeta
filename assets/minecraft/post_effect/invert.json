@@ -13,13 +13,15 @@
                 }
             ],
             "output": "swap",
-            "uniforms": [
-                {
-                    "name": "InverseAmount",
-                    "type": "float",
-                    "values": [ 0.8 ]
-                }
-            ]
+            "uniforms": {
+                "InvertConfig": [
+                    {
+                        "name": "InverseAmount",
+                        "type": "float",
+                        "value": 0.8
+                    }
+                ]
+            }
         },
         {
             "vertex_shader": "minecraft:post/blit",
@@ -30,13 +32,15 @@
                     "target": "swap"
                 }
             ],
-            "uniforms": [
-                {
-                    "name": "ColorModulate",
-                    "type": "vec4",
-                    "values": [ 1.0, 1.0, 1.0, 1.0 ]
-                }
-            ],
+            "uniforms": {
+                "BlitConfig": [
+                    {
+                        "name": "ColorModulate",
+                        "type": "vec4",
+                        "value": [ 1.0, 1.0, 1.0, 1.0 ]
+                    }
+                ]
+            },
             "output": "minecraft:main"
         }
     ]

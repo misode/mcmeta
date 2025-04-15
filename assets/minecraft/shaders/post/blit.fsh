@@ -2,7 +2,9 @@
 
 uniform sampler2D InSampler;
 
-uniform vec4 ColorModulate;
+layout(std140) uniform BlitConfig {
+    vec4 ColorModulate;
+};
 
 in vec2 texCoord;
 

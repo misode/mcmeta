@@ -6,9 +6,15 @@ uniform sampler2D BlurSampler;
 in vec2 texCoord;
 in vec2 scaledCoord;
 
-uniform vec2 InSize;
-uniform vec4 Scissor;
-uniform vec4 Vignette;
+layout(std140) uniform SamplerInfo {
+    vec2 OutSize;
+    vec2 InSize;
+};
+
+layout(std140) uniform SpiderConfig {
+    vec4 Scissor;
+    vec4 Vignette;
+};
 
 out vec4 fragColor;
 

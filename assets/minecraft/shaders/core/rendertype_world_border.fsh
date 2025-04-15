@@ -1,8 +1,8 @@
 #version 150
 
-uniform sampler2D Sampler0;
+#moj_import <minecraft:dynamictransforms.glsl>
 
-uniform vec4 ColorModulator;
+uniform sampler2D Sampler0;
 
 in vec2 texCoord0;
 

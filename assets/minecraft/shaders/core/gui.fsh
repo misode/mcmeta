@@ -1,8 +1,16 @@
 #version 150
 
-in vec4 vertexColor;
+// Can't moj_import in things used during startup, when resource packs don't exist.
+// This is a copy of dynamicimports.glsl
+layout(std140) uniform DynamicTransforms {
+    mat4 ModelViewMat;
+    vec4 ColorModulator;
+    vec3 ModelOffset;
+    mat4 TextureMat;
+    float LineWidth;
+};
 
-uniform vec4 ColorModulator;
+in vec4 vertexColor;
 
 out vec4 fragColor;
 
