@@ -2,14 +2,10 @@
 
 #moj_import <minecraft:fog.glsl>
 #moj_import <minecraft:matrix.glsl>
+#moj_import <minecraft:globals.glsl>
 
 uniform sampler2D Sampler0;
 uniform sampler2D Sampler1;
-
-uniform float GameTime;
-uniform float FogStart;
-uniform float FogEnd;
-uniform vec4 FogColor;
 
 in vec4 texProj0;
 in float vertexDistance;

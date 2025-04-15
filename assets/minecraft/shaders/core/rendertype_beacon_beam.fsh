@@ -1,14 +1,10 @@
 #version 150
 
 #moj_import <minecraft:fog.glsl>
+#moj_import <minecraft:dynamictransforms.glsl>
+#moj_import <minecraft:projection.glsl>
 
 uniform sampler2D Sampler0;
-
-uniform mat4 ProjMat;
-uniform vec4 ColorModulator;
-uniform float FogStart;
-uniform float FogEnd;
-uniform vec4 FogColor;
 
 in vec4 vertexColor;
 in vec2 texCoord0;

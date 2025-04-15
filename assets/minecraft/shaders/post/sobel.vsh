@@ -1,10 +1,13 @@
 #version 150
 
+#moj_import <minecraft:projection.glsl>
+
 in vec4 Position;
 
-uniform mat4 ProjMat;
-uniform vec2 InSize;
-uniform vec2 OutSize;
+layout(std140) uniform SamplerInfo {
+    vec2 OutSize;
+    vec2 InSize;
+};
 
 out vec2 texCoord;
 out vec2 oneTexel;

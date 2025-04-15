@@ -1,16 +1,13 @@
 #version 150
 
 #moj_import <minecraft:fog.glsl>
+#moj_import <minecraft:globals.glsl>
+#moj_import <minecraft:dynamictransforms.glsl>
+#moj_import <minecraft:projection.glsl>
 
 in vec3 Position;
 in vec4 Color;
 in vec3 Normal;
-
-uniform mat4 ModelViewMat;
-uniform mat4 ProjMat;
-uniform float LineWidth;
-uniform vec2 ScreenSize;
-uniform int FogShape;
 
 out float vertexDistance;
 out vec4 vertexColor;
