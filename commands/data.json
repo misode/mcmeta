@@ -6907,6 +6907,17 @@
           },
           "executable": true
         },
+        "locatorBar": {
+          "type": "literal",
+          "children": {
+            "value": {
+              "type": "argument",
+              "executable": true,
+              "parser": "brigadier:bool"
+            }
+          },
+          "executable": true
+        },
         "logAdminCommands": {
           "type": "literal",
           "children": {
@@ -7158,17 +7169,6 @@
           "executable": true
         },
         "universalAnger": {
-          "type": "literal",
-          "children": {
-            "value": {
-              "type": "argument",
-              "executable": true,
-              "parser": "brigadier:bool"
-            }
-          },
-          "executable": true
-        },
-        "useLocatorBar": {
           "type": "literal",
           "children": {
             "value": {
@@ -11265,51 +11265,22 @@
                     }
                   }
                 },
-                "fade": {
+                "style": {
                   "type": "literal",
                   "children": {
-                    "fade_start": {
-                      "type": "argument",
-                      "children": {
-                        "alpha_start": {
-                          "type": "argument",
-                          "children": {
-                            "fade_end": {
-                              "type": "argument",
-                              "children": {
-                                "alpha_end": {
-                                  "type": "argument",
-                                  "executable": true,
-                                  "parser": "brigadier:float",
-                                  "properties": {
-                                    "max": 1.0,
-                                    "min": 0.0
-                                  }
-                                }
-                              },
-                              "parser": "brigadier:integer",
-                              "properties": {
-                                "max": 60000000,
-                                "min": 0
-                              }
-                            }
-                          },
-                          "parser": "brigadier:float",
-                          "properties": {
-                            "max": 1.0,
-                            "min": 0.0
-                          }
-                        }
-                      },
-                      "parser": "brigadier:integer",
-                      "properties": {
-                        "max": 60000000,
-                        "min": 0
-                      }
-                    },
                     "reset": {
                       "type": "literal",
                       "executable": true
+                    },
+                    "set": {
+                      "type": "literal",
+                      "children": {
+                        "style": {
+                          "type": "argument",
+                          "executable": true,
+                          "parser": "minecraft:resource_location"
+                        }
+                      }
                     }
                   }
                 }
