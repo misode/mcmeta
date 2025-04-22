@@ -11,9 +11,5 @@ out float vertexDistance;
 void main() {
     gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
 
-#ifdef FOG_IS_SKY
-    vertexDistance = fog_distance(Position, FOG_SHAPE_CYLINDER);
-#else
     vertexDistance = fog_distance(Position, FogShape);
-#endif
 }
