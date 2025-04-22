@@ -8,5 +8,5 @@ in float vertexDistance;
 out vec4 fragColor;
 
 void main() {
-    fragColor = linear_fog(ColorModulator, vertexDistance, FogStart, FogEnd, FogColor);
+    fragColor = linear_fog(ColorModulator, vertexDistance, 0.0, FogSkyEnd, FogColor);
 }

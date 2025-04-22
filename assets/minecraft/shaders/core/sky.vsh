@@ -11,5 +11,5 @@ out float vertexDistance;
 void main() {
     gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
 
-    vertexDistance = fog_distance(Position, FogShape);
+    vertexDistance = fog_distance(Position, FOG_SHAPE_CYLINDER);
 }
