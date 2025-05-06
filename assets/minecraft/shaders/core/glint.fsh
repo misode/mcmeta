@@ -6,7 +6,8 @@
 
 uniform sampler2D Sampler0;
 
-in float vertexDistance;
+in float sphericalVertexDistance;
+in float cylindricalVertexDistance;
 in vec2 texCoord0;
 
 out vec4 fragColor;
@@ -16,6 +17,6 @@ void main() {
     if (color.a < 0.1) {
         discard;
     }
-    float fade = linear_fog_fade(vertexDistance, FogStart, FogEnd) * GlintAlpha;
+    float fade = (1.0f - total_fog_value(sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd)) * GlintAlpha;
     fragColor = vec4(color.rgb * fade, color.a);
 }
