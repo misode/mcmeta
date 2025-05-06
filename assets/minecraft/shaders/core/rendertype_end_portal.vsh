@@ -8,11 +8,13 @@
 in vec3 Position;
 
 out vec4 texProj0;
-out float vertexDistance;
+out float sphericalVertexDistance;
+out float cylindricalVertexDistance;
 
 void main() {
     gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
 
     texProj0 = projection_from_position(gl_Position);
-    vertexDistance = fog_distance(Position, FogShape);
+    sphericalVertexDistance = fog_spherical_distance(Position);
+    cylindricalVertexDistance = fog_cylindrical_distance(Position);
 }
