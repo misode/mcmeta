@@ -9,7 +9,8 @@ in vec3 Position;
 in vec4 Color;
 in vec3 Normal;
 
-out float vertexDistance;
+out float sphericalVertexDistance;
+out float cylindricalVertexDistance;
 out vec4 vertexColor;
 
 const float VIEW_SHRINK = 1.0 - (1.0 / 256.0);
@@ -40,6 +41,7 @@ void main() {
         gl_Position = vec4((ndc1 - vec3(lineOffset, 0.0)) * linePosStart.w, linePosStart.w);
     }
 
-    vertexDistance = fog_distance(Position, FogShape);
+    sphericalVertexDistance = fog_spherical_distance(Position);
+    cylindricalVertexDistance = fog_cylindrical_distance(Position);
     vertexColor = Color;
 }

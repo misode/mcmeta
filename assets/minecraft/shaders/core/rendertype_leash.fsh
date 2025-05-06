@@ -3,11 +3,12 @@
 #moj_import <minecraft:fog.glsl>
 
 
-in float vertexDistance;
+in float sphericalVertexDistance;
+in float cylindricalVertexDistance;
 flat in vec4 vertexColor;
 
 out vec4 fragColor;
 
 void main() {
-    fragColor = linear_fog(vertexColor, vertexDistance, FogStart, FogEnd, FogColor);
+    fragColor = apply_fog(vertexColor, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
 }

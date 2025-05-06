@@ -5,7 +5,8 @@
 
 uniform sampler2D Sampler0;
 
-in float vertexDistance;
+in float sphericalVertexDistance;
+in float cylindricalVertexDistance;
 in vec4 vertexColor;
 in vec2 texCoord0;
 
@@ -14,5 +15,5 @@ out vec4 fragColor;
 void main() {
     vec4 color = texture(Sampler0, clamp(texCoord0, 0.0, 1.0));
     color *= vertexColor * ColorModulator;
-    fragColor = linear_fog(color, vertexDistance, FogStart, FogEnd, FogColor);
+    fragColor = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
 }

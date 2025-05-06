@@ -12,7 +12,8 @@ in vec3 Normal;
 
 uniform sampler2D Sampler2;
 
-out float vertexDistance;
+out float sphericalVertexDistance;
+out float cylindricalVertexDistance;
 out vec4 vertexColor;
 out vec2 texCoord0;
 
@@ -24,7 +25,8 @@ void main() {
     vec3 pos = Position + ModelOffset;
     gl_Position = ProjMat * ModelViewMat * vec4(pos, 1.0);
 
-    vertexDistance = fog_distance(pos, FogShape);
+    sphericalVertexDistance = fog_spherical_distance(pos);
+    cylindricalVertexDistance = fog_cylindrical_distance(pos);
     vertexColor = Color * minecraft_sample_lightmap(Sampler2, UV2);
     texCoord0 = UV0;
 }
