@@ -60,6 +60,42 @@
         }
       ],
       "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "direct_entity": {
+              "type": "minecraft:fireball"
+            },
+            "tags": [
+              {
+                "expected": true,
+                "id": "minecraft:is_projectile"
+              }
+            ]
+          }
+        },
+        {
+          "condition": "minecraft:killed_by_player"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:music_disc_tears"
+        }
+      ],
+      "functions": [
+        {
+          "add": false,
+          "count": 1.0,
+          "function": "minecraft:set_count"
+        }
+      ],
+      "rolls": 1.0
     }
   ],
   "random_sequence": "minecraft:entities/ghast"
