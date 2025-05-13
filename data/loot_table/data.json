@@ -31150,11 +31150,15 @@
             "functions": [
               {
                 "add": false,
-                "count": 1.0,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 5.0,
+                  "min": 1.0
+                },
                 "function": "minecraft:set_count"
               }
             ],
-            "name": "minecraft:saddle",
+            "name": "minecraft:leather",
             "weight": 2
           },
           {
@@ -33567,7 +33571,18 @@
           },
           {
             "type": "minecraft:item",
-            "name": "minecraft:saddle",
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 5.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:leather",
             "weight": 20
           },
           {
@@ -34302,7 +34317,18 @@
           },
           {
             "type": "minecraft:item",
-            "name": "minecraft:saddle",
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 5.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:leather",
             "weight": 3
           },
           {
@@ -35685,7 +35711,18 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "minecraft:saddle",
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 5.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:leather",
             "weight": 20
           },
           {
@@ -36355,7 +36392,18 @@
           },
           {
             "type": "minecraft:item",
-            "name": "minecraft:saddle"
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 5.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:leather"
           },
           {
             "type": "minecraft:item",
@@ -42170,6 +42218,42 @@
               }
             ],
             "name": "minecraft:gunpowder"
+          }
+        ],
+        "rolls": 1.0
+      },
+      {
+        "bonus_rolls": 0.0,
+        "conditions": [
+          {
+            "condition": "minecraft:damage_source_properties",
+            "predicate": {
+              "direct_entity": {
+                "type": "minecraft:fireball"
+              },
+              "tags": [
+                {
+                  "expected": true,
+                  "id": "minecraft:is_projectile"
+                }
+              ]
+            }
+          },
+          {
+            "condition": "minecraft:killed_by_player"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:music_disc_tears"
+          }
+        ],
+        "functions": [
+          {
+            "add": false,
+            "count": 1.0,
+            "function": "minecraft:set_count"
           }
         ],
         "rolls": 1.0
