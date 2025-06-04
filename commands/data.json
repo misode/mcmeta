@@ -9059,6 +9059,60 @@
               },
               "executable": true
             },
+            "ui": {
+              "type": "literal",
+              "children": {
+                "targets": {
+                  "type": "argument",
+                  "children": {
+                    "pos": {
+                      "type": "argument",
+                      "children": {
+                        "volume": {
+                          "type": "argument",
+                          "children": {
+                            "pitch": {
+                              "type": "argument",
+                              "children": {
+                                "minVolume": {
+                                  "type": "argument",
+                                  "executable": true,
+                                  "parser": "brigadier:float",
+                                  "properties": {
+                                    "max": 1.0,
+                                    "min": 0.0
+                                  }
+                                }
+                              },
+                              "executable": true,
+                              "parser": "brigadier:float",
+                              "properties": {
+                                "max": 2.0,
+                                "min": 0.0
+                              }
+                            }
+                          },
+                          "executable": true,
+                          "parser": "brigadier:float",
+                          "properties": {
+                            "min": 0.0
+                          }
+                        }
+                      },
+                      "executable": true,
+                      "parser": "minecraft:vec3"
+                    }
+                  },
+                  "executable": true,
+                  "parser": "minecraft:entity",
+                  "properties": {
+                    "type": "players",
+                    "amount": "multiple"
+                  }
+                }
+              },
+              "executable": true
+            },
             "voice": {
               "type": "literal",
               "children": {
@@ -10267,6 +10321,17 @@
               "executable": true
             },
             "record": {
+              "type": "literal",
+              "children": {
+                "sound": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:resource_location"
+                }
+              },
+              "executable": true
+            },
+            "ui": {
               "type": "literal",
               "children": {
                 "sound": {
