@@ -3,7 +3,6 @@
 uniform sampler2D InSampler;
 
 in vec2 texCoord;
-in vec2 oneTexel;
 
 layout(std140) uniform SamplerInfo {
     vec2 OutSize;
@@ -22,6 +21,7 @@ const float Saturation = 1.8;
 out vec4 fragColor;
 
 void main() {
+    vec2 oneTexel = 1.0 / InSize;
     vec4 InTexel = texture(InSampler, texCoord);
 
     // Color Matrix

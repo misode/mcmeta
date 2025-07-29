@@ -1,9 +1,5 @@
 #version 150
 
-#moj_import <minecraft:projection.glsl>
-
-in vec4 Position;
-
 layout(std140) uniform SamplerInfo {
     vec2 OutSize;
     vec2 InSize;
@@ -19,10 +15,11 @@ out vec2 texCoord;
 out vec2 scaledCoord;
 
 void main(){
-    vec4 outPos = ProjMat * vec4(Position.xy * OutSize, 0.0, 1.0);
-    gl_Position = vec4(outPos.xy, 0.2, 1.0);
+    vec2 uv = vec2((gl_VertexID << 1) & 2, gl_VertexID & 2);
+    vec4 pos = vec4(uv * vec2(2, 2) + vec2(-1, -1), 0, 1);
 
-    texCoord = Position.xy;
+    gl_Position = pos;
+    texCoord = uv;
 
     float Deg2Rad = 0.0174532925;
     float InRadians = InRotation * Deg2Rad;
