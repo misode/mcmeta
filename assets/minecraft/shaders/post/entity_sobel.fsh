@@ -2,12 +2,18 @@
 
 uniform sampler2D InSampler;
 
+layout(std140) uniform SamplerInfo {
+    vec2 OutSize;
+    vec2 InSize;
+};
+
 in vec2 texCoord;
-in vec2 oneTexel;
 
 out vec4 fragColor;
 
 void main(){
+    vec2 oneTexel = 1.0 / InSize;
+
     vec4 center = texture(InSampler, texCoord);
     vec4 left = texture(InSampler, texCoord - vec2(oneTexel.x, 0.0));
     vec4 right = texture(InSampler, texCoord + vec2(oneTexel.x, 0.0));

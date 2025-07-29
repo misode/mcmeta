@@ -3,7 +3,6 @@
 uniform sampler2D InSampler;
 
 in vec2 texCoord;
-in vec2 oneTexel;
 
 layout(std140) uniform SamplerInfo {
     vec2 OutSize;
@@ -20,6 +19,7 @@ out vec4 fragColor;
 const float Saturation = 1.5;
 
 void main() {
+    vec2 oneTexel = 1.0 / InSize;
     vec2 mosaicInSize = InSize / MosaicSize;
     vec2 fractPix = fract(texCoord * mosaicInSize) / mosaicInSize;
 
