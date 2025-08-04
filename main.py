@@ -203,8 +203,10 @@ def get_version_meta(version: str, versions: dict[str], jar: str = None):
 			'stable': data['stable'],
 			'data_version': data['world_version'],
 			'protocol_version': data['protocol_version'],
-			'data_pack_version': pack if type(pack) == int else pack['data'] if 'data' in pack else [pack['data_major'], pack['data_minor']],
-			'resource_pack_version': pack if type(pack) == int else pack['resource'] if 'resource' in pack else [pack['resource_major'], pack['resource_minor']],
+			'data_pack_version': pack if type(pack) == int else pack['data'] if 'data' in pack else pack['data_major'],
+			'data_pack_version_minor': pack['data_minor'] if 'data_minor' in pack else 0,
+			'resource_pack_version': pack if type(pack) == int else pack['resource'] if 'resource' in pack else pack['resource_major'],
+			'resource_pack_version_minor': pack['resource_minor'] if 'resource_minor' in pack else 0,
 			'build_time': data['build_time'],
 			'release_time': versions[version]['releaseTime'],
 			'sha1': versions[version]['sha1']
@@ -275,9 +277,9 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			pack = {
 				'pack': {
 					'description': 'The default data for Minecraft',
-					'pack_format': version_meta['data_pack_version'][0],
-					'min_format': version_meta['data_pack_version'],
-					'max_format': version_meta['data_pack_version']
+					'pack_format': version_meta['data_pack_version'],
+					'min_format': [version_meta['data_pack_version'], version_meta['data_pack_version_minor']],
+					'max_format': [version_meta['data_pack_version'], version_meta['data_pack_version_minor']]
 				}
 			}
 		else:
