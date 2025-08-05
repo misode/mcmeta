@@ -7399,6 +7399,10 @@
                     "minecraft:waxed_exposed_copper_trapdoor",
                     "minecraft:waxed_weathered_copper_trapdoor",
                     "minecraft:waxed_oxidized_copper_trapdoor",
+                    "minecraft:waxed_copper_bars",
+                    "minecraft:waxed_exposed_copper_bars",
+                    "minecraft:waxed_weathered_copper_bars",
+                    "minecraft:waxed_oxidized_copper_bars",
                     "minecraft:waxed_copper_grate",
                     "minecraft:waxed_exposed_copper_grate",
                     "minecraft:waxed_weathered_copper_grate",
@@ -7418,7 +7422,15 @@
                     "minecraft:waxed_lightning_rod",
                     "minecraft:waxed_exposed_lightning_rod",
                     "minecraft:waxed_weathered_lightning_rod",
-                    "minecraft:waxed_oxidized_lightning_rod"
+                    "minecraft:waxed_oxidized_lightning_rod",
+                    "minecraft:waxed_copper_lantern",
+                    "minecraft:waxed_exposed_copper_lantern",
+                    "minecraft:waxed_weathered_copper_lantern",
+                    "minecraft:waxed_oxidized_copper_lantern",
+                    "minecraft:waxed_copper_chain",
+                    "minecraft:waxed_exposed_copper_chain",
+                    "minecraft:waxed_weathered_copper_chain",
+                    "minecraft:waxed_oxidized_copper_chain"
                   ]
                 }
               }
@@ -7500,6 +7512,10 @@
                     "minecraft:exposed_copper_trapdoor",
                     "minecraft:weathered_copper_trapdoor",
                     "minecraft:oxidized_copper_trapdoor",
+                    "minecraft:copper_bars",
+                    "minecraft:exposed_copper_bars",
+                    "minecraft:weathered_copper_bars",
+                    "minecraft:oxidized_copper_bars",
                     "minecraft:copper_grate",
                     "minecraft:exposed_copper_grate",
                     "minecraft:weathered_copper_grate",
@@ -7519,7 +7535,15 @@
                     "minecraft:lightning_rod",
                     "minecraft:exposed_lightning_rod",
                     "minecraft:weathered_lightning_rod",
-                    "minecraft:oxidized_lightning_rod"
+                    "minecraft:oxidized_lightning_rod",
+                    "minecraft:copper_lantern",
+                    "minecraft:exposed_copper_lantern",
+                    "minecraft:weathered_copper_lantern",
+                    "minecraft:oxidized_copper_lantern",
+                    "minecraft:copper_chain",
+                    "minecraft:exposed_copper_chain",
+                    "minecraft:weathered_copper_chain",
+                    "minecraft:oxidized_copper_chain"
                   ]
                 }
               }
@@ -25003,6 +25027,38 @@
       ]
     }
   },
+  "recipes/building_blocks/waxed_copper_bars_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_bars": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_bars"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_copper_bars_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_bars"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_copper_bars_from_honeycomb"
+      ]
+    }
+  },
   "recipes/building_blocks/waxed_copper_block_from_honeycomb": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -25064,6 +25120,38 @@
     "rewards": {
       "recipes": [
         "minecraft:waxed_copper_bulb_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_copper_chain_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_chain": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_chain"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_copper_chain_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_chain"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_copper_chain_from_honeycomb"
       ]
     }
   },
@@ -25256,6 +25344,38 @@
     "rewards": {
       "recipes": [
         "minecraft:waxed_copper_grate_from_waxed_copper_block_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_copper_lantern_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_lantern": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_lantern"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_copper_lantern_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_lantern"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_copper_lantern_from_honeycomb"
       ]
     }
   },
@@ -25771,6 +25891,38 @@
       ]
     }
   },
+  "recipes/building_blocks/waxed_exposed_copper_bars_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_exposed_copper_bars": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:exposed_copper_bars"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_exposed_copper_bars_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_exposed_copper_bars"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_exposed_copper_bars_from_honeycomb"
+      ]
+    }
+  },
   "recipes/building_blocks/waxed_exposed_copper_bulb_from_honeycomb": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -25800,6 +25952,38 @@
     "rewards": {
       "recipes": [
         "minecraft:waxed_exposed_copper_bulb_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_exposed_copper_chain_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_exposed_copper_chain": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:exposed_copper_chain"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_exposed_copper_chain_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_exposed_copper_chain"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_exposed_copper_chain_from_honeycomb"
       ]
     }
   },
@@ -26024,6 +26208,38 @@
     "rewards": {
       "recipes": [
         "minecraft:waxed_exposed_copper_grate_from_waxed_exposed_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_exposed_copper_lantern_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_exposed_copper_lantern": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:exposed_copper_lantern"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_exposed_copper_lantern_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_exposed_copper_lantern"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_exposed_copper_lantern_from_honeycomb"
       ]
     }
   },
@@ -26603,6 +26819,38 @@
       ]
     }
   },
+  "recipes/building_blocks/waxed_oxidized_copper_bars_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_oxidized_copper_bars": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:oxidized_copper_bars"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_oxidized_copper_bars_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_oxidized_copper_bars"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_oxidized_copper_bars_from_honeycomb"
+      ]
+    }
+  },
   "recipes/building_blocks/waxed_oxidized_copper_bulb_from_honeycomb": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -26632,6 +26880,38 @@
     "rewards": {
       "recipes": [
         "minecraft:waxed_oxidized_copper_bulb_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_oxidized_copper_chain_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_oxidized_copper_chain": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:oxidized_copper_chain"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_oxidized_copper_chain_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_oxidized_copper_chain"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_oxidized_copper_chain_from_honeycomb"
       ]
     }
   },
@@ -26856,6 +27136,38 @@
     "rewards": {
       "recipes": [
         "minecraft:waxed_oxidized_copper_grate_from_waxed_oxidized_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_oxidized_copper_lantern_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_oxidized_copper_lantern": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:oxidized_copper_lantern"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_oxidized_copper_lantern_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_oxidized_copper_lantern"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_oxidized_copper_lantern_from_honeycomb"
       ]
     }
   },
@@ -27403,6 +27715,38 @@
       ]
     }
   },
+  "recipes/building_blocks/waxed_weathered_copper_bars_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_weathered_copper_bars_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_weathered_copper_bars": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:weathered_copper_bars"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_weathered_copper_bars"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_weathered_copper_bars_from_honeycomb"
+      ]
+    }
+  },
   "recipes/building_blocks/waxed_weathered_copper_bulb_from_honeycomb": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -27432,6 +27776,38 @@
     "rewards": {
       "recipes": [
         "minecraft:waxed_weathered_copper_bulb_from_honeycomb"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_weathered_copper_chain_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_weathered_copper_chain_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_weathered_copper_chain": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:weathered_copper_chain"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_weathered_copper_chain"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_weathered_copper_chain_from_honeycomb"
       ]
     }
   },
@@ -27656,6 +28032,38 @@
     "rewards": {
       "recipes": [
         "minecraft:waxed_weathered_copper_grate_from_waxed_weathered_copper_stonecutting"
+      ]
+    }
+  },
+  "recipes/building_blocks/waxed_weathered_copper_lantern_from_honeycomb": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:waxed_weathered_copper_lantern_from_honeycomb"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_weathered_copper_lantern": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:weathered_copper_lantern"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_weathered_copper_lantern"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:waxed_weathered_copper_lantern_from_honeycomb"
       ]
     }
   },
@@ -33146,6 +33554,81 @@
       ]
     }
   },
+  "recipes/decorations/copper_bars": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_ingot": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_ingot"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:copper_bars"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_ingot"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:copper_bars"
+      ]
+    }
+  },
+  "recipes/decorations/copper_chain": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_ingot": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_ingot"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_copper_nugget": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_nugget"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:copper_chain"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_nugget",
+        "has_copper_ingot"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:copper_chain"
+      ]
+    }
+  },
   "recipes/decorations/copper_chest": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -33175,6 +33658,70 @@
     "rewards": {
       "recipes": [
         "minecraft:copper_chest"
+      ]
+    }
+  },
+  "recipes/decorations/copper_lantern": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_torch": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_torch"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:copper_lantern"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_torch"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:copper_lantern"
+      ]
+    }
+  },
+  "recipes/decorations/copper_torch": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_nugget": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_nugget"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:copper_torch"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_nugget"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:copper_torch"
       ]
     }
   },
