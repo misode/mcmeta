@@ -204,9 +204,9 @@ def get_version_meta(version: str, versions: dict[str], jar: str = None):
 			'data_version': data['world_version'],
 			'protocol_version': data['protocol_version'],
 			'data_pack_version': pack if type(pack) == int else pack['data'] if 'data' in pack else pack['data_major'],
-			'data_pack_version_minor': pack['data_minor'] if 'data_minor' in pack else 0,
+			'data_pack_version_minor': pack['data_minor'] if type(pack) != int and 'data_minor' in pack else 0,
 			'resource_pack_version': pack if type(pack) == int else pack['resource'] if 'resource' in pack else pack['resource_major'],
-			'resource_pack_version_minor': pack['resource_minor'] if 'resource_minor' in pack else 0,
+			'resource_pack_version_minor': pack['resource_minor'] if type(pack) != int and 'resource_minor' in pack else 0,
 			'build_time': data['build_time'],
 			'release_time': versions[version]['releaseTime'],
 			'sha1': versions[version]['sha1']
