@@ -4,12 +4,12 @@ layout(std140) uniform LightmapInfo {
     float AmbientLightFactor;
     float SkyFactor;
     float BlockFactor;
-    int UseBrightLightmap;
     float NightVisionFactor;
     float DarknessScale;
     float DarkenWorldFactor;
     float BrightnessFactor;
     vec3 SkyLightColor;
+    vec3 AmbientColor;
 } lightmapInfo;
 
 in vec2 texCoord;
@@ -17,8 +17,7 @@ in vec2 texCoord;
 out vec4 fragColor;
 
 float get_brightness(float level) {
-    float curved_level = level / (4.0 - 3.0 * level);
-    return mix(curved_level, 1.0, lightmapInfo.AmbientLightFactor);
+    return level / (4.0 - 3.0 * level);
 }
 
 vec3 notGamma(vec3 x) {
@@ -37,16 +36,14 @@ void main() {
         block_brightness * (block_brightness * block_brightness * 0.6 + 0.4)
     );
 
-    if (lightmapInfo.UseBrightLightmap != 0) {
-        color = mix(color, vec3(0.99, 1.12, 1.0), 0.25);
-        color = clamp(color, 0.0, 1.0);
-    } else {
-        color += lightmapInfo.SkyLightColor * sky_brightness;
-        color = mix(color, vec3(0.75), 0.04);
+    color = mix(color, lightmapInfo.AmbientColor, lightmapInfo.AmbientLightFactor);
+    color = clamp(color, 0.0, 1.0);
 
-        vec3 darkened_color = color * vec3(0.7, 0.6, 0.6);
-        color = mix(color, darkened_color, lightmapInfo.DarkenWorldFactor);
-    }
+    color += lightmapInfo.SkyLightColor * sky_brightness;
+    color = mix(color, vec3(0.75), 0.04);
+
+    vec3 darkened_color = color * vec3(0.7, 0.6, 0.6);
+    color = mix(color, darkened_color, lightmapInfo.DarkenWorldFactor);
 
     if (lightmapInfo.NightVisionFactor > 0.0) {
         // scale up uniformly until 1.0 is hit by one of the colors
@@ -57,9 +54,7 @@ void main() {
         }
     }
 
-    if (lightmapInfo.UseBrightLightmap == 0) {
-        color = clamp(color - vec3(lightmapInfo.DarknessScale), 0.0, 1.0);
-    }
+    color = clamp(color - vec3(lightmapInfo.DarknessScale), 0.0, 1.0);
 
     vec3 notGamma = notGamma(color);
     color = mix(color, notGamma, lightmapInfo.BrightnessFactor);
