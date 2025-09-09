@@ -1,4 +1,4 @@
-#version 150
+#version 330
 
 #moj_import <minecraft:fog.glsl>
 #moj_import <minecraft:dynamictransforms.glsl>
@@ -7,7 +7,11 @@ uniform sampler2D Sampler0;
 
 in float sphericalVertexDistance;
 in float cylindricalVertexDistance;
+#ifdef PER_FACE_LIGHTING
+in vec4 vertexPerFaceColor[2];
+#else
 in vec4 vertexColor;
+#endif
 in vec4 lightMapColor;
 in vec4 overlayColor;
 in vec2 texCoord0;
@@ -21,7 +25,11 @@ void main() {
         discard;
     }
 #endif
+#ifdef PER_FACE_LIGHTING
+    color *= vertexPerFaceColor[int(gl_FrontFacing)] * ColorModulator;
+#else
     color *= vertexColor * ColorModulator;
+#endif
 #ifndef NO_OVERLAY
     color.rgb = mix(overlayColor.rgb, color.rgb, overlayColor.a);
 #endif

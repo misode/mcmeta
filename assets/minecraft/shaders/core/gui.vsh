@@ -1,4 +1,4 @@
-#version 150
+#version 330
 
 // Can't moj_import in things used during startup, when resource packs don't exist.
 // This is a copy of dynamicimports.glsl and projection.glsl

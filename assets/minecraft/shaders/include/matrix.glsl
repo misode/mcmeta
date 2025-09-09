@@ -1,4 +1,4 @@
-#version 150
+#version 330
 
 mat2 mat2_rotate_z(float radians) {
     return mat2(
