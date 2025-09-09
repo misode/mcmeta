@@ -1,4 +1,4 @@
-#version 150
+#version 330
 
 layout(std140) uniform LightmapInfo {
     float AmbientLightFactor;
@@ -39,7 +39,6 @@ void main() {
     );
 
     color = mix(color, lightmapInfo.AmbientColor, lightmapInfo.AmbientLightFactor);
-    color = clamp(color, 0.0, 1.0);
 
     color += lightmapInfo.SkyLightColor * sky_brightness;
     color = mix(color, vec3(0.75), 0.04);
