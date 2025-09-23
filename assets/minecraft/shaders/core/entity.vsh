@@ -18,7 +18,8 @@ uniform sampler2D Sampler2;
 out float sphericalVertexDistance;
 out float cylindricalVertexDistance;
 #ifdef PER_FACE_LIGHTING
-out vec4 vertexPerFaceColor[2];
+out vec4 vertexPerFaceColorBack;
+out vec4 vertexPerFaceColorFront;
 #else
 out vec4 vertexColor;
 #endif
@@ -34,8 +35,8 @@ void main() {
 
 #ifdef PER_FACE_LIGHTING
     vec2 light = minecraft_compute_light(Light0_Direction, Light1_Direction, Normal);
-    vertexPerFaceColor[0] = minecraft_mix_light_separate(-light, Color);
-    vertexPerFaceColor[1] = minecraft_mix_light_separate(light, Color);
+    vertexPerFaceColorBack = minecraft_mix_light_separate(-light, Color);
+    vertexPerFaceColorFront = minecraft_mix_light_separate(light, Color);
 #elif defined(NO_CARDINAL_LIGHTING)
     vertexColor = Color;
 #else
