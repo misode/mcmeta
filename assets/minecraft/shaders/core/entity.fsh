@@ -8,7 +8,8 @@ uniform sampler2D Sampler0;
 in float sphericalVertexDistance;
 in float cylindricalVertexDistance;
 #ifdef PER_FACE_LIGHTING
-in vec4 vertexPerFaceColor[2];
+in vec4 vertexPerFaceColorBack;
+in vec4 vertexPerFaceColorFront;
 #else
 in vec4 vertexColor;
 #endif
@@ -26,7 +27,7 @@ void main() {
     }
 #endif
 #ifdef PER_FACE_LIGHTING
-    color *= vertexPerFaceColor[int(gl_FrontFacing)] * ColorModulator;
+    color *= (gl_FrontFacing ? vertexPerFaceColorFront : vertexPerFaceColorBack) * ColorModulator;
 #else
     color *= vertexColor * ColorModulator;
 #endif
