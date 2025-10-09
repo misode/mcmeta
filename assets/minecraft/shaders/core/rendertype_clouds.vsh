@@ -56,17 +56,17 @@ const vec3[] vertices = vec3[](
 
 const vec4[] faceColors = vec4[](
     // Bottom face
-    vec4(0.7, 0.7, 0.7, 0.8),
+    vec4(0.7, 0.7, 0.7, 1.0),
     // Top face
-    vec4(1.0, 1.0, 1.0, 0.8),
+    vec4(1.0, 1.0, 1.0, 1.0),
     // North face
-    vec4(0.8, 0.8, 0.8, 0.8),
+    vec4(0.8, 0.8, 0.8, 1.0),
     // South face
-    vec4(0.8, 0.8, 0.8, 0.8),
+    vec4(0.8, 0.8, 0.8, 1.0),
     // West face
-    vec4(0.9, 0.9, 0.9, 0.8),
+    vec4(0.9, 0.9, 0.9, 1.0),
     // East face
-    vec4(0.9, 0.9, 0.9, 0.8)
+    vec4(0.9, 0.9, 0.9, 1.0)
 );
 
 void main() {
