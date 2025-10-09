@@ -7,7 +7,6 @@ layout(std140) uniform DynamicTransforms {
     vec4 ColorModulator;
     vec3 ModelOffset;
     mat4 TextureMat;
-    float LineWidth;
 };
 layout(std140) uniform Projection {
     mat4 ProjMat;
