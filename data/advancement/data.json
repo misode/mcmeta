@@ -2288,6 +2288,34 @@
         },
         "trigger": "minecraft:player_killed_entity"
       },
+      "minecraft:zombie_horse": {
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:zombie_horse"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
+      "minecraft:zombie_nautilus": {
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:zombie_nautilus"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
       "minecraft:zombie_villager": {
         "conditions": {
           "entity": [
@@ -2367,7 +2395,9 @@
         "minecraft:zoglin",
         "minecraft:zombie_villager",
         "minecraft:zombie",
-        "minecraft:zombified_piglin"
+        "minecraft:zombie_horse",
+        "minecraft:zombified_piglin",
+        "minecraft:zombie_nautilus"
       ]
     ],
     "sends_telemetry_event": true
@@ -2865,6 +2895,34 @@
         },
         "trigger": "minecraft:player_killed_entity"
       },
+      "minecraft:zombie_horse": {
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:zombie_horse"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
+      "minecraft:zombie_nautilus": {
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:zombie_nautilus"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
       "minecraft:zombie_villager": {
         "conditions": {
           "entity": [
@@ -3017,7 +3075,13 @@
         "minecraft:zombie"
       ],
       [
+        "minecraft:zombie_horse"
+      ],
+      [
         "minecraft:zombified_piglin"
+      ],
+      [
+        "minecraft:zombie_nautilus"
       ]
     ],
     "rewards": {
@@ -5928,6 +5992,20 @@
         },
         "trigger": "minecraft:bred_animals"
       },
+      "minecraft:nautilus": {
+        "conditions": {
+          "child": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:nautilus"
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:bred_animals"
+      },
       "minecraft:ocelot": {
         "conditions": {
           "child": [
@@ -6152,6 +6230,9 @@
       ],
       [
         "minecraft:armadillo"
+      ],
+      [
+        "minecraft:nautilus"
       ],
       [
         "minecraft:turtle"
@@ -7782,6 +7863,7 @@
             "minecraft:absorption": {},
             "minecraft:bad_omen": {},
             "minecraft:blindness": {},
+            "minecraft:breath_of_the_nautilus": {},
             "minecraft:conduit_power": {},
             "minecraft:darkness": {},
             "minecraft:dolphins_grace": {},
@@ -29444,6 +29526,38 @@
       ]
     }
   },
+  "recipes/combat/copper_spear": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_copper_ingot": {
+        "conditions": {
+          "items": [
+            {
+              "items": "#minecraft:copper_tool_materials"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:copper_spear"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_copper_ingot"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:copper_spear"
+      ]
+    }
+  },
   "recipes/combat/copper_sword": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -29687,6 +29801,38 @@
     "rewards": {
       "recipes": [
         "minecraft:diamond_leggings"
+      ]
+    }
+  },
+  "recipes/combat/diamond_spear": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_diamond": {
+        "conditions": {
+          "items": [
+            {
+              "items": "#minecraft:diamond_tool_materials"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:diamond_spear"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_diamond"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:diamond_spear"
       ]
     }
   },
@@ -30362,6 +30508,38 @@
       ]
     }
   },
+  "recipes/combat/golden_spear": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_gold_ingot": {
+        "conditions": {
+          "items": [
+            {
+              "items": "#minecraft:gold_tool_materials"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:golden_spear"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_gold_ingot"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:golden_spear"
+      ]
+    }
+  },
   "recipes/combat/golden_sword": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -30583,6 +30761,38 @@
     "rewards": {
       "recipes": [
         "minecraft:iron_leggings"
+      ]
+    }
+  },
+  "recipes/combat/iron_spear": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_iron_ingot": {
+        "conditions": {
+          "items": [
+            {
+              "items": "#minecraft:iron_tool_materials"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:iron_spear"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_iron_ingot"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:iron_spear"
       ]
     }
   },
@@ -31045,6 +31255,70 @@
       ]
     }
   },
+  "recipes/combat/netherite_nautilus_armor_smithing": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_netherite_ingot": {
+        "conditions": {
+          "items": [
+            {
+              "items": "#minecraft:netherite_tool_materials"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:netherite_nautilus_armor_smithing"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_netherite_ingot"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:netherite_nautilus_armor_smithing"
+      ]
+    }
+  },
+  "recipes/combat/netherite_spear_smithing": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_netherite_ingot": {
+        "conditions": {
+          "items": [
+            {
+              "items": "#minecraft:netherite_tool_materials"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:netherite_spear_smithing"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_netherite_ingot"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:netherite_spear_smithing"
+      ]
+    }
+  },
   "recipes/combat/netherite_sword_smithing": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -31301,6 +31575,38 @@
       ]
     }
   },
+  "recipes/combat/stone_spear": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_cobblestone": {
+        "conditions": {
+          "items": [
+            {
+              "items": "#minecraft:stone_tool_materials"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:stone_spear"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_cobblestone"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:stone_spear"
+      ]
+    }
+  },
   "recipes/combat/stone_sword": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -31426,6 +31732,38 @@
     "rewards": {
       "recipes": [
         "minecraft:wolf_armor"
+      ]
+    }
+  },
+  "recipes/combat/wooden_spear": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_stick": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:stick"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:wooden_spear"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_stick"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:wooden_spear"
       ]
     }
   },
@@ -45168,6 +45506,16 @@
         },
         "trigger": "minecraft:inventory_changed"
       },
+      "has_copper_spear": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_spear"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
       "has_copper_sword": {
         "conditions": {
           "items": [
@@ -45193,6 +45541,7 @@
         "has_copper_axe",
         "has_copper_hoe",
         "has_copper_sword",
+        "has_copper_spear",
         "has_copper_helmet",
         "has_copper_chestplate",
         "has_copper_leggings",
@@ -45279,6 +45628,16 @@
         },
         "trigger": "minecraft:inventory_changed"
       },
+      "has_copper_nautilus_armor": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_nautilus_armor"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
       "has_copper_pickaxe": {
         "conditions": {
           "items": [
@@ -45294,6 +45653,16 @@
           "items": [
             {
               "items": "minecraft:copper_shovel"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_copper_spear": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_spear"
             }
           ]
         },
@@ -45324,11 +45693,13 @@
         "has_copper_axe",
         "has_copper_hoe",
         "has_copper_sword",
+        "has_copper_spear",
         "has_copper_helmet",
         "has_copper_chestplate",
         "has_copper_leggings",
         "has_copper_boots",
-        "has_copper_horse_armor"
+        "has_copper_horse_armor",
+        "has_copper_nautilus_armor"
       ]
     ],
     "rewards": {
@@ -46593,6 +46964,16 @@
         },
         "trigger": "minecraft:inventory_changed"
       },
+      "has_golden_spear": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:golden_spear"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
       "has_golden_sword": {
         "conditions": {
           "items": [
@@ -46618,6 +46999,7 @@
         "has_golden_axe",
         "has_golden_hoe",
         "has_golden_sword",
+        "has_golden_spear",
         "has_golden_helmet",
         "has_golden_chestplate",
         "has_golden_leggings",
@@ -46704,6 +47086,16 @@
         },
         "trigger": "minecraft:inventory_changed"
       },
+      "has_golden_nautilus_armor": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:golden_nautilus_armor"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
       "has_golden_pickaxe": {
         "conditions": {
           "items": [
@@ -46719,6 +47111,16 @@
           "items": [
             {
               "items": "minecraft:golden_shovel"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_golden_spear": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:golden_spear"
             }
           ]
         },
@@ -46749,11 +47151,13 @@
         "has_golden_axe",
         "has_golden_hoe",
         "has_golden_sword",
+        "has_golden_spear",
         "has_golden_helmet",
         "has_golden_chestplate",
         "has_golden_leggings",
         "has_golden_boots",
-        "has_golden_horse_armor"
+        "has_golden_horse_armor",
+        "has_golden_nautilus_armor"
       ]
     ],
     "rewards": {
@@ -47354,6 +47758,16 @@
         },
         "trigger": "minecraft:inventory_changed"
       },
+      "has_iron_spear": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:iron_spear"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
       "has_iron_sword": {
         "conditions": {
           "items": [
@@ -47379,6 +47793,7 @@
         "has_iron_axe",
         "has_iron_hoe",
         "has_iron_sword",
+        "has_iron_spear",
         "has_iron_helmet",
         "has_iron_chestplate",
         "has_iron_leggings",
@@ -47509,6 +47924,16 @@
         },
         "trigger": "minecraft:inventory_changed"
       },
+      "has_iron_nautilus_armor": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:iron_nautilus_armor"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
       "has_iron_pickaxe": {
         "conditions": {
           "items": [
@@ -47524,6 +47949,16 @@
           "items": [
             {
               "items": "minecraft:iron_shovel"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_iron_spear": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:iron_spear"
             }
           ]
         },
@@ -47554,6 +47989,7 @@
         "has_iron_axe",
         "has_iron_hoe",
         "has_iron_sword",
+        "has_iron_spear",
         "has_iron_helmet",
         "has_iron_chestplate",
         "has_iron_leggings",
@@ -47562,7 +47998,8 @@
         "has_chainmail_helmet",
         "has_chainmail_chestplate",
         "has_chainmail_leggings",
-        "has_chainmail_boots"
+        "has_chainmail_boots",
+        "has_iron_nautilus_armor"
       ]
     ],
     "rewards": {

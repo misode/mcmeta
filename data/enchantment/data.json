@@ -105,7 +105,7 @@
       "base": 5,
       "per_level_above_first": 8
     },
-    "primary_items": "#minecraft:enchantable/sword",
+    "primary_items": "#minecraft:enchantable/melee_weapon",
     "slots": [
       "mainhand"
     ],
@@ -532,7 +532,7 @@
       "base": 10,
       "per_level_above_first": 20
     },
-    "primary_items": "#minecraft:enchantable/sword",
+    "primary_items": "#minecraft:enchantable/melee_weapon",
     "slots": [
       "mainhand"
     ],
@@ -892,7 +892,7 @@
     "slots": [
       "mainhand"
     ],
-    "supported_items": "#minecraft:enchantable/sword",
+    "supported_items": "#minecraft:enchantable/melee_weapon",
     "weight": 5
   },
   "looting": {
@@ -934,7 +934,7 @@
     "slots": [
       "mainhand"
     ],
-    "supported_items": "#minecraft:enchantable/sword",
+    "supported_items": "#minecraft:enchantable/melee_weapon",
     "weight": 2
   },
   "loyalty": {
@@ -1004,6 +1004,111 @@
     ],
     "supported_items": "#minecraft:enchantable/fishing",
     "weight": 2
+  },
+  "lunge": {
+    "anvil_cost": 2,
+    "description": {
+      "translate": "enchantment.minecraft.lunge"
+    },
+    "effects": {
+      "minecraft:post_piercing_attack": [
+        {
+          "effect": {
+            "type": "minecraft:all_of",
+            "effects": [
+              {
+                "type": "minecraft:change_item_damage",
+                "amount": {
+                  "type": "minecraft:exponent",
+                  "base": 2.0,
+                  "power": {
+                    "type": "minecraft:linear",
+                    "base": 3.0,
+                    "per_level_above_first": 2.0
+                  }
+                }
+              },
+              {
+                "type": "minecraft:apply_impulse",
+                "coordinate_scale": [
+                  1.0,
+                  0.0,
+                  1.0
+                ],
+                "direction": [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "magnitude": {
+                  "type": "minecraft:linear",
+                  "base": 0.458,
+                  "per_level_above_first": 0.458
+                }
+              },
+              {
+                "type": "minecraft:play_sound",
+                "pitch": 1.0,
+                "sound": [
+                  "minecraft:item.spear.lunge_1",
+                  "minecraft:item.spear.lunge_2",
+                  "minecraft:item.spear.lunge_3"
+                ],
+                "volume": 1.0
+              }
+            ]
+          },
+          "requirements": {
+            "condition": "minecraft:all_of",
+            "terms": [
+              {
+                "condition": "minecraft:inverted",
+                "term": {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "vehicle": {}
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "flags": {
+                    "is_fall_flying": false
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "flags": {
+                    "is_in_water": false
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "exclusive_set": "#minecraft:exclusive_set/lunge",
+    "max_cost": {
+      "base": 25,
+      "per_level_above_first": 8
+    },
+    "max_level": 3,
+    "min_cost": {
+      "base": 5,
+      "per_level_above_first": 8
+    },
+    "slots": [
+      "hand"
+    ],
+    "supported_items": "#minecraft:enchantable/lunge",
+    "weight": 5
   },
   "lure": {
     "anvil_cost": 4,
@@ -1473,7 +1578,7 @@
       "base": 1,
       "per_level_above_first": 11
     },
-    "primary_items": "#minecraft:enchantable/sword",
+    "primary_items": "#minecraft:enchantable/melee_weapon",
     "slots": [
       "mainhand"
     ],
@@ -1547,7 +1652,7 @@
       "base": 5,
       "per_level_above_first": 8
     },
-    "primary_items": "#minecraft:enchantable/sword",
+    "primary_items": "#minecraft:enchantable/melee_weapon",
     "slots": [
       "mainhand"
     ],
@@ -1847,7 +1952,7 @@
     "slots": [
       "mainhand"
     ],
-    "supported_items": "#minecraft:enchantable/sword",
+    "supported_items": "#minecraft:enchantable/sweeping",
     "weight": 2
   },
   "swift_sneak": {
