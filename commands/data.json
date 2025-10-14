@@ -10887,27 +10887,52 @@
     "stopwatch": {
       "type": "literal",
       "children": {
-        "id": {
-          "type": "argument",
+        "create": {
+          "type": "literal",
           "children": {
-            "create": {
-              "type": "literal",
-              "executable": true
-            },
-            "query": {
-              "type": "literal",
-              "executable": true
-            },
-            "remove": {
-              "type": "literal",
-              "executable": true
-            },
-            "restart": {
-              "type": "literal",
-              "executable": true
+            "id": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:resource_location"
             }
-          },
-          "parser": "minecraft:resource_location"
+          }
+        },
+        "query": {
+          "type": "literal",
+          "children": {
+            "id": {
+              "type": "argument",
+              "children": {
+                "scale": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "brigadier:double"
+                }
+              },
+              "executable": true,
+              "parser": "minecraft:resource_location"
+            }
+          }
+        },
+        "remove": {
+          "type": "literal",
+          "children": {
+            "id": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:resource_location"
+            }
+          }
+        },
+        "restart": {
+          "type": "literal",
+          "children": {
+            "id": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:resource_location"
+            }
+          }
         }
       },
       "permissions": {
