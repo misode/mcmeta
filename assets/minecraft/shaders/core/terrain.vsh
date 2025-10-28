@@ -1,7 +1,8 @@
 #version 330
 
 #moj_import <minecraft:fog.glsl>
-#moj_import <minecraft:dynamictransforms.glsl>
+#moj_import <minecraft:globals.glsl>
+#moj_import <minecraft:chunksection.glsl>
 #moj_import <minecraft:projection.glsl>
 
 in vec3 Position;
@@ -22,7 +23,7 @@ vec4 minecraft_sample_lightmap(sampler2D lightMap, ivec2 uv) {
 }
 
 void main() {
-    vec3 pos = Position + ModelOffset;
+    vec3 pos = Position + (ChunkPosition - CameraBlockPos) + CameraOffset;
     gl_Position = ProjMat * ModelViewMat * vec4(pos, 1.0);
 
     sphericalVertexDistance = fog_spherical_distance(pos);
