@@ -3928,6 +3928,36 @@
     },
     "sends_telemetry_event": true
   },
+  "adventure/spear_many_mobs": {
+    "parent": "minecraft:adventure/kill_a_mob",
+    "criteria": {
+      "spear_many_mobs": {
+        "conditions": {
+          "count": 5
+        },
+        "trigger": "minecraft:spear_mobs"
+      }
+    },
+    "display": {
+      "description": {
+        "translate": "advancements.adventure.spear_many_mobs.description"
+      },
+      "frame": "challenge",
+      "icon": {
+        "count": 1,
+        "id": "minecraft:iron_spear"
+      },
+      "title": {
+        "translate": "advancements.adventure.spear_many_mobs.title"
+      }
+    },
+    "requirements": [
+      [
+        "spear_many_mobs"
+      ]
+    ],
+    "sends_telemetry_event": true
+  },
   "adventure/spyglass_at_dragon": {
     "parent": "minecraft:adventure/spyglass_at_ghast",
     "criteria": {
@@ -31284,6 +31314,38 @@
     "rewards": {
       "recipes": [
         "minecraft:netherite_helmet_smithing"
+      ]
+    }
+  },
+  "recipes/combat/netherite_horse_armor_smithing": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_netherite_ingot": {
+        "conditions": {
+          "items": [
+            {
+              "items": "#minecraft:netherite_tool_materials"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:netherite_horse_armor_smithing"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_netherite_ingot"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:netherite_horse_armor_smithing"
       ]
     }
   },

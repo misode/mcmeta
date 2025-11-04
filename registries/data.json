@@ -56,6 +56,7 @@
     "adventure/shoot_arrow",
     "adventure/sleep_in_bed",
     "adventure/sniper_duel",
+    "adventure/spear_many_mobs",
     "adventure/spyglass_at_dragon",
     "adventure/spyglass_at_ghast",
     "adventure/spyglass_at_parrot",
@@ -818,6 +819,7 @@
     "recipes/combat/netherite_boots_smithing",
     "recipes/combat/netherite_chestplate_smithing",
     "recipes/combat/netherite_helmet_smithing",
+    "recipes/combat/netherite_horse_armor_smithing",
     "recipes/combat/netherite_leggings_smithing",
     "recipes/combat/netherite_nautilus_armor_smithing",
     "recipes/combat/netherite_spear_smithing",
@@ -1620,6 +1622,7 @@
     "chests",
     "decorated_pot",
     "gui",
+    "items",
     "map_decorations",
     "paintings",
     "particles",
@@ -1665,15 +1668,19 @@
     "waypoint_transmit_range"
   ],
   "attribute_type": [
+    "activity",
     "ambient_particles",
     "ambient_sounds",
+    "angle_degrees",
     "argb_color",
     "background_music",
     "bed_rule",
     "boolean",
     "float",
+    "moon_phase",
     "particle",
-    "rgb_color"
+    "rgb_color",
+    "tri_state"
   ],
   "banner_pattern": [
     "base",
@@ -4766,7 +4773,8 @@
     "wolf/sound_variant",
     "wolf/variant",
     "writable_book_content",
-    "written_book_content"
+    "written_book_content",
+    "zombie_nautilus/variant"
   ],
   "datapack": [
     "minecart_improvements",
@@ -5168,15 +5176,27 @@
   "environment_attribute": [
     "audio/ambient_sounds",
     "audio/background_music",
+    "audio/firefly_bush_sounds",
     "audio/music_volume",
+    "gameplay/baby_villager_activity",
     "gameplay/bed_rule",
+    "gameplay/bees_stay_in_hive",
+    "gameplay/can_pillager_patrol_spawn",
     "gameplay/can_start_raid",
+    "gameplay/cat_waking_up_gift_chance",
+    "gameplay/creaking_active",
+    "gameplay/eyeblossom_open",
     "gameplay/fast_lava",
     "gameplay/increased_fire_burnout",
+    "gameplay/monsters_burn",
     "gameplay/nether_portal_spawns_piglin",
     "gameplay/piglins_zombify",
     "gameplay/respawn_anchor_works",
+    "gameplay/sky_light_level",
     "gameplay/snow_golem_melts",
+    "gameplay/surface_slime_spawn_chance",
+    "gameplay/turtle_egg_hatch_chance",
+    "gameplay/villager_activity",
     "gameplay/water_evaporates",
     "visual/ambient_particles",
     "visual/cloud_color",
@@ -5186,8 +5206,16 @@
     "visual/fog_color",
     "visual/fog_end_distance",
     "visual/fog_start_distance",
+    "visual/moon_angle",
+    "visual/moon_phase",
     "visual/sky_color",
     "visual/sky_fog_end_distance",
+    "visual/sky_light_color",
+    "visual/sky_light_factor",
+    "visual/star_angle",
+    "visual/star_brightness",
+    "visual/sun_angle",
+    "visual/sunrise_sunset_color",
     "visual/water_fog_color",
     "visual/water_fog_end_distance",
     "visual/water_fog_start_distance"
@@ -6427,6 +6455,7 @@
     "netherite_chestplate",
     "netherite_helmet",
     "netherite_hoe",
+    "netherite_horse_armor",
     "netherite_ingot",
     "netherite_leggings",
     "netherite_nautilus_armor",
@@ -7933,6 +7962,7 @@
     "netherite_chestplate",
     "netherite_helmet",
     "netherite_hoe",
+    "netherite_horse_armor",
     "netherite_ingot",
     "netherite_leggings",
     "netherite_nautilus_armor",
@@ -13677,6 +13707,7 @@
     "item/netherite_helmet_redstone_trim",
     "item/netherite_helmet_resin_trim",
     "item/netherite_hoe",
+    "item/netherite_horse_armor",
     "item/netherite_ingot",
     "item/netherite_leggings",
     "item/netherite_leggings_amethyst_trim",
@@ -15160,6 +15191,7 @@
     "netherite_chestplate_smithing",
     "netherite_helmet_smithing",
     "netherite_hoe_smithing",
+    "netherite_horse_armor_smithing",
     "netherite_ingot",
     "netherite_ingot_from_netherite_block",
     "netherite_leggings_smithing",
@@ -15876,12 +15908,6 @@
     "random_block_match",
     "random_blockstate_match",
     "tag_match"
-  ],
-  "schedule": [
-    "empty",
-    "simple",
-    "villager_baby",
-    "villager_default"
   ],
   "sensor_type": [
     "armadillo_scare_detected",
@@ -23888,6 +23914,12 @@
     "bee_home",
     "village"
   ],
+  "tag/timeline": [
+    "in_end",
+    "in_nether",
+    "in_overworld",
+    "universal"
+  ],
   "tag/worldgen/biome": [
     "allows_surface_slime_spawns",
     "allows_tropical_fish_spawns_at_any_height",
@@ -23947,6 +23979,7 @@
     "required_ocean_monument_surrounding",
     "spawns_cold_variant_farm_animals",
     "spawns_cold_variant_frogs",
+    "spawns_coral_variant_zombie_nautilus",
     "spawns_gold_rabbits",
     "spawns_snow_foxes",
     "spawns_warm_variant_farm_animals",
@@ -23954,7 +23987,6 @@
     "spawns_white_rabbits",
     "stronghold_biased_to",
     "water_on_map_outlines",
-    "without_patrol_spawns",
     "without_wandering_trader_spawns",
     "without_zombie_sieges"
   ],
@@ -25350,6 +25382,7 @@
     "entity/equipment/horse_body/gold",
     "entity/equipment/horse_body/iron",
     "entity/equipment/horse_body/leather",
+    "entity/equipment/horse_body/netherite",
     "entity/equipment/horse_saddle/saddle",
     "entity/equipment/humanoid/chainmail",
     "entity/equipment/humanoid/copper",
@@ -25473,6 +25506,7 @@
     "entity/nautilus/nautilus",
     "entity/nautilus/nautilus_baby",
     "entity/nautilus/zombie_nautilus",
+    "entity/nautilus/zombie_nautilus_coral",
     "entity/panda/aggressive_panda",
     "entity/panda/brown_panda",
     "entity/panda/lazy_panda",
@@ -26801,6 +26835,7 @@
     "item/netherite_chestplate",
     "item/netherite_helmet",
     "item/netherite_hoe",
+    "item/netherite_horse_armor",
     "item/netherite_ingot",
     "item/netherite_leggings",
     "item/netherite_nautilus_armor",
@@ -27530,6 +27565,12 @@
     "spawn_search",
     "unknown"
   ],
+  "timeline": [
+    "day",
+    "early_game",
+    "moon",
+    "villager_schedule"
+  ],
   "trial_spawner": [
     "trial_chamber/breeze/normal",
     "trial_chamber/breeze/ominous",
@@ -27606,6 +27647,7 @@
     "shot_crossbow",
     "slept_in_bed",
     "slide_down_block",
+    "spear_mobs",
     "started_riding",
     "summoned_entity",
     "tame_animal",
@@ -28987,5 +29029,9 @@
     "large_biomes",
     "normal",
     "single_biome_surface"
+  ],
+  "zombie_nautilus_variant": [
+    "temperate",
+    "warm"
   ]
 }
