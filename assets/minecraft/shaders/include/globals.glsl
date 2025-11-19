@@ -7,4 +7,5 @@ layout(std140) uniform Globals {
     float GlintAlpha;
     float GameTime;
     int MenuBlurRadius;
+    int UseRgss;
 };
