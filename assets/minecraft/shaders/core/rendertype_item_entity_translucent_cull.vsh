@@ -8,7 +8,7 @@
 in vec3 Position;
 in vec4 Color;
 in vec2 UV0;
-in vec2 UV1;
+in ivec2 UV1;
 in ivec2 UV2;
 in vec3 Normal;
 

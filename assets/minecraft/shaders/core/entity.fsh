@@ -13,8 +13,15 @@ in vec4 vertexPerFaceColorFront;
 #else
 in vec4 vertexColor;
 #endif
+
+#ifndef EMISSIVE
 in vec4 lightMapColor;
+#endif
+
+#ifndef NO_OVERLAY
 in vec4 overlayColor;
+#endif
+
 in vec2 texCoord0;
 
 out vec4 fragColor;
