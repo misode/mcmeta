@@ -13,7 +13,7 @@ in vec2 texCoord0;
 
 out vec4 fragColor;
 
-vec4 sampleNearest(sampler2D sampler, vec2 uv, vec2 pixelSize, vec2 du, vec2 dv, vec2 texelScreenSize) {
+vec4 sampleNearest(sampler2D source, vec2 uv, vec2 pixelSize, vec2 du, vec2 dv, vec2 texelScreenSize) {
     // Convert our UV back up to texel coordinates and find out how far over we are from the center of each pixel
     vec2 uvTexelCoords = uv / pixelSize;
     vec2 texelCenter = round(uvTexelCoords) - 0.5f;
@@ -24,7 +24,7 @@ vec4 sampleNearest(sampler2D sampler, vec2 uv, vec2 pixelSize, vec2 du, vec2 dv,
     texelOffset = clamp(texelOffset, 0.0f, 1.0f);
 
     uv = (texelCenter + texelOffset) * pixelSize;
-    return textureGrad(sampler, uv, du, dv);
+    return textureGrad(source, uv, du, dv);
 }
 
 vec4 sampleNearest(sampler2D source, vec2 uv, vec2 pixelSize) {
