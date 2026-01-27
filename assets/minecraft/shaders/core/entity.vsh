@@ -57,7 +57,7 @@ void main() {
 #endif
 
 #ifndef EMISSIVE
-    lightMapColor = texelFetch(Sampler2, UV2 / 16, 0);
+    lightMapColor = texture(Sampler2, UV2 / 16);
 #endif
 
 #ifndef NO_OVERLAY
