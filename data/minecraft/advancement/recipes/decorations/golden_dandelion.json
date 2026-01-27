@@ -1,11 +1,21 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_end_stone_brick": {
+    "has_dandelion": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:end_stone_bricks"
+            "items": "minecraft:dandelion"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_gold_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:gold_nugget"
           }
         ]
       },
@@ -13,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:end_stone_brick_wall_from_end_stone_brick_stonecutting"
+        "recipe": "minecraft:golden_dandelion"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +31,13 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_end_stone_brick"
+      "has_gold_nugget",
+      "has_dandelion"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:end_stone_brick_wall_from_end_stone_brick_stonecutting"
+      "minecraft:golden_dandelion"
     ]
   }
 }
