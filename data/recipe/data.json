@@ -357,10 +357,6 @@
       "id": "minecraft:anvil"
     }
   },
-  "armor_dye": {
-    "type": "minecraft:crafting_special_armordye",
-    "category": "misc"
-  },
   "armor_stand": {
     "type": "minecraft:crafting_shaped",
     "category": "misc",
@@ -702,10 +698,6 @@
       "id": "minecraft:bamboo_trapdoor"
     }
   },
-  "banner_duplicate": {
-    "type": "minecraft:crafting_special_bannerduplicate",
-    "category": "misc"
-  },
   "barrel": {
     "type": "minecraft:crafting_shaped",
     "category": "misc",
@@ -1015,6 +1007,13 @@
       "###",
       " | "
     ],
+    "result": {
+      "id": "minecraft:black_banner"
+    }
+  },
+  "black_banner_duplicate": {
+    "type": "minecraft:crafting_special_bannerduplicate",
+    "banner": "minecraft:black_banner",
     "result": {
       "id": "minecraft:black_banner"
     }
@@ -1333,6 +1332,13 @@
       "id": "minecraft:blue_banner"
     }
   },
+  "blue_banner_duplicate": {
+    "type": "minecraft:crafting_special_bannerduplicate",
+    "banner": "minecraft:blue_banner",
+    "result": {
+      "id": "minecraft:blue_banner"
+    }
+  },
   "blue_bed": {
     "type": "minecraft:crafting_shaped",
     "category": "misc",
@@ -1635,7 +1641,11 @@
   },
   "book_cloning": {
     "type": "minecraft:crafting_special_bookcloning",
-    "category": "misc"
+    "material": "#minecraft:book_cloning_target",
+    "result": {
+      "id": "minecraft:written_book"
+    },
+    "source": "minecraft:written_book"
   },
   "bookshelf": {
     "type": "minecraft:crafting_shaped",
@@ -1827,6 +1837,13 @@
       "###",
       " | "
     ],
+    "result": {
+      "id": "minecraft:brown_banner"
+    }
+  },
+  "brown_banner_duplicate": {
+    "type": "minecraft:crafting_special_bannerduplicate",
+    "banner": "minecraft:brown_banner",
     "result": {
       "id": "minecraft:brown_banner"
     }
@@ -2666,7 +2683,7 @@
       "id": "minecraft:chiseled_stone_bricks"
     }
   },
-  "chiseled_stone_bricks_stone_from_stonecutting": {
+  "chiseled_stone_bricks_from_stone_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": "minecraft:stone",
     "result": {
@@ -4320,6 +4337,13 @@
       "id": "minecraft:cyan_banner"
     }
   },
+  "cyan_banner_duplicate": {
+    "type": "minecraft:crafting_special_bannerduplicate",
+    "banner": "minecraft:cyan_banner",
+    "result": {
+      "id": "minecraft:cyan_banner"
+    }
+  },
   "cyan_bed": {
     "type": "minecraft:crafting_shaped",
     "category": "misc",
@@ -4836,7 +4860,13 @@
   },
   "decorated_pot": {
     "type": "minecraft:crafting_decorated_pot",
-    "category": "misc"
+    "back": "#minecraft:decorated_pot_ingredients",
+    "front": "#minecraft:decorated_pot_ingredients",
+    "left": "#minecraft:decorated_pot_ingredients",
+    "result": {
+      "id": "minecraft:decorated_pot"
+    },
+    "right": "#minecraft:decorated_pot_ingredients"
   },
   "decorated_pot_simple": {
     "type": "minecraft:crafting_shaped",
@@ -7568,7 +7598,7 @@
       "id": "minecraft:end_stone_brick_slab"
     }
   },
-  "end_stone_brick_slab_from_end_stone_brick_stonecutting": {
+  "end_stone_brick_slab_from_end_stone_bricks_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": "minecraft:end_stone_bricks",
     "result": {
@@ -7600,7 +7630,7 @@
       "id": "minecraft:end_stone_brick_stairs"
     }
   },
-  "end_stone_brick_stairs_from_end_stone_brick_stonecutting": {
+  "end_stone_brick_stairs_from_end_stone_bricks_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": "minecraft:end_stone_bricks",
     "result": {
@@ -7629,7 +7659,7 @@
       "id": "minecraft:end_stone_brick_wall"
     }
   },
-  "end_stone_brick_wall_from_end_stone_brick_stonecutting": {
+  "end_stone_brick_wall_from_end_stone_bricks_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": "minecraft:end_stone_bricks",
     "result": {
@@ -7915,7 +7945,13 @@
   },
   "firework_rocket": {
     "type": "minecraft:crafting_special_firework_rocket",
-    "category": "misc"
+    "fuel": "minecraft:gunpowder",
+    "result": {
+      "count": 3,
+      "id": "minecraft:firework_rocket"
+    },
+    "shell": "minecraft:paper",
+    "star": "minecraft:firework_star"
   },
   "firework_rocket_simple": {
     "type": "minecraft:crafting_shapeless",
@@ -7931,11 +7967,27 @@
   },
   "firework_star": {
     "type": "minecraft:crafting_special_firework_star",
-    "category": "misc"
+    "dye": "#minecraft:dyes",
+    "fuel": "minecraft:gunpowder",
+    "result": {
+      "id": "minecraft:firework_star"
+    },
+    "shapes": {
+      "burst": "minecraft:feather",
+      "creeper": "#minecraft:skulls",
+      "large_ball": "minecraft:fire_charge",
+      "star": "minecraft:gold_nugget"
+    },
+    "trail": "minecraft:diamond",
+    "twinkle": "minecraft:glowstone_dust"
   },
   "firework_star_fade": {
     "type": "minecraft:crafting_special_firework_star_fade",
-    "category": "misc"
+    "dye": "#minecraft:dyes",
+    "result": {
+      "id": "minecraft:firework_star"
+    },
+    "target": "minecraft:firework_star"
   },
   "fishing_rod": {
     "type": "minecraft:crafting_shaped",
@@ -8402,6 +8454,22 @@
       "id": "minecraft:golden_chestplate"
     }
   },
+  "golden_dandelion": {
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+      "#": "minecraft:gold_nugget",
+      "I": "minecraft:dandelion"
+    },
+    "pattern": [
+      "###",
+      "#I#",
+      "###"
+    ],
+    "result": {
+      "id": "minecraft:golden_dandelion"
+    }
+  },
   "golden_helmet": {
     "type": "minecraft:crafting_shaped",
     "category": "equipment",
@@ -8602,6 +8670,13 @@
       "###",
       " | "
     ],
+    "result": {
+      "id": "minecraft:gray_banner"
+    }
+  },
+  "gray_banner_duplicate": {
+    "type": "minecraft:crafting_special_bannerduplicate",
+    "banner": "minecraft:gray_banner",
     "result": {
       "id": "minecraft:gray_banner"
     }
@@ -8823,6 +8898,13 @@
       "###",
       " | "
     ],
+    "result": {
+      "id": "minecraft:green_banner"
+    }
+  },
+  "green_banner_duplicate": {
+    "type": "minecraft:crafting_special_bannerduplicate",
+    "banner": "minecraft:green_banner",
     "result": {
       "id": "minecraft:green_banner"
     }
@@ -9982,6 +10064,16 @@
       "id": "minecraft:leather_boots"
     }
   },
+  "leather_boots_dyed": {
+    "type": "minecraft:crafting_dye",
+    "category": "misc",
+    "dye": "#minecraft:dyes",
+    "group": "dyed_armor",
+    "result": {
+      "id": "minecraft:leather_boots"
+    },
+    "target": "minecraft:leather_boots"
+  },
   "leather_chestplate": {
     "type": "minecraft:crafting_shaped",
     "category": "equipment",
@@ -9997,6 +10089,16 @@
       "id": "minecraft:leather_chestplate"
     }
   },
+  "leather_chestplate_dyed": {
+    "type": "minecraft:crafting_dye",
+    "category": "misc",
+    "dye": "#minecraft:dyes",
+    "group": "dyed_armor",
+    "result": {
+      "id": "minecraft:leather_chestplate"
+    },
+    "target": "minecraft:leather_chestplate"
+  },
   "leather_helmet": {
     "type": "minecraft:crafting_shaped",
     "category": "equipment",
@@ -10010,6 +10112,16 @@
     "result": {
       "id": "minecraft:leather_helmet"
     }
+  },
+  "leather_helmet_dyed": {
+    "type": "minecraft:crafting_dye",
+    "category": "misc",
+    "dye": "#minecraft:dyes",
+    "group": "dyed_armor",
+    "result": {
+      "id": "minecraft:leather_helmet"
+    },
+    "target": "minecraft:leather_helmet"
   },
   "leather_horse_armor": {
     "type": "minecraft:crafting_shaped",
@@ -10026,6 +10138,16 @@
       "id": "minecraft:leather_horse_armor"
     }
   },
+  "leather_horse_armor_dyed": {
+    "type": "minecraft:crafting_dye",
+    "category": "misc",
+    "dye": "#minecraft:dyes",
+    "group": "dyed_armor",
+    "result": {
+      "id": "minecraft:leather_horse_armor"
+    },
+    "target": "minecraft:leather_horse_armor"
+  },
   "leather_leggings": {
     "type": "minecraft:crafting_shaped",
     "category": "equipment",
@@ -10040,6 +10162,16 @@
     "result": {
       "id": "minecraft:leather_leggings"
     }
+  },
+  "leather_leggings_dyed": {
+    "type": "minecraft:crafting_dye",
+    "category": "misc",
+    "dye": "#minecraft:dyes",
+    "group": "dyed_armor",
+    "result": {
+      "id": "minecraft:leather_leggings"
+    },
+    "target": "minecraft:leather_leggings"
   },
   "lectern": {
     "type": "minecraft:crafting_shaped",
@@ -10085,6 +10217,13 @@
       "###",
       " | "
     ],
+    "result": {
+      "id": "minecraft:light_blue_banner"
+    }
+  },
+  "light_blue_banner_duplicate": {
+    "type": "minecraft:crafting_special_bannerduplicate",
+    "banner": "minecraft:light_blue_banner",
     "result": {
       "id": "minecraft:light_blue_banner"
     }
@@ -10306,6 +10445,13 @@
       "###",
       " | "
     ],
+    "result": {
+      "id": "minecraft:light_gray_banner"
+    }
+  },
+  "light_gray_banner_duplicate": {
+    "type": "minecraft:crafting_special_bannerduplicate",
+    "banner": "minecraft:light_gray_banner",
     "result": {
       "id": "minecraft:light_gray_banner"
     }
@@ -10595,6 +10741,13 @@
       "id": "minecraft:lime_banner"
     }
   },
+  "lime_banner_duplicate": {
+    "type": "minecraft:crafting_special_bannerduplicate",
+    "banner": "minecraft:lime_banner",
+    "result": {
+      "id": "minecraft:lime_banner"
+    }
+  },
   "lime_bed": {
     "type": "minecraft:crafting_shaped",
     "category": "misc",
@@ -10856,6 +11009,13 @@
       "###",
       " | "
     ],
+    "result": {
+      "id": "minecraft:magenta_banner"
+    }
+  },
+  "magenta_banner_duplicate": {
+    "type": "minecraft:crafting_special_bannerduplicate",
+    "banner": "minecraft:magenta_banner",
     "result": {
       "id": "minecraft:magenta_banner"
     }
@@ -11378,12 +11538,27 @@
     }
   },
   "map_cloning": {
-    "type": "minecraft:crafting_special_mapcloning",
-    "category": "misc"
+    "type": "minecraft:crafting_transmute",
+    "add_material_count_to_result": true,
+    "category": "misc",
+    "group": "map_cloning",
+    "input": "minecraft:filled_map",
+    "material": "minecraft:map",
+    "material_count": {
+      "max": 8,
+      "min": 1
+    },
+    "result": {
+      "id": "minecraft:filled_map"
+    }
   },
   "map_extending": {
     "type": "minecraft:crafting_special_mapextending",
-    "category": "misc"
+    "map": "minecraft:filled_map",
+    "material": "minecraft:paper",
+    "result": {
+      "id": "minecraft:filled_map"
+    }
   },
   "melon": {
     "type": "minecraft:crafting_shapeless",
@@ -11558,7 +11733,7 @@
       "id": "minecraft:mossy_stone_brick_slab"
     }
   },
-  "mossy_stone_brick_slab_from_mossy_stone_brick_stonecutting": {
+  "mossy_stone_brick_slab_from_mossy_stone_bricks_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": "minecraft:mossy_stone_bricks",
     "result": {
@@ -11582,7 +11757,7 @@
       "id": "minecraft:mossy_stone_brick_stairs"
     }
   },
-  "mossy_stone_brick_stairs_from_mossy_stone_brick_stonecutting": {
+  "mossy_stone_brick_stairs_from_mossy_stone_bricks_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": "minecraft:mossy_stone_bricks",
     "result": {
@@ -11604,7 +11779,7 @@
       "id": "minecraft:mossy_stone_brick_wall"
     }
   },
-  "mossy_stone_brick_wall_from_mossy_stone_brick_stonecutting": {
+  "mossy_stone_brick_wall_from_mossy_stone_bricks_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": "minecraft:mossy_stone_bricks",
     "result": {
@@ -12370,6 +12545,13 @@
       "id": "minecraft:orange_banner"
     }
   },
+  "orange_banner_duplicate": {
+    "type": "minecraft:crafting_special_bannerduplicate",
+    "banner": "minecraft:orange_banner",
+    "result": {
+      "id": "minecraft:orange_banner"
+    }
+  },
   "orange_bed": {
     "type": "minecraft:crafting_shaped",
     "category": "misc",
@@ -13075,6 +13257,13 @@
       "id": "minecraft:pink_banner"
     }
   },
+  "pink_banner_duplicate": {
+    "type": "minecraft:crafting_special_bannerduplicate",
+    "banner": "minecraft:pink_banner",
+    "result": {
+      "id": "minecraft:pink_banner"
+    }
+  },
   "pink_bed": {
     "type": "minecraft:crafting_shaped",
     "category": "misc",
@@ -13565,11 +13754,11 @@
     "type": "minecraft:crafting_shaped",
     "category": "building",
     "key": {
-      "S": "minecraft:polished_blackstone"
+      "#": "minecraft:polished_blackstone"
     },
     "pattern": [
-      "SS",
-      "SS"
+      "##",
+      "##"
     ],
     "result": {
       "count": 4,
@@ -14151,7 +14340,7 @@
       "id": "minecraft:prismarine_brick_slab"
     }
   },
-  "prismarine_brick_slab_from_prismarine_stonecutting": {
+  "prismarine_brick_slab_from_prismarine_bricks_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": "minecraft:prismarine_bricks",
     "result": {
@@ -14175,7 +14364,7 @@
       "id": "minecraft:prismarine_brick_stairs"
     }
   },
-  "prismarine_brick_stairs_from_prismarine_stonecutting": {
+  "prismarine_brick_stairs_from_prismarine_bricks_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": "minecraft:prismarine_bricks",
     "result": {
@@ -14303,6 +14492,13 @@
       "###",
       " | "
     ],
+    "result": {
+      "id": "minecraft:purple_banner"
+    }
+  },
+  "purple_banner_duplicate": {
+    "type": "minecraft:crafting_special_bannerduplicate",
+    "banner": "minecraft:purple_banner",
     "result": {
       "id": "minecraft:purple_banner"
     }
@@ -14682,7 +14878,7 @@
       "id": "minecraft:quartz_slab"
     }
   },
-  "quartz_slab_from_stonecutting": {
+  "quartz_slab_from_quartz_block_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": "minecraft:quartz_block",
     "result": {
@@ -14896,6 +15092,13 @@
       "###",
       " | "
     ],
+    "result": {
+      "id": "minecraft:red_banner"
+    }
+  },
+  "red_banner_duplicate": {
+    "type": "minecraft:crafting_special_bannerduplicate",
+    "banner": "minecraft:red_banner",
     "result": {
       "id": "minecraft:red_banner"
     }
@@ -15397,8 +15600,7 @@
     }
   },
   "repair_item": {
-    "type": "minecraft:crafting_special_repairitem",
-    "category": "misc"
+    "type": "minecraft:crafting_special_repairitem"
   },
   "repeater": {
     "type": "minecraft:crafting_shaped",
@@ -15792,7 +15994,11 @@
   },
   "shield_decoration": {
     "type": "minecraft:crafting_special_shielddecoration",
-    "category": "misc"
+    "banner": "#minecraft:banners",
+    "result": {
+      "id": "minecraft:shield"
+    },
+    "target": "minecraft:shield"
   },
   "shulker_box": {
     "type": "minecraft:crafting_shaped",
@@ -16671,7 +16877,7 @@
       "id": "minecraft:stone_brick_wall"
     }
   },
-  "stone_brick_walls_from_stone_stonecutting": {
+  "stone_brick_wall_from_stone_stonecutting": {
     "type": "minecraft:stonecutting",
     "ingredient": "minecraft:stone",
     "result": {
@@ -17194,6 +17400,28 @@
       "id": "minecraft:suspicious_stew"
     }
   },
+  "suspicious_stew_from_golden_dandelion": {
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "group": "suspicious_stew",
+    "ingredients": [
+      "minecraft:bowl",
+      "minecraft:brown_mushroom",
+      "minecraft:red_mushroom",
+      "minecraft:golden_dandelion"
+    ],
+    "result": {
+      "components": {
+        "minecraft:suspicious_stew_effects": [
+          {
+            "duration": 7,
+            "id": "minecraft:saturation"
+          }
+        ]
+      },
+      "id": "minecraft:suspicious_stew"
+    }
+  },
   "suspicious_stew_from_lily_of_the_valley": {
     "type": "minecraft:crafting_shapeless",
     "category": "misc",
@@ -17483,8 +17711,14 @@
     }
   },
   "tipped_arrow": {
-    "type": "minecraft:crafting_special_tippedarrow",
-    "category": "misc"
+    "type": "minecraft:crafting_imbue",
+    "category": "misc",
+    "material": "minecraft:arrow",
+    "result": {
+      "count": 8,
+      "id": "minecraft:tipped_arrow"
+    },
+    "source": "minecraft:lingering_potion"
   },
   "tnt": {
     "type": "minecraft:crafting_shaped",
@@ -17679,11 +17913,11 @@
     "type": "minecraft:crafting_shaped",
     "category": "building",
     "key": {
-      "S": "minecraft:polished_tuff"
+      "#": "minecraft:polished_tuff"
     },
     "pattern": [
-      "SS",
-      "SS"
+      "##",
+      "##"
     ],
     "result": {
       "count": 4,
@@ -19628,6 +19862,13 @@
       "id": "minecraft:white_banner"
     }
   },
+  "white_banner_duplicate": {
+    "type": "minecraft:crafting_special_bannerduplicate",
+    "banner": "minecraft:white_banner",
+    "result": {
+      "id": "minecraft:white_banner"
+    }
+  },
   "white_bed": {
     "type": "minecraft:crafting_shaped",
     "category": "misc",
@@ -19895,6 +20136,16 @@
       "id": "minecraft:wolf_armor"
     }
   },
+  "wolf_armor_dyed": {
+    "type": "minecraft:crafting_dye",
+    "category": "misc",
+    "dye": "#minecraft:dyes",
+    "group": "dyed_armor",
+    "result": {
+      "id": "minecraft:wolf_armor"
+    },
+    "target": "minecraft:wolf_armor"
+  },
   "wooden_axe": {
     "type": "minecraft:crafting_shaped",
     "category": "equipment",
@@ -20020,6 +20271,13 @@
       "id": "minecraft:yellow_banner"
     }
   },
+  "yellow_banner_duplicate": {
+    "type": "minecraft:crafting_special_bannerduplicate",
+    "banner": "minecraft:yellow_banner",
+    "result": {
+      "id": "minecraft:yellow_banner"
+    }
+  },
   "yellow_bed": {
     "type": "minecraft:crafting_shaped",
     "category": "misc",
@@ -20099,6 +20357,17 @@
     "group": "yellow_dye",
     "ingredients": [
       "minecraft:dandelion"
+    ],
+    "result": {
+      "id": "minecraft:yellow_dye"
+    }
+  },
+  "yellow_dye_from_golden_dandelion": {
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "group": "yellow_dye",
+    "ingredients": [
+      "minecraft:golden_dandelion"
     ],
     "result": {
       "id": "minecraft:yellow_dye"
