@@ -3,12 +3,6 @@
     "type": "minecraft:tree",
     "config": {
       "decorators": [],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:acacia_foliage_placer",
         "offset": 0,
@@ -25,7 +19,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -155,13 +148,16 @@
   "azalea_tree": {
     "type": "minecraft:tree",
     "config": {
-      "decorators": [],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:rooted_dirt"
-        }
+      "below_trunk_provider": {
+        "fallback": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:rooted_dirt"
+          }
+        },
+        "rules": []
       },
+      "decorators": [],
       "foliage_placer": {
         "type": "minecraft:random_spread_foliage_placer",
         "foliage_height": 2,
@@ -196,7 +192,6 @@
           }
         ]
       },
-      "force_dirt": true,
       "ignore_vines": false,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -289,12 +284,6 @@
     "type": "minecraft:tree",
     "config": {
       "decorators": [],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:blob_foliage_placer",
         "height": 3,
@@ -312,7 +301,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -346,12 +334,6 @@
           "probability": 0.002
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:blob_foliage_placer",
         "height": 3,
@@ -369,7 +351,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -705,12 +686,6 @@
           "tries": 150
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:blob_foliage_placer",
         "height": 3,
@@ -728,7 +703,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -762,12 +736,6 @@
           "probability": 0.02
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:blob_foliage_placer",
         "height": 3,
@@ -785,7 +753,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -819,12 +786,6 @@
           "probability": 0.05
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:blob_foliage_placer",
         "height": 3,
@@ -842,7 +803,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -1174,12 +1134,6 @@
           "tries": 150
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:blob_foliage_placer",
         "height": 3,
@@ -1197,7 +1151,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -1470,12 +1423,6 @@
     "type": "minecraft:tree",
     "config": {
       "decorators": [],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:cherry_foliage_placer",
         "corner_hole_chance": 0.25,
@@ -1497,7 +1444,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -1562,12 +1508,6 @@
           "probability": 0.05
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:cherry_foliage_placer",
         "corner_hole_chance": 0.25,
@@ -1589,7 +1529,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -1979,12 +1918,6 @@
     "type": "minecraft:tree",
     "config": {
       "decorators": [],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:dark_oak_foliage_placer",
         "offset": 0,
@@ -2001,7 +1934,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:three_layers_feature_size",
@@ -2335,12 +2267,6 @@
           "tries": 150
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:dark_oak_foliage_placer",
         "offset": 0,
@@ -2357,7 +2283,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:three_layers_feature_size",
@@ -3199,12 +3124,6 @@
     "type": "minecraft:tree",
     "config": {
       "decorators": [],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:fancy_foliage_placer",
         "height": 4,
@@ -3222,7 +3141,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -3257,12 +3175,6 @@
           "probability": 1.0
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:fancy_foliage_placer",
         "height": 4,
@@ -3280,7 +3192,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -3617,12 +3528,6 @@
           "tries": 150
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:fancy_foliage_placer",
         "height": 4,
@@ -3640,7 +3545,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -3675,12 +3579,6 @@
           "probability": 0.02
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:fancy_foliage_placer",
         "height": 4,
@@ -3698,7 +3596,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -3733,12 +3630,6 @@
           "probability": 0.05
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:fancy_foliage_placer",
         "height": 4,
@@ -3756,7 +3647,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -4089,12 +3979,6 @@
           "tries": 150
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:fancy_foliage_placer",
         "height": 4,
@@ -4112,7 +3996,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -4791,8 +4674,12 @@
     }
   },
   "forest_rock": {
-    "type": "minecraft:forest_rock",
+    "type": "minecraft:block_blob",
     "config": {
+      "can_place_on": {
+        "type": "minecraft:matching_block_tag",
+        "tag": "minecraft:forest_rock_can_place_on"
+      },
       "state": {
         "Name": "minecraft:mossy_cobblestone"
       }
@@ -4886,6 +4773,10 @@
   "huge_brown_mushroom": {
     "type": "minecraft:huge_brown_mushroom",
     "config": {
+      "can_place_on": {
+        "type": "minecraft:matching_block_tag",
+        "tag": "minecraft:huge_brown_mushroom_can_place_on"
+      },
       "cap_provider": {
         "type": "minecraft:simple_state_provider",
         "state": {
@@ -4920,6 +4811,10 @@
   "huge_red_mushroom": {
     "type": "minecraft:huge_red_mushroom",
     "config": {
+      "can_place_on": {
+        "type": "minecraft:matching_block_tag",
+        "tag": "minecraft:huge_red_mushroom_can_place_on"
+      },
       "cap_provider": {
         "type": "minecraft:simple_state_provider",
         "state": {
@@ -4984,8 +4879,20 @@
     }
   },
   "ice_spike": {
-    "type": "minecraft:ice_spike",
-    "config": {}
+    "type": "minecraft:spike",
+    "config": {
+      "can_place_on": {
+        "type": "minecraft:matching_blocks",
+        "blocks": "minecraft:snow_block"
+      },
+      "can_replace": {
+        "type": "minecraft:matching_block_tag",
+        "tag": "minecraft:ice_spike_replaceable"
+      },
+      "state": {
+        "Name": "minecraft:packed_ice"
+      }
+    }
   },
   "iceberg_blue": {
     "type": "minecraft:iceberg",
@@ -5007,12 +4914,6 @@
     "type": "minecraft:tree",
     "config": {
       "decorators": [],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:bush_foliage_placer",
         "height": 2,
@@ -5030,7 +4931,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": false,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -5071,12 +4971,6 @@
           "probability": 0.25
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:blob_foliage_placer",
         "height": 3,
@@ -5094,7 +4988,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -5123,12 +5016,6 @@
     "type": "minecraft:tree",
     "config": {
       "decorators": [],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:blob_foliage_placer",
         "height": 3,
@@ -5146,7 +5033,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -5301,12 +5187,6 @@
           "probability": 0.01
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:random_spread_foliage_placer",
         "foliage_height": 2,
@@ -5325,7 +5205,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -5443,12 +5322,6 @@
           "probability": 0.25
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:jungle_foliage_placer",
         "height": 2,
@@ -5466,7 +5339,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": false,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -5498,22 +5370,26 @@
         {
           "type": "minecraft:alter_ground",
           "provider": {
-            "type": "minecraft:simple_state_provider",
-            "state": {
-              "Name": "minecraft:podzol",
-              "Properties": {
-                "snowy": "false"
+            "rules": [
+              {
+                "if_true": {
+                  "type": "minecraft:matching_block_tag",
+                  "tag": "minecraft:beneath_tree_podzol_replaceable"
+                },
+                "then": {
+                  "type": "minecraft:simple_state_provider",
+                  "state": {
+                    "Name": "minecraft:podzol",
+                    "Properties": {
+                      "snowy": "false"
+                    }
+                  }
+                }
               }
-            }
+            ]
           }
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:mega_pine_foliage_placer",
         "crown_height": {
@@ -5535,7 +5411,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": false,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -5567,22 +5442,26 @@
         {
           "type": "minecraft:alter_ground",
           "provider": {
-            "type": "minecraft:simple_state_provider",
-            "state": {
-              "Name": "minecraft:podzol",
-              "Properties": {
-                "snowy": "false"
+            "rules": [
+              {
+                "if_true": {
+                  "type": "minecraft:matching_block_tag",
+                  "tag": "minecraft:beneath_tree_podzol_replaceable"
+                },
+                "then": {
+                  "type": "minecraft:simple_state_provider",
+                  "state": {
+                    "Name": "minecraft:podzol",
+                    "Properties": {
+                      "snowy": "false"
+                    }
+                  }
+                }
               }
-            }
+            ]
           }
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:mega_pine_foliage_placer",
         "crown_height": {
@@ -5604,7 +5483,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": false,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -5804,12 +5682,6 @@
     "type": "minecraft:tree",
     "config": {
       "decorators": [],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:blob_foliage_placer",
         "height": 3,
@@ -5827,7 +5699,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -6163,12 +6034,6 @@
           "tries": 150
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:blob_foliage_placer",
         "height": 3,
@@ -6186,7 +6051,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -6220,12 +6084,6 @@
           "probability": 0.02
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:blob_foliage_placer",
         "height": 3,
@@ -6243,7 +6101,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -6277,12 +6134,6 @@
           "probability": 0.05
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:blob_foliage_placer",
         "height": 3,
@@ -6300,7 +6151,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -6632,12 +6482,6 @@
           "tries": 150
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:blob_foliage_placer",
         "height": 3,
@@ -6655,7 +6499,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -7568,12 +7411,6 @@
           "trunk_probability": 0.4
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:dark_oak_foliage_placer",
         "offset": 0,
@@ -7590,7 +7427,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:three_layers_feature_size",
@@ -7621,12 +7457,6 @@
     "type": "minecraft:tree",
     "config": {
       "decorators": [],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:dark_oak_foliage_placer",
         "offset": 0,
@@ -7643,7 +7473,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:three_layers_feature_size",
@@ -7685,12 +7514,6 @@
           "probability": 1.0
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:dark_oak_foliage_placer",
         "offset": 0,
@@ -7707,7 +7530,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:three_layers_feature_size",
@@ -8928,12 +8750,6 @@
     "type": "minecraft:tree",
     "config": {
       "decorators": [],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:pine_foliage_placer",
         "height": {
@@ -8955,7 +8771,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -9354,12 +9169,6 @@
     "type": "minecraft:tree",
     "config": {
       "decorators": [],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:spruce_foliage_placer",
         "offset": {
@@ -9389,7 +9198,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -9423,12 +9231,6 @@
           "probability": 1.0
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:blob_foliage_placer",
         "height": 3,
@@ -9446,7 +9248,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -9480,12 +9281,6 @@
           "probability": 0.002
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:blob_foliage_placer",
         "height": 3,
@@ -9503,7 +9298,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -9537,12 +9331,6 @@
           "probability": 0.25
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:blob_foliage_placer",
         "height": 3,
@@ -9560,7 +9348,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": false,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
@@ -9629,12 +9416,6 @@
           "probability": 0.01
         }
       ],
-      "dirt_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dirt"
-        }
-      },
       "foliage_placer": {
         "type": "minecraft:random_spread_foliage_placer",
         "foliage_height": 2,
@@ -9653,7 +9434,6 @@
           }
         }
       },
-      "force_dirt": false,
       "ignore_vines": true,
       "minimum_size": {
         "type": "minecraft:two_layers_feature_size",
