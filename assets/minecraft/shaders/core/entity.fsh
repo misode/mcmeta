@@ -5,6 +5,10 @@
 
 uniform sampler2D Sampler0;
 
+#ifdef DISSOLVE
+uniform sampler2D DissolveMaskSampler;
+#endif
+
 in float sphericalVertexDistance;
 in float cylindricalVertexDistance;
 #ifdef PER_FACE_LIGHTING
@@ -33,16 +37,28 @@ void main() {
         discard;
     }
 #endif
+
 #ifdef PER_FACE_LIGHTING
-    color *= (gl_FrontFacing ? vertexPerFaceColorFront : vertexPerFaceColorBack) * ColorModulator;
+    vec4 faceVertexColor = gl_FrontFacing ? vertexPerFaceColorFront : vertexPerFaceColorBack;
 #else
-    color *= vertexColor * ColorModulator;
+    vec4 faceVertexColor = vertexColor;
 #endif
+
+#ifdef DISSOLVE
+    if (faceVertexColor.a < texture(DissolveMaskSampler, texCoord0).a) {
+        discard;
+    }
+    // The dissolve effect entirely replaces translucency
+    faceVertexColor.a = 1.0;
+#endif
+
+    color *= faceVertexColor * ColorModulator;
 #ifndef NO_OVERLAY
     color.rgb = mix(overlayColor.rgb, color.rgb, overlayColor.a);
 #endif
 #ifndef EMISSIVE
     color *= lightMapColor;
 #endif
+
     fragColor = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
 }
