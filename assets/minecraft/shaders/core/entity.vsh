@@ -57,7 +57,8 @@ void main() {
 #endif
 
 #ifndef EMISSIVE
-    lightMapColor = texture(Sampler2, UV2 / 16);
+    vec2 texSize = textureSize(Sampler2, 0);
+    lightMapColor = texture(Sampler2, vec2(UV2 / 16) / texSize);
 #endif
 
 #ifndef NO_OVERLAY

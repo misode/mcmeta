@@ -19,5 +19,6 @@ void main() {
 
     sphericalVertexDistance = fog_spherical_distance(Position);
     cylindricalVertexDistance = fog_cylindrical_distance(Position);
-    vertexColor = Color * ColorModulator * texture(Sampler2, UV2 / 16);
+    vec2 texSize = textureSize(Sampler2, 0);
+    vertexColor = Color * ColorModulator * texture(Sampler2, vec2(UV2 / 16) / texSize);
 }
