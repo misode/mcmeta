@@ -4,6 +4,7 @@
 #moj_import <minecraft:fog.glsl>
 #moj_import <minecraft:dynamictransforms.glsl>
 #moj_import <minecraft:projection.glsl>
+#moj_import <minecraft:sample_lightmap.glsl>
 
 in vec3 Position;
 in vec4 Color;
@@ -57,8 +58,7 @@ void main() {
 #endif
 
 #ifndef EMISSIVE
-    vec2 texSize = textureSize(Sampler2, 0);
-    lightMapColor = texture(Sampler2, vec2(UV2 / 16) / texSize);
+    lightMapColor = sample_lightmap(Sampler2, UV2);
 #endif
 
 #ifndef NO_OVERLAY
