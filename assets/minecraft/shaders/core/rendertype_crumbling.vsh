@@ -14,7 +14,6 @@ out float sphericalVertexDistance;
 out float cylindricalVertexDistance;
 out vec4 vertexColor;
 out vec2 texCoord0;
-out vec2 texCoord2;
 
 void main() {
     gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
@@ -23,5 +22,4 @@ void main() {
     cylindricalVertexDistance = fog_cylindrical_distance(Position);
     vertexColor = Color;
     texCoord0 = UV0;
-    texCoord2 = UV2;
 }
