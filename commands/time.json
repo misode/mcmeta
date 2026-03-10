@@ -60,6 +60,20 @@
                 }
               }
             },
+            "rate": {
+              "type": "literal",
+              "children": {
+                "rate": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "brigadier:float",
+                  "properties": {
+                    "max": 1000.0,
+                    "min": 1e-05
+                  }
+                }
+              }
+            },
             "resume": {
               "type": "literal",
               "executable": true
@@ -117,6 +131,20 @@
           "parser": "minecraft:resource",
           "properties": {
             "registry": "minecraft:timeline"
+          }
+        }
+      }
+    },
+    "rate": {
+      "type": "literal",
+      "children": {
+        "rate": {
+          "type": "argument",
+          "executable": true,
+          "parser": "brigadier:float",
+          "properties": {
+            "max": 1000.0,
+            "min": 1e-05
           }
         }
       }
