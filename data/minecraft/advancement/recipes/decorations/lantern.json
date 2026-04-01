@@ -3,23 +3,43 @@
   "criteria": {
     "has_iron_ingot": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:iron_ingot"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:iron_ingot"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_iron_nugget": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:iron_nugget"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:iron_nugget"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {

@@ -3,13 +3,23 @@
   "criteria": {
     "has_enchanted_golden_apple": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:enchanted_golden_apple"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:enchanted_golden_apple"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {

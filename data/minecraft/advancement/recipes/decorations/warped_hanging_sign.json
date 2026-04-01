@@ -3,13 +3,23 @@
   "criteria": {
     "has_stripped_logs": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:stripped_warped_stem"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:stripped_warped_stem"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {

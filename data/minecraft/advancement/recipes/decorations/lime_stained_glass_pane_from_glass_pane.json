@@ -3,23 +3,43 @@
   "criteria": {
     "has_glass_pane": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:glass_pane"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:glass_pane"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_lime_dye": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:lime_dye"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:lime_dye"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {

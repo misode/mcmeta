@@ -1,10 +1,14 @@
 {
   "criteria": {
-    "killed_by_something": {
-      "trigger": "minecraft:entity_killed_player"
-    },
-    "killed_something": {
-      "trigger": "minecraft:player_killed_entity"
+    "root": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:build_action"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
@@ -23,8 +27,7 @@
   },
   "requirements": [
     [
-      "killed_something",
-      "killed_by_something"
+      "root"
     ]
   ],
   "sends_telemetry_event": true

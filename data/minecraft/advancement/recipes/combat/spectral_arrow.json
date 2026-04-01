@@ -3,13 +3,23 @@
   "criteria": {
     "has_glowstone_dust": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:glowstone_dust"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:glowstone_dust"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {

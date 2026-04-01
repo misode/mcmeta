@@ -9,13 +9,23 @@
     },
     "has_wither_rose": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:wither_rose"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:wither_rose"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     }
   },
   "requirements": [

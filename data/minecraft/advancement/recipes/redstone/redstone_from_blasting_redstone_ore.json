@@ -3,13 +3,23 @@
   "criteria": {
     "has_redstone_ore": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:redstone_ore"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:redstone_ore"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {

@@ -3,13 +3,23 @@
   "criteria": {
     "has_rib_armor_trim_smithing_template": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:rib_armor_trim_smithing_template"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:rib_armor_trim_smithing_template"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {

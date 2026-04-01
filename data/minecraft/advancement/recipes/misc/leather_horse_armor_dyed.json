@@ -3,13 +3,23 @@
   "criteria": {
     "has_leather_horse_armor": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:leather_horse_armor"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:leather_horse_armor"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {

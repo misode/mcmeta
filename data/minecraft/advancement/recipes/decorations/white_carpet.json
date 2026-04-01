@@ -9,13 +9,23 @@
     },
     "has_white_wool": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:white_wool"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:white_wool"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     }
   },
   "requirements": [
