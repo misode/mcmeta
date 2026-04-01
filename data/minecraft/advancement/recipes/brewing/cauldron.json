@@ -9,13 +9,23 @@
     },
     "has_water_bucket": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:water_bucket"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:water_bucket"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     }
   },
   "requirements": [

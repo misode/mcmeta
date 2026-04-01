@@ -3,13 +3,23 @@
   "criteria": {
     "has_bamboo_slab": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:bamboo_slab"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:bamboo_slab"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {

@@ -3,13 +3,23 @@
   "criteria": {
     "has_cyan_terracotta": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:cyan_terracotta"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:cyan_terracotta"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {

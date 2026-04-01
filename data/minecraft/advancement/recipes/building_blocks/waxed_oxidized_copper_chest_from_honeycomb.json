@@ -3,13 +3,23 @@
   "criteria": {
     "has_oxidized_copper_chest": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:oxidized_copper_chest"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:oxidized_copper_chest"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {

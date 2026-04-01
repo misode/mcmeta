@@ -3,13 +3,23 @@
   "criteria": {
     "has_orange_dye": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:orange_dye"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:orange_dye"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {
