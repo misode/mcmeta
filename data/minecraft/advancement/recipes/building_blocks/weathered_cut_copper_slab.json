@@ -9,13 +9,23 @@
     },
     "has_weathered_cut_copper": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:weathered_cut_copper"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:weathered_cut_copper"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     }
   },
   "requirements": [

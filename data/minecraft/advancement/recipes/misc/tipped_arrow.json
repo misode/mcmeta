@@ -3,13 +3,23 @@
   "criteria": {
     "has_lingering_potion": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:lingering_potion"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:lingering_potion"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {

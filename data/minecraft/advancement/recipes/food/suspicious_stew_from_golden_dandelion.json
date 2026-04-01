@@ -3,13 +3,23 @@
   "criteria": {
     "has_golden_dandelion": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:golden_dandelion"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:golden_dandelion"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {

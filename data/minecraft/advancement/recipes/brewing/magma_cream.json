@@ -3,13 +3,23 @@
   "criteria": {
     "has_blaze_powder": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:blaze_powder"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:blaze_powder"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {

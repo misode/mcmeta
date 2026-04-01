@@ -3,13 +3,23 @@
   "criteria": {
     "has_deepslate_tiles": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:deepslate_tiles"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:deepslate_tiles"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {

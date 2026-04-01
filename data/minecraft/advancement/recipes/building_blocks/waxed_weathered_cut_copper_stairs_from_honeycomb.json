@@ -9,13 +9,23 @@
     },
     "has_weathered_cut_copper_stairs": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:weathered_cut_copper_stairs"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:weathered_cut_copper_stairs"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     }
   },
   "requirements": [

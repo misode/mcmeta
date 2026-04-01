@@ -9,13 +9,23 @@
     },
     "has_waxed_weathered_copper": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:waxed_weathered_copper"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:waxed_weathered_copper"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     }
   },
   "requirements": [

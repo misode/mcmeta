@@ -9,13 +9,23 @@
     },
     "has_waxed_cut_copper_slab": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:waxed_cut_copper_slab"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:waxed_cut_copper_slab"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     }
   },
   "requirements": [

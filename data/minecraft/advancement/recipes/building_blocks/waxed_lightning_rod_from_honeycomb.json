@@ -3,13 +3,23 @@
   "criteria": {
     "has_lightning_rod": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:lightning_rod"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:lightning_rod"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {

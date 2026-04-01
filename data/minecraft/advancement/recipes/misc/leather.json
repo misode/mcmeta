@@ -3,13 +3,23 @@
   "criteria": {
     "has_rabbit_hide": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "minecraft:rabbit_hide"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:living_block",
+              "type_specific": {
+                "type": "minecraft:living_block",
+                "item": {
+                  "items": "minecraft:rabbit_hide"
+                }
+              }
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:summoned_entity"
     },
     "has_the_recipe": {
       "conditions": {
