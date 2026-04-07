@@ -43,7 +43,7 @@ import traceback
 
 EXPORTS = ('assets', 'assets-json', 'assets-tiny', 'data', 'data-json', 'summary', 'registries', 'atlas', 'diff')
 
-APRIL_FOOLS = ('15w14a', '3D Shareware v1.34', '20w14infinite', '22w13oneblockatatime', '23w13a_or_b', '24w14potato', '25w14craftmine')
+APRIL_FOOLS = ('15w14a', '3D Shareware v1.34', '20w14infinite', '22w13oneblockatatime', '23w13a_or_b', '24w14potato', '25w14craftmine', '26w14a')
 
 @click.command()
 @click.option('--version', '-v')
