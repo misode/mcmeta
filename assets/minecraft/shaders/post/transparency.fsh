@@ -31,7 +31,7 @@ void try_insert(vec4 color, float depth) {
 
     int jj = active_layers++;
     int ii = jj - 1;
-    while (jj > 0 && depth_layers[jj] > depth_layers[ii]) {
+    while (jj > 0 && depth_layers[jj] < depth_layers[ii]) {
         float depthTemp = depth_layers[ii];
         depth_layers[ii] = depth_layers[jj];
         depth_layers[jj] = depthTemp;
