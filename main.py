@@ -127,6 +127,12 @@ def fetch_versions(version: str | None, file: str | None):
 	v1164 = version_ids.index('1.16.4')
 	version_ids = [*version_ids[:v1165], *version_ids[v20w51a:v1164], *version_ids[v1165:v20w51a], *version_ids[v1164:]]
 
+	# Fix version order anomaly around 26.1.2
+	v2612 = version_ids.index('26.1.2')
+	v262s1 = version_ids.index('26.2-snapshot-1')
+	v26w14a = version_ids.index('26w14a')
+	version_ids = [*version_ids[:v2612], *version_ids[v262s1:v26w14a], *version_ids[v2612:v262s1], *version_ids[v26w14a:]]
+
 	unordered_versions = { v['id']: dict(**v, index=version_ids.index(v['id'])) for v in manifest['versions'] }
 	versions = { v: unordered_versions[v] for v in version_ids }
 
