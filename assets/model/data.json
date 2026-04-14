@@ -1845,10 +1845,403 @@
       }
     ]
   },
-  "block/bed": {
+  "block/bed_foot": {
+    "parent": "block/template_bed",
     "textures": {
-      "particle": "minecraft:block/oak_planks"
-    }
+      "particle": "minecraft:block/oak_planks",
+      "south": "#south",
+      "east": "#east",
+      "west": "#west",
+      "up": "#up",
+      "down": "minecraft:block/bed_down"
+    },
+    "elements": [
+      {
+        "from": [
+          0,
+          3,
+          0
+        ],
+        "to": [
+          16,
+          9,
+          16
+        ],
+        "faces": {
+          "down": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#down"
+          },
+          "up": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#up"
+          },
+          "south": {
+            "uv": [
+              0,
+              7,
+              16,
+              13
+            ],
+            "texture": "#south",
+            "cullface": "south"
+          },
+          "west": {
+            "uv": [
+              0,
+              7,
+              16,
+              13
+            ],
+            "texture": "#west",
+            "cullface": "west"
+          },
+          "east": {
+            "uv": [
+              0,
+              7,
+              16,
+              13
+            ],
+            "texture": "#east",
+            "cullface": "east"
+          }
+        }
+      },
+      {
+        "from": [
+          0,
+          0,
+          13
+        ],
+        "to": [
+          3,
+          3,
+          16
+        ],
+        "faces": {
+          "down": {
+            "uv": [
+              7,
+              13,
+              10,
+              16
+            ],
+            "texture": "#west",
+            "cullface": "down"
+          },
+          "north": {
+            "uv": [
+              10,
+              13,
+              13,
+              16
+            ],
+            "texture": "#west"
+          },
+          "south": {
+            "uv": [
+              0,
+              13,
+              3,
+              16
+            ],
+            "texture": "#south",
+            "cullface": "south"
+          },
+          "west": {
+            "uv": [
+              13,
+              13,
+              16,
+              16
+            ],
+            "texture": "#west",
+            "cullface": "west"
+          },
+          "east": {
+            "uv": [
+              3,
+              13,
+              6,
+              16
+            ],
+            "texture": "#south"
+          }
+        }
+      },
+      {
+        "from": [
+          13,
+          0,
+          13
+        ],
+        "to": [
+          16,
+          3,
+          16
+        ],
+        "faces": {
+          "down": {
+            "uv": [
+              6,
+              13,
+              9,
+              16
+            ],
+            "texture": "#east",
+            "cullface": "down"
+          },
+          "north": {
+            "uv": [
+              3,
+              13,
+              6,
+              16
+            ],
+            "texture": "#east"
+          },
+          "south": {
+            "uv": [
+              13,
+              13,
+              16,
+              16
+            ],
+            "texture": "#south",
+            "cullface": "south"
+          },
+          "west": {
+            "uv": [
+              10,
+              13,
+              13,
+              16
+            ],
+            "texture": "#south"
+          },
+          "east": {
+            "uv": [
+              0,
+              13,
+              3,
+              16
+            ],
+            "texture": "#east",
+            "cullface": "east"
+          }
+        }
+      }
+    ]
+  },
+  "block/bed_head": {
+    "parent": "block/template_bed",
+    "textures": {
+      "particle": "minecraft:block/oak_planks",
+      "north": "minecraft:block/bed_head_north",
+      "east": "#east",
+      "west": "#west",
+      "up": "#up",
+      "down": "minecraft:block/bed_down"
+    },
+    "elements": [
+      {
+        "from": [
+          0,
+          3,
+          0
+        ],
+        "to": [
+          16,
+          9,
+          16
+        ],
+        "faces": {
+          "down": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#down"
+          },
+          "up": {
+            "uv": [
+              0,
+              0,
+              16,
+              16
+            ],
+            "texture": "#up"
+          },
+          "north": {
+            "uv": [
+              0,
+              7,
+              16,
+              13
+            ],
+            "texture": "#north",
+            "cullface": "north"
+          },
+          "west": {
+            "uv": [
+              0,
+              7,
+              16,
+              13
+            ],
+            "texture": "#west",
+            "cullface": "west"
+          },
+          "east": {
+            "uv": [
+              0,
+              7,
+              16,
+              13
+            ],
+            "texture": "#east",
+            "cullface": "east"
+          }
+        }
+      },
+      {
+        "from": [
+          0,
+          0,
+          0
+        ],
+        "to": [
+          3,
+          3,
+          3
+        ],
+        "faces": {
+          "down": {
+            "uv": [
+              6,
+              13,
+              9,
+              16
+            ],
+            "texture": "#west",
+            "cullface": "down"
+          },
+          "north": {
+            "uv": [
+              13,
+              13,
+              16,
+              16
+            ],
+            "texture": "#north",
+            "cullface": "north"
+          },
+          "south": {
+            "uv": [
+              3,
+              13,
+              6,
+              16
+            ],
+            "texture": "#west"
+          },
+          "west": {
+            "uv": [
+              0,
+              13,
+              3,
+              16
+            ],
+            "texture": "#west",
+            "cullface": "west"
+          },
+          "east": {
+            "uv": [
+              10,
+              13,
+              13,
+              16
+            ],
+            "texture": "#north"
+          }
+        }
+      },
+      {
+        "from": [
+          13,
+          0,
+          0
+        ],
+        "to": [
+          16,
+          3,
+          3
+        ],
+        "faces": {
+          "down": {
+            "uv": [
+              7,
+              13,
+              10,
+              16
+            ],
+            "texture": "#east",
+            "cullface": "down"
+          },
+          "north": {
+            "uv": [
+              0,
+              13,
+              3,
+              16
+            ],
+            "texture": "#north",
+            "cullface": "north"
+          },
+          "south": {
+            "uv": [
+              10,
+              13,
+              13,
+              16
+            ],
+            "texture": "#east"
+          },
+          "west": {
+            "uv": [
+              3,
+              13,
+              6,
+              16
+            ],
+            "texture": "#north"
+          },
+          "east": {
+            "uv": [
+              13,
+              13,
+              16,
+              16
+            ],
+            "texture": "#east",
+            "cullface": "east"
+          }
+        }
+      }
+    ]
   },
   "block/bedrock": {
     "parent": "minecraft:block/cube_all",
@@ -3496,6 +3889,23 @@
       "side": "minecraft:block/birch_log"
     }
   },
+  "block/black_bed_foot": {
+    "parent": "minecraft:block/bed_foot",
+    "textures": {
+      "east": "minecraft:block/black_bed_foot_east",
+      "south": "minecraft:block/black_bed_foot_south",
+      "up": "minecraft:block/black_bed_foot_up",
+      "west": "minecraft:block/black_bed_foot_west"
+    }
+  },
+  "block/black_bed_head": {
+    "parent": "minecraft:block/bed_head",
+    "textures": {
+      "east": "minecraft:block/black_bed_head_east",
+      "up": "minecraft:block/black_bed_head_up",
+      "west": "minecraft:block/black_bed_head_west"
+    }
+  },
   "block/black_candle_cake": {
     "parent": "minecraft:block/template_cake_with_candle",
     "textures": {
@@ -3888,6 +4298,23 @@
           0.4
         ]
       }
+    }
+  },
+  "block/blue_bed_foot": {
+    "parent": "minecraft:block/bed_foot",
+    "textures": {
+      "east": "minecraft:block/blue_bed_foot_east",
+      "south": "minecraft:block/blue_bed_foot_south",
+      "up": "minecraft:block/blue_bed_foot_up",
+      "west": "minecraft:block/blue_bed_foot_west"
+    }
+  },
+  "block/blue_bed_head": {
+    "parent": "minecraft:block/bed_head",
+    "textures": {
+      "east": "minecraft:block/blue_bed_head_east",
+      "up": "minecraft:block/blue_bed_head_up",
+      "west": "minecraft:block/blue_bed_head_west"
     }
   },
   "block/blue_candle_cake": {
@@ -4751,6 +5178,23 @@
     "parent": "minecraft:block/cube_all",
     "textures": {
       "all": "minecraft:block/bricks"
+    }
+  },
+  "block/brown_bed_foot": {
+    "parent": "minecraft:block/bed_foot",
+    "textures": {
+      "east": "minecraft:block/brown_bed_foot_east",
+      "south": "minecraft:block/brown_bed_foot_south",
+      "up": "minecraft:block/brown_bed_foot_up",
+      "west": "minecraft:block/brown_bed_foot_west"
+    }
+  },
+  "block/brown_bed_head": {
+    "parent": "minecraft:block/bed_head",
+    "textures": {
+      "east": "minecraft:block/brown_bed_head_east",
+      "up": "minecraft:block/brown_bed_head_up",
+      "west": "minecraft:block/brown_bed_head_west"
     }
   },
   "block/brown_candle_cake": {
@@ -14835,6 +15279,23 @@
       "top": "minecraft:block/sandstone_top"
     }
   },
+  "block/cyan_bed_foot": {
+    "parent": "minecraft:block/bed_foot",
+    "textures": {
+      "east": "minecraft:block/cyan_bed_foot_east",
+      "south": "minecraft:block/cyan_bed_foot_south",
+      "up": "minecraft:block/cyan_bed_foot_up",
+      "west": "minecraft:block/cyan_bed_foot_west"
+    }
+  },
+  "block/cyan_bed_head": {
+    "parent": "minecraft:block/bed_head",
+    "textures": {
+      "east": "minecraft:block/cyan_bed_head_east",
+      "up": "minecraft:block/cyan_bed_head_up",
+      "west": "minecraft:block/cyan_bed_head_west"
+    }
+  },
   "block/cyan_candle_cake": {
     "parent": "minecraft:block/template_cake_with_candle",
     "textures": {
@@ -23023,6 +23484,23 @@
       "all": "minecraft:block/gravel"
     }
   },
+  "block/gray_bed_foot": {
+    "parent": "minecraft:block/bed_foot",
+    "textures": {
+      "east": "minecraft:block/gray_bed_foot_east",
+      "south": "minecraft:block/gray_bed_foot_south",
+      "up": "minecraft:block/gray_bed_foot_up",
+      "west": "minecraft:block/gray_bed_foot_west"
+    }
+  },
+  "block/gray_bed_head": {
+    "parent": "minecraft:block/bed_head",
+    "textures": {
+      "east": "minecraft:block/gray_bed_head_east",
+      "up": "minecraft:block/gray_bed_head_up",
+      "west": "minecraft:block/gray_bed_head_west"
+    }
+  },
   "block/gray_candle_cake": {
     "parent": "minecraft:block/template_cake_with_candle",
     "textures": {
@@ -23204,6 +23682,23 @@
     "parent": "minecraft:block/cube_all",
     "textures": {
       "all": "minecraft:block/gray_wool"
+    }
+  },
+  "block/green_bed_foot": {
+    "parent": "minecraft:block/bed_foot",
+    "textures": {
+      "east": "minecraft:block/green_bed_foot_east",
+      "south": "minecraft:block/green_bed_foot_south",
+      "up": "minecraft:block/green_bed_foot_up",
+      "west": "minecraft:block/green_bed_foot_west"
+    }
+  },
+  "block/green_bed_head": {
+    "parent": "minecraft:block/bed_head",
+    "textures": {
+      "east": "minecraft:block/green_bed_head_east",
+      "up": "minecraft:block/green_bed_head_up",
+      "west": "minecraft:block/green_bed_head_west"
     }
   },
   "block/green_candle_cake": {
@@ -26006,6 +26501,23 @@
       "particle": "minecraft:item/light_15"
     }
   },
+  "block/light_blue_bed_foot": {
+    "parent": "minecraft:block/bed_foot",
+    "textures": {
+      "east": "minecraft:block/light_blue_bed_foot_east",
+      "south": "minecraft:block/light_blue_bed_foot_south",
+      "up": "minecraft:block/light_blue_bed_foot_up",
+      "west": "minecraft:block/light_blue_bed_foot_west"
+    }
+  },
+  "block/light_blue_bed_head": {
+    "parent": "minecraft:block/bed_head",
+    "textures": {
+      "east": "minecraft:block/light_blue_bed_head_east",
+      "up": "minecraft:block/light_blue_bed_head_up",
+      "west": "minecraft:block/light_blue_bed_head_west"
+    }
+  },
   "block/light_blue_candle_cake": {
     "parent": "minecraft:block/template_cake_with_candle",
     "textures": {
@@ -26187,6 +26699,23 @@
     "parent": "minecraft:block/cube_all",
     "textures": {
       "all": "minecraft:block/light_blue_wool"
+    }
+  },
+  "block/light_gray_bed_foot": {
+    "parent": "minecraft:block/bed_foot",
+    "textures": {
+      "east": "minecraft:block/light_gray_bed_foot_east",
+      "south": "minecraft:block/light_gray_bed_foot_south",
+      "up": "minecraft:block/light_gray_bed_foot_up",
+      "west": "minecraft:block/light_gray_bed_foot_west"
+    }
+  },
+  "block/light_gray_bed_head": {
+    "parent": "minecraft:block/bed_head",
+    "textures": {
+      "east": "minecraft:block/light_gray_bed_head_east",
+      "up": "minecraft:block/light_gray_bed_head_up",
+      "west": "minecraft:block/light_gray_bed_head_west"
     }
   },
   "block/light_gray_candle_cake": {
@@ -26457,6 +26986,23 @@
       }
     ]
   },
+  "block/lime_bed_foot": {
+    "parent": "minecraft:block/bed_foot",
+    "textures": {
+      "east": "minecraft:block/lime_bed_foot_east",
+      "south": "minecraft:block/lime_bed_foot_south",
+      "up": "minecraft:block/lime_bed_foot_up",
+      "west": "minecraft:block/lime_bed_foot_west"
+    }
+  },
+  "block/lime_bed_head": {
+    "parent": "minecraft:block/bed_head",
+    "textures": {
+      "east": "minecraft:block/lime_bed_head_east",
+      "up": "minecraft:block/lime_bed_head_up",
+      "west": "minecraft:block/lime_bed_head_west"
+    }
+  },
   "block/lime_candle_cake": {
     "parent": "minecraft:block/template_cake_with_candle",
     "textures": {
@@ -26654,6 +27200,23 @@
       "front": "minecraft:block/loom_front",
       "side": "minecraft:block/loom_side",
       "top": "minecraft:block/loom_top"
+    }
+  },
+  "block/magenta_bed_foot": {
+    "parent": "minecraft:block/bed_foot",
+    "textures": {
+      "east": "minecraft:block/magenta_bed_foot_east",
+      "south": "minecraft:block/magenta_bed_foot_south",
+      "up": "minecraft:block/magenta_bed_foot_up",
+      "west": "minecraft:block/magenta_bed_foot_west"
+    }
+  },
+  "block/magenta_bed_head": {
+    "parent": "minecraft:block/bed_head",
+    "textures": {
+      "east": "minecraft:block/magenta_bed_head_east",
+      "up": "minecraft:block/magenta_bed_head_up",
+      "west": "minecraft:block/magenta_bed_head_west"
     }
   },
   "block/magenta_candle_cake": {
@@ -32133,6 +32696,23 @@
       "cross_emissive": "minecraft:block/open_eyeblossom_emissive"
     }
   },
+  "block/orange_bed_foot": {
+    "parent": "minecraft:block/bed_foot",
+    "textures": {
+      "east": "minecraft:block/orange_bed_foot_east",
+      "south": "minecraft:block/orange_bed_foot_south",
+      "up": "minecraft:block/orange_bed_foot_up",
+      "west": "minecraft:block/orange_bed_foot_west"
+    }
+  },
+  "block/orange_bed_head": {
+    "parent": "minecraft:block/bed_head",
+    "textures": {
+      "east": "minecraft:block/orange_bed_head_east",
+      "up": "minecraft:block/orange_bed_head_up",
+      "west": "minecraft:block/orange_bed_head_west"
+    }
+  },
   "block/orange_candle_cake": {
     "parent": "minecraft:block/template_cake_with_candle",
     "textures": {
@@ -33129,6 +33709,23 @@
       "bottom": "minecraft:block/oak_planks",
       "side": "minecraft:block/oak_planks",
       "top": "minecraft:block/oak_planks"
+    }
+  },
+  "block/pink_bed_foot": {
+    "parent": "minecraft:block/bed_foot",
+    "textures": {
+      "east": "minecraft:block/pink_bed_foot_east",
+      "south": "minecraft:block/pink_bed_foot_south",
+      "up": "minecraft:block/pink_bed_foot_up",
+      "west": "minecraft:block/pink_bed_foot_west"
+    }
+  },
+  "block/pink_bed_head": {
+    "parent": "minecraft:block/bed_head",
+    "textures": {
+      "east": "minecraft:block/pink_bed_head_east",
+      "up": "minecraft:block/pink_bed_head_up",
+      "west": "minecraft:block/pink_bed_head_west"
     }
   },
   "block/pink_candle_cake": {
@@ -37354,6 +37951,23 @@
       "stem": "minecraft:block/pumpkin_stem"
     }
   },
+  "block/purple_bed_foot": {
+    "parent": "minecraft:block/bed_foot",
+    "textures": {
+      "east": "minecraft:block/purple_bed_foot_east",
+      "south": "minecraft:block/purple_bed_foot_south",
+      "up": "minecraft:block/purple_bed_foot_up",
+      "west": "minecraft:block/purple_bed_foot_west"
+    }
+  },
+  "block/purple_bed_head": {
+    "parent": "minecraft:block/bed_head",
+    "textures": {
+      "east": "minecraft:block/purple_bed_head_east",
+      "up": "minecraft:block/purple_bed_head_up",
+      "west": "minecraft:block/purple_bed_head_west"
+    }
+  },
   "block/purple_candle_cake": {
     "parent": "minecraft:block/template_cake_with_candle",
     "textures": {
@@ -37784,6 +38398,23 @@
     "parent": "minecraft:block/cube_all",
     "textures": {
       "all": "minecraft:block/raw_iron_block"
+    }
+  },
+  "block/red_bed_foot": {
+    "parent": "minecraft:block/bed_foot",
+    "textures": {
+      "east": "minecraft:block/red_bed_foot_east",
+      "south": "minecraft:block/red_bed_foot_south",
+      "up": "minecraft:block/red_bed_foot_up",
+      "west": "minecraft:block/red_bed_foot_west"
+    }
+  },
+  "block/red_bed_head": {
+    "parent": "minecraft:block/bed_head",
+    "textures": {
+      "east": "minecraft:block/red_bed_head_east",
+      "up": "minecraft:block/red_bed_head_up",
+      "west": "minecraft:block/red_bed_head_west"
     }
   },
   "block/red_candle_cake": {
@@ -49178,6 +49809,66 @@
       "top": "minecraft:block/sulfur"
     }
   },
+  "block/sulfur_spike_down_base": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/sulfur_spike_down_base"
+    }
+  },
+  "block/sulfur_spike_down_frustum": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/sulfur_spike_down_frustum"
+    }
+  },
+  "block/sulfur_spike_down_middle": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/sulfur_spike_down_middle"
+    }
+  },
+  "block/sulfur_spike_down_tip": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/sulfur_spike_down_tip"
+    }
+  },
+  "block/sulfur_spike_down_tip_merge": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/sulfur_spike_down_tip_merge"
+    }
+  },
+  "block/sulfur_spike_up_base": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/sulfur_spike_up_base"
+    }
+  },
+  "block/sulfur_spike_up_frustum": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/sulfur_spike_up_frustum"
+    }
+  },
+  "block/sulfur_spike_up_middle": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/sulfur_spike_up_middle"
+    }
+  },
+  "block/sulfur_spike_up_tip": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/sulfur_spike_up_tip"
+    }
+  },
+  "block/sulfur_spike_up_tip_merge": {
+    "parent": "minecraft:block/pointed_dripstone",
+    "textures": {
+      "cross": "minecraft:block/sulfur_spike_up_tip_merge"
+    }
+  },
   "block/sulfur_stairs": {
     "parent": "minecraft:block/stairs",
     "textures": {
@@ -50608,6 +51299,129 @@
         }
       }
     ]
+  },
+  "block/template_bed": {
+    "display": {
+      "thirdperson_righthand": {
+        "rotation": [
+          30,
+          340,
+          0
+        ],
+        "translation": [
+          0,
+          3,
+          -2
+        ],
+        "scale": [
+          0.23,
+          0.23,
+          0.23
+        ]
+      },
+      "firstperson_righthand": {
+        "rotation": [
+          30,
+          340,
+          0
+        ],
+        "translation": [
+          0,
+          3,
+          0
+        ],
+        "scale": [
+          0.375,
+          0.375,
+          0.375
+        ]
+      },
+      "gui": {
+        "rotation": [
+          30,
+          340,
+          0
+        ],
+        "translation": [
+          2,
+          3,
+          0
+        ],
+        "scale": [
+          0.5325,
+          0.5325,
+          0.5325
+        ]
+      },
+      "ground": {
+        "rotation": [
+          0,
+          180,
+          0
+        ],
+        "translation": [
+          0,
+          1,
+          2
+        ],
+        "scale": [
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "head": {
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "translation": [
+          0,
+          10,
+          -8
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "fixed": {
+        "rotation": [
+          270,
+          180,
+          0
+        ],
+        "translation": [
+          0,
+          4,
+          -2
+        ],
+        "scale": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "on_shelf": {
+        "rotation": [
+          90,
+          0,
+          0
+        ],
+        "translation": [
+          0,
+          14.5,
+          2.5
+        ],
+        "scale": [
+          0.9375,
+          0.9375,
+          0.9375
+        ]
+      }
+    }
   },
   "block/template_cake_with_candle": {
     "textures": {
@@ -71762,6 +72576,23 @@
       "crop": "minecraft:block/wheat_stage7"
     }
   },
+  "block/white_bed_foot": {
+    "parent": "minecraft:block/bed_foot",
+    "textures": {
+      "east": "minecraft:block/white_bed_foot_east",
+      "south": "minecraft:block/white_bed_foot_south",
+      "up": "minecraft:block/white_bed_foot_up",
+      "west": "minecraft:block/white_bed_foot_west"
+    }
+  },
+  "block/white_bed_head": {
+    "parent": "minecraft:block/bed_head",
+    "textures": {
+      "east": "minecraft:block/white_bed_head_east",
+      "up": "minecraft:block/white_bed_head_up",
+      "west": "minecraft:block/white_bed_head_west"
+    }
+  },
   "block/white_candle_cake": {
     "parent": "minecraft:block/template_cake_with_candle",
     "textures": {
@@ -71983,6 +72814,23 @@
     "parent": "minecraft:block/cross",
     "textures": {
       "cross": "minecraft:block/wither_rose"
+    }
+  },
+  "block/yellow_bed_foot": {
+    "parent": "minecraft:block/bed_foot",
+    "textures": {
+      "east": "minecraft:block/yellow_bed_foot_east",
+      "south": "minecraft:block/yellow_bed_foot_south",
+      "up": "minecraft:block/yellow_bed_foot_up",
+      "west": "minecraft:block/yellow_bed_foot_west"
+    }
+  },
+  "block/yellow_bed_head": {
+    "parent": "minecraft:block/bed_head",
+    "textures": {
+      "east": "minecraft:block/yellow_bed_head_east",
+      "up": "minecraft:block/yellow_bed_head_up",
+      "west": "minecraft:block/yellow_bed_head_west"
     }
   },
   "block/yellow_candle_cake": {
@@ -72561,12 +73409,6 @@
       "layer0": "minecraft:item/birch_sign"
     }
   },
-  "item/black_bed": {
-    "parent": "minecraft:item/template_bed",
-    "textures": {
-      "particle": "minecraft:block/black_wool"
-    }
-  },
   "item/black_bundle": {
     "parent": "minecraft:item/generated",
     "textures": {
@@ -72637,12 +73479,6 @@
     "parent": "minecraft:item/generated",
     "textures": {
       "layer0": "minecraft:item/blaze_spawn_egg"
-    }
-  },
-  "item/blue_bed": {
-    "parent": "minecraft:item/template_bed",
-    "textures": {
-      "particle": "minecraft:block/blue_wool"
     }
   },
   "item/blue_bundle": {
@@ -72906,12 +73742,6 @@
     "parent": "minecraft:item/generated",
     "textures": {
       "layer0": "minecraft:item/brick"
-    }
-  },
-  "item/brown_bed": {
-    "parent": "minecraft:item/template_bed",
-    "textures": {
-      "particle": "minecraft:block/brown_wool"
     }
   },
   "item/brown_bundle": {
@@ -75152,12 +75982,6 @@
       "layer0": "minecraft:item/crossbow_pulling_2"
     }
   },
-  "item/cyan_bed": {
-    "parent": "minecraft:item/template_bed",
-    "textures": {
-      "particle": "minecraft:block/cyan_wool"
-    }
-  },
   "item/cyan_bundle": {
     "parent": "minecraft:item/generated",
     "textures": {
@@ -76903,12 +77727,6 @@
       "layer0": "minecraft:item/golden_sword"
     }
   },
-  "item/gray_bed": {
-    "parent": "minecraft:item/template_bed",
-    "textures": {
-      "particle": "minecraft:block/gray_wool"
-    }
-  },
   "item/gray_bundle": {
     "parent": "minecraft:item/generated",
     "textures": {
@@ -76955,12 +77773,6 @@
     "parent": "minecraft:item/generated",
     "textures": {
       "layer0": "minecraft:block/gray_stained_glass"
-    }
-  },
-  "item/green_bed": {
-    "parent": "minecraft:item/template_bed",
-    "textures": {
-      "particle": "minecraft:block/green_wool"
     }
   },
   "item/green_bundle": {
@@ -78445,12 +79257,6 @@
       "layer0": "minecraft:item/light_15"
     }
   },
-  "item/light_blue_bed": {
-    "parent": "minecraft:item/template_bed",
-    "textures": {
-      "particle": "minecraft:block/light_blue_wool"
-    }
-  },
   "item/light_blue_bundle": {
     "parent": "minecraft:item/generated",
     "textures": {
@@ -78497,12 +79303,6 @@
     "parent": "minecraft:item/generated",
     "textures": {
       "layer0": "minecraft:block/light_blue_stained_glass"
-    }
-  },
-  "item/light_gray_bed": {
-    "parent": "minecraft:item/template_bed",
-    "textures": {
-      "particle": "minecraft:block/light_gray_wool"
     }
   },
   "item/light_gray_bundle": {
@@ -78571,12 +79371,6 @@
       "layer0": "minecraft:block/lily_pad"
     }
   },
-  "item/lime_bed": {
-    "parent": "minecraft:item/template_bed",
-    "textures": {
-      "particle": "minecraft:block/lime_wool"
-    }
-  },
   "item/lime_bundle": {
     "parent": "minecraft:item/generated",
     "textures": {
@@ -78642,12 +79436,6 @@
     "parent": "minecraft:item/handheld_mace",
     "textures": {
       "layer0": "minecraft:item/mace"
-    }
-  },
-  "item/magenta_bed": {
-    "parent": "minecraft:item/template_bed",
-    "textures": {
-      "particle": "minecraft:block/magenta_wool"
     }
   },
   "item/magenta_bundle": {
@@ -79466,12 +80254,6 @@
       "layer1": "minecraft:block/open_eyeblossom_emissive"
     }
   },
-  "item/orange_bed": {
-    "parent": "minecraft:item/template_bed",
-    "textures": {
-      "particle": "minecraft:block/orange_wool"
-    }
-  },
   "item/orange_bundle": {
     "parent": "minecraft:item/generated",
     "textures": {
@@ -79680,12 +80462,6 @@
     "parent": "minecraft:item/generated",
     "textures": {
       "layer0": "minecraft:item/pillager_spawn_egg"
-    }
-  },
-  "item/pink_bed": {
-    "parent": "minecraft:item/template_bed",
-    "textures": {
-      "particle": "minecraft:block/pink_wool"
     }
   },
   "item/pink_bundle": {
@@ -79909,12 +80685,6 @@
     "parent": "minecraft:item/generated",
     "textures": {
       "layer0": "minecraft:item/pumpkin_seeds"
-    }
-  },
-  "item/purple_bed": {
-    "parent": "minecraft:item/template_bed",
-    "textures": {
-      "particle": "minecraft:block/purple_wool"
     }
   },
   "item/purple_bundle": {
@@ -80227,12 +80997,6 @@
     "parent": "minecraft:item/generated",
     "textures": {
       "layer0": "minecraft:item/recovery_compass_31"
-    }
-  },
-  "item/red_bed": {
-    "parent": "minecraft:item/template_bed",
-    "textures": {
-      "particle": "minecraft:block/red_wool"
     }
   },
   "item/red_bundle": {
@@ -81309,6 +82073,48 @@
       "layer0": "minecraft:item/sulfur_cube_spawn_egg"
     }
   },
+  "item/sulfur_spike": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "minecraft:item/sulfur_spike"
+    },
+    "display": {
+      "thirdperson_righthand": {
+        "rotation": [
+          0,
+          100,
+          0
+        ],
+        "translation": [
+          -1,
+          -1,
+          0
+        ],
+        "scale": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      "firstperson_righthand": {
+        "rotation": [
+          0,
+          100,
+          0
+        ],
+        "translation": [
+          0,
+          -2,
+          0
+        ],
+        "scale": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      }
+    }
+  },
   "item/sunflower": {
     "parent": "minecraft:item/generated",
     "textures": {
@@ -81457,129 +82263,6 @@
           0.5,
           0.5,
           0.5
-        ]
-      }
-    }
-  },
-  "item/template_bed": {
-    "display": {
-      "thirdperson_righthand": {
-        "rotation": [
-          30,
-          160,
-          0
-        ],
-        "translation": [
-          0,
-          3,
-          -2
-        ],
-        "scale": [
-          0.23,
-          0.23,
-          0.23
-        ]
-      },
-      "firstperson_righthand": {
-        "rotation": [
-          30,
-          160,
-          0
-        ],
-        "translation": [
-          0,
-          3,
-          0
-        ],
-        "scale": [
-          0.375,
-          0.375,
-          0.375
-        ]
-      },
-      "gui": {
-        "rotation": [
-          30,
-          160,
-          0
-        ],
-        "translation": [
-          2,
-          3,
-          0
-        ],
-        "scale": [
-          0.5325,
-          0.5325,
-          0.5325
-        ]
-      },
-      "ground": {
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "translation": [
-          0,
-          1,
-          2
-        ],
-        "scale": [
-          0.25,
-          0.25,
-          0.25
-        ]
-      },
-      "head": {
-        "rotation": [
-          0,
-          180,
-          0
-        ],
-        "translation": [
-          0,
-          10,
-          -8
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "fixed": {
-        "rotation": [
-          270,
-          0,
-          0
-        ],
-        "translation": [
-          0,
-          4,
-          -2
-        ],
-        "scale": [
-          0.5,
-          0.5,
-          0.5
-        ]
-      },
-      "on_shelf": {
-        "rotation": [
-          90,
-          180,
-          0
-        ],
-        "translation": [
-          0,
-          14.5,
-          2.5
-        ],
-        "scale": [
-          0.9375,
-          0.9375,
-          0.9375
         ]
       }
     }
@@ -82730,12 +83413,6 @@
       "layer0": "minecraft:item/wheat_seeds"
     }
   },
-  "item/white_bed": {
-    "parent": "minecraft:item/template_bed",
-    "textures": {
-      "particle": "minecraft:block/white_wool"
-    }
-  },
   "item/white_bundle": {
     "parent": "minecraft:item/generated",
     "textures": {
@@ -82903,12 +83580,6 @@
     "parent": "minecraft:item/generated",
     "textures": {
       "layer0": "minecraft:item/written_book"
-    }
-  },
-  "item/yellow_bed": {
-    "parent": "minecraft:item/template_bed",
-    "textures": {
-      "particle": "minecraft:block/yellow_wool"
     }
   },
   "item/yellow_bundle": {

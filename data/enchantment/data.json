@@ -53,7 +53,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
-              "type": "#minecraft:sensitive_to_bane_of_arthropods"
+              "minecraft:entity_type": "#minecraft:sensitive_to_bane_of_arthropods"
             }
           }
         }
@@ -81,7 +81,7 @@
                 "condition": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
-                  "type": "#minecraft:sensitive_to_bane_of_arthropods"
+                  "minecraft:entity_type": "#minecraft:sensitive_to_bane_of_arthropods"
                 }
               },
               {
@@ -266,7 +266,7 @@
                 "condition": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
-                  "type": "minecraft:trident"
+                  "minecraft:entity_type": "minecraft:trident"
                 }
               },
               {
@@ -312,7 +312,7 @@
                 "condition": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
-                  "location": {
+                  "minecraft:location": {
                     "can_see_sky": true
                   }
                 }
@@ -321,7 +321,7 @@
                 "condition": "minecraft:entity_properties",
                 "entity": "direct_attacker",
                 "predicate": {
-                  "type": "minecraft:trident"
+                  "minecraft:entity_type": "minecraft:trident"
                 }
               }
             ]
@@ -746,7 +746,7 @@
                 "condition": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
-                  "flags": {
+                  "minecraft:flags": {
                     "is_on_ground": true
                   }
                 }
@@ -757,7 +757,7 @@
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
-                    "vehicle": {}
+                    "minecraft:vehicle": {}
                   }
                 }
               }
@@ -802,7 +802,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
-              "type": "#minecraft:sensitive_to_impaling"
+              "minecraft:entity_type": "#minecraft:sensitive_to_impaling"
             }
           }
         }
@@ -916,7 +916,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "attacker",
             "predicate": {
-              "type": "minecraft:player"
+              "minecraft:entity_type": "minecraft:player"
             }
           }
         }
@@ -1067,7 +1067,7 @@
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
-                    "vehicle": {}
+                    "minecraft:vehicle": {}
                   }
                 }
               },
@@ -1075,7 +1075,7 @@
                 "condition": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
-                  "flags": {
+                  "minecraft:flags": {
                     "is_fall_flying": false
                   }
                 }
@@ -1084,7 +1084,7 @@
                 "condition": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
-                  "flags": {
+                  "minecraft:flags": {
                     "is_in_water": false
                   }
                 }
@@ -1098,9 +1098,7 @@
                       "condition": "minecraft:entity_properties",
                       "entity": "this",
                       "predicate": {
-                        "type_specific": {
-                          "type": "minecraft:player"
-                        }
+                        "minecraft:type_specific/player": {}
                       }
                     }
                   },
@@ -1108,8 +1106,7 @@
                     "condition": "minecraft:entity_properties",
                     "entity": "this",
                     "predicate": {
-                      "type_specific": {
-                        "type": "minecraft:player",
+                      "minecraft:type_specific/player": {
                         "gamemode": [
                           "creative"
                         ]
@@ -1120,8 +1117,7 @@
                     "condition": "minecraft:entity_properties",
                     "entity": "this",
                     "predicate": {
-                      "type_specific": {
-                        "type": "minecraft:player",
+                      "minecraft:type_specific/player": {
                         "food": {
                           "level": {
                             "min": 7
@@ -1318,7 +1314,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "direct_attacker",
             "predicate": {
-              "type": "#minecraft:arrows"
+              "minecraft:entity_type": "#minecraft:arrows"
             }
           }
         }
@@ -1455,7 +1451,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "direct_attacker",
             "predicate": {
-              "type": "#minecraft:arrows"
+              "minecraft:entity_type": "#minecraft:arrows"
             }
           }
         }
@@ -1678,7 +1674,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
-              "type": "#minecraft:sensitive_to_smite"
+              "minecraft:entity_type": "#minecraft:sensitive_to_smite"
             }
           }
         }
@@ -1741,7 +1737,7 @@
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
-                    "vehicle": {}
+                    "minecraft:vehicle": {}
                   }
                 }
               },
@@ -1759,7 +1755,7 @@
                         "condition": "minecraft:entity_properties",
                         "entity": "this",
                         "predicate": {
-                          "flags": {
+                          "minecraft:flags": {
                             "is_flying": false
                           }
                         }
@@ -1771,7 +1767,7 @@
                             "condition": "minecraft:entity_properties",
                             "entity": "this",
                             "predicate": {
-                              "movement_affected_by": {
+                              "minecraft:movement_affected_by": {
                                 "block": {
                                   "blocks": "#minecraft:soul_speed_blocks"
                                 }
@@ -1782,7 +1778,7 @@
                             "condition": "minecraft:entity_properties",
                             "entity": "this",
                             "predicate": {
-                              "flags": {
+                              "minecraft:flags": {
                                 "is_on_ground": false
                               }
                             }
@@ -1802,10 +1798,10 @@
                         "condition": "minecraft:entity_properties",
                         "entity": "this",
                         "predicate": {
-                          "flags": {
+                          "minecraft:flags": {
                             "is_flying": false
                           },
-                          "movement_affected_by": {
+                          "minecraft:movement_affected_by": {
                             "block": {
                               "blocks": "#minecraft:soul_speed_blocks"
                             }
@@ -1838,10 +1834,10 @@
                 "condition": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
-                  "flags": {
+                  "minecraft:flags": {
                     "is_on_ground": true
                   },
-                  "movement_affected_by": {
+                  "minecraft:movement_affected_by": {
                     "block": {
                       "blocks": "#minecraft:soul_speed_blocks"
                     }
@@ -1878,21 +1874,21 @@
             "condition": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
-              "flags": {
+              "minecraft:flags": {
                 "is_flying": false,
                 "is_on_ground": true
               },
-              "movement": {
+              "minecraft:movement": {
                 "horizontal_speed": {
                   "min": 9.999999747378752e-06
                 }
               },
-              "movement_affected_by": {
+              "minecraft:movement_affected_by": {
                 "block": {
                   "blocks": "#minecraft:soul_speed_blocks"
                 }
               },
-              "periodic_tick": 5
+              "minecraft:periodic_tick": 5
             }
           }
         },
@@ -1918,21 +1914,21 @@
                 "condition": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
-                  "flags": {
+                  "minecraft:flags": {
                     "is_flying": false,
                     "is_on_ground": true
                   },
-                  "movement": {
+                  "minecraft:movement": {
                     "horizontal_speed": {
                       "min": 9.999999747378752e-06
                     }
                   },
-                  "movement_affected_by": {
+                  "minecraft:movement_affected_by": {
                     "block": {
                       "blocks": "#minecraft:soul_speed_blocks"
                     }
                   },
-                  "periodic_tick": 5
+                  "minecraft:periodic_tick": 5
                 }
               }
             ]
@@ -2224,10 +2220,10 @@
             "condition": "minecraft:entity_properties",
             "entity": "direct_attacker",
             "predicate": {
-              "flags": {
+              "minecraft:flags": {
                 "is_flying": false
               },
-              "movement": {
+              "minecraft:movement": {
                 "fall_distance": {
                   "min": 1.5
                 }
