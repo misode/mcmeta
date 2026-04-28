@@ -5,15 +5,74 @@
     "argument1": {
       "type": "minecraft:add",
       "argument1": {
-        "type": "minecraft:weird_scaled_sampler",
-        "input": {
-          "type": "minecraft:noise",
-          "noise": "minecraft:spaghetti_2d_modulator",
-          "xz_scale": 2.0,
-          "y_scale": 1.0
-        },
-        "noise": "minecraft:spaghetti_2d",
-        "rarity_value_mapper": "type_2"
+        "type": "minecraft:abs",
+        "argument": {
+          "type": "minecraft:interval_select",
+          "functions": [
+            {
+              "type": "minecraft:mul",
+              "argument1": 0.5,
+              "argument2": {
+                "type": "minecraft:noise",
+                "noise": "minecraft:spaghetti_2d",
+                "xz_scale": 2.0,
+                "y_scale": 2.0
+              }
+            },
+            {
+              "type": "minecraft:mul",
+              "argument1": 0.75,
+              "argument2": {
+                "type": "minecraft:noise",
+                "noise": "minecraft:spaghetti_2d",
+                "xz_scale": 1.3333333333333333,
+                "y_scale": 1.3333333333333333
+              }
+            },
+            {
+              "type": "minecraft:mul",
+              "argument1": 1.0,
+              "argument2": {
+                "type": "minecraft:noise",
+                "noise": "minecraft:spaghetti_2d",
+                "xz_scale": 1.0,
+                "y_scale": 1.0
+              }
+            },
+            {
+              "type": "minecraft:mul",
+              "argument1": 2.0,
+              "argument2": {
+                "type": "minecraft:noise",
+                "noise": "minecraft:spaghetti_2d",
+                "xz_scale": 0.5,
+                "y_scale": 0.5
+              }
+            },
+            {
+              "type": "minecraft:mul",
+              "argument1": 3.0,
+              "argument2": {
+                "type": "minecraft:noise",
+                "noise": "minecraft:spaghetti_2d",
+                "xz_scale": 0.3333333333333333,
+                "y_scale": 0.3333333333333333
+              }
+            }
+          ],
+          "input": {
+            "type": "minecraft:noise",
+            "noise": "minecraft:spaghetti_2d_modulator",
+            "xz_scale": 2.0,
+            "y_scale": 1.0
+          },
+          "thresholds": [
+            -0.75,
+            -0.5,
+            0.5,
+            0.75
+          ]
+        }
       },
       "argument2": {
         "type": "minecraft:mul",
@@ -30,16 +89,19 @@
           "argument": {
             "type": "minecraft:add",
             "argument1": {
-              "type": "minecraft:add",
-              "argument1": 0.0,
-              "argument2": {
-                "type": "minecraft:mul",
-                "argument1": 8.0,
+              "type": "minecraft:flat_cache",
+              "argument": {
+                "type": "minecraft:add",
+                "argument1": 0.0,
                 "argument2": {
-                  "type": "minecraft:noise",
-                  "noise": "minecraft:spaghetti_2d_elevation",
-                  "xz_scale": 1.0,
-                  "y_scale": 0.0
+                  "type": "minecraft:mul",
+                  "argument1": 8.0,
+                  "argument2": {
+                    "type": "minecraft:noise",
+                    "noise": "minecraft:spaghetti_2d_elevation",
+                    "xz_scale": 1.0,
+                    "y_scale": 0.0
+                  }
                 }
               }
             },
