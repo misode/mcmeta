@@ -55,7 +55,7 @@
               "state": {
                 "Name": "minecraft:potent_sulfur",
                 "Properties": {
-                  "potent_sulfur_state": "dry"
+                  "potent_sulfur_state": "wet"
                 }
               }
             }
@@ -67,7 +67,21 @@
             "direction_of_search": "down",
             "max_steps": 4,
             "target_condition": {
-              "type": "minecraft:solid"
+              "type": "minecraft:all_of",
+              "predicates": [
+                {
+                  "type": "minecraft:solid"
+                },
+                {
+                  "type": "minecraft:matching_fluids",
+                  "fluids": "minecraft:water",
+                  "offset": [
+                    0,
+                    1,
+                    0
+                  ]
+                }
+              ]
             }
           }
         ]
