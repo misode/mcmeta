@@ -33,7 +33,11 @@
       }
     ],
     "buoyant": true,
-    "items": "#minecraft:sulfur_cube_archetype/bouncy"
+    "items": "#minecraft:sulfur_cube_archetype/bouncy",
+    "knockback_modifiers": {
+      "horizontal_power": 0.33,
+      "vertical_power": 0.07
+    }
   },
   "explosive": {
     "attribute_modifiers": [
@@ -69,31 +73,39 @@
       }
     ],
     "buoyant": true,
-    "explosion_fuse": 120,
-    "items": "#minecraft:sulfur_cube_archetype/explosive"
+    "explosion": {
+      "causes_fire": false,
+      "fuse": 120,
+      "power": 3
+    },
+    "items": "#minecraft:sulfur_cube_archetype/explosive",
+    "knockback_modifiers": {
+      "horizontal_power": 0.33,
+      "vertical_power": 0.06
+    }
   },
   "fast_flat": {
     "attribute_modifiers": [
       {
-        "amount": -2.0,
+        "amount": -1.0,
         "attribute": "minecraft:knockback_resistance",
         "id": "minecraft:fast_flat_add_knockback_resistance",
         "operation": "add_value"
       },
       {
-        "amount": -2.0,
+        "amount": -1.0,
         "attribute": "minecraft:explosion_knockback_resistance",
         "id": "minecraft:fast_flat_add_explosion_knockback_resistance",
         "operation": "add_value"
       },
       {
-        "amount": 0.20000000298023224,
+        "amount": 0.5,
         "attribute": "minecraft:bounciness",
         "id": "minecraft:fast_flat_add_bounciness",
         "operation": "add_value"
       },
       {
-        "amount": -0.8999999985098839,
+        "amount": -0.7999999970197678,
         "attribute": "minecraft:friction_modifier",
         "id": "minecraft:fast_flat_mul_friction_modifier",
         "operation": "add_multiplied_total"
@@ -105,7 +117,11 @@
         "operation": "add_multiplied_total"
       }
     ],
-    "items": "#minecraft:sulfur_cube_archetype/fast_flat"
+    "items": "#minecraft:sulfur_cube_archetype/fast_flat",
+    "knockback_modifiers": {
+      "horizontal_power": 0.73,
+      "vertical_power": 0.06
+    }
   },
   "fast_sliding": {
     "attribute_modifiers": [
@@ -140,7 +156,11 @@
         "operation": "add_multiplied_total"
       }
     ],
-    "items": "#minecraft:sulfur_cube_archetype/fast_sliding"
+    "items": "#minecraft:sulfur_cube_archetype/fast_sliding",
+    "knockback_modifiers": {
+      "horizontal_power": 0.53,
+      "vertical_power": 0.06
+    }
   },
   "high_resistance": {
     "attribute_modifiers": [
@@ -175,7 +195,56 @@
         "operation": "add_multiplied_total"
       }
     ],
-    "items": "#minecraft:sulfur_cube_archetype/high_resistance"
+    "items": "#minecraft:sulfur_cube_archetype/high_resistance",
+    "knockback_modifiers": {
+      "horizontal_power": 0.33,
+      "vertical_power": 0.06
+    }
+  },
+  "hot": {
+    "attribute_modifiers": [
+      {
+        "amount": -1.0,
+        "attribute": "minecraft:knockback_resistance",
+        "id": "minecraft:hot_add_knockback_resistance",
+        "operation": "add_value"
+      },
+      {
+        "amount": -1.0,
+        "attribute": "minecraft:explosion_knockback_resistance",
+        "id": "minecraft:hot_add_explosion_knockback_resistance",
+        "operation": "add_value"
+      },
+      {
+        "amount": 0.5,
+        "attribute": "minecraft:bounciness",
+        "id": "minecraft:hot_add_bounciness",
+        "operation": "add_value"
+      },
+      {
+        "amount": -0.699999988079071,
+        "attribute": "minecraft:friction_modifier",
+        "id": "minecraft:hot_mul_friction_modifier",
+        "operation": "add_multiplied_total"
+      },
+      {
+        "amount": -0.8999999985098839,
+        "attribute": "minecraft:air_drag_modifier",
+        "id": "minecraft:hot_mul_air_drag_modifier",
+        "operation": "add_multiplied_total"
+      }
+    ],
+    "buoyant": true,
+    "contact_damage": {
+      "amount": 1.0,
+      "attribute_to_source": false,
+      "damage_type": "minecraft:hot_floor"
+    },
+    "items": "#minecraft:sulfur_cube_archetype/hot",
+    "knockback_modifiers": {
+      "horizontal_power": 0.33,
+      "vertical_power": 0.06
+    }
   },
   "light": {
     "attribute_modifiers": [
@@ -211,7 +280,11 @@
       }
     ],
     "buoyant": true,
-    "items": "#minecraft:sulfur_cube_archetype/light"
+    "items": "#minecraft:sulfur_cube_archetype/light",
+    "knockback_modifiers": {
+      "horizontal_power": 0.33,
+      "vertical_power": 0.12
+    }
   },
   "regular": {
     "attribute_modifiers": [
@@ -247,30 +320,74 @@
       }
     ],
     "buoyant": true,
-    "items": "#minecraft:sulfur_cube_archetype/regular"
+    "items": "#minecraft:sulfur_cube_archetype/regular",
+    "knockback_modifiers": {
+      "horizontal_power": 0.33,
+      "vertical_power": 0.06
+    }
+  },
+  "slow_bouncy": {
+    "attribute_modifiers": [
+      {
+        "amount": 0.4000000059604645,
+        "attribute": "minecraft:knockback_resistance",
+        "id": "minecraft:slow_bouncy_add_knockback_resistance",
+        "operation": "add_value"
+      },
+      {
+        "amount": 0.4000000059604645,
+        "attribute": "minecraft:explosion_knockback_resistance",
+        "id": "minecraft:slow_bouncy_add_explosion_knockback_resistance",
+        "operation": "add_value"
+      },
+      {
+        "amount": 0.6000000238418579,
+        "attribute": "minecraft:bounciness",
+        "id": "minecraft:slow_bouncy_add_bounciness",
+        "operation": "add_value"
+      },
+      {
+        "amount": -0.699999988079071,
+        "attribute": "minecraft:friction_modifier",
+        "id": "minecraft:slow_bouncy_mul_friction_modifier",
+        "operation": "add_multiplied_total"
+      },
+      {
+        "amount": -0.9499999992549419,
+        "attribute": "minecraft:air_drag_modifier",
+        "id": "minecraft:slow_bouncy_mul_air_drag_modifier",
+        "operation": "add_multiplied_total"
+      }
+    ],
+    "buoyant": true,
+    "items": "#minecraft:sulfur_cube_archetype/slow_bouncy",
+    "knockback_modifiers": {
+      "horizontal_power": 0.33,
+      "vertical_power": 0.16
+    }
   },
   "slow_flat": {
     "attribute_modifiers": [
       {
-        "amount": 0.699999988079071,
+        "amount": 0.5,
         "attribute": "minecraft:knockback_resistance",
         "id": "minecraft:slow_flat_add_knockback_resistance",
         "operation": "add_value"
       },
       {
-        "amount": 0.699999988079071,
+        "amount": 0.5,
         "attribute": "minecraft:explosion_knockback_resistance",
         "id": "minecraft:slow_flat_add_explosion_knockback_resistance",
         "operation": "add_value"
       },
       {
-        "amount": 0.20000000298023224,
+        "amount": 0.4000000059604645,
         "attribute": "minecraft:bounciness",
         "id": "minecraft:slow_flat_add_bounciness",
         "operation": "add_value"
       },
       {
-        "amount": -0.699999988079071,
+        "amount": -0.5999999940395355,
         "attribute": "minecraft:friction_modifier",
         "id": "minecraft:slow_flat_mul_friction_modifier",
         "operation": "add_multiplied_total"
@@ -282,7 +399,11 @@
         "operation": "add_multiplied_total"
       }
     ],
-    "items": "#minecraft:sulfur_cube_archetype/slow_flat"
+    "items": "#minecraft:sulfur_cube_archetype/slow_flat",
+    "knockback_modifiers": {
+      "horizontal_power": 0.33,
+      "vertical_power": 0.07
+    }
   },
   "slow_sliding": {
     "attribute_modifiers": [
@@ -317,7 +438,11 @@
         "operation": "add_multiplied_total"
       }
     ],
-    "items": "#minecraft:sulfur_cube_archetype/slow_sliding"
+    "items": "#minecraft:sulfur_cube_archetype/slow_sliding",
+    "knockback_modifiers": {
+      "horizontal_power": 0.33,
+      "vertical_power": 0.06
+    }
   },
   "sticky": {
     "attribute_modifiers": [
@@ -352,6 +477,10 @@
         "operation": "add_multiplied_total"
       }
     ],
-    "items": "#minecraft:sulfur_cube_archetype/sticky"
+    "items": "#minecraft:sulfur_cube_archetype/sticky",
+    "knockback_modifiers": {
+      "horizontal_power": 0.33,
+      "vertical_power": 0.06
+    }
   }
 }

@@ -5582,9 +5582,14 @@
     "type": "minecraft:large_dripstone",
     "config": {
       "column_radius": {
-        "type": "minecraft:uniform",
-        "max_inclusive": 19,
-        "min_inclusive": 3
+        "type": "minecraft:clamped",
+        "max_inclusive": 16,
+        "min_inclusive": 3,
+        "source": {
+          "type": "minecraft:uniform",
+          "max_inclusive": 19,
+          "min_inclusive": 3
+        }
       },
       "height_scale": {
         "type": "minecraft:uniform",
@@ -8737,6 +8742,8 @@
         }
       },
       "hanging_roots_vertical_span": 2,
+      "level_test_distance": 0,
+      "max_level_deviation": 0,
       "required_vertical_space_for_tree": 3,
       "root_column_max_height": 100,
       "root_placement_attempts": 20,
@@ -8760,17 +8767,7 @@
       "allowed_vertical_water_for_tree": 1,
       "feature": {
         "feature": "minecraft:sulfur_spring",
-        "placement": [
-          {
-            "type": "minecraft:heightmap",
-            "heightmap": "OCEAN_FLOOR_WG"
-          },
-          {
-            "type": "minecraft:random_offset",
-            "xz_spread": 0,
-            "y_spread": -2
-          }
-        ]
+        "placement": []
       },
       "hanging_root_placement_attempts": 1,
       "hanging_root_radius": 1,
@@ -8781,6 +8778,8 @@
         }
       },
       "hanging_roots_vertical_span": 1,
+      "level_test_distance": 8,
+      "max_level_deviation": 2,
       "required_vertical_space_for_tree": 5,
       "root_column_max_height": 184,
       "root_placement_attempts": 20,
@@ -9164,7 +9163,7 @@
                 "state": {
                   "Name": "minecraft:potent_sulfur",
                   "Properties": {
-                    "potent_sulfur_state": "dry"
+                    "potent_sulfur_state": "wet"
                   }
                 }
               }
@@ -9176,7 +9175,21 @@
               "direction_of_search": "down",
               "max_steps": 4,
               "target_condition": {
-                "type": "minecraft:solid"
+                "type": "minecraft:all_of",
+                "predicates": [
+                  {
+                    "type": "minecraft:solid"
+                  },
+                  {
+                    "type": "minecraft:matching_fluids",
+                    "fluids": "minecraft:water",
+                    "offset": [
+                      0,
+                      1,
+                      0
+                    ]
+                  }
+                ]
               }
             }
           ]
@@ -9330,68 +9343,376 @@
     }
   },
   "sulfur_spring": {
-    "type": "minecraft:template",
+    "type": "minecraft:weighted_random_selector",
     "config": {
-      "templates": [
+      "features": [
         {
           "data": {
-            "id": "minecraft:spring/sulfur_spring_small_1"
+            "feature": {
+              "type": "minecraft:sequence",
+              "config": {
+                "features": [
+                  {
+                    "feature": {
+                      "type": "minecraft:simple_block",
+                      "config": {
+                        "to_place": {
+                          "type": "minecraft:simple_state_provider",
+                          "state": {
+                            "Name": "minecraft:tuff"
+                          }
+                        }
+                      }
+                    },
+                    "placement": [
+                      {
+                        "type": "minecraft:count",
+                        "count": 64
+                      },
+                      {
+                        "type": "minecraft:random_offset",
+                        "xz_spread": {
+                          "type": "minecraft:trapezoid",
+                          "max": 7,
+                          "min": -7,
+                          "plateau": 0
+                        },
+                        "y_spread": {
+                          "type": "minecraft:trapezoid",
+                          "max": 3,
+                          "min": -3,
+                          "plateau": 0
+                        }
+                      },
+                      {
+                        "type": "minecraft:environment_scan",
+                        "direction_of_search": "down",
+                        "max_steps": 4,
+                        "target_condition": {
+                          "type": "minecraft:solid"
+                        }
+                      },
+                      {
+                        "type": "minecraft:block_predicate_filter",
+                        "predicate": {
+                          "type": "minecraft:solid"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "feature": {
+                      "type": "minecraft:template",
+                      "config": {
+                        "templates": [
+                          {
+                            "data": {
+                              "id": "minecraft:spring/sulfur_spring_small_1"
+                            },
+                            "weight": 1
+                          },
+                          {
+                            "data": {
+                              "id": "minecraft:spring/sulfur_spring_small_2"
+                            },
+                            "weight": 1
+                          },
+                          {
+                            "data": {
+                              "id": "minecraft:spring/sulfur_spring_small_3"
+                            },
+                            "weight": 1
+                          },
+                          {
+                            "data": {
+                              "id": "minecraft:spring/sulfur_spring_small_4"
+                            },
+                            "weight": 1
+                          }
+                        ]
+                      }
+                    },
+                    "placement": [
+                      {
+                        "type": "minecraft:random_offset",
+                        "xz_spread": 0,
+                        "y_spread": -7
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "placement": []
           },
-          "weight": 5000
+          "weight": 200
         },
         {
           "data": {
-            "id": "minecraft:spring/sulfur_spring_small_2"
+            "feature": {
+              "type": "minecraft:sequence",
+              "config": {
+                "features": [
+                  {
+                    "feature": {
+                      "type": "minecraft:simple_block",
+                      "config": {
+                        "to_place": {
+                          "type": "minecraft:simple_state_provider",
+                          "state": {
+                            "Name": "minecraft:tuff"
+                          }
+                        }
+                      }
+                    },
+                    "placement": [
+                      {
+                        "type": "minecraft:count",
+                        "count": 80
+                      },
+                      {
+                        "type": "minecraft:random_offset",
+                        "xz_spread": {
+                          "type": "minecraft:trapezoid",
+                          "max": 8,
+                          "min": -8,
+                          "plateau": 0
+                        },
+                        "y_spread": {
+                          "type": "minecraft:trapezoid",
+                          "max": 3,
+                          "min": -3,
+                          "plateau": 0
+                        }
+                      },
+                      {
+                        "type": "minecraft:environment_scan",
+                        "direction_of_search": "down",
+                        "max_steps": 4,
+                        "target_condition": {
+                          "type": "minecraft:solid"
+                        }
+                      },
+                      {
+                        "type": "minecraft:block_predicate_filter",
+                        "predicate": {
+                          "type": "minecraft:solid"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "feature": {
+                      "type": "minecraft:template",
+                      "config": {
+                        "templates": [
+                          {
+                            "data": {
+                              "id": "minecraft:spring/sulfur_spring_medium_1"
+                            },
+                            "weight": 1
+                          },
+                          {
+                            "data": {
+                              "id": "minecraft:spring/sulfur_spring_medium_2"
+                            },
+                            "weight": 1
+                          },
+                          {
+                            "data": {
+                              "id": "minecraft:spring/sulfur_spring_medium_3"
+                            },
+                            "weight": 1
+                          }
+                        ]
+                      }
+                    },
+                    "placement": [
+                      {
+                        "type": "minecraft:random_offset",
+                        "xz_spread": 0,
+                        "y_spread": -7
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "placement": []
           },
-          "weight": 5000
+          "weight": 90
         },
         {
           "data": {
-            "id": "minecraft:spring/sulfur_spring_small_3"
+            "feature": {
+              "type": "minecraft:sequence",
+              "config": {
+                "features": [
+                  {
+                    "feature": {
+                      "type": "minecraft:simple_block",
+                      "config": {
+                        "to_place": {
+                          "type": "minecraft:simple_state_provider",
+                          "state": {
+                            "Name": "minecraft:tuff"
+                          }
+                        }
+                      }
+                    },
+                    "placement": [
+                      {
+                        "type": "minecraft:count",
+                        "count": 96
+                      },
+                      {
+                        "type": "minecraft:random_offset",
+                        "xz_spread": {
+                          "type": "minecraft:trapezoid",
+                          "max": 9,
+                          "min": -9,
+                          "plateau": 0
+                        },
+                        "y_spread": {
+                          "type": "minecraft:trapezoid",
+                          "max": 3,
+                          "min": -3,
+                          "plateau": 0
+                        }
+                      },
+                      {
+                        "type": "minecraft:environment_scan",
+                        "direction_of_search": "down",
+                        "max_steps": 4,
+                        "target_condition": {
+                          "type": "minecraft:solid"
+                        }
+                      },
+                      {
+                        "type": "minecraft:block_predicate_filter",
+                        "predicate": {
+                          "type": "minecraft:solid"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "feature": {
+                      "type": "minecraft:template",
+                      "config": {
+                        "templates": [
+                          {
+                            "data": {
+                              "id": "minecraft:spring/sulfur_spring_large_1"
+                            },
+                            "weight": 1
+                          },
+                          {
+                            "data": {
+                              "id": "minecraft:spring/sulfur_spring_large_2"
+                            },
+                            "weight": 1
+                          }
+                        ]
+                      }
+                    },
+                    "placement": [
+                      {
+                        "type": "minecraft:random_offset",
+                        "xz_spread": 0,
+                        "y_spread": -7
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "placement": []
           },
-          "weight": 5000
+          "weight": 20
         },
         {
           "data": {
-            "id": "minecraft:spring/sulfur_spring_small_4"
+            "feature": {
+              "type": "minecraft:sequence",
+              "config": {
+                "features": [
+                  {
+                    "feature": {
+                      "type": "minecraft:simple_block",
+                      "config": {
+                        "to_place": {
+                          "type": "minecraft:simple_state_provider",
+                          "state": {
+                            "Name": "minecraft:tuff"
+                          }
+                        }
+                      }
+                    },
+                    "placement": [
+                      {
+                        "type": "minecraft:count",
+                        "count": 128
+                      },
+                      {
+                        "type": "minecraft:random_offset",
+                        "xz_spread": {
+                          "type": "minecraft:trapezoid",
+                          "max": 10,
+                          "min": -10,
+                          "plateau": 0
+                        },
+                        "y_spread": {
+                          "type": "minecraft:trapezoid",
+                          "max": 3,
+                          "min": -3,
+                          "plateau": 0
+                        }
+                      },
+                      {
+                        "type": "minecraft:environment_scan",
+                        "direction_of_search": "down",
+                        "max_steps": 4,
+                        "target_condition": {
+                          "type": "minecraft:solid"
+                        }
+                      },
+                      {
+                        "type": "minecraft:block_predicate_filter",
+                        "predicate": {
+                          "type": "minecraft:solid"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "feature": {
+                      "type": "minecraft:template",
+                      "config": {
+                        "templates": [
+                          {
+                            "data": {
+                              "id": "minecraft:spring/sulfur_spring_extra_large_1"
+                            },
+                            "weight": 1
+                          }
+                        ]
+                      }
+                    },
+                    "placement": [
+                      {
+                        "type": "minecraft:random_offset",
+                        "xz_spread": 0,
+                        "y_spread": -7
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "placement": []
           },
-          "weight": 5000
-        },
-        {
-          "data": {
-            "id": "minecraft:spring/sulfur_spring_medium_1"
-          },
-          "weight": 3000
-        },
-        {
-          "data": {
-            "id": "minecraft:spring/sulfur_spring_medium_2"
-          },
-          "weight": 3000
-        },
-        {
-          "data": {
-            "id": "minecraft:spring/sulfur_spring_medium_3"
-          },
-          "weight": 3000
-        },
-        {
-          "data": {
-            "id": "minecraft:spring/sulfur_spring_large_1"
-          },
-          "weight": 1000
-        },
-        {
-          "data": {
-            "id": "minecraft:spring/sulfur_spring_large_2"
-          },
-          "weight": 1000
-        },
-        {
-          "data": {
-            "id": "minecraft:spring/sulfur_spring_extra_large_1"
-          },
-          "weight": 500
+          "weight": 5
         }
       ]
     }
