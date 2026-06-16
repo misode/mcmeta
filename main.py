@@ -425,7 +425,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 						json.dump(root, f, indent=2)
 
 	# === download resources ===
-	if 'assets' in exports or 'assets-json' in exports or 'summary' in exports or 'diff' in exports:
+	if 'assets' in exports or 'assets-json' in exports or 'summary' in exports or 'registries' in exports or 'diff' in exports:
 		click.echo('   🔊 Downloading assets')
 		assets_hash = launchermeta['assetIndex']['sha1']
 		assets_url = launchermeta['assetIndex']['url']
