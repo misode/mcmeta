@@ -467,7 +467,7 @@ def process(version: str, versions: dict[str], exports: tuple[str]):
 			files = glob.glob(f'{path}/**/*.{ext}', recursive=True)
 			entries = [e.replace('\\', '/', -1).removeprefix(f'{path}/').removesuffix(f'.{ext}') for e in files]
 			registries[id] = sorted(entries)
-			if ext == 'json':
+			if ext == 'json' and id != 'lang': # lang creates files > 100 MB
 				content = dict()
 				for i, file in enumerate(files):
 					try:
