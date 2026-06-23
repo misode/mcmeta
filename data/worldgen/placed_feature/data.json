@@ -367,6 +367,51 @@
       }
     ]
   },
+  "brown_mushroom_dappled_forest": {
+    "feature": "minecraft:brown_mushroom",
+    "placement": [
+      {
+        "type": "minecraft:rarity_filter",
+        "chance": 2
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "MOTION_BLOCKING"
+      },
+      {
+        "type": "minecraft:biome"
+      },
+      {
+        "type": "minecraft:count",
+        "count": 96
+      },
+      {
+        "type": "minecraft:random_offset",
+        "xz_spread": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        },
+        "y_spread": {
+          "type": "minecraft:trapezoid",
+          "max": 3,
+          "min": -3,
+          "plateau": 0
+        }
+      },
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:matching_block_tag",
+          "tag": "minecraft:air"
+        }
+      }
+    ]
+  },
   "brown_mushroom_nether": {
     "feature": "minecraft:brown_mushroom",
     "placement": [
@@ -1117,6 +1162,23 @@
           "type": "minecraft:would_survive",
           "state": {
             "Name": "minecraft:oak_sapling",
+            "Properties": {
+              "stage": "0"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "fallen_poplar_tree": {
+    "feature": "minecraft:fallen_poplar_tree",
+    "placement": [
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:would_survive",
+          "state": {
+            "Name": "minecraft:poplar_sapling",
             "Properties": {
               "stage": "0"
             }
@@ -2502,6 +2564,23 @@
           "type": "minecraft:would_survive",
           "state": {
             "Name": "minecraft:oak_sapling",
+            "Properties": {
+              "stage": "0"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "orange_poplar_leaf_litter": {
+    "feature": "minecraft:orange_poplar_leaf_litter",
+    "placement": [
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:would_survive",
+          "state": {
+            "Name": "minecraft:poplar_sapling",
             "Properties": {
               "stage": "0"
             }
@@ -5398,6 +5477,47 @@
       }
     ]
   },
+  "patch_red_shrub": {
+    "feature": "minecraft:red_shrub",
+    "placement": [
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "WORLD_SURFACE_WG"
+      },
+      {
+        "type": "minecraft:biome"
+      },
+      {
+        "type": "minecraft:count",
+        "count": 8
+      },
+      {
+        "type": "minecraft:random_offset",
+        "xz_spread": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        },
+        "y_spread": {
+          "type": "minecraft:trapezoid",
+          "max": 3,
+          "min": -3,
+          "plateau": 0
+        }
+      },
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:matching_block_tag",
+          "tag": "minecraft:air"
+        }
+      }
+    ]
+  },
   "patch_soul_fire": {
     "feature": "minecraft:patch_soul_fire",
     "placement": [
@@ -6505,6 +6625,23 @@
       }
     ]
   },
+  "red_poplar_leaf_litter": {
+    "feature": "minecraft:red_poplar_leaf_litter",
+    "placement": [
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:would_survive",
+          "state": {
+            "Name": "minecraft:poplar_sapling",
+            "Properties": {
+              "stage": "0"
+            }
+          }
+        }
+      }
+    ]
+  },
   "rooted_azalea_tree": {
     "feature": "minecraft:rooted_azalea_tree",
     "placement": [
@@ -7518,6 +7655,29 @@
       }
     ]
   },
+  "trees_dappled_forest": {
+    "feature": "minecraft:trees_dappled_forest",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 6
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:surface_water_depth_filter",
+        "max_water_depth": 0
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "OCEAN_FLOOR"
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
   "trees_flower_forest": {
     "feature": "minecraft:trees_flower_forest",
     "placement": [
@@ -8386,6 +8546,23 @@
         "predicate": {
           "type": "minecraft:matching_block_tag",
           "tag": "minecraft:air"
+        }
+      }
+    ]
+  },
+  "yellow_poplar_leaf_litter": {
+    "feature": "minecraft:yellow_poplar_leaf_litter",
+    "placement": [
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:would_survive",
+          "state": {
+            "Name": "minecraft:poplar_sapling",
+            "Properties": {
+              "stage": "0"
+            }
+          }
         }
       }
     ]

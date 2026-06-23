@@ -454,6 +454,215 @@
     ],
     "random_sequence": "minecraft:archaeology/trail_ruins_rare"
   },
+  "barrels/abandoned_camp_barrel": {
+    "type": "minecraft:chest",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 3.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:arrow"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 4.0,
+                  "min": 2.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:bone"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 2.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:bowl"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 3.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:bread"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 4.0,
+                  "min": 2.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:coal"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:cobweb"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:fishing_rod"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 3.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:glass_bottle"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 3.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:leather"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:bundle"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 4.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:rabbit_hide"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 2.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:string"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 4.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:wheat"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 3.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:white_candle"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:wooden_axe"
+          }
+        ],
+        "rolls": {
+          "type": "minecraft:uniform",
+          "max": 8.0,
+          "min": 4.0
+        }
+      }
+    ],
+    "random_sequence": "minecraft:barrels/abandoned_camp_barrel"
+  },
   "blocks/acacia_button": {
     "type": "minecraft:block",
     "pools": [
@@ -2915,6 +3124,59 @@
     ],
     "random_sequence": "minecraft:blocks/black_wool"
   },
+  "blocks/black_wool_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:black_wool_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:black_wool_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/black_wool_slab"
+  },
+  "blocks/black_wool_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:black_wool_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/black_wool_stairs"
+  },
   "blocks/blackstone": {
     "type": "minecraft:block",
     "pools": [
@@ -3435,6 +3697,59 @@
       }
     ],
     "random_sequence": "minecraft:blocks/blue_wool"
+  },
+  "blocks/blue_wool_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:blue_wool_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:blue_wool_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/blue_wool_slab"
+  },
+  "blocks/blue_wool_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:blue_wool_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/blue_wool_stairs"
   },
   "blocks/bone_block": {
     "type": "minecraft:block",
@@ -4164,6 +4479,59 @@
       }
     ],
     "random_sequence": "minecraft:blocks/brown_wool"
+  },
+  "blocks/brown_wool_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:brown_wool_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:brown_wool_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/brown_wool_slab"
+  },
+  "blocks/brown_wool_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:brown_wool_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/brown_wool_stairs"
   },
   "blocks/bubble_coral": {
     "type": "minecraft:block",
@@ -7744,6 +8112,59 @@
       }
     ],
     "random_sequence": "minecraft:blocks/cyan_wool"
+  },
+  "blocks/cyan_wool_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:cyan_wool_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:cyan_wool_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/cyan_wool_slab"
+  },
+  "blocks/cyan_wool_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:cyan_wool_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/cyan_wool_stairs"
   },
   "blocks/damaged_anvil": {
     "type": "minecraft:block",
@@ -11980,6 +12401,59 @@
     ],
     "random_sequence": "minecraft:blocks/gray_wool"
   },
+  "blocks/gray_wool_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:gray_wool_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:gray_wool_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/gray_wool_slab"
+  },
+  "blocks/gray_wool_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:gray_wool_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/gray_wool_stairs"
+  },
   "blocks/green_banner": {
     "type": "minecraft:block",
     "pools": [
@@ -12326,6 +12800,59 @@
       }
     ],
     "random_sequence": "minecraft:blocks/green_wool"
+  },
+  "blocks/green_wool_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:green_wool_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:green_wool_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/green_wool_slab"
+  },
+  "blocks/green_wool_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:green_wool_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/green_wool_stairs"
   },
   "blocks/grindstone": {
     "type": "minecraft:block",
@@ -14321,6 +14848,59 @@
     ],
     "random_sequence": "minecraft:blocks/light_blue_wool"
   },
+  "blocks/light_blue_wool_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:light_blue_wool_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:light_blue_wool_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/light_blue_wool_slab"
+  },
+  "blocks/light_blue_wool_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:light_blue_wool_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/light_blue_wool_stairs"
+  },
   "blocks/light_gray_banner": {
     "type": "minecraft:block",
     "pools": [
@@ -14667,6 +15247,59 @@
       }
     ],
     "random_sequence": "minecraft:blocks/light_gray_wool"
+  },
+  "blocks/light_gray_wool_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:light_gray_wool_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:light_gray_wool_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/light_gray_wool_slab"
+  },
+  "blocks/light_gray_wool_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:light_gray_wool_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/light_gray_wool_stairs"
   },
   "blocks/light_weighted_pressure_plate": {
     "type": "minecraft:block",
@@ -15124,6 +15757,59 @@
     ],
     "random_sequence": "minecraft:blocks/lime_wool"
   },
+  "blocks/lime_wool_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:lime_wool_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:lime_wool_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/lime_wool_slab"
+  },
+  "blocks/lime_wool_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:lime_wool_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/lime_wool_stairs"
+  },
   "blocks/lodestone": {
     "type": "minecraft:block",
     "pools": [
@@ -15510,6 +16196,59 @@
       }
     ],
     "random_sequence": "minecraft:blocks/magenta_wool"
+  },
+  "blocks/magenta_wool_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:magenta_wool_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:magenta_wool_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/magenta_wool_slab"
+  },
+  "blocks/magenta_wool_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:magenta_wool_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/magenta_wool_stairs"
   },
   "blocks/magma_block": {
     "type": "minecraft:block",
@@ -17848,6 +18587,139 @@
     ],
     "random_sequence": "minecraft:blocks/orange_glazed_terracotta"
   },
+  "blocks/orange_poplar_leaves": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:any_of",
+                    "terms": [
+                      {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                          "items": "minecraft:shears"
+                        }
+                      },
+                      {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                          "predicates": {
+                            "minecraft:enchantments": [
+                              {
+                                "enchantments": "minecraft:silk_touch",
+                                "levels": {
+                                  "min": 1
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "name": "minecraft:orange_poplar_leaves"
+              },
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:survives_explosion"
+                  },
+                  {
+                    "chances": [
+                      0.05,
+                      0.0625,
+                      0.083333336,
+                      0.1
+                    ],
+                    "condition": "minecraft:table_bonus",
+                    "enchantment": "minecraft:fortune"
+                  }
+                ],
+                "name": "minecraft:poplar_sapling"
+              }
+            ]
+          }
+        ],
+        "rolls": 1.0
+      },
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:any_of",
+              "terms": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "items": "minecraft:shears"
+                  }
+                },
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "chances": [
+                  0.02,
+                  0.022222223,
+                  0.025,
+                  0.033333335,
+                  0.1
+                ],
+                "condition": "minecraft:table_bonus",
+                "enchantment": "minecraft:fortune"
+              }
+            ],
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 2.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:stick"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/orange_poplar_leaves"
+  },
   "blocks/orange_shulker_box": {
     "type": "minecraft:block",
     "pools": [
@@ -17998,6 +18870,59 @@
       }
     ],
     "random_sequence": "minecraft:blocks/orange_wool"
+  },
+  "blocks/orange_wool_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:orange_wool_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:orange_wool_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/orange_wool_slab"
+  },
+  "blocks/orange_wool_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:orange_wool_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/orange_wool_stairs"
   },
   "blocks/oxeye_daisy": {
     "type": "minecraft:block",
@@ -19510,6 +20435,59 @@
     ],
     "random_sequence": "minecraft:blocks/pink_wool"
   },
+  "blocks/pink_wool_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:pink_wool_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:pink_wool_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/pink_wool_slab"
+  },
+  "blocks/pink_wool_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pink_wool_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/pink_wool_stairs"
+  },
   "blocks/piston": {
     "type": "minecraft:block",
     "pools": [
@@ -20639,6 +21617,328 @@
     ],
     "random_sequence": "minecraft:blocks/polished_tuff_wall"
   },
+  "blocks/poplar_button": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:poplar_button"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/poplar_button"
+  },
+  "blocks/poplar_door": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "block": "minecraft:poplar_door",
+                "condition": "minecraft:block_state_property",
+                "properties": {
+                  "half": "lower"
+                }
+              }
+            ],
+            "name": "minecraft:poplar_door"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/poplar_door"
+  },
+  "blocks/poplar_fence": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:poplar_fence"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/poplar_fence"
+  },
+  "blocks/poplar_fence_gate": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:poplar_fence_gate"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/poplar_fence_gate"
+  },
+  "blocks/poplar_hanging_sign": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:poplar_hanging_sign"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/poplar_hanging_sign"
+  },
+  "blocks/poplar_log": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:poplar_log"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/poplar_log"
+  },
+  "blocks/poplar_planks": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:poplar_planks"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/poplar_planks"
+  },
+  "blocks/poplar_pressure_plate": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:poplar_pressure_plate"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/poplar_pressure_plate"
+  },
+  "blocks/poplar_sapling": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:poplar_sapling"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/poplar_sapling"
+  },
+  "blocks/poplar_shelf": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:poplar_shelf"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/poplar_shelf"
+  },
+  "blocks/poplar_sign": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:poplar_sign"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/poplar_sign"
+  },
+  "blocks/poplar_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:poplar_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:poplar_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/poplar_slab"
+  },
+  "blocks/poplar_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:poplar_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/poplar_stairs"
+  },
+  "blocks/poplar_trapdoor": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:poplar_trapdoor"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/poplar_trapdoor"
+  },
+  "blocks/poplar_wood": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:poplar_wood"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/poplar_wood"
+  },
   "blocks/poppy": {
     "type": "minecraft:block",
     "pools": [
@@ -21738,6 +23038,40 @@
     ],
     "random_sequence": "minecraft:blocks/potted_pink_tulip"
   },
+  "blocks/potted_poplar_sapling": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:flower_pot"
+          }
+        ],
+        "rolls": 1.0
+      },
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:poplar_sapling"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/potted_poplar_sapling"
+  },
   "blocks/potted_poppy": {
     "type": "minecraft:block",
     "pools": [
@@ -22779,6 +24113,59 @@
     ],
     "random_sequence": "minecraft:blocks/purple_wool"
   },
+  "blocks/purple_wool_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:purple_wool_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:purple_wool_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/purple_wool_slab"
+  },
+  "blocks/purple_wool_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:purple_wool_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/purple_wool_stairs"
+  },
   "blocks/purpur_block": {
     "type": "minecraft:block",
     "pools": [
@@ -23454,6 +24841,139 @@
     ],
     "random_sequence": "minecraft:blocks/red_nether_bricks"
   },
+  "blocks/red_poplar_leaves": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:any_of",
+                    "terms": [
+                      {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                          "items": "minecraft:shears"
+                        }
+                      },
+                      {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                          "predicates": {
+                            "minecraft:enchantments": [
+                              {
+                                "enchantments": "minecraft:silk_touch",
+                                "levels": {
+                                  "min": 1
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "name": "minecraft:red_poplar_leaves"
+              },
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:survives_explosion"
+                  },
+                  {
+                    "chances": [
+                      0.05,
+                      0.0625,
+                      0.083333336,
+                      0.1
+                    ],
+                    "condition": "minecraft:table_bonus",
+                    "enchantment": "minecraft:fortune"
+                  }
+                ],
+                "name": "minecraft:poplar_sapling"
+              }
+            ]
+          }
+        ],
+        "rolls": 1.0
+      },
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:any_of",
+              "terms": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "items": "minecraft:shears"
+                  }
+                },
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "chances": [
+                  0.02,
+                  0.022222223,
+                  0.025,
+                  0.033333335,
+                  0.1
+                ],
+                "condition": "minecraft:table_bonus",
+                "enchantment": "minecraft:fortune"
+              }
+            ],
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 2.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:stick"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/red_poplar_leaves"
+  },
   "blocks/red_sand": {
     "type": "minecraft:block",
     "pools": [
@@ -23566,6 +25086,26 @@
       }
     ],
     "random_sequence": "minecraft:blocks/red_sandstone_wall"
+  },
+  "blocks/red_shrub": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:red_shrub"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/red_shrub"
   },
   "blocks/red_shulker_box": {
     "type": "minecraft:block",
@@ -23717,6 +25257,59 @@
       }
     ],
     "random_sequence": "minecraft:blocks/red_wool"
+  },
+  "blocks/red_wool_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:red_wool_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:red_wool_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/red_wool_slab"
+  },
+  "blocks/red_wool_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:red_wool_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/red_wool_stairs"
   },
   "blocks/redstone_block": {
     "type": "minecraft:block",
@@ -24712,6 +26305,39 @@
       }
     ],
     "random_sequence": "minecraft:blocks/seagrass"
+  },
+  "blocks/shelf_mushroom": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:shelf_mushroom",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "age": "1"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:shelf_mushroom"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/shelf_mushroom"
   },
   "blocks/short_dry_grass": {
     "type": "minecraft:block",
@@ -26992,6 +28618,46 @@
       }
     ],
     "random_sequence": "minecraft:blocks/stripped_pale_oak_wood"
+  },
+  "blocks/stripped_poplar_log": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:stripped_poplar_log"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/stripped_poplar_log"
+  },
+  "blocks/stripped_poplar_wood": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:stripped_poplar_wood"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/stripped_poplar_wood"
   },
   "blocks/stripped_spruce_log": {
     "type": "minecraft:block",
@@ -31091,6 +32757,59 @@
     ],
     "random_sequence": "minecraft:blocks/white_wool"
   },
+  "blocks/white_wool_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:white_wool_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:white_wool_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/white_wool_slab"
+  },
+  "blocks/white_wool_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:white_wool_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/white_wool_stairs"
+  },
   "blocks/wildflowers": {
     "type": "minecraft:block",
     "pools": [
@@ -31423,6 +33142,139 @@
     ],
     "random_sequence": "minecraft:blocks/yellow_glazed_terracotta"
   },
+  "blocks/yellow_poplar_leaves": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:any_of",
+                    "terms": [
+                      {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                          "items": "minecraft:shears"
+                        }
+                      },
+                      {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                          "predicates": {
+                            "minecraft:enchantments": [
+                              {
+                                "enchantments": "minecraft:silk_touch",
+                                "levels": {
+                                  "min": 1
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "name": "minecraft:yellow_poplar_leaves"
+              },
+              {
+                "type": "minecraft:item",
+                "conditions": [
+                  {
+                    "condition": "minecraft:survives_explosion"
+                  },
+                  {
+                    "chances": [
+                      0.05,
+                      0.0625,
+                      0.083333336,
+                      0.1
+                    ],
+                    "condition": "minecraft:table_bonus",
+                    "enchantment": "minecraft:fortune"
+                  }
+                ],
+                "name": "minecraft:poplar_sapling"
+              }
+            ]
+          }
+        ],
+        "rolls": 1.0
+      },
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:any_of",
+              "terms": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "items": "minecraft:shears"
+                  }
+                },
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "chances": [
+                  0.02,
+                  0.022222223,
+                  0.025,
+                  0.033333335,
+                  0.1
+                ],
+                "condition": "minecraft:table_bonus",
+                "enchantment": "minecraft:fortune"
+              }
+            ],
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 2.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:stick"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/yellow_poplar_leaves"
+  },
   "blocks/yellow_shulker_box": {
     "type": "minecraft:block",
     "pools": [
@@ -31553,6 +33405,59 @@
       }
     ],
     "random_sequence": "minecraft:blocks/yellow_wool"
+  },
+  "blocks/yellow_wool_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "conditions": [
+                  {
+                    "block": "minecraft:yellow_wool_slab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                ],
+                "count": 2.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:yellow_wool_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/yellow_wool_slab"
+  },
+  "blocks/yellow_wool_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ],
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:yellow_wool_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/yellow_wool_stairs"
   },
   "blocks/zombie_head": {
     "type": "minecraft:block",
@@ -31769,6 +33674,501 @@
       }
     ],
     "random_sequence": "minecraft:charged_creeper/zombie"
+  },
+  "chests/abandoned_camp_common_chest": {
+    "type": "minecraft:chest",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 4.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:arrow"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:map"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 4.0,
+                  "min": 2.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:bone"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:cobweb"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:compass"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 2.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:map"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 4.0,
+                  "min": 2.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:firework_rocket"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:fishing_rod"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:flint_and_steel"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 4.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:glass_bottle"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 3.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:lead"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 4.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:leather"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:bundle"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 4.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:rabbit_hide"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:saddle"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 3.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:white_candle"
+          }
+        ],
+        "rolls": {
+          "type": "minecraft:uniform",
+          "max": 6.0,
+          "min": 4.0
+        }
+      },
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:bow"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:bucket"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:copper_axe"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:copper_boots"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:copper_chestplate"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:copper_leggings"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:copper_spear"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:copper_sword"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:spyglass"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:shears"
+          }
+        ],
+        "rolls": 2.0
+      }
+    ],
+    "random_sequence": "minecraft:chests/abandoned_camp_common_chest"
+  },
+  "chests/abandoned_camp_secret_chest": {
+    "type": "minecraft:chest",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:diamond"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:set_potion",
+                "id": "minecraft:healing"
+              }
+            ],
+            "name": "minecraft:potion"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:set_potion",
+                "id": "minecraft:leaping"
+              }
+            ],
+            "name": "minecraft:potion"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:set_potion",
+                "id": "minecraft:night_vision"
+              }
+            ],
+            "name": "minecraft:potion"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              },
+              {
+                "function": "minecraft:set_potion",
+                "id": "minecraft:swiftness"
+              }
+            ],
+            "name": "minecraft:potion"
+          }
+        ],
+        "rolls": 2.0
+      },
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:map"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 2.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:copper_ingot"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 2.0,
+                  "min": 1.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:gold_ingot"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:iron_ingot"
+          }
+        ],
+        "rolls": {
+          "type": "minecraft:uniform",
+          "max": 6.0,
+          "min": 4.0
+        }
+      },
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:iron_axe"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:iron_boots"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:iron_leggings"
+          },
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "count": 1.0,
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "minecraft:iron_spear"
+          }
+        ],
+        "rolls": {
+          "type": "minecraft:uniform",
+          "max": 1.0,
+          "min": 0.0
+        }
+      }
+    ],
+    "random_sequence": "minecraft:chests/abandoned_camp_secret_chest"
   },
   "chests/abandoned_mineshaft": {
     "type": "minecraft:chest",

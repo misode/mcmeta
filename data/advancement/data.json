@@ -98,6 +98,22 @@
         },
         "trigger": "minecraft:location"
       },
+      "minecraft:dappled_forest": {
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:location": {
+                  "biomes": "minecraft:dappled_forest"
+                }
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:location"
+      },
       "minecraft:dark_forest": {
         "conditions": {
           "player": [
@@ -1023,6 +1039,9 @@
         "minecraft:ice_spikes"
       ],
       [
+        "minecraft:dappled_forest"
+      ],
+      [
         "minecraft:old_growth_pine_taiga"
       ],
       [
@@ -1293,12 +1312,14 @@
       },
       "icon": {
         "components": {
-          "minecraft:pot_decorations": [
-            "minecraft:brick",
-            "minecraft:heart_pottery_sherd",
-            "minecraft:brick",
-            "minecraft:explorer_pottery_sherd"
-          ]
+          "minecraft:pot_decorations": {
+            "front": {
+              "id": "minecraft:explorer_pottery_sherd"
+            },
+            "left": {
+              "id": "minecraft:heart_pottery_sherd"
+            }
+          }
         },
         "id": "minecraft:decorated_pot"
       },
@@ -10069,6 +10090,70 @@
       ]
     }
   },
+  "recipes/building_blocks/black_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_black_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:black_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:black_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_black_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:black_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/black_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_black_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:black_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:black_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_black_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:black_wool_stairs"
+      ]
+    }
+  },
   "recipes/building_blocks/blackstone_slab": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -10333,6 +10418,70 @@
     "rewards": {
       "recipes": [
         "minecraft:blue_terracotta"
+      ]
+    }
+  },
+  "recipes/building_blocks/blue_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_blue_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:blue_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:blue_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_blue_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:blue_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/blue_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_blue_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:blue_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:blue_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_blue_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:blue_wool_stairs"
       ]
     }
   },
@@ -10664,6 +10813,70 @@
     "rewards": {
       "recipes": [
         "minecraft:brown_terracotta"
+      ]
+    }
+  },
+  "recipes/building_blocks/brown_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_brown_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:brown_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:brown_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_brown_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:brown_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/brown_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_brown_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:brown_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:brown_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_brown_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:brown_wool_stairs"
       ]
     }
   },
@@ -13986,6 +14199,70 @@
       ]
     }
   },
+  "recipes/building_blocks/cyan_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_cyan_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:cyan_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cyan_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_cyan_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cyan_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/cyan_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_cyan_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:cyan_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:cyan_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_cyan_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:cyan_wool_stairs"
+      ]
+    }
+  },
   "recipes/building_blocks/dark_oak_planks": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -15618,6 +15895,70 @@
       ]
     }
   },
+  "recipes/building_blocks/dye_black_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:black_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_black_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_black_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_black_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:black_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_black_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_black_wool_stairs"
+      ]
+    }
+  },
   "recipes/building_blocks/dye_blue_wool": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -15647,6 +15988,70 @@
     "rewards": {
       "recipes": [
         "minecraft:dye_blue_wool"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_blue_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:blue_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_blue_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_blue_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_blue_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:blue_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_blue_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_blue_wool_stairs"
       ]
     }
   },
@@ -15682,6 +16087,70 @@
       ]
     }
   },
+  "recipes/building_blocks/dye_brown_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:brown_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_brown_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_brown_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_brown_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:brown_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_brown_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_brown_wool_stairs"
+      ]
+    }
+  },
   "recipes/building_blocks/dye_cyan_wool": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -15711,6 +16180,70 @@
     "rewards": {
       "recipes": [
         "minecraft:dye_cyan_wool"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_cyan_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:cyan_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_cyan_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_cyan_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_cyan_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:cyan_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_cyan_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_cyan_wool_stairs"
       ]
     }
   },
@@ -15746,6 +16279,70 @@
       ]
     }
   },
+  "recipes/building_blocks/dye_gray_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:gray_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_gray_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_gray_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_gray_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:gray_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_gray_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_gray_wool_stairs"
+      ]
+    }
+  },
   "recipes/building_blocks/dye_green_wool": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -15775,6 +16372,70 @@
     "rewards": {
       "recipes": [
         "minecraft:dye_green_wool"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_green_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:green_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_green_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_green_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_green_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:green_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_green_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_green_wool_stairs"
       ]
     }
   },
@@ -15810,6 +16471,70 @@
       ]
     }
   },
+  "recipes/building_blocks/dye_light_blue_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:light_blue_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_light_blue_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_light_blue_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_light_blue_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:light_blue_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_light_blue_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_light_blue_wool_stairs"
+      ]
+    }
+  },
   "recipes/building_blocks/dye_light_gray_wool": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -15839,6 +16564,70 @@
     "rewards": {
       "recipes": [
         "minecraft:dye_light_gray_wool"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_light_gray_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:light_gray_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_light_gray_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_light_gray_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_light_gray_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:light_gray_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_light_gray_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_light_gray_wool_stairs"
       ]
     }
   },
@@ -15874,6 +16663,70 @@
       ]
     }
   },
+  "recipes/building_blocks/dye_lime_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:lime_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_lime_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_lime_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_lime_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:lime_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_lime_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_lime_wool_stairs"
+      ]
+    }
+  },
   "recipes/building_blocks/dye_magenta_wool": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -15903,6 +16756,70 @@
     "rewards": {
       "recipes": [
         "minecraft:dye_magenta_wool"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_magenta_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:magenta_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_magenta_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_magenta_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_magenta_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:magenta_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_magenta_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_magenta_wool_stairs"
       ]
     }
   },
@@ -15938,6 +16855,70 @@
       ]
     }
   },
+  "recipes/building_blocks/dye_orange_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:orange_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_orange_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_orange_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_orange_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:orange_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_orange_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_orange_wool_stairs"
+      ]
+    }
+  },
   "recipes/building_blocks/dye_pink_wool": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -15967,6 +16948,70 @@
     "rewards": {
       "recipes": [
         "minecraft:dye_pink_wool"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_pink_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:pink_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_pink_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_pink_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_pink_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:pink_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_pink_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_pink_wool_stairs"
       ]
     }
   },
@@ -16002,6 +17047,70 @@
       ]
     }
   },
+  "recipes/building_blocks/dye_purple_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:purple_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_purple_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_purple_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_purple_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:purple_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_purple_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_purple_wool_stairs"
+      ]
+    }
+  },
   "recipes/building_blocks/dye_red_wool": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -16031,6 +17140,70 @@
     "rewards": {
       "recipes": [
         "minecraft:dye_red_wool"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_red_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:red_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_red_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_red_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_red_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:red_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_red_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_red_wool_stairs"
       ]
     }
   },
@@ -16066,6 +17239,70 @@
       ]
     }
   },
+  "recipes/building_blocks/dye_white_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:white_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_white_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_white_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_white_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:white_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_white_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_white_wool_stairs"
+      ]
+    }
+  },
   "recipes/building_blocks/dye_yellow_wool": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -16095,6 +17332,70 @@
     "rewards": {
       "recipes": [
         "minecraft:dye_yellow_wool"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_yellow_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:yellow_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_yellow_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_yellow_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/dye_yellow_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_needed_dye": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:yellow_dye"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:dye_yellow_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_needed_dye"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:dye_yellow_wool_stairs"
       ]
     }
   },
@@ -17165,6 +18466,70 @@
       ]
     }
   },
+  "recipes/building_blocks/gray_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_gray_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:gray_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:gray_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_gray_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:gray_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/gray_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_gray_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:gray_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:gray_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_gray_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:gray_wool_stairs"
+      ]
+    }
+  },
   "recipes/building_blocks/green_concrete_powder": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -17269,6 +18634,70 @@
     "rewards": {
       "recipes": [
         "minecraft:green_terracotta"
+      ]
+    }
+  },
+  "recipes/building_blocks/green_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_green_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:green_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:green_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_green_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:green_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/green_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_green_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:green_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:green_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_green_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:green_wool_stairs"
       ]
     }
   },
@@ -17635,6 +19064,70 @@
       ]
     }
   },
+  "recipes/building_blocks/light_blue_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_light_blue_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:light_blue_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:light_blue_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_light_blue_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:light_blue_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/light_blue_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_light_blue_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:light_blue_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:light_blue_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_light_blue_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:light_blue_wool_stairs"
+      ]
+    }
+  },
   "recipes/building_blocks/light_gray_concrete_powder": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -17739,6 +19232,70 @@
     "rewards": {
       "recipes": [
         "minecraft:light_gray_terracotta"
+      ]
+    }
+  },
+  "recipes/building_blocks/light_gray_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_light_gray_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:light_gray_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:light_gray_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_light_gray_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:light_gray_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/light_gray_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_light_gray_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:light_gray_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:light_gray_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_light_gray_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:light_gray_wool_stairs"
       ]
     }
   },
@@ -17849,6 +19406,70 @@
       ]
     }
   },
+  "recipes/building_blocks/lime_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_lime_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:lime_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:lime_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_lime_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:lime_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/lime_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_lime_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:lime_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:lime_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_lime_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:lime_wool_stairs"
+      ]
+    }
+  },
   "recipes/building_blocks/magenta_concrete_powder": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -17953,6 +19574,70 @@
     "rewards": {
       "recipes": [
         "minecraft:magenta_terracotta"
+      ]
+    }
+  },
+  "recipes/building_blocks/magenta_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_magenta_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:magenta_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:magenta_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_magenta_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:magenta_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/magenta_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_magenta_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:magenta_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:magenta_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_magenta_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:magenta_wool_stairs"
       ]
     }
   },
@@ -19183,6 +20868,70 @@
       ]
     }
   },
+  "recipes/building_blocks/orange_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_orange_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:orange_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:orange_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_orange_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:orange_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/orange_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_orange_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:orange_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:orange_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_orange_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:orange_wool_stairs"
+      ]
+    }
+  },
   "recipes/building_blocks/oxidized_chiseled_copper": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -19895,6 +21644,70 @@
     "rewards": {
       "recipes": [
         "minecraft:pink_terracotta"
+      ]
+    }
+  },
+  "recipes/building_blocks/pink_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_pink_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:pink_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:pink_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_pink_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:pink_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/pink_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_pink_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:pink_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:pink_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_pink_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:pink_wool_stairs"
       ]
     }
   },
@@ -22458,6 +24271,134 @@
       ]
     }
   },
+  "recipes/building_blocks/poplar_planks": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_logs": {
+        "conditions": {
+          "items": [
+            {
+              "items": "#minecraft:poplar_logs"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poplar_planks"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_logs"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poplar_planks"
+      ]
+    }
+  },
+  "recipes/building_blocks/poplar_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poplar_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poplar_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poplar_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/poplar_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poplar_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poplar_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poplar_stairs"
+      ]
+    }
+  },
+  "recipes/building_blocks/poplar_wood": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_log": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poplar_log"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poplar_wood"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_log"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poplar_wood"
+      ]
+    }
+  },
   "recipes/building_blocks/potent_sulfur": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -22914,6 +24855,70 @@
     "rewards": {
       "recipes": [
         "minecraft:purple_terracotta"
+      ]
+    }
+  },
+  "recipes/building_blocks/purple_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_purple_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:purple_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:purple_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_purple_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:purple_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/purple_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_purple_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:purple_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:purple_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_purple_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:purple_wool_stairs"
       ]
     }
   },
@@ -24048,6 +26053,70 @@
     "rewards": {
       "recipes": [
         "minecraft:red_terracotta"
+      ]
+    }
+  },
+  "recipes/building_blocks/red_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_red_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:red_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:red_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_red_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:red_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/red_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_red_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:red_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:red_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_red_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:red_wool_stairs"
       ]
     }
   },
@@ -25969,6 +28038,38 @@
     "rewards": {
       "recipes": [
         "minecraft:stripped_pale_oak_wood"
+      ]
+    }
+  },
+  "recipes/building_blocks/stripped_poplar_wood": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_log": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:stripped_poplar_log"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:stripped_poplar_wood"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_log"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:stripped_poplar_wood"
       ]
     }
   },
@@ -30975,6 +33076,70 @@
       ]
     }
   },
+  "recipes/building_blocks/white_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:white_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_white_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:white_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_white_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:white_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/white_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:white_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_white_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:white_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_white_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:white_wool_stairs"
+      ]
+    }
+  },
   "recipes/building_blocks/yellow_concrete_powder": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -31079,6 +33244,70 @@
     "rewards": {
       "recipes": [
         "minecraft:yellow_terracotta"
+      ]
+    }
+  },
+  "recipes/building_blocks/yellow_wool_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:yellow_wool_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_yellow_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:yellow_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_yellow_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:yellow_wool_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/yellow_wool_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:yellow_wool_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "has_yellow_wool": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:yellow_wool"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_yellow_wool"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:yellow_wool_stairs"
       ]
     }
   },
@@ -34433,38 +36662,6 @@
       ]
     }
   },
-  "recipes/decorations/black_carpet": {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-      "has_black_wool": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:black_wool"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "has_the_recipe": {
-        "conditions": {
-          "recipe": "minecraft:black_carpet"
-        },
-        "trigger": "minecraft:recipe_unlocked"
-      }
-    },
-    "requirements": [
-      [
-        "has_the_recipe",
-        "has_black_wool"
-      ]
-    ],
-    "rewards": {
-      "recipes": [
-        "minecraft:black_carpet"
-      ]
-    }
-  },
   "recipes/decorations/black_glazed_terracotta": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -34796,38 +36993,6 @@
       ]
     }
   },
-  "recipes/decorations/blue_carpet": {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-      "has_blue_wool": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:blue_wool"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "has_the_recipe": {
-        "conditions": {
-          "recipe": "minecraft:blue_carpet"
-        },
-        "trigger": "minecraft:recipe_unlocked"
-      }
-    },
-    "requirements": [
-      [
-        "has_the_recipe",
-        "has_blue_wool"
-      ]
-    ],
-    "rewards": {
-      "recipes": [
-        "minecraft:blue_carpet"
-      ]
-    }
-  },
   "recipes/decorations/blue_glazed_terracotta": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -35124,38 +37289,6 @@
     "rewards": {
       "recipes": [
         "minecraft:brown_candle"
-      ]
-    }
-  },
-  "recipes/decorations/brown_carpet": {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-      "has_brown_wool": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:brown_wool"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "has_the_recipe": {
-        "conditions": {
-          "recipe": "minecraft:brown_carpet"
-        },
-        "trigger": "minecraft:recipe_unlocked"
-      }
-    },
-    "requirements": [
-      [
-        "has_the_recipe",
-        "has_brown_wool"
-      ]
-    ],
-    "rewards": {
-      "recipes": [
-        "minecraft:brown_carpet"
       ]
     }
   },
@@ -36409,38 +38542,6 @@
     "rewards": {
       "recipes": [
         "minecraft:cyan_candle"
-      ]
-    }
-  },
-  "recipes/decorations/cyan_carpet": {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-      "has_cyan_wool": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:cyan_wool"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "has_the_recipe": {
-        "conditions": {
-          "recipe": "minecraft:cyan_carpet"
-        },
-        "trigger": "minecraft:recipe_unlocked"
-      }
-    },
-    "requirements": [
-      [
-        "has_the_recipe",
-        "has_cyan_wool"
-      ]
-    ],
-    "rewards": {
-      "recipes": [
-        "minecraft:cyan_carpet"
       ]
     }
   },
@@ -38781,38 +40882,6 @@
       ]
     }
   },
-  "recipes/decorations/gray_carpet": {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-      "has_gray_wool": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:gray_wool"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "has_the_recipe": {
-        "conditions": {
-          "recipe": "minecraft:gray_carpet"
-        },
-        "trigger": "minecraft:recipe_unlocked"
-      }
-    },
-    "requirements": [
-      [
-        "has_the_recipe",
-        "has_gray_wool"
-      ]
-    ],
-    "rewards": {
-      "recipes": [
-        "minecraft:gray_carpet"
-      ]
-    }
-  },
   "recipes/decorations/gray_glazed_terracotta": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -39045,38 +41114,6 @@
     "rewards": {
       "recipes": [
         "minecraft:green_candle"
-      ]
-    }
-  },
-  "recipes/decorations/green_carpet": {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-      "has_green_wool": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:green_wool"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "has_the_recipe": {
-        "conditions": {
-          "recipe": "minecraft:green_carpet"
-        },
-        "trigger": "minecraft:recipe_unlocked"
-      }
-    },
-    "requirements": [
-      [
-        "has_the_recipe",
-        "has_green_wool"
-      ]
-    ],
-    "rewards": {
-      "recipes": [
-        "minecraft:green_carpet"
       ]
     }
   },
@@ -39721,38 +41758,6 @@
       ]
     }
   },
-  "recipes/decorations/light_blue_carpet": {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-      "has_light_blue_wool": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:light_blue_wool"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "has_the_recipe": {
-        "conditions": {
-          "recipe": "minecraft:light_blue_carpet"
-        },
-        "trigger": "minecraft:recipe_unlocked"
-      }
-    },
-    "requirements": [
-      [
-        "has_the_recipe",
-        "has_light_blue_wool"
-      ]
-    ],
-    "rewards": {
-      "recipes": [
-        "minecraft:light_blue_carpet"
-      ]
-    }
-  },
   "recipes/decorations/light_blue_glazed_terracotta": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -39988,38 +41993,6 @@
       ]
     }
   },
-  "recipes/decorations/light_gray_carpet": {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-      "has_light_gray_wool": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:light_gray_wool"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "has_the_recipe": {
-        "conditions": {
-          "recipe": "minecraft:light_gray_carpet"
-        },
-        "trigger": "minecraft:recipe_unlocked"
-      }
-    },
-    "requirements": [
-      [
-        "has_the_recipe",
-        "has_light_gray_wool"
-      ]
-    ],
-    "rewards": {
-      "recipes": [
-        "minecraft:light_gray_carpet"
-      ]
-    }
-  },
   "recipes/decorations/light_gray_glazed_terracotta": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -40252,38 +42225,6 @@
     "rewards": {
       "recipes": [
         "minecraft:lime_candle"
-      ]
-    }
-  },
-  "recipes/decorations/lime_carpet": {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-      "has_lime_wool": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:lime_wool"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "has_the_recipe": {
-        "conditions": {
-          "recipe": "minecraft:lime_carpet"
-        },
-        "trigger": "minecraft:recipe_unlocked"
-      }
-    },
-    "requirements": [
-      [
-        "has_the_recipe",
-        "has_lime_wool"
-      ]
-    ],
-    "rewards": {
-      "recipes": [
-        "minecraft:lime_carpet"
       ]
     }
   },
@@ -40594,38 +42535,6 @@
     "rewards": {
       "recipes": [
         "minecraft:magenta_candle"
-      ]
-    }
-  },
-  "recipes/decorations/magenta_carpet": {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-      "has_magenta_wool": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:magenta_wool"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "has_the_recipe": {
-        "conditions": {
-          "recipe": "minecraft:magenta_carpet"
-        },
-        "trigger": "minecraft:recipe_unlocked"
-      }
-    },
-    "requirements": [
-      [
-        "has_the_recipe",
-        "has_magenta_wool"
-      ]
-    ],
-    "rewards": {
-      "recipes": [
-        "minecraft:magenta_carpet"
       ]
     }
   },
@@ -41440,38 +43349,6 @@
       ]
     }
   },
-  "recipes/decorations/orange_carpet": {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-      "has_orange_wool": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:orange_wool"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "has_the_recipe": {
-        "conditions": {
-          "recipe": "minecraft:orange_carpet"
-        },
-        "trigger": "minecraft:recipe_unlocked"
-      }
-    },
-    "requirements": [
-      [
-        "has_the_recipe",
-        "has_orange_wool"
-      ]
-    ],
-    "rewards": {
-      "recipes": [
-        "minecraft:orange_carpet"
-      ]
-    }
-  },
   "recipes/decorations/orange_glazed_terracotta": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -41896,38 +43773,6 @@
     "rewards": {
       "recipes": [
         "minecraft:pink_candle"
-      ]
-    }
-  },
-  "recipes/decorations/pink_carpet": {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-      "has_pink_wool": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:pink_wool"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "has_the_recipe": {
-        "conditions": {
-          "recipe": "minecraft:pink_carpet"
-        },
-        "trigger": "minecraft:recipe_unlocked"
-      }
-    },
-    "requirements": [
-      [
-        "has_the_recipe",
-        "has_pink_wool"
-      ]
-    ],
-    "rewards": {
-      "recipes": [
-        "minecraft:pink_carpet"
       ]
     }
   },
@@ -42710,6 +44555,134 @@
       ]
     }
   },
+  "recipes/decorations/poplar_fence": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poplar_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poplar_fence"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poplar_fence"
+      ]
+    }
+  },
+  "recipes/decorations/poplar_hanging_sign": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_stripped_log": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:stripped_poplar_log"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poplar_hanging_sign"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_stripped_log"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poplar_hanging_sign"
+      ]
+    }
+  },
+  "recipes/decorations/poplar_shelf": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_stripped_poplar_log": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:stripped_poplar_log"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poplar_shelf"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_stripped_poplar_log"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poplar_shelf"
+      ]
+    }
+  },
+  "recipes/decorations/poplar_sign": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poplar_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poplar_sign"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poplar_sign"
+      ]
+    }
+  },
   "recipes/decorations/prismarine_wall": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -42867,38 +44840,6 @@
     "rewards": {
       "recipes": [
         "minecraft:purple_candle"
-      ]
-    }
-  },
-  "recipes/decorations/purple_carpet": {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-      "has_purple_wool": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:purple_wool"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "has_the_recipe": {
-        "conditions": {
-          "recipe": "minecraft:purple_carpet"
-        },
-        "trigger": "minecraft:recipe_unlocked"
-      }
-    },
-    "requirements": [
-      [
-        "has_the_recipe",
-        "has_purple_wool"
-      ]
-    ],
-    "rewards": {
-      "recipes": [
-        "minecraft:purple_carpet"
       ]
     }
   },
@@ -43134,38 +45075,6 @@
     "rewards": {
       "recipes": [
         "minecraft:red_candle"
-      ]
-    }
-  },
-  "recipes/decorations/red_carpet": {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-      "has_red_wool": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:red_wool"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "has_the_recipe": {
-        "conditions": {
-          "recipe": "minecraft:red_carpet"
-        },
-        "trigger": "minecraft:recipe_unlocked"
-      }
-    },
-    "requirements": [
-      [
-        "has_the_recipe",
-        "has_red_wool"
-      ]
-    ],
-    "rewards": {
-      "recipes": [
-        "minecraft:red_carpet"
       ]
     }
   },
@@ -44748,38 +46657,6 @@
       ]
     }
   },
-  "recipes/decorations/white_carpet": {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-      "has_the_recipe": {
-        "conditions": {
-          "recipe": "minecraft:white_carpet"
-        },
-        "trigger": "minecraft:recipe_unlocked"
-      },
-      "has_white_wool": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:white_wool"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "has_the_recipe",
-        "has_white_wool"
-      ]
-    ],
-    "rewards": {
-      "recipes": [
-        "minecraft:white_carpet"
-      ]
-    }
-  },
   "recipes/decorations/white_glazed_terracotta": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -45012,38 +46889,6 @@
     "rewards": {
       "recipes": [
         "minecraft:yellow_candle"
-      ]
-    }
-  },
-  "recipes/decorations/yellow_carpet": {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-      "has_the_recipe": {
-        "conditions": {
-          "recipe": "minecraft:yellow_carpet"
-        },
-        "trigger": "minecraft:recipe_unlocked"
-      },
-      "has_yellow_wool": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:yellow_wool"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "has_the_recipe",
-        "has_yellow_wool"
-      ]
-    ],
-    "rewards": {
-      "recipes": [
-        "minecraft:yellow_carpet"
       ]
     }
   },
@@ -46287,11 +48132,11 @@
         },
         "trigger": "minecraft:inventory_changed"
       },
-      "has_brown_mushroom": {
+      "has_mushroom": {
         "conditions": {
           "items": [
             {
-              "items": "minecraft:brown_mushroom"
+              "items": "#minecraft:mushrooms"
             }
           ]
         },
@@ -46302,16 +48147,6 @@
           "items": [
             {
               "items": "minecraft:mushroom_stew"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "has_red_mushroom": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:red_mushroom"
             }
           ]
         },
@@ -46329,8 +48164,7 @@
         "has_the_recipe",
         "has_mushroom_stew",
         "has_bowl",
-        "has_brown_mushroom",
-        "has_red_mushroom"
+        "has_mushroom"
       ]
     ],
     "rewards": {
@@ -46443,6 +48277,38 @@
     "rewards": {
       "recipes": [
         "minecraft:rabbit_stew_from_red_mushroom"
+      ]
+    }
+  },
+  "recipes/food/rabbit_stew_from_shelf_mushroom": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_cooked_rabbit": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:cooked_rabbit"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:rabbit_stew_from_shelf_mushroom"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_cooked_rabbit"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:rabbit_stew_from_shelf_mushroom"
       ]
     }
   },
@@ -47345,11 +49211,11 @@
   "recipes/misc/bowl": {
     "parent": "minecraft:recipes/root",
     "criteria": {
-      "has_brown_mushroom": {
+      "has_mushroom": {
         "conditions": {
           "items": [
             {
-              "items": "minecraft:brown_mushroom"
+              "items": "#minecraft:mushrooms"
             }
           ]
         },
@@ -47365,16 +49231,6 @@
         },
         "trigger": "minecraft:inventory_changed"
       },
-      "has_red_mushroom": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:red_mushroom"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
       "has_the_recipe": {
         "conditions": {
           "recipe": "minecraft:bowl"
@@ -47385,8 +49241,7 @@
     "requirements": [
       [
         "has_the_recipe",
-        "has_brown_mushroom",
-        "has_red_mushroom",
+        "has_mushroom",
         "has_mushroom_stew"
       ]
     ],
@@ -56567,6 +58422,166 @@
       ]
     }
   },
+  "recipes/redstone/poplar_button": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poplar_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poplar_button"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poplar_button"
+      ]
+    }
+  },
+  "recipes/redstone/poplar_door": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poplar_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poplar_door"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poplar_door"
+      ]
+    }
+  },
+  "recipes/redstone/poplar_fence_gate": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poplar_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poplar_fence_gate"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poplar_fence_gate"
+      ]
+    }
+  },
+  "recipes/redstone/poplar_pressure_plate": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poplar_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poplar_pressure_plate"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poplar_pressure_plate"
+      ]
+    }
+  },
+  "recipes/redstone/poplar_trapdoor": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_planks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:poplar_planks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poplar_trapdoor"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_planks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poplar_trapdoor"
+      ]
+    }
+  },
   "recipes/redstone/redstone": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -60552,6 +62567,66 @@
     "rewards": {
       "recipes": [
         "minecraft:pale_oak_chest_boat"
+      ]
+    }
+  },
+  "recipes/transportation/poplar_boat": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poplar_boat"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      },
+      "in_water": {
+        "conditions": {
+          "block": "minecraft:water"
+        },
+        "trigger": "minecraft:enter_block"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "in_water"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poplar_boat"
+      ]
+    }
+  },
+  "recipes/transportation/poplar_chest_boat": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_boat": {
+        "conditions": {
+          "items": [
+            {
+              "items": "#minecraft:boats"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipe": "minecraft:poplar_chest_boat"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_boat"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:poplar_chest_boat"
       ]
     }
   },
