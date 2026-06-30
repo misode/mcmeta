@@ -185,6 +185,30 @@
         }
       },
       {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:all_of",
+          "predicates": [
+            {
+              "type": "minecraft:matching_block_tag",
+              "tag": "minecraft:air"
+            },
+            {
+              "type": "minecraft:not",
+              "predicate": {
+                "type": "minecraft:matching_block_tag",
+                "offset": [
+                  0,
+                  1,
+                  0
+                ],
+                "tag": "minecraft:air"
+              }
+            }
+          ]
+        }
+      },
+      {
         "type": "minecraft:biome"
       }
     ]
@@ -389,17 +413,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -442,17 +472,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -487,17 +523,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -536,17 +578,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -581,17 +629,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -626,17 +680,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -685,9 +745,10 @@
         }
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": 0,
-        "y_spread": -1
+        "type": "minecraft:offset",
+        "x": 0,
+        "y": -1,
+        "z": 0
       },
       {
         "type": "minecraft:biome"
@@ -927,9 +988,10 @@
         "heightmap": "OCEAN_FLOOR_WG"
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": 0,
-        "y_spread": -1
+        "type": "minecraft:offset",
+        "x": 0,
+        "y": -1,
+        "z": 0
       },
       {
         "type": "minecraft:block_predicate_filter",
@@ -1037,13 +1099,14 @@
         "heightmap": "MOTION_BLOCKING"
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": 0,
-        "y_spread": {
+        "type": "minecraft:offset",
+        "x": 0,
+        "y": {
           "type": "minecraft:uniform",
           "max_inclusive": 9,
           "min_inclusive": 3
-        }
+        },
+        "z": 0
       },
       {
         "type": "minecraft:biome"
@@ -1330,17 +1393,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 6,
           "min": -6,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 2,
           "min": -2,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 6,
+          "min": -6,
           "plateau": 0
         }
       },
@@ -1375,17 +1444,23 @@
         "count": 64
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -1424,17 +1499,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 6,
           "min": -6,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 2,
           "min": -2,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 6,
+          "min": -6,
           "plateau": 0
         }
       },
@@ -1497,17 +1578,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 6,
           "min": -6,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 2,
           "min": -2,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 6,
+          "min": -6,
           "plateau": 0
         }
       },
@@ -1547,17 +1634,23 @@
         "count": 64
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 6,
           "min": -6,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 2,
           "min": -2,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 6,
+          "min": -6,
           "plateau": 0
         }
       },
@@ -1598,17 +1691,23 @@
         "count": 64
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 6,
           "min": -6,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 2,
           "min": -2,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 6,
+          "min": -6,
           "plateau": 0
         }
       },
@@ -1643,17 +1742,23 @@
         "count": 64
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 6,
           "min": -6,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 2,
           "min": -2,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 6,
+          "min": -6,
           "plateau": 0
         }
       },
@@ -1688,17 +1793,23 @@
         "count": 64
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -1883,6 +1994,31 @@
         }
       },
       {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:all_of",
+          "predicates": [
+            {
+              "type": "minecraft:matching_block_tag",
+              "tag": "minecraft:air"
+            },
+            {
+              "type": "minecraft:matching_blocks",
+              "blocks": [
+                "minecraft:netherrack",
+                "minecraft:basalt",
+                "minecraft:blackstone"
+              ],
+              "offset": [
+                0,
+                1,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      {
         "type": "minecraft:biome"
       }
     ]
@@ -1911,6 +2047,31 @@
           "min_inclusive": {
             "above_bottom": 4
           }
+        }
+      },
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:all_of",
+          "predicates": [
+            {
+              "type": "minecraft:matching_block_tag",
+              "tag": "minecraft:air"
+            },
+            {
+              "type": "minecraft:matching_blocks",
+              "blocks": [
+                "minecraft:netherrack",
+                "minecraft:basalt",
+                "minecraft:blackstone"
+              ],
+              "offset": [
+                0,
+                1,
+                0
+              ]
+            }
+          ]
         }
       },
       {
@@ -1945,9 +2106,10 @@
         "heightmap": "MOTION_BLOCKING"
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": 0,
-        "y_spread": -1
+        "type": "minecraft:offset",
+        "x": 0,
+        "y": -1,
+        "z": 0
       },
       {
         "type": "minecraft:block_predicate_filter",
@@ -2238,9 +2400,10 @@
         }
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": 0,
-        "y_spread": -1
+        "type": "minecraft:offset",
+        "x": 0,
+        "y": -1,
+        "z": 0
       },
       {
         "type": "minecraft:biome"
@@ -2282,9 +2445,10 @@
         }
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": 0,
-        "y_spread": 1
+        "type": "minecraft:offset",
+        "x": 0,
+        "y": 1,
+        "z": 0
       },
       {
         "type": "minecraft:biome"
@@ -2326,9 +2490,10 @@
         }
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": 0,
-        "y_spread": 1
+        "type": "minecraft:offset",
+        "x": 0,
+        "y": 1,
+        "z": 0
       },
       {
         "type": "minecraft:biome"
@@ -3687,17 +3852,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -3794,17 +3965,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -3853,17 +4030,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -3912,17 +4095,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -3971,17 +4160,23 @@
         "count": 24
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 5,
           "min": -5,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 5,
+          "min": -5,
           "plateau": 0
         }
       },
@@ -4002,17 +4197,23 @@
         "count": 10
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -4061,17 +4262,23 @@
         "count": 10
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -4120,17 +4327,23 @@
         "count": 10
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -4180,17 +4393,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -4221,17 +4440,23 @@
         "count": 4
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -4266,17 +4491,23 @@
         "count": 4
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -4311,17 +4542,23 @@
         "count": 4
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -4356,17 +4593,23 @@
         "count": 64
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -4401,17 +4644,23 @@
         "count": 64
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -4458,17 +4707,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -4588,17 +4843,23 @@
         "count": 20
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 4,
           "min": -4,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 4,
+          "min": -4,
           "plateau": 0
         }
       },
@@ -4704,17 +4965,23 @@
         "count": 20
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 4,
           "min": -4,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 4,
+          "min": -4,
           "plateau": 0
         }
       },
@@ -4749,17 +5016,23 @@
         "count": 20
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 4,
           "min": -4,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 4,
+          "min": -4,
           "plateau": 0
         }
       },
@@ -4790,17 +5063,23 @@
         "count": 32
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -4835,17 +5114,23 @@
         "count": 32
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -4880,17 +5165,23 @@
         "count": 32
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -4944,17 +5235,23 @@
         "count": 16
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -4989,17 +5286,23 @@
         "count": 32
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -5036,17 +5339,23 @@
         "count": 32
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -5081,17 +5390,23 @@
         "count": 32
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -5126,17 +5441,23 @@
         "count": 32
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -5167,17 +5488,23 @@
         "count": 32
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -5212,17 +5539,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -5257,17 +5590,23 @@
         "count": 32
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -5316,17 +5655,23 @@
         "count": 64
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -5378,17 +5723,23 @@
         "count": 64
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -5440,17 +5791,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -5495,17 +5852,23 @@
         "count": 8
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -5552,17 +5915,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -5611,17 +5980,23 @@
         "count": 20
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 4,
           "min": -4,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 0,
           "min": 0,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 4,
+          "min": -4,
           "plateau": 0
         }
       },
@@ -5723,17 +6098,23 @@
         "count": 20
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 4,
           "min": -4,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 0,
           "min": 0,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 4,
+          "min": -4,
           "plateau": 0
         }
       },
@@ -5831,17 +6212,23 @@
         "count": 20
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 4,
           "min": -4,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 0,
           "min": 0,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 4,
+          "min": -4,
           "plateau": 0
         }
       },
@@ -5943,17 +6330,23 @@
         "count": 20
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 4,
           "min": -4,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 0,
           "min": 0,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 4,
+          "min": -4,
           "plateau": 0
         }
       },
@@ -6055,17 +6448,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -6086,17 +6485,23 @@
         "count": 32
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -6131,17 +6536,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -6182,17 +6593,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -6227,17 +6644,23 @@
         "count": 10
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -6371,20 +6794,27 @@
         }
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:clamped_normal",
           "deviation": 3.0,
           "max_inclusive": 10,
           "mean": 0.0,
           "min_inclusive": -10
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:clamped_normal",
           "deviation": 0.6,
           "max_inclusive": 2,
           "mean": 0.0,
           "min_inclusive": -2
+        },
+        "z": {
+          "type": "minecraft:clamped_normal",
+          "deviation": 3.0,
+          "max_inclusive": 10,
+          "mean": 0.0,
+          "min_inclusive": -10
         }
       },
       {
@@ -6422,17 +6852,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -6467,17 +6903,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -6512,17 +6954,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -6557,17 +7005,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -6602,17 +7056,23 @@
         "count": 96
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 7,
           "min": -7,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 3,
           "min": -3,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
           "plateau": 0
         }
       },
@@ -6681,9 +7141,10 @@
         }
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": 0,
-        "y_spread": -1
+        "type": "minecraft:offset",
+        "x": 0,
+        "y": -1,
+        "z": 0
       },
       {
         "type": "minecraft:biome"
@@ -6729,9 +7190,10 @@
         }
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": 0,
-        "y_spread": -1
+        "type": "minecraft:offset",
+        "x": 0,
+        "y": -1,
+        "z": 0
       },
       {
         "type": "minecraft:biome"
@@ -7018,9 +7480,10 @@
         }
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": 0,
-        "y_spread": -1
+        "type": "minecraft:offset",
+        "x": 0,
+        "y": -1,
+        "z": 0
       },
       {
         "type": "minecraft:biome"
@@ -7322,9 +7785,10 @@
         }
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": 0,
-        "y_spread": -1
+        "type": "minecraft:offset",
+        "x": 0,
+        "y": -1,
+        "z": 0
       },
       {
         "type": "minecraft:block_predicate_filter",
@@ -7373,20 +7837,27 @@
         }
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:clamped_normal",
           "deviation": 3.0,
           "max_inclusive": 10,
           "mean": 0.0,
           "min_inclusive": -10
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:clamped_normal",
           "deviation": 0.6,
           "max_inclusive": 2,
           "mean": 0.0,
           "min_inclusive": -2
+        },
+        "z": {
+          "type": "minecraft:clamped_normal",
+          "deviation": 3.0,
+          "max_inclusive": 10,
+          "mean": 0.0,
+          "min_inclusive": -10
         }
       },
       {
@@ -8480,17 +8951,23 @@
         "count": 64
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 6,
           "min": -6,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 2,
           "min": -2,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 6,
+          "min": -6,
           "plateau": 0
         }
       },
@@ -8527,17 +9004,23 @@
         "count": 8
       },
       {
-        "type": "minecraft:random_offset",
-        "xz_spread": {
+        "type": "minecraft:offset",
+        "x": {
           "type": "minecraft:trapezoid",
           "max": 6,
           "min": -6,
           "plateau": 0
         },
-        "y_spread": {
+        "y": {
           "type": "minecraft:trapezoid",
           "max": 2,
           "min": -2,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 6,
+          "min": -6,
           "plateau": 0
         }
       },

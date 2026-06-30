@@ -783,7 +783,7 @@
     "sequence": [
       {
         "type": "minecraft:condition",
-        "if_true": "minecraft:above_water",
+        "if_true": "minecraft:not_underwater",
         "then_run": {
           "type": "minecraft:block",
           "result_state": {
@@ -855,7 +855,7 @@
       },
       {
         "type": "minecraft:condition",
-        "if_true": "minecraft:above_water",
+        "if_true": "minecraft:not_underwater",
         "then_run": {
           "type": "minecraft:block",
           "result_state": {
@@ -871,7 +871,7 @@
       "minecraft:overworld/powder_snow_surface",
       {
         "type": "minecraft:condition",
-        "if_true": "minecraft:above_water",
+        "if_true": "minecraft:not_underwater",
         "then_run": {
           "type": "minecraft:block",
           "result_state": {
@@ -883,7 +883,7 @@
   },
   "overworld/biome_surface/ice_spikes": {
     "type": "minecraft:condition",
-    "if_true": "minecraft:above_water",
+    "if_true": "minecraft:not_underwater",
     "then_run": {
       "type": "minecraft:block",
       "result_state": {
@@ -908,7 +908,7 @@
       },
       {
         "type": "minecraft:condition",
-        "if_true": "minecraft:above_water",
+        "if_true": "minecraft:not_underwater",
         "then_run": {
           "type": "minecraft:block",
           "result_state": {
@@ -989,7 +989,7 @@
       "minecraft:overworld/powder_snow_surface",
       {
         "type": "minecraft:condition",
-        "if_true": "minecraft:above_water",
+        "if_true": "minecraft:not_underwater",
         "then_run": {
           "type": "minecraft:block",
           "result_state": {
@@ -1180,7 +1180,7 @@
     },
     "then_run": {
       "type": "minecraft:condition",
-      "if_true": "minecraft:above_water",
+      "if_true": "minecraft:not_underwater",
       "then_run": {
         "type": "minecraft:block",
         "result_state": {
@@ -1199,7 +1199,7 @@
     },
     "then_run": {
       "type": "minecraft:condition",
-      "if_true": "minecraft:above_water",
+      "if_true": "minecraft:not_underwater",
       "then_run": {
         "type": "minecraft:block",
         "result_state": {
@@ -1708,40 +1708,10 @@
                     "type": "minecraft:hole"
                   },
                   "then_run": {
-                    "type": "minecraft:sequence",
-                    "sequence": [
-                      {
-                        "type": "minecraft:condition",
-                        "if_true": "minecraft:above_water",
-                        "then_run": {
-                          "type": "minecraft:block",
-                          "result_state": {
-                            "Name": "minecraft:air"
-                          }
-                        }
-                      },
-                      {
-                        "type": "minecraft:condition",
-                        "if_true": {
-                          "type": "minecraft:temperature"
-                        },
-                        "then_run": {
-                          "type": "minecraft:block",
-                          "result_state": {
-                            "Name": "minecraft:ice"
-                          }
-                        }
-                      },
-                      {
-                        "type": "minecraft:block",
-                        "result_state": {
-                          "Name": "minecraft:water",
-                          "Properties": {
-                            "level": "0"
-                          }
-                        }
-                      }
-                    ]
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:air"
+                    }
                   }
                 }
               },
@@ -2051,7 +2021,7 @@
       },
       {
         "type": "minecraft:condition",
-        "if_true": "minecraft:above_water",
+        "if_true": "minecraft:not_underwater",
         "then_run": {
           "type": "minecraft:block",
           "result_state": {
@@ -2097,7 +2067,7 @@
       "minecraft:overworld/powder_snow_under_surface",
       {
         "type": "minecraft:condition",
-        "if_true": "minecraft:above_water",
+        "if_true": "minecraft:not_underwater",
         "then_run": {
           "type": "minecraft:block",
           "result_state": {

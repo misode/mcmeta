@@ -224,17 +224,23 @@
           "count": 32
         },
         {
-          "type": "minecraft:random_offset",
-          "xz_spread": {
+          "type": "minecraft:offset",
+          "x": {
             "type": "minecraft:trapezoid",
             "max": 7,
             "min": -7,
             "plateau": 0
           },
-          "y_spread": {
+          "y": {
             "type": "minecraft:trapezoid",
             "max": 3,
             "min": -3,
+            "plateau": 0
+          },
+          "z": {
+            "type": "minecraft:trapezoid",
+            "max": 7,
+            "min": -7,
             "plateau": 0
           }
         },
@@ -297,7 +303,300 @@
     }
   },
   "basalt_pillar": {
-    "type": "minecraft:basalt_pillar"
+    "type": "minecraft:overlay",
+    "features": [
+      {
+        "feature": {
+          "type": "minecraft:single_block_pillar",
+          "block": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "minecraft:basalt",
+              "Properties": {
+                "axis": "y"
+              }
+            }
+          },
+          "can_replace": {
+            "type": "minecraft:matching_block_tag",
+            "tag": "minecraft:air"
+          },
+          "cap_feature": {
+            "feature": {
+              "type": "minecraft:overlay",
+              "features": [
+                {
+                  "feature": {
+                    "type": "minecraft:projected_random_patchy_square",
+                    "block": {
+                      "type": "minecraft:rule_based_state_provider",
+                      "rules": [
+                        {
+                          "if_true": {
+                            "type": "minecraft:not",
+                            "predicate": {
+                              "type": "minecraft:matching_block_tag",
+                              "offset": [
+                                0,
+                                -1,
+                                0
+                              ],
+                              "tag": "minecraft:air"
+                            }
+                          },
+                          "then": {
+                            "type": "minecraft:simple_state_provider",
+                            "state": {
+                              "Name": "minecraft:basalt",
+                              "Properties": {
+                                "axis": "y"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "max_projection_height": 3,
+                    "project_through": {
+                      "type": "minecraft:matching_block_tag",
+                      "tag": "minecraft:air"
+                    },
+                    "size": 3
+                  },
+                  "placement": [
+                    {
+                      "type": "minecraft:offset",
+                      "x": 0,
+                      "y": -1,
+                      "z": 0
+                    }
+                  ]
+                },
+                {
+                  "feature": {
+                    "type": "minecraft:simple_block",
+                    "to_place": {
+                      "type": "minecraft:simple_state_provider",
+                      "state": {
+                        "Name": "minecraft:basalt",
+                        "Properties": {
+                          "axis": "y"
+                        }
+                      }
+                    }
+                  },
+                  "placement": [
+                    {
+                      "type": "minecraft:rarity_filter",
+                      "chance": 2
+                    },
+                    {
+                      "type": "minecraft:offset",
+                      "x": 1,
+                      "y": 0,
+                      "z": 0
+                    }
+                  ]
+                },
+                {
+                  "feature": {
+                    "type": "minecraft:simple_block",
+                    "to_place": {
+                      "type": "minecraft:simple_state_provider",
+                      "state": {
+                        "Name": "minecraft:basalt",
+                        "Properties": {
+                          "axis": "y"
+                        }
+                      }
+                    }
+                  },
+                  "placement": [
+                    {
+                      "type": "minecraft:rarity_filter",
+                      "chance": 2
+                    },
+                    {
+                      "type": "minecraft:offset",
+                      "x": -1,
+                      "y": 0,
+                      "z": 0
+                    }
+                  ]
+                },
+                {
+                  "feature": {
+                    "type": "minecraft:simple_block",
+                    "to_place": {
+                      "type": "minecraft:simple_state_provider",
+                      "state": {
+                        "Name": "minecraft:basalt",
+                        "Properties": {
+                          "axis": "y"
+                        }
+                      }
+                    }
+                  },
+                  "placement": [
+                    {
+                      "type": "minecraft:rarity_filter",
+                      "chance": 2
+                    },
+                    {
+                      "type": "minecraft:offset",
+                      "x": 0,
+                      "y": 0,
+                      "z": 1
+                    }
+                  ]
+                },
+                {
+                  "feature": {
+                    "type": "minecraft:simple_block",
+                    "to_place": {
+                      "type": "minecraft:simple_state_provider",
+                      "state": {
+                        "Name": "minecraft:basalt",
+                        "Properties": {
+                          "axis": "y"
+                        }
+                      }
+                    }
+                  },
+                  "placement": [
+                    {
+                      "type": "minecraft:rarity_filter",
+                      "chance": 2
+                    },
+                    {
+                      "type": "minecraft:offset",
+                      "x": 0,
+                      "y": 0,
+                      "z": -1
+                    }
+                  ]
+                }
+              ]
+            },
+            "placement": []
+          },
+          "direction": "down"
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "minecraft:single_block_pillar",
+          "block": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "minecraft:basalt",
+              "Properties": {
+                "axis": "y"
+              }
+            }
+          },
+          "can_replace": {
+            "type": "minecraft:matching_block_tag",
+            "tag": "minecraft:air"
+          },
+          "chance_to_continue": 0.9,
+          "direction": "down"
+        },
+        "placement": [
+          {
+            "type": "minecraft:offset",
+            "x": 1,
+            "y": 0,
+            "z": 0
+          }
+        ]
+      },
+      {
+        "feature": {
+          "type": "minecraft:single_block_pillar",
+          "block": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "minecraft:basalt",
+              "Properties": {
+                "axis": "y"
+              }
+            }
+          },
+          "can_replace": {
+            "type": "minecraft:matching_block_tag",
+            "tag": "minecraft:air"
+          },
+          "chance_to_continue": 0.9,
+          "direction": "down"
+        },
+        "placement": [
+          {
+            "type": "minecraft:offset",
+            "x": -1,
+            "y": 0,
+            "z": 0
+          }
+        ]
+      },
+      {
+        "feature": {
+          "type": "minecraft:single_block_pillar",
+          "block": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "minecraft:basalt",
+              "Properties": {
+                "axis": "y"
+              }
+            }
+          },
+          "can_replace": {
+            "type": "minecraft:matching_block_tag",
+            "tag": "minecraft:air"
+          },
+          "chance_to_continue": 0.9,
+          "direction": "down"
+        },
+        "placement": [
+          {
+            "type": "minecraft:offset",
+            "x": 0,
+            "y": 0,
+            "z": 1
+          }
+        ]
+      },
+      {
+        "feature": {
+          "type": "minecraft:single_block_pillar",
+          "block": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "minecraft:basalt",
+              "Properties": {
+                "axis": "y"
+              }
+            }
+          },
+          "can_replace": {
+            "type": "minecraft:matching_block_tag",
+            "tag": "minecraft:air"
+          },
+          "chance_to_continue": 0.9,
+          "direction": "down"
+        },
+        "placement": [
+          {
+            "type": "minecraft:offset",
+            "x": 0,
+            "y": 0,
+            "z": -1
+          }
+        ]
+      }
+    ]
   },
   "berry_bush": {
     "type": "minecraft:simple_block",
@@ -4797,17 +5096,23 @@
             "count": 96
           },
           {
-            "type": "minecraft:random_offset",
-            "xz_spread": {
+            "type": "minecraft:offset",
+            "x": {
               "type": "minecraft:trapezoid",
               "max": 7,
               "min": -7,
               "plateau": 0
             },
-            "y_spread": {
+            "y": {
               "type": "minecraft:trapezoid",
               "max": 3,
               "min": -3,
+              "plateau": 0
+            },
+            "z": {
+              "type": "minecraft:trapezoid",
+              "max": 7,
+              "min": -7,
               "plateau": 0
             }
           },
@@ -4839,17 +5144,23 @@
             "count": 96
           },
           {
-            "type": "minecraft:random_offset",
-            "xz_spread": {
+            "type": "minecraft:offset",
+            "x": {
               "type": "minecraft:trapezoid",
               "max": 7,
               "min": -7,
               "plateau": 0
             },
-            "y_spread": {
+            "y": {
               "type": "minecraft:trapezoid",
               "max": 3,
               "min": -3,
+              "plateau": 0
+            },
+            "z": {
+              "type": "minecraft:trapezoid",
+              "max": 7,
+              "min": -7,
               "plateau": 0
             }
           },
@@ -4881,17 +5192,23 @@
             "count": 96
           },
           {
-            "type": "minecraft:random_offset",
-            "xz_spread": {
+            "type": "minecraft:offset",
+            "x": {
               "type": "minecraft:trapezoid",
               "max": 7,
               "min": -7,
               "plateau": 0
             },
-            "y_spread": {
+            "y": {
               "type": "minecraft:trapezoid",
               "max": 3,
               "min": -3,
+              "plateau": 0
+            },
+            "z": {
+              "type": "minecraft:trapezoid",
+              "max": 7,
+              "min": -7,
               "plateau": 0
             }
           },
@@ -4920,17 +5237,23 @@
             "count": 96
           },
           {
-            "type": "minecraft:random_offset",
-            "xz_spread": {
+            "type": "minecraft:offset",
+            "x": {
               "type": "minecraft:trapezoid",
               "max": 7,
               "min": -7,
               "plateau": 0
             },
-            "y_spread": {
+            "y": {
               "type": "minecraft:trapezoid",
               "max": 3,
               "min": -3,
+              "plateau": 0
+            },
+            "z": {
+              "type": "minecraft:trapezoid",
+              "max": 7,
+              "min": -7,
               "plateau": 0
             }
           },
@@ -5030,7 +5353,30 @@
     "search_range": 20
   },
   "glowstone_extra": {
-    "type": "minecraft:glowstone_blob"
+    "type": "minecraft:random_neighbor_spread",
+    "accepted_neighbors": "minecraft:glowstone",
+    "attempts": 1500,
+    "block": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:glowstone"
+      }
+    },
+    "can_replace": {
+      "type": "minecraft:matching_block_tag",
+      "tag": "minecraft:air"
+    },
+    "xy_offset": {
+      "type": "minecraft:trapezoid",
+      "max": 7,
+      "min": -7,
+      "plateau": 0
+    },
+    "y_offset": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 0,
+      "min_inclusive": -11
+    }
   },
   "grass": {
     "type": "minecraft:simple_block",
@@ -5418,17 +5764,133 @@
     }
   },
   "large_basalt_columns": {
-    "type": "minecraft:basalt_columns",
-    "height": {
-      "type": "minecraft:uniform",
-      "max_inclusive": 10,
-      "min_inclusive": 5
-    },
-    "reach": {
-      "type": "minecraft:uniform",
-      "max_inclusive": 3,
-      "min_inclusive": 2
-    }
+    "type": "minecraft:weighted_random_selector",
+    "features": [
+      {
+        "data": {
+          "feature": {
+            "type": "minecraft:stepped_column_cluster",
+            "block": {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:basalt",
+                "Properties": {
+                  "axis": "y"
+                }
+              }
+            },
+            "can_replace": {
+              "type": "minecraft:any_of",
+              "predicates": [
+                {
+                  "type": "minecraft:matching_block_tag",
+                  "tag": "minecraft:air"
+                },
+                {
+                  "type": "minecraft:all_of",
+                  "predicates": [
+                    {
+                      "type": "minecraft:matching_blocks",
+                      "blocks": "minecraft:lava"
+                    },
+                    {
+                      "type": "minecraft:height_range",
+                      "max_inclusive": {
+                        "relative_to_sea_level": 0
+                      },
+                      "min_inclusive": {
+                        "above_bottom": 0
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "cannot_place_on": "#minecraft:cannot_place_basalt_pillar_on",
+            "cluster_reach": 5,
+            "column_count": 50,
+            "column_reach": {
+              "type": "minecraft:uniform",
+              "max_inclusive": 3,
+              "min_inclusive": 2
+            },
+            "continue_through": {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:basalt"
+            },
+            "height": {
+              "type": "minecraft:uniform",
+              "max_inclusive": 10,
+              "min_inclusive": 5
+            }
+          },
+          "placement": []
+        },
+        "weight": 9
+      },
+      {
+        "data": {
+          "feature": {
+            "type": "minecraft:stepped_column_cluster",
+            "block": {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:basalt",
+                "Properties": {
+                  "axis": "y"
+                }
+              }
+            },
+            "can_replace": {
+              "type": "minecraft:any_of",
+              "predicates": [
+                {
+                  "type": "minecraft:matching_block_tag",
+                  "tag": "minecraft:air"
+                },
+                {
+                  "type": "minecraft:all_of",
+                  "predicates": [
+                    {
+                      "type": "minecraft:matching_blocks",
+                      "blocks": "minecraft:lava"
+                    },
+                    {
+                      "type": "minecraft:height_range",
+                      "max_inclusive": {
+                        "relative_to_sea_level": 0
+                      },
+                      "min_inclusive": {
+                        "above_bottom": 0
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "cannot_place_on": "#minecraft:cannot_place_basalt_pillar_on",
+            "cluster_reach": 8,
+            "column_count": 15,
+            "column_reach": {
+              "type": "minecraft:uniform",
+              "max_inclusive": 3,
+              "min_inclusive": 2
+            },
+            "continue_through": {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:basalt"
+            },
+            "height": {
+              "type": "minecraft:uniform",
+              "max_inclusive": 10,
+              "min_inclusive": 5
+            }
+          },
+          "placement": []
+        },
+        "weight": 1
+      }
+    ]
   },
   "large_dripstone": {
     "type": "minecraft:large_dripstone",
@@ -9158,9 +9620,10 @@
             }
           },
           {
-            "type": "minecraft:random_offset",
-            "xz_spread": 0,
-            "y_spread": 1
+            "type": "minecraft:offset",
+            "x": 0,
+            "y": 1,
+            "z": 0
           }
         ]
       },
@@ -9203,9 +9666,10 @@
             }
           },
           {
-            "type": "minecraft:random_offset",
-            "xz_spread": 0,
-            "y_spread": -1
+            "type": "minecraft:offset",
+            "x": 0,
+            "y": -1,
+            "z": 0
           }
         ]
       }
@@ -9891,13 +10355,125 @@
     "probability": 0.8
   },
   "small_basalt_columns": {
-    "type": "minecraft:basalt_columns",
-    "height": {
-      "type": "minecraft:uniform",
-      "max_inclusive": 4,
-      "min_inclusive": 1
-    },
-    "reach": 1
+    "type": "minecraft:weighted_random_selector",
+    "features": [
+      {
+        "data": {
+          "feature": {
+            "type": "minecraft:stepped_column_cluster",
+            "block": {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:basalt",
+                "Properties": {
+                  "axis": "y"
+                }
+              }
+            },
+            "can_replace": {
+              "type": "minecraft:any_of",
+              "predicates": [
+                {
+                  "type": "minecraft:matching_block_tag",
+                  "tag": "minecraft:air"
+                },
+                {
+                  "type": "minecraft:all_of",
+                  "predicates": [
+                    {
+                      "type": "minecraft:matching_blocks",
+                      "blocks": "minecraft:lava"
+                    },
+                    {
+                      "type": "minecraft:height_range",
+                      "max_inclusive": {
+                        "relative_to_sea_level": 0
+                      },
+                      "min_inclusive": {
+                        "above_bottom": 0
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "cannot_place_on": "#minecraft:cannot_place_basalt_pillar_on",
+            "cluster_reach": 5,
+            "column_count": 50,
+            "column_reach": 1,
+            "continue_through": {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:basalt"
+            },
+            "height": {
+              "type": "minecraft:uniform",
+              "max_inclusive": 4,
+              "min_inclusive": 1
+            }
+          },
+          "placement": []
+        },
+        "weight": 9
+      },
+      {
+        "data": {
+          "feature": {
+            "type": "minecraft:stepped_column_cluster",
+            "block": {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:basalt",
+                "Properties": {
+                  "axis": "y"
+                }
+              }
+            },
+            "can_replace": {
+              "type": "minecraft:any_of",
+              "predicates": [
+                {
+                  "type": "minecraft:matching_block_tag",
+                  "tag": "minecraft:air"
+                },
+                {
+                  "type": "minecraft:all_of",
+                  "predicates": [
+                    {
+                      "type": "minecraft:matching_blocks",
+                      "blocks": "minecraft:lava"
+                    },
+                    {
+                      "type": "minecraft:height_range",
+                      "max_inclusive": {
+                        "relative_to_sea_level": 0
+                      },
+                      "min_inclusive": {
+                        "above_bottom": 0
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "cannot_place_on": "#minecraft:cannot_place_basalt_pillar_on",
+            "cluster_reach": 8,
+            "column_count": 15,
+            "column_reach": 1,
+            "continue_through": {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:basalt"
+            },
+            "height": {
+              "type": "minecraft:uniform",
+              "max_inclusive": 4,
+              "min_inclusive": 1
+            }
+          },
+          "placement": []
+        },
+        "weight": 1
+      }
+    ]
   },
   "spore_blossom": {
     "type": "minecraft:simple_block",
@@ -10231,9 +10807,10 @@
             }
           },
           {
-            "type": "minecraft:random_offset",
-            "xz_spread": 0,
-            "y_spread": 1
+            "type": "minecraft:offset",
+            "x": 0,
+            "y": 1,
+            "z": 0
           }
         ]
       },
@@ -10276,9 +10853,10 @@
             }
           },
           {
-            "type": "minecraft:random_offset",
-            "xz_spread": 0,
-            "y_spread": -1
+            "type": "minecraft:offset",
+            "x": 0,
+            "y": -1,
+            "z": 0
           }
         ]
       }
@@ -10350,17 +10928,23 @@
                     "count": 64
                   },
                   {
-                    "type": "minecraft:random_offset",
-                    "xz_spread": {
+                    "type": "minecraft:offset",
+                    "x": {
                       "type": "minecraft:trapezoid",
                       "max": 7,
                       "min": -7,
                       "plateau": 0
                     },
-                    "y_spread": {
+                    "y": {
                       "type": "minecraft:trapezoid",
                       "max": 3,
                       "min": -3,
+                      "plateau": 0
+                    },
+                    "z": {
+                      "type": "minecraft:trapezoid",
+                      "max": 7,
+                      "min": -7,
                       "plateau": 0
                     }
                   },
@@ -10412,9 +10996,10 @@
                 },
                 "placement": [
                   {
-                    "type": "minecraft:random_offset",
-                    "xz_spread": 0,
-                    "y_spread": -7
+                    "type": "minecraft:offset",
+                    "x": 0,
+                    "y": -7,
+                    "z": 0
                   }
                 ]
               }
@@ -10445,17 +11030,23 @@
                     "count": 80
                   },
                   {
-                    "type": "minecraft:random_offset",
-                    "xz_spread": {
+                    "type": "minecraft:offset",
+                    "x": {
                       "type": "minecraft:trapezoid",
                       "max": 8,
                       "min": -8,
                       "plateau": 0
                     },
-                    "y_spread": {
+                    "y": {
                       "type": "minecraft:trapezoid",
                       "max": 3,
                       "min": -3,
+                      "plateau": 0
+                    },
+                    "z": {
+                      "type": "minecraft:trapezoid",
+                      "max": 8,
+                      "min": -8,
                       "plateau": 0
                     }
                   },
@@ -10501,9 +11092,10 @@
                 },
                 "placement": [
                   {
-                    "type": "minecraft:random_offset",
-                    "xz_spread": 0,
-                    "y_spread": -7
+                    "type": "minecraft:offset",
+                    "x": 0,
+                    "y": -7,
+                    "z": 0
                   }
                 ]
               }
@@ -10534,17 +11126,23 @@
                     "count": 96
                   },
                   {
-                    "type": "minecraft:random_offset",
-                    "xz_spread": {
+                    "type": "minecraft:offset",
+                    "x": {
                       "type": "minecraft:trapezoid",
                       "max": 9,
                       "min": -9,
                       "plateau": 0
                     },
-                    "y_spread": {
+                    "y": {
                       "type": "minecraft:trapezoid",
                       "max": 3,
                       "min": -3,
+                      "plateau": 0
+                    },
+                    "z": {
+                      "type": "minecraft:trapezoid",
+                      "max": 9,
+                      "min": -9,
                       "plateau": 0
                     }
                   },
@@ -10584,9 +11182,10 @@
                 },
                 "placement": [
                   {
-                    "type": "minecraft:random_offset",
-                    "xz_spread": 0,
-                    "y_spread": -7
+                    "type": "minecraft:offset",
+                    "x": 0,
+                    "y": -7,
+                    "z": 0
                   }
                 ]
               }
@@ -10617,17 +11216,23 @@
                     "count": 128
                   },
                   {
-                    "type": "minecraft:random_offset",
-                    "xz_spread": {
+                    "type": "minecraft:offset",
+                    "x": {
                       "type": "minecraft:trapezoid",
                       "max": 10,
                       "min": -10,
                       "plateau": 0
                     },
-                    "y_spread": {
+                    "y": {
                       "type": "minecraft:trapezoid",
                       "max": 3,
                       "min": -3,
+                      "plateau": 0
+                    },
+                    "z": {
+                      "type": "minecraft:trapezoid",
+                      "max": 10,
+                      "min": -10,
                       "plateau": 0
                     }
                   },
@@ -10661,9 +11266,10 @@
                 },
                 "placement": [
                   {
-                    "type": "minecraft:random_offset",
-                    "xz_spread": 0,
-                    "y_spread": -7
+                    "type": "minecraft:offset",
+                    "x": 0,
+                    "y": -7,
+                    "z": 0
                   }
                 ]
               }
