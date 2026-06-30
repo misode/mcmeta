@@ -15,11 +15,11 @@ in ivec2 UV1;
 in ivec2 UV2;
 in vec3 Normal;
 
-#ifndef NO_OVERLAY
+#if !defined(NO_OVERLAY) && !defined(OIT_ALPHA_ONLY)
 uniform sampler2D Sampler1;
 #endif
 
-#ifndef EMISSIVE
+#if !defined(EMISSIVE) && !defined(OIT_ALPHA_ONLY)
 uniform sampler2D Sampler2;
 #endif
 
@@ -42,6 +42,9 @@ out vec4 overlayColor;
 #endif
 
 out vec2 texCoord0;
+#ifdef GLINT
+out vec2 texCoordGlint;
+#endif
 
 void main() {
     gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
@@ -59,11 +62,11 @@ void main() {
     vertexColor = minecraft_mix_light(Light0_Direction, Light1_Direction, Normal, Color);
 #endif
 
-#ifndef EMISSIVE
+#if !defined(EMISSIVE) && !defined(OIT_ALPHA_ONLY)
     lightMapColor = sample_lightmap(Sampler2, UV2);
 #endif
 
-#ifndef NO_OVERLAY
+#if !defined(NO_OVERLAY) && !defined(OIT_ALPHA_ONLY)
     overlayColor = texelFetch(Sampler1, UV1, 0);
 #endif
 
@@ -71,5 +74,9 @@ void main() {
 
 #ifdef APPLY_TEXTURE_MATRIX
     texCoord0 = (TextureMat * vec4(UV0, 0.0, 1.0)).xy;
+#endif
+
+#ifdef GLINT
+    texCoordGlint = (TextureMat * vec4(UV0, 0.0, 1.0)).xy;
 #endif
 }
