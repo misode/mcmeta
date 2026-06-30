@@ -3,13 +3,16 @@
 #moj_import <minecraft:dynamictransforms.glsl>
 #moj_import <minecraft:oit.glsl>
 
-in vec4 vertexColor;
+uniform sampler2D Sampler0;
+
+in vec2 texCoord0;
 
 #ifndef OIT_ALPHA_ONLY
 out vec4 fragColor;
 #endif
 
 vec4 calculateFinalColor(vec4 color) {
+    color *= ColorModulator;
     #ifdef OIT_ACCUMULATE
     color = sampleColorForAccumulation(color);
     #endif
@@ -17,12 +20,10 @@ vec4 calculateFinalColor(vec4 color) {
 }
 
 void main() {
-    vec4 color = vertexColor;
+    vec4 color = texture(Sampler0, texCoord0);
     if (color.a == 0.0) {
         discard;
     }
-
-    color *= ColorModulator;
 
     #ifdef OIT_ALPHA_ONLY
     executeAlphaOnlyPhase(gl_FragCoord.z, color.a);
