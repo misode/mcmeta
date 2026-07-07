@@ -10061,10 +10061,7 @@
                 }
               },
               "executable": true,
-              "parser": "minecraft:resource_key",
-              "properties": {
-                "registry": "minecraft:worldgen/feature"
-              }
+              "parser": "minecraft:feature"
             }
           }
         },
@@ -10801,6 +10798,86 @@
         }
       }
     },
+    "posteffect": {
+      "type": "literal",
+      "children": {
+        "add": {
+          "type": "literal",
+          "children": {
+            "targets": {
+              "type": "argument",
+              "children": {
+                "posteffect": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:resource_location"
+                }
+              },
+              "parser": "minecraft:entity",
+              "properties": {
+                "type": "players",
+                "amount": "multiple"
+              }
+            }
+          }
+        },
+        "clear": {
+          "type": "literal",
+          "children": {
+            "targets": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:entity",
+              "properties": {
+                "type": "players",
+                "amount": "multiple"
+              }
+            }
+          }
+        },
+        "list": {
+          "type": "literal",
+          "children": {
+            "target": {
+              "type": "argument",
+              "executable": true,
+              "parser": "minecraft:entity",
+              "properties": {
+                "type": "players",
+                "amount": "single"
+              }
+            }
+          }
+        },
+        "remove": {
+          "type": "literal",
+          "children": {
+            "targets": {
+              "type": "argument",
+              "children": {
+                "posteffect": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "minecraft:resource_location"
+                }
+              },
+              "parser": "minecraft:entity",
+              "properties": {
+                "type": "players",
+                "amount": "multiple"
+              }
+            }
+          }
+        }
+      },
+      "permissions": {
+        "type": "minecraft:require",
+        "permission": {
+          "type": "minecraft:command_level",
+          "level": "gamemasters"
+        }
+      }
+    },
     "publish": {
       "type": "literal",
       "children": {
@@ -11217,10 +11294,7 @@
             "function": {
               "type": "argument",
               "executable": true,
-              "parser": "brigadier:string",
-              "properties": {
-                "type": "greedy"
-              }
+              "parser": "minecraft:resource_location"
             }
           }
         },

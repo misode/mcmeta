@@ -81,6 +81,18 @@
       }
     ]
   },
+  "bamboo_in_structure": {
+    "feature": "minecraft:bamboo_no_podzol",
+    "placement": [
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:matching_block_tag",
+          "tag": "minecraft:air"
+        }
+      }
+    ]
+  },
   "bamboo_light": {
     "feature": "minecraft:bamboo_no_podzol",
     "placement": [
@@ -2219,7 +2231,35 @@
       },
       {
         "type": "minecraft:heightmap",
-        "heightmap": "OCEAN_FLOOR_WG"
+        "heightmap": "OCEAN_FLOOR"
+      },
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:all_of",
+          "predicates": [
+            {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:water"
+            },
+            {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:water",
+              "offset": [
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "type": "minecraft:not",
+              "predicate": {
+                "type": "minecraft:matching_block_tag",
+                "tag": "minecraft:cannot_support_kelp"
+              }
+            }
+          ]
+        }
       },
       {
         "type": "minecraft:biome"
@@ -2239,7 +2279,35 @@
       },
       {
         "type": "minecraft:heightmap",
-        "heightmap": "OCEAN_FLOOR_WG"
+        "heightmap": "OCEAN_FLOOR"
+      },
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:all_of",
+          "predicates": [
+            {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:water"
+            },
+            {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:water",
+              "offset": [
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "type": "minecraft:not",
+              "predicate": {
+                "type": "minecraft:matching_block_tag",
+                "tag": "minecraft:cannot_support_kelp"
+              }
+            }
+          ]
+        }
       },
       {
         "type": "minecraft:biome"
@@ -2729,6 +2797,23 @@
           "type": "minecraft:would_survive",
           "state": {
             "Name": "minecraft:oak_sapling",
+            "Properties": {
+              "stage": "0"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "orange_poplar": {
+    "feature": "minecraft:orange_poplar",
+    "placement": [
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:would_survive",
+          "state": {
+            "Name": "minecraft:poplar_sapling",
             "Properties": {
               "stage": "0"
             }
@@ -7085,6 +7170,23 @@
       }
     ]
   },
+  "red_poplar": {
+    "feature": "minecraft:red_poplar",
+    "placement": [
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:would_survive",
+          "state": {
+            "Name": "minecraft:poplar_sapling",
+            "Properties": {
+              "stage": "0"
+            }
+          }
+        }
+      }
+    ]
+  },
   "red_poplar_leaf_litter": {
     "feature": "minecraft:red_poplar_leaf_litter",
     "placement": [
@@ -7273,8 +7375,40 @@
         "type": "minecraft:in_square"
       },
       {
+        "type": "minecraft:count",
+        "count": 20
+      },
+      {
+        "type": "minecraft:offset",
+        "x": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        },
+        "y": {
+          "type": "minecraft:trapezoid",
+          "max": 0,
+          "min": 0,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        }
+      },
+      {
         "type": "minecraft:heightmap",
-        "heightmap": "OCEAN_FLOOR_WG"
+        "heightmap": "OCEAN_FLOOR"
+      },
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "blocks": "minecraft:water"
+        }
       },
       {
         "type": "minecraft:biome"
@@ -7288,12 +7422,40 @@
         "type": "minecraft:in_square"
       },
       {
-        "type": "minecraft:heightmap",
-        "heightmap": "OCEAN_FLOOR_WG"
-      },
-      {
         "type": "minecraft:count",
         "count": 32
+      },
+      {
+        "type": "minecraft:offset",
+        "x": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        },
+        "y": {
+          "type": "minecraft:trapezoid",
+          "max": 0,
+          "min": 0,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        }
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "OCEAN_FLOOR"
+      },
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "blocks": "minecraft:water"
+        }
       },
       {
         "type": "minecraft:biome"
@@ -7307,12 +7469,40 @@
         "type": "minecraft:in_square"
       },
       {
-        "type": "minecraft:heightmap",
-        "heightmap": "OCEAN_FLOOR_WG"
-      },
-      {
         "type": "minecraft:count",
         "count": 48
+      },
+      {
+        "type": "minecraft:offset",
+        "x": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        },
+        "y": {
+          "type": "minecraft:trapezoid",
+          "max": 0,
+          "min": 0,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        }
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "OCEAN_FLOOR"
+      },
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "blocks": "minecraft:water"
+        }
       },
       {
         "type": "minecraft:biome"
@@ -7326,12 +7516,40 @@
         "type": "minecraft:in_square"
       },
       {
-        "type": "minecraft:heightmap",
-        "heightmap": "OCEAN_FLOOR_WG"
-      },
-      {
         "type": "minecraft:count",
         "count": 40
+      },
+      {
+        "type": "minecraft:offset",
+        "x": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        },
+        "y": {
+          "type": "minecraft:trapezoid",
+          "max": 0,
+          "min": 0,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        }
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "OCEAN_FLOOR"
+      },
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "blocks": "minecraft:water"
+        }
       },
       {
         "type": "minecraft:biome"
@@ -7345,12 +7563,40 @@
         "type": "minecraft:in_square"
       },
       {
-        "type": "minecraft:heightmap",
-        "heightmap": "OCEAN_FLOOR_WG"
-      },
-      {
         "type": "minecraft:count",
         "count": 80
+      },
+      {
+        "type": "minecraft:offset",
+        "x": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        },
+        "y": {
+          "type": "minecraft:trapezoid",
+          "max": 0,
+          "min": 0,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        }
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "OCEAN_FLOOR"
+      },
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "blocks": "minecraft:water"
+        }
       },
       {
         "type": "minecraft:biome"
@@ -7364,12 +7610,40 @@
         "type": "minecraft:in_square"
       },
       {
-        "type": "minecraft:heightmap",
-        "heightmap": "OCEAN_FLOOR_WG"
-      },
-      {
         "type": "minecraft:count",
         "count": 48
+      },
+      {
+        "type": "minecraft:offset",
+        "x": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        },
+        "y": {
+          "type": "minecraft:trapezoid",
+          "max": 0,
+          "min": 0,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        }
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "OCEAN_FLOOR"
+      },
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "blocks": "minecraft:water"
+        }
       },
       {
         "type": "minecraft:biome"
@@ -7383,12 +7657,40 @@
         "type": "minecraft:in_square"
       },
       {
-        "type": "minecraft:heightmap",
-        "heightmap": "OCEAN_FLOOR_WG"
-      },
-      {
         "type": "minecraft:count",
         "count": 48
+      },
+      {
+        "type": "minecraft:offset",
+        "x": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        },
+        "y": {
+          "type": "minecraft:trapezoid",
+          "max": 0,
+          "min": 0,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        }
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "OCEAN_FLOOR"
+      },
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "blocks": "minecraft:water"
+        }
       },
       {
         "type": "minecraft:biome"
@@ -7402,12 +7704,40 @@
         "type": "minecraft:in_square"
       },
       {
-        "type": "minecraft:heightmap",
-        "heightmap": "OCEAN_FLOOR_WG"
-      },
-      {
         "type": "minecraft:count",
         "count": 64
+      },
+      {
+        "type": "minecraft:offset",
+        "x": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        },
+        "y": {
+          "type": "minecraft:trapezoid",
+          "max": 0,
+          "min": 0,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        }
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "OCEAN_FLOOR"
+      },
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "blocks": "minecraft:water"
+        }
       },
       {
         "type": "minecraft:biome"
@@ -7421,12 +7751,40 @@
         "type": "minecraft:in_square"
       },
       {
-        "type": "minecraft:heightmap",
-        "heightmap": "OCEAN_FLOOR_WG"
-      },
-      {
         "type": "minecraft:count",
         "count": 80
+      },
+      {
+        "type": "minecraft:offset",
+        "x": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        },
+        "y": {
+          "type": "minecraft:trapezoid",
+          "max": 0,
+          "min": 0,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 7,
+          "min": -7,
+          "plateau": 0
+        }
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "OCEAN_FLOOR"
+      },
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "blocks": "minecraft:water"
+        }
       },
       {
         "type": "minecraft:biome"
@@ -9029,6 +9387,23 @@
         "predicate": {
           "type": "minecraft:matching_block_tag",
           "tag": "minecraft:air"
+        }
+      }
+    ]
+  },
+  "yellow_poplar": {
+    "feature": "minecraft:yellow_poplar",
+    "placement": [
+      {
+        "type": "minecraft:block_predicate_filter",
+        "predicate": {
+          "type": "minecraft:would_survive",
+          "state": {
+            "Name": "minecraft:poplar_sapling",
+            "Properties": {
+              "stage": "0"
+            }
+          }
         }
       }
     ]

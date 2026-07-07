@@ -1,0 +1,115 @@
+{
+  "compostable/always_add_one": 1.0,
+  "compostable/low": {
+    "type": "minecraft:number_dispatcher",
+    "cases": [
+      {
+        "condition": {
+          "block": "minecraft:composter",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "level": "0"
+          }
+        },
+        "number_provider": 1.0
+      }
+    ],
+    "default": {
+      "type": "minecraft:weighted_list",
+      "distribution": [
+        {
+          "data": 1.0,
+          "weight": 30
+        },
+        {
+          "data": 0.0,
+          "weight": 70
+        }
+      ]
+    }
+  },
+  "compostable/low_medium": {
+    "type": "minecraft:number_dispatcher",
+    "cases": [
+      {
+        "condition": {
+          "block": "minecraft:composter",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "level": "0"
+          }
+        },
+        "number_provider": 1.0
+      }
+    ],
+    "default": {
+      "type": "minecraft:weighted_list",
+      "distribution": [
+        {
+          "data": 1.0,
+          "weight": 50
+        },
+        {
+          "data": 0.0,
+          "weight": 50
+        }
+      ]
+    }
+  },
+  "compostable/medium": {
+    "type": "minecraft:number_dispatcher",
+    "cases": [
+      {
+        "condition": {
+          "block": "minecraft:composter",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "level": "0"
+          }
+        },
+        "number_provider": 1.0
+      }
+    ],
+    "default": {
+      "type": "minecraft:weighted_list",
+      "distribution": [
+        {
+          "data": 1.0,
+          "weight": 65
+        },
+        {
+          "data": 0.0,
+          "weight": 35
+        }
+      ]
+    }
+  },
+  "compostable/medium_high": {
+    "type": "minecraft:number_dispatcher",
+    "cases": [
+      {
+        "condition": {
+          "block": "minecraft:composter",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "level": "0"
+          }
+        },
+        "number_provider": 1.0
+      }
+    ],
+    "default": {
+      "type": "minecraft:weighted_list",
+      "distribution": [
+        {
+          "data": 1.0,
+          "weight": 85
+        },
+        {
+          "data": 0.0,
+          "weight": 15
+        }
+      ]
+    }
+  }
+}
