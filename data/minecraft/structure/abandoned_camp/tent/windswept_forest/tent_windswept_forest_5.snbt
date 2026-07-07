@@ -31,6 +31,10 @@
       state: 0
     }, 
     {
+      pos: [2, 0, 6], 
+      state: 0
+    }, 
+    {
       pos: [2, 0, 7], 
       state: 0
     }, 
@@ -48,6 +52,10 @@
     }, 
     {
       pos: [4, 0, 2], 
+      state: 0
+    }, 
+    {
+      pos: [4, 0, 6], 
       state: 0
     }, 
     {
@@ -88,10 +96,6 @@
     }, 
     {
       pos: [6, 0, 7], 
-      state: 0
-    }, 
-    {
-      pos: [7, 0, 0], 
       state: 0
     }, 
     {
@@ -167,10 +171,6 @@
       state: 1
     }, 
     {
-      pos: [2, 0, 6], 
-      state: 1
-    }, 
-    {
       pos: [3, 0, 1], 
       state: 1
     }, 
@@ -208,10 +208,6 @@
     }, 
     {
       pos: [4, 0, 5], 
-      state: 1
-    }, 
-    {
-      pos: [4, 0, 6], 
       state: 1
     }, 
     {
@@ -340,11 +336,11 @@
     }, 
     {
       pos: [2, 1, 5], 
-      state: 3
+      state: 6
     }, 
     {
       pos: [2, 1, 6], 
-      state: 3
+      state: 7
     }, 
     {
       pos: [2, 1, 7], 
@@ -404,11 +400,11 @@
     }, 
     {
       pos: [4, 1, 5], 
-      state: 3
+      state: 6
     }, 
     {
       pos: [4, 1, 6], 
-      state: 3
+      state: 7
     }, 
     {
       pos: [4, 1, 7], 
@@ -416,15 +412,11 @@
     }, 
     {
       pos: [5, 1, 0], 
-      state: 6
+      state: 8
     }, 
     {
       pos: [5, 1, 1], 
       state: 3
-    }, 
-    {
-      pos: [5, 1, 2], 
-      state: 6
     }, 
     {
       pos: [5, 1, 3], 
@@ -480,7 +472,7 @@
     }, 
     {
       pos: [7, 1, 0], 
-      state: 7
+      state: 3
     }, 
     {
       pos: [7, 1, 1], 
@@ -520,7 +512,7 @@
     }, 
     {
       pos: [0, 2, 2], 
-      state: 8
+      state: 9
     }, 
     {
       pos: [0, 2, 3], 
@@ -532,7 +524,7 @@
     }, 
     {
       pos: [0, 2, 5], 
-      state: 9
+      state: 10
     }, 
     {
       pos: [0, 2, 6], 
@@ -756,7 +748,7 @@
     }, 
     {
       pos: [7, 2, 5], 
-      state: 9
+      state: 10
     }, 
     {
       pos: [7, 2, 6], 
@@ -2059,7 +2051,32 @@
         target: "minecraft:end_connector"
       }, 
       pos: [0, 0, 3], 
-      state: 10
+      state: 11
+    }, 
+    {
+      nbt: {
+        components: {}, 
+        joint: "rollable", 
+        final_state: "minecraft:dirt", 
+        name: "minecraft:bottom", 
+        placement_priority: 0, 
+        pool: "minecraft:abandoned_camp/trees/oak", 
+        selection_priority: 0, 
+        id: "minecraft:jigsaw", 
+        target: "minecraft:bottom"
+      }, 
+      pos: [7, 0, 0], 
+      state: 12
+    }, 
+    {
+      nbt: {
+        LootTable: "minecraft:chests/abandoned_camp_common_chest", 
+        components: {}, 
+        Items: [], 
+        id: "minecraft:chest"
+      }, 
+      pos: [5, 1, 2], 
+      state: 13
     }
   ], 
   palette: [
@@ -2101,13 +2118,23 @@
       Name: "minecraft:white_wool_stairs"
     }, 
     {
-      Name: "minecraft:bush"
+      Properties: {
+        part: "foot", 
+        facing: "south", 
+        occupied: "false"
+      }, 
+      Name: "minecraft:straw_bed"
     }, 
     {
       Properties: {
-        stage: "0"
+        part: "head", 
+        facing: "south", 
+        occupied: "false"
       }, 
-      Name: "minecraft:oak_sapling"
+      Name: "minecraft:straw_bed"
+    }, 
+    {
+      Name: "minecraft:bush"
     }, 
     {
       Properties: {
@@ -2134,6 +2161,20 @@
         orientation: "west_up"
       }, 
       Name: "minecraft:jigsaw"
+    }, 
+    {
+      Properties: {
+        orientation: "up_south"
+      }, 
+      Name: "minecraft:jigsaw"
+    }, 
+    {
+      Properties: {
+        waterlogged: "false", 
+        facing: "south", 
+        type: "single"
+      }, 
+      Name: "minecraft:chest"
     }
   ]
 }

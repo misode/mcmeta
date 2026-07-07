@@ -32,10 +32,18 @@
     }, 
     {
       pos: [2, 0, 2], 
-      state: 1
+      state: 0
     }, 
     {
       pos: [2, 0, 3], 
+      state: 1
+    }, 
+    {
+      pos: [2, 0, 5], 
+      state: 1
+    }, 
+    {
+      pos: [2, 0, 6], 
       state: 1
     }, 
     {
@@ -211,14 +219,6 @@
       state: 3
     }, 
     {
-      pos: [2, 0, 5], 
-      state: 3
-    }, 
-    {
-      pos: [2, 0, 6], 
-      state: 3
-    }, 
-    {
       pos: [3, 0, 5], 
       state: 3
     }, 
@@ -327,10 +327,6 @@
       state: 5
     }, 
     {
-      pos: [2, 1, 2], 
-      state: 5
-    }, 
-    {
       pos: [2, 1, 3], 
       state: 5
     }, 
@@ -340,11 +336,11 @@
     }, 
     {
       pos: [2, 1, 5], 
-      state: 5
+      state: 8
     }, 
     {
       pos: [2, 1, 6], 
-      state: 5
+      state: 9
     }, 
     {
       pos: [2, 1, 7], 
@@ -360,7 +356,7 @@
     }, 
     {
       pos: [3, 1, 2], 
-      state: 8
+      state: 10
     }, 
     {
       pos: [3, 1, 3], 
@@ -452,7 +448,7 @@
     }, 
     {
       pos: [6, 1, 1], 
-      state: 8
+      state: 10
     }, 
     {
       pos: [6, 1, 2], 
@@ -464,7 +460,7 @@
     }, 
     {
       pos: [6, 1, 4], 
-      state: 8
+      state: 10
     }, 
     {
       pos: [6, 1, 5], 
@@ -472,7 +468,7 @@
     }, 
     {
       pos: [6, 1, 6], 
-      state: 8
+      state: 10
     }, 
     {
       pos: [6, 1, 7], 
@@ -484,7 +480,7 @@
     }, 
     {
       pos: [7, 1, 1], 
-      state: 9
+      state: 5
     }, 
     {
       pos: [7, 1, 2], 
@@ -492,7 +488,7 @@
     }, 
     {
       pos: [7, 1, 3], 
-      state: 8
+      state: 10
     }, 
     {
       pos: [7, 1, 4], 
@@ -508,7 +504,7 @@
     }, 
     {
       pos: [7, 1, 7], 
-      state: 9
+      state: 5
     }, 
     {
       pos: [0, 2, 0], 
@@ -520,7 +516,7 @@
     }, 
     {
       pos: [0, 2, 2], 
-      state: 10
+      state: 11
     }, 
     {
       pos: [0, 2, 3], 
@@ -532,7 +528,7 @@
     }, 
     {
       pos: [0, 2, 5], 
-      state: 11
+      state: 12
     }, 
     {
       pos: [0, 2, 6], 
@@ -680,7 +676,7 @@
     }, 
     {
       pos: [5, 2, 2], 
-      state: 10
+      state: 11
     }, 
     {
       pos: [5, 2, 3], 
@@ -692,7 +688,7 @@
     }, 
     {
       pos: [5, 2, 5], 
-      state: 11
+      state: 12
     }, 
     {
       pos: [5, 2, 6], 
@@ -2059,7 +2055,17 @@
         target: "minecraft:end_connector"
       }, 
       pos: [0, 0, 3], 
-      state: 12
+      state: 13
+    }, 
+    {
+      nbt: {
+        LootTable: "minecraft:barrels/abandoned_camp_barrel", 
+        components: {}, 
+        Items: [], 
+        id: "minecraft:barrel"
+      }, 
+      pos: [2, 1, 2], 
+      state: 14
     }
   ], 
   palette: [
@@ -2110,13 +2116,23 @@
       Name: "minecraft:white_wool_stairs"
     }, 
     {
-      Name: "minecraft:bush"
+      Properties: {
+        part: "foot", 
+        facing: "south", 
+        occupied: "false"
+      }, 
+      Name: "minecraft:straw_bed"
     }, 
     {
       Properties: {
-        stage: "1"
+        part: "head", 
+        facing: "south", 
+        occupied: "false"
       }, 
-      Name: "minecraft:spruce_sapling"
+      Name: "minecraft:straw_bed"
+    }, 
+    {
+      Name: "minecraft:bush"
     }, 
     {
       Properties: {
@@ -2143,6 +2159,13 @@
         orientation: "west_up"
       }, 
       Name: "minecraft:jigsaw"
+    }, 
+    {
+      Properties: {
+        facing: "up", 
+        open: "false"
+      }, 
+      Name: "minecraft:barrel"
     }
   ]
 }
