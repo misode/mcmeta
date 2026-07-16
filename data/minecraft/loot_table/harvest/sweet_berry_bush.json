@@ -5,21 +5,17 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "block": "minecraft:sweet_berry_bush",
-              "condition": "minecraft:block_state_property",
-              "properties": {
-                "age": "3"
-              }
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "minecraft:sweet_berry_bush",
+            "state": {
+              "age": "3"
             }
-          ],
-          "functions": [
-            {
-              "count": 1.0,
-              "function": "minecraft:set_count"
-            }
-          ],
+          },
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": 1.0
+          },
           "name": "minecraft:sweet_berries"
         }
       ],
@@ -29,16 +25,14 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2.0,
+              "min": 1.0
             }
-          ],
+          },
           "name": "minecraft:sweet_berries"
         }
       ],

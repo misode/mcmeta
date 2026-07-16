@@ -2,58 +2,57 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "conditions": [
-        {
-          "block": "minecraft:tall_grass",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "half": "lower"
-          }
-        },
-        {
-          "condition": "minecraft:location_check",
-          "offsetY": 1,
-          "predicate": {
-            "block": {
-              "blocks": "minecraft:tall_grass",
-              "state": {
-                "half": "upper"
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          {
+            "type": "minecraft:match_block",
+            "blocks": "minecraft:tall_grass",
+            "state": {
+              "half": "lower"
+            }
+          },
+          {
+            "type": "minecraft:location_check",
+            "offsetY": 1,
+            "predicate": {
+              "block": {
+                "blocks": "minecraft:tall_grass",
+                "state": {
+                  "half": "upper"
+                }
               }
             }
           }
-        }
-      ],
+        ]
+      },
       "entries": [
         {
           "type": "minecraft:alternatives",
           "children": [
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "minecraft:tool/can_shear"
-                }
-              ],
-              "functions": [
-                {
-                  "count": 2.0,
-                  "function": "minecraft:set_count"
-                }
-              ],
+              "condition": "minecraft:tool/can_shear",
+              "modifier": {
+                "type": "minecraft:set_count",
+                "count": 2.0
+              },
               "name": "minecraft:short_grass"
             },
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:survives_explosion"
-                },
-                {
-                  "chance": 0.125,
-                  "condition": "minecraft:random_chance"
-                }
-              ],
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:survives_explosion"
+                  },
+                  {
+                    "type": "minecraft:random_chance",
+                    "chance": 0.125
+                  }
+                ]
+              },
               "name": "minecraft:wheat_seeds"
             }
           ]
@@ -62,58 +61,57 @@
       "rolls": 1.0
     },
     {
-      "conditions": [
-        {
-          "block": "minecraft:tall_grass",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "half": "upper"
-          }
-        },
-        {
-          "condition": "minecraft:location_check",
-          "offsetY": -1,
-          "predicate": {
-            "block": {
-              "blocks": "minecraft:tall_grass",
-              "state": {
-                "half": "lower"
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          {
+            "type": "minecraft:match_block",
+            "blocks": "minecraft:tall_grass",
+            "state": {
+              "half": "upper"
+            }
+          },
+          {
+            "type": "minecraft:location_check",
+            "offsetY": -1,
+            "predicate": {
+              "block": {
+                "blocks": "minecraft:tall_grass",
+                "state": {
+                  "half": "lower"
+                }
               }
             }
           }
-        }
-      ],
+        ]
+      },
       "entries": [
         {
           "type": "minecraft:alternatives",
           "children": [
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "minecraft:tool/can_shear"
-                }
-              ],
-              "functions": [
-                {
-                  "count": 2.0,
-                  "function": "minecraft:set_count"
-                }
-              ],
+              "condition": "minecraft:tool/can_shear",
+              "modifier": {
+                "type": "minecraft:set_count",
+                "count": 2.0
+              },
               "name": "minecraft:short_grass"
             },
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:survives_explosion"
-                },
-                {
-                  "chance": 0.125,
-                  "condition": "minecraft:random_chance"
-                }
-              ],
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:survives_explosion"
+                  },
+                  {
+                    "type": "minecraft:random_chance",
+                    "chance": 0.125
+                  }
+                ]
+              },
               "name": "minecraft:wheat_seeds"
             }
           ]

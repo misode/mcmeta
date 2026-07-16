@@ -8,28 +8,24 @@
           "children": [
             {
               "type": "minecraft:dynamic",
-              "conditions": [
-                {
-                  "block": "minecraft:decorated_pot",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "cracked": "true"
-                  }
+              "condition": {
+                "type": "minecraft:match_block",
+                "blocks": "minecraft:decorated_pot",
+                "state": {
+                  "cracked": "true"
                 }
-              ],
+              },
               "name": "minecraft:sherds"
             },
             {
               "type": "minecraft:item",
-              "functions": [
-                {
-                  "function": "minecraft:copy_components",
-                  "include": [
-                    "minecraft:pot_decorations"
-                  ],
-                  "source": "block_entity"
-                }
-              ],
+              "modifier": {
+                "type": "minecraft:copy_components",
+                "include": [
+                  "minecraft:pot_decorations"
+                ],
+                "source": "block_entity"
+              },
               "name": "minecraft:decorated_pot"
             }
           ]

@@ -1,13 +1,13 @@
 {
-  "given_item_modifiers": [
+  "given_item_modifier": [
     {
+      "type": "minecraft:set_enchantments",
       "enchantments": {
         "minecraft:aqua_affinity": 1.0
-      },
-      "function": "minecraft:set_enchantments"
+      }
     },
     {
-      "function": "minecraft:filtered",
+      "type": "minecraft:filtered",
       "item_filter": {
         "items": "minecraft:iron_helmet",
         "predicates": {
@@ -19,7 +19,7 @@
         }
       },
       "on_fail": {
-        "function": "minecraft:discard"
+        "type": "minecraft:discard"
       }
     }
   ],
@@ -28,7 +28,7 @@
   },
   "max_uses": 3.0,
   "merchant_predicate": {
-    "condition": "minecraft:entity_properties",
+    "type": "minecraft:entity_properties",
     "entity": "this",
     "predicate": {
       "minecraft:predicates": {
