@@ -50,7 +50,7 @@
             }
           },
           "requirements": {
-            "condition": "minecraft:entity_properties",
+            "type": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
               "minecraft:entity_type": "#minecraft:sensitive_to_bane_of_arthropods"
@@ -75,17 +75,17 @@
           },
           "enchanted": "attacker",
           "requirements": {
-            "condition": "minecraft:all_of",
+            "type": "minecraft:all_of",
             "terms": [
               {
-                "condition": "minecraft:entity_properties",
+                "type": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
                   "minecraft:entity_type": "#minecraft:sensitive_to_bane_of_arthropods"
                 }
               },
               {
-                "condition": "minecraft:damage_source_properties",
+                "type": "minecraft:damage_source_properties",
                 "predicate": {
                   "is_direct": true
                 }
@@ -164,16 +164,16 @@
             }
           },
           "requirements": {
-            "condition": "minecraft:damage_source_properties",
+            "type": "minecraft:damage_source_properties",
             "predicate": {
               "tags": [
                 {
                   "expected": true,
-                  "id": "minecraft:is_explosion"
+                  "id": "#minecraft:is_explosion"
                 },
                 {
                   "expected": false,
-                  "id": "minecraft:bypasses_invulnerability"
+                  "id": "#minecraft:bypasses_invulnerability"
                 }
               ]
             }
@@ -256,21 +256,21 @@
             ]
           },
           "requirements": {
-            "condition": "minecraft:all_of",
+            "type": "minecraft:all_of",
             "terms": [
               {
-                "condition": "minecraft:weather_check",
+                "type": "minecraft:weather_check",
                 "thundering": true
               },
               {
-                "condition": "minecraft:entity_properties",
+                "type": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
                   "minecraft:entity_type": "minecraft:trident"
                 }
               },
               {
-                "condition": "minecraft:location_check",
+                "type": "minecraft:location_check",
                 "predicate": {
                   "block": {
                     "blocks": "#minecraft:lightning_rods"
@@ -302,14 +302,14 @@
           },
           "enchanted": "attacker",
           "requirements": {
-            "condition": "minecraft:all_of",
+            "type": "minecraft:all_of",
             "terms": [
               {
-                "condition": "minecraft:weather_check",
+                "type": "minecraft:weather_check",
                 "thundering": true
               },
               {
-                "condition": "minecraft:entity_properties",
+                "type": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
                   "minecraft:location": {
@@ -318,7 +318,7 @@
                 }
               },
               {
-                "condition": "minecraft:entity_properties",
+                "type": "minecraft:entity_properties",
                 "entity": "direct_attacker",
                 "predicate": {
                   "minecraft:entity_type": "minecraft:trident"
@@ -464,16 +464,16 @@
             }
           },
           "requirements": {
-            "condition": "minecraft:damage_source_properties",
+            "type": "minecraft:damage_source_properties",
             "predicate": {
               "tags": [
                 {
                   "expected": true,
-                  "id": "minecraft:is_fall"
+                  "id": "#minecraft:is_fall"
                 },
                 {
                   "expected": false,
-                  "id": "minecraft:bypasses_invulnerability"
+                  "id": "#minecraft:bypasses_invulnerability"
                 }
               ]
             }
@@ -515,7 +515,7 @@
           },
           "enchanted": "attacker",
           "requirements": {
-            "condition": "minecraft:damage_source_properties",
+            "type": "minecraft:damage_source_properties",
             "predicate": {
               "is_direct": true
             }
@@ -568,24 +568,19 @@
             }
           },
           "requirements": {
-            "condition": "minecraft:all_of",
-            "terms": [
-              {
-                "condition": "minecraft:damage_source_properties",
-                "predicate": {
-                  "tags": [
-                    {
-                      "expected": true,
-                      "id": "minecraft:is_fire"
-                    },
-                    {
-                      "expected": false,
-                      "id": "minecraft:bypasses_invulnerability"
-                    }
-                  ]
+            "type": "minecraft:damage_source_properties",
+            "predicate": {
+              "tags": [
+                {
+                  "expected": true,
+                  "id": "#minecraft:is_fire"
+                },
+                {
+                  "expected": false,
+                  "id": "#minecraft:bypasses_invulnerability"
                 }
-              }
-            ]
+              ]
+            }
           }
         }
       ]
@@ -667,16 +662,16 @@
         {
           "effect": {},
           "requirements": {
-            "condition": "minecraft:damage_source_properties",
+            "type": "minecraft:damage_source_properties",
             "predicate": {
               "tags": [
                 {
                   "expected": true,
-                  "id": "minecraft:burn_from_stepping"
+                  "id": "#minecraft:burn_from_stepping"
                 },
                 {
                   "expected": false,
-                  "id": "minecraft:bypasses_invulnerability"
+                  "id": "#minecraft:bypasses_invulnerability"
                 }
               ]
             }
@@ -740,10 +735,10 @@
             "trigger_game_event": "minecraft:block_place"
           },
           "requirements": {
-            "condition": "minecraft:all_of",
+            "type": "minecraft:all_of",
             "terms": [
               {
-                "condition": "minecraft:entity_properties",
+                "type": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
                   "minecraft:flags": {
@@ -752,9 +747,9 @@
                 }
               },
               {
-                "condition": "minecraft:inverted",
+                "type": "minecraft:inverted",
                 "term": {
-                  "condition": "minecraft:entity_properties",
+                  "type": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
                     "minecraft:vehicle": {}
@@ -799,7 +794,7 @@
             }
           },
           "requirements": {
-            "condition": "minecraft:entity_properties",
+            "type": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
               "minecraft:entity_type": "#minecraft:sensitive_to_impaling"
@@ -837,7 +832,7 @@
             "value": 0.0
           },
           "requirements": {
-            "condition": "minecraft:match_tool",
+            "type": "minecraft:match_tool",
             "predicate": {
               "items": "minecraft:arrow"
             }
@@ -913,7 +908,7 @@
           },
           "enchanted": "attacker",
           "requirements": {
-            "condition": "minecraft:entity_properties",
+            "type": "minecraft:entity_properties",
             "entity": "attacker",
             "predicate": {
               "minecraft:entity_type": "minecraft:player"
@@ -1059,12 +1054,12 @@
             ]
           },
           "requirements": {
-            "condition": "minecraft:all_of",
+            "type": "minecraft:all_of",
             "terms": [
               {
-                "condition": "minecraft:inverted",
+                "type": "minecraft:inverted",
                 "term": {
-                  "condition": "minecraft:entity_properties",
+                  "type": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
                     "minecraft:vehicle": {}
@@ -1072,7 +1067,7 @@
                 }
               },
               {
-                "condition": "minecraft:entity_properties",
+                "type": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
                   "minecraft:flags": {
@@ -1081,7 +1076,7 @@
                 }
               },
               {
-                "condition": "minecraft:entity_properties",
+                "type": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
                   "minecraft:flags": {
@@ -1090,12 +1085,12 @@
                 }
               },
               {
-                "condition": "minecraft:any_of",
+                "type": "minecraft:any_of",
                 "terms": [
                   {
-                    "condition": "minecraft:inverted",
+                    "type": "minecraft:inverted",
                     "term": {
-                      "condition": "minecraft:entity_properties",
+                      "type": "minecraft:entity_properties",
                       "entity": "this",
                       "predicate": {
                         "minecraft:type_specific/player": {}
@@ -1103,7 +1098,7 @@
                     }
                   },
                   {
-                    "condition": "minecraft:entity_properties",
+                    "type": "minecraft:entity_properties",
                     "entity": "this",
                     "predicate": {
                       "minecraft:type_specific/player": {
@@ -1114,7 +1109,7 @@
                     }
                   },
                   {
-                    "condition": "minecraft:entity_properties",
+                    "type": "minecraft:entity_properties",
                     "entity": "this",
                     "predicate": {
                       "minecraft:type_specific/player": {
@@ -1311,7 +1306,7 @@
             }
           },
           "requirements": {
-            "condition": "minecraft:entity_properties",
+            "type": "minecraft:entity_properties",
             "entity": "direct_attacker",
             "predicate": {
               "minecraft:entity_type": "#minecraft:arrows"
@@ -1352,16 +1347,16 @@
             }
           },
           "requirements": {
-            "condition": "minecraft:damage_source_properties",
+            "type": "minecraft:damage_source_properties",
             "predicate": {
               "tags": [
                 {
                   "expected": true,
-                  "id": "minecraft:is_projectile"
+                  "id": "#minecraft:is_projectile"
                 },
                 {
                   "expected": false,
-                  "id": "minecraft:bypasses_invulnerability"
+                  "id": "#minecraft:bypasses_invulnerability"
                 }
               ]
             }
@@ -1402,12 +1397,12 @@
             }
           },
           "requirements": {
-            "condition": "minecraft:damage_source_properties",
+            "type": "minecraft:damage_source_properties",
             "predicate": {
               "tags": [
                 {
                   "expected": false,
-                  "id": "minecraft:bypasses_invulnerability"
+                  "id": "#minecraft:bypasses_invulnerability"
                 }
               ]
             }
@@ -1448,7 +1443,7 @@
             }
           },
           "requirements": {
-            "condition": "minecraft:entity_properties",
+            "type": "minecraft:entity_properties",
             "entity": "direct_attacker",
             "predicate": {
               "minecraft:entity_type": "#minecraft:arrows"
@@ -1671,7 +1666,7 @@
             }
           },
           "requirements": {
-            "condition": "minecraft:entity_properties",
+            "type": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
               "minecraft:entity_type": "#minecraft:sensitive_to_smite"
@@ -1729,12 +1724,12 @@
             ]
           },
           "requirements": {
-            "condition": "minecraft:all_of",
+            "type": "minecraft:all_of",
             "terms": [
               {
-                "condition": "minecraft:inverted",
+                "type": "minecraft:inverted",
                 "term": {
-                  "condition": "minecraft:entity_properties",
+                  "type": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
                     "minecraft:vehicle": {}
@@ -1742,17 +1737,17 @@
                 }
               },
               {
-                "condition": "minecraft:any_of",
+                "type": "minecraft:any_of",
                 "terms": [
                   {
-                    "condition": "minecraft:all_of",
+                    "type": "minecraft:all_of",
                     "terms": [
                       {
-                        "active": true,
-                        "condition": "minecraft:enchantment_active_check"
+                        "type": "minecraft:enchantment_active_check",
+                        "active": true
                       },
                       {
-                        "condition": "minecraft:entity_properties",
+                        "type": "minecraft:entity_properties",
                         "entity": "this",
                         "predicate": {
                           "minecraft:flags": {
@@ -1761,10 +1756,10 @@
                         }
                       },
                       {
-                        "condition": "minecraft:any_of",
+                        "type": "minecraft:any_of",
                         "terms": [
                           {
-                            "condition": "minecraft:entity_properties",
+                            "type": "minecraft:entity_properties",
                             "entity": "this",
                             "predicate": {
                               "minecraft:movement_affected_by": {
@@ -1775,7 +1770,7 @@
                             }
                           },
                           {
-                            "condition": "minecraft:entity_properties",
+                            "type": "minecraft:entity_properties",
                             "entity": "this",
                             "predicate": {
                               "minecraft:flags": {
@@ -1788,14 +1783,14 @@
                     ]
                   },
                   {
-                    "condition": "minecraft:all_of",
+                    "type": "minecraft:all_of",
                     "terms": [
                       {
-                        "active": false,
-                        "condition": "minecraft:enchantment_active_check"
+                        "type": "minecraft:enchantment_active_check",
+                        "active": false
                       },
                       {
-                        "condition": "minecraft:entity_properties",
+                        "type": "minecraft:entity_properties",
                         "entity": "this",
                         "predicate": {
                           "minecraft:flags": {
@@ -1821,17 +1816,17 @@
             "amount": 1.0
           },
           "requirements": {
-            "condition": "minecraft:all_of",
+            "type": "minecraft:all_of",
             "terms": [
               {
+                "type": "minecraft:random_chance",
                 "chance": {
                   "type": "minecraft:enchantment_level",
                   "amount": 0.04
-                },
-                "condition": "minecraft:random_chance"
+                }
               },
               {
-                "condition": "minecraft:entity_properties",
+                "type": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
                   "minecraft:flags": {
@@ -1871,7 +1866,7 @@
             }
           },
           "requirements": {
-            "condition": "minecraft:entity_properties",
+            "type": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
               "minecraft:flags": {
@@ -1904,14 +1899,14 @@
             "volume": 0.6
           },
           "requirements": {
-            "condition": "minecraft:all_of",
+            "type": "minecraft:all_of",
             "terms": [
               {
-                "chance": 0.35,
-                "condition": "minecraft:random_chance"
+                "type": "minecraft:random_chance",
+                "chance": 0.35
               },
               {
-                "condition": "minecraft:entity_properties",
+                "type": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
                   "minecraft:flags": {
@@ -2053,6 +2048,7 @@
           },
           "enchanted": "victim",
           "requirements": {
+            "type": "minecraft:random_chance",
             "chance": {
               "type": "minecraft:enchantment_level",
               "amount": {
@@ -2060,8 +2056,7 @@
                 "base": 0.15,
                 "per_level_above_first": 0.15
               }
-            },
-            "condition": "minecraft:random_chance"
+            }
           }
         }
       ]
@@ -2107,7 +2102,7 @@
             }
           },
           "requirements": {
-            "condition": "minecraft:match_tool",
+            "type": "minecraft:match_tool",
             "predicate": {
               "items": "#minecraft:enchantable/armor"
             }
@@ -2131,9 +2126,9 @@
             }
           },
           "requirements": {
-            "condition": "minecraft:inverted",
+            "type": "minecraft:inverted",
             "term": {
-              "condition": "minecraft:match_tool",
+              "type": "minecraft:match_tool",
               "predicate": {
                 "items": "#minecraft:enchantable/armor"
               }
@@ -2217,7 +2212,7 @@
           },
           "enchanted": "attacker",
           "requirements": {
-            "condition": "minecraft:entity_properties",
+            "type": "minecraft:entity_properties",
             "entity": "direct_attacker",
             "predicate": {
               "minecraft:flags": {

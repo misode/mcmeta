@@ -1,13 +1,15 @@
 {
+  "brewing/speed_default": 1.0,
+  "brewing/uses_default": 20.0,
   "compostable/always_add_one": 1.0,
   "compostable/low": {
     "type": "minecraft:number_dispatcher",
     "cases": [
       {
         "condition": {
-          "block": "minecraft:composter",
-          "condition": "minecraft:block_state_property",
-          "properties": {
+          "type": "minecraft:match_block",
+          "blocks": "minecraft:composter",
+          "state": {
             "level": "0"
           }
         },
@@ -33,9 +35,9 @@
     "cases": [
       {
         "condition": {
-          "block": "minecraft:composter",
-          "condition": "minecraft:block_state_property",
-          "properties": {
+          "type": "minecraft:match_block",
+          "blocks": "minecraft:composter",
+          "state": {
             "level": "0"
           }
         },
@@ -61,9 +63,9 @@
     "cases": [
       {
         "condition": {
-          "block": "minecraft:composter",
-          "condition": "minecraft:block_state_property",
-          "properties": {
+          "type": "minecraft:match_block",
+          "blocks": "minecraft:composter",
+          "state": {
             "level": "0"
           }
         },
@@ -89,9 +91,9 @@
     "cases": [
       {
         "condition": {
-          "block": "minecraft:composter",
-          "condition": "minecraft:block_state_property",
-          "properties": {
+          "type": "minecraft:match_block",
+          "blocks": "minecraft:composter",
+          "state": {
             "level": "0"
           }
         },
@@ -111,5 +113,119 @@
         }
       ]
     }
+  },
+  "cooking/speed_default": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 1.0,
+    "on_true": 2.0
+  },
+  "cooking/time_bamboo": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 50.0,
+    "on_true": 25.0
+  },
+  "cooking/time_blaze_rod": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 2400.0,
+    "on_true": 1200.0
+  },
+  "cooking/time_boats": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 1200.0,
+    "on_true": 600.0
+  },
+  "cooking/time_coal": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 1600.0,
+    "on_true": 800.0
+  },
+  "cooking/time_coal_block": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 16000.0,
+    "on_true": 8000.0
+  },
+  "cooking/time_dried_kelp_block": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 4001.0,
+    "on_true": 2000.5
+  },
+  "cooking/time_dry_plants": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 100.0,
+    "on_true": 50.0
+  },
+  "cooking/time_hanging_signs": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 800.0,
+    "on_true": 400.0
+  },
+  "cooking/time_lava_bucket": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 20000.0,
+    "on_true": 10000.0
+  },
+  "cooking/time_roots": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 300.0,
+    "on_true": 150.0
+  },
+  "cooking/time_wood_blocks": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 300.0,
+    "on_true": 150.0
+  },
+  "cooking/time_wood_items_extra_small": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 100.0,
+    "on_true": 50.0
+  },
+  "cooking/time_wood_items_large": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 200.0,
+    "on_true": 100.0
+  },
+  "cooking/time_wood_items_small": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 300.0,
+    "on_true": 150.0
+  },
+  "cooking/time_wood_slabs": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 150.0,
+    "on_true": 75.0
+  },
+  "cooking/time_wool": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 100.0,
+    "on_true": 50.0
+  },
+  "cooking/time_wool_carpets": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 67.0,
+    "on_true": 33.5
+  },
+  "cooking/time_wool_slabs": {
+    "type": "minecraft:conditional",
+    "condition": "minecraft:block/fast_cooking",
+    "on_false": 50.0,
+    "on_true": 25.0
   }
 }
