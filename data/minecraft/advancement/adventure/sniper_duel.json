@@ -3,25 +3,23 @@
   "criteria": {
     "killed_skeleton": {
       "conditions": {
-        "entity": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "minecraft:distance": {
-                "horizontal": {
-                  "min": 50.0
-                }
-              },
-              "minecraft:entity_type": "minecraft:skeleton"
-            }
+        "entity": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:distance": {
+              "horizontal": {
+                "min": 50.0
+              }
+            },
+            "minecraft:entity_type": "minecraft:skeleton"
           }
-        ],
+        },
         "killing_blow": {
           "tags": [
             {
               "expected": true,
-              "id": "minecraft:is_projectile"
+              "id": "#minecraft:is_projectile"
             }
           ]
         }

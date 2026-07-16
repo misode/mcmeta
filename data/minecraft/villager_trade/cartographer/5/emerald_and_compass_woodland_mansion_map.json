@@ -2,21 +2,21 @@
   "additional_wants": {
     "id": "minecraft:compass"
   },
-  "given_item_modifiers": [
+  "given_item_modifier": [
     {
-      "destination": "minecraft:on_woodland_explorer_maps",
-      "function": "minecraft:exploration_map",
+      "type": "minecraft:exploration_map",
+      "destination": "#minecraft:on_woodland_explorer_maps",
       "search_radius": 100
     },
     {
-      "function": "minecraft:set_name",
+      "type": "minecraft:set_name",
       "name": {
         "translate": "filled_map.mansion"
       },
       "target": "item_name"
     },
     {
-      "function": "minecraft:filtered",
+      "type": "minecraft:filtered",
       "item_filter": {
         "items": "minecraft:filled_map",
         "predicates": {
@@ -24,7 +24,7 @@
         }
       },
       "on_fail": {
-        "function": "minecraft:discard"
+        "type": "minecraft:discard"
       }
     }
   ],

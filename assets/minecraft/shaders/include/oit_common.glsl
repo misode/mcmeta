@@ -2,6 +2,9 @@
 
 #moj_import <minecraft:projection.glsl>
 
+const float OIT_FULLY_OPAQUE_ALPHA = 0.99;
+const float OIT_FULLY_OPAQUE_TOTAL_TRANSMITTANCE = 0.02;
+
 float deviceToLinearDepth(float deviceDepth) {
     #ifndef B3D_DEPTH_IS_ZERO_TO_ONE
     deviceDepth = (deviceDepth - 0.5) * 2.0;
@@ -16,5 +19,5 @@ float deviceToLinearDepth(float deviceDepth) {
 }
 
 float toAbsorbance(float transmittance) {
-    return max(-log(max(transmittance, 0.00001)), -0.1);
+    return clamp(-log(transmittance), 0, 4.0);
 }

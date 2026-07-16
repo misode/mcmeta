@@ -8,23 +8,18 @@
           "children": [
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "minecraft:tool/can_silk_touch"
-                }
-              ],
+              "condition": "minecraft:tool/can_silk_touch",
               "name": "minecraft:ender_chest"
             },
             {
               "type": "minecraft:item",
-              "functions": [
+              "modifier": [
                 {
-                  "count": 8.0,
-                  "function": "minecraft:set_count"
+                  "type": "minecraft:set_count",
+                  "count": 8.0
                 },
                 {
-                  "function": "minecraft:explosion_decay"
+                  "type": "minecraft:explosion_decay"
                 }
               ],
               "name": "minecraft:obsidian"

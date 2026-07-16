@@ -63,8 +63,6 @@ void main() {
 
     color *= vertexColor * ColorModulator;
 
-    handleOpaquePartDiscards(color.a);
-
     #ifdef GLINT
     color.a = max(color.a, GlintAlpha);
     #endif

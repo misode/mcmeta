@@ -6,7 +6,7 @@ void addTransmittance(float alpha) {
     float transmittance = 1.0 - alpha;
     float absorbance = toAbsorbance(transmittance);
 
-    float depth = normalizeDepth(gl_FragCoord.z, transmittance);
+    float depth = normalizeDepth(gl_FragCoord.z);
 
     float coefficients[COEFF_COUNT];
     for (int i = 0; i < COEFF_COUNT; i++) {

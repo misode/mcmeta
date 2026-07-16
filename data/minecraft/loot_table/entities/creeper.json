@@ -5,23 +5,23 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
+          "modifier": [
             {
+              "type": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
                 "max": 2.0,
                 "min": 0.0
-              },
-              "function": "minecraft:set_count"
+              }
             },
             {
+              "type": "minecraft:enchanted_count_increase",
               "count": {
                 "type": "minecraft:uniform",
                 "max": 1.0,
                 "min": 0.0
               },
-              "enchantment": "minecraft:looting",
-              "function": "minecraft:enchanted_count_increase"
+              "enchantment": "minecraft:looting"
             }
           ],
           "name": "minecraft:gunpowder"
@@ -30,20 +30,18 @@
       "rolls": 1.0
     },
     {
-      "conditions": [
-        {
-          "condition": "minecraft:entity_properties",
-          "entity": "attacker",
-          "predicate": {
-            "minecraft:entity_type": "#minecraft:skeletons"
-          }
+      "condition": {
+        "type": "minecraft:entity_properties",
+        "entity": "attacker",
+        "predicate": {
+          "minecraft:entity_type": "#minecraft:skeletons"
         }
-      ],
+      },
       "entries": [
         {
           "type": "minecraft:tag",
           "expand": true,
-          "name": "minecraft:creeper_drop_music_discs"
+          "items": "#minecraft:creeper_drop_music_discs"
         }
       ],
       "rolls": 1.0
