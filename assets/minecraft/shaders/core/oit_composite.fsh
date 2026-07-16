@@ -14,7 +14,7 @@ void main() {
     vec4 accumulatedColor = texelFetch(Sampler0, pixelCoords, 0);
 
     float sampledTransmittance = sampleTransmittance(pixelCoords, 100000.0f, 0);
-    float coverage = 1.0 - sampledTransmittance;
+    float coverage = 1.0 - (sampledTransmittance < OIT_FULLY_OPAQUE_TOTAL_TRANSMITTANCE ? 0.0 : sampledTransmittance);
 
     // Additive surfaces contribute colour but no coverage, so they only show up in rgb.
     // Discard pixels that have neither coverage nor additive light.
@@ -26,5 +26,7 @@ void main() {
     // premultiplied light pass through untouched.
     float normalization = accumulatedColor.a > 0.00001 ? coverage / accumulatedColor.a : 1.0;
     fragColor = vec4(accumulatedColor.rgb * normalization, coverage);
-    gl_FragDepth = texelFetch(DepthBoundsSampler, pixelCoords, 0).b;
+
+    float closestBoundDeviceDepth = texelFetch(DepthBoundsSampler, pixelCoords, 0).b;
+    gl_FragDepth = closestBoundDeviceDepth;
 }

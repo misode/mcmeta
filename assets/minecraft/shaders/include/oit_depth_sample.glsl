@@ -1,11 +1,29 @@
 uniform sampler2D DepthBoundsSampler;
 
-float normalizeDepth(float depth, float transmittance) {
-    float linearDepth = deviceToLinearDepth(depth);
-    vec2 depthBoundsSample = texelFetch(DepthBoundsSampler, ivec2(gl_FragCoord.xy), 0).xy;
-    vec2 depthBounds = vec2(-depthBoundsSample.x, depthBoundsSample.y);
+const float OIT_HIGH_PRECISION_DEPTH_THRESHOLD = 10.0;
+const int OIT_LOW_PRECISION_COEFF_COUNT = 2;
 
-    float range = max(depthBounds.y - depthBounds.x, 0.0001);
-    float distance = linearDepth - depthBounds.x;
-    return max(clamp(distance / range, 0.0, 1.0) * (1.0 - 1.0 / COEFF_COUNT), 0.0);
+float normalizeDepth(float fragmentDeviceDepth) {
+    vec4 depthBoundsSample = texelFetch(DepthBoundsSampler, ivec2(gl_FragCoord.xy), 0);
+    float closestBoundLinearDepthNegated = depthBoundsSample.r;
+    float closestBoundLinearDepth = -closestBoundLinearDepthNegated;
+    float furthestBoundLinearDepth = depthBoundsSample.g;
+
+    float fragmentLinearDepth = deviceToLinearDepth(fragmentDeviceDepth);
+    float range = max(furthestBoundLinearDepth - closestBoundLinearDepth, 0.0001);
+    float depthWithinBounds = clamp(fragmentLinearDepth - closestBoundLinearDepth, 0.0, range);
+
+    const float depthFractionWithHighPrecision = float(COEFF_COUNT - OIT_LOW_PRECISION_COEFF_COUNT) / float(COEFF_COUNT);
+    float depthWithHighPrecision = depthFractionWithHighPrecision * range;
+
+    float mappedDepth;
+    if (depthWithHighPrecision <= OIT_HIGH_PRECISION_DEPTH_THRESHOLD) {
+        mappedDepth = depthWithinBounds / range;
+    } else if (depthWithinBounds <= OIT_HIGH_PRECISION_DEPTH_THRESHOLD) {
+        mappedDepth = (depthWithinBounds / OIT_HIGH_PRECISION_DEPTH_THRESHOLD) * depthFractionWithHighPrecision;
+    } else {
+        mappedDepth = depthFractionWithHighPrecision + ((depthWithinBounds - OIT_HIGH_PRECISION_DEPTH_THRESHOLD) / (range - OIT_HIGH_PRECISION_DEPTH_THRESHOLD)) * (1.0 - depthFractionWithHighPrecision);
+    }
+
+    return mappedDepth * (1.0 - 1.0 / COEFF_COUNT);
 }

@@ -97,8 +97,6 @@ void main() {
 
     color *= faceVertexColor * ColorModulator;
 
-    handleOpaquePartDiscards(color.a);
-
     #ifdef GLINT
     color.a = max(color.a, GlintAlpha);
     #endif

@@ -14,18 +14,6 @@
     #endif
 #endif
 
-void handleOpaquePartDiscards(float alpha) {
-    #ifdef OIT
-    if (alpha > OIT_OPAQUE_PARTS_THRESHOLD) {
-        discard;
-    }
-    #elif defined(OIT_OPAQUE_PARTS_THRESHOLD)
-    if (alpha <= OIT_OPAQUE_PARTS_THRESHOLD) {
-        discard;
-    }
-    #endif
-}
-
 void executeAlphaOnlyPhase(float deviceDepth, float alpha) {
     #ifdef OIT_ADDITIVE
     // Additive surfaces do not occlude, so they contribute nothing to the depth bounds or
@@ -35,7 +23,7 @@ void executeAlphaOnlyPhase(float deviceDepth, float alpha) {
     if (alpha < 0.01) {
         discard;
     }
-    calculateDepthBounds(deviceDepth);
+    calculateDepthBounds(deviceDepth, alpha);
     #elif defined(OIT_TRANSMITTANCE)
     addTransmittance(alpha);
     #endif
