@@ -2,23 +2,19 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "block": "minecraft:green_bed",
-              "condition": "minecraft:block_state_property",
-              "properties": {
-                "part": "head"
-              }
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "minecraft:green_bed",
+            "state": {
+              "part": "head"
             }
-          ],
+          },
           "name": "minecraft:green_bed"
         }
       ],

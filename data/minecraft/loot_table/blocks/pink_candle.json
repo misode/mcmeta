@@ -5,48 +5,42 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
+          "modifier": [
             {
-              "conditions": [
-                {
-                  "block": "minecraft:pink_candle",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "candles": "2"
-                  }
+              "type": "minecraft:set_count",
+              "condition": {
+                "type": "minecraft:match_block",
+                "blocks": "minecraft:pink_candle",
+                "state": {
+                  "candles": "2"
                 }
-              ],
-              "count": 2.0,
-              "function": "minecraft:set_count"
+              },
+              "count": 2.0
             },
             {
-              "conditions": [
-                {
-                  "block": "minecraft:pink_candle",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "candles": "3"
-                  }
+              "type": "minecraft:set_count",
+              "condition": {
+                "type": "minecraft:match_block",
+                "blocks": "minecraft:pink_candle",
+                "state": {
+                  "candles": "3"
                 }
-              ],
-              "count": 3.0,
-              "function": "minecraft:set_count"
+              },
+              "count": 3.0
             },
             {
-              "conditions": [
-                {
-                  "block": "minecraft:pink_candle",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "candles": "4"
-                  }
+              "type": "minecraft:set_count",
+              "condition": {
+                "type": "minecraft:match_block",
+                "blocks": "minecraft:pink_candle",
+                "state": {
+                  "candles": "4"
                 }
-              ],
-              "count": 4.0,
-              "function": "minecraft:set_count"
+              },
+              "count": 4.0
             },
             {
-              "function": "minecraft:explosion_decay"
+              "type": "minecraft:explosion_decay"
             }
           ],
           "name": "minecraft:pink_candle"

@@ -8,27 +8,18 @@
           "children": [
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "minecraft:tool/can_silk_touch"
-                }
-              ],
+              "condition": "minecraft:tool/can_silk_touch",
               "name": "minecraft:campfire"
             },
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:survives_explosion"
-                }
-              ],
-              "functions": [
-                {
-                  "count": 2.0,
-                  "function": "minecraft:set_count"
-                }
-              ],
+              "condition": {
+                "type": "minecraft:survives_explosion"
+              },
+              "modifier": {
+                "type": "minecraft:set_count",
+                "count": 2.0
+              },
               "name": "minecraft:charcoal"
             }
           ]

@@ -1,10 +1,8 @@
 {
   "type": "minecraft:block",
-  "functions": [
-    {
-      "function": "minecraft:explosion_decay"
-    }
-  ],
+  "modifier": {
+    "type": "minecraft:explosion_decay"
+  },
   "pools": [
     {
       "entries": [
@@ -13,15 +11,13 @@
           "children": [
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "block": "minecraft:beetroots",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "age": "3"
-                  }
+              "condition": {
+                "type": "minecraft:match_block",
+                "blocks": "minecraft:beetroots",
+                "state": {
+                  "age": "3"
                 }
-              ],
+              },
               "name": "minecraft:beetroot"
             },
             {
@@ -34,29 +30,25 @@
       "rolls": 1.0
     },
     {
-      "conditions": [
-        {
-          "block": "minecraft:beetroots",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "age": "3"
-          }
+      "condition": {
+        "type": "minecraft:match_block",
+        "blocks": "minecraft:beetroots",
+        "state": {
+          "age": "3"
         }
-      ],
+      },
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "enchantment": "minecraft:fortune",
-              "formula": "minecraft:binomial_with_bonus_count",
-              "function": "minecraft:apply_bonus",
-              "parameters": {
-                "extra": 3,
-                "probability": 0.5714286
-              }
+          "modifier": {
+            "type": "minecraft:apply_bonus",
+            "enchantment": "minecraft:fortune",
+            "formula": "minecraft:binomial_with_bonus_count",
+            "parameters": {
+              "extra": 3,
+              "probability": 0.5714286
             }
-          ],
+          },
           "name": "minecraft:beetroot_seeds"
         }
       ],

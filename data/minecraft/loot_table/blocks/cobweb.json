@@ -8,30 +8,20 @@
           "children": [
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:any_of",
-                  "terms": [
-                    {
-                      "condition": "minecraft:reference",
-                      "name": "minecraft:tool/can_shear"
-                    },
-                    {
-                      "condition": "minecraft:reference",
-                      "name": "minecraft:tool/can_silk_touch"
-                    }
-                  ]
-                }
-              ],
+              "condition": {
+                "type": "minecraft:any_of",
+                "terms": [
+                  "minecraft:tool/can_shear",
+                  "minecraft:tool/can_silk_touch"
+                ]
+              },
               "name": "minecraft:cobweb"
             },
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:survives_explosion"
-                }
-              ],
+              "condition": {
+                "type": "minecraft:survives_explosion"
+              },
               "name": "minecraft:string"
             }
           ]
