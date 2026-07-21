@@ -1,4 +1,4 @@
-out vec4 fragColor;
+layout(location = 0) out vec4 fragColor;
 
 void calculateDepthBounds(float fragmentDeviceDepth, float alpha) {
     float fragmentLinearDepth = deviceToLinearDepth(fragmentDeviceDepth);

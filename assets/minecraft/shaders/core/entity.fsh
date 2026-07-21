@@ -1,11 +1,12 @@
 #version 330
+#extension GL_ARB_separate_shader_objects : require
 
 #ifdef GLINT
-#moj_import <minecraft:globals.glsl>
+#include <minecraft:globals.glsl>
 #endif
-#moj_import <minecraft:fog.glsl>
-#moj_import <minecraft:dynamictransforms.glsl>
-#moj_import <minecraft:oit.glsl>
+#include <minecraft:fog.glsl>
+#include <minecraft:dynamictransforms.glsl>
+#include <minecraft:oit.glsl>
 
 uniform sampler2D Sampler0;
 
@@ -17,30 +18,30 @@ uniform sampler2D DissolveMaskSampler;
 uniform sampler2D GlintSampler;
 #endif
 
-in float sphericalVertexDistance;
-in float cylindricalVertexDistance;
+layout(location = 0) in float sphericalVertexDistance;
+layout(location = 1) in float cylindricalVertexDistance;
 #ifdef PER_FACE_LIGHTING
-in vec4 vertexPerFaceColorBack;
-in vec4 vertexPerFaceColorFront;
+layout(location = 2) in vec4 vertexPerFaceColorBack;
+layout(location = 3) in vec4 vertexPerFaceColorFront;
 #else
-in vec4 vertexColor;
+layout(location = 2) in vec4 vertexColor;
 #endif
 
 #ifndef EMISSIVE
-in vec4 lightMapColor;
+layout(location = 4) in vec4 lightMapColor;
 #endif
 
 #ifndef NO_OVERLAY
-in vec4 overlayColor;
+layout(location = 5) in vec4 overlayColor;
 #endif
 
-in vec2 texCoord0;
+layout(location = 6) in vec2 texCoord0;
 #ifdef GLINT
-in vec2 texCoordGlint;
+layout(location = 7) in vec2 texCoordGlint;
 #endif
 
 #ifndef OIT_ALPHA_ONLY
-out vec4 fragColor;
+layout(location = 0) out vec4 fragColor;
 #endif
 
 vec4 calculateFinalColor(vec4 color) {

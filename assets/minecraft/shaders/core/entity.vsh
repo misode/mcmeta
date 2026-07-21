@@ -1,19 +1,20 @@
 #version 330
+#extension GL_ARB_separate_shader_objects : require
 
 #if defined(PER_FACE_LIGHTING) || !defined(NO_CARDINAL_LIGHTING)
-#moj_import <minecraft:light.glsl>
+#include <minecraft:light.glsl>
 #endif
-#moj_import <minecraft:fog.glsl>
-#moj_import <minecraft:dynamictransforms.glsl>
-#moj_import <minecraft:projection.glsl>
-#moj_import <minecraft:sample_lightmap.glsl>
+#include <minecraft:fog.glsl>
+#include <minecraft:dynamictransforms.glsl>
+#include <minecraft:projection.glsl>
+#include <minecraft:sample_lightmap.glsl>
 
-in vec3 Position;
-in vec4 Color;
-in vec2 UV0;
-in ivec2 UV1;
-in ivec2 UV2;
-in vec3 Normal;
+layout(location = 0) in vec3 Position;
+layout(location = 1) in vec4 Color;
+layout(location = 2) in vec2 UV0;
+layout(location = 3) in ivec2 UV1;
+layout(location = 4) in ivec2 UV2;
+layout(location = 5) in vec3 Normal;
 
 #if !defined(NO_OVERLAY) && !defined(OIT_ALPHA_ONLY)
 uniform sampler2D Sampler1;
@@ -23,27 +24,27 @@ uniform sampler2D Sampler1;
 uniform sampler2D Sampler2;
 #endif
 
-out float sphericalVertexDistance;
-out float cylindricalVertexDistance;
+layout(location = 0) out float sphericalVertexDistance;
+layout(location = 1) out float cylindricalVertexDistance;
 
 #ifdef PER_FACE_LIGHTING
-out vec4 vertexPerFaceColorBack;
-out vec4 vertexPerFaceColorFront;
+layout(location = 2) out vec4 vertexPerFaceColorBack;
+layout(location = 3) out vec4 vertexPerFaceColorFront;
 #else
-out vec4 vertexColor;
+layout(location = 2) out vec4 vertexColor;
 #endif
 
 #ifndef EMISSIVE
-out vec4 lightMapColor;
+layout(location = 4) out vec4 lightMapColor;
 #endif
 
 #ifndef NO_OVERLAY
-out vec4 overlayColor;
+layout(location = 5) out vec4 overlayColor;
 #endif
 
-out vec2 texCoord0;
+layout(location = 6) out vec2 texCoord0;
 #ifdef GLINT
-out vec2 texCoordGlint;
+layout(location = 7) out vec2 texCoordGlint;
 #endif
 
 void main() {

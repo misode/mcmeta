@@ -1,21 +1,22 @@
 #version 330
+#extension GL_ARB_separate_shader_objects : require
 
 #ifndef IS_SEE_THROUGH
-#moj_import <minecraft:fog.glsl>
+#include <minecraft:fog.glsl>
 #endif
 
-#moj_import <minecraft:dynamictransforms.glsl>
-#moj_import <minecraft:oit.glsl>
+#include <minecraft:dynamictransforms.glsl>
+#include <minecraft:oit.glsl>
 
 #ifndef IS_SEE_THROUGH
-in float sphericalVertexDistance;
-in float cylindricalVertexDistance;
+layout(location = 0) in float sphericalVertexDistance;
+layout(location = 1) in float cylindricalVertexDistance;
 #endif
 
-in vec4 vertexColor;
+layout(location = 2) in vec4 vertexColor;
 
 #ifndef OIT_ALPHA_ONLY
-out vec4 fragColor;
+layout(location = 0) out vec4 fragColor;
 #endif
 
 vec4 calculateFinalColor(vec4 color) {

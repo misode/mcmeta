@@ -1,12 +1,13 @@
 #version 330
+#extension GL_ARB_separate_shader_objects : require
 
-#moj_import <minecraft:animation_sprite.glsl>
+#include <minecraft:animation_sprite.glsl>
 
 uniform sampler2D Sprite;
 
-in vec2 texCoord0;
+layout(location = 1) in vec2 texCoord0;
 
-out vec4 fragColor;
+layout(location = 0) out vec4 fragColor;
 
 void main() {
     vec4 color = textureLod(Sprite, texCoord0, MipMapLevel);

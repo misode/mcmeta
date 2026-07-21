@@ -1,9 +1,10 @@
 #version 330
+#extension GL_ARB_separate_shader_objects : require
 
-#moj_import <minecraft:animation_sprite.glsl>
+#include <minecraft:animation_sprite.glsl>
 
-out float fAnimationProgress;
-out vec2 texCoord0;
+layout(location = 0) out float fAnimationProgress;
+layout(location = 1) out vec2 texCoord0;
 
 const vec2[] positions = vec2[](
     vec2(0, 0),
@@ -15,8 +16,8 @@ const vec2[] positions = vec2[](
 );
 
 void main() {
-    int index = gl_VertexID & 7;
-    float frameProgress = (gl_VertexID >> 3) / 1000.0;
+    int index = gl_VertexIndex & 7;
+    float frameProgress = (gl_VertexIndex >> 3) / 1000.0;
     vec2 padding = vec2(UPadding, VPadding);
     gl_Position = ProjectionMatrix * SpriteMatrix * vec4(positions[index], 0, 1);
     vec2 uv = positions[index];

@@ -1,20 +1,21 @@
 #version 330
+#extension GL_ARB_separate_shader_objects : require
 
-#moj_import <minecraft:fog.glsl>
-#moj_import <minecraft:globals.glsl>
-#moj_import <minecraft:chunksection.glsl>
-#moj_import <minecraft:texture_sampling.glsl>
-#moj_import <minecraft:oit.glsl>
+#include <minecraft:fog.glsl>
+#include <minecraft:globals.glsl>
+#include <minecraft:chunksection.glsl>
+#include <minecraft:texture_sampling.glsl>
+#include <minecraft:oit.glsl>
 
 uniform sampler2D Sampler0;
 
-in float sphericalVertexDistance;
-in float cylindricalVertexDistance;
-in vec4 vertexColor;
-in vec2 texCoord0;
+layout(location = 0) in float sphericalVertexDistance;
+layout(location = 1) in float cylindricalVertexDistance;
+layout(location = 2) in vec4 vertexColor;
+layout(location = 3) in vec2 texCoord0;
 
 #ifndef OIT_ALPHA_ONLY
-out vec4 fragColor;
+layout(location = 0) out vec4 fragColor;
 #endif
 
 vec4 calculateFinalColor(vec4 color) {
