@@ -1,5 +1,3 @@
-#version 330
-
 layout(location = 0) out vec4 coeff[COEFF_ATTACHMENT_COUNT];
 
 void addTransmittance(float alpha) {

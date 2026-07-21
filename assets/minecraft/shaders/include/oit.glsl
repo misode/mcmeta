@@ -1,16 +1,16 @@
 #ifdef OIT
-    #moj_import <minecraft:oit_common.glsl>
+    #include <minecraft:oit_common.glsl>
 
     #if defined(OIT_TRANSMITTANCE) || defined(OIT_ACCUMULATE)
-        #moj_import <minecraft:oit_depth_sample.glsl>
+        #include <minecraft:oit_depth_sample.glsl>
     #endif
 
     #if defined(OIT_DEPTH_BOUNDS)
-        #moj_import <minecraft:oit_depth_bounds.glsl>
+        #include <minecraft:oit_depth_bounds.glsl>
     #elif defined(OIT_TRANSMITTANCE)
-        #moj_import <minecraft:oit_add_transmittance.glsl>
+        #include <minecraft:oit_add_transmittance.glsl>
     #else
-        #moj_import <minecraft:oit_sample.glsl>
+        #include <minecraft:oit_sample.glsl>
     #endif
 #endif
 

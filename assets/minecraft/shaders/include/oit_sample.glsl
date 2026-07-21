@@ -1,5 +1,3 @@
-#version 330
-
 uniform sampler2D Coeff0;
 #if COEFF_COUNT > 4
 uniform sampler2D Coeff1;
