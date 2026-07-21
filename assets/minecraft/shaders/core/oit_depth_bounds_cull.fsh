@@ -1,12 +1,13 @@
 #version 330
+#extension GL_ARB_separate_shader_objects : require
 
-#moj_import <minecraft:oit_common.glsl>
+#include <minecraft:oit_common.glsl>
 
 uniform sampler2D DepthBoundsSampler;
 
-in vec2 texCoord;
+layout(location = 0) in vec2 texCoord;
 
-out vec4 fragColor;
+layout(location = 0) out vec4 fragColor;
 
 void main() {
     ivec2 pixelCoords = ivec2(gl_FragCoord.xy);

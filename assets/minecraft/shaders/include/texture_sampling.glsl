@@ -1,5 +1,3 @@
-#version 330
-
 vec4 sampleNearest(sampler2D source, vec2 uv, vec2 pixelSize, vec2 du, vec2 dv, vec2 texelScreenSize) {
     // Convert our UV back up to texel coordinates and find out how far over we are from the center of each pixel
     vec2 uvTexelCoords = uv / pixelSize;

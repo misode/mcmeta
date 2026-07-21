@@ -1,8 +1,9 @@
 #version 330
+#extension GL_ARB_separate_shader_objects : require
 
-#moj_import <minecraft:fog.glsl>
-#moj_import <minecraft:dynamictransforms.glsl>
-#moj_import <minecraft:projection.glsl>
+#include <minecraft:fog.glsl>
+#include <minecraft:dynamictransforms.glsl>
+#include <minecraft:projection.glsl>
 
 const int FLAG_MASK_DIR = 7;
 const int FLAG_INSIDE_FACE = 1 << 4;
@@ -18,8 +19,8 @@ layout(std140) uniform CloudInfo {
 
 uniform isamplerBuffer CloudFaces;
 
-out float vertexDistance;
-out vec4 vertexColor;
+layout(location = 0) out float vertexDistance;
+layout(location = 1) out vec4 vertexColor;
 
 const vec3[] vertices = vec3[](
     // Bottom face
@@ -70,8 +71,8 @@ const vec4[] faceColors = vec4[](
 );
 
 void main() {
-    int quadVertex = gl_VertexID % 4;
-    int index = (gl_VertexID / 4) * 3;
+    int quadVertex = gl_VertexIndex % 4;
+    int index = (gl_VertexIndex / 4) * 3;
 
     int cellX = texelFetch(CloudFaces, index).r;
     int cellZ = texelFetch(CloudFaces, index + 1).r;

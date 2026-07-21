@@ -1,12 +1,13 @@
 #version 330
+#extension GL_ARB_separate_shader_objects : require
 
-#moj_import <minecraft:dynamictransforms.glsl>
-#moj_import <minecraft:oit.glsl>
+#include <minecraft:dynamictransforms.glsl>
+#include <minecraft:oit.glsl>
 
-in vec4 vertexColor;
+layout(location = 0) in vec4 vertexColor;
 
 #ifndef OIT_ALPHA_ONLY
-out vec4 fragColor;
+layout(location = 0) out vec4 fragColor;
 #endif
 
 vec4 calculateFinalColor(vec4 color) {

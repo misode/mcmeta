@@ -1,8 +1,9 @@
 #version 330
+#extension GL_ARB_separate_shader_objects : require
 
 uniform sampler2D InSampler;
 
-in vec2 texCoord;
+layout(location = 0) in vec2 texCoord;
 
 layout(std140) uniform SamplerInfo {
     vec2 OutSize;
@@ -18,7 +19,7 @@ layout(std140) uniform ColorConfig {
 const vec3 Gray = vec3(0.3, 0.59, 0.11);
 const float Saturation = 1.8;
 
-out vec4 fragColor;
+layout(location = 0) out vec4 fragColor;
 
 void main() {
     vec2 oneTexel = 1.0 / InSize;
