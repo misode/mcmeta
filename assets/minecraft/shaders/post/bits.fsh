@@ -15,7 +15,7 @@ layout(std140) uniform BitsConfig {
     float MosaicSize;
 };
 
-out vec4 fragColor;
+layout(location = 0) out vec4 fragColor;
 
 const float Saturation = 1.5;
 
