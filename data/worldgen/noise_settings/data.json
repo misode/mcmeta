@@ -173,7 +173,9 @@
     },
     "noise_router": {
       "continents": 0.0,
-      "depth": {
+      "depth": 0.0,
+      "erosion": 0.0,
+      "final_density": {
         "type": "minecraft:add",
         "left": {
           "type": "minecraft:squeeze",
@@ -187,21 +189,23 @@
                 "input": {
                   "type": "minecraft:lerp",
                   "alpha": {
-                    "type": "minecraft:y_clamped_gradient",
+                    "type": "minecraft:gradient",
+                    "axis": "y",
+                    "from_coordinate": -72,
                     "from_value": 0.0,
-                    "from_y": -72,
-                    "to_value": 1.0,
-                    "to_y": -40
+                    "to_coordinate": -40,
+                    "to_value": 1.0
                   },
                   "first": 2.5,
                   "second": {
                     "type": "minecraft:lerp",
                     "alpha": {
-                      "type": "minecraft:y_clamped_gradient",
+                      "type": "minecraft:gradient",
+                      "axis": "y",
+                      "from_coordinate": 104,
                       "from_value": 1.0,
-                      "from_y": 104,
-                      "to_value": 0.0,
-                      "to_y": 128
+                      "to_coordinate": 128,
+                      "to_value": 0.0
                     },
                     "first": 0.9375,
                     "second": "minecraft:nether/base_3d_noise"
@@ -215,8 +219,6 @@
           "type": "minecraft:beardifier"
         }
       },
-      "erosion": 0.0,
-      "final_density": 0.0,
       "preliminary_surface_level": 0.0,
       "ridges": 0.0,
       "temperature": 0.0,
@@ -244,12 +246,7 @@
     "noise_router": {
       "continents": 0.0,
       "depth": 0.0,
-      "erosion": {
-        "type": "minecraft:cache_2d",
-        "input": {
-          "type": "minecraft:end_islands"
-        }
-      },
+      "erosion": "minecraft:end/islands",
       "final_density": {
         "type": "minecraft:add",
         "left": {
@@ -264,21 +261,23 @@
                 "input": {
                   "type": "minecraft:lerp",
                   "alpha": {
-                    "type": "minecraft:y_clamped_gradient",
+                    "type": "minecraft:gradient",
+                    "axis": "y",
+                    "from_coordinate": 4,
                     "from_value": 0.0,
-                    "from_y": 4,
-                    "to_value": 1.0,
-                    "to_y": 32
+                    "to_coordinate": 32,
+                    "to_value": 1.0
                   },
                   "first": -0.234375,
                   "second": {
                     "type": "minecraft:lerp",
                     "alpha": {
-                      "type": "minecraft:y_clamped_gradient",
+                      "type": "minecraft:gradient",
+                      "axis": "y",
+                      "from_coordinate": 56,
                       "from_value": 1.0,
-                      "from_y": 56,
-                      "to_value": 0.0,
-                      "to_y": 312
+                      "to_coordinate": 312,
+                      "to_value": 0.0
                     },
                     "first": -23.4375,
                     "second": "minecraft:end/sloped_cheese"
@@ -321,7 +320,9 @@
     },
     "noise_router": {
       "continents": 0.0,
-      "depth": {
+      "depth": 0.0,
+      "erosion": 0.0,
+      "final_density": {
         "type": "minecraft:add",
         "left": {
           "type": "minecraft:squeeze",
@@ -335,21 +336,23 @@
                 "input": {
                   "type": "minecraft:lerp",
                   "alpha": {
-                    "type": "minecraft:y_clamped_gradient",
+                    "type": "minecraft:gradient",
+                    "axis": "y",
+                    "from_coordinate": 4,
                     "from_value": 0.0,
-                    "from_y": 4,
-                    "to_value": 1.0,
-                    "to_y": 32
+                    "to_coordinate": 32,
+                    "to_value": 1.0
                   },
                   "first": -0.234375,
                   "second": {
                     "type": "minecraft:lerp",
                     "alpha": {
-                      "type": "minecraft:y_clamped_gradient",
+                      "type": "minecraft:gradient",
+                      "axis": "y",
+                      "from_coordinate": 184,
                       "from_value": 1.0,
-                      "from_y": 184,
-                      "to_value": 0.0,
-                      "to_y": 440
+                      "to_coordinate": 440,
+                      "to_value": 0.0
                     },
                     "first": -23.4375,
                     "second": "minecraft:end/base_3d_noise"
@@ -363,8 +366,6 @@
           "type": "minecraft:beardifier"
         }
       },
-      "erosion": 0.0,
-      "final_density": 0.0,
       "preliminary_surface_level": 0.0,
       "ridges": 0.0,
       "temperature": 0.0,
@@ -563,21 +564,23 @@
                 "input": {
                   "type": "minecraft:lerp",
                   "alpha": {
-                    "type": "minecraft:y_clamped_gradient",
+                    "type": "minecraft:gradient",
+                    "axis": "y",
+                    "from_coordinate": -8,
                     "from_value": 0.0,
-                    "from_y": -8,
-                    "to_value": 1.0,
-                    "to_y": 24
+                    "to_coordinate": 24,
+                    "to_value": 1.0
                   },
                   "first": 2.5,
                   "second": {
                     "type": "minecraft:lerp",
                     "alpha": {
-                      "type": "minecraft:y_clamped_gradient",
+                      "type": "minecraft:gradient",
+                      "axis": "y",
+                      "from_coordinate": 104,
                       "from_value": 1.0,
-                      "from_y": 104,
-                      "to_value": 0.0,
-                      "to_y": 128
+                      "to_coordinate": 128,
+                      "to_value": 0.0
                     },
                     "first": 0.9375,
                     "second": "minecraft:nether/base_3d_noise"

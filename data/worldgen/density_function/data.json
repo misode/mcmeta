@@ -7,11 +7,49 @@
     "y_factor": 160.0,
     "y_scale": 0.25
   },
+  "end/islands": {
+    "type": "minecraft:cache_2d",
+    "input": {
+      "type": "minecraft:max",
+      "left": {
+        "type": "minecraft:slice",
+        "axis": "y",
+        "coordinate": 0,
+        "input": {
+          "type": "minecraft:mul",
+          "left": 0.0078125,
+          "right": {
+            "type": "minecraft:sub",
+            "left": {
+              "type": "minecraft:clamp",
+              "input": {
+                "type": "minecraft:sub",
+                "left": 100.0,
+                "right": {
+                  "type": "minecraft:distance_to_point",
+                  "metric": "euclidean",
+                  "point": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              },
+              "max": 80.0,
+              "min": -100.0
+            },
+            "right": 8.0
+          }
+        }
+      },
+      "right": {
+        "type": "minecraft:end_outer_islands"
+      }
+    }
+  },
   "end/sloped_cheese": {
     "type": "minecraft:add",
-    "left": {
-      "type": "minecraft:end_islands"
-    },
+    "left": "minecraft:end/islands",
     "right": "minecraft:end/base_3d_noise"
   },
   "nether/base_3d_noise": {
@@ -47,11 +85,12 @@
           }
         },
         "right": {
-          "type": "minecraft:y_clamped_gradient",
+          "type": "minecraft:gradient",
+          "axis": "y",
+          "from_coordinate": -10,
           "from_value": 0.3,
-          "from_y": -10,
-          "to_value": 0.0,
-          "to_y": 30
+          "to_coordinate": 30,
+          "to_value": 0.0
         }
       },
       "right": {
@@ -457,11 +496,12 @@
                 }
               },
               "right": {
-                "type": "minecraft:y_clamped_gradient",
+                "type": "minecraft:gradient",
+                "axis": "y",
+                "from_coordinate": -64,
                 "from_value": 8.0,
-                "from_y": -64,
-                "to_value": -40.0,
-                "to_y": 320
+                "to_coordinate": 320,
+                "to_value": -40.0
               }
             }
           },
@@ -537,11 +577,12 @@
   "overworld/depth": {
     "type": "minecraft:add",
     "left": {
-      "type": "minecraft:y_clamped_gradient",
+      "type": "minecraft:gradient",
+      "axis": "y",
+      "from_coordinate": -64,
       "from_value": 1.5,
-      "from_y": -64,
-      "to_value": -1.5,
-      "to_y": 320
+      "to_coordinate": 320,
+      "to_value": -1.5
     },
     "right": "minecraft:overworld/offset"
   },
@@ -1456,21 +1497,23 @@
               "input": {
                 "type": "minecraft:lerp",
                 "alpha": {
-                  "type": "minecraft:y_clamped_gradient",
+                  "type": "minecraft:gradient",
+                  "axis": "y",
+                  "from_coordinate": -64,
                   "from_value": 0.0,
-                  "from_y": -64,
-                  "to_value": 1.0,
-                  "to_y": -40
+                  "to_coordinate": -40,
+                  "to_value": 1.0
                 },
                 "first": 0.1171875,
                 "second": {
                   "type": "minecraft:lerp",
                   "alpha": {
-                    "type": "minecraft:y_clamped_gradient",
+                    "type": "minecraft:gradient",
+                    "axis": "y",
+                    "from_coordinate": 240,
                     "from_value": 1.0,
-                    "from_y": 240,
-                    "to_value": 0.0,
-                    "to_y": 256
+                    "to_coordinate": 256,
+                    "to_value": 0.0
                   },
                   "first": -0.078125,
                   "second": {
@@ -3593,21 +3636,23 @@
       "right": {
         "type": "minecraft:lerp",
         "alpha": {
-          "type": "minecraft:y_clamped_gradient",
+          "type": "minecraft:gradient",
+          "axis": "y",
+          "from_coordinate": -64,
           "from_value": 0.0,
-          "from_y": -64,
-          "to_value": 1.0,
-          "to_y": -40
+          "to_coordinate": -40,
+          "to_value": 1.0
         },
         "first": 0.1171875,
         "second": {
           "type": "minecraft:lerp",
           "alpha": {
-            "type": "minecraft:y_clamped_gradient",
+            "type": "minecraft:gradient",
+            "axis": "y",
+            "from_coordinate": 240,
             "from_value": 1.0,
-            "from_y": 240,
-            "to_value": 0.0,
-            "to_y": 256
+            "to_coordinate": 256,
+            "to_value": 0.0
           },
           "first": -0.078125,
           "second": {
@@ -3625,11 +3670,12 @@
                     "left": {
                       "type": "minecraft:add",
                       "left": {
-                        "type": "minecraft:y_clamped_gradient",
+                        "type": "minecraft:gradient",
+                        "axis": "y",
+                        "from_coordinate": -64,
                         "from_value": 1.5,
-                        "from_y": -64,
-                        "to_value": -1.5,
-                        "to_y": 320
+                        "to_coordinate": 320,
+                        "to_value": -1.5
                       },
                       "right": {
                         "type": "minecraft:cache_2d",
@@ -3770,11 +3816,12 @@
   "overworld_amplified/depth": {
     "type": "minecraft:add",
     "left": {
-      "type": "minecraft:y_clamped_gradient",
+      "type": "minecraft:gradient",
+      "axis": "y",
+      "from_coordinate": -64,
       "from_value": 1.5,
-      "from_y": -64,
-      "to_value": -1.5,
-      "to_y": 320
+      "to_coordinate": 320,
+      "to_value": -1.5
     },
     "right": "minecraft:overworld_amplified/offset"
   },
@@ -4677,21 +4724,23 @@
               "input": {
                 "type": "minecraft:lerp",
                 "alpha": {
-                  "type": "minecraft:y_clamped_gradient",
+                  "type": "minecraft:gradient",
+                  "axis": "y",
+                  "from_coordinate": -64,
                   "from_value": 0.0,
-                  "from_y": -64,
-                  "to_value": 1.0,
-                  "to_y": -40
+                  "to_coordinate": -40,
+                  "to_value": 1.0
                 },
                 "first": 0.4,
                 "second": {
                   "type": "minecraft:lerp",
                   "alpha": {
-                    "type": "minecraft:y_clamped_gradient",
+                    "type": "minecraft:gradient",
+                    "axis": "y",
+                    "from_coordinate": 304,
                     "from_value": 1.0,
-                    "from_y": 304,
-                    "to_value": 0.0,
-                    "to_y": 320
+                    "to_coordinate": 320,
+                    "to_value": 0.0
                   },
                   "first": -0.078125,
                   "second": {
@@ -6597,21 +6646,23 @@
       "right": {
         "type": "minecraft:lerp",
         "alpha": {
-          "type": "minecraft:y_clamped_gradient",
+          "type": "minecraft:gradient",
+          "axis": "y",
+          "from_coordinate": -64,
           "from_value": 0.0,
-          "from_y": -64,
-          "to_value": 1.0,
-          "to_y": -40
+          "to_coordinate": -40,
+          "to_value": 1.0
         },
         "first": 0.4,
         "second": {
           "type": "minecraft:lerp",
           "alpha": {
-            "type": "minecraft:y_clamped_gradient",
+            "type": "minecraft:gradient",
+            "axis": "y",
+            "from_coordinate": 304,
             "from_value": 1.0,
-            "from_y": 304,
-            "to_value": 0.0,
-            "to_y": 320
+            "to_coordinate": 320,
+            "to_value": 0.0
           },
           "first": -0.078125,
           "second": {
@@ -6629,11 +6680,12 @@
                     "left": {
                       "type": "minecraft:add",
                       "left": {
-                        "type": "minecraft:y_clamped_gradient",
+                        "type": "minecraft:gradient",
+                        "axis": "y",
+                        "from_coordinate": -64,
                         "from_value": 1.5,
-                        "from_y": -64,
-                        "to_value": -1.5,
-                        "to_y": 320
+                        "to_coordinate": 320,
+                        "to_value": -1.5
                       },
                       "right": {
                         "type": "minecraft:cache_2d",
@@ -6737,11 +6789,12 @@
   "overworld_large_biomes/depth": {
     "type": "minecraft:add",
     "left": {
-      "type": "minecraft:y_clamped_gradient",
+      "type": "minecraft:gradient",
+      "axis": "y",
+      "from_coordinate": -64,
       "from_value": 1.5,
-      "from_y": -64,
-      "to_value": -1.5,
-      "to_y": 320
+      "to_coordinate": 320,
+      "to_value": -1.5
     },
     "right": "minecraft:overworld_large_biomes/offset"
   },
@@ -7656,21 +7709,23 @@
               "input": {
                 "type": "minecraft:lerp",
                 "alpha": {
-                  "type": "minecraft:y_clamped_gradient",
+                  "type": "minecraft:gradient",
+                  "axis": "y",
+                  "from_coordinate": -64,
                   "from_value": 0.0,
-                  "from_y": -64,
-                  "to_value": 1.0,
-                  "to_y": -40
+                  "to_coordinate": -40,
+                  "to_value": 1.0
                 },
                 "first": 0.1171875,
                 "second": {
                   "type": "minecraft:lerp",
                   "alpha": {
-                    "type": "minecraft:y_clamped_gradient",
+                    "type": "minecraft:gradient",
+                    "axis": "y",
+                    "from_coordinate": 240,
                     "from_value": 1.0,
-                    "from_y": 240,
-                    "to_value": 0.0,
-                    "to_y": 256
+                    "to_coordinate": 256,
+                    "to_value": 0.0
                   },
                   "first": -0.078125,
                   "second": {
@@ -9576,21 +9631,23 @@
       "right": {
         "type": "minecraft:lerp",
         "alpha": {
-          "type": "minecraft:y_clamped_gradient",
+          "type": "minecraft:gradient",
+          "axis": "y",
+          "from_coordinate": -64,
           "from_value": 0.0,
-          "from_y": -64,
-          "to_value": 1.0,
-          "to_y": -40
+          "to_coordinate": -40,
+          "to_value": 1.0
         },
         "first": 0.1171875,
         "second": {
           "type": "minecraft:lerp",
           "alpha": {
-            "type": "minecraft:y_clamped_gradient",
+            "type": "minecraft:gradient",
+            "axis": "y",
+            "from_coordinate": 240,
             "from_value": 1.0,
-            "from_y": 240,
-            "to_value": 0.0,
-            "to_y": 256
+            "to_coordinate": 256,
+            "to_value": 0.0
           },
           "first": -0.078125,
           "second": {
@@ -9608,11 +9665,12 @@
                     "left": {
                       "type": "minecraft:add",
                       "left": {
-                        "type": "minecraft:y_clamped_gradient",
+                        "type": "minecraft:gradient",
+                        "axis": "y",
+                        "from_coordinate": -64,
                         "from_value": 1.5,
-                        "from_y": -64,
-                        "to_value": -1.5,
-                        "to_y": 320
+                        "to_coordinate": 320,
+                        "to_value": -1.5
                       },
                       "right": {
                         "type": "minecraft:cache_2d",
@@ -9740,11 +9798,12 @@
     }
   },
   "y": {
-    "type": "minecraft:y_clamped_gradient",
+    "type": "minecraft:gradient",
+    "axis": "y",
+    "from_coordinate": -4064,
     "from_value": -4064.0,
-    "from_y": -4064,
-    "to_value": 4062.0,
-    "to_y": 4062
+    "to_coordinate": 4062,
+    "to_value": 4062.0
   },
   "zero": 0.0
 }
