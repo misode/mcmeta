@@ -5,7 +5,7 @@ uniform sampler2D InSampler;
 uniform sampler2D BlurSampler;
 
 layout(location = 0) in vec2 texCoord;
-layout(location = 2) in vec2 scaledCoord;
+layout(location = 1) in vec2 scaledCoord;
 
 layout(std140) uniform SamplerInfo {
     vec2 OutSize;

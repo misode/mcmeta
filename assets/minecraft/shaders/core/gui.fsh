@@ -5,9 +5,9 @@
 // This is a copy of dynamicimports.glsl
 layout(std140) uniform DynamicTransforms {
     mat4 ModelViewMat;
+    mat4 TextureMat;
     vec4 ColorModulator;
     vec3 ModelOffset;
-    mat4 TextureMat;
 };
 
 layout(location = 0) in vec4 vertexColor;

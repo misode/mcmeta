@@ -37,4 +37,7 @@ void addTransmittance(float alpha) {
             coeff[attachmentIndex][i] = coefficients[attachmentIndex * 4 + i];
         }
     }
+    #ifdef RENDERPEARL_EXPLICIT_DEPTH_INVARIANCE
+    gl_FragDepth = gl_FragCoord.z;
+    #endif
 }
