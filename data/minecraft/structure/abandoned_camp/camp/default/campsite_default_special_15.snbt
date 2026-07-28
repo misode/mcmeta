@@ -1,6 +1,64 @@
 {
   size: [10, 5, 10], 
-  entities: [], 
+  entities: [
+    {
+      nbt: {
+        Motion: [0.0d, 0.0d, 0.0d], 
+        color: "purple", 
+        block_pos: [I; -33, -61, 12], 
+        Invulnerable: 0b, 
+        Air: 300s, 
+        OnGround: 0b, 
+        fall_distance: 0.0d, 
+        PortalCooldown: 0, 
+        Rotation: [180.0f, 0.0f], 
+        Pos: [-32.5d, -60.0625d, 12.5d], 
+        Fire: 0s, 
+        id: "minecraft:cushion", 
+        UUID: [I; 1098272144, -991606195, -1494624741, -1242837616]
+      }, 
+      blockPos: [6, 2, 4], 
+      pos: [6.5d, 2.9375d, 4.5d]
+    }, 
+    {
+      nbt: {
+        Motion: [0.0d, 0.0d, 0.0d], 
+        color: "purple", 
+        block_pos: [I; -31, -61, 13], 
+        Invulnerable: 0b, 
+        Air: 300s, 
+        OnGround: 0b, 
+        fall_distance: 0.0d, 
+        PortalCooldown: 0, 
+        Rotation: [270.0f, 0.0f], 
+        Pos: [-30.5d, -60.0625d, 13.5d], 
+        Fire: 0s, 
+        id: "minecraft:cushion", 
+        UUID: [I; 1892461245, -1544074508, -2011520020, -173940238]
+      }, 
+      blockPos: [8, 2, 5], 
+      pos: [8.5d, 2.9375d, 5.5d]
+    }, 
+    {
+      nbt: {
+        Motion: [0.0d, 0.0d, 0.0d], 
+        color: "purple", 
+        block_pos: [I; -31, -60, 11], 
+        Invulnerable: 0b, 
+        Air: 300s, 
+        OnGround: 0b, 
+        fall_distance: 0.0d, 
+        PortalCooldown: 0, 
+        Rotation: [180.0f, 0.0f], 
+        Pos: [-30.5d, -60.0d, 11.5d], 
+        Fire: 0s, 
+        id: "minecraft:cushion", 
+        UUID: [I; -1648362032, 199445840, -1117080985, -2138609236]
+      }, 
+      blockPos: [8, 3, 3], 
+      pos: [8.5d, 3.0d, 3.5d]
+    }
+  ], 
   blocks: [
     {
       pos: [0, 0, 4], 
@@ -403,6 +461,10 @@
       state: 0
     }, 
     {
+      pos: [7, 2, 4], 
+      state: 0
+    }, 
+    {
       pos: [7, 2, 5], 
       state: 2
     }, 
@@ -511,10 +573,6 @@
       state: 8
     }, 
     {
-      pos: [7, 2, 4], 
-      state: 8
-    }, 
-    {
       pos: [8, 2, 4], 
       state: 8
     }, 
@@ -557,7 +615,6 @@
       nbt: {
         LootTable: "minecraft:barrels/abandoned_camp_barrel", 
         components: {}, 
-        Items: [], 
         id: "minecraft:barrel"
       }, 
       pos: [5, 3, 8], 
@@ -567,11 +624,21 @@
       nbt: {
         LootTable: "minecraft:chests/abandoned_camp_common_chest", 
         components: {}, 
-        Items: [], 
         id: "minecraft:chest"
       }, 
       pos: [6, 3, 8], 
       state: 13
+    }, 
+    {
+      nbt: {
+        components: {}, 
+        Items: [], 
+        CookingTimes: [I; 0, 0, 0, 0], 
+        CookingTotalTimes: [I; 0, 0, 0, 0], 
+        id: "minecraft:campfire"
+      }, 
+      pos: [7, 3, 4], 
+      state: 14
     }
   ], 
   palette: [
@@ -660,6 +727,15 @@
         type: "single"
       }, 
       Name: "minecraft:chest"
+    }, 
+    {
+      Properties: {
+        waterlogged: "false", 
+        signal_fire: "false", 
+        lit: "false", 
+        facing: "east"
+      }, 
+      Name: "minecraft:campfire"
     }
   ]
 }

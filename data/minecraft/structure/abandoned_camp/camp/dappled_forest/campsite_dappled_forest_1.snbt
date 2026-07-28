@@ -4,6 +4,25 @@
     {
       nbt: {
         Motion: [0.0d, 0.0d, 0.0d], 
+        color: "yellow", 
+        block_pos: [I; -88, -61, 584], 
+        Invulnerable: 0b, 
+        Air: 300s, 
+        OnGround: 0b, 
+        fall_distance: 0.0d, 
+        PortalCooldown: 0, 
+        Rotation: [90.0f, 0.0f], 
+        Pos: [-87.5d, -60.0625d, 584.5d], 
+        Fire: 0s, 
+        id: "minecraft:cushion", 
+        UUID: [I; 264686681, -2091299778, -1297700743, -1384025774]
+      }, 
+      blockPos: [6, 0, 2], 
+      pos: [6.5d, 0.9375d, 2.5d]
+    }, 
+    {
+      nbt: {
+        Motion: [0.0d, 0.0d, 0.0d], 
         color: "orange", 
         block_pos: [I; -87, -61, 586], 
         Invulnerable: 0b, 
@@ -11,33 +30,14 @@
         OnGround: 0b, 
         fall_distance: 0.0d, 
         PortalCooldown: 0, 
-        Rotation: [0.0f, 0.0f], 
+        Rotation: [90.0f, 0.0f], 
         Pos: [-86.5d, -60.0625d, 586.5d], 
         Fire: 0s, 
         id: "minecraft:cushion", 
-        UUID: [I; -628162071, 570379431, -1592355018, 1729959055]
+        UUID: [I; 688436820, -1412085080, -2032463194, -1444586959]
       }, 
       blockPos: [7, 0, 4], 
       pos: [7.5d, 0.9375d, 4.5d]
-    }, 
-    {
-      nbt: {
-        Motion: [0.0d, 0.0d, 0.0d], 
-        color: "yellow", 
-        block_pos: [I; -87, -59, 583], 
-        Invulnerable: 0b, 
-        Air: 300s, 
-        OnGround: 0b, 
-        fall_distance: 0.0d, 
-        PortalCooldown: 0, 
-        Rotation: [0.0f, 0.0f], 
-        Pos: [-86.5d, -59.0d, 583.5d], 
-        Fire: 0s, 
-        id: "minecraft:cushion", 
-        UUID: [I; -1129800865, -1609873321, -1199139026, -55553875]
-      }, 
-      blockPos: [7, 2, 1], 
-      pos: [7.5d, 2.0d, 1.5d]
     }
   ], 
   blocks: [
@@ -199,7 +199,7 @@
     }, 
     {
       pos: [6, 1, 6], 
-      state: 1
+      state: 2
     }, 
     {
       pos: [6, 1, 7], 
@@ -220,10 +220,6 @@
     {
       pos: [3, 2, 2], 
       state: 0
-    }, 
-    {
-      pos: [6, 2, 6], 
-      state: 4
     }, 
     {
       pos: [2, 0, 4], 
@@ -317,12 +313,12 @@
         components: {}, 
         joint: "rollable", 
         final_state: "minecraft:dirt", 
-        name: "minecraft:bottom", 
+        name: "minecraft:down", 
         placement_priority: 0, 
         pool: "minecraft:abandoned_camp/trees/red_poplar", 
         selection_priority: 0, 
         id: "minecraft:jigsaw", 
-        target: "minecraft:bottom"
+        target: "minecraft:down"
       }, 
       pos: [5, 1, 5], 
       state: 9
@@ -342,7 +338,6 @@
       nbt: {
         LootTable: "minecraft:chests/abandoned_camp_common_chest", 
         components: {}, 
-        Items: [], 
         id: "minecraft:chest"
       }, 
       pos: [5, 2, 4], 

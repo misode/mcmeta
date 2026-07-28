@@ -35,21 +35,23 @@
               "input": {
                 "type": "minecraft:lerp",
                 "alpha": {
-                  "type": "minecraft:y_clamped_gradient",
+                  "type": "minecraft:gradient",
+                  "axis": "y",
+                  "from_coordinate": -8,
                   "from_value": 0.0,
-                  "from_y": -8,
-                  "to_value": 1.0,
-                  "to_y": 24
+                  "to_coordinate": 24,
+                  "to_value": 1.0
                 },
                 "first": 2.5,
                 "second": {
                   "type": "minecraft:lerp",
                   "alpha": {
-                    "type": "minecraft:y_clamped_gradient",
+                    "type": "minecraft:gradient",
+                    "axis": "y",
+                    "from_coordinate": 104,
                     "from_value": 1.0,
-                    "from_y": 104,
-                    "to_value": 0.0,
-                    "to_y": 128
+                    "to_coordinate": 128,
+                    "to_value": 0.0
                   },
                   "first": 0.9375,
                   "second": "minecraft:nether/base_3d_noise"

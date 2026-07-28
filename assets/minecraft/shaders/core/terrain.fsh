@@ -3,9 +3,12 @@
 
 #include <minecraft:fog.glsl>
 #include <minecraft:globals.glsl>
-#include <minecraft:chunksection.glsl>
 #include <minecraft:texture_sampling.glsl>
 #include <minecraft:oit.glsl>
+#include <minecraft:terrainglobals.glsl>
+#ifndef MULTIDRAW_TERRAIN
+    #include <minecraft:chunksection.glsl>
+#endif
 
 uniform sampler2D Sampler0;
 
@@ -13,6 +16,9 @@ layout(location = 0) in float sphericalVertexDistance;
 layout(location = 1) in float cylindricalVertexDistance;
 layout(location = 2) in vec4 vertexColor;
 layout(location = 3) in vec2 texCoord0;
+#ifdef MULTIDRAW_TERRAIN
+layout(location = 4) flat in float ChunkVisibility;
+#endif
 
 #ifndef OIT_ALPHA_ONLY
 layout(location = 0) out vec4 fragColor;

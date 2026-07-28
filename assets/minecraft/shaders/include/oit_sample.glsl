@@ -88,6 +88,9 @@ vec4 sampleColorForAccumulation(vec4 color) {
     float absorbance = toAbsorbance(transmittance);
     float accumAlpha = color.a;
     #endif
+    #ifdef RENDERPEARL_EXPLICIT_DEPTH_INVARIANCE
+    gl_FragDepth = gl_FragCoord.z;
+    #endif
     float sampledTransmittance = sampleTransmittance(ivec2(gl_FragCoord.xy), normalizeDepth(gl_FragCoord.z), absorbance);
     return vec4(color.rgb * color.a, accumAlpha) * sampledTransmittance;
 }

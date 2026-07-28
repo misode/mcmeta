@@ -17,12 +17,7 @@
   "noise_router": {
     "continents": 0.0,
     "depth": 0.0,
-    "erosion": {
-      "type": "minecraft:cache_2d",
-      "input": {
-        "type": "minecraft:end_islands"
-      }
-    },
+    "erosion": "minecraft:end/islands",
     "final_density": {
       "type": "minecraft:add",
       "left": {
@@ -37,21 +32,23 @@
               "input": {
                 "type": "minecraft:lerp",
                 "alpha": {
-                  "type": "minecraft:y_clamped_gradient",
+                  "type": "minecraft:gradient",
+                  "axis": "y",
+                  "from_coordinate": 4,
                   "from_value": 0.0,
-                  "from_y": 4,
-                  "to_value": 1.0,
-                  "to_y": 32
+                  "to_coordinate": 32,
+                  "to_value": 1.0
                 },
                 "first": -0.234375,
                 "second": {
                   "type": "minecraft:lerp",
                   "alpha": {
-                    "type": "minecraft:y_clamped_gradient",
+                    "type": "minecraft:gradient",
+                    "axis": "y",
+                    "from_coordinate": 56,
                     "from_value": 1.0,
-                    "from_y": 56,
-                    "to_value": 0.0,
-                    "to_y": 312
+                    "to_coordinate": 312,
+                    "to_value": 0.0
                   },
                   "first": -23.4375,
                   "second": "minecraft:end/sloped_cheese"
