@@ -11,7 +11,7 @@
         "type": "minecraft:min",
         "left": {
           "type": "minecraft:sub",
-          "left": -0.22499999403953552,
+          "left": -0.225,
           "right": "minecraft:overworld/erosion"
         },
         "right": {
@@ -19,7 +19,7 @@
           "left": {
             "type": "minecraft:sub",
             "left": "minecraft:overworld_amplified/depth",
-            "right": 0.8999999761581421
+            "right": 0.9
           },
           "right": 0.0
         }
@@ -44,15 +44,8 @@
       },
       "surface_level": "minecraft:overworld_amplified/preliminary_surface_level"
     },
-    "default_block": {
-      "Name": "minecraft:stone"
-    },
-    "default_fluid": {
-      "Name": "minecraft:water",
-      "Properties": {
-        "level": "0"
-      }
-    },
+    "default_block": "minecraft:stone",
+    "default_fluid": "minecraft:water",
     "disable_mob_generation": false,
     "legacy_random_source": false,
     "material_rule": "minecraft:overworld",
@@ -75,31 +68,19 @@
     "ore_veins": [
       {
         "density": "minecraft:overworld/ore_vein/copper_density",
-        "filler_block": {
-          "Name": "minecraft:granite"
-        },
+        "filler_block": "minecraft:granite",
         "filler_gap": "minecraft:overworld/ore_vein/gap",
-        "ore_block": {
-          "Name": "minecraft:copper_ore"
-        },
-        "raw_ore_block": {
-          "Name": "minecraft:raw_copper_block"
-        },
+        "ore_block": "minecraft:copper_ore",
+        "raw_ore_block": "minecraft:raw_copper_block",
         "raw_ore_chance": 0.02,
         "richness": "minecraft:overworld/ore_vein/richness"
       },
       {
         "density": "minecraft:overworld/ore_vein/iron_density",
-        "filler_block": {
-          "Name": "minecraft:tuff"
-        },
+        "filler_block": "minecraft:tuff",
         "filler_gap": "minecraft:overworld/ore_vein/gap",
-        "ore_block": {
-          "Name": "minecraft:deepslate_iron_ore"
-        },
-        "raw_ore_block": {
-          "Name": "minecraft:raw_iron_block"
-        },
+        "ore_block": "minecraft:deepslate_iron_ore",
+        "raw_ore_block": "minecraft:raw_iron_block",
         "raw_ore_chance": 0.02,
         "richness": "minecraft:overworld/ore_vein/richness"
       }
@@ -153,15 +134,8 @@
     ]
   },
   "caves": {
-    "default_block": {
-      "Name": "minecraft:stone"
-    },
-    "default_fluid": {
-      "Name": "minecraft:water",
-      "Properties": {
-        "level": "0"
-      }
-    },
+    "default_block": "minecraft:stone",
+    "default_fluid": "minecraft:water",
     "disable_mob_generation": false,
     "legacy_random_source": true,
     "material_rule": "minecraft:overworld_caves",
@@ -183,8 +157,7 @@
             "type": "minecraft:interpolated",
             "input": {
               "type": "minecraft:mul",
-              "left": 0.64,
-              "right": {
+              "left": {
                 "type": "minecraft:blend_density",
                 "input": {
                   "type": "minecraft:lerp",
@@ -211,7 +184,8 @@
                     "second": "minecraft:nether/base_3d_noise"
                   }
                 }
-              }
+              },
+              "right": 0.64
             }
           }
         },
@@ -228,12 +202,8 @@
     "spawn_target": []
   },
   "end": {
-    "default_block": {
-      "Name": "minecraft:end_stone"
-    },
-    "default_fluid": {
-      "Name": "minecraft:air"
-    },
+    "default_block": "minecraft:end_stone",
+    "default_fluid": "minecraft:air",
     "disable_mob_generation": true,
     "legacy_random_source": true,
     "material_rule": "minecraft:end",
@@ -255,8 +225,7 @@
             "type": "minecraft:interpolated",
             "input": {
               "type": "minecraft:mul",
-              "left": 0.64,
-              "right": {
+              "left": {
                 "type": "minecraft:blend_density",
                 "input": {
                   "type": "minecraft:lerp",
@@ -283,7 +252,8 @@
                     "second": "minecraft:end/sloped_cheese"
                   }
                 }
-              }
+              },
+              "right": 0.64
             }
           }
         },
@@ -300,15 +270,8 @@
     "spawn_target": []
   },
   "floating_islands": {
-    "default_block": {
-      "Name": "minecraft:stone"
-    },
-    "default_fluid": {
-      "Name": "minecraft:water",
-      "Properties": {
-        "level": "0"
-      }
-    },
+    "default_block": "minecraft:stone",
+    "default_fluid": "minecraft:water",
     "disable_mob_generation": false,
     "legacy_random_source": true,
     "material_rule": "minecraft:overworld_floating_islands",
@@ -330,8 +293,7 @@
             "type": "minecraft:interpolated",
             "input": {
               "type": "minecraft:mul",
-              "left": 0.64,
-              "right": {
+              "left": {
                 "type": "minecraft:blend_density",
                 "input": {
                   "type": "minecraft:lerp",
@@ -358,7 +320,8 @@
                     "second": "minecraft:end/base_3d_noise"
                   }
                 }
-              }
+              },
+              "right": 0.64
             }
           }
         },
@@ -386,7 +349,7 @@
         "type": "minecraft:min",
         "left": {
           "type": "minecraft:sub",
-          "left": -0.22499999403953552,
+          "left": -0.225,
           "right": "minecraft:overworld_large_biomes/erosion"
         },
         "right": {
@@ -394,7 +357,7 @@
           "left": {
             "type": "minecraft:sub",
             "left": "minecraft:overworld_large_biomes/depth",
-            "right": 0.8999999761581421
+            "right": 0.9
           },
           "right": 0.0
         }
@@ -419,15 +382,8 @@
       },
       "surface_level": "minecraft:overworld_large_biomes/preliminary_surface_level"
     },
-    "default_block": {
-      "Name": "minecraft:stone"
-    },
-    "default_fluid": {
-      "Name": "minecraft:water",
-      "Properties": {
-        "level": "0"
-      }
-    },
+    "default_block": "minecraft:stone",
+    "default_fluid": "minecraft:water",
     "disable_mob_generation": false,
     "legacy_random_source": false,
     "material_rule": "minecraft:overworld",
@@ -450,31 +406,19 @@
     "ore_veins": [
       {
         "density": "minecraft:overworld/ore_vein/copper_density",
-        "filler_block": {
-          "Name": "minecraft:granite"
-        },
+        "filler_block": "minecraft:granite",
         "filler_gap": "minecraft:overworld/ore_vein/gap",
-        "ore_block": {
-          "Name": "minecraft:copper_ore"
-        },
-        "raw_ore_block": {
-          "Name": "minecraft:raw_copper_block"
-        },
+        "ore_block": "minecraft:copper_ore",
+        "raw_ore_block": "minecraft:raw_copper_block",
         "raw_ore_chance": 0.02,
         "richness": "minecraft:overworld/ore_vein/richness"
       },
       {
         "density": "minecraft:overworld/ore_vein/iron_density",
-        "filler_block": {
-          "Name": "minecraft:tuff"
-        },
+        "filler_block": "minecraft:tuff",
         "filler_gap": "minecraft:overworld/ore_vein/gap",
-        "ore_block": {
-          "Name": "minecraft:deepslate_iron_ore"
-        },
-        "raw_ore_block": {
-          "Name": "minecraft:raw_iron_block"
-        },
+        "ore_block": "minecraft:deepslate_iron_ore",
+        "raw_ore_block": "minecraft:raw_iron_block",
         "raw_ore_chance": 0.02,
         "richness": "minecraft:overworld/ore_vein/richness"
       }
@@ -528,15 +472,8 @@
     ]
   },
   "nether": {
-    "default_block": {
-      "Name": "minecraft:netherrack"
-    },
-    "default_fluid": {
-      "Name": "minecraft:lava",
-      "Properties": {
-        "level": "0"
-      }
-    },
+    "default_block": "minecraft:netherrack",
+    "default_fluid": "minecraft:lava",
     "disable_mob_generation": false,
     "legacy_random_source": true,
     "material_rule": "minecraft:nether",
@@ -558,8 +495,7 @@
             "type": "minecraft:interpolated",
             "input": {
               "type": "minecraft:mul",
-              "left": 0.64,
-              "right": {
+              "left": {
                 "type": "minecraft:blend_density",
                 "input": {
                   "type": "minecraft:lerp",
@@ -586,7 +522,8 @@
                     "second": "minecraft:nether/base_3d_noise"
                   }
                 }
-              }
+              },
+              "right": 0.64
             }
           }
         },
@@ -630,7 +567,7 @@
         "type": "minecraft:min",
         "left": {
           "type": "minecraft:sub",
-          "left": -0.22499999403953552,
+          "left": -0.225,
           "right": "minecraft:overworld/erosion"
         },
         "right": {
@@ -638,7 +575,7 @@
           "left": {
             "type": "minecraft:sub",
             "left": "minecraft:overworld/depth",
-            "right": 0.8999999761581421
+            "right": 0.9
           },
           "right": 0.0
         }
@@ -663,15 +600,8 @@
       },
       "surface_level": "minecraft:overworld/preliminary_surface_level"
     },
-    "default_block": {
-      "Name": "minecraft:stone"
-    },
-    "default_fluid": {
-      "Name": "minecraft:water",
-      "Properties": {
-        "level": "0"
-      }
-    },
+    "default_block": "minecraft:stone",
+    "default_fluid": "minecraft:water",
     "disable_mob_generation": false,
     "legacy_random_source": false,
     "material_rule": "minecraft:overworld",
@@ -694,31 +624,19 @@
     "ore_veins": [
       {
         "density": "minecraft:overworld/ore_vein/copper_density",
-        "filler_block": {
-          "Name": "minecraft:granite"
-        },
+        "filler_block": "minecraft:granite",
         "filler_gap": "minecraft:overworld/ore_vein/gap",
-        "ore_block": {
-          "Name": "minecraft:copper_ore"
-        },
-        "raw_ore_block": {
-          "Name": "minecraft:raw_copper_block"
-        },
+        "ore_block": "minecraft:copper_ore",
+        "raw_ore_block": "minecraft:raw_copper_block",
         "raw_ore_chance": 0.02,
         "richness": "minecraft:overworld/ore_vein/richness"
       },
       {
         "density": "minecraft:overworld/ore_vein/iron_density",
-        "filler_block": {
-          "Name": "minecraft:tuff"
-        },
+        "filler_block": "minecraft:tuff",
         "filler_gap": "minecraft:overworld/ore_vein/gap",
-        "ore_block": {
-          "Name": "minecraft:deepslate_iron_ore"
-        },
-        "raw_ore_block": {
-          "Name": "minecraft:raw_iron_block"
-        },
+        "ore_block": "minecraft:deepslate_iron_ore",
+        "raw_ore_block": "minecraft:raw_iron_block",
         "raw_ore_chance": 0.02,
         "richness": "minecraft:overworld/ore_vein/richness"
       }

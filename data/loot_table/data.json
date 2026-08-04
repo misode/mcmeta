@@ -529,14 +529,6 @@
             "type": "minecraft:item",
             "modifier": {
               "type": "minecraft:set_count",
-              "count": 1.0
-            },
-            "name": "minecraft:fishing_rod"
-          },
-          {
-            "type": "minecraft:item",
-            "modifier": {
-              "type": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
                 "max": 3.0,
@@ -556,14 +548,6 @@
               }
             },
             "name": "minecraft:leather"
-          },
-          {
-            "type": "minecraft:item",
-            "modifier": {
-              "type": "minecraft:set_count",
-              "count": 1.0
-            },
-            "name": "minecraft:bundle"
           },
           {
             "type": "minecraft:item",
@@ -617,9 +601,25 @@
             "type": "minecraft:item",
             "modifier": {
               "type": "minecraft:set_count",
-              "count": 1.0
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              }
             },
-            "name": "minecraft:wooden_axe"
+            "name": "minecraft:white_cushion"
+          },
+          {
+            "type": "minecraft:item",
+            "modifier": {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4.0,
+                "min": 2.0
+              }
+            },
+            "name": "minecraft:straw_bed"
           }
         ],
         "rolls": {
@@ -627,6 +627,35 @@
           "max": 8.0,
           "min": 4.0
         }
+      },
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": {
+              "type": "minecraft:set_count",
+              "count": 1.0
+            },
+            "name": "minecraft:bundle"
+          },
+          {
+            "type": "minecraft:item",
+            "modifier": {
+              "type": "minecraft:set_count",
+              "count": 1.0
+            },
+            "name": "minecraft:wooden_axe"
+          },
+          {
+            "type": "minecraft:item",
+            "modifier": {
+              "type": "minecraft:set_count",
+              "count": 1.0
+            },
+            "name": "minecraft:fishing_rod"
+          }
+        ],
+        "rolls": 1.0
       }
     ],
     "random_sequence": "minecraft:barrels/abandoned_camp_barrel"
@@ -2594,6 +2623,55 @@
     ],
     "random_sequence": "minecraft:blocks/black_concrete_powder"
   },
+  "blocks/black_concrete_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "condition": {
+                  "type": "minecraft:match_block",
+                  "blocks": "minecraft:black_concrete_slab",
+                  "state": {
+                    "type": "double"
+                  }
+                },
+                "count": 2.0
+              },
+              {
+                "type": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:black_concrete_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/black_concrete_slab"
+  },
+  "blocks/black_concrete_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:black_concrete_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/black_concrete_stairs"
+  },
   "blocks/black_glazed_terracotta": {
     "type": "minecraft:block",
     "pools": [
@@ -3039,6 +3117,55 @@
       }
     ],
     "random_sequence": "minecraft:blocks/blue_concrete_powder"
+  },
+  "blocks/blue_concrete_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "condition": {
+                  "type": "minecraft:match_block",
+                  "blocks": "minecraft:blue_concrete_slab",
+                  "state": {
+                    "type": "double"
+                  }
+                },
+                "count": 2.0
+              },
+              {
+                "type": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:blue_concrete_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/blue_concrete_slab"
+  },
+  "blocks/blue_concrete_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:blue_concrete_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/blue_concrete_stairs"
   },
   "blocks/blue_glazed_terracotta": {
     "type": "minecraft:block",
@@ -3631,6 +3758,55 @@
       }
     ],
     "random_sequence": "minecraft:blocks/brown_concrete_powder"
+  },
+  "blocks/brown_concrete_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "condition": {
+                  "type": "minecraft:match_block",
+                  "blocks": "minecraft:brown_concrete_slab",
+                  "state": {
+                    "type": "double"
+                  }
+                },
+                "count": 2.0
+              },
+              {
+                "type": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:brown_concrete_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/brown_concrete_slab"
+  },
+  "blocks/brown_concrete_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:brown_concrete_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/brown_concrete_stairs"
   },
   "blocks/brown_glazed_terracotta": {
     "type": "minecraft:block",
@@ -6764,6 +6940,55 @@
       }
     ],
     "random_sequence": "minecraft:blocks/cyan_concrete_powder"
+  },
+  "blocks/cyan_concrete_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "condition": {
+                  "type": "minecraft:match_block",
+                  "blocks": "minecraft:cyan_concrete_slab",
+                  "state": {
+                    "type": "double"
+                  }
+                },
+                "count": 2.0
+              },
+              {
+                "type": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:cyan_concrete_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/cyan_concrete_slab"
+  },
+  "blocks/cyan_concrete_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:cyan_concrete_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/cyan_concrete_stairs"
   },
   "blocks/cyan_glazed_terracotta": {
     "type": "minecraft:block",
@@ -10142,6 +10367,55 @@
     ],
     "random_sequence": "minecraft:blocks/gray_concrete_powder"
   },
+  "blocks/gray_concrete_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "condition": {
+                  "type": "minecraft:match_block",
+                  "blocks": "minecraft:gray_concrete_slab",
+                  "state": {
+                    "type": "double"
+                  }
+                },
+                "count": 2.0
+              },
+              {
+                "type": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:gray_concrete_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/gray_concrete_slab"
+  },
+  "blocks/gray_concrete_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:gray_concrete_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/gray_concrete_stairs"
+  },
   "blocks/gray_glazed_terracotta": {
     "type": "minecraft:block",
     "pools": [
@@ -10477,6 +10751,55 @@
       }
     ],
     "random_sequence": "minecraft:blocks/green_concrete_powder"
+  },
+  "blocks/green_concrete_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "condition": {
+                  "type": "minecraft:match_block",
+                  "blocks": "minecraft:green_concrete_slab",
+                  "state": {
+                    "type": "double"
+                  }
+                },
+                "count": 2.0
+              },
+              {
+                "type": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:green_concrete_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/green_concrete_slab"
+  },
+  "blocks/green_concrete_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:green_concrete_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/green_concrete_stairs"
   },
   "blocks/green_glazed_terracotta": {
     "type": "minecraft:block",
@@ -12093,6 +12416,55 @@
     ],
     "random_sequence": "minecraft:blocks/light_blue_concrete_powder"
   },
+  "blocks/light_blue_concrete_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "condition": {
+                  "type": "minecraft:match_block",
+                  "blocks": "minecraft:light_blue_concrete_slab",
+                  "state": {
+                    "type": "double"
+                  }
+                },
+                "count": 2.0
+              },
+              {
+                "type": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:light_blue_concrete_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/light_blue_concrete_slab"
+  },
+  "blocks/light_blue_concrete_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:light_blue_concrete_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/light_blue_concrete_stairs"
+  },
   "blocks/light_blue_glazed_terracotta": {
     "type": "minecraft:block",
     "pools": [
@@ -12428,6 +12800,55 @@
       }
     ],
     "random_sequence": "minecraft:blocks/light_gray_concrete_powder"
+  },
+  "blocks/light_gray_concrete_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "condition": {
+                  "type": "minecraft:match_block",
+                  "blocks": "minecraft:light_gray_concrete_slab",
+                  "state": {
+                    "type": "double"
+                  }
+                },
+                "count": 2.0
+              },
+              {
+                "type": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:light_gray_concrete_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/light_gray_concrete_slab"
+  },
+  "blocks/light_gray_concrete_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:light_gray_concrete_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/light_gray_concrete_stairs"
   },
   "blocks/light_gray_glazed_terracotta": {
     "type": "minecraft:block",
@@ -12862,6 +13283,55 @@
     ],
     "random_sequence": "minecraft:blocks/lime_concrete_powder"
   },
+  "blocks/lime_concrete_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "condition": {
+                  "type": "minecraft:match_block",
+                  "blocks": "minecraft:lime_concrete_slab",
+                  "state": {
+                    "type": "double"
+                  }
+                },
+                "count": 2.0
+              },
+              {
+                "type": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:lime_concrete_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/lime_concrete_slab"
+  },
+  "blocks/lime_concrete_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:lime_concrete_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/lime_concrete_stairs"
+  },
   "blocks/lime_glazed_terracotta": {
     "type": "minecraft:block",
     "pools": [
@@ -13233,6 +13703,55 @@
       }
     ],
     "random_sequence": "minecraft:blocks/magenta_concrete_powder"
+  },
+  "blocks/magenta_concrete_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "condition": {
+                  "type": "minecraft:match_block",
+                  "blocks": "minecraft:magenta_concrete_slab",
+                  "state": {
+                    "type": "double"
+                  }
+                },
+                "count": 2.0
+              },
+              {
+                "type": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:magenta_concrete_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/magenta_concrete_slab"
+  },
+  "blocks/magenta_concrete_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:magenta_concrete_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/magenta_concrete_stairs"
   },
   "blocks/magenta_glazed_terracotta": {
     "type": "minecraft:block",
@@ -15352,6 +15871,55 @@
     ],
     "random_sequence": "minecraft:blocks/orange_concrete_powder"
   },
+  "blocks/orange_concrete_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "condition": {
+                  "type": "minecraft:match_block",
+                  "blocks": "minecraft:orange_concrete_slab",
+                  "state": {
+                    "type": "double"
+                  }
+                },
+                "count": 2.0
+              },
+              {
+                "type": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:orange_concrete_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/orange_concrete_slab"
+  },
+  "blocks/orange_concrete_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:orange_concrete_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/orange_concrete_stairs"
+  },
   "blocks/orange_glazed_terracotta": {
     "type": "minecraft:block",
     "pools": [
@@ -16705,6 +17273,55 @@
       }
     ],
     "random_sequence": "minecraft:blocks/pink_concrete_powder"
+  },
+  "blocks/pink_concrete_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "condition": {
+                  "type": "minecraft:match_block",
+                  "blocks": "minecraft:pink_concrete_slab",
+                  "state": {
+                    "type": "double"
+                  }
+                },
+                "count": 2.0
+              },
+              {
+                "type": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:pink_concrete_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/pink_concrete_slab"
+  },
+  "blocks/pink_concrete_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:pink_concrete_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/pink_concrete_stairs"
   },
   "blocks/pink_glazed_terracotta": {
     "type": "minecraft:block",
@@ -20065,6 +20682,55 @@
     ],
     "random_sequence": "minecraft:blocks/purple_concrete_powder"
   },
+  "blocks/purple_concrete_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "condition": {
+                  "type": "minecraft:match_block",
+                  "blocks": "minecraft:purple_concrete_slab",
+                  "state": {
+                    "type": "double"
+                  }
+                },
+                "count": 2.0
+              },
+              {
+                "type": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:purple_concrete_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/purple_concrete_slab"
+  },
+  "blocks/purple_concrete_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:purple_concrete_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/purple_concrete_stairs"
+  },
   "blocks/purple_glazed_terracotta": {
     "type": "minecraft:block",
     "pools": [
@@ -20660,6 +21326,55 @@
       }
     ],
     "random_sequence": "minecraft:blocks/red_concrete_powder"
+  },
+  "blocks/red_concrete_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "condition": {
+                  "type": "minecraft:match_block",
+                  "blocks": "minecraft:red_concrete_slab",
+                  "state": {
+                    "type": "double"
+                  }
+                },
+                "count": 2.0
+              },
+              {
+                "type": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:red_concrete_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/red_concrete_slab"
+  },
+  "blocks/red_concrete_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:red_concrete_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/red_concrete_stairs"
   },
   "blocks/red_glazed_terracotta": {
     "type": "minecraft:block",
@@ -27399,6 +28114,55 @@
     ],
     "random_sequence": "minecraft:blocks/white_concrete_powder"
   },
+  "blocks/white_concrete_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "condition": {
+                  "type": "minecraft:match_block",
+                  "blocks": "minecraft:white_concrete_slab",
+                  "state": {
+                    "type": "double"
+                  }
+                },
+                "count": 2.0
+              },
+              {
+                "type": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:white_concrete_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/white_concrete_slab"
+  },
+  "blocks/white_concrete_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:white_concrete_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/white_concrete_stairs"
+  },
   "blocks/white_glazed_terracotta": {
     "type": "minecraft:block",
     "pools": [
@@ -27856,6 +28620,55 @@
       }
     ],
     "random_sequence": "minecraft:blocks/yellow_concrete_powder"
+  },
+  "blocks/yellow_concrete_slab": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "condition": {
+                  "type": "minecraft:match_block",
+                  "blocks": "minecraft:yellow_concrete_slab",
+                  "state": {
+                    "type": "double"
+                  }
+                },
+                "count": 2.0
+              },
+              {
+                "type": "minecraft:explosion_decay"
+              }
+            ],
+            "name": "minecraft:yellow_concrete_slab"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/yellow_concrete_slab"
+  },
+  "blocks/yellow_concrete_stairs": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:yellow_concrete_stairs"
+          }
+        ],
+        "rolls": 1.0
+      }
+    ],
+    "random_sequence": "minecraft:blocks/yellow_concrete_stairs"
   },
   "blocks/yellow_glazed_terracotta": {
     "type": "minecraft:block",
@@ -28382,7 +29195,7 @@
                 "min": 2.0
               }
             },
-            "name": "minecraft:firework_rocket"
+            "name": "minecraft:gunpowder"
           },
           {
             "type": "minecraft:item",
@@ -28567,6 +29380,315 @@
           }
         ],
         "rolls": 2.0
+      },
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "condition": {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:location_check",
+                "predicate": {
+                  "biomes": "minecraft:bamboo_jungle"
+                }
+              }
+            },
+            "modifier": [
+              {
+                "type": "minecraft:set_name",
+                "name": {
+                  "translate": "filled_map.bamboo_jungle_abandoned_camp"
+                },
+                "target": "item_name"
+              },
+              {
+                "type": "minecraft:exploration_map",
+                "decoration": "minecraft:abandoned_camp",
+                "destination": "#minecraft:on_abandoned_camp_bamboo_jungle"
+              },
+              {
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
+                },
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
+              }
+            ],
+            "name": "minecraft:abandoned_campsite_map"
+          },
+          {
+            "type": "minecraft:item",
+            "condition": {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:location_check",
+                "predicate": {
+                  "biomes": "minecraft:cherry_grove"
+                }
+              }
+            },
+            "modifier": [
+              {
+                "type": "minecraft:set_name",
+                "name": {
+                  "translate": "filled_map.cherry_grove_abandoned_camp"
+                },
+                "target": "item_name"
+              },
+              {
+                "type": "minecraft:exploration_map",
+                "decoration": "minecraft:abandoned_camp",
+                "destination": "#minecraft:on_abandoned_camp_cherry_grove"
+              },
+              {
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
+                },
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
+              }
+            ],
+            "name": "minecraft:abandoned_campsite_map"
+          },
+          {
+            "type": "minecraft:item",
+            "condition": {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:location_check",
+                "predicate": {
+                  "biomes": "minecraft:birch_forest"
+                }
+              }
+            },
+            "modifier": [
+              {
+                "type": "minecraft:set_name",
+                "name": {
+                  "translate": "filled_map.birch_forest_abandoned_camp"
+                },
+                "target": "item_name"
+              },
+              {
+                "type": "minecraft:exploration_map",
+                "decoration": "minecraft:abandoned_camp",
+                "destination": "#minecraft:on_abandoned_camp_birch_forest"
+              },
+              {
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
+                },
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
+              }
+            ],
+            "name": "minecraft:abandoned_campsite_map"
+          },
+          {
+            "type": "minecraft:item",
+            "condition": {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:location_check",
+                "predicate": {
+                  "biomes": "minecraft:dappled_forest"
+                }
+              }
+            },
+            "modifier": [
+              {
+                "type": "minecraft:set_name",
+                "name": {
+                  "translate": "filled_map.dappled_forest_abandoned_camp"
+                },
+                "target": "item_name"
+              },
+              {
+                "type": "minecraft:exploration_map",
+                "decoration": "minecraft:abandoned_camp",
+                "destination": "#minecraft:on_abandoned_camp_dappled_forest"
+              },
+              {
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
+                },
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
+              }
+            ],
+            "name": "minecraft:abandoned_campsite_map"
+          },
+          {
+            "type": "minecraft:item",
+            "condition": {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:location_check",
+                "predicate": {
+                  "biomes": "minecraft:flower_forest"
+                }
+              }
+            },
+            "modifier": [
+              {
+                "type": "minecraft:set_name",
+                "name": {
+                  "translate": "filled_map.flower_forest_abandoned_camp"
+                },
+                "target": "item_name"
+              },
+              {
+                "type": "minecraft:exploration_map",
+                "decoration": "minecraft:abandoned_camp",
+                "destination": "#minecraft:on_abandoned_camp_flower_forest"
+              },
+              {
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
+                },
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
+              }
+            ],
+            "name": "minecraft:abandoned_campsite_map"
+          },
+          {
+            "type": "minecraft:item",
+            "condition": {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:location_check",
+                "predicate": {
+                  "biomes": "minecraft:pale_garden"
+                }
+              }
+            },
+            "modifier": [
+              {
+                "type": "minecraft:set_name",
+                "name": {
+                  "translate": "filled_map.pale_garden_abandoned_camp"
+                },
+                "target": "item_name"
+              },
+              {
+                "type": "minecraft:exploration_map",
+                "decoration": "minecraft:abandoned_camp",
+                "destination": "#minecraft:on_abandoned_camp_pale_garden"
+              },
+              {
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
+                },
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
+              }
+            ],
+            "name": "minecraft:abandoned_campsite_map"
+          },
+          {
+            "type": "minecraft:item",
+            "condition": {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:location_check",
+                "predicate": {
+                  "biomes": "minecraft:swamp"
+                }
+              }
+            },
+            "modifier": [
+              {
+                "type": "minecraft:set_name",
+                "name": {
+                  "translate": "filled_map.swamp_abandoned_camp"
+                },
+                "target": "item_name"
+              },
+              {
+                "type": "minecraft:exploration_map",
+                "decoration": "minecraft:abandoned_camp",
+                "destination": "#minecraft:on_abandoned_camp_swamp"
+              },
+              {
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
+                },
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
+              }
+            ],
+            "name": "minecraft:abandoned_campsite_map"
+          },
+          {
+            "type": "minecraft:item",
+            "condition": {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:location_check",
+                "predicate": {
+                  "biomes": "minecraft:windswept_forest"
+                }
+              }
+            },
+            "modifier": [
+              {
+                "type": "minecraft:set_name",
+                "name": {
+                  "translate": "filled_map.windswept_forest_abandoned_camp"
+                },
+                "target": "item_name"
+              },
+              {
+                "type": "minecraft:exploration_map",
+                "decoration": "minecraft:abandoned_camp",
+                "destination": "#minecraft:on_abandoned_camp_windswept"
+              },
+              {
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
+                },
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
+              }
+            ],
+            "name": "minecraft:abandoned_campsite_map"
+          }
+        ],
+        "rolls": 1.0
       }
     ],
     "random_sequence": "minecraft:chests/abandoned_camp_common_chest"
@@ -28732,6 +29854,164 @@
           "max": 1.0,
           "min": 0.0
         }
+      },
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:exploration_map",
+                "decoration": "minecraft:ancient_city",
+                "destination": "#minecraft:on_ancient_city_maps"
+              },
+              {
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
+                },
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
+              }
+            ],
+            "name": "minecraft:ancient_city_map"
+          },
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:exploration_map",
+                "decoration": "minecraft:trial_chambers",
+                "destination": "#minecraft:on_trial_chambers_maps"
+              },
+              {
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
+                },
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
+              }
+            ],
+            "name": "minecraft:trial_explorer_map"
+          },
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:exploration_map",
+                "decoration": "minecraft:mineshaft",
+                "destination": "#minecraft:on_mineshaft_maps"
+              },
+              {
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
+                },
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
+              }
+            ],
+            "name": "minecraft:mineshaft_map"
+          },
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:exploration_map",
+                "decoration": "minecraft:desert_pyramid",
+                "destination": "#minecraft:on_desert_pyramid_maps"
+              },
+              {
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
+                },
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
+              }
+            ],
+            "name": "minecraft:desert_pyramid_map"
+          },
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:exploration_map",
+                "decoration": "minecraft:jungle_temple",
+                "destination": "#minecraft:on_jungle_explorer_maps"
+              },
+              {
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
+                },
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
+              }
+            ],
+            "name": "minecraft:jungle_explorer_map"
+          },
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:exploration_map",
+                "decoration": "minecraft:ocean_ruin_warm",
+                "destination": "#minecraft:on_ocean_ruin_warm_maps"
+              },
+              {
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
+                },
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
+              }
+            ],
+            "name": "minecraft:warm_ocean_ruins_map"
+          },
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:exploration_map",
+                "destination": "#minecraft:on_woodland_explorer_maps"
+              },
+              {
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
+                },
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
+              }
+            ],
+            "name": "minecraft:woodland_explorer_map"
+          }
+        ],
+        "rolls": 1.0
       }
     ],
     "random_sequence": "minecraft:chests/abandoned_camp_secret_chest"
@@ -32568,14 +33848,18 @@
                 "zoom": 1
               },
               {
-                "type": "minecraft:set_name",
-                "name": {
-                  "translate": "filled_map.buried_treasure"
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
                 },
-                "target": "item_name"
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
               }
             ],
-            "name": "minecraft:map"
+            "name": "minecraft:buried_treasure_map"
           }
         ],
         "rolls": 1.0
@@ -35520,14 +36804,18 @@
                 "zoom": 1
               },
               {
-                "type": "minecraft:set_name",
-                "name": {
-                  "translate": "filled_map.buried_treasure"
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
                 },
-                "target": "item_name"
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
               }
             ],
-            "name": "minecraft:map",
+            "name": "minecraft:buried_treasure_map",
             "weight": 10
           }
         ],
@@ -35668,14 +36956,18 @@
                 "zoom": 1
               },
               {
-                "type": "minecraft:set_name",
-                "name": {
-                  "translate": "filled_map.buried_treasure"
+                "type": "minecraft:filtered",
+                "item_filter": {
+                  "predicates": {
+                    "minecraft:map_id": {}
+                  }
                 },
-                "target": "item_name"
+                "on_fail": {
+                  "type": "minecraft:discard"
+                }
               }
             ],
-            "name": "minecraft:map",
+            "name": "minecraft:buried_treasure_map",
             "weight": 5
           }
         ],
