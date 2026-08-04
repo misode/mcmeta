@@ -4,22 +4,21 @@
     "type": "minecraft:mul",
     "left": {
       "type": "minecraft:add",
-      "left": -0.05,
-      "right": {
+      "left": {
         "type": "minecraft:mul",
-        "left": -0.05,
-        "right": {
+        "left": {
           "type": "minecraft:noise",
           "noise": "minecraft:spaghetti_roughness_modulator",
           "xz_scale": 1.0,
           "y_scale": 1.0
-        }
-      }
+        },
+        "right": -0.05
+      },
+      "right": -0.05
     },
     "right": {
       "type": "minecraft:add",
-      "left": -0.4,
-      "right": {
+      "left": {
         "type": "minecraft:abs",
         "input": {
           "type": "minecraft:noise",
@@ -27,7 +26,8 @@
           "xz_scale": 1.0,
           "y_scale": 1.0
         }
-      }
+      },
+      "right": -0.4
     }
   }
 }

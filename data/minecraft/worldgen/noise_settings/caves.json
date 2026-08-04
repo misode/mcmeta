@@ -1,13 +1,6 @@
 {
-  "default_block": {
-    "Name": "minecraft:stone"
-  },
-  "default_fluid": {
-    "Name": "minecraft:water",
-    "Properties": {
-      "level": "0"
-    }
-  },
+  "default_block": "minecraft:stone",
+  "default_fluid": "minecraft:water",
   "disable_mob_generation": false,
   "legacy_random_source": true,
   "material_rule": "minecraft:overworld_caves",
@@ -29,8 +22,7 @@
           "type": "minecraft:interpolated",
           "input": {
             "type": "minecraft:mul",
-            "left": 0.64,
-            "right": {
+            "left": {
               "type": "minecraft:blend_density",
               "input": {
                 "type": "minecraft:lerp",
@@ -57,7 +49,8 @@
                   "second": "minecraft:nether/base_3d_noise"
                 }
               }
-            }
+            },
+            "right": 0.64
           }
         }
       },
