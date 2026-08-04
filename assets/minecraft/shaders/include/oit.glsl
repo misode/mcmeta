@@ -25,6 +25,6 @@ void executeAlphaOnlyPhase(float deviceDepth, float alpha) {
     }
     calculateDepthBounds(deviceDepth, alpha);
     #elif defined(OIT_TRANSMITTANCE)
-    addTransmittance(alpha);
+    addTransmittance(1.0 - alpha);
     #endif
 }

@@ -3,8 +3,7 @@
   "cell_height": 8,
   "density": {
     "type": "minecraft:add",
-    "left": -0.390625,
-    "right": {
+    "left": {
       "type": "minecraft:lerp",
       "alpha": {
         "type": "minecraft:gradient",
@@ -30,11 +29,9 @@
           "type": "minecraft:clamp",
           "input": {
             "type": "minecraft:add",
-            "left": -0.703125,
-            "right": {
+            "left": {
               "type": "minecraft:mul",
-              "left": 4.0,
-              "right": {
+              "left": {
                 "type": "minecraft:quarter_negative",
                 "input": {
                   "type": "minecraft:mul",
@@ -58,25 +55,26 @@
                     "input": "minecraft:overworld/factor"
                   }
                 }
-              }
-            }
+              },
+              "right": 4.0
+            },
+            "right": -0.703125
           },
           "max": 64.0,
           "min": -64.0
         }
       }
-    }
+    },
+    "right": -0.390625
   },
   "lower_bound": -64,
   "upper_bound": {
     "type": "minecraft:clamp",
     "input": {
       "type": "minecraft:add",
-      "left": 128.0,
-      "right": {
+      "left": {
         "type": "minecraft:mul",
-        "left": -128.0,
-        "right": {
+        "left": {
           "type": "minecraft:sub",
           "left": {
             "type": "minecraft:div",
@@ -90,8 +88,10 @@
             "type": "minecraft:cache_2d",
             "input": "minecraft:overworld/offset"
           }
-        }
-      }
+        },
+        "right": -128.0
+      },
+      "right": 128.0
     },
     "max": 320.0,
     "min": -40.0

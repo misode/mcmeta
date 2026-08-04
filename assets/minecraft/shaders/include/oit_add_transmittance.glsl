@@ -1,38 +1,41 @@
-layout(location = 0) out vec4 coeff[COEFF_ATTACHMENT_COUNT];
+layout(location = 0) out vec4 coeff[OIT_COEFF_ATTACHMENT_COUNT];
 
-void addTransmittance(float alpha) {
-    float transmittance = 1.0 - alpha;
-    float absorbance = toAbsorbance(transmittance);
-
-    float depth = normalizeDepth(gl_FragCoord.z);
-
-    float coefficients[COEFF_COUNT];
-    for (int i = 0; i < COEFF_COUNT; i++) {
+void addTransmittance(float transmittance) {
+    float coefficients[OIT_COEFF_COUNT];
+    for (int i = 0; i < OIT_COEFF_COUNT; i++) {
         coefficients[i] = 0;
     }
 
-    depth *= float(COEFF_COUNT - 1) / COEFF_COUNT;
+    float absorbance = toAbsorbance(transmittance);
 
-    int index = clamp(int(floor(depth * COEFF_COUNT)), 0, COEFF_COUNT - 1);
-    index += COEFF_COUNT - 1;
+    float originalDepth = normalizeDepth(gl_FragCoord.z);
+    float depth = originalDepth * float(OIT_NUMBER_OF_DEPTH_BINS - 1) / OIT_NUMBER_OF_DEPTH_BINS;
 
-    for (int i = 0; i < (WAVELET_RANK + 1); i++) {
-        int power = WAVELET_RANK - i;
-        int newIndex = (index - 1) >> 1;
-        float k = float((newIndex + 1) & ((1 << power) - 1));
+    float averageAbsorbance = absorbance * (1 - depth);
+    coefficients[0] = averageAbsorbance;
 
-        int waveletSign = ((index & 1) << 1) - 1;
-        float waveletPhase = ((index + 1) & 1) * exp2(-power);
-        float addend = ((depth - exp2(-power) * k) * waveletSign + waveletPhase) * exp2(power * 0.5) * absorbance;
-        coefficients[newIndex] = addend;
+    int depthBinIndex = int(floor(originalDepth * (OIT_NUMBER_OF_DEPTH_BINS - 1)));
+    // The tree starts at the coefficient 1
+    int treeIndex = depthBinIndex + OIT_COEFF_COUNT;
 
-        index = int(newIndex);
+    for (int waveletLevel = 0; waveletLevel <= OIT_WAVELET_RANK; waveletLevel++) {
+        int power = OIT_WAVELET_RANK - waveletLevel;
+        int parentIndex = treeIndex >> 1;
+        float indexAtParentLevel = float(parentIndex & ((1 << power) - 1));
+
+        int isRightHalf = treeIndex & 1;
+        int waveletSign = 1 - (isRightHalf << 1);
+        float waveletWidth = exp2(-power);
+        float waveletHeightScale = exp2(power * 0.5);
+        float depthOffsetRelativeToWavelet = depth - waveletWidth * indexAtParentLevel;
+        float distanceFromWaveletEdge = isRightHalf * waveletWidth + waveletSign * depthOffsetRelativeToWavelet;
+        float differenceCoefficient = distanceFromWaveletEdge * waveletHeightScale * absorbance;
+        coefficients[parentIndex] = differenceCoefficient;
+
+        treeIndex = parentIndex;
     }
 
-    float addend = absorbance - (absorbance * depth);
-    coefficients[COEFF_COUNT - 1] = addend;
-
-    for (int attachmentIndex = 0; attachmentIndex < COEFF_ATTACHMENT_COUNT; attachmentIndex++) {
+    for (int attachmentIndex = 0; attachmentIndex < OIT_COEFF_ATTACHMENT_COUNT; attachmentIndex++) {
         for (int i = 0; i < 4; i++) {
             coeff[attachmentIndex][i] = coefficients[attachmentIndex * 4 + i];
         }

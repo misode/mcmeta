@@ -14,7 +14,7 @@ void main() {
     ivec2 pixelCoords = ivec2(gl_FragCoord.xy);
     vec4 accumulatedColor = texelFetch(Sampler0, pixelCoords, 0);
 
-    float sampledTransmittance = sampleTransmittance(pixelCoords, 100000.0f, 0);
+    float sampledTransmittance = sampleTransmittance(pixelCoords, 100000.0f, 1.0);
     float coverage = 1.0 - (sampledTransmittance < OIT_FULLY_OPAQUE_TOTAL_TRANSMITTANCE ? 0.0 : sampledTransmittance);
 
     // Additive surfaces contribute colour but no coverage, so they only show up in rgb.
