@@ -1,13 +1,6 @@
 {
-  "default_block": {
-    "Name": "minecraft:netherrack"
-  },
-  "default_fluid": {
-    "Name": "minecraft:lava",
-    "Properties": {
-      "level": "0"
-    }
-  },
+  "default_block": "minecraft:netherrack",
+  "default_fluid": "minecraft:lava",
   "disable_mob_generation": false,
   "legacy_random_source": true,
   "material_rule": "minecraft:nether",
@@ -29,8 +22,7 @@
           "type": "minecraft:interpolated",
           "input": {
             "type": "minecraft:mul",
-            "left": 0.64,
-            "right": {
+            "left": {
               "type": "minecraft:blend_density",
               "input": {
                 "type": "minecraft:lerp",
@@ -57,7 +49,8 @@
                   "second": "minecraft:nether/base_3d_noise"
                 }
               }
-            }
+            },
+            "right": 0.64
           }
         }
       },

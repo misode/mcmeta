@@ -1,10 +1,6 @@
 {
-  "default_block": {
-    "Name": "minecraft:end_stone"
-  },
-  "default_fluid": {
-    "Name": "minecraft:air"
-  },
+  "default_block": "minecraft:end_stone",
+  "default_fluid": "minecraft:air",
   "disable_mob_generation": true,
   "legacy_random_source": true,
   "material_rule": "minecraft:end",
@@ -26,8 +22,7 @@
           "type": "minecraft:interpolated",
           "input": {
             "type": "minecraft:mul",
-            "left": 0.64,
-            "right": {
+            "left": {
               "type": "minecraft:blend_density",
               "input": {
                 "type": "minecraft:lerp",
@@ -54,7 +49,8 @@
                   "second": "minecraft:end/sloped_cheese"
                 }
               }
-            }
+            },
+            "right": 0.64
           }
         }
       },
