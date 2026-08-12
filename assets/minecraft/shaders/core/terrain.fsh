@@ -16,9 +16,7 @@ layout(location = 0) in float sphericalVertexDistance;
 layout(location = 1) in float cylindricalVertexDistance;
 layout(location = 2) in vec4 vertexColor;
 layout(location = 3) in vec2 texCoord0;
-#ifdef MULTIDRAW_TERRAIN
-layout(location = 4) flat in float ChunkVisibility;
-#endif
+layout(location = 4) in float chunkVisibility;
 
 #ifndef OIT_ALPHA_ONLY
 layout(location = 0) out vec4 fragColor;
@@ -37,7 +35,7 @@ vec4 calculateFinalColor(vec4 color) {
 void main() {
     vec4 color = (UseRgss == 1 ? sampleRGSS(Sampler0, texCoord0, 1.0f / TextureSize) : sampleNearest(Sampler0, texCoord0, 1.0f / TextureSize)) * vertexColor;
     #ifndef OIT_ALPHA_ONLY
-    color = mix(FogColor * vec4(1, 1, 1, color.a), color, ChunkVisibility);
+    color = mix(FogColor * vec4(1, 1, 1, color.a), color, chunkVisibility);
     #endif
     #ifdef ALPHA_CUTOUT
     if (color.a < ALPHA_CUTOUT) {

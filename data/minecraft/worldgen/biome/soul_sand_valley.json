@@ -21,54 +21,57 @@
       }
     },
     "minecraft:gameplay/natural_mob_spawns": {
-      "spawn_costs": {
-        "minecraft:enderman": {
-          "charge": 0.7,
-          "energy_budget": 0.15
+      "argument": {
+        "spawn_costs": {
+          "minecraft:enderman": {
+            "charge": 0.7,
+            "energy_budget": 0.15
+          },
+          "minecraft:ghast": {
+            "charge": 0.7,
+            "energy_budget": 0.15
+          },
+          "minecraft:skeleton": {
+            "charge": 0.7,
+            "energy_budget": 0.15
+          },
+          "minecraft:strider": {
+            "charge": 0.7,
+            "energy_budget": 0.15
+          }
         },
-        "minecraft:ghast": {
-          "charge": 0.7,
-          "energy_budget": 0.15
-        },
-        "minecraft:skeleton": {
-          "charge": 0.7,
-          "energy_budget": 0.15
-        },
-        "minecraft:strider": {
-          "charge": 0.7,
-          "energy_budget": 0.15
+        "spawns_by_category": {
+          "creature": [
+            {
+              "type": "minecraft:strider",
+              "count": {
+                "type": "minecraft:uniform",
+                "max_inclusive": 2,
+                "min_inclusive": 1
+              },
+              "weight": 60
+            }
+          ],
+          "monster": [
+            {
+              "type": "minecraft:skeleton",
+              "count": 5,
+              "weight": 20
+            },
+            {
+              "type": "minecraft:ghast",
+              "count": 4,
+              "weight": 50
+            },
+            {
+              "type": "minecraft:enderman",
+              "count": 4,
+              "weight": 1
+            }
+          ]
         }
       },
-      "spawns_by_category": {
-        "creature": [
-          {
-            "type": "minecraft:strider",
-            "count": {
-              "type": "minecraft:uniform",
-              "max_inclusive": 2,
-              "min_inclusive": 1
-            },
-            "weight": 60
-          }
-        ],
-        "monster": [
-          {
-            "type": "minecraft:skeleton",
-            "count": 5,
-            "weight": 20
-          },
-          {
-            "type": "minecraft:ghast",
-            "count": 4,
-            "weight": 50
-          },
-          {
-            "type": "minecraft:enderman",
-            "count": 4,
-            "weight": 1
-          }
-        ]
-      }
+      "modifier": "overlay"
     },
     "minecraft:visual/ambient_particles": {
       "argument": [
