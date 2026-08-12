@@ -16,7 +16,7 @@ layout(location = 2) in vec2 UV0;
 layout(location = 3) in ivec2 UV2;
 #ifdef MULTIDRAW_TERRAIN
 layout(location = 4) in ivec3 ChunkPosition;
-layout(location = 5) in float InChunkVisibility;
+layout(location = 5) in float ChunkVisibility;
 #endif
 
 #ifndef OIT_ALPHA_ONLY
@@ -27,9 +27,7 @@ layout(location = 0) out float sphericalVertexDistance;
 layout(location = 1) out float cylindricalVertexDistance;
 layout(location = 2) out vec4 vertexColor;
 layout(location = 3) out vec2 texCoord0;
-#ifdef MULTIDRAW_TERRAIN
-layout(location = 4) flat out float ChunkVisibility;
-#endif
+layout(location = 4) out float chunkVisibility;
 
 void main() {
     vec3 pos = Position + (ChunkPosition - CameraBlockPos) + CameraOffset;
@@ -43,7 +41,8 @@ void main() {
     vertexColor = Color;
     #endif
     texCoord0 = UV0;
-    #ifdef MULTIDRAW_TERRAIN
-    ChunkVisibility = InChunkVisibility;
-    #endif
+
+    const float chunkFullyVisibleRange = 16.0;
+    float dist = length(pos);
+    chunkVisibility = mix(1.0, ChunkVisibility, clamp((dist - chunkFullyVisibleRange) / chunkFullyVisibleRange, 0.0, 1.0));
 }
