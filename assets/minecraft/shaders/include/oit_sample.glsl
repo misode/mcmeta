@@ -12,12 +12,13 @@ float sampleAbsorbance(float coefficients[OIT_COEFF_COUNT], float originalDepth,
     if (averageAbsorbance == 0) {
         return 0.0;
     }
-    float currentAverageAbsorbanceContribution = currentAbsorbance * (1 - originalDepth);
-    averageAbsorbance -= currentAverageAbsorbanceContribution;
 
     float depthMeasuredInBins = originalDepth * (OIT_NUMBER_OF_DEPTH_BINS - 1);
 
     float depth = depthMeasuredInBins / OIT_NUMBER_OF_DEPTH_BINS;
+
+    float currentAverageAbsorbanceContribution = currentAbsorbance * (1 - depth);
+    averageAbsorbance -= currentAverageAbsorbanceContribution;
 
     int treeIndexB = clamp(int(floor(depthMeasuredInBins)), 0, OIT_NUMBER_OF_DEPTH_BINS - 1);
     bool shouldSampleA = treeIndexB >= 1;
