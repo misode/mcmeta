@@ -21,32 +21,35 @@
       }
     },
     "minecraft:gameplay/natural_mob_spawns": {
-      "spawn_costs": {
-        "minecraft:enderman": {
-          "charge": 1.0,
-          "energy_budget": 0.12
+      "argument": {
+        "spawn_costs": {
+          "minecraft:enderman": {
+            "charge": 1.0,
+            "energy_budget": 0.12
+          }
+        },
+        "spawns_by_category": {
+          "creature": [
+            {
+              "type": "minecraft:strider",
+              "count": {
+                "type": "minecraft:uniform",
+                "max_inclusive": 2,
+                "min_inclusive": 1
+              },
+              "weight": 60
+            }
+          ],
+          "monster": [
+            {
+              "type": "minecraft:enderman",
+              "count": 4,
+              "weight": 1
+            }
+          ]
         }
       },
-      "spawns_by_category": {
-        "creature": [
-          {
-            "type": "minecraft:strider",
-            "count": {
-              "type": "minecraft:uniform",
-              "max_inclusive": 2,
-              "min_inclusive": 1
-            },
-            "weight": 60
-          }
-        ],
-        "monster": [
-          {
-            "type": "minecraft:enderman",
-            "count": 4,
-            "weight": 1
-          }
-        ]
-      }
+      "modifier": "overlay"
     },
     "minecraft:visual/ambient_particles": {
       "argument": [

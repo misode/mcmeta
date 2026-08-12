@@ -21,36 +21,39 @@
       }
     },
     "minecraft:gameplay/natural_mob_spawns": {
-      "spawn_costs": {},
-      "spawns_by_category": {
-        "creature": [
-          {
-            "type": "minecraft:strider",
-            "count": {
-              "type": "minecraft:uniform",
-              "max_inclusive": 2,
-              "min_inclusive": 1
+      "argument": {
+        "spawn_costs": {},
+        "spawns_by_category": {
+          "creature": [
+            {
+              "type": "minecraft:strider",
+              "count": {
+                "type": "minecraft:uniform",
+                "max_inclusive": 2,
+                "min_inclusive": 1
+              },
+              "weight": 60
+            }
+          ],
+          "monster": [
+            {
+              "type": "minecraft:ghast",
+              "count": 1,
+              "weight": 40
             },
-            "weight": 60
-          }
-        ],
-        "monster": [
-          {
-            "type": "minecraft:ghast",
-            "count": 1,
-            "weight": 40
-          },
-          {
-            "type": "minecraft:magma_cube",
-            "count": {
-              "type": "minecraft:uniform",
-              "max_inclusive": 5,
-              "min_inclusive": 2
-            },
-            "weight": 100
-          }
-        ]
-      }
+            {
+              "type": "minecraft:magma_cube",
+              "count": {
+                "type": "minecraft:uniform",
+                "max_inclusive": 5,
+                "min_inclusive": 2
+              },
+              "weight": 100
+            }
+          ]
+        }
+      },
+      "modifier": "overlay"
     },
     "minecraft:visual/ambient_particles": {
       "argument": [
