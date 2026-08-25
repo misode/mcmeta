@@ -43,6 +43,62 @@
     },
     "surface_level": "minecraft:overworld_amplified/preliminary_surface_level"
   },
+  "debug_functions": [
+    {
+      "function": "minecraft:overworld_amplified/final_density",
+      "label": "N"
+    },
+    {
+      "function": "minecraft:overworld/temperature",
+      "label": "T"
+    },
+    {
+      "function": "minecraft:overworld/vegetation",
+      "label": "V"
+    },
+    {
+      "function": "minecraft:overworld/continents",
+      "label": "C"
+    },
+    {
+      "function": "minecraft:overworld/erosion",
+      "label": "E"
+    },
+    {
+      "function": "minecraft:overworld_amplified/depth",
+      "label": "D"
+    },
+    {
+      "function": "minecraft:overworld/ridges",
+      "label": "W"
+    },
+    {
+      "function": {
+        "type": "minecraft:mul",
+        "left": {
+          "type": "minecraft:add",
+          "left": {
+            "type": "minecraft:abs",
+            "input": {
+              "type": "minecraft:add",
+              "left": {
+                "type": "minecraft:abs",
+                "input": "minecraft:overworld/ridges"
+              },
+              "right": -0.6666667
+            }
+          },
+          "right": -0.33333334
+        },
+        "right": -3.0
+      },
+      "label": "PV"
+    },
+    {
+      "function": "minecraft:overworld_amplified/preliminary_surface_level",
+      "label": "PS"
+    }
+  ],
   "default_block": "minecraft:stone",
   "default_fluid": "minecraft:water",
   "disable_mob_generation": false,
@@ -50,40 +106,18 @@
   "material_rule": "minecraft:overworld",
   "noise": {
     "height": 384,
-    "min_y": -64,
-    "size_horizontal": 1,
-    "size_vertical": 2
+    "min_y": -64
   },
   "noise_router": {
+    "chunk_surface_level": "minecraft:overworld_amplified/chunk_surface_level",
     "continents": "minecraft:overworld/continents",
     "depth": "minecraft:overworld_amplified/depth",
     "erosion": "minecraft:overworld/erosion",
     "final_density": "minecraft:overworld_amplified/final_density",
-    "preliminary_surface_level": "minecraft:overworld_amplified/preliminary_surface_level",
     "ridges": "minecraft:overworld/ridges",
     "temperature": "minecraft:overworld/temperature",
     "vegetation": "minecraft:overworld/vegetation"
   },
-  "ore_veins": [
-    {
-      "density": "minecraft:overworld/ore_vein/copper_density",
-      "filler_block": "minecraft:granite",
-      "filler_gap": "minecraft:overworld/ore_vein/gap",
-      "ore_block": "minecraft:copper_ore",
-      "raw_ore_block": "minecraft:raw_copper_block",
-      "raw_ore_chance": 0.02,
-      "richness": "minecraft:overworld/ore_vein/richness"
-    },
-    {
-      "density": "minecraft:overworld/ore_vein/iron_density",
-      "filler_block": "minecraft:tuff",
-      "filler_gap": "minecraft:overworld/ore_vein/gap",
-      "ore_block": "minecraft:deepslate_iron_ore",
-      "raw_ore_block": "minecraft:raw_iron_block",
-      "raw_ore_chance": 0.02,
-      "richness": "minecraft:overworld/ore_vein/richness"
-    }
-  ],
   "sea_level": 63,
   "spawn_target": [
     {
