@@ -1224,6 +1224,97 @@
         }
       }
     },
+    "compute": {
+      "type": "literal",
+      "children": {
+        "block": {
+          "type": "literal",
+          "children": {
+            "computePos": {
+              "type": "argument",
+              "children": {
+                "provider": {
+                  "type": "argument",
+                  "children": {
+                    "integer": {
+                      "type": "literal",
+                      "executable": true
+                    },
+                    "scale": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "brigadier:float"
+                    }
+                  },
+                  "executable": true,
+                  "parser": "minecraft:number_provider"
+                }
+              },
+              "parser": "minecraft:block_pos"
+            }
+          }
+        },
+        "default": {
+          "type": "literal",
+          "children": {
+            "provider": {
+              "type": "argument",
+              "children": {
+                "integer": {
+                  "type": "literal",
+                  "executable": true
+                },
+                "scale": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "brigadier:float"
+                }
+              },
+              "executable": true,
+              "parser": "minecraft:number_provider"
+            }
+          }
+        },
+        "entity": {
+          "type": "literal",
+          "children": {
+            "computeTarget": {
+              "type": "argument",
+              "children": {
+                "provider": {
+                  "type": "argument",
+                  "children": {
+                    "integer": {
+                      "type": "literal",
+                      "executable": true
+                    },
+                    "scale": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "brigadier:float"
+                    }
+                  },
+                  "executable": true,
+                  "parser": "minecraft:number_provider"
+                }
+              },
+              "parser": "minecraft:entity",
+              "properties": {
+                "type": "entities",
+                "amount": "single"
+              }
+            }
+          }
+        }
+      },
+      "permissions": {
+        "type": "minecraft:require",
+        "permission": {
+          "type": "minecraft:command_level",
+          "level": "gamemasters"
+        }
+      }
+    },
     "damage": {
       "type": "literal",
       "children": {
@@ -1462,6 +1553,75 @@
                         "append": {
                           "type": "literal",
                           "children": {
+                            "compute": {
+                              "type": "literal",
+                              "children": {
+                                "block": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computePos": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:block_pos"
+                                    }
+                                  }
+                                },
+                                "default": {
+                                  "type": "literal",
+                                  "children": {
+                                    "provider": {
+                                      "type": "argument",
+                                      "children": {
+                                        "integer": {
+                                          "type": "literal",
+                                          "executable": true
+                                        }
+                                      },
+                                      "executable": true,
+                                      "parser": "minecraft:number_provider"
+                                    }
+                                  }
+                                },
+                                "entity": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computeTarget": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:entity",
+                                      "properties": {
+                                        "type": "entities",
+                                        "amount": "single"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
                             "from": {
                               "type": "literal",
                               "children": {
@@ -1642,6 +1802,75 @@
                             "index": {
                               "type": "argument",
                               "children": {
+                                "compute": {
+                                  "type": "literal",
+                                  "children": {
+                                    "block": {
+                                      "type": "literal",
+                                      "children": {
+                                        "computePos": {
+                                          "type": "argument",
+                                          "children": {
+                                            "provider": {
+                                              "type": "argument",
+                                              "children": {
+                                                "integer": {
+                                                  "type": "literal",
+                                                  "executable": true
+                                                }
+                                              },
+                                              "executable": true,
+                                              "parser": "minecraft:number_provider"
+                                            }
+                                          },
+                                          "parser": "minecraft:block_pos"
+                                        }
+                                      }
+                                    },
+                                    "default": {
+                                      "type": "literal",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      }
+                                    },
+                                    "entity": {
+                                      "type": "literal",
+                                      "children": {
+                                        "computeTarget": {
+                                          "type": "argument",
+                                          "children": {
+                                            "provider": {
+                                              "type": "argument",
+                                              "children": {
+                                                "integer": {
+                                                  "type": "literal",
+                                                  "executable": true
+                                                }
+                                              },
+                                              "executable": true,
+                                              "parser": "minecraft:number_provider"
+                                            }
+                                          },
+                                          "parser": "minecraft:entity",
+                                          "properties": {
+                                            "type": "entities",
+                                            "amount": "single"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
                                 "from": {
                                   "type": "literal",
                                   "children": {
@@ -1822,6 +2051,75 @@
                         "merge": {
                           "type": "literal",
                           "children": {
+                            "compute": {
+                              "type": "literal",
+                              "children": {
+                                "block": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computePos": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:block_pos"
+                                    }
+                                  }
+                                },
+                                "default": {
+                                  "type": "literal",
+                                  "children": {
+                                    "provider": {
+                                      "type": "argument",
+                                      "children": {
+                                        "integer": {
+                                          "type": "literal",
+                                          "executable": true
+                                        }
+                                      },
+                                      "executable": true,
+                                      "parser": "minecraft:number_provider"
+                                    }
+                                  }
+                                },
+                                "entity": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computeTarget": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:entity",
+                                      "properties": {
+                                        "type": "entities",
+                                        "amount": "single"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
                             "from": {
                               "type": "literal",
                               "children": {
@@ -1999,6 +2297,75 @@
                         "prepend": {
                           "type": "literal",
                           "children": {
+                            "compute": {
+                              "type": "literal",
+                              "children": {
+                                "block": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computePos": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:block_pos"
+                                    }
+                                  }
+                                },
+                                "default": {
+                                  "type": "literal",
+                                  "children": {
+                                    "provider": {
+                                      "type": "argument",
+                                      "children": {
+                                        "integer": {
+                                          "type": "literal",
+                                          "executable": true
+                                        }
+                                      },
+                                      "executable": true,
+                                      "parser": "minecraft:number_provider"
+                                    }
+                                  }
+                                },
+                                "entity": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computeTarget": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:entity",
+                                      "properties": {
+                                        "type": "entities",
+                                        "amount": "single"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
                             "from": {
                               "type": "literal",
                               "children": {
@@ -2176,6 +2543,75 @@
                         "set": {
                           "type": "literal",
                           "children": {
+                            "compute": {
+                              "type": "literal",
+                              "children": {
+                                "block": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computePos": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:block_pos"
+                                    }
+                                  }
+                                },
+                                "default": {
+                                  "type": "literal",
+                                  "children": {
+                                    "provider": {
+                                      "type": "argument",
+                                      "children": {
+                                        "integer": {
+                                          "type": "literal",
+                                          "executable": true
+                                        }
+                                      },
+                                      "executable": true,
+                                      "parser": "minecraft:number_provider"
+                                    }
+                                  }
+                                },
+                                "entity": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computeTarget": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:entity",
+                                      "properties": {
+                                        "type": "entities",
+                                        "amount": "single"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
                             "from": {
                               "type": "literal",
                               "children": {
@@ -2370,6 +2806,75 @@
                         "append": {
                           "type": "literal",
                           "children": {
+                            "compute": {
+                              "type": "literal",
+                              "children": {
+                                "block": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computePos": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:block_pos"
+                                    }
+                                  }
+                                },
+                                "default": {
+                                  "type": "literal",
+                                  "children": {
+                                    "provider": {
+                                      "type": "argument",
+                                      "children": {
+                                        "integer": {
+                                          "type": "literal",
+                                          "executable": true
+                                        }
+                                      },
+                                      "executable": true,
+                                      "parser": "minecraft:number_provider"
+                                    }
+                                  }
+                                },
+                                "entity": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computeTarget": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:entity",
+                                      "properties": {
+                                        "type": "entities",
+                                        "amount": "single"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
                             "from": {
                               "type": "literal",
                               "children": {
@@ -2550,6 +3055,75 @@
                             "index": {
                               "type": "argument",
                               "children": {
+                                "compute": {
+                                  "type": "literal",
+                                  "children": {
+                                    "block": {
+                                      "type": "literal",
+                                      "children": {
+                                        "computePos": {
+                                          "type": "argument",
+                                          "children": {
+                                            "provider": {
+                                              "type": "argument",
+                                              "children": {
+                                                "integer": {
+                                                  "type": "literal",
+                                                  "executable": true
+                                                }
+                                              },
+                                              "executable": true,
+                                              "parser": "minecraft:number_provider"
+                                            }
+                                          },
+                                          "parser": "minecraft:block_pos"
+                                        }
+                                      }
+                                    },
+                                    "default": {
+                                      "type": "literal",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      }
+                                    },
+                                    "entity": {
+                                      "type": "literal",
+                                      "children": {
+                                        "computeTarget": {
+                                          "type": "argument",
+                                          "children": {
+                                            "provider": {
+                                              "type": "argument",
+                                              "children": {
+                                                "integer": {
+                                                  "type": "literal",
+                                                  "executable": true
+                                                }
+                                              },
+                                              "executable": true,
+                                              "parser": "minecraft:number_provider"
+                                            }
+                                          },
+                                          "parser": "minecraft:entity",
+                                          "properties": {
+                                            "type": "entities",
+                                            "amount": "single"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
                                 "from": {
                                   "type": "literal",
                                   "children": {
@@ -2730,6 +3304,75 @@
                         "merge": {
                           "type": "literal",
                           "children": {
+                            "compute": {
+                              "type": "literal",
+                              "children": {
+                                "block": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computePos": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:block_pos"
+                                    }
+                                  }
+                                },
+                                "default": {
+                                  "type": "literal",
+                                  "children": {
+                                    "provider": {
+                                      "type": "argument",
+                                      "children": {
+                                        "integer": {
+                                          "type": "literal",
+                                          "executable": true
+                                        }
+                                      },
+                                      "executable": true,
+                                      "parser": "minecraft:number_provider"
+                                    }
+                                  }
+                                },
+                                "entity": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computeTarget": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:entity",
+                                      "properties": {
+                                        "type": "entities",
+                                        "amount": "single"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
                             "from": {
                               "type": "literal",
                               "children": {
@@ -2907,6 +3550,75 @@
                         "prepend": {
                           "type": "literal",
                           "children": {
+                            "compute": {
+                              "type": "literal",
+                              "children": {
+                                "block": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computePos": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:block_pos"
+                                    }
+                                  }
+                                },
+                                "default": {
+                                  "type": "literal",
+                                  "children": {
+                                    "provider": {
+                                      "type": "argument",
+                                      "children": {
+                                        "integer": {
+                                          "type": "literal",
+                                          "executable": true
+                                        }
+                                      },
+                                      "executable": true,
+                                      "parser": "minecraft:number_provider"
+                                    }
+                                  }
+                                },
+                                "entity": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computeTarget": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:entity",
+                                      "properties": {
+                                        "type": "entities",
+                                        "amount": "single"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
                             "from": {
                               "type": "literal",
                               "children": {
@@ -3084,6 +3796,75 @@
                         "set": {
                           "type": "literal",
                           "children": {
+                            "compute": {
+                              "type": "literal",
+                              "children": {
+                                "block": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computePos": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:block_pos"
+                                    }
+                                  }
+                                },
+                                "default": {
+                                  "type": "literal",
+                                  "children": {
+                                    "provider": {
+                                      "type": "argument",
+                                      "children": {
+                                        "integer": {
+                                          "type": "literal",
+                                          "executable": true
+                                        }
+                                      },
+                                      "executable": true,
+                                      "parser": "minecraft:number_provider"
+                                    }
+                                  }
+                                },
+                                "entity": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computeTarget": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:entity",
+                                      "properties": {
+                                        "type": "entities",
+                                        "amount": "single"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
                             "from": {
                               "type": "literal",
                               "children": {
@@ -3282,6 +4063,75 @@
                         "append": {
                           "type": "literal",
                           "children": {
+                            "compute": {
+                              "type": "literal",
+                              "children": {
+                                "block": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computePos": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:block_pos"
+                                    }
+                                  }
+                                },
+                                "default": {
+                                  "type": "literal",
+                                  "children": {
+                                    "provider": {
+                                      "type": "argument",
+                                      "children": {
+                                        "integer": {
+                                          "type": "literal",
+                                          "executable": true
+                                        }
+                                      },
+                                      "executable": true,
+                                      "parser": "minecraft:number_provider"
+                                    }
+                                  }
+                                },
+                                "entity": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computeTarget": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:entity",
+                                      "properties": {
+                                        "type": "entities",
+                                        "amount": "single"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
                             "from": {
                               "type": "literal",
                               "children": {
@@ -3462,6 +4312,75 @@
                             "index": {
                               "type": "argument",
                               "children": {
+                                "compute": {
+                                  "type": "literal",
+                                  "children": {
+                                    "block": {
+                                      "type": "literal",
+                                      "children": {
+                                        "computePos": {
+                                          "type": "argument",
+                                          "children": {
+                                            "provider": {
+                                              "type": "argument",
+                                              "children": {
+                                                "integer": {
+                                                  "type": "literal",
+                                                  "executable": true
+                                                }
+                                              },
+                                              "executable": true,
+                                              "parser": "minecraft:number_provider"
+                                            }
+                                          },
+                                          "parser": "minecraft:block_pos"
+                                        }
+                                      }
+                                    },
+                                    "default": {
+                                      "type": "literal",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      }
+                                    },
+                                    "entity": {
+                                      "type": "literal",
+                                      "children": {
+                                        "computeTarget": {
+                                          "type": "argument",
+                                          "children": {
+                                            "provider": {
+                                              "type": "argument",
+                                              "children": {
+                                                "integer": {
+                                                  "type": "literal",
+                                                  "executable": true
+                                                }
+                                              },
+                                              "executable": true,
+                                              "parser": "minecraft:number_provider"
+                                            }
+                                          },
+                                          "parser": "minecraft:entity",
+                                          "properties": {
+                                            "type": "entities",
+                                            "amount": "single"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
                                 "from": {
                                   "type": "literal",
                                   "children": {
@@ -3642,6 +4561,75 @@
                         "merge": {
                           "type": "literal",
                           "children": {
+                            "compute": {
+                              "type": "literal",
+                              "children": {
+                                "block": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computePos": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:block_pos"
+                                    }
+                                  }
+                                },
+                                "default": {
+                                  "type": "literal",
+                                  "children": {
+                                    "provider": {
+                                      "type": "argument",
+                                      "children": {
+                                        "integer": {
+                                          "type": "literal",
+                                          "executable": true
+                                        }
+                                      },
+                                      "executable": true,
+                                      "parser": "minecraft:number_provider"
+                                    }
+                                  }
+                                },
+                                "entity": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computeTarget": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:entity",
+                                      "properties": {
+                                        "type": "entities",
+                                        "amount": "single"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
                             "from": {
                               "type": "literal",
                               "children": {
@@ -3819,6 +4807,75 @@
                         "prepend": {
                           "type": "literal",
                           "children": {
+                            "compute": {
+                              "type": "literal",
+                              "children": {
+                                "block": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computePos": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:block_pos"
+                                    }
+                                  }
+                                },
+                                "default": {
+                                  "type": "literal",
+                                  "children": {
+                                    "provider": {
+                                      "type": "argument",
+                                      "children": {
+                                        "integer": {
+                                          "type": "literal",
+                                          "executable": true
+                                        }
+                                      },
+                                      "executable": true,
+                                      "parser": "minecraft:number_provider"
+                                    }
+                                  }
+                                },
+                                "entity": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computeTarget": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:entity",
+                                      "properties": {
+                                        "type": "entities",
+                                        "amount": "single"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
                             "from": {
                               "type": "literal",
                               "children": {
@@ -3996,6 +5053,75 @@
                         "set": {
                           "type": "literal",
                           "children": {
+                            "compute": {
+                              "type": "literal",
+                              "children": {
+                                "block": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computePos": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:block_pos"
+                                    }
+                                  }
+                                },
+                                "default": {
+                                  "type": "literal",
+                                  "children": {
+                                    "provider": {
+                                      "type": "argument",
+                                      "children": {
+                                        "integer": {
+                                          "type": "literal",
+                                          "executable": true
+                                        }
+                                      },
+                                      "executable": true,
+                                      "parser": "minecraft:number_provider"
+                                    }
+                                  }
+                                },
+                                "entity": {
+                                  "type": "literal",
+                                  "children": {
+                                    "computeTarget": {
+                                      "type": "argument",
+                                      "children": {
+                                        "provider": {
+                                          "type": "argument",
+                                          "children": {
+                                            "integer": {
+                                              "type": "literal",
+                                              "executable": true
+                                            }
+                                          },
+                                          "executable": true,
+                                          "parser": "minecraft:number_provider"
+                                        }
+                                      },
+                                      "parser": "minecraft:entity",
+                                      "properties": {
+                                        "type": "entities",
+                                        "amount": "single"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
                             "from": {
                               "type": "literal",
                               "children": {

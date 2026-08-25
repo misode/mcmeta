@@ -436,7 +436,7 @@
       {
         "type": "minecraft:exploration_map",
         "decoration": "minecraft:jungle_temple",
-        "destination": "#minecraft:on_jungle_explorer_maps",
+        "destination": "#minecraft:on_jungle_pyramid_maps",
         "search_radius": 100
       },
       {
@@ -452,7 +452,7 @@
       }
     ],
     "gives": {
-      "id": "minecraft:jungle_explorer_map"
+      "id": "minecraft:jungle_pyramid_map"
     },
     "max_uses": 12.0,
     "merchant_predicate": {
@@ -483,7 +483,7 @@
       {
         "type": "minecraft:exploration_map",
         "decoration": "minecraft:swamp_hut",
-        "destination": "#minecraft:on_swamp_explorer_maps",
+        "destination": "#minecraft:on_swamp_hut_maps",
         "search_radius": 100
       },
       {
@@ -499,7 +499,7 @@
       }
     ],
     "gives": {
-      "id": "minecraft:swamp_explorer_map"
+      "id": "minecraft:swamp_hut_map"
     },
     "max_uses": 12.0,
     "merchant_predicate": {
@@ -779,41 +779,7 @@
     },
     "xp": 20.0
   },
-  "cartographer/3/emerald_and_compass_ocean_explorer_map": {
-    "additional_wants": {
-      "id": "minecraft:compass"
-    },
-    "given_item_modifier": [
-      {
-        "type": "minecraft:exploration_map",
-        "decoration": "minecraft:monument",
-        "destination": "#minecraft:on_ocean_explorer_maps",
-        "search_radius": 100
-      },
-      {
-        "type": "minecraft:filtered",
-        "item_filter": {
-          "predicates": {
-            "minecraft:map_id": {}
-          }
-        },
-        "on_fail": {
-          "type": "minecraft:discard"
-        }
-      }
-    ],
-    "gives": {
-      "id": "minecraft:ocean_explorer_map"
-    },
-    "max_uses": 12.0,
-    "reputation_discount": 0.2,
-    "wants": {
-      "count": 13.0,
-      "id": "minecraft:emerald"
-    },
-    "xp": 10.0
-  },
-  "cartographer/3/emerald_and_compass_trial_chamber_map": {
+  "cartographer/3/emerald_and_compass_buried_trial_chambers_map": {
     "additional_wants": {
       "id": "minecraft:compass"
     },
@@ -821,7 +787,7 @@
       {
         "type": "minecraft:exploration_map",
         "decoration": "minecraft:trial_chambers",
-        "destination": "#minecraft:on_trial_chambers_maps",
+        "destination": "#minecraft:on_buried_trial_chambers_maps",
         "search_radius": 100
       },
       {
@@ -837,12 +803,46 @@
       }
     ],
     "gives": {
-      "id": "minecraft:trial_explorer_map"
+      "id": "minecraft:buried_trial_chambers_map"
     },
     "max_uses": 12.0,
     "reputation_discount": 0.2,
     "wants": {
       "count": 12.0,
+      "id": "minecraft:emerald"
+    },
+    "xp": 10.0
+  },
+  "cartographer/3/emerald_and_compass_ocean_monument_map": {
+    "additional_wants": {
+      "id": "minecraft:compass"
+    },
+    "given_item_modifier": [
+      {
+        "type": "minecraft:exploration_map",
+        "decoration": "minecraft:monument",
+        "destination": "#minecraft:on_ocean_monument_maps",
+        "search_radius": 100
+      },
+      {
+        "type": "minecraft:filtered",
+        "item_filter": {
+          "predicates": {
+            "minecraft:map_id": {}
+          }
+        },
+        "on_fail": {
+          "type": "minecraft:discard"
+        }
+      }
+    ],
+    "gives": {
+      "id": "minecraft:ocean_monument_map"
+    },
+    "max_uses": 12.0,
+    "reputation_discount": 0.2,
+    "wants": {
+      "count": 13.0,
       "id": "minecraft:emerald"
     },
     "xp": 10.0
@@ -1218,7 +1218,7 @@
     "given_item_modifier": [
       {
         "type": "minecraft:exploration_map",
-        "destination": "#minecraft:on_woodland_explorer_maps",
+        "destination": "#minecraft:on_woodland_mansion_maps",
         "search_radius": 100
       },
       {
@@ -1234,7 +1234,7 @@
       }
     ],
     "gives": {
-      "id": "minecraft:woodland_explorer_map"
+      "id": "minecraft:woodland_mansion_map"
     },
     "max_uses": 12.0,
     "reputation_discount": 0.2,
