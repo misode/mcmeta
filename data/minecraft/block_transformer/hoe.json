@@ -1,7 +1,7 @@
 [
   {
     "block_state_provider": {
-      "type": "minecraft:rule_based_state_provider",
+      "type": "minecraft:rule_based",
       "rules": [
         {
           "if_true": {
@@ -23,8 +23,10 @@
             ]
           },
           "then": {
-            "type": "minecraft:simple_state_provider",
-            "state": "minecraft:farmland"
+            "id": "minecraft:farmland",
+            "properties": {
+              "moisture": "0"
+            }
           }
         },
         {
@@ -47,8 +49,7 @@
             ]
           },
           "then": {
-            "type": "minecraft:simple_state_provider",
-            "state": "minecraft:dirt"
+            "id": "minecraft:dirt"
           }
         }
       ]
@@ -61,7 +62,7 @@
   },
   {
     "block_state_provider": {
-      "type": "minecraft:rule_based_state_provider",
+      "type": "minecraft:rule_based",
       "rules": [
         {
           "if_true": {
@@ -69,8 +70,7 @@
             "blocks": "minecraft:rooted_dirt"
           },
           "then": {
-            "type": "minecraft:simple_state_provider",
-            "state": "minecraft:dirt"
+            "id": "minecraft:dirt"
           }
         }
       ]

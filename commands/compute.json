@@ -7,21 +7,32 @@
         "computePos": {
           "type": "argument",
           "children": {
-            "provider": {
-              "type": "argument",
+            "float": {
+              "type": "literal",
               "children": {
-                "integer": {
-                  "type": "literal",
-                  "executable": true
-                },
-                "scale": {
+                "provider": {
+                  "type": "argument",
+                  "children": {
+                    "scale": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "brigadier:float"
+                    }
+                  },
+                  "executable": true,
+                  "parser": "minecraft:context_float_provider"
+                }
+              }
+            },
+            "integer": {
+              "type": "literal",
+              "children": {
+                "provider": {
                   "type": "argument",
                   "executable": true,
-                  "parser": "brigadier:float"
+                  "parser": "minecraft:context_int_provider"
                 }
-              },
-              "executable": true,
-              "parser": "minecraft:number_provider"
+              }
             }
           },
           "parser": "minecraft:block_pos"
@@ -31,21 +42,32 @@
     "default": {
       "type": "literal",
       "children": {
-        "provider": {
-          "type": "argument",
+        "float": {
+          "type": "literal",
           "children": {
-            "integer": {
-              "type": "literal",
-              "executable": true
-            },
-            "scale": {
+            "provider": {
+              "type": "argument",
+              "children": {
+                "scale": {
+                  "type": "argument",
+                  "executable": true,
+                  "parser": "brigadier:float"
+                }
+              },
+              "executable": true,
+              "parser": "minecraft:context_float_provider"
+            }
+          }
+        },
+        "integer": {
+          "type": "literal",
+          "children": {
+            "provider": {
               "type": "argument",
               "executable": true,
-              "parser": "brigadier:float"
+              "parser": "minecraft:context_int_provider"
             }
-          },
-          "executable": true,
-          "parser": "minecraft:number_provider"
+          }
         }
       }
     },
@@ -55,21 +77,32 @@
         "computeTarget": {
           "type": "argument",
           "children": {
-            "provider": {
-              "type": "argument",
+            "float": {
+              "type": "literal",
               "children": {
-                "integer": {
-                  "type": "literal",
-                  "executable": true
-                },
-                "scale": {
+                "provider": {
+                  "type": "argument",
+                  "children": {
+                    "scale": {
+                      "type": "argument",
+                      "executable": true,
+                      "parser": "brigadier:float"
+                    }
+                  },
+                  "executable": true,
+                  "parser": "minecraft:context_float_provider"
+                }
+              }
+            },
+            "integer": {
+              "type": "literal",
+              "children": {
+                "provider": {
                   "type": "argument",
                   "executable": true,
-                  "parser": "brigadier:float"
+                  "parser": "minecraft:context_int_provider"
                 }
-              },
-              "executable": true,
-              "parser": "minecraft:number_provider"
+              }
             }
           },
           "parser": "minecraft:entity",
