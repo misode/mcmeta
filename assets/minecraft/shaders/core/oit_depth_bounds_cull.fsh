@@ -20,7 +20,6 @@ void main() {
 
     float opaqueOitLinearDepth = deviceToLinearDepth(opaqueOitDeviceDepth);
 
-
     fragColor = vec4(closestBoundLinearDepthNegated, min(furthestBoundLinearDepth, opaqueOitLinearDepth), closestBoundDeviceDepth, opaqueOitDeviceDepth);
     gl_FragDepth = opaqueOitDeviceDepth;
 }
