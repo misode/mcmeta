@@ -1,23 +1,6 @@
 {
   "type": "minecraft:tree",
-  "below_trunk_provider": {
-    "type": "minecraft:rule_based_state_provider",
-    "rules": [
-      {
-        "if_true": {
-          "type": "minecraft:not",
-          "predicate": {
-            "type": "minecraft:matching_block_tag",
-            "tag": "minecraft:cannot_replace_below_tree_trunk"
-          }
-        },
-        "then": {
-          "type": "minecraft:simple_state_provider",
-          "state": "minecraft:dirt"
-        }
-      }
-    ]
-  },
+  "below_trunk_provider": "minecraft:soil_beneath_tree",
   "decorators": [
     {
       "type": "minecraft:shelf_mushroom",
@@ -56,8 +39,12 @@
     "side_hole_chance": 0.15
   },
   "foliage_provider": {
-    "type": "minecraft:simple_state_provider",
-    "state": "minecraft:orange_poplar_leaves"
+    "id": "minecraft:orange_poplar_leaves",
+    "properties": {
+      "distance": "7",
+      "persistent": "false",
+      "waterlogged": "false"
+    }
   },
   "ignore_vines": true,
   "minimum_size": {
@@ -77,7 +64,9 @@
     "trunk_height_above_branches": 4
   },
   "trunk_provider": {
-    "type": "minecraft:simple_state_provider",
-    "state": "minecraft:poplar_log"
+    "id": "minecraft:poplar_log",
+    "properties": {
+      "axis": "y"
+    }
   }
 }

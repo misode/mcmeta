@@ -7,10 +7,9 @@
     "min_inclusive": 2
   },
   "state_provider": {
-    "type": "minecraft:rule_based_state_provider",
+    "type": "minecraft:rule_based",
     "fallback": {
-      "type": "minecraft:simple_state_provider",
-      "state": "minecraft:sand"
+      "id": "minecraft:sand"
     },
     "rules": [
       {
@@ -24,8 +23,7 @@
           ]
         },
         "then": {
-          "type": "minecraft:simple_state_provider",
-          "state": "minecraft:sandstone"
+          "id": "minecraft:sandstone"
         }
       }
     ]

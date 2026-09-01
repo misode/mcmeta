@@ -7,10 +7,9 @@
     "min_inclusive": 2
   },
   "state_provider": {
-    "type": "minecraft:rule_based_state_provider",
+    "type": "minecraft:rule_based",
     "fallback": {
-      "type": "minecraft:simple_state_provider",
-      "state": "minecraft:dirt"
+      "id": "minecraft:dirt"
     },
     "rules": [
       {
@@ -40,8 +39,10 @@
           }
         },
         "then": {
-          "type": "minecraft:simple_state_provider",
-          "state": "minecraft:grass_block"
+          "id": "minecraft:grass_block",
+          "properties": {
+            "snowy": "false"
+          }
         }
       }
     ]
