@@ -1,0 +1,298 @@
+{
+  "brewing/uses_default": 20,
+  "compostable/always_add_one": 1,
+  "compostable/low": {
+    "type": "minecraft:number_dispatcher",
+    "cases": [
+      {
+        "condition": {
+          "type": "minecraft:match_block",
+          "blocks": "minecraft:composter",
+          "state": {
+            "level": "0"
+          }
+        },
+        "value": 1
+      }
+    ],
+    "default": {
+      "type": "minecraft:weighted_list",
+      "distribution": [
+        {
+          "data": 1,
+          "weight": 30
+        },
+        {
+          "data": 0,
+          "weight": 70
+        }
+      ]
+    }
+  },
+  "compostable/low_medium": {
+    "type": "minecraft:number_dispatcher",
+    "cases": [
+      {
+        "condition": {
+          "type": "minecraft:match_block",
+          "blocks": "minecraft:composter",
+          "state": {
+            "level": "0"
+          }
+        },
+        "value": 1
+      }
+    ],
+    "default": {
+      "type": "minecraft:weighted_list",
+      "distribution": [
+        {
+          "data": 1,
+          "weight": 50
+        },
+        {
+          "data": 0,
+          "weight": 50
+        }
+      ]
+    }
+  },
+  "compostable/medium": {
+    "type": "minecraft:number_dispatcher",
+    "cases": [
+      {
+        "condition": {
+          "type": "minecraft:match_block",
+          "blocks": "minecraft:composter",
+          "state": {
+            "level": "0"
+          }
+        },
+        "value": 1
+      }
+    ],
+    "default": {
+      "type": "minecraft:weighted_list",
+      "distribution": [
+        {
+          "data": 1,
+          "weight": 65
+        },
+        {
+          "data": 0,
+          "weight": 35
+        }
+      ]
+    }
+  },
+  "compostable/medium_high": {
+    "type": "minecraft:number_dispatcher",
+    "cases": [
+      {
+        "condition": {
+          "type": "minecraft:match_block",
+          "blocks": "minecraft:composter",
+          "state": {
+            "level": "0"
+          }
+        },
+        "value": 1
+      }
+    ],
+    "default": {
+      "type": "minecraft:weighted_list",
+      "distribution": [
+        {
+          "data": 1,
+          "weight": 85
+        },
+        {
+          "data": 0,
+          "weight": 15
+        }
+      ]
+    }
+  },
+  "cooking/fast_burn_time_reduction_factor": 2,
+  "cooking/normal_burn_time_reduction_factor": 1,
+  "cooking/time_bamboo": {
+    "type": "minecraft:div",
+    "left": 50,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  },
+  "cooking/time_blaze_rod": {
+    "type": "minecraft:div",
+    "left": 2400,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  },
+  "cooking/time_boats": {
+    "type": "minecraft:div",
+    "left": 1200,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  },
+  "cooking/time_coal": {
+    "type": "minecraft:div",
+    "left": 1600,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  },
+  "cooking/time_coal_block": {
+    "type": "minecraft:div",
+    "left": 16000,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  },
+  "cooking/time_dried_kelp_block": {
+    "type": "minecraft:div",
+    "left": 4001,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  },
+  "cooking/time_dry_plants": {
+    "type": "minecraft:div",
+    "left": 100,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  },
+  "cooking/time_hanging_signs": {
+    "type": "minecraft:div",
+    "left": 800,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  },
+  "cooking/time_lava_bucket": {
+    "type": "minecraft:div",
+    "left": 20000,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  },
+  "cooking/time_roots": {
+    "type": "minecraft:div",
+    "left": 300,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  },
+  "cooking/time_wood_blocks": {
+    "type": "minecraft:div",
+    "left": 300,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  },
+  "cooking/time_wood_items_extra_small": {
+    "type": "minecraft:div",
+    "left": 100,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  },
+  "cooking/time_wood_items_large": {
+    "type": "minecraft:div",
+    "left": 200,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  },
+  "cooking/time_wood_items_small": {
+    "type": "minecraft:div",
+    "left": 300,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  },
+  "cooking/time_wood_slabs": {
+    "type": "minecraft:div",
+    "left": 150,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  },
+  "cooking/time_wool": {
+    "type": "minecraft:div",
+    "left": 100,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  },
+  "cooking/time_wool_carpets": {
+    "type": "minecraft:div",
+    "left": 67,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  },
+  "cooking/time_wool_slabs": {
+    "type": "minecraft:div",
+    "left": 50,
+    "right": {
+      "type": "minecraft:conditional",
+      "condition": "minecraft:block/fast_cooking",
+      "on_false": "minecraft:cooking/normal_burn_time_reduction_factor",
+      "on_true": "minecraft:cooking/fast_burn_time_reduction_factor"
+    }
+  }
+}
