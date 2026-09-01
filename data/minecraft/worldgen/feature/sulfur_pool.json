@@ -5,8 +5,7 @@
       "feature": {
         "type": "minecraft:lake",
         "barrier": {
-          "type": "minecraft:simple_state_provider",
-          "state": "minecraft:sulfur"
+          "id": "minecraft:sulfur"
         },
         "can_place_feature": {
           "type": "minecraft:not",
@@ -30,8 +29,10 @@
           }
         },
         "fluid": {
-          "type": "minecraft:simple_state_provider",
-          "state": "minecraft:water"
+          "id": "minecraft:water",
+          "properties": {
+            "level": "0"
+          }
         }
       },
       "placement": []
@@ -40,12 +41,9 @@
       "feature": {
         "type": "minecraft:simple_block",
         "to_place": {
-          "type": "minecraft:simple_state_provider",
-          "state": {
-            "id": "minecraft:potent_sulfur",
-            "properties": {
-              "potent_sulfur_state": "wet"
-            }
+          "id": "minecraft:potent_sulfur",
+          "properties": {
+            "potent_sulfur_state": "wet"
           }
         }
       },
