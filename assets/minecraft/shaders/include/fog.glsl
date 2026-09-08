@@ -1,3 +1,6 @@
+#ifndef MINECRAFT_FOG_GLSL
+#define MINECRAFT_FOG_GLSL
+
 layout(std140) uniform Fog {
     vec4 FogColor;
     float FogEnvironmentalStart;
@@ -36,3 +39,5 @@ float fog_cylindrical_distance(vec3 pos) {
     float distY = abs(pos.y);
     return max(distXZ, distY);
 }
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef MINECRAFT_LIGHT_GLSL
+#define MINECRAFT_LIGHT_GLSL
+
 #define MINECRAFT_LIGHT_POWER   (0.6)
 #define MINECRAFT_AMBIENT_LIGHT (0.4)
 
@@ -21,3 +24,5 @@ vec4 minecraft_mix_light(vec3 lightDir0, vec3 lightDir1, vec3 normal, vec4 color
     return minecraft_mix_light_separate(light, color);
 }
 
+
+#endif

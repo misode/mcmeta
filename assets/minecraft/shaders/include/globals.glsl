@@ -1,3 +1,6 @@
+#ifndef MINECRAFT_GLOBALS_GLSL
+#define MINECRAFT_GLOBALS_GLSL
+
 layout(std140) uniform Globals {
     ivec3 CameraBlockPos;
     float GlintAlpha;
@@ -7,3 +10,5 @@ layout(std140) uniform Globals {
     int MenuBlurRadius;
     int UseRgss;
 };
+
+#endif

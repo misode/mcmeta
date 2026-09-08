@@ -1,3 +1,6 @@
+#ifndef MINECRAFT_OIT_DEPTH_SAMPLE_GLSL
+#define MINECRAFT_OIT_DEPTH_SAMPLE_GLSL
+
 uniform sampler2D DepthBoundsSampler;
 
 const float OIT_HIGH_PRECISION_DEPTH_THRESHOLD = 10.0;
@@ -24,3 +27,5 @@ float normalizeDepth(float fragmentDeviceDepth) {
         return depthFractionWithHighPrecision + ((depthWithinBounds - OIT_HIGH_PRECISION_DEPTH_THRESHOLD) / (range - OIT_HIGH_PRECISION_DEPTH_THRESHOLD)) * (1.0 - depthFractionWithHighPrecision);
     }
 }
+
+#endif
