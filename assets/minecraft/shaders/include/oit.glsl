@@ -1,3 +1,6 @@
+#ifndef MINECRAFT_OIT_GLSL
+#define MINECRAFT_OIT_GLSL
+
 #ifdef OIT
     #include <minecraft:oit_common.glsl>
 
@@ -27,3 +30,5 @@ void executeAlphaOnlyPhase(float deviceDepth, float alpha) {
     addTransmittance(1.0 - alpha);
     #endif
 }
+
+#endif
