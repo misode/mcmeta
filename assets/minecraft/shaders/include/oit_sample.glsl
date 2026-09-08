@@ -1,3 +1,6 @@
+#ifndef MINECRAFT_OIT_SAMPLE_GLSL
+#define MINECRAFT_OIT_SAMPLE_GLSL
+
 uniform sampler2D Coeff0;
 #if OIT_COEFF_COUNT > 4
 uniform sampler2D Coeff1;
@@ -101,4 +104,6 @@ vec4 sampleColorForAccumulation(vec4 color) {
     float sampledTransmittance = sampleTransmittance(ivec2(gl_FragCoord.xy), normalizeDepth(gl_FragCoord.z), transmittance);
     return vec4(color.rgb * color.a, accumAlpha) * sampledTransmittance;
 }
+#endif
+
 #endif

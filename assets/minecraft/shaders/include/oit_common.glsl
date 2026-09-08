@@ -1,3 +1,6 @@
+#ifndef MINECRAFT_OIT_COMMON_GLSL
+#define MINECRAFT_OIT_COMMON_GLSL
+
 #include <minecraft:projection.glsl>
 
 const float OIT_FULLY_OPAQUE_ALPHA = 0.99;
@@ -24,3 +27,5 @@ float toAbsorbance(float transmittance) {
 float toTransmittance(float absorbance) {
     return clamp(exp(-absorbance), 0.0001, 1.0);
 }
+
+#endif

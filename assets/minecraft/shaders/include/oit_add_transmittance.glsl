@@ -1,3 +1,6 @@
+#ifndef MINECRAFT_OIT_ADD_TRANSMITTANCE_GLSL
+#define MINECRAFT_OIT_ADD_TRANSMITTANCE_GLSL
+
 layout(location = 0) out vec4 coeff[OIT_COEFF_ATTACHMENT_COUNT];
 
 void addTransmittance(float transmittance) {
@@ -44,3 +47,5 @@ void addTransmittance(float transmittance) {
     gl_FragDepth = gl_FragCoord.z;
     #endif
 }
+
+#endif

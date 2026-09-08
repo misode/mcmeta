@@ -1,3 +1,6 @@
+#ifndef MINECRAFT_PROJECTION_GLSL
+#define MINECRAFT_PROJECTION_GLSL
+
 layout(std140) uniform Projection {
     mat4 ProjMat;
 };
@@ -8,3 +11,5 @@ vec4 projection_from_position(vec4 position) {
     projection.zw = position.zw;
     return projection;
 }
+
+#endif
