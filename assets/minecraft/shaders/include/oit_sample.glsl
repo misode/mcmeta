@@ -1,92 +1,58 @@
 #ifndef MINECRAFT_OIT_SAMPLE_GLSL
 #define MINECRAFT_OIT_SAMPLE_GLSL
 
-uniform sampler2D Coeff0;
-#if OIT_COEFF_COUNT > 4
-uniform sampler2D Coeff1;
+uniform sampler2D Bins0;
+#if OIT_TRANSMITTANCE_TARGET_COUNT > 1
+uniform sampler2D Bins1;
 #endif
-#if OIT_COEFF_COUNT > 8
-uniform sampler2D Coeff2;
-uniform sampler2D Coeff3;
+#if OIT_TRANSMITTANCE_TARGET_COUNT > 2
+uniform sampler2D Bins2;
+#endif
+#if OIT_TRANSMITTANCE_TARGET_COUNT > 3
+uniform sampler2D Bins3;
 #endif
 
-float sampleAbsorbance(float coefficients[OIT_COEFF_COUNT], float originalDepth, float currentAbsorbance) {
-    float averageAbsorbance = coefficients[0];
-    if (averageAbsorbance == 0) {
+float sampleAbsorbance(float bins[OIT_NUMBER_OF_DEPTH_BINS], float originalDepth, float currentAbsorbance) {
+    float totalAbsorbance = bins[OIT_NUMBER_OF_DEPTH_BINS - 1];
+    if (totalAbsorbance == 0) {
         return 0.0;
     }
 
     float depthMeasuredInBins = originalDepth * (OIT_NUMBER_OF_DEPTH_BINS - 1);
+    float depthWithinBin = fract(depthMeasuredInBins);
 
-    float depth = depthMeasuredInBins / OIT_NUMBER_OF_DEPTH_BINS;
-
-    float currentAverageAbsorbanceContribution = currentAbsorbance * (1 - depth);
-    averageAbsorbance -= currentAverageAbsorbanceContribution;
-
-    int treeIndexB = clamp(int(floor(depthMeasuredInBins)), 0, OIT_NUMBER_OF_DEPTH_BINS - 1);
-    bool shouldSampleA = treeIndexB >= 1;
-    int treeIndexA = shouldSampleA ? (treeIndexB - 1) : treeIndexB;
-
-    treeIndexB += OIT_COEFF_COUNT;
-    treeIndexA += OIT_COEFF_COUNT;
+    int indexB = clamp(int(floor(depthMeasuredInBins)), 0, OIT_NUMBER_OF_DEPTH_BINS - 1);
+    bool shouldSampleA = indexB >= 1;
+    int indexA = shouldSampleA ? (indexB - 1) : indexB;
 
     // B is the sample at the depth bin that the fragment is in, and A is the sample at the depth bin just before it.
+    float sampleB = bins[indexB] - currentAbsorbance * (1.0 - depthWithinBin);
+    float sampleA = shouldSampleA ? bins[indexA] : 0.0;
 
-    float sampleB = averageAbsorbance;
-    float sampleA = shouldSampleA ? averageAbsorbance : 0;
-
-    for (int waveletLevel = 0; waveletLevel <= OIT_WAVELET_RANK; waveletLevel++) {
-        int power = OIT_WAVELET_RANK - waveletLevel;
-        float waveletWidth = exp2(-power);
-        float waveletHeightScale = exp2(power * 0.5);
-
-        int parentIndexB = treeIndexB >> 1;
-        int isRightHalfB = treeIndexB & 1;
-        int waveletSignB = 1 - (isRightHalfB << 1);
-
-        float indexAtParentLevel = float(parentIndexB & ((1 << power) - 1));
-        float depthOffsetRelativeToWavelet = depth - waveletWidth * indexAtParentLevel;
-        float currentDifferenceCoefficient = (isRightHalfB * waveletWidth + waveletSignB * depthOffsetRelativeToWavelet) * waveletHeightScale * currentAbsorbance;
-
-        float differenceCoefficientB = coefficients[parentIndexB];
-        differenceCoefficientB -= currentDifferenceCoefficient;
-
-        sampleB -= waveletHeightScale * differenceCoefficientB * waveletSignB;
-        treeIndexB = parentIndexB;
-
-        if (shouldSampleA) {
-            int parentIndexA = treeIndexA >> 1;
-            float differenceCoefficientA = (parentIndexA == parentIndexB) ? differenceCoefficientB : coefficients[parentIndexA];
-            int isRightHalfA = treeIndexA & 1;
-            int waveletSignA = 1 - (isRightHalfA << 1);
-            sampleA -= waveletHeightScale * differenceCoefficientA * waveletSignA;
-            treeIndexA = parentIndexA;
-        }
-    }
-
-    float lerpAlpha = depthMeasuredInBins >= OIT_NUMBER_OF_DEPTH_BINS ? 1.0 : fract(depthMeasuredInBins);
+    float lerpAlpha = depthMeasuredInBins >= OIT_NUMBER_OF_DEPTH_BINS ? 1.0 : depthWithinBin;
 
     return mix(sampleA, sampleB, lerpAlpha);
 }
 
 float sampleTransmittance(ivec2 pos, float depth, float currentTransmittance) {
-    float coefficients[OIT_COEFF_COUNT];
-    const int targetCount = OIT_COEFF_COUNT / 4;
-    vec4 coeffSamples[targetCount];
-    coeffSamples[0] = texelFetch(Coeff0, pos, 0);
-    #if OIT_COEFF_COUNT > 4
-    coeffSamples[1] = texelFetch(Coeff1, pos, 0);
+    float bins[OIT_NUMBER_OF_DEPTH_BINS];
+    vec4 binsSamples[OIT_TRANSMITTANCE_TARGET_COUNT];
+    binsSamples[0] = texelFetch(Bins0, pos, 0);
+    #if OIT_TRANSMITTANCE_TARGET_COUNT > 1
+    binsSamples[1] = texelFetch(Bins1, pos, 0);
     #endif
-    #if OIT_COEFF_COUNT > 8
-    coeffSamples[2] = texelFetch(Coeff2, pos, 0);
-    coeffSamples[3] = texelFetch(Coeff3, pos, 0);
+    #if OIT_TRANSMITTANCE_TARGET_COUNT > 2
+    binsSamples[2] = texelFetch(Bins2, pos, 0);
     #endif
-    for (int i = 0; i < targetCount; i++) {
+    #if OIT_TRANSMITTANCE_TARGET_COUNT > 3
+    binsSamples[3] = texelFetch(Bins3, pos, 0);
+    #endif
+    for (int i = 0; i < OIT_TRANSMITTANCE_TARGET_COUNT; i++) {
         for (int j = 0; j < 4; j++) {
-            coefficients[i * 4 + j] = coeffSamples[i][j];
+            bins[i * 4 + j] = binsSamples[i][j];
         }
     }
-    return toTransmittance(sampleAbsorbance(coefficients, depth, toAbsorbance(currentTransmittance)));
+    return toTransmittance(sampleAbsorbance(bins, depth, toAbsorbance(currentTransmittance)));
 }
 
 #ifdef OIT_ACCUMULATE
