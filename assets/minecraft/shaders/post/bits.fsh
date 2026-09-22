@@ -20,15 +20,14 @@ layout(location = 0) out vec4 fragColor;
 const float Saturation = 1.5;
 
 void main() {
-    vec2 oneTexel = 1.0 / InSize;
     vec2 mosaicInSize = InSize / MosaicSize;
-    vec2 fractPix = fract(texCoord * mosaicInSize) / mosaicInSize;
+    vec2 mosaicTexCoord = floor(texCoord * mosaicInSize) / mosaicInSize;
 
-    vec4 baseTexel = texture(InSampler, texCoord - fractPix);
+    vec4 baseTexel = texture(InSampler, mosaicTexCoord);
 
-    vec3 fractTexel = baseTexel.rgb - fract(baseTexel.rgb * Resolution) / Resolution;
-    float luma = dot(fractTexel, vec3(0.3, 0.59, 0.11));
-    vec3 chroma = (fractTexel - luma) * Saturation;
+    vec3 quantizedTexel = floor(baseTexel.rgb * Resolution) / Resolution;
+    float luma = dot(quantizedTexel, vec3(0.3, 0.59, 0.11));
+    vec3 chroma = (quantizedTexel - luma) * Saturation;
     baseTexel.rgb = luma + chroma;
     baseTexel.a = 1.0;
 
