@@ -3,10 +3,10 @@
 
 layout(location = 0) out vec4 bins[OIT_TRANSMITTANCE_TARGET_COUNT];
 
-void addTransmittance(float transmittance) {
+void addTransmittance(float transmittance, float deviceDepth) {
     float absorbance = toAbsorbance(transmittance);
 
-    float depthBinIndexF = normalizeDepth(gl_FragCoord.z) * float(OIT_NUMBER_OF_DEPTH_BINS - 1);
+    float depthBinIndexF = normalizeDepth(deviceDepth) * float(OIT_NUMBER_OF_DEPTH_BINS - 1);
     int depthBinIndex = int(floor(depthBinIndexF));
 
     float absorbanceInThisBin = absorbance * (1.0 - fract(depthBinIndexF));
@@ -15,12 +15,12 @@ void addTransmittance(float transmittance) {
         for (int i = 0; i < 4; i++) {
             int outputDepthBinIndex = attachmentIndex * 4 + i;
             bins[attachmentIndex][i] = outputDepthBinIndex > depthBinIndex
-                ? absorbance
-                : (outputDepthBinIndex == depthBinIndex ? absorbanceInThisBin : 0.0);
+            ? absorbance
+            : (outputDepthBinIndex == depthBinIndex ? absorbanceInThisBin : 0.0);
         }
     }
     #ifdef RENDERPEARL_EXPLICIT_DEPTH_INVARIANCE
-    gl_FragDepth = gl_FragCoord.z;
+    gl_FragDepth = deviceDepth;
     #endif
 }
 

@@ -56,7 +56,7 @@ float sampleTransmittance(ivec2 pos, float depth, float currentTransmittance) {
 }
 
 #ifdef OIT_ACCUMULATE
-vec4 sampleColorForAccumulation(vec4 color) {
+vec4 sampleColorForAccumulation(vec4 color, float deviceDepth) {
     #ifdef OIT_ADDITIVE
     float transmittance = 1.0;
     float accumAlpha = 0.0;
@@ -65,10 +65,14 @@ vec4 sampleColorForAccumulation(vec4 color) {
     float accumAlpha = color.a;
     #endif
     #ifdef RENDERPEARL_EXPLICIT_DEPTH_INVARIANCE
-    gl_FragDepth = gl_FragCoord.z;
+    gl_FragDepth = deviceDepth;
     #endif
-    float sampledTransmittance = sampleTransmittance(ivec2(gl_FragCoord.xy), normalizeDepth(gl_FragCoord.z), transmittance);
+    float sampledTransmittance = sampleTransmittance(ivec2(gl_FragCoord.xy), normalizeDepth(deviceDepth), transmittance);
     return vec4(color.rgb * color.a, accumAlpha) * sampledTransmittance;
+}
+
+vec4 sampleColorForAccumulation(vec4 color) {
+    return sampleColorForAccumulation(color, gl_FragCoord.z);
 }
 #endif
 
