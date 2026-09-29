@@ -43,8 +43,17 @@
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
-        "type": "minecraft:matching_block_tag",
-        "tag": "minecraft:air"
+        "type": "minecraft:all_of",
+        "predicates": [
+          {
+            "type": "minecraft:matching_block_tag",
+            "tag": "minecraft:air"
+          },
+          {
+            "type": "minecraft:below_heightmap",
+            "heightmap": "MOTION_BLOCKING"
+          }
+        ]
       }
     }
   ]

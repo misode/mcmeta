@@ -27,7 +27,7 @@ void executeAlphaOnlyPhase(float deviceDepth, float alpha) {
     // Additive surfaces do not occlude, so they contribute nothing to the transmittance function. Discard to avoid writing to those targets.
     discard;
     #elif defined(OIT_TRANSMITTANCE)
-    addTransmittance(1.0 - alpha);
+    addTransmittance(1.0 - alpha, deviceDepth);
     #endif
 }
 
