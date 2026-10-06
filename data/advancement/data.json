@@ -310,6 +310,20 @@
         },
         "trigger": "minecraft:location"
       },
+      "minecraft:ice_caves": {
+        "conditions": {
+          "player": {
+            "type": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:location": {
+                "biomes": "minecraft:ice_caves"
+              }
+            }
+          }
+        },
+        "trigger": "minecraft:location"
+      },
       "minecraft:ice_spikes": {
         "conditions": {
           "player": {
@@ -967,6 +981,9 @@
       ],
       [
         "minecraft:deep_dark"
+      ],
+      [
+        "minecraft:ice_caves"
       ]
     ],
     "rewards": {
@@ -1856,6 +1873,18 @@
         },
         "trigger": "minecraft:player_killed_entity"
       },
+      "minecraft:frostbite": {
+        "conditions": {
+          "entity": {
+            "type": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:entity_type": "minecraft:frostbite"
+            }
+          }
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
       "minecraft:ghast": {
         "conditions": {
           "entity": {
@@ -2219,6 +2248,7 @@
         "minecraft:enderman",
         "minecraft:endermite",
         "minecraft:evoker",
+        "minecraft:frostbite",
         "minecraft:ghast",
         "minecraft:guardian",
         "minecraft:hoglin",
@@ -2405,6 +2435,18 @@
             "entity": "this",
             "predicate": {
               "minecraft:entity_type": "minecraft:evoker"
+            }
+          }
+        },
+        "trigger": "minecraft:player_killed_entity"
+      },
+      "minecraft:frostbite": {
+        "conditions": {
+          "entity": {
+            "type": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:entity_type": "minecraft:frostbite"
             }
           }
         },
@@ -2798,6 +2840,9 @@
       ],
       [
         "minecraft:evoker"
+      ],
+      [
+        "minecraft:frostbite"
       ],
       [
         "minecraft:ghast"

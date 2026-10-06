@@ -420,8 +420,22 @@
               "tag": "minecraft:air"
             },
             {
-              "type": "minecraft:below_heightmap",
-              "heightmap": "MOTION_BLOCKING"
+              "type": "minecraft:any_of",
+              "predicates": [
+                {
+                  "type": "minecraft:below_heightmap",
+                  "heightmap": "MOTION_BLOCKING"
+                },
+                {
+                  "type": "minecraft:matching_block_tag",
+                  "offset": [
+                    0,
+                    -1,
+                    0
+                  ],
+                  "tag": "minecraft:overrides_mushroom_light_requirement"
+                }
+              ]
             }
           ]
         }
@@ -539,8 +553,22 @@
               "tag": "minecraft:air"
             },
             {
-              "type": "minecraft:below_heightmap",
-              "heightmap": "MOTION_BLOCKING"
+              "type": "minecraft:any_of",
+              "predicates": [
+                {
+                  "type": "minecraft:below_heightmap",
+                  "heightmap": "MOTION_BLOCKING"
+                },
+                {
+                  "type": "minecraft:matching_block_tag",
+                  "offset": [
+                    0,
+                    -1,
+                    0
+                  ],
+                  "tag": "minecraft:overrides_mushroom_light_requirement"
+                }
+              ]
             }
           ]
         }
@@ -603,8 +631,22 @@
               "tag": "minecraft:air"
             },
             {
-              "type": "minecraft:below_heightmap",
-              "heightmap": "MOTION_BLOCKING"
+              "type": "minecraft:any_of",
+              "predicates": [
+                {
+                  "type": "minecraft:below_heightmap",
+                  "heightmap": "MOTION_BLOCKING"
+                },
+                {
+                  "type": "minecraft:matching_block_tag",
+                  "offset": [
+                    0,
+                    -1,
+                    0
+                  ],
+                  "tag": "minecraft:overrides_mushroom_light_requirement"
+                }
+              ]
             }
           ]
         }
@@ -663,8 +705,22 @@
               "tag": "minecraft:air"
             },
             {
-              "type": "minecraft:below_heightmap",
-              "heightmap": "MOTION_BLOCKING"
+              "type": "minecraft:any_of",
+              "predicates": [
+                {
+                  "type": "minecraft:below_heightmap",
+                  "heightmap": "MOTION_BLOCKING"
+                },
+                {
+                  "type": "minecraft:matching_block_tag",
+                  "offset": [
+                    0,
+                    -1,
+                    0
+                  ],
+                  "tag": "minecraft:overrides_mushroom_light_requirement"
+                }
+              ]
             }
           ]
         }
@@ -723,8 +779,22 @@
               "tag": "minecraft:air"
             },
             {
-              "type": "minecraft:below_heightmap",
-              "heightmap": "MOTION_BLOCKING"
+              "type": "minecraft:any_of",
+              "predicates": [
+                {
+                  "type": "minecraft:below_heightmap",
+                  "heightmap": "MOTION_BLOCKING"
+                },
+                {
+                  "type": "minecraft:matching_block_tag",
+                  "offset": [
+                    0,
+                    -1,
+                    0
+                  ],
+                  "tag": "minecraft:overrides_mushroom_light_requirement"
+                }
+              ]
             }
           ]
         }
@@ -2120,6 +2190,652 @@
       }
     ]
   },
+  "ice_cave_ore_andesite_lower": {
+    "feature": "minecraft:ice_cave_ore_andesite",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 2
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "absolute": 60
+          },
+          "min_inclusive": {
+            "absolute": 0
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_andesite_upper": {
+    "feature": "minecraft:ice_cave_ore_andesite",
+    "placement": [
+      {
+        "type": "minecraft:rarity_filter",
+        "chance": 6
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "absolute": 128
+          },
+          "min_inclusive": {
+            "absolute": 64
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_coal_lower": {
+    "feature": "minecraft:ice_cave_ore_coal_buried",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 20
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:trapezoid",
+          "max_inclusive": {
+            "absolute": 192
+          },
+          "min_inclusive": {
+            "absolute": 0
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_coal_upper": {
+    "feature": "minecraft:ice_cave_ore_coal",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 30
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "below_top": 0
+          },
+          "min_inclusive": {
+            "absolute": 136
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_copper": {
+    "feature": "minecraft:ice_cave_ore_copper_small",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 16
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:trapezoid",
+          "max_inclusive": {
+            "absolute": 112
+          },
+          "min_inclusive": {
+            "absolute": -16
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_diamond": {
+    "feature": "minecraft:ice_cave_ore_diamond_small",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 7
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:trapezoid",
+          "max_inclusive": {
+            "above_bottom": 80
+          },
+          "min_inclusive": {
+            "above_bottom": -80
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_diamond_buried": {
+    "feature": "minecraft:ice_cave_ore_diamond_buried",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 4
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:trapezoid",
+          "max_inclusive": {
+            "above_bottom": 80
+          },
+          "min_inclusive": {
+            "above_bottom": -80
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_diamond_large": {
+    "feature": "minecraft:ice_cave_ore_diamond_large",
+    "placement": [
+      {
+        "type": "minecraft:rarity_filter",
+        "chance": 9
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:trapezoid",
+          "max_inclusive": {
+            "above_bottom": 80
+          },
+          "min_inclusive": {
+            "above_bottom": -80
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_diamond_medium": {
+    "feature": "minecraft:ice_cave_ore_diamond_medium",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 2
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "absolute": -4
+          },
+          "min_inclusive": {
+            "absolute": -64
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_diorite_lower": {
+    "feature": "minecraft:ice_cave_ore_diorite",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 2
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "absolute": 60
+          },
+          "min_inclusive": {
+            "absolute": 0
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_diorite_upper": {
+    "feature": "minecraft:ice_cave_ore_diorite",
+    "placement": [
+      {
+        "type": "minecraft:rarity_filter",
+        "chance": 6
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "absolute": 128
+          },
+          "min_inclusive": {
+            "absolute": 64
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_gold": {
+    "feature": "minecraft:ice_cave_ore_gold_buried",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 4
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:trapezoid",
+          "max_inclusive": {
+            "absolute": 32
+          },
+          "min_inclusive": {
+            "absolute": -64
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_gold_lower": {
+    "feature": "minecraft:ice_cave_ore_gold_buried",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": {
+          "type": "minecraft:uniform",
+          "max_inclusive": 1,
+          "min_inclusive": 0
+        }
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "absolute": -48
+          },
+          "min_inclusive": {
+            "absolute": -64
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_gravel": {
+    "feature": "minecraft:ice_cave_ore_gravel",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 14
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "below_top": 0
+          },
+          "min_inclusive": {
+            "above_bottom": 0
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_iron_middle": {
+    "feature": "minecraft:ice_cave_ore_iron",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 10
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:trapezoid",
+          "max_inclusive": {
+            "absolute": 56
+          },
+          "min_inclusive": {
+            "absolute": -24
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_iron_small": {
+    "feature": "minecraft:ice_cave_ore_iron_small",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 10
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "absolute": 72
+          },
+          "min_inclusive": {
+            "above_bottom": 0
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_iron_upper": {
+    "feature": "minecraft:ice_cave_ore_iron",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 90
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:trapezoid",
+          "max_inclusive": {
+            "absolute": 384
+          },
+          "min_inclusive": {
+            "absolute": 80
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_lapis": {
+    "feature": "minecraft:ice_cave_ore_lapis",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 2
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:trapezoid",
+          "max_inclusive": {
+            "absolute": 32
+          },
+          "min_inclusive": {
+            "absolute": -32
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_lapis_buried": {
+    "feature": "minecraft:ice_cave_ore_lapis_buried",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 4
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "absolute": 64
+          },
+          "min_inclusive": {
+            "above_bottom": 0
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_redstone": {
+    "feature": "minecraft:ice_cave_ore_redstone",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 4
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "absolute": 15
+          },
+          "min_inclusive": {
+            "above_bottom": 0
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_cave_ore_redstone_lower": {
+    "feature": "minecraft:ice_cave_ore_redstone",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 8
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:trapezoid",
+          "max_inclusive": {
+            "above_bottom": 32
+          },
+          "min_inclusive": {
+            "above_bottom": -32
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "ice_crystals": {
+    "feature": "minecraft:ice_crystal",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": {
+          "type": "minecraft:uniform",
+          "max_inclusive": 64,
+          "min_inclusive": 48
+        }
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "absolute": 256
+          },
+          "min_inclusive": {
+            "above_bottom": 0
+          }
+        }
+      },
+      {
+        "type": "minecraft:count",
+        "count": 2
+      },
+      {
+        "type": "minecraft:offset",
+        "x": {
+          "type": "minecraft:trapezoid",
+          "max": 2,
+          "min": -2,
+          "plateau": 0
+        },
+        "y": {
+          "type": "minecraft:trapezoid",
+          "max": 0,
+          "min": 0,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 2,
+          "min": -2,
+          "plateau": 0
+        }
+      },
+      {
+        "type": "minecraft:environment_scan",
+        "allowed_search_condition": {
+          "type": "minecraft:matching_block_tag",
+          "tag": "minecraft:air"
+        },
+        "direction_of_search": "down",
+        "max_steps": 32,
+        "target_condition": {
+          "type": "minecraft:matching_blocks",
+          "blocks": "minecraft:packed_ice"
+        }
+      },
+      {
+        "type": "minecraft:offset",
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
   "ice_patch": {
     "feature": "minecraft:ice_patch",
     "placement": [
@@ -2195,6 +2911,37 @@
       },
       {
         "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "icicle_cluster": {
+    "feature": "minecraft:icicle_cluster",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": {
+          "type": "minecraft:uniform",
+          "max_inclusive": 64,
+          "min_inclusive": 24
+        }
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "absolute": 256
+          },
+          "min_inclusive": {
+            "above_bottom": 0
+          }
+        }
       },
       {
         "type": "minecraft:biome"
@@ -2446,6 +3193,37 @@
           "type": "minecraft:uniform",
           "max_inclusive": 48,
           "min_inclusive": 10
+        }
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "absolute": 256
+          },
+          "min_inclusive": {
+            "above_bottom": 0
+          }
+        }
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "large_icicle": {
+    "feature": "minecraft:large_icicle",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": {
+          "type": "minecraft:uniform",
+          "max_inclusive": 64,
+          "min_inclusive": 48
         }
       },
       {
@@ -6980,8 +7758,22 @@
               "tag": "minecraft:air"
             },
             {
-              "type": "minecraft:below_heightmap",
-              "heightmap": "MOTION_BLOCKING"
+              "type": "minecraft:any_of",
+              "predicates": [
+                {
+                  "type": "minecraft:below_heightmap",
+                  "heightmap": "MOTION_BLOCKING"
+                },
+                {
+                  "type": "minecraft:matching_block_tag",
+                  "offset": [
+                    0,
+                    -1,
+                    0
+                  ],
+                  "tag": "minecraft:overrides_mushroom_light_requirement"
+                }
+              ]
             }
           ]
         }
@@ -7040,8 +7832,22 @@
               "tag": "minecraft:air"
             },
             {
-              "type": "minecraft:below_heightmap",
-              "heightmap": "MOTION_BLOCKING"
+              "type": "minecraft:any_of",
+              "predicates": [
+                {
+                  "type": "minecraft:below_heightmap",
+                  "heightmap": "MOTION_BLOCKING"
+                },
+                {
+                  "type": "minecraft:matching_block_tag",
+                  "offset": [
+                    0,
+                    -1,
+                    0
+                  ],
+                  "tag": "minecraft:overrides_mushroom_light_requirement"
+                }
+              ]
             }
           ]
         }
@@ -7100,8 +7906,22 @@
               "tag": "minecraft:air"
             },
             {
-              "type": "minecraft:below_heightmap",
-              "heightmap": "MOTION_BLOCKING"
+              "type": "minecraft:any_of",
+              "predicates": [
+                {
+                  "type": "minecraft:below_heightmap",
+                  "heightmap": "MOTION_BLOCKING"
+                },
+                {
+                  "type": "minecraft:matching_block_tag",
+                  "offset": [
+                    0,
+                    -1,
+                    0
+                  ],
+                  "tag": "minecraft:overrides_mushroom_light_requirement"
+                }
+              ]
             }
           ]
         }
@@ -7160,8 +7980,22 @@
               "tag": "minecraft:air"
             },
             {
-              "type": "minecraft:below_heightmap",
-              "heightmap": "MOTION_BLOCKING"
+              "type": "minecraft:any_of",
+              "predicates": [
+                {
+                  "type": "minecraft:below_heightmap",
+                  "heightmap": "MOTION_BLOCKING"
+                },
+                {
+                  "type": "minecraft:matching_block_tag",
+                  "offset": [
+                    0,
+                    -1,
+                    0
+                  ],
+                  "tag": "minecraft:overrides_mushroom_light_requirement"
+                }
+              ]
             }
           ]
         }
@@ -7785,6 +8619,80 @@
       {
         "type": "minecraft:count_on_every_layer",
         "count": 4
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "snow_layers": {
+    "feature": "minecraft:snow_layer",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": {
+          "type": "minecraft:uniform",
+          "max_inclusive": 24,
+          "min_inclusive": 16
+        }
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "absolute": 256
+          },
+          "min_inclusive": {
+            "above_bottom": 0
+          }
+        }
+      },
+      {
+        "type": "minecraft:count",
+        "count": 32
+      },
+      {
+        "type": "minecraft:offset",
+        "x": {
+          "type": "minecraft:trapezoid",
+          "max": 4,
+          "min": -4,
+          "plateau": 0
+        },
+        "y": {
+          "type": "minecraft:trapezoid",
+          "max": 0,
+          "min": 0,
+          "plateau": 0
+        },
+        "z": {
+          "type": "minecraft:trapezoid",
+          "max": 4,
+          "min": -4,
+          "plateau": 0
+        }
+      },
+      {
+        "type": "minecraft:environment_scan",
+        "allowed_search_condition": {
+          "type": "minecraft:matching_block_tag",
+          "tag": "minecraft:air"
+        },
+        "direction_of_search": "down",
+        "max_steps": 32,
+        "target_condition": {
+          "type": "minecraft:solid"
+        }
+      },
+      {
+        "type": "minecraft:offset",
+        "x": 0,
+        "y": 1,
+        "z": 0
       },
       {
         "type": "minecraft:biome"

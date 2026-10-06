@@ -11186,6 +11186,42 @@
     ],
     "random_sequence": "minecraft:blocks/ice"
   },
+  "blocks/ice_crystal": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:ice_crystal"
+          }
+        ],
+        "rolls": 1
+      }
+    ],
+    "random_sequence": "minecraft:blocks/ice_crystal"
+  },
+  "blocks/icicle": {
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "condition": {
+          "type": "minecraft:survives_explosion"
+        },
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:icicle"
+          }
+        ],
+        "rolls": 1
+      }
+    ],
+    "random_sequence": "minecraft:blocks/icicle"
+  },
   "blocks/infested_chiseled_stone_bricks": {
     "type": "minecraft:block",
     "pools": [
@@ -40310,6 +40346,68 @@
   "entities/frog": {
     "type": "minecraft:entity",
     "random_sequence": "minecraft:entities/frog"
+  },
+  "entities/frostbite": {
+    "type": "minecraft:entity",
+    "pools": [
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 2,
+                  "min": 0
+                }
+              },
+              {
+                "type": "minecraft:enchanted_count_increase",
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 1.0,
+                  "min": 0.0
+                },
+                "enchantment": "minecraft:looting"
+              }
+            ],
+            "name": "minecraft:rotten_flesh"
+          }
+        ],
+        "rolls": 1
+      },
+      {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "modifier": [
+              {
+                "type": "minecraft:set_count",
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 3,
+                  "min": 0
+                }
+              },
+              {
+                "type": "minecraft:enchanted_count_increase",
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 1.0,
+                  "min": 0.0
+                },
+                "enchantment": "minecraft:looting"
+              }
+            ],
+            "name": "minecraft:ice_ball"
+          }
+        ],
+        "rolls": 1
+      }
+    ],
+    "random_sequence": "minecraft:entities/frostbite"
   },
   "entities/ghast": {
     "type": "minecraft:entity",
