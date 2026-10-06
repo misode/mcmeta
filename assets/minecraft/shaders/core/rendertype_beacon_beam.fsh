@@ -15,14 +15,14 @@ layout(location = 0) out vec4 fragColor;
 #endif
 
 vec4 calculateFinalColor(vec4 color) {
+    float fragmentDistance = 1.0 / gl_FragCoord.w;
+    color = apply_fog(color, fragmentDistance, fragmentDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
+
     #ifdef OIT_ACCUMULATE
     color = sampleColorForAccumulation(color);
-    vec4 fogColor = vec4(FogColor.rgb * color.a, FogColor.a);
-    #else
-    vec4 fogColor = FogColor;
     #endif
-    float fragmentDistance = 1.0 / gl_FragCoord.w;
-    return apply_fog(color, fragmentDistance, fragmentDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, fogColor);
+
+    return color;
 }
 
 void main() {
