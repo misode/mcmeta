@@ -29,13 +29,12 @@ vec4 calculateFinalColor(vec4 color) {
 
     #if !defined(IS_SEE_THROUGH) && !defined(IS_GUI)
 
+    color = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
+
     #ifdef OIT_ACCUMULATE
-    vec4 fogColor = vec4(FogColor.rgb * color.a, FogColor.a);
-    #else
-    vec4 fogColor = FogColor;
+    color = sampleColorForAccumulation(color);
     #endif
 
-    color = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, fogColor);
     #endif
 
     return color;
