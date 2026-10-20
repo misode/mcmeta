@@ -1,7 +1,7 @@
 #version 330
 #extension GL_ARB_separate_shader_objects : require
 
-#if !defined(IS_GUI) && !defined(IS_SEE_THROUGH)
+#ifdef AFFECTED_BY_FOG_AND_LIGHT
 #include <minecraft:fog.glsl>
 #endif
 
@@ -10,7 +10,7 @@
 
 uniform sampler2D Sampler0;
 
-#if !defined(IS_GUI) && !defined(IS_SEE_THROUGH)
+#ifdef AFFECTED_BY_FOG_AND_LIGHT
 layout(location = 0) in float sphericalVertexDistance;
 layout(location = 1) in float cylindricalVertexDistance;
 #endif
@@ -27,7 +27,7 @@ vec4 calculateFinalColor(vec4 color) {
     color = sampleColorForAccumulation(color);
     #endif
 
-    #if !defined(IS_SEE_THROUGH) && !defined(IS_GUI)
+    #ifdef AFFECTED_BY_FOG_AND_LIGHT
 
     color = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
 
