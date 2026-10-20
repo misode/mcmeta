@@ -11,7 +11,9 @@ layout(location = 1) in vec2 UV0;
 layout(location = 2) in vec4 Color;
 layout(location = 3) in ivec2 UV2;
 
+#ifndef OIT_ALPHA_ONLY
 uniform sampler2D Sampler2;
+#endif
 
 layout(location = 0) out float sphericalVertexDistance;
 layout(location = 1) out float cylindricalVertexDistance;
@@ -24,5 +26,9 @@ void main() {
     sphericalVertexDistance = fog_spherical_distance(Position);
     cylindricalVertexDistance = fog_cylindrical_distance(Position);
     texCoord0 = UV0;
+#ifndef OIT_ALPHA_ONLY
     vertexColor = Color * sample_lightmap(Sampler2, UV2);
+#else
+    vertexColor = Color;
+#endif
 }
