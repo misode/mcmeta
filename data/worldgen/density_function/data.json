@@ -251,9 +251,7 @@
   "overworld/caves/noodle": {
     "type": "minecraft:range_choice",
     "input": {
-      "type": "minecraft:interpolated",
-      "cell_size_xz": 4,
-      "cell_size_y": 8,
+      "type": "minecraft:upscale",
       "input": {
         "type": "minecraft:range_choice",
         "input": "minecraft:y",
@@ -266,6 +264,18 @@
           "y_scale": 1.0
         },
         "when_out_of_range": -1.0
+      },
+      "x": {
+        "cell_size": 4,
+        "mode": "interpolate_linear"
+      },
+      "y": {
+        "cell_size": 8,
+        "mode": "interpolate_linear"
+      },
+      "z": {
+        "cell_size": 4,
+        "mode": "interpolate_linear"
       }
     },
     "max_exclusive": 0.0,
@@ -274,9 +284,7 @@
     "when_out_of_range": {
       "type": "minecraft:add",
       "left": {
-        "type": "minecraft:interpolated",
-        "cell_size_xz": 4,
-        "cell_size_y": 8,
+        "type": "minecraft:upscale",
         "input": {
           "type": "minecraft:range_choice",
           "input": "minecraft:y",
@@ -297,6 +305,18 @@
             "right": -0.075
           },
           "when_out_of_range": 0.0
+        },
+        "x": {
+          "cell_size": 4,
+          "mode": "interpolate_linear"
+        },
+        "y": {
+          "cell_size": 8,
+          "mode": "interpolate_linear"
+        },
+        "z": {
+          "cell_size": 4,
+          "mode": "interpolate_linear"
         }
       },
       "right": {
@@ -306,9 +326,7 @@
           "left": {
             "type": "minecraft:abs",
             "input": {
-              "type": "minecraft:interpolated",
-              "cell_size_xz": 4,
-              "cell_size_y": 8,
+              "type": "minecraft:upscale",
               "input": {
                 "type": "minecraft:range_choice",
                 "input": "minecraft:y",
@@ -321,15 +339,25 @@
                   "y_scale": 2.6666666666666665
                 },
                 "when_out_of_range": 0.0
+              },
+              "x": {
+                "cell_size": 4,
+                "mode": "interpolate_linear"
+              },
+              "y": {
+                "cell_size": 8,
+                "mode": "interpolate_linear"
+              },
+              "z": {
+                "cell_size": 4,
+                "mode": "interpolate_linear"
               }
             }
           },
           "right": {
             "type": "minecraft:abs",
             "input": {
-              "type": "minecraft:interpolated",
-              "cell_size_xz": 4,
-              "cell_size_y": 8,
+              "type": "minecraft:upscale",
               "input": {
                 "type": "minecraft:range_choice",
                 "input": "minecraft:y",
@@ -342,6 +370,18 @@
                   "y_scale": 2.6666666666666665
                 },
                 "when_out_of_range": 0.0
+              },
+              "x": {
+                "cell_size": 4,
+                "mode": "interpolate_linear"
+              },
+              "y": {
+                "cell_size": 8,
+                "mode": "interpolate_linear"
+              },
+              "z": {
+                "cell_size": 4,
+                "mode": "interpolate_linear"
               }
             }
           }
@@ -571,10 +611,20 @@
     }
   },
   "overworld/chunk_surface_level": {
-    "type": "minecraft:interpolated",
-    "cell_size_xz": 16,
-    "cell_size_y": 1,
-    "input": "minecraft:overworld/preliminary_surface_level"
+    "type": "minecraft:upscale",
+    "input": "minecraft:overworld/preliminary_surface_level",
+    "x": {
+      "cell_size": 16,
+      "mode": "interpolate_linear"
+    },
+    "y": {
+      "cell_size": 1,
+      "mode": "interpolate_linear"
+    },
+    "z": {
+      "cell_size": 16,
+      "mode": "interpolate_linear"
+    }
   },
   "overworld/continents": {
     "type": "minecraft:cache",
@@ -1497,9 +1547,7 @@
       "left": {
         "type": "minecraft:squeeze",
         "input": {
-          "type": "minecraft:interpolated",
-          "cell_size_xz": 4,
-          "cell_size_y": 8,
+          "type": "minecraft:upscale",
           "input": {
             "type": "minecraft:mul",
             "left": {
@@ -1616,6 +1664,18 @@
               }
             },
             "right": 0.64
+          },
+          "x": {
+            "cell_size": 4,
+            "mode": "interpolate_linear"
+          },
+          "y": {
+            "cell_size": 8,
+            "mode": "interpolate_linear"
+          },
+          "z": {
+            "cell_size": 4,
+            "mode": "interpolate_linear"
           }
         }
       },
@@ -3554,9 +3614,7 @@
           "left": {
             "type": "minecraft:abs",
             "input": {
-              "type": "minecraft:interpolated",
-              "cell_size_xz": 4,
-              "cell_size_y": 8,
+              "type": "minecraft:upscale",
               "input": {
                 "type": "minecraft:range_choice",
                 "input": "minecraft:y",
@@ -3569,15 +3627,25 @@
                   "y_scale": 4.0
                 },
                 "when_out_of_range": 1.0
+              },
+              "x": {
+                "cell_size": 4,
+                "mode": "interpolate_linear"
+              },
+              "y": {
+                "cell_size": 8,
+                "mode": "interpolate_linear"
+              },
+              "z": {
+                "cell_size": 4,
+                "mode": "interpolate_linear"
               }
             }
           },
           "right": {
             "type": "minecraft:abs",
             "input": {
-              "type": "minecraft:interpolated",
-              "cell_size_xz": 4,
-              "cell_size_y": 8,
+              "type": "minecraft:upscale",
               "input": {
                 "type": "minecraft:range_choice",
                 "input": "minecraft:y",
@@ -3590,6 +3658,18 @@
                   "y_scale": 4.0
                 },
                 "when_out_of_range": 1.0
+              },
+              "x": {
+                "cell_size": 4,
+                "mode": "interpolate_linear"
+              },
+              "y": {
+                "cell_size": 8,
+                "mode": "interpolate_linear"
+              },
+              "z": {
+                "cell_size": 4,
+                "mode": "interpolate_linear"
               }
             }
           }
@@ -3617,9 +3697,7 @@
   "overworld/ore_vein/toggle": {
     "type": "minecraft:cache",
     "input": {
-      "type": "minecraft:interpolated",
-      "cell_size_xz": 4,
-      "cell_size_y": 8,
+      "type": "minecraft:upscale",
       "input": {
         "type": "minecraft:range_choice",
         "input": "minecraft:y",
@@ -3632,6 +3710,18 @@
           "y_scale": 1.5
         },
         "when_out_of_range": 0.0
+      },
+      "x": {
+        "cell_size": 4,
+        "mode": "interpolate_linear"
+      },
+      "y": {
+        "cell_size": 8,
+        "mode": "interpolate_linear"
+      },
+      "z": {
+        "cell_size": 4,
+        "mode": "interpolate_linear"
       }
     }
   },
@@ -3807,10 +3897,20 @@
     "y_scale": 0.0
   },
   "overworld_amplified/chunk_surface_level": {
-    "type": "minecraft:interpolated",
-    "cell_size_xz": 16,
-    "cell_size_y": 1,
-    "input": "minecraft:overworld_amplified/preliminary_surface_level"
+    "type": "minecraft:upscale",
+    "input": "minecraft:overworld_amplified/preliminary_surface_level",
+    "x": {
+      "cell_size": 16,
+      "mode": "interpolate_linear"
+    },
+    "y": {
+      "cell_size": 1,
+      "mode": "interpolate_linear"
+    },
+    "z": {
+      "cell_size": 16,
+      "mode": "interpolate_linear"
+    }
   },
   "overworld_amplified/depth": {
     "type": "minecraft:add",
@@ -4711,9 +4811,7 @@
       "left": {
         "type": "minecraft:squeeze",
         "input": {
-          "type": "minecraft:interpolated",
-          "cell_size_xz": 4,
-          "cell_size_y": 8,
+          "type": "minecraft:upscale",
           "input": {
             "type": "minecraft:mul",
             "left": {
@@ -4830,6 +4928,18 @@
               }
             },
             "right": 0.64
+          },
+          "x": {
+            "cell_size": 4,
+            "mode": "interpolate_linear"
+          },
+          "y": {
+            "cell_size": 8,
+            "mode": "interpolate_linear"
+          },
+          "z": {
+            "cell_size": 4,
+            "mode": "interpolate_linear"
           }
         }
       },
@@ -6755,10 +6865,20 @@
     }
   },
   "overworld_large_biomes/chunk_surface_level": {
-    "type": "minecraft:interpolated",
-    "cell_size_xz": 16,
-    "cell_size_y": 1,
-    "input": "minecraft:overworld_large_biomes/preliminary_surface_level"
+    "type": "minecraft:upscale",
+    "input": "minecraft:overworld_large_biomes/preliminary_surface_level",
+    "x": {
+      "cell_size": 16,
+      "mode": "interpolate_linear"
+    },
+    "y": {
+      "cell_size": 1,
+      "mode": "interpolate_linear"
+    },
+    "z": {
+      "cell_size": 16,
+      "mode": "interpolate_linear"
+    }
   },
   "overworld_large_biomes/continents": {
     "type": "minecraft:cache",
@@ -7681,9 +7801,7 @@
       "left": {
         "type": "minecraft:squeeze",
         "input": {
-          "type": "minecraft:interpolated",
-          "cell_size_xz": 4,
-          "cell_size_y": 8,
+          "type": "minecraft:upscale",
           "input": {
             "type": "minecraft:mul",
             "left": {
@@ -7800,6 +7918,18 @@
               }
             },
             "right": 0.64
+          },
+          "x": {
+            "cell_size": 4,
+            "mode": "interpolate_linear"
+          },
+          "y": {
+            "cell_size": 8,
+            "mode": "interpolate_linear"
+          },
+          "z": {
+            "cell_size": 4,
+            "mode": "interpolate_linear"
           }
         }
       },
