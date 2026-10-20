@@ -14,9 +14,7 @@
         "left": {
           "type": "minecraft:abs",
           "input": {
-            "type": "minecraft:interpolated",
-            "cell_size_xz": 4,
-            "cell_size_y": 8,
+            "type": "minecraft:upscale",
             "input": {
               "type": "minecraft:range_choice",
               "input": "minecraft:y",
@@ -29,15 +27,25 @@
                 "y_scale": 4.0
               },
               "when_out_of_range": 1.0
+            },
+            "x": {
+              "cell_size": 4,
+              "mode": "interpolate_linear"
+            },
+            "y": {
+              "cell_size": 8,
+              "mode": "interpolate_linear"
+            },
+            "z": {
+              "cell_size": 4,
+              "mode": "interpolate_linear"
             }
           }
         },
         "right": {
           "type": "minecraft:abs",
           "input": {
-            "type": "minecraft:interpolated",
-            "cell_size_xz": 4,
-            "cell_size_y": 8,
+            "type": "minecraft:upscale",
             "input": {
               "type": "minecraft:range_choice",
               "input": "minecraft:y",
@@ -50,6 +58,18 @@
                 "y_scale": 4.0
               },
               "when_out_of_range": 1.0
+            },
+            "x": {
+              "cell_size": 4,
+              "mode": "interpolate_linear"
+            },
+            "y": {
+              "cell_size": 8,
+              "mode": "interpolate_linear"
+            },
+            "z": {
+              "cell_size": 4,
+              "mode": "interpolate_linear"
             }
           }
         }
