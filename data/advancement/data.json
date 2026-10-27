@@ -7628,6 +7628,7 @@
             "minecraft:darkness": {},
             "minecraft:dolphins_grace": {},
             "minecraft:fire_resistance": {},
+            "minecraft:freezing": {},
             "minecraft:glowing": {},
             "minecraft:haste": {},
             "minecraft:hero_of_the_village": {},
@@ -7689,6 +7690,7 @@
         "conditions": {
           "effects": {
             "minecraft:fire_resistance": {},
+            "minecraft:freezing": {},
             "minecraft:infested": {},
             "minecraft:invisibility": {},
             "minecraft:jump_boost": {},
@@ -28937,6 +28939,102 @@
       ]
     }
   },
+  "recipes/building_blocks/snow_brick_slab": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_snow_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:snow_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipes": "minecraft:snow_brick_slab"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_snow_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:snow_brick_slab"
+      ]
+    }
+  },
+  "recipes/building_blocks/snow_brick_stairs": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_snow_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:snow_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipes": "minecraft:snow_brick_stairs"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_snow_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:snow_brick_stairs"
+      ]
+    }
+  },
+  "recipes/building_blocks/snow_bricks": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_snow_block": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:snow_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipes": "minecraft:snow_bricks"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_snow_block"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:snow_bricks"
+      ]
+    }
+  },
   "recipes/building_blocks/sponge": {
     "parent": "minecraft:recipes/root",
     "criteria": {
@@ -49182,6 +49280,38 @@
     "rewards": {
       "recipes": [
         "minecraft:snow"
+      ]
+    }
+  },
+  "recipes/decorations/snow_brick_wall": {
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_snow_bricks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:snow_bricks"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "has_the_recipe": {
+        "conditions": {
+          "recipes": "minecraft:snow_brick_wall"
+        },
+        "trigger": "minecraft:recipe_unlocked"
+      }
+    },
+    "requirements": [
+      [
+        "has_the_recipe",
+        "has_snow_bricks"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "minecraft:snow_brick_wall"
       ]
     }
   },
