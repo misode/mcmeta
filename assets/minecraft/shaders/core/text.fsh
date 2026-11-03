@@ -23,18 +23,12 @@ layout(location = 0) out vec4 fragColor;
 #endif
 
 vec4 calculateFinalColor(vec4 color) {
-    #ifdef OIT_ACCUMULATE
-    color = sampleColorForAccumulation(color);
-    #endif
-
     #ifdef AFFECTED_BY_FOG_AND_LIGHT
-
     color = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
+    #endif
 
     #ifdef OIT_ACCUMULATE
     color = sampleColorForAccumulation(color);
-    #endif
-
     #endif
 
     return color;
