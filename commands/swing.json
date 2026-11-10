@@ -3,55 +3,80 @@
   "children": {
     "targets": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:entity",
+        "players_only": false,
+        "single_result": false
+      },
       "children": {
         "mainhand": {
           "type": "literal",
           "children": {
             "animation": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:swing_animation"
+              },
               "children": {
                 "duration": {
                   "type": "argument",
-                  "executable": true,
-                  "parser": "minecraft:time",
-                  "properties": {
+                  "argument": {
+                    "type": "minecraft:time",
                     "min": 1
+                  },
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
               },
               "executable": true,
-              "parser": "minecraft:swing_animation"
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
           },
-          "executable": true
+          "executable": true,
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         },
         "offhand": {
           "type": "literal",
           "children": {
             "animation": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:swing_animation"
+              },
               "children": {
                 "duration": {
                   "type": "argument",
-                  "executable": true,
-                  "parser": "minecraft:time",
-                  "properties": {
+                  "argument": {
+                    "type": "minecraft:time",
                     "min": 1
+                  },
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
               },
               "executable": true,
-              "parser": "minecraft:swing_animation"
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
           },
-          "executable": true
+          "executable": true,
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
       },
       "executable": true,
-      "parser": "minecraft:entity",
-      "properties": {
-        "type": "entities",
-        "amount": "multiple"
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

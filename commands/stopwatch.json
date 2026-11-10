@@ -6,9 +6,17 @@
       "children": {
         "id": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:resource_location"
+          },
           "executable": true,
-          "parser": "minecraft:resource_location"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "query": {
@@ -16,16 +24,32 @@
       "children": {
         "id": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:resource_location"
+          },
           "children": {
             "scale": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:double"
+              },
               "executable": true,
-              "parser": "brigadier:double"
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
           },
+          "custom_suggestion": {
+            "type": "minecraft:ask_server"
+          },
           "executable": true,
-          "parser": "minecraft:resource_location"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "remove": {
@@ -33,9 +57,20 @@
       "children": {
         "id": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:resource_location"
+          },
+          "custom_suggestion": {
+            "type": "minecraft:ask_server"
+          },
           "executable": true,
-          "parser": "minecraft:resource_location"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "restart": {
@@ -43,9 +78,20 @@
       "children": {
         "id": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:resource_location"
+          },
+          "custom_suggestion": {
+            "type": "minecraft:ask_server"
+          },
           "executable": true,
-          "parser": "minecraft:resource_location"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

@@ -3,42 +3,61 @@
   "children": {
     "targets": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:entity",
+        "players_only": false,
+        "single_result": false
+      },
       "children": {
         "add": {
           "type": "literal",
           "children": {
             "name": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:string"
+              },
               "executable": true,
-              "parser": "brigadier:string",
-              "properties": {
-                "type": "word"
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         },
         "list": {
           "type": "literal",
-          "executable": true
+          "executable": true,
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         },
         "remove": {
           "type": "literal",
           "children": {
             "name": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:string"
+              },
+              "custom_suggestion": {
+                "type": "minecraft:ask_server"
+              },
               "executable": true,
-              "parser": "brigadier:string",
-              "properties": {
-                "type": "word"
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
       },
-      "parser": "minecraft:entity",
-      "properties": {
-        "type": "entities",
-        "amount": "multiple"
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

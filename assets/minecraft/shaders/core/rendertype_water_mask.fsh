@@ -1,10 +1,8 @@
 #version 330
 #extension GL_ARB_separate_shader_objects : require
 
-#include <minecraft:dynamictransforms.glsl>
-
-layout(location = 0) out vec4 fragColor;
+layout(location = 0) out float fragColor;
 
 void main() {
-    fragColor = ColorModulator;
+    fragColor = gl_FragCoord.z;
 }

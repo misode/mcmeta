@@ -3,21 +3,43 @@
   "children": {
     "target": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:entity",
+        "players_only": false,
+        "single_result": true
+      },
       "children": {
         "amount": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:float",
+            "min": 0.0
+          },
           "children": {
             "damageType": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:resource",
+                "registry": "minecraft:damage_type"
+              },
               "children": {
                 "at": {
                   "type": "literal",
                   "children": {
                     "location": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:vec3",
+                        "auto_center": true
+                      },
                       "executable": true,
-                      "parser": "minecraft:vec3"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
                     }
+                  },
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 },
                 "by": {
@@ -25,50 +47,58 @@
                   "children": {
                     "entity": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:entity",
+                        "players_only": false,
+                        "single_result": true
+                      },
                       "children": {
                         "from": {
                           "type": "literal",
                           "children": {
                             "cause": {
                               "type": "argument",
+                              "argument": {
+                                "type": "minecraft:entity",
+                                "players_only": false,
+                                "single_result": true
+                              },
                               "executable": true,
-                              "parser": "minecraft:entity",
-                              "properties": {
-                                "type": "entities",
-                                "amount": "single"
+                              "permissions": {
+                                "type": "minecraft:always_pass"
                               }
                             }
+                          },
+                          "permissions": {
+                            "type": "minecraft:always_pass"
                           }
                         }
                       },
                       "executable": true,
-                      "parser": "minecraft:entity",
-                      "properties": {
-                        "type": "entities",
-                        "amount": "single"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
                       }
                     }
+                  },
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
               },
               "executable": true,
-              "parser": "minecraft:resource",
-              "properties": {
-                "registry": "minecraft:damage_type"
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
           },
           "executable": true,
-          "parser": "brigadier:float",
-          "properties": {
-            "min": 0.0
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
       },
-      "parser": "minecraft:entity",
-      "properties": {
-        "type": "entities",
-        "amount": "single"
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

@@ -3,15 +3,26 @@
   "children": {
     "fail": {
       "type": "literal",
-      "executable": true
+      "executable": true,
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     },
     "run": {
-      "type": "literal"
+      "type": "literal",
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     },
     "value": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:integer"
+      },
       "executable": true,
-      "parser": "brigadier:integer"
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     }
   },
   "permissions": {

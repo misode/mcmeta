@@ -3,30 +3,42 @@
   "children": {
     "target": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:entity",
+        "players_only": false,
+        "single_result": true
+      },
       "children": {
         "dismount": {
           "type": "literal",
-          "executable": true
+          "executable": true,
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         },
         "mount": {
           "type": "literal",
           "children": {
             "vehicle": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:entity",
+                "players_only": false,
+                "single_result": true
+              },
               "executable": true,
-              "parser": "minecraft:entity",
-              "properties": {
-                "type": "entities",
-                "amount": "single"
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
       },
-      "parser": "minecraft:entity",
-      "properties": {
-        "type": "entities",
-        "amount": "single"
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

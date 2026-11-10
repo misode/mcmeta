@@ -3,25 +3,38 @@
   "children": {
     "targets": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:entity",
+        "players_only": true,
+        "single_result": false
+      },
       "children": {
         "pos": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:block_pos"
+          },
           "children": {
             "rotation": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:rotation"
+              },
               "executable": true,
-              "parser": "minecraft:rotation"
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
           },
           "executable": true,
-          "parser": "minecraft:block_pos"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
       },
       "executable": true,
-      "parser": "minecraft:entity",
-      "properties": {
-        "type": "players",
-        "amount": "multiple"
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

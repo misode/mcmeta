@@ -3,17 +3,25 @@
   "children": {
     "targets": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:entity",
+        "players_only": true,
+        "single_result": false
+      },
       "children": {
         "message": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:component"
+          },
           "executable": true,
-          "parser": "minecraft:component"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
       },
-      "parser": "minecraft:entity",
-      "properties": {
-        "type": "players",
-        "amount": "multiple"
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

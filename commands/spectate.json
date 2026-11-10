@@ -3,22 +3,28 @@
   "children": {
     "target": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:entity",
+        "players_only": false,
+        "single_result": true
+      },
       "children": {
         "player": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:entity",
+            "players_only": true,
+            "single_result": true
+          },
           "executable": true,
-          "parser": "minecraft:entity",
-          "properties": {
-            "type": "players",
-            "amount": "single"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
       },
       "executable": true,
-      "parser": "minecraft:entity",
-      "properties": {
-        "type": "entities",
-        "amount": "single"
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

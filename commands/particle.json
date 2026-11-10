@@ -3,72 +3,107 @@
   "children": {
     "name": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:particle"
+      },
       "children": {
         "pos": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:vec3",
+            "auto_center": true
+          },
           "children": {
             "delta": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:vec3",
+                "auto_center": false
+              },
               "children": {
                 "speed": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:float",
+                    "min": 0.0
+                  },
                   "children": {
                     "count": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:integer",
+                        "min": 0
+                      },
                       "children": {
                         "force": {
                           "type": "literal",
                           "children": {
                             "viewers": {
                               "type": "argument",
+                              "argument": {
+                                "type": "minecraft:entity",
+                                "players_only": true,
+                                "single_result": false
+                              },
                               "executable": true,
-                              "parser": "minecraft:entity",
-                              "properties": {
-                                "type": "players",
-                                "amount": "multiple"
+                              "permissions": {
+                                "type": "minecraft:always_pass"
                               }
                             }
                           },
-                          "executable": true
+                          "executable": true,
+                          "permissions": {
+                            "type": "minecraft:always_pass"
+                          }
                         },
                         "normal": {
                           "type": "literal",
                           "children": {
                             "viewers": {
                               "type": "argument",
+                              "argument": {
+                                "type": "minecraft:entity",
+                                "players_only": true,
+                                "single_result": false
+                              },
                               "executable": true,
-                              "parser": "minecraft:entity",
-                              "properties": {
-                                "type": "players",
-                                "amount": "multiple"
+                              "permissions": {
+                                "type": "minecraft:always_pass"
                               }
                             }
                           },
-                          "executable": true
+                          "executable": true,
+                          "permissions": {
+                            "type": "minecraft:always_pass"
+                          }
                         }
                       },
                       "executable": true,
-                      "parser": "brigadier:integer",
-                      "properties": {
-                        "min": 0
+                      "permissions": {
+                        "type": "minecraft:always_pass"
                       }
                     }
                   },
-                  "parser": "brigadier:float",
-                  "properties": {
-                    "min": 0.0
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
               },
-              "parser": "minecraft:vec3"
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
           },
           "executable": true,
-          "parser": "minecraft:vec3"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
       },
       "executable": true,
-      "parser": "minecraft:particle"
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     }
   },
   "permissions": {

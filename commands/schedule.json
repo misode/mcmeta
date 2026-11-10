@@ -6,9 +6,20 @@
       "children": {
         "function": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:resource_location"
+          },
+          "custom_suggestion": {
+            "type": "minecraft:ask_server"
+          },
           "executable": true,
-          "parser": "minecraft:resource_location"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "function": {
@@ -16,28 +27,47 @@
       "children": {
         "function": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:function"
+          },
           "children": {
             "time": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:time"
+              },
               "children": {
                 "append": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 },
                 "replace": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
               },
               "executable": true,
-              "parser": "minecraft:time",
-              "properties": {
-                "min": 0
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
           },
-          "parser": "minecraft:function"
+          "custom_suggestion": {
+            "type": "minecraft:ask_server"
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

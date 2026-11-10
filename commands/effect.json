@@ -6,98 +6,138 @@
       "children": {
         "targets": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:entity",
+            "players_only": false,
+            "single_result": false
+          },
           "children": {
             "effect": {
               "type": "argument",
-              "executable": true,
-              "parser": "minecraft:resource_or_tag",
-              "properties": {
+              "argument": {
+                "type": "minecraft:resource_or_tag",
                 "registry": "minecraft:mob_effect"
+              },
+              "executable": true,
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
           },
           "executable": true,
-          "parser": "minecraft:entity",
-          "properties": {
-            "type": "entities",
-            "amount": "multiple"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
       },
-      "executable": true
+      "executable": true,
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     },
     "give": {
       "type": "literal",
       "children": {
         "targets": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:entity",
+            "players_only": false,
+            "single_result": false
+          },
           "children": {
             "effect": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:resource_or_tag",
+                "registry": "minecraft:mob_effect"
+              },
               "children": {
                 "infinite": {
                   "type": "literal",
                   "children": {
                     "amplifier": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:integer",
+                        "max": 255,
+                        "min": 0
+                      },
                       "children": {
                         "hideParticles": {
                           "type": "argument",
+                          "argument": {
+                            "type": "minecraft:bool"
+                          },
                           "executable": true,
-                          "parser": "brigadier:bool"
+                          "permissions": {
+                            "type": "minecraft:always_pass"
+                          }
                         }
                       },
                       "executable": true,
-                      "parser": "brigadier:integer",
-                      "properties": {
-                        "max": 255,
-                        "min": 0
-                      }
-                    }
-                  },
-                  "executable": true
-                },
-                "seconds": {
-                  "type": "argument",
-                  "children": {
-                    "amplifier": {
-                      "type": "argument",
-                      "children": {
-                        "hideParticles": {
-                          "type": "argument",
-                          "executable": true,
-                          "parser": "brigadier:bool"
-                        }
-                      },
-                      "executable": true,
-                      "parser": "brigadier:integer",
-                      "properties": {
-                        "max": 255,
-                        "min": 0
+                      "permissions": {
+                        "type": "minecraft:always_pass"
                       }
                     }
                   },
                   "executable": true,
-                  "parser": "brigadier:integer",
-                  "properties": {
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
+                },
+                "seconds": {
+                  "type": "argument",
+                  "argument": {
+                    "type": "minecraft:integer",
                     "max": 1000000,
                     "min": 1
+                  },
+                  "children": {
+                    "amplifier": {
+                      "type": "argument",
+                      "argument": {
+                        "type": "minecraft:integer",
+                        "max": 255,
+                        "min": 0
+                      },
+                      "children": {
+                        "hideParticles": {
+                          "type": "argument",
+                          "argument": {
+                            "type": "minecraft:bool"
+                          },
+                          "executable": true,
+                          "permissions": {
+                            "type": "minecraft:always_pass"
+                          }
+                        }
+                      },
+                      "executable": true,
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
+                    }
+                  },
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
               },
               "executable": true,
-              "parser": "minecraft:resource_or_tag",
-              "properties": {
-                "registry": "minecraft:mob_effect"
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
           },
-          "parser": "minecraft:entity",
-          "properties": {
-            "type": "entities",
-            "amount": "multiple"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

@@ -3,33 +3,60 @@
   "children": {
     "targets": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:entity",
+        "players_only": true,
+        "single_result": false
+      },
       "children": {
         "actionbar": {
           "type": "literal",
           "children": {
             "title": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:component"
+              },
               "executable": true,
-              "parser": "minecraft:component"
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         },
         "clear": {
           "type": "literal",
-          "executable": true
+          "executable": true,
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         },
         "reset": {
           "type": "literal",
-          "executable": true
+          "executable": true,
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         },
         "subtitle": {
           "type": "literal",
           "children": {
             "title": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:component"
+              },
               "executable": true,
-              "parser": "minecraft:component"
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         },
         "times": {
@@ -37,30 +64,39 @@
           "children": {
             "fadeIn": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:time"
+              },
               "children": {
                 "stay": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:time"
+                  },
                   "children": {
                     "fadeOut": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:time"
+                      },
                       "executable": true,
-                      "parser": "minecraft:time",
-                      "properties": {
-                        "min": 0
+                      "permissions": {
+                        "type": "minecraft:always_pass"
                       }
                     }
                   },
-                  "parser": "minecraft:time",
-                  "properties": {
-                    "min": 0
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
               },
-              "parser": "minecraft:time",
-              "properties": {
-                "min": 0
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         },
         "title": {
@@ -68,16 +104,22 @@
           "children": {
             "title": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:component"
+              },
               "executable": true,
-              "parser": "minecraft:component"
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
       },
-      "parser": "minecraft:entity",
-      "properties": {
-        "type": "players",
-        "amount": "multiple"
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

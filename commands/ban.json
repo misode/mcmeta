@@ -3,15 +3,25 @@
   "children": {
     "targets": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:game_profile"
+      },
       "children": {
         "reason": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:message"
+          },
           "executable": true,
-          "parser": "minecraft:message"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
       },
       "executable": true,
-      "parser": "minecraft:game_profile"
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     }
   },
   "permissions": {

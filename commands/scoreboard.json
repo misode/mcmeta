@@ -9,45 +9,74 @@
           "children": {
             "objective": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:string"
+              },
               "children": {
                 "criteria": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:objective_criteria"
+                  },
                   "children": {
                     "displayName": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:component"
+                      },
                       "executable": true,
-                      "parser": "minecraft:component"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
                     }
                   },
                   "executable": true,
-                  "parser": "minecraft:objective_criteria"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
               },
-              "parser": "brigadier:string",
-              "properties": {
-                "type": "word"
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         },
         "list": {
           "type": "literal",
-          "executable": true
+          "executable": true,
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         },
         "modify": {
           "type": "literal",
           "children": {
             "objective": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:objective"
+              },
               "children": {
                 "displayautoupdate": {
                   "type": "literal",
                   "children": {
                     "value": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:bool"
+                      },
                       "executable": true,
-                      "parser": "brigadier:bool"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
                     }
+                  },
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 },
                 "displayname": {
@@ -55,9 +84,17 @@
                   "children": {
                     "displayName": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:component"
+                      },
                       "executable": true,
-                      "parser": "minecraft:component"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
                     }
+                  },
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 },
                 "numberformat": {
@@ -65,16 +102,27 @@
                   "children": {
                     "blank": {
                       "type": "literal",
-                      "executable": true
+                      "executable": true,
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
                     },
                     "fixed": {
                       "type": "literal",
                       "children": {
                         "contents": {
                           "type": "argument",
+                          "argument": {
+                            "type": "minecraft:component"
+                          },
                           "executable": true,
-                          "parser": "minecraft:component"
+                          "permissions": {
+                            "type": "minecraft:always_pass"
+                          }
                         }
+                      },
+                      "permissions": {
+                        "type": "minecraft:always_pass"
                       }
                     },
                     "styled": {
@@ -82,30 +130,55 @@
                       "children": {
                         "style": {
                           "type": "argument",
+                          "argument": {
+                            "type": "minecraft:style"
+                          },
                           "executable": true,
-                          "parser": "minecraft:style"
+                          "permissions": {
+                            "type": "minecraft:always_pass"
+                          }
                         }
+                      },
+                      "permissions": {
+                        "type": "minecraft:always_pass"
                       }
                     }
                   },
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 },
                 "rendertype": {
                   "type": "literal",
                   "children": {
                     "hearts": {
                       "type": "literal",
-                      "executable": true
+                      "executable": true,
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
                     },
                     "integer": {
                       "type": "literal",
-                      "executable": true
+                      "executable": true,
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
                     }
+                  },
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
               },
-              "parser": "minecraft:objective"
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         },
         "remove": {
@@ -113,9 +186,17 @@
           "children": {
             "objective": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:objective"
+              },
               "executable": true,
-              "parser": "minecraft:objective"
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         },
         "setdisplay": {
@@ -123,18 +204,34 @@
           "children": {
             "slot": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:scoreboard_slot"
+              },
               "children": {
                 "objective": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:objective"
+                  },
                   "executable": true,
-                  "parser": "minecraft:objective"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
               },
               "executable": true,
-              "parser": "minecraft:scoreboard_slot"
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "players": {
@@ -145,27 +242,44 @@
           "children": {
             "targets": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:score_holder",
+                "multiple": true
+              },
               "children": {
                 "objective": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:objective"
+                  },
                   "children": {
                     "score": {
                       "type": "argument",
-                      "executable": true,
-                      "parser": "brigadier:integer",
-                      "properties": {
+                      "argument": {
+                        "type": "minecraft:integer",
                         "min": 0
+                      },
+                      "executable": true,
+                      "permissions": {
+                        "type": "minecraft:always_pass"
                       }
                     }
                   },
-                  "parser": "minecraft:objective"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
               },
-              "parser": "minecraft:score_holder",
-              "properties": {
-                "amount": "multiple"
+              "custom_suggestion": {
+                "type": "minecraft:ask_server"
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         },
         "display": {
@@ -176,25 +290,44 @@
               "children": {
                 "targets": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:score_holder",
+                    "multiple": true
+                  },
                   "children": {
                     "objective": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:objective"
+                      },
                       "children": {
                         "name": {
                           "type": "argument",
+                          "argument": {
+                            "type": "minecraft:component"
+                          },
                           "executable": true,
-                          "parser": "minecraft:component"
+                          "permissions": {
+                            "type": "minecraft:always_pass"
+                          }
                         }
                       },
                       "executable": true,
-                      "parser": "minecraft:objective"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
                     }
                   },
-                  "parser": "minecraft:score_holder",
-                  "properties": {
-                    "amount": "multiple"
+                  "custom_suggestion": {
+                    "type": "minecraft:ask_server"
+                  },
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "numberformat": {
@@ -202,22 +335,40 @@
               "children": {
                 "targets": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:score_holder",
+                    "multiple": true
+                  },
                   "children": {
                     "objective": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:objective"
+                      },
                       "children": {
                         "blank": {
                           "type": "literal",
-                          "executable": true
+                          "executable": true,
+                          "permissions": {
+                            "type": "minecraft:always_pass"
+                          }
                         },
                         "fixed": {
                           "type": "literal",
                           "children": {
                             "contents": {
                               "type": "argument",
+                              "argument": {
+                                "type": "minecraft:component"
+                              },
                               "executable": true,
-                              "parser": "minecraft:component"
+                              "permissions": {
+                                "type": "minecraft:always_pass"
+                              }
                             }
+                          },
+                          "permissions": {
+                            "type": "minecraft:always_pass"
                           }
                         },
                         "styled": {
@@ -225,23 +376,41 @@
                           "children": {
                             "style": {
                               "type": "argument",
+                              "argument": {
+                                "type": "minecraft:style"
+                              },
                               "executable": true,
-                              "parser": "minecraft:style"
+                              "permissions": {
+                                "type": "minecraft:always_pass"
+                              }
                             }
+                          },
+                          "permissions": {
+                            "type": "minecraft:always_pass"
                           }
                         }
                       },
                       "executable": true,
-                      "parser": "minecraft:objective"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
                     }
                   },
-                  "parser": "minecraft:score_holder",
-                  "properties": {
-                    "amount": "multiple"
+                  "custom_suggestion": {
+                    "type": "minecraft:ask_server"
+                  },
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         },
         "enable": {
@@ -249,18 +418,35 @@
           "children": {
             "targets": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:score_holder",
+                "multiple": true
+              },
               "children": {
                 "objective": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:objective"
+                  },
+                  "custom_suggestion": {
+                    "type": "minecraft:ask_server"
+                  },
                   "executable": true,
-                  "parser": "minecraft:objective"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
               },
-              "parser": "minecraft:score_holder",
-              "properties": {
-                "amount": "multiple"
+              "custom_suggestion": {
+                "type": "minecraft:ask_server"
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         },
         "get": {
@@ -268,18 +454,32 @@
           "children": {
             "target": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:score_holder",
+                "multiple": false
+              },
               "children": {
                 "objective": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:objective"
+                  },
                   "executable": true,
-                  "parser": "minecraft:objective"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
               },
-              "parser": "minecraft:score_holder",
-              "properties": {
-                "amount": "single"
+              "custom_suggestion": {
+                "type": "minecraft:ask_server"
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         },
         "list": {
@@ -287,53 +487,92 @@
           "children": {
             "target": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:score_holder",
+                "multiple": false
+              },
+              "custom_suggestion": {
+                "type": "minecraft:ask_server"
+              },
               "executable": true,
-              "parser": "minecraft:score_holder",
-              "properties": {
-                "amount": "single"
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
           },
-          "executable": true
+          "executable": true,
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         },
         "operation": {
           "type": "literal",
           "children": {
             "targets": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:score_holder",
+                "multiple": true
+              },
               "children": {
                 "targetObjective": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:objective"
+                  },
                   "children": {
                     "operation": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:operation"
+                      },
                       "children": {
                         "source": {
                           "type": "argument",
+                          "argument": {
+                            "type": "minecraft:score_holder",
+                            "multiple": true
+                          },
                           "children": {
                             "sourceObjective": {
                               "type": "argument",
+                              "argument": {
+                                "type": "minecraft:objective"
+                              },
                               "executable": true,
-                              "parser": "minecraft:objective"
+                              "permissions": {
+                                "type": "minecraft:always_pass"
+                              }
                             }
                           },
-                          "parser": "minecraft:score_holder",
-                          "properties": {
-                            "amount": "multiple"
+                          "custom_suggestion": {
+                            "type": "minecraft:ask_server"
+                          },
+                          "permissions": {
+                            "type": "minecraft:always_pass"
                           }
                         }
                       },
-                      "parser": "minecraft:operation"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
                     }
                   },
-                  "parser": "minecraft:objective"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
               },
-              "parser": "minecraft:score_holder",
-              "properties": {
-                "amount": "multiple"
+              "custom_suggestion": {
+                "type": "minecraft:ask_server"
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         },
         "remove": {
@@ -341,27 +580,44 @@
           "children": {
             "targets": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:score_holder",
+                "multiple": true
+              },
               "children": {
                 "objective": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:objective"
+                  },
                   "children": {
                     "score": {
                       "type": "argument",
-                      "executable": true,
-                      "parser": "brigadier:integer",
-                      "properties": {
+                      "argument": {
+                        "type": "minecraft:integer",
                         "min": 0
+                      },
+                      "executable": true,
+                      "permissions": {
+                        "type": "minecraft:always_pass"
                       }
                     }
                   },
-                  "parser": "minecraft:objective"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
               },
-              "parser": "minecraft:score_holder",
-              "properties": {
-                "amount": "multiple"
+              "custom_suggestion": {
+                "type": "minecraft:ask_server"
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         },
         "reset": {
@@ -369,19 +625,33 @@
           "children": {
             "targets": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:score_holder",
+                "multiple": true
+              },
               "children": {
                 "objective": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:objective"
+                  },
                   "executable": true,
-                  "parser": "minecraft:objective"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
               },
+              "custom_suggestion": {
+                "type": "minecraft:ask_server"
+              },
               "executable": true,
-              "parser": "minecraft:score_holder",
-              "properties": {
-                "amount": "multiple"
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         },
         "set": {
@@ -389,26 +659,48 @@
           "children": {
             "targets": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:score_holder",
+                "multiple": true
+              },
               "children": {
                 "objective": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:objective"
+                  },
                   "children": {
                     "score": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:integer"
+                      },
                       "executable": true,
-                      "parser": "brigadier:integer"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
                     }
                   },
-                  "parser": "minecraft:objective"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
               },
-              "parser": "minecraft:score_holder",
-              "properties": {
-                "amount": "multiple"
+              "custom_suggestion": {
+                "type": "minecraft:ask_server"
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

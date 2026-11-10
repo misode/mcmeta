@@ -3,24 +3,42 @@
   "children": {
     "freeze": {
       "type": "literal",
-      "executable": true
+      "executable": true,
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     },
     "query": {
       "type": "literal",
-      "executable": true
+      "executable": true,
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     },
     "rate": {
       "type": "literal",
       "children": {
         "rate": {
           "type": "argument",
-          "executable": true,
-          "parser": "brigadier:float",
-          "properties": {
+          "argument": {
+            "type": "minecraft:float",
             "max": 10000.0,
             "min": 1.0
+          },
+          "custom_suggestion": {
+            "type": "minecraft:literal",
+            "values": [
+              "20"
+            ]
+          },
+          "executable": true,
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "sprint": {
@@ -28,16 +46,33 @@
       "children": {
         "stop": {
           "type": "literal",
-          "executable": true
+          "executable": true,
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         },
         "time": {
           "type": "argument",
-          "executable": true,
-          "parser": "minecraft:time",
-          "properties": {
+          "argument": {
+            "type": "minecraft:time",
             "min": 1
+          },
+          "custom_suggestion": {
+            "type": "minecraft:literal",
+            "values": [
+              "60s",
+              "1d",
+              "3d"
+            ]
+          },
+          "executable": true,
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "step": {
@@ -45,22 +80,41 @@
       "children": {
         "stop": {
           "type": "literal",
-          "executable": true
+          "executable": true,
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         },
         "time": {
           "type": "argument",
-          "executable": true,
-          "parser": "minecraft:time",
-          "properties": {
+          "argument": {
+            "type": "minecraft:time",
             "min": 1
+          },
+          "custom_suggestion": {
+            "type": "minecraft:literal",
+            "values": [
+              "1t",
+              "1s"
+            ]
+          },
+          "executable": true,
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
       },
-      "executable": true
+      "executable": true,
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     },
     "unfreeze": {
       "type": "literal",
-      "executable": true
+      "executable": true,
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     }
   },
   "permissions": {

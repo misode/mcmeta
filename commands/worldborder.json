@@ -6,23 +6,32 @@
       "children": {
         "distance": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:double",
+            "max": 59999968.0,
+            "min": -59999968.0
+          },
           "children": {
             "time": {
               "type": "argument",
-              "executable": true,
-              "parser": "minecraft:time",
-              "properties": {
+              "argument": {
+                "type": "minecraft:time",
                 "min": 0
+              },
+              "executable": true,
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
           },
           "executable": true,
-          "parser": "brigadier:double",
-          "properties": {
-            "max": 59999968.0,
-            "min": -59999968.0
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "center": {
@@ -30,9 +39,18 @@
       "children": {
         "pos": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:vec2",
+            "auto_center": true
+          },
           "executable": true,
-          "parser": "minecraft:vec2"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "damage": {
@@ -43,12 +61,18 @@
           "children": {
             "damagePerBlock": {
               "type": "argument",
-              "executable": true,
-              "parser": "brigadier:float",
-              "properties": {
+              "argument": {
+                "type": "minecraft:float",
                 "min": 0.0
+              },
+              "executable": true,
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         },
         "buffer": {
@@ -56,42 +80,63 @@
           "children": {
             "distance": {
               "type": "argument",
-              "executable": true,
-              "parser": "brigadier:float",
-              "properties": {
+              "argument": {
+                "type": "minecraft:float",
                 "min": 0.0
+              },
+              "executable": true,
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "get": {
       "type": "literal",
-      "executable": true
+      "executable": true,
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     },
     "set": {
       "type": "literal",
       "children": {
         "distance": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:double",
+            "max": 59999968.0,
+            "min": -59999968.0
+          },
           "children": {
             "time": {
               "type": "argument",
-              "executable": true,
-              "parser": "minecraft:time",
-              "properties": {
+              "argument": {
+                "type": "minecraft:time",
                 "min": 0
+              },
+              "executable": true,
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
           },
           "executable": true,
-          "parser": "brigadier:double",
-          "properties": {
-            "max": 59999968.0,
-            "min": -59999968.0
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "warning": {
@@ -102,12 +147,18 @@
           "children": {
             "distance": {
               "type": "argument",
-              "executable": true,
-              "parser": "brigadier:integer",
-              "properties": {
+              "argument": {
+                "type": "minecraft:integer",
                 "min": 0
+              },
+              "executable": true,
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         },
         "time": {
@@ -115,14 +166,23 @@
           "children": {
             "time": {
               "type": "argument",
-              "executable": true,
-              "parser": "minecraft:time",
-              "properties": {
+              "argument": {
+                "type": "minecraft:time",
                 "min": 0
+              },
+              "executable": true,
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

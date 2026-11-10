@@ -6,22 +6,36 @@
       "children": {
         "targets": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:entity",
+            "players_only": true,
+            "single_result": false
+          },
           "children": {
             "everything": {
               "type": "literal",
-              "executable": true
+              "executable": true,
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             },
             "from": {
               "type": "literal",
               "children": {
                 "advancement": {
                   "type": "argument",
-                  "executable": true,
-                  "parser": "minecraft:resource_key",
-                  "properties": {
+                  "argument": {
+                    "type": "minecraft:resource",
                     "registry": "minecraft:advancement"
+                  },
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "only": {
@@ -29,22 +43,33 @@
               "children": {
                 "advancement": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:resource",
+                    "registry": "minecraft:advancement"
+                  },
                   "children": {
                     "criterion": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:string"
+                      },
+                      "custom_suggestion": {
+                        "type": "minecraft:ask_server"
+                      },
                       "executable": true,
-                      "parser": "brigadier:string",
-                      "properties": {
-                        "type": "greedy"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
                       }
                     }
                   },
                   "executable": true,
-                  "parser": "minecraft:resource_key",
-                  "properties": {
-                    "registry": "minecraft:advancement"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "through": {
@@ -52,12 +77,18 @@
               "children": {
                 "advancement": {
                   "type": "argument",
-                  "executable": true,
-                  "parser": "minecraft:resource_key",
-                  "properties": {
+                  "argument": {
+                    "type": "minecraft:resource",
                     "registry": "minecraft:advancement"
+                  },
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "until": {
@@ -65,21 +96,28 @@
               "children": {
                 "advancement": {
                   "type": "argument",
-                  "executable": true,
-                  "parser": "minecraft:resource_key",
-                  "properties": {
+                  "argument": {
+                    "type": "minecraft:resource",
                     "registry": "minecraft:advancement"
+                  },
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
           },
-          "parser": "minecraft:entity",
-          "properties": {
-            "type": "players",
-            "amount": "multiple"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "revoke": {
@@ -87,22 +125,36 @@
       "children": {
         "targets": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:entity",
+            "players_only": true,
+            "single_result": false
+          },
           "children": {
             "everything": {
               "type": "literal",
-              "executable": true
+              "executable": true,
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             },
             "from": {
               "type": "literal",
               "children": {
                 "advancement": {
                   "type": "argument",
-                  "executable": true,
-                  "parser": "minecraft:resource_key",
-                  "properties": {
+                  "argument": {
+                    "type": "minecraft:resource",
                     "registry": "minecraft:advancement"
+                  },
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "only": {
@@ -110,22 +162,33 @@
               "children": {
                 "advancement": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:resource",
+                    "registry": "minecraft:advancement"
+                  },
                   "children": {
                     "criterion": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:string"
+                      },
+                      "custom_suggestion": {
+                        "type": "minecraft:ask_server"
+                      },
                       "executable": true,
-                      "parser": "brigadier:string",
-                      "properties": {
-                        "type": "greedy"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
                       }
                     }
                   },
                   "executable": true,
-                  "parser": "minecraft:resource_key",
-                  "properties": {
-                    "registry": "minecraft:advancement"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "through": {
@@ -133,12 +196,18 @@
               "children": {
                 "advancement": {
                   "type": "argument",
-                  "executable": true,
-                  "parser": "minecraft:resource_key",
-                  "properties": {
+                  "argument": {
+                    "type": "minecraft:resource",
                     "registry": "minecraft:advancement"
+                  },
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "until": {
@@ -146,21 +215,28 @@
               "children": {
                 "advancement": {
                   "type": "argument",
-                  "executable": true,
-                  "parser": "minecraft:resource_key",
-                  "properties": {
+                  "argument": {
+                    "type": "minecraft:resource",
                     "registry": "minecraft:advancement"
+                  },
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
           },
-          "parser": "minecraft:entity",
-          "properties": {
-            "type": "players",
-            "amount": "multiple"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

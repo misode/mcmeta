@@ -3,32 +3,40 @@
   "children": {
     "hostname": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:string"
+      },
       "children": {
         "port": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:integer",
+            "max": 65535,
+            "min": 1
+          },
           "children": {
             "players": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:entity",
+                "players_only": true,
+                "single_result": false
+              },
               "executable": true,
-              "parser": "minecraft:entity",
-              "properties": {
-                "type": "players",
-                "amount": "multiple"
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
           },
           "executable": true,
-          "parser": "brigadier:integer",
-          "properties": {
-            "max": 65535,
-            "min": 1
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
       },
       "executable": true,
-      "parser": "brigadier:string",
-      "properties": {
-        "type": "phrase"
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

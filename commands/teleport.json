@@ -3,32 +3,53 @@
   "children": {
     "destination": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:entity",
+        "players_only": false,
+        "single_result": true
+      },
       "executable": true,
-      "parser": "minecraft:entity",
-      "properties": {
-        "type": "entities",
-        "amount": "single"
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "location": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:vec3",
+        "auto_center": true
+      },
       "executable": true,
-      "parser": "minecraft:vec3"
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     },
     "targets": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:entity",
+        "players_only": false,
+        "single_result": false
+      },
       "children": {
         "destination": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:entity",
+            "players_only": false,
+            "single_result": true
+          },
           "executable": true,
-          "parser": "minecraft:entity",
-          "properties": {
-            "type": "entities",
-            "amount": "single"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         },
         "location": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:vec3",
+            "auto_center": true
+          },
           "children": {
             "facing": {
               "type": "literal",
@@ -38,43 +59,68 @@
                   "children": {
                     "facingEntity": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:entity",
+                        "players_only": false,
+                        "single_result": true
+                      },
                       "children": {
                         "facingAnchor": {
                           "type": "argument",
+                          "argument": {
+                            "type": "minecraft:entity_anchor"
+                          },
                           "executable": true,
-                          "parser": "minecraft:entity_anchor"
+                          "permissions": {
+                            "type": "minecraft:always_pass"
+                          }
                         }
                       },
                       "executable": true,
-                      "parser": "minecraft:entity",
-                      "properties": {
-                        "type": "entities",
-                        "amount": "single"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
                       }
                     }
+                  },
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 },
                 "facingLocation": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:vec3",
+                    "auto_center": true
+                  },
                   "executable": true,
-                  "parser": "minecraft:vec3"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "rotation": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:rotation"
+              },
               "executable": true,
-              "parser": "minecraft:rotation"
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
           },
           "executable": true,
-          "parser": "minecraft:vec3"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
       },
-      "parser": "minecraft:entity",
-      "properties": {
-        "type": "entities",
-        "amount": "multiple"
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

@@ -6,13 +6,19 @@
       "children": {
         "entity": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:entity",
+            "players_only": false,
+            "single_result": true
+          },
           "executable": true,
-          "parser": "minecraft:entity",
-          "properties": {
-            "type": "entities",
-            "amount": "single"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "id": {
@@ -20,9 +26,17 @@
       "children": {
         "id": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:uuid"
+          },
           "executable": true,
-          "parser": "minecraft:uuid"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "name": {
@@ -30,12 +44,17 @@
       "children": {
         "name": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:string"
+          },
           "executable": true,
-          "parser": "brigadier:string",
-          "properties": {
-            "type": "greedy"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

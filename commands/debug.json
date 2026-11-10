@@ -6,8 +6,16 @@
       "children": {
         "name": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:function"
+          },
+          "custom_suggestion": {
+            "type": "minecraft:ask_server"
+          },
           "executable": true,
-          "parser": "minecraft:function"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
       },
       "permissions": {
@@ -20,11 +28,17 @@
     },
     "start": {
       "type": "literal",
-      "executable": true
+      "executable": true,
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     },
     "stop": {
       "type": "literal",
-      "executable": true
+      "executable": true,
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     }
   },
   "permissions": {

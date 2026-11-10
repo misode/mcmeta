@@ -3,36 +3,63 @@
   "children": {
     "list": {
       "type": "literal",
-      "executable": true
+      "executable": true,
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     },
     "modify": {
       "type": "literal",
       "children": {
         "waypoint": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:entity",
+            "players_only": false,
+            "single_result": true
+          },
           "children": {
             "color": {
               "type": "literal",
               "children": {
                 "color": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:team_color"
+                  },
                   "executable": true,
-                  "parser": "minecraft:team_color"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 },
                 "hex": {
                   "type": "literal",
                   "children": {
                     "color": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:hex_color"
+                      },
                       "executable": true,
-                      "parser": "minecraft:hex_color"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
                     }
+                  },
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 },
                 "reset": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "style": {
@@ -40,27 +67,42 @@
               "children": {
                 "reset": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 },
                 "set": {
                   "type": "literal",
                   "children": {
                     "style": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:resource_location"
+                      },
                       "executable": true,
-                      "parser": "minecraft:resource_location"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
                     }
+                  },
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
           },
-          "parser": "minecraft:entity",
-          "properties": {
-            "type": "entities",
-            "amount": "single"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

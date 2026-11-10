@@ -3,27 +3,38 @@
   "children": {
     "targets": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:entity",
+        "players_only": true,
+        "single_result": false
+      },
       "children": {
         "item": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:item_stack"
+          },
           "children": {
             "count": {
               "type": "argument",
-              "executable": true,
-              "parser": "brigadier:integer",
-              "properties": {
+              "argument": {
+                "type": "minecraft:integer",
                 "min": 1
+              },
+              "executable": true,
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
           },
           "executable": true,
-          "parser": "minecraft:item_stack"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
       },
-      "parser": "minecraft:entity",
-      "properties": {
-        "type": "players",
-        "amount": "multiple"
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

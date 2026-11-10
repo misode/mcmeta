@@ -3,19 +3,27 @@
   "children": {
     "allowCommands": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:bool"
+      },
       "children": {
         "port": {
           "type": "argument",
-          "executable": true,
-          "parser": "brigadier:integer",
-          "properties": {
+          "argument": {
+            "type": "minecraft:integer",
             "max": 65535,
             "min": 0
+          },
+          "executable": true,
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
       },
       "executable": true,
-      "parser": "brigadier:bool"
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     }
   },
   "executable": true,

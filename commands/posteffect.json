@@ -6,19 +6,33 @@
       "children": {
         "targets": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:entity",
+            "players_only": true,
+            "single_result": false
+          },
           "children": {
             "posteffect": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:resource_location"
+              },
+              "custom_suggestion": {
+                "type": "minecraft:post_effects"
+              },
               "executable": true,
-              "parser": "minecraft:resource_location"
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
           },
-          "parser": "minecraft:entity",
-          "properties": {
-            "type": "players",
-            "amount": "multiple"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "clear": {
@@ -26,13 +40,19 @@
       "children": {
         "targets": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:entity",
+            "players_only": true,
+            "single_result": false
+          },
           "executable": true,
-          "parser": "minecraft:entity",
-          "properties": {
-            "type": "players",
-            "amount": "multiple"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "list": {
@@ -40,13 +60,19 @@
       "children": {
         "target": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:entity",
+            "players_only": true,
+            "single_result": true
+          },
           "executable": true,
-          "parser": "minecraft:entity",
-          "properties": {
-            "type": "players",
-            "amount": "single"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "remove": {
@@ -54,19 +80,33 @@
       "children": {
         "targets": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:entity",
+            "players_only": true,
+            "single_result": false
+          },
           "children": {
             "posteffect": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:resource_location"
+              },
+              "custom_suggestion": {
+                "type": "minecraft:post_effects"
+              },
               "executable": true,
-              "parser": "minecraft:resource_location"
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
           },
-          "parser": "minecraft:entity",
-          "properties": {
-            "type": "players",
-            "amount": "multiple"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

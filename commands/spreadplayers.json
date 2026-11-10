@@ -3,68 +3,104 @@
   "children": {
     "center": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:vec2",
+        "auto_center": true
+      },
       "children": {
         "spreadDistance": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:float",
+            "min": 0.0
+          },
           "children": {
             "maxRange": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:float",
+                "min": 1.0
+              },
               "children": {
                 "respectTeams": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:bool"
+                  },
                   "children": {
                     "targets": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:entity",
+                        "players_only": false,
+                        "single_result": false
+                      },
                       "executable": true,
-                      "parser": "minecraft:entity",
-                      "properties": {
-                        "type": "entities",
-                        "amount": "multiple"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
                       }
                     }
                   },
-                  "parser": "brigadier:bool"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 },
                 "under": {
                   "type": "literal",
                   "children": {
                     "maxHeight": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:integer"
+                      },
                       "children": {
                         "respectTeams": {
                           "type": "argument",
+                          "argument": {
+                            "type": "minecraft:bool"
+                          },
                           "children": {
                             "targets": {
                               "type": "argument",
+                              "argument": {
+                                "type": "minecraft:entity",
+                                "players_only": false,
+                                "single_result": false
+                              },
                               "executable": true,
-                              "parser": "minecraft:entity",
-                              "properties": {
-                                "type": "entities",
-                                "amount": "multiple"
+                              "permissions": {
+                                "type": "minecraft:always_pass"
                               }
                             }
                           },
-                          "parser": "brigadier:bool"
+                          "permissions": {
+                            "type": "minecraft:always_pass"
+                          }
                         }
                       },
-                      "parser": "brigadier:integer"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
                     }
+                  },
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
               },
-              "parser": "brigadier:float",
-              "properties": {
-                "min": 1.0
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
           },
-          "parser": "brigadier:float",
-          "properties": {
-            "min": 0.0
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
       },
-      "parser": "minecraft:vec2"
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     }
   },
   "permissions": {

@@ -3,11 +3,19 @@
   "children": {
     "name": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:function"
+      },
       "children": {
         "arguments": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:nbt_compound_tag"
+          },
           "executable": true,
-          "parser": "minecraft:nbt_compound_tag"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         },
         "with": {
           "type": "literal",
@@ -17,16 +25,29 @@
               "children": {
                 "source": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:block_pos"
+                  },
                   "children": {
                     "path": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:nbt_path"
+                      },
                       "executable": true,
-                      "parser": "minecraft:nbt_path"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
                     }
                   },
                   "executable": true,
-                  "parser": "minecraft:block_pos"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "entity": {
@@ -34,20 +55,31 @@
               "children": {
                 "source": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:entity",
+                    "players_only": false,
+                    "single_result": true
+                  },
                   "children": {
                     "path": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:nbt_path"
+                      },
                       "executable": true,
-                      "parser": "minecraft:nbt_path"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
                     }
                   },
                   "executable": true,
-                  "parser": "minecraft:entity",
-                  "properties": {
-                    "type": "entities",
-                    "amount": "single"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "storage": {
@@ -55,23 +87,47 @@
               "children": {
                 "source": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:resource_location"
+                  },
                   "children": {
                     "path": {
                       "type": "argument",
+                      "argument": {
+                        "type": "minecraft:nbt_path"
+                      },
                       "executable": true,
-                      "parser": "minecraft:nbt_path"
+                      "permissions": {
+                        "type": "minecraft:always_pass"
+                      }
                     }
                   },
+                  "custom_suggestion": {
+                    "type": "minecraft:ask_server"
+                  },
                   "executable": true,
-                  "parser": "minecraft:resource_location"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
+          },
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
       },
+      "custom_suggestion": {
+        "type": "minecraft:ask_server"
+      },
       "executable": true,
-      "parser": "minecraft:function"
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     }
   },
   "permissions": {

@@ -3,17 +3,24 @@
   "children": {
     "target": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:string"
+      },
       "children": {
         "reason": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:message"
+          },
           "executable": true,
-          "parser": "minecraft:message"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
       },
       "executable": true,
-      "parser": "brigadier:string",
-      "properties": {
-        "type": "word"
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

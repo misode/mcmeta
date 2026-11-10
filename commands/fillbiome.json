@@ -3,38 +3,57 @@
   "children": {
     "from": {
       "type": "argument",
+      "argument": {
+        "type": "minecraft:block_pos"
+      },
       "children": {
         "to": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:block_pos"
+          },
           "children": {
             "biome": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:resource",
+                "registry": "minecraft:worldgen/biome"
+              },
               "children": {
                 "replace": {
                   "type": "literal",
                   "children": {
                     "filter": {
                       "type": "argument",
-                      "executable": true,
-                      "parser": "minecraft:resource_or_tag",
-                      "properties": {
+                      "argument": {
+                        "type": "minecraft:resource_or_tag",
                         "registry": "minecraft:worldgen/biome"
+                      },
+                      "executable": true,
+                      "permissions": {
+                        "type": "minecraft:always_pass"
                       }
                     }
+                  },
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
               },
               "executable": true,
-              "parser": "minecraft:resource",
-              "properties": {
-                "registry": "minecraft:worldgen/biome"
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
           },
-          "parser": "minecraft:block_pos"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
       },
-      "parser": "minecraft:block_pos"
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     }
   },
   "permissions": {

@@ -6,16 +6,23 @@
       "children": {
         "id": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:string"
+          },
           "children": {
             "description": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:component"
+              },
               "executable": true,
-              "parser": "minecraft:component"
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
           },
-          "parser": "brigadier:string",
-          "properties": {
-            "type": "phrase"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
       },
@@ -32,12 +39,20 @@
       "children": {
         "name": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:string"
+          },
+          "custom_suggestion": {
+            "type": "minecraft:ask_server"
+          },
           "executable": true,
-          "parser": "brigadier:string",
-          "properties": {
-            "type": "phrase"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "enable": {
@@ -45,18 +60,29 @@
       "children": {
         "name": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:string"
+          },
           "children": {
             "after": {
               "type": "literal",
               "children": {
                 "existing": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:string"
+                  },
+                  "custom_suggestion": {
+                    "type": "minecraft:ask_server"
+                  },
                   "executable": true,
-                  "parser": "brigadier:string",
-                  "properties": {
-                    "type": "phrase"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "before": {
@@ -64,29 +90,48 @@
               "children": {
                 "existing": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:string"
+                  },
+                  "custom_suggestion": {
+                    "type": "minecraft:ask_server"
+                  },
                   "executable": true,
-                  "parser": "brigadier:string",
-                  "properties": {
-                    "type": "phrase"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
                   }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "first": {
               "type": "literal",
-              "executable": true
+              "executable": true,
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             },
             "last": {
               "type": "literal",
-              "executable": true
+              "executable": true,
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
           },
+          "custom_suggestion": {
+            "type": "minecraft:ask_server"
+          },
           "executable": true,
-          "parser": "brigadier:string",
-          "properties": {
-            "type": "phrase"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "list": {
@@ -94,14 +139,23 @@
       "children": {
         "available": {
           "type": "literal",
-          "executable": true
+          "executable": true,
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         },
         "enabled": {
           "type": "literal",
-          "executable": true
+          "executable": true,
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
       },
-      "executable": true
+      "executable": true,
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     }
   },
   "permissions": {

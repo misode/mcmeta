@@ -6,19 +6,29 @@
       "children": {
         "team": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:string"
+          },
           "children": {
             "displayName": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:component"
+              },
               "executable": true,
-              "parser": "minecraft:component"
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
           },
           "executable": true,
-          "parser": "brigadier:string",
-          "properties": {
-            "type": "word"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "empty": {
@@ -26,9 +36,17 @@
       "children": {
         "team": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:team"
+          },
           "executable": true,
-          "parser": "minecraft:team"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "join": {
@@ -36,19 +54,33 @@
       "children": {
         "team": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:team"
+          },
           "children": {
             "members": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:score_holder",
+                "multiple": true
+              },
+              "custom_suggestion": {
+                "type": "minecraft:ask_server"
+              },
               "executable": true,
-              "parser": "minecraft:score_holder",
-              "properties": {
-                "amount": "multiple"
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
           },
           "executable": true,
-          "parser": "minecraft:team"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "leave": {
@@ -56,12 +88,21 @@
       "children": {
         "members": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:score_holder",
+            "multiple": true
+          },
+          "custom_suggestion": {
+            "type": "minecraft:ask_server"
+          },
           "executable": true,
-          "parser": "minecraft:score_holder",
-          "properties": {
-            "amount": "multiple"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "list": {
@@ -69,37 +110,63 @@
       "children": {
         "team": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:team"
+          },
           "executable": true,
-          "parser": "minecraft:team"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
       },
-      "executable": true
+      "executable": true,
+      "permissions": {
+        "type": "minecraft:always_pass"
+      }
     },
     "modify": {
       "type": "literal",
       "children": {
         "team": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:team"
+          },
           "children": {
             "collisionRule": {
               "type": "literal",
               "children": {
                 "always": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 },
                 "never": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 },
                 "pushOtherTeams": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 },
                 "pushOwnTeam": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "color": {
@@ -107,13 +174,24 @@
               "children": {
                 "reset": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 },
                 "value": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:team_color"
+                  },
                   "executable": true,
-                  "parser": "minecraft:team_color"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "deathMessageVisibility": {
@@ -121,20 +199,35 @@
               "children": {
                 "always": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 },
                 "hideForOtherTeams": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 },
                 "hideForOwnTeam": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 },
                 "never": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "displayName": {
@@ -142,9 +235,17 @@
               "children": {
                 "displayName": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:component"
+                  },
                   "executable": true,
-                  "parser": "minecraft:component"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "friendlyFire": {
@@ -152,9 +253,17 @@
               "children": {
                 "allowed": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:bool"
+                  },
                   "executable": true,
-                  "parser": "brigadier:bool"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "nametagVisibility": {
@@ -162,20 +271,35 @@
               "children": {
                 "always": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 },
                 "hideForOtherTeams": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 },
                 "hideForOwnTeam": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 },
                 "never": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "prefix": {
@@ -183,9 +307,17 @@
               "children": {
                 "prefix": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:component"
+                  },
                   "executable": true,
-                  "parser": "minecraft:component"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "seeFriendlyInvisibles": {
@@ -193,9 +325,17 @@
               "children": {
                 "allowed": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:bool"
+                  },
                   "executable": true,
-                  "parser": "brigadier:bool"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             },
             "suffix": {
@@ -203,14 +343,27 @@
               "children": {
                 "suffix": {
                   "type": "argument",
+                  "argument": {
+                    "type": "minecraft:component"
+                  },
                   "executable": true,
-                  "parser": "minecraft:component"
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
+              },
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
           },
-          "parser": "minecraft:team"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "remove": {
@@ -218,9 +371,17 @@
       "children": {
         "team": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:team"
+          },
           "executable": true,
-          "parser": "minecraft:team"
+          "permissions": {
+            "type": "minecraft:always_pass"
+          }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },

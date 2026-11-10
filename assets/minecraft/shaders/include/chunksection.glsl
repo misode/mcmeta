@@ -4,6 +4,7 @@
 layout(std140) uniform ChunkSection {
     ivec3 ChunkPosition;
     float ChunkVisibility;
+    ivec2 BufferStartOffsets;
 };
 
 #endif

@@ -6,29 +6,46 @@
       "children": {
         "target": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:entity",
+            "players_only": true,
+            "single_result": false
+          },
           "children": {
             "amount": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:integer"
+              },
               "children": {
                 "levels": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 },
                 "points": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
               },
               "executable": true,
-              "parser": "brigadier:integer"
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
           },
-          "parser": "minecraft:entity",
-          "properties": {
-            "type": "players",
-            "amount": "multiple"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "query": {
@@ -36,22 +53,34 @@
       "children": {
         "target": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:entity",
+            "players_only": true,
+            "single_result": true
+          },
           "children": {
             "levels": {
               "type": "literal",
-              "executable": true
+              "executable": true,
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             },
             "points": {
               "type": "literal",
-              "executable": true
+              "executable": true,
+              "permissions": {
+                "type": "minecraft:always_pass"
+              }
             }
           },
-          "parser": "minecraft:entity",
-          "properties": {
-            "type": "players",
-            "amount": "single"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     },
     "set": {
@@ -59,32 +88,47 @@
       "children": {
         "target": {
           "type": "argument",
+          "argument": {
+            "type": "minecraft:entity",
+            "players_only": true,
+            "single_result": false
+          },
           "children": {
             "amount": {
               "type": "argument",
+              "argument": {
+                "type": "minecraft:integer",
+                "min": 0
+              },
               "children": {
                 "levels": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 },
                 "points": {
                   "type": "literal",
-                  "executable": true
+                  "executable": true,
+                  "permissions": {
+                    "type": "minecraft:always_pass"
+                  }
                 }
               },
               "executable": true,
-              "parser": "brigadier:integer",
-              "properties": {
-                "min": 0
+              "permissions": {
+                "type": "minecraft:always_pass"
               }
             }
           },
-          "parser": "minecraft:entity",
-          "properties": {
-            "type": "players",
-            "amount": "multiple"
+          "permissions": {
+            "type": "minecraft:always_pass"
           }
         }
+      },
+      "permissions": {
+        "type": "minecraft:always_pass"
       }
     }
   },
