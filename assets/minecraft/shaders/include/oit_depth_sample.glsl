@@ -1,13 +1,13 @@
 #ifndef MINECRAFT_OIT_DEPTH_SAMPLE_GLSL
 #define MINECRAFT_OIT_DEPTH_SAMPLE_GLSL
 
-uniform sampler2D DepthBoundsSampler;
+layout (input_attachment_index = 0) uniform subpassInput DepthBoundsSampler;
 
 const float OIT_HIGH_PRECISION_DEPTH_THRESHOLD = 10.0;
 const int OIT_LOW_PRECISION_DEPTH_BINS = 2;
 
 float normalizeDepth(float fragmentDeviceDepth) {
-    vec4 depthBoundsSample = texelFetch(DepthBoundsSampler, ivec2(gl_FragCoord.xy), 0);
+    vec4 depthBoundsSample = subpassLoad(DepthBoundsSampler);
     float closestBoundLinearDepthNegated = depthBoundsSample.r;
     float closestBoundLinearDepth = -closestBoundLinearDepthNegated;
     float furthestBoundLinearDepth = depthBoundsSample.g;

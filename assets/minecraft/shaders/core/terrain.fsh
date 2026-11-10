@@ -17,6 +17,10 @@ uniform sampler2D CloudsSampler;
 uniform sampler2D CloudsDepthSampler;
 #endif
 
+#ifdef CHECK_WATER_MASK
+uniform sampler2D WaterMaskSampler;
+#endif
+
 layout(location = 0) in float sphericalVertexDistance;
 layout(location = 1) in float cylindricalVertexDistance;
 layout(location = 2) in vec4 vertexColor;
@@ -76,6 +80,13 @@ void main() {
     vec4 color = (UseRgss == 1 ? sampleRGSS(Sampler0, texCoord0, 1.0f / TextureSize) : sampleNearest(Sampler0, texCoord0, 1.0f / TextureSize)) * vertexColor;
     #ifdef ALPHA_CUTOUT
     if (color.a < ALPHA_CUTOUT) {
+        discard;
+    }
+    #endif
+
+    #ifdef CHECK_WATER_MASK
+    float waterMaskDepth = texelFetch(WaterMaskSampler, ivec2(gl_FragCoord.xy), 0).r;
+    if (gl_FragCoord.z <= waterMaskDepth) {
         discard;
     }
     #endif

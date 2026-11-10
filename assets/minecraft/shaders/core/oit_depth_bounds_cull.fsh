@@ -3,15 +3,14 @@
 
 #include <minecraft:oit_common.glsl>
 
-uniform sampler2D DepthBoundsSampler;
+layout (input_attachment_index = 0) uniform subpassInput DepthBoundsSampler;
 
 layout(location = 0) in vec2 texCoord;
 
 layout(location = 0) out vec4 fragColor;
 
 void main() {
-    ivec2 pixelCoords = ivec2(gl_FragCoord.xy);
-    vec4 depthBounds = texelFetch(DepthBoundsSampler, pixelCoords, 0);
+    vec4 depthBounds = subpassLoad(DepthBoundsSampler);
 
     float closestBoundLinearDepthNegated = depthBounds.r;
     float furthestBoundLinearDepth = depthBounds.g;
