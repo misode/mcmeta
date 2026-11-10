@@ -1,15 +1,15 @@
 #ifndef MINECRAFT_OIT_SAMPLE_GLSL
 #define MINECRAFT_OIT_SAMPLE_GLSL
 
-uniform sampler2D Bins0;
+layout (input_attachment_index = 2) uniform subpassInput Bins0;
 #if OIT_TRANSMITTANCE_TARGET_COUNT > 1
-uniform sampler2D Bins1;
+layout (input_attachment_index = 3) uniform subpassInput Bins1;
 #endif
 #if OIT_TRANSMITTANCE_TARGET_COUNT > 2
-uniform sampler2D Bins2;
+layout (input_attachment_index = 4) uniform subpassInput Bins2;
 #endif
 #if OIT_TRANSMITTANCE_TARGET_COUNT > 3
-uniform sampler2D Bins3;
+layout (input_attachment_index = 5) uniform subpassInput Bins3;
 #endif
 
 float sampleAbsorbance(float bins[OIT_NUMBER_OF_DEPTH_BINS], float originalDepth, float currentAbsorbance) {
@@ -34,18 +34,18 @@ float sampleAbsorbance(float bins[OIT_NUMBER_OF_DEPTH_BINS], float originalDepth
     return mix(sampleA, sampleB, lerpAlpha);
 }
 
-float sampleTransmittance(ivec2 pos, float depth, float currentTransmittance) {
+float sampleTransmittance(float depth, float currentTransmittance) {
     float bins[OIT_NUMBER_OF_DEPTH_BINS];
     vec4 binsSamples[OIT_TRANSMITTANCE_TARGET_COUNT];
-    binsSamples[0] = texelFetch(Bins0, pos, 0);
+    binsSamples[0] = subpassLoad(Bins0);
     #if OIT_TRANSMITTANCE_TARGET_COUNT > 1
-    binsSamples[1] = texelFetch(Bins1, pos, 0);
+    binsSamples[1] = subpassLoad(Bins1);
     #endif
     #if OIT_TRANSMITTANCE_TARGET_COUNT > 2
-    binsSamples[2] = texelFetch(Bins2, pos, 0);
+    binsSamples[2] = subpassLoad(Bins2);
     #endif
     #if OIT_TRANSMITTANCE_TARGET_COUNT > 3
-    binsSamples[3] = texelFetch(Bins3, pos, 0);
+    binsSamples[3] = subpassLoad(Bins3);
     #endif
     for (int i = 0; i < OIT_TRANSMITTANCE_TARGET_COUNT; i++) {
         for (int j = 0; j < 4; j++) {
@@ -67,7 +67,7 @@ vec4 sampleColorForAccumulation(vec4 color, float deviceDepth) {
     #ifdef RENDERPEARL_EXPLICIT_DEPTH_INVARIANCE
     gl_FragDepth = deviceDepth;
     #endif
-    float sampledTransmittance = sampleTransmittance(ivec2(gl_FragCoord.xy), normalizeDepth(deviceDepth), transmittance);
+    float sampledTransmittance = sampleTransmittance(normalizeDepth(deviceDepth), transmittance);
     return vec4(color.rgb * color.a, accumAlpha) * sampledTransmittance;
 }
 
