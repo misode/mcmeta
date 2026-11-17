@@ -51,9 +51,11 @@ VertexData decodeVertex(usamplerBuffer vertexBuffer, ivec2 vertexBufferOffsets, 
     int startOffset = vertexBufferOffsets.x + faceID * PER_FACE_INCREMENT;
 
     uvec4 packedData1 = texelFetch(vertexBuffer, startOffset);
+    uvec4 packedData2 = texelFetch(vertexBuffer, startOffset + 1);
+
     int posPacked = int(packedData1.x);
     uint colorPacked = packedData1.y;
-    int bakedQuadIndex = ((int(colorPacked) << 8) & 0xFF00) | ((posPacked >> 24) & 0xFF);
+    int bakedQuadIndex = int(packedData2.y);
 
     uint brightnessPacked = packedData1.z;
     uint brightnessShiftVal = 8u * uint(cornerID);
@@ -62,7 +64,7 @@ VertexData decodeVertex(usamplerBuffer vertexBuffer, ivec2 vertexBufferOffsets, 
 
     int lightCoordIndex = startOffset + 3 + (cornerID >> 1);
     uint lightCoord01 = packedData1.w;
-    uint lightCoord23 = texelFetch(vertexBuffer, startOffset + 1).r;
+    uint lightCoord23 = packedData2.r;
     uint lightCoordUint = ((cornerID >> 1) == 1) ? lightCoord23 : lightCoord01;
 
     uint shiftVal = 16u * (uint(cornerID) & 1u);
