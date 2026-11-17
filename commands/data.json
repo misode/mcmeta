@@ -54,7 +54,7 @@
                         "criterion": {
                           "type": "argument",
                           "argument": {
-                            "type": "minecraft:string"
+                            "type": "minecraft:greedy_string"
                           },
                           "custom_suggestion": {
                             "type": "minecraft:ask_server"
@@ -173,7 +173,7 @@
                         "criterion": {
                           "type": "argument",
                           "argument": {
-                            "type": "minecraft:string"
+                            "type": "minecraft:greedy_string"
                           },
                           "custom_suggestion": {
                             "type": "minecraft:ask_server"
@@ -520,7 +520,7 @@
         "target": {
           "type": "argument",
           "argument": {
-            "type": "minecraft:string"
+            "type": "minecraft:word"
           },
           "children": {
             "reason": {
@@ -9894,7 +9894,7 @@
             "id": {
               "type": "argument",
               "argument": {
-                "type": "minecraft:string"
+                "type": "minecraft:quoted_string"
               },
               "children": {
                 "description": {
@@ -9927,7 +9927,7 @@
             "name": {
               "type": "argument",
               "argument": {
-                "type": "minecraft:string"
+                "type": "minecraft:quoted_string"
               },
               "custom_suggestion": {
                 "type": "minecraft:ask_server"
@@ -9948,7 +9948,7 @@
             "name": {
               "type": "argument",
               "argument": {
-                "type": "minecraft:string"
+                "type": "minecraft:quoted_string"
               },
               "children": {
                 "after": {
@@ -9957,7 +9957,7 @@
                     "existing": {
                       "type": "argument",
                       "argument": {
-                        "type": "minecraft:string"
+                        "type": "minecraft:quoted_string"
                       },
                       "custom_suggestion": {
                         "type": "minecraft:ask_server"
@@ -9978,7 +9978,7 @@
                     "existing": {
                       "type": "argument",
                       "argument": {
-                        "type": "minecraft:string"
+                        "type": "minecraft:quoted_string"
                       },
                       "custom_suggestion": {
                         "type": "minecraft:ask_server"
@@ -13707,7 +13707,7 @@
             "name": {
               "type": "argument",
               "argument": {
-                "type": "minecraft:string"
+                "type": "minecraft:greedy_string"
               },
               "executable": true,
               "permissions": {
@@ -16534,7 +16534,7 @@
         "command": {
           "type": "argument",
           "argument": {
-            "type": "minecraft:string"
+            "type": "minecraft:greedy_string"
           },
           "executable": true,
           "permissions": {
@@ -19053,7 +19053,7 @@
         "target": {
           "type": "argument",
           "argument": {
-            "type": "minecraft:string"
+            "type": "minecraft:word"
           },
           "custom_suggestion": {
             "type": "minecraft:ask_server"
@@ -21009,7 +21009,8 @@
                 "time": {
                   "type": "argument",
                   "argument": {
-                    "type": "minecraft:time"
+                    "type": "minecraft:time",
+                    "min": 0
                   },
                   "children": {
                     "append": {
@@ -21066,7 +21067,7 @@
                 "objective": {
                   "type": "argument",
                   "argument": {
-                    "type": "minecraft:string"
+                    "type": "minecraft:word"
                   },
                   "children": {
                     "criteria": {
@@ -22665,7 +22666,7 @@
                 "name": {
                   "type": "argument",
                   "argument": {
-                    "type": "minecraft:string"
+                    "type": "minecraft:word"
                   },
                   "executable": true,
                   "permissions": {
@@ -22690,7 +22691,7 @@
                 "name": {
                   "type": "argument",
                   "argument": {
-                    "type": "minecraft:string"
+                    "type": "minecraft:word"
                   },
                   "custom_suggestion": {
                     "type": "minecraft:ask_server"
@@ -22728,7 +22729,7 @@
             "team": {
               "type": "argument",
               "argument": {
-                "type": "minecraft:string"
+                "type": "minecraft:word"
               },
               "children": {
                 "displayName": {
@@ -23427,7 +23428,7 @@
             "var": {
               "type": "argument",
               "argument": {
-                "type": "minecraft:string"
+                "type": "minecraft:word"
               },
               "executable": true,
               "permissions": {
@@ -23957,8 +23958,7 @@
             "time": {
               "type": "argument",
               "argument": {
-                "type": "minecraft:time",
-                "min": -2147483648
+                "type": "minecraft:time"
               },
               "executable": true,
               "permissions": {
@@ -23986,8 +23986,7 @@
                     "time": {
                       "type": "argument",
                       "argument": {
-                        "type": "minecraft:time",
-                        "min": -2147483648
+                        "type": "minecraft:time"
                       },
                       "executable": true,
                       "permissions": {
@@ -24077,7 +24076,8 @@
                     "time": {
                       "type": "argument",
                       "argument": {
-                        "type": "minecraft:time"
+                        "type": "minecraft:time",
+                        "min": 0
                       },
                       "executable": true,
                       "permissions": {
@@ -24197,7 +24197,8 @@
             "time": {
               "type": "argument",
               "argument": {
-                "type": "minecraft:time"
+                "type": "minecraft:time",
+                "min": 0
               },
               "executable": true,
               "permissions": {
@@ -24298,19 +24299,22 @@
                 "fadeIn": {
                   "type": "argument",
                   "argument": {
-                    "type": "minecraft:time"
+                    "type": "minecraft:time",
+                    "min": 0
                   },
                   "children": {
                     "stay": {
                       "type": "argument",
                       "argument": {
-                        "type": "minecraft:time"
+                        "type": "minecraft:time",
+                        "min": 0
                       },
                       "children": {
                         "fadeOut": {
                           "type": "argument",
                           "argument": {
-                            "type": "minecraft:time"
+                            "type": "minecraft:time",
+                            "min": 0
                           },
                           "executable": true,
                           "permissions": {
@@ -24392,7 +24396,7 @@
         "hostname": {
           "type": "argument",
           "argument": {
-            "type": "minecraft:string"
+            "type": "minecraft:quoted_string"
           },
           "children": {
             "port": {
